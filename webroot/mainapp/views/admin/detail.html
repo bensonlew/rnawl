@@ -1,0 +1,164 @@
+$def with (controller)
+$var title: $controller.title
+$var is_admin: $controller.is_admin
+$var username: $controller.username
+$var nav_index: $controller.nav_index
+      <div class="row">
+        <div class="col-md-12">
+          <!--breadcrumbs start -->
+          <ul class="breadcrumb">
+            <li><a href="main"><i class="fa fa-home"></i> 首页</a></li>
+            <li class="active">$controller.title</li>
+          </ul>
+          <!--breadcrumbs end -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel">
+            <header class="panel-heading">
+              $controller.title<p class="text-primary">$controller.type:$controller.params.run_id</p>
+            </header>
+            $if controller.type == "workflow":
+              <ul class="nav nav-tabs" role="tablist">
+                $if controller.show_type == "sub":
+                  <li role="presentation" class="active"><a role="tab" data-toggle="tab">子模块</a></li>
+                $else:
+                  <li role="presentation"><a href="detail?run_id=$controller.params.run_id" role="tab">子模块</a></li>
+                $if controller.show_type == "report":
+                  <li role="presentation" class="active"><a role="tab" data-toggle="tab">交互任务</a></li>
+                $else:
+                  <li role="presentation"><a href="detail?show=report&run_id=$controller.params.run_id" role="tab">交互任务</a></li>
+                $if controller.is_batch:
+                  $if controller.show_type == "batch":
+                    <li role="presentation" class="active"><a role="tab" data-toggle="tab">批处理任务</a></li>
+                  $else:
+                    <li role="presentation"><a  href="detail?show=batch&run_id=$controller.params.run_id" role="tab">批处理任务</a></li>
+              </ul>
+            $if controller.show_type == "sub":
+              <div class="alert alert-warning" role="alert">外部命令只有通过tool模块的addcommand方法调用才能在此处显示</div>
+            $if controller.type != "workflow":
+              <div class="alert alert-success" role="alert">链接到Workflow:<a href="detail?run_id=$controller.workflow_id">$controller.workflow_id</a></div>
+
+            <table class="table table-hover tree">
+              <tr>
+                <th>RUN ID</th>
+                <th>PATH</th>
+                <th>DIR</th>
+                <th>LOG</th>
+                  <th>资源</th>
+                <th>W/Q/R(秒)</th>
+                <th>Request</th>
+                <th>MaxUsed</th>
+                <th>平均使用</th>
+                  <th>host</th>
+                  <th>次数</th>
+                <th>状态</th>
+              </tr>
+              $for data in controller.data_list:
+                $if data.i_index == 1:
+                  <tr class="treegrid-1">
+                $else:
+                  <tr class="treegrid-$data.i_index treegrid-parent-$data.parent_index">
+                $if data.data_type == "workflow":
+                  <td><i class="fa fa-wordpress" aria-hidden="true" data-toggle="tooltip" title="workflow流程"></i>
+                    $if data.batch_id or int(data.batch)==1:
+                      <i class="fa fa-th" data-toggle="tooltip" title="批处理子任务"></i>
+                    $if int(data.instant) == 1:
+                      <i class="fa fa-arrow-down" data-toggle="tooltip" title="即时计算任务"></i>
+                    <a href="detail?run_id=$data.workflow_id">$data.workflow_id</a></td>
+                $elif data.data_type == "command":
+                  <td><i class="fa fa-hand-o-right" aria-hidden="true" data-toggle="tooltip" title="调用命令"></i>$data.name</td>
+                $elif data.data_type == "module":
+                  <td><i class="fa fa-maxcdn" aria-hidden="true" data-toggle="tooltip" title="Module模块"></i><a href="detail?run_id=$data.run_id" title="点击可展开详情">$data.short_name</a></td>
+                $elif data.data_type == "tool":
+                  <td><i class="fa fa-tumblr" aria-hidden="true" data-toggle="tooltip" title="Tool工具"></i><a href="detail?run_id=$data.run_id">$data.short_name</a></td>
+                $if data.data_type == "workflow":
+                  $if data.type == "module":
+                      <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="<a href='pymodule?cluster=$data.cluster&name=mbio.modules.$data.path'>$data.path</a>">View</button></td>
+                  $elif data.type == "tool":
+                      <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="<a href='pymodule?cluster=$data.cluster&name=mbio.tools.$data.path'>$data.path</a>">View</button></td>
+                  $else:
+                      <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="<a href='pymodule?cluster=$data.cluster&name=mbio.workflows.$data.path'>$data.path</a>">View</button></td>
+                $elif data.data_type == "module":
+                  <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="<a href='pymodule?cluster=$data.cluster&name=$data.path'>$data.path</a>">View</button></td>
+                $elif data.data_type == "tool":
+                  <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="<a href='pymodule?cluster=$data.cluster&name=$data.path'>$data.path</a>">View</button></td>
+                $else:
+                  <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="$data.cmd">View</button></td>
+                <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog" data-content="<a target='_blank' href='/workdir/$data.work_dir_url?cluster=$data.cluster'>$data.work_dir</a>">View</button></td>
+                $if data.data_type != "module":
+                  <td><a target="_blank" class="btn btn-default btn-xs" role="button" href="log?cluster=$data.cluster&id=$data.id&type=$data.data_type">View</a></td>
+                $else:
+                  <td><a target="_blank" class="btn btn-default btn-xs" role="button" href="log?cluster=$data.cluster&workflow_id=$data.parent_run_id">View</a></td>
+                $if data.data_type == "tool":
+                  <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog" data-content="<a target='_blank' href='/workdir/$data.work_dir_url/All_resource.txt?cluster=$data.cluster'>$data.work_dir/All_resource.txt</a>">View</button></td>
+                $elif data.data_type == "command":
+                  <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog" data-content="<a target='_blank' href='/workdir/$data.work_dir_url/$(data.name)_resource.txt?cluster=$data.cluster'>$data.work_dir/$(data.name)_resource.txt</a>">View</button></td>
+                $else:
+                  <td></td>
+                <td>
+                  $if data.data_type == "tool":
+                    $data.wait_spend_time/$data.queue_spend_time/$data.run_spend_time
+                  $else:
+                    -/$data.queue_spend_time/$data.run_spend_time
+                $if data.run_spend_time > 18000:
+                      <button type="button" class="btn btn-danger btn-xs" data-toggle="tooltip" title="运行时间过长，请设法优化程序运行！"><i class="fa fa-bell" aria-hidden="true"></i></button>
+                </td>
+                $if data.data_type == "tool":
+                  <td>$data.request_cpu/$data.request_memory</td>
+                $else:
+                  <td></td>
+                $if data.data_type == "tool":
+                  <td>$("%.3f" % data.cpu_used)/$data.mem_used
+                    $if data.resource_alert:
+                      <button type="button" class="btn btn-danger btn-xs" data-toggle="tooltip" title="$data.resource_alert"><i class="fa fa-close" aria-hidden="true"></i></button>
+                  </td>
+                $elif data.data_type == "command":
+                  <td>$("%.3f" % data.cpu_used)/$data.mem_used</td>
+                $else:
+                  <td></td>
+                $if data.data_type == "tool":
+                  <td>$("%.3f" % data.avg_cpu_used)/$data.avg_mem_used</td>
+                $elif data.data_type == "command":
+                  <td>$("%.3f" % data.avg_cpu_used)/$data.avg_mem_used</td>
+                $else:
+                  <td></td>
+                $if data.data_type == "tool":
+                  <td>$data.run_host</td>
+                $else:
+                  <td>-</td>
+                $if data.data_type in ["tool", "command"]:
+                  <td>$data.run_times</td>
+                $else:
+                  <td>-</td>
+                $if data.data_type == "tool":
+                  $if int(data.success) != 1:
+                    <td> <button type="button" class="btn btn-danger btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.start_time, 结束时间$data.end_time, 运行节点:$data.run_host,任务类型：$data.job_type , Job ID：$data.job_id, 主进程ID：$data.process_id, 子进程数：$data.sub_process_num,错误信息:$data.info">错误</button></td>
+                  $else:
+                    <td> <button type="button" class="btn btn-success btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.start_time, 结束时间$data.end_time, 运行节点:$data.run_host,任务类型：$data.job_type , Job ID：$data.job_id, 主进程ID：$data.process_id, 子进程数：$data.sub_process_num">成功</button></td>
+                $elif data.data_type == "command":
+                    <td> <button type="button" class="btn btn-default btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.start_time, 结束时间$data.end_time, 主进程ID：$data.main_pid, 子进程数：$data.sub_process_num,命令内容: $data.cmd">查看</button></td>
+                $elif data.data_type == "module":
+                    <td> <button type="button" class="btn btn-default btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.start_time, 结束时间$data.end_time,子Tool数：$data.tool_num">查看</button></td>
+                $else:
+                    <td>
+                          $if int(data.has_run) == 0:
+                              <button type="button" class="btn btn-default btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="运行节点:$data.server">排队中</button>
+                          $elif int(data.is_error) == 1:
+                              <button type="button" class="btn btn-danger btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 结束时间$data.end_time, 运行节点:$data.server, PID：$data.pid,错误信息:$data.error,重运行时间:$data.rerun_time">错误</button>
+                          $elif int(data.is_end) == 1:
+                              <button type="button" class="btn btn-success btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 结束时间$data.end_time, 运行节点:$data.server, PID：$data.pid,重运行时间:$data.rerun_time">成功</button>
+                          $elif int(data.paused) == 1:
+                              <button type="button" class="btn btn-warning btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 运行节点:$data.server, PID：$data.pid">暂停中</button>
+                          $elif int(data.rerun) == 1:
+                              <button type="button" class="btn btn-warning btn-xs" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 运行节点:$data.server, PID：$data.pid, 重运行时间:$data.rerun_time">重运行中</button>
+                          $else:
+                              <button type="button" class="btn btn-info btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 运行节点:$data.server, PID：$data.pid">运行中</button>
+                    </td>
+            </tr>
+            </table>
+
+          </div>
+        </div>

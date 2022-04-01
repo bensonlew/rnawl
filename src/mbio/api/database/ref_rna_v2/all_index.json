@@ -1,0 +1,2203 @@
+{
+    "sg_annotation_query": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_query", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_seq_stat": {}, 
+    "sg_annotation_swissprot": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_swissprot", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_batch": {}, 
+    "sg_software_database": {}, 
+    "sg_geneset_kegg_enrich_pic": {
+        "kegg_enrich_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_kegg_enrich_pic", 
+            "key": [
+                [
+                    "kegg_enrich_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_query_detail": {
+        "is_new_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_query_detail", 
+            "key": [
+                [
+                    "is_new", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "is_gene_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_query_detail", 
+            "key": [
+                [
+                    "is_gene", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "seq_type_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_query_detail", 
+            "key": [
+                [
+                    "seq_type", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "transcript_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_query_detail", 
+            "key": [
+                [
+                    "transcript_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "gene_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_query_detail", 
+            "key": [
+                [
+                    "gene_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "query_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_query_detail", 
+            "key": [
+                [
+                    "query_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "query_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_query_detail", 
+            "key": [
+                [
+                    "query_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_project_overview": {}, 
+    "sg_splicing_rmats_model": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_model", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_file_dowload_detail": {}, 
+    "sg_snp": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_snp", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_specimen_mapping": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_specimen_mapping", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_masigpro_seq": {}, 
+    "sg_geneset_ppi_edge": {
+        "ppi_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_ppi_edge", 
+            "key": [
+                [
+                    "ppi_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_gsea_exp": {
+        "gsea_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_gsea_exp", 
+            "key": [
+                [
+                    "gsea_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_task": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_task", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_venn": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_venn", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_gsea_geneset": {
+        "gsea_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_gsea_geneset", 
+            "key": [
+                [
+                    "gsea_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_kegg_enrich": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_kegg_enrich", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_kegg_class_pathway": {
+        "kegg_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_kegg_class_pathway", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_transcripts_seq_type": {
+        "transcripts_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_transcripts_seq_type", 
+            "key": [
+                [
+                    "transcripts_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_cluster_tree": {
+        "cluster_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_cluster_tree", 
+            "key": [
+                [
+                    "cluster_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_assessment_chrom_distribution": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_assessment_chrom_distribution", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_circ": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_circ", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_wgcna_relate_gene_detail": {
+        "relate_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_relate_gene_detail", 
+            "key": [
+                [
+                    "relate_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_info": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_info", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_record_status": {}, 
+    "sg_diff_scatter": {
+        "diff_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_diff_scatter", 
+            "key": [
+                [
+                    "diff_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "diff_id_hashed": {
+            "ns": "sanger_ref_rna_v2.sg_diff_scatter", 
+            "key": [
+                [
+                    "diff_id", 
+                    "hashed"
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_masigpro": {}, 
+    "sg_specimen_graphic": {
+        "specimen_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_specimen_graphic", 
+            "key": [
+                [
+                    "specimen_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_asprofile_diff": {}, 
+    "sg_annotation_pfam_bar": {
+        "pfam_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_pfam_bar", 
+            "key": [
+                [
+                    "pfam_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_asprofile_diff_detail": {
+        "diff_id_1_event_type_1_gene_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_asprofile_diff_detail", 
+            "key": [
+                [
+                    "diff_id", 
+                    1.0
+                ], 
+                [
+                    "event_type", 
+                    1.0
+                ], 
+                [
+                    "gene_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "diff_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_asprofile_diff_detail", 
+            "key": [
+                [
+                    "diff_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_batch_corr_detail": {
+        "corr_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_batch_corr_detail", 
+            "key": [
+                [
+                    "corr_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_detail": {
+        "exp_id_1_seq_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_detail", 
+            "key": [
+                [
+                    "exp_id", 
+                    1.0
+                ], 
+                [
+                    "seq_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "seq_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_detail", 
+            "key": [
+                [
+                    "seq_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "exp_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_detail", 
+            "key": [
+                [
+                    "exp_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_diff_stats": {
+        "stat_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_diff_stats", 
+            "key": [
+                [
+                    "stat_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_wgcna_prepare": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_prepare", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_stat": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_stat", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_snp_stat": {
+        "snp_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_snp_stat", 
+            "key": [
+                [
+                    "snp_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_count": {}, 
+    "sg_transcripts_relations": {
+        "transcripts_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_transcripts_relations", 
+            "key": [
+                [
+                    "transcripts_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_wgcna_network_edge_detail": {
+        "network_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_network_edge_detail", 
+            "key": [
+                [
+                    "network_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_assessment_coverage_detail": {
+        "coverage_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_assessment_coverage_detail", 
+            "key": [
+                [
+                    "coverage_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_psi": {
+        "stat_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_psi", 
+            "key": [
+                [
+                    "stat_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_go_graph": {
+        "go_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_go_graph", 
+            "key": [
+                [
+                    "go_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "go_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_go_graph", 
+            "key": [
+                [
+                    "go_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_go_list": {
+        "go_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_go_list", 
+            "key": [
+                [
+                    "go_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "go_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_go_list", 
+            "key": [
+                [
+                    "go_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_wgcna_network": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_network", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_one_touch": {}, 
+    "sg_wgcna_prepare_detail": {
+        "prepare_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_prepare_detail", 
+            "key": [
+                [
+                    "prepare_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_stats": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_stats", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_cluster": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_cluster", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_cluster_detail": {
+        "cluster_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_cluster_detail", 
+            "key": [
+                [
+                    "cluster_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_type_stats": {}, 
+    "sg_geneset_kegg_class_pic": {
+        "kegg_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_kegg_class_pic", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_batch_pca_detail": {
+        "pca_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_batch_pca_detail", 
+            "key": [
+                [
+                    "pca_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_stat_detail": {
+        "stat_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_stat_detail", 
+            "key": [
+                [
+                    "stat_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sanger_chart": {}, 
+    "sg_wgcna_module_tree_detail": {
+        "module_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_module_tree_detail", 
+            "key": [
+                [
+                    "module_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_wgcna_relate_module_detail": {
+        "relate_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_relate_module_detail", 
+            "key": [
+                [
+                    "relate_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_transcripts_step": {
+        "transcripts_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_transcripts_step", 
+            "key": [
+                [
+                    "transcripts_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_batch": {}, 
+    "sg_annotation_nr": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_nr", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_go_dag_detail": {}, 
+    "sg_geneset_ppi_stat": {
+        "ppi_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_ppi_stat", 
+            "key": [
+                [
+                    "ppi_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_graph_volin": {
+        "graph_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_graph_volin", 
+            "key": [
+                [
+                    "graph_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "graph_id_hashed": {
+            "ns": "sanger_ref_rna_v2.sg_exp_graph_volin", 
+            "key": [
+                [
+                    "graph_id", 
+                    "hashed"
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_tf_predict_detail": {
+        "tf_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_tf_predict_detail", 
+            "key": [
+                [
+                    "tf_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "tf_predict_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_tf_predict_detail", 
+            "key": [
+                [
+                    "tf_predict_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_genes_detail": {
+        "main_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_genes_detail", 
+            "key": [
+                [
+                    "main_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_tfbs_predict_detail": {
+        "tfbs_predict_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_tfbs_predict_detail", 
+            "key": [
+                [
+                    "tfbs_predict_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_ghost_add_annotation": {}, 
+    "sg_geneset_cog_class_detail": {
+        "geneset_cog_id_hashed": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_cog_class_detail", 
+            "key": [
+                [
+                    "geneset_cog_id", 
+                    "hashed"
+                ]
+            ], 
+            "v": 2
+        }, 
+        "geneset_cog_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_cog_class_detail", 
+            "key": [
+                [
+                    "geneset_cog_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_detail": {
+        "geneset_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_detail", 
+            "key": [
+                [
+                    "geneset_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_corrsf_detail": {
+        "expcorr_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_corrsf_detail", 
+            "key": [
+                [
+                    "expcorr_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_graph": {
+        "stat_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_graph", 
+            "key": [
+                [
+                    "stat_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_tool_lab_diff_plot": {}, 
+    "sg_geneset": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_diffcomp": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_diffcomp", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_blast": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_blast", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_go": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_go", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_gene_fusion_venn": {}, 
+    "sg_diff_detail": {
+        "diff_id_1_compare_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_diff_detail", 
+            "key": [
+                [
+                    "diff_id", 
+                    1.0
+                ], 
+                [
+                    "compare", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "diff_id_1_seq_id_1": {
+            "key": [
+                [
+                    "diff_id", 
+                    1
+                ], 
+                [
+                    "seq_id", 
+                    1
+                ]
+            ], 
+            "ns": "sanger_ref_rna_v2.sg_diff_detail", 
+            "background": true, 
+            "v": 2
+        }, 
+        "diff_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_diff_detail", 
+            "key": [
+                [
+                    "diff_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "seq_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_diff_detail", 
+            "key": [
+                [
+                    "seq_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_blast_detail": {
+        "blast_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_blast_detail", 
+            "key": [
+                [
+                    "blast_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_specimen": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_specimen", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_gsea_stat": {}, 
+    "sg_geneset_go_dag": {}, 
+    "sg_exp_venn": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_venn", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_species_information": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_species_information", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_transcripts": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_transcripts", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_kegg_class_detail": {
+        "kegg_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_kegg_class_detail", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_nr_detail": {
+        "nr_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_nr_detail", 
+            "key": [
+                [
+                    "nr_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "nr_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_nr_detail", 
+            "key": [
+                [
+                    "nr_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_graph_box": {
+        "graph_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_graph_box", 
+            "key": [
+                [
+                    "graph_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "graph_id_hashed": {
+            "ns": "sanger_ref_rna_v2.sg_exp_graph_box", 
+            "key": [
+                [
+                    "graph_id", 
+                    "hashed"
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_cog_detail": {
+        "cog_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_cog_detail", 
+            "key": [
+                [
+                    "cog_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "cog_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_cog_detail", 
+            "key": [
+                [
+                    "cog_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_wgcna_module_membership_detail": {
+        "module_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_module_membership_detail", 
+            "key": [
+                [
+                    "module_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_status": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_status", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_circos": {}, 
+    "sg_gene_fusion_detail": {}, 
+    "sg_asprofile": {}, 
+    "sg_snp_detail": {
+        "_id_snp_id_1": {
+            "key": [
+                [
+                    "_id", 
+                    1.0
+                ], 
+                [
+                    "snp_id", 
+                    1.0
+                ]
+            ], 
+            "ns": "sanger_ref_rna_v2.sg_snp_detail", 
+            "background": true, 
+            "v": 2
+        }, 
+        "snp_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_snp_detail", 
+            "key": [
+                [
+                    "snp_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "only_test": {}, 
+    "sg_geneset_go_class": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_go_class", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_kegg_class_statistic": {
+        "kegg_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_kegg_class_statistic", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_tfbs_predict": {}, 
+    "sg_geneset_gsea": {}, 
+    "sg_diff": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_diff", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_gene_fusion_stat": {}, 
+    "sg_msigdb_stat": {}, 
+    "sg_gene_fusion_venn_detail": {}, 
+    "sg_geneset_analysis": {}, 
+    "sg_seq_stat_detail": {
+        "_seq_stat_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_seq_stat_detail", 
+            "key": [
+                [
+                    "seq_stat_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_venn_detail": {
+        "venn_id_hashed": {
+            "ns": "sanger_ref_rna_v2.sg_exp_venn_detail", 
+            "key": [
+                [
+                    "venn_id", 
+                    "hashed"
+                ]
+            ], 
+            "v": 2
+        }, 
+        "venn_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_venn_detail", 
+            "key": [
+                [
+                    "venn_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_assessment_saturation_curve": {
+        "saturation_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_assessment_saturation_curve", 
+            "key": [
+                [
+                    "saturation_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_known_mirna": {}, 
+    "sg_annotation_pfam": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_pfam", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_extract": {}, 
+    "sg_wgcna_relate": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_relate", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_table_relation": {}, 
+    "sg_diff_volcano": {
+        "diff_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_diff_volcano", 
+            "key": [
+                [
+                    "diff_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "diff_id_hashed": {
+            "ns": "sanger_ref_rna_v2.sg_diff_volcano", 
+            "key": [
+                [
+                    "diff_id", 
+                    "hashed"
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_gene_fusion_circos_detail": {}, 
+    "sg_exp_corr_detail": {
+        "corr_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_corr_detail", 
+            "key": [
+                [
+                    "corr_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_species_information_detail": {
+        "species_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_species_information_detail", 
+            "key": [
+                [
+                    "species_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_ppi": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_ppi", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_tf_stat_bar_detail": {
+        "tf_stat_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_tf_stat_bar_detail", 
+            "key": [
+                [
+                    "tf_stat_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_diffcomp_detail": {
+        "rmats_diffcomp_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_diffcomp_detail", 
+            "key": [
+                [
+                    "rmats_diffcomp_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_batch_pca_circ_detail": {}, 
+    "sg_exp_corrsf": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_corrsf", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_diff_summary": {
+        "diff_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_diff_summary", 
+            "key": [
+                [
+                    "diff_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "diff_id_hashed": {
+            "ns": "sanger_ref_rna_v2.sg_diff_summary", 
+            "key": [
+                [
+                    "diff_id", 
+                    "hashed"
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_gene_fusion": {}, 
+    "sg_annotation_pfam_detail": {
+        "pfam_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_pfam_detail", 
+            "key": [
+                [
+                    "pfam_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "pfam_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_pfam_detail", 
+            "key": [
+                [
+                    "pfam_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_specimen_group": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_specimen_group", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_cog_class": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_cog_class", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_kegg_enrich_detail": {
+        "kegg_enrich_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_kegg_enrich_detail", 
+            "key": [
+                [
+                    "kegg_enrich_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_graph": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_graph", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_pca": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_pca", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_stem_cluster": {}, 
+    "sg_stem": {}, 
+    "sg_tf_predict": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_tf_predict", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_add_annotation": {}, 
+    "sg_annotation_kegg_level": {
+        "kegg_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_kegg_level", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "kegg_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_kegg_level", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_msigdb": {}, 
+    "sg_asprofile_result_detail": {
+        "asprofile_id_1_group_1": {
+            "ns": "sanger_ref_rna_v2.sg_asprofile_result_detail", 
+            "key": [
+                [
+                    "asprofile_id", 
+                    1.0
+                ], 
+                [
+                    "group", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_software_para": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_software_para", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_wgcna_pipeline": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_pipeline", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_kegg_table": {
+        "kegg_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_kegg_table", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "kegg_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_kegg_table", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_asprofile_statistics_detail": {
+        "asprofile_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_asprofile_statistics_detail", 
+            "key": [
+                [
+                    "asprofile_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_wgcna_module": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_wgcna_module", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_go_class_detail": {
+        "go_regulate_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_go_class_detail", 
+            "key": [
+                [
+                    "go_regulate_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "go_regulate_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_go_class_detail", 
+            "key": [
+                [
+                    "go_regulate_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_detail": {
+        "gid_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_detail", 
+            "key": [
+                [
+                    "gid", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "type_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_detail", 
+            "key": [
+                [
+                    "type", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "splicing_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_splicing_rmats_detail", 
+            "key": [
+                [
+                    "splicing_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_assessment_distribution_detail": {
+        "distribution_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_assessment_distribution_detail", 
+            "key": [
+                [
+                    "distribution_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_genome_db": {
+        "taxon_1": {
+            "ns": "sanger_ref_rna_v2.sg_genome_db", 
+            "key": [
+                [
+                    "taxon", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "name_1": {
+            "ns": "sanger_ref_rna_v2.sg_genome_db", 
+            "key": [
+                [
+                    "name", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "assembly_1": {
+            "ns": "sanger_ref_rna_v2.sg_genome_db", 
+            "key": [
+                [
+                    "assembly", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "genome_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_genome_db", 
+            "key": [
+                [
+                    "genome_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_kegg_categories": {
+        "kegg_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_kegg_categories", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "kegg_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_kegg_categories", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_tfbs_predict_stat_detail": {}, 
+    "task_workflow_params": {}, 
+    "sg_stem_detail": {
+        "stem_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_stem_detail", 
+            "key": [
+                [
+                    "stem_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_tf_stat": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_tf_stat", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_assessment_coverage": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_assessment_coverage", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_specimen_group_compare": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_specimen_group_compare", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_pca_circ_detail": {
+        "exp_pca_ellipse_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_pca_circ_detail", 
+            "key": [
+                [
+                    "exp_pca_ellipse_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_go_enrich_detail": {
+        "go_enrich_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_go_enrich_detail", 
+            "key": [
+                [
+                    "go_enrich_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "study_count_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_go_enrich_detail", 
+            "key": [
+                [
+                    "study_count", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "go_enrich_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_go_enrich_detail", 
+            "key": [
+                [
+                    "go_enrich_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_genes": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_genes", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_kegg_class": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_kegg_class", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_exp_graph_density": {
+        "graph_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_graph_density", 
+            "key": [
+                [
+                    "graph_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "graph_id_hashed": {
+            "ns": "sanger_ref_rna_v2.sg_exp_graph_density", 
+            "key": [
+                [
+                    "graph_id", 
+                    "hashed"
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_splicing_rmats_count_detail": {}, 
+    "sg_exp_pca_detail": {
+        "pca_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_pca_detail", 
+            "key": [
+                [
+                    "pca_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_query_seq": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_query_seq", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_masigpro_detail": {}, 
+    "sg_geneset_circ_graph": {
+        "circ_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_circ_graph", 
+            "key": [
+                [
+                    "circ_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_go_enrich": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_go_enrich", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_cancel": {}, 
+    "sg_target": {}, 
+    "sg_assessment_saturation": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_assessment_saturation", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_cog": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_cog", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_swissprot_detail": {
+        "swissprot_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_swissprot_detail", 
+            "key": [
+                [
+                    "swissprot_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "swissprot_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_swissprot_detail", 
+            "key": [
+                [
+                    "swissprot_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_assessment_distribution": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_assessment_distribution", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_mapping": {}, 
+    "sg_exp_corr": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_exp_corr", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_result_table_deposit": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_result_table_deposit", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_file_dowload": {}, 
+    "sg_geneset_circ_detail": {
+        "circ_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_circ_detail", 
+            "key": [
+                [
+                    "circ_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_tf_stat_circos_detail": {
+        "tf_stat_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_tf_stat_circos_detail", 
+            "key": [
+                [
+                    "tf_stat_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_kegg": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_kegg", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_go_detail": {
+        "go_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_go_detail", 
+            "key": [
+                [
+                    "go_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }, 
+        "go_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_go_detail", 
+            "key": [
+                [
+                    "go_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_assessment_chrom_distribution_detail": {
+        "chrom_distribution_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_assessment_chrom_distribution_detail", 
+            "key": [
+                [
+                    "chrom_distribution_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_annotation_kegg_pic": {
+        "kegg_id_1__id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_kegg_pic", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1.0
+                ], 
+                [
+                    "_id", 
+                    1.0
+                ]
+            ], 
+            "v": 2
+        }, 
+        "kegg_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_annotation_kegg_pic", 
+            "key": [
+                [
+                    "kegg_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_geneset_ipath": {
+        "task_id_1": {
+            "ns": "sanger_ref_rna_v2.sg_geneset_ipath", 
+            "key": [
+                [
+                    "task_id", 
+                    1
+                ]
+            ], 
+            "v": 2
+        }
+    }, 
+    "sg_novel_mirna": {}
+}

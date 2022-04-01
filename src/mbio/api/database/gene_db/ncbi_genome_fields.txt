@@ -1,0 +1,13 @@
+refseq_category	RefSeq category
+assembly_name	Assembly name
+genbank_assembly_accession	GenBank assembly accession
+description	Description
+taxid	Taxid
+assembly_level	Assembly level
+genome_representation	Genome representation
+date	Date
+release_type	Release type
+bioproject	BioProject
+submitter	Submitter
+organism_name	Organism name
+assembly_type	Assembly type

@@ -1,0 +1,256 @@
+field	displayName	ENSEMBL	NCBI	UNIPROT	uniprot_use	url	selected	uniprot_match	label
+sg_gene_id	sg_gene_id	sg_gene_id	sg_gene_id	sg_gene_id			ENSEMBL		
+sg_tran_id	sg_tran_id	sg_tran_id	sg_tran_id	sg_tran_id			ENSEMBL		
+ensembl_gene_id	Gene stable ID	ensembl_gene_id		Ensembl	0	exturl|/Gene/Summary?db=core;g=%s	ENSEMBL		
+ensembl_gene_id_version	Gene stable ID version	ensembl_gene_id_version				exturl|/Gene/Summary?db=core;g=%s	ENSEMBL		
+ensembl_transcript_id	Transcript stable ID	ensembl_transcript_id		Ensembl_TRS	0	exturl|/Transcript/Summary?db=core;t=%s	ENSEMBL	3	
+ensembl_transcript_id_version	Transcript stable ID version	ensembl_transcript_id_version				exturl|/Transcript/Summary?db=core;t=%s	ENSEMBL		
+ensembl_peptide_id	Protein stable ID	ensembl_peptide_id		Ensembl_PRO	0	exturl|/Transcript/ProteinSummary?db=core;p=%s	ENSEMBL	2	
+ensembl_peptide_id_version	Protein stable ID version	ensembl_peptide_id_version				exturl|/Transcript/ProteinSummary?db=core;p=%s	ENSEMBL		
+ensembl_exon_id	Exon stable ID	ensembl_exon_id					ENSEMBL		
+description	Gene description	description					ENSEMBL		
+chromosome_name	Chromosome/scaffold name	chromosome_name				exturl|/contigview?chr=%s	ENSEMBL		
+start_position	Gene start (bp)	start_position				exturl|/contigview?chr=%s&vc_start=%s&vc_end=%s|chromosome_name|start_position|end_position	ENSEMBL		
+end_position	Gene end (bp)	end_position				exturl|/contigview?chr=%s&vc_start=%s&vc_end=%s|chromosome_name|start_position|end_position	ENSEMBL		
+strand	Strand	strand					ENSEMBL		
+band	Karyotype band	band				exturl|/contigview?chr=%s&band=%s|chromosome_name|band	ENSEMBL		
+transcript_start	Transcript start (bp)	transcript_start				exturl|/contigview?chr=%s&vc_start=%s&vc_end=%s|chromosome_name|transcript_start|transcript_end	ENSEMBL		
+transcript_end	Transcript end (bp)	transcript_end				exturl|/contigview?chr=%s&vc_start=%s&vc_end=%s|chromosome_name|transcript_start|transcript_end	ENSEMBL		
+transcription_start_site	Transcription start site (TSS)	transcription_start_site					ENSEMBL		
+transcript_length	Transcript length (including UTRs and CDS)	transcript_length					ENSEMBL		
+transcript_tsl	Transcript support level (TSL)	transcript_tsl				http://www.ensembl.org/Help/Glossary?id=492	ENSEMBL		
+transcript_gencode_basic	GENCODE basic annotation	transcript_gencode_basic				http://www.ensembl.org/Help/Glossary?id=500	ENSEMBL		
+transcript_appris	APPRIS annotation	transcript_appris				http://www.ensembl.org/Help/Glossary?id=521	ENSEMBL		
+transcript_mane_select	RefSeq match transcript	transcript_mane_select				https://www.ncbi.nlm.nih.gov/nuccore/%s	ENSEMBL		
+external_gene_name	Gene name	external_gene_name		Gene_Name	0	exturl|/Gene/Summary?db=core;g=%s|ensembl_gene_id	ENSEMBL		
+external_gene_source	Source of gene name	external_gene_source					ENSEMBL		
+external_transcript_name	Transcript name	external_transcript_name				exturl|/Transcript/Summary?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+external_transcript_source_name	Source of transcript name	external_transcript_source_name					ENSEMBL		
+transcript_count	Transcript count	transcript_count					ENSEMBL		
+percentage_gene_gc_content	Gene % GC content	percentage_gene_gc_content					ENSEMBL		
+gene_biotype	Gene type	gene_biotype					ENSEMBL		
+transcript_biotype	Transcript type	transcript_biotype					ENSEMBL		
+source	Source (gene)	source					ENSEMBL		
+transcript_source	Source (transcript)	transcript_source					ENSEMBL		
+version	Version (gene)	version					ENSEMBL		
+transcript_version	Version (transcript)	transcript_version					ENSEMBL		
+peptide_version	Version (protein)	peptide_version					ENSEMBL		
+phenotype_description	Phenotype description	phenotype_description					ENSEMBL		
+Source_name	Source name	Source_name					ENSEMBL		
+study_external_id	Study external reference	study_external_id					ENSEMBL		
+strain_name	Strain name	strain_name					ENSEMBL		
+strain_gender	Strain gender	strain_gender					ENSEMBL		
+p_value	P value	p_value					ENSEMBL		
+go_id	GO term accession	go_id				http://amigo.geneontology.org/amigo/term/%s	ENSEMBL		
+name_1006	GO term name	name_1006					ENSEMBL		
+definition_1006	GO term definition	definition_1006					ENSEMBL		
+go_linkage_type	GO term evidence code	go_linkage_type					ENSEMBL		
+namespace_1003	GO domain	namespace_1003					ENSEMBL		
+goslim_goa_accession	GOSlim GOA Accession(s)	goslim_goa_accession				http://amigo.geneontology.org/amigo/term/%s	ENSEMBL		
+goslim_goa_description	GOSlim GOA Description	goslim_goa_description					ENSEMBL		
+ccds	CCDS ID	ccds		CCDS	0	http://www.ncbi.nlm.nih.gov/CCDS/CcdsBrowse.cgi?REQUEST=CCDS&DATA=%s	ENSEMBL		
+chembl	ChEMBL ID	chembl		ChEMBL	0	https://www.ebi.ac.uk/chembldb/target/inspect/%s	ENSEMBL		
+clone_based_ensembl_gene	Clone-based (Ensembl) gene ID	clone_based_ensembl_gene					ENSEMBL		
+clone_based_ensembl_transcript	Clone-based (Ensembl) transcript ID	clone_based_ensembl_transcript					ENSEMBL		
+dbass3_name	DataBase of Aberrant 3' Splice Sites name	dbass3_name				http://www.dbass.soton.ac.uk/DBASS3/viewlist.aspx?filter=gene&id=%s|dbass3_id	ENSEMBL		
+dbass3_id	DataBase of Aberrant 3' Splice Sites ID	dbass3_id				http://www.dbass.soton.ac.uk/DBASS3/viewlist.aspx?filter=gene&id=%s|dbass3_id	ENSEMBL		
+dbass5_name	DataBase of Aberrant 5' Splice Sites name	dbass5_name				http://www.dbass.soton.ac.uk/DBASS5/viewlist.aspx?filter=gene&id=%s|dbass5_id	ENSEMBL		
+dbass5_id	DataBase of Aberrant 5' Splice Sites ID	dbass5_id				http://www.dbass.soton.ac.uk/DBASS5/viewlist.aspx?filter=gene&id=%s|dbass5_id	ENSEMBL		
+ens_hs_transcript	Ensembl Human Transcript ID	ens_hs_transcript				http://www.ensembl.org/Homo_sapiens/Transcript/Summary?t=%s	ENSEMBL		
+ens_hs_translation	Ensembl Human Translation ID	ens_hs_translation				http://www.ensembl.org/Homo_sapiens/Transcript/ProteinSummary?peptide=%s	ENSEMBL		
+entrezgene_trans_name	EntrezGene transcript name ID	entrezgene_trans_name					ENSEMBL		
+embl	European Nucleotide Archive ID	embl				http://www.ebi.ac.uk/ena/data/view/%s	ENSEMBL		
+arrayexpress	Expression Atlas ID	arrayexpress				http://www.ebi.ac.uk/gxa/genes/%s	ENSEMBL		
+genedb	GeneDB ID	genedb				http://www.genedb.org/genedb/Dispatcher?formType=navBar&organism=All%3A*&name=%s	ENSEMBL		
+hgnc_id	HGNC ID	hgnc_id		HGNC	0	https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=%s	ENSEMBL		
+hgnc_symbol	HGNC symbol	hgnc_symbol				https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=%s|hgnc_id	ENSEMBL		
+hpa_accession	Human Protein Atlas accession	hpa_accession				http://www.proteinatlas.org/tissue_profile.php?antibody_id=%s|hpa_id	ENSEMBL		
+hpa_id	Human Protein Atlas ID	hpa_id				http://www.proteinatlas.org/tissue_profile.php?antibody_id=%s|hpa_id	ENSEMBL		
+protein_id	INSDC protein ID	protein_id				http://www.ncbi.nlm.nih.gov/protein/%s	ENSEMBL		
+kegg_enzyme	KEGG Pathway and Enzyme ID	kegg_enzyme				http://www.genome.jp/kegg-bin/show_pathway?map%s	ENSEMBL		
+ens_lrg_gene	LRG display in Ensembl gene ID	ens_lrg_gene				exturl|/LRG/Summary?lrg=%s	ENSEMBL		
+ens_lrg_transcript	LRG display in Ensembl transcript ID	ens_lrg_transcript					ENSEMBL		
+merops	MEROPS - the Peptidase Database ID	merops					ENSEMBL		
+mim_gene_description	MIM gene description	mim_gene_description				http://www.omim.org/%s|mim_gene_accession	ENSEMBL		
+mim_gene_accession	MIM gene accession	mim_gene_accession				http://www.omim.org/%s|mim_gene_accession	ENSEMBL		
+mim_morbid_description	MIM morbid description	mim_morbid_description				http://www.omim.org/%s|mim_morbid_accession	ENSEMBL		
+mim_morbid_accession	MIM morbid accession	mim_morbid_accession				http://www.omim.org/%s|mim_morbid_accession	ENSEMBL		
+mirbase_accession	miRBase accession	mirbase_accession				http://www.mirbase.org/cgi-bin/mirna_entry.pl?id=%s	ENSEMBL		
+mirbase_id	miRBase ID	mirbase_id				http://www.mirbase.org/cgi-bin/mirna_entry.pl?id=%s|mirbase_accession	ENSEMBL		
+mirbase_trans_name	miRBase transcript name ID	mirbase_trans_name					ENSEMBL		
+entrezgene_description	NCBI gene description	entrezgene_description				http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=Graphics&list_uids=%s|entrezgene_id	ENSEMBL		
+entrezgene_accession	NCBI gene accession	entrezgene_accession				http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=Graphics&list_uids=%s|entrezgene_id|entrezgene_id	ENSEMBL		
+entrezgene_id	NCBI gene ID	entrezgene_id		GeneID		http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=Graphics&list_uids=%s|entrezgene_id|entrezgene_id	ENSEMBL		
+pdb	PDB ID	pdb		PDB		http://www.ebi.ac.uk/pdbe-srv/view/entry/%s/summary.html	ENSEMBL		
+reactome	Reactome ID	reactome		Reactome		http://www.reactome.org/content/detail/%s	ENSEMBL		
+reactome_gene	Reactome gene ID	reactome_gene		Reactome			ENSEMBL		
+reactome_transcript	Reactome transcript ID	reactome_transcript					ENSEMBL		
+refseq_mrna	RefSeq mRNA ID	refseq_mrna		RefSeq_NT		http://www.ncbi.nlm.nih.gov/nuccore/%s	ENSEMBL	4	
+refseq_mrna_predicted	RefSeq mRNA predicted ID	refseq_mrna_predicted				http://www.ncbi.nlm.nih.gov/nuccore/%s	ENSEMBL		
+refseq_ncrna	RefSeq ncRNA ID	refseq_ncrna		RefSeq_NT		http://www.ncbi.nlm.nih.gov/nuccore/%s	ENSEMBL		
+refseq_ncrna_predicted	RefSeq ncRNA predicted ID	refseq_ncrna_predicted				http://www.ncbi.nlm.nih.gov/nuccore/%s	ENSEMBL		
+refseq_peptide	RefSeq peptide ID	refseq_peptide		RefSeq		http://www.ncbi.nlm.nih.gov/nuccore/%s	ENSEMBL		
+refseq_peptide_predicted	RefSeq peptide predicted ID	refseq_peptide_predicted				http://www.ncbi.nlm.nih.gov/nuccore/%s	ENSEMBL		
+rfam	RFAM ID	rfam				http://rfam.xfam.org/family/%s	ENSEMBL		
+rfam_trans_name	RFAM transcript name ID	rfam_trans_name					ENSEMBL		
+rnacentral	RNAcentral ID	rnacentral				http://rnacentral.org/rna/%s	ENSEMBL		
+hgnc_trans_name	Transcript name ID	hgnc_trans_name					ENSEMBL		
+ucsc	UCSC Stable ID	ucsc		UCSC			ENSEMBL		
+uniparc	UniParc ID	uniparc		UniParc		http://www.uniprot.org/uniparc/%s	ENSEMBL		
+uniprot_gn_symbol	UniProtKB Gene Name symbol	uniprot_gn_symbol				http://www.uniprot.org/uniprot/%s	ENSEMBL		
+uniprot_gn_id	UniProtKB Gene Name ID	uniprot_gn_id		UniProtKB-ID		http://www.uniprot.org/uniprot/%s	ENSEMBL	1	
+uniprotswissprot	UniProtKB/Swiss-Prot ID	uniprotswissprot				http://www.uniprot.org/uniprot/%s	ENSEMBL		
+uniprotsptrembl	UniProtKB/TrEMBL ID	uniprotsptrembl				http://www.uniprot.org/uniprot/%s	ENSEMBL		
+wikigene_description	WikiGene description	wikigene_description				https://www.wikigenes.org/e/gene/e/%s.html|wikigene_id	ENSEMBL		
+wikigene_name	WikiGene name	wikigene_name		GeneWiki	0	https://www.wikigenes.org/e/gene/e/%s.html|wikigene_id|wikigene_id	ENSEMBL		
+wikigene_id	WikiGene ID	wikigene_id				https://www.wikigenes.org/e/gene/e/%s.html|wikigene_id|wikigene_id	ENSEMBL		
+affy_hc_g110	AFFY HC G110 probe	affy_hc_g110				exturl|/Location/Genome?ftype=ProbeFeature;array=HC-G110;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_focus	AFFY HG Focus probe	affy_hg_focus				exturl|/Location/Genome?ftype=ProbeFeature;array=HG-Focus;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u133a	AFFY HG U133A probe	affy_hg_u133a				exturl|/Location/Genome?ftype=ProbeFeature;array=HG-U133A;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u133a_2	AFFY HG U133A 2 probe	affy_hg_u133a_2				exturl|/Location/Genome?ftype=ProbeFeature;array=HG-U133A_2;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u133b	AFFY HG U133B probe	affy_hg_u133b				exturl|/Location/Genome?ftype=ProbeFeature;array=HG-U133B;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u133_plus_2	AFFY HG U133 Plus 2 probe	affy_hg_u133_plus_2				exturl|/Location/Genome?ftype=ProbeFeature;array=HG-U133_Plus_2;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u95a	AFFY HG U95A probe	affy_hg_u95a				exturl|/Location/Genome?ftype=ProbeFeature;array=HG_U95A;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u95av2	AFFY HG U95Av2 probe	affy_hg_u95av2				exturl|/Location/Genome?ftype=ProbeFeature;array=HG_U95Av2;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u95b	AFFY HG U95B probe	affy_hg_u95b				exturl|/Location/Genome?ftype=ProbeFeature;array=HG-U95B;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u95c	AFFY HG U95C probe	affy_hg_u95c				exturl|/Location/Genome?ftype=ProbeFeature;array=HG-U95C;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u95d	AFFY HG U95D probe	affy_hg_u95d				exturl|/Location/Genome?ftype=ProbeFeature;array=HG-U95D;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hg_u95e	AFFY HG U95E probe	affy_hg_u95e				exturl|/Location/Genome?ftype=ProbeFeature;array=HG-U95E;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hta_2_0	AFFY HTA 2 0 probe	affy_hta_2_0				exturl|/Location/Genome?ftype=ProbeFeature;array=HTA-2_0;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_huex_1_0_st_v2	AFFY HuEx 1 0 st v2 probe	affy_huex_1_0_st_v2				exturl|/Location/Genome?ftype=ProbeFeature;array=HuEx-1_0-st-v2;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hugenefl	AFFY HuGeneFL probe	affy_hugenefl				exturl|/Location/Genome?ftype=ProbeFeature;array=HuGeneFL;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hugene_1_0_st_v1	AFFY HuGene 1 0 st v1 probe	affy_hugene_1_0_st_v1				exturl|/Location/Genome?ftype=ProbeFeature;array=HuGene-1_0-st-v1;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_hugene_2_0_st_v1	AFFY HuGene 2 0 st v1 probe	affy_hugene_2_0_st_v1				exturl|/Location/Genome?ftype=ProbeFeature;array=HuGene-2_0-st-v1;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_primeview	AFFY PrimeView probe	affy_primeview				exturl|/Location/Genome?ftype=ProbeFeature;array=PrimeView;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+affy_u133_x3p	AFFY U133 X3P probe	affy_u133_x3p				exturl|/Location/Genome?ftype=ProbeFeature;array=U133_X3P;vendor=AFFY;fdb=funcgen;id=%s;ptype=pset;	ENSEMBL		
+agilent_cgh_44b	AGILENT CGH 44b probe	agilent_cgh_44b				exturl|/Location/Genome?ftype=ProbeFeature;array=CGH_44b;vendor=AGILENT;fdb=funcgen;id=%s	ENSEMBL		
+agilent_gpl6848	AGILENT GPL6848 probe	agilent_gpl6848				exturl|/Location/Genome?ftype=ProbeFeature;array=GPL6848;vendor=AGILENT;fdb=funcgen;id=%s	ENSEMBL		
+agilent_sureprint_g3_ge_8x60k	AGILENT SurePrint G3 GE 8x60k probe	agilent_sureprint_g3_ge_8x60k				exturl|/Location/Genome?ftype=ProbeFeature;array=SurePrint_G3_GE_8x60k;vendor=AGILENT;fdb=funcgen;id=%s	ENSEMBL		
+agilent_sureprint_g3_ge_8x60k_v2	AGILENT SurePrint G3 GE 8x60k v2 probe	agilent_sureprint_g3_ge_8x60k_v2				exturl|/Location/Genome?ftype=ProbeFeature;array=SurePrint_G3_GE_8x60k_v2;vendor=AGILENT;fdb=funcgen;id=%s	ENSEMBL		
+agilent_wholegenome	AGILENT WholeGenome probe	agilent_wholegenome				exturl|/Location/Genome?ftype=ProbeFeature;array=WholeGenome;vendor=AGILENT;fdb=funcgen;id=%s	ENSEMBL		
+agilent_wholegenome_4x44k_v1	AGILENT WholeGenome 4x44k v1 probe	agilent_wholegenome_4x44k_v1				exturl|/Location/Genome?ftype=ProbeFeature;array=WholeGenome_4x44k_v1;vendor=AGILENT;fdb=funcgen;id=%s	ENSEMBL		
+agilent_wholegenome_4x44k_v2	AGILENT WholeGenome 4x44k v2 probe	agilent_wholegenome_4x44k_v2				exturl|/Location/Genome?ftype=ProbeFeature;array=WholeGenome_4x44k_v2;vendor=AGILENT;fdb=funcgen;id=%s	ENSEMBL		
+codelink_codelink	CODELINK CODELINK probe	codelink_codelink				exturl|/Location/Genome?ftype=ProbeFeature;array=CODELINK;vendor=CODELINK;fdb=funcgen;id=%s	ENSEMBL		
+illumina_humanht_12_v3	ILLUMINA HumanHT 12 V3 probe	illumina_humanht_12_v3				exturl|/Location/Genome?ftype=ProbeFeature;array=HumanHT-12_V3;vendor=ILLUMINA;fdb=funcgen;id=%s	ENSEMBL		
+illumina_humanht_12_v4	ILLUMINA HumanHT 12 V4 probe	illumina_humanht_12_v4				exturl|/Location/Genome?ftype=ProbeFeature;array=HumanHT-12_V4;vendor=ILLUMINA;fdb=funcgen;id=%s	ENSEMBL		
+illumina_humanref_8_v3	ILLUMINA HumanRef 8 V3 probe	illumina_humanref_8_v3				exturl|/Location/Genome?ftype=ProbeFeature;array=HumanRef-8_V3;vendor=ILLUMINA;fdb=funcgen;id=%s	ENSEMBL		
+illumina_humanwg_6_v1	ILLUMINA HumanWG 6 V1 probe	illumina_humanwg_6_v1				exturl|/Location/Genome?ftype=ProbeFeature;array=HumanWG_6_V1;vendor=ILLUMINA;fdb=funcgen;id=%s	ENSEMBL		
+illumina_humanwg_6_v2	ILLUMINA HumanWG 6 V2 probe	illumina_humanwg_6_v2				exturl|/Location/Genome?ftype=ProbeFeature;array=HumanWG_6_V2;vendor=ILLUMINA;fdb=funcgen;id=%s	ENSEMBL		
+illumina_humanwg_6_v3	ILLUMINA HumanWG 6 V3 probe	illumina_humanwg_6_v3				exturl|/Location/Genome?ftype=ProbeFeature;array=HumanWG_6_V3;vendor=ILLUMINA;fdb=funcgen;id=%s	ENSEMBL		
+phalanx_onearray	PHALANX OneArray probe	phalanx_onearray				exturl|/Location/Genome?ftype=ProbeFeature;array=OneArray;vendor=PHALANX;fdb=funcgen;id=%s	ENSEMBL		
+family	Ensembl Protein Family ID(s)	family				exturl|/Multi/Family/Details?fm=%s	ENSEMBL		
+family_description	Ensembl Family Description	family_description					ENSEMBL		
+cdd	CDD ID	cdd					ENSEMBL		
+cdd_start	CDD start	cdd_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+cdd_end	CDD end	cdd_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+gene3d	Gene3D ID	gene3d					ENSEMBL		
+gene3d_start	Gene3D start	gene3d_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+gene3d_end	Gene3D end	gene3d_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+hamap	HAMAP ID	hamap				http://hamap.expasy.org/unirule/%s	ENSEMBL		
+hamap_start	HAMAP start	hamap_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+hamap_end	HAMAP end	hamap_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+hmmpanther	PANTHER ID	hmmpanther					ENSEMBL		
+hmmpanther_start	PANTHER start	hmmpanther_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+hmmpanther_end	PANTHER end	hmmpanther_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+pfam	Pfam ID	pfam				http://pfam.xfam.org/family/%s	ENSEMBL		
+pfam_start	Pfam start	pfam_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+pfam_end	Pfam end	pfam_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+pirsf	PIRSF ID	pirsf				http://pir.georgetown.edu/cgi-bin/ipcSF?id=%s	ENSEMBL		
+pirsf_start	PIRSF start	pirsf_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+pirsf_end	PIRSF end	pirsf_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+prints	Prints ID	prints				http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?prints_accn=%s&display_opts=Prints&category=None&queryform=false&regexpr=off&prints_accn=###ID###	ENSEMBL		
+prints_start	Prints start	prints_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+prints_end	Prints end	prints_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+scanprosite	PROSITE patterns ID	scanprosite				http://www.expasy.ch/prosite/%s	ENSEMBL		
+scanprosite_start	PROSITE patterns start	scanprosite_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+scanprosite_end	PROSITE patterns end	scanprosite_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+pfscan	PROSITE profiles ID	pfscan				http://www.expasy.ch/prosite/%s	ENSEMBL		
+pfscan_start	PROSITE profiles start	pfscan_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+pfscan_end	PROSITE profiles end	pfscan_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+sfld	SFLD ID	sfld					ENSEMBL		
+sfld_start	SFLD start	sfld_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+sfld_end	SFLD end	sfld_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+smart	SMART ID	smart				http://smart.embl-heidelberg.de/smart/do_annotation.pl?DOMAIN=%s	ENSEMBL		
+smart_start	SMART start	smart_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+smart_end	SMART end	smart_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+superfamily	Superfamily ID	superfamily				http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?ipid=%s	ENSEMBL		
+superfamily_start	Superfamily start	superfamily_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+superfamily_end	Superfamily end	superfamily_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+tigrfam	TIGRFAM ID	tigrfam				http://www.ebi.ac.uk/interpro/signature/%s	ENSEMBL		
+tigrfam_start	TIGRFAM start	tigrfam_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+tigrfam_end	TIGRFAM end	tigrfam_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+interpro	Interpro ID	interpro				http://www.ebi.ac.uk/interpro/entry/%s	ENSEMBL		
+interpro_short_description	Interpro Short Description	interpro_short_description					ENSEMBL		
+interpro_description	Interpro Description	interpro_description					ENSEMBL		
+interpro_start	Interpro start	interpro_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+interpro_end	Interpro end	interpro_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+mobidblite	MobiDB lite	mobidblite					ENSEMBL		
+mobidblite_start	MobiDB lite start	mobidblite_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+mobidblite_end	MobiDB lite end	mobidblite_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+ncoils	Coiled-coils (Ncoils)	ncoils					ENSEMBL		
+ncoils_start	Coiled-coils (Ncoils) start	ncoils_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+ncoils_end	Coiled-coils (Ncoils) end	ncoils_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+seg	Low complexity (Seg)	seg					ENSEMBL		
+seg_start	Low complexity (Seg) start	seg_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+seg_end	Low complexity (Seg) end	seg_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+sifts_import	PDB-ENSP mappings	sifts_import					ENSEMBL		
+sifts_import_start	PDB-ENSP mappings start	sifts_import_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+sifts_import_end	PDB-ENSP mappings end	sifts_import_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+signalp	Cleavage site (Signalp)	signalp					ENSEMBL		
+signalp_start	Cleavage site (Signalp) start	signalp_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+signalp_end	Cleavage site (Signalp) end	signalp_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+tmhmm	Transmembrane helices	tmhmm					ENSEMBL		
+tmhmm_start	Transmembrane helices start	tmhmm_start				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+tmhmm_end	Transmembrane helices end	tmhmm_end				exturl|/Transcript/Domains?db=core;t=%s|ensembl_transcript_id	ENSEMBL		
+allergome	Allergome			Allergome		http://www.allergome.org/script/dettaglio.php?id_molecule=%s	UNIPROT		Allergome; a platform for allergen knowledge
+biocyc	BioCyc			BioCyc		https://biocyc.org/getid?id=%s	UNIPROT		BioCyc Collection of Pathway/Genome Databases
+biogrid	BioGrid			BioGrid		https://thebiogrid.org/%s	UNIPROT		The Biological General Repository for Interaction Datasets (BioGrid)
+biomuta	BioMuta			BioMuta		https://hive.biochemistry.gwu.edu/tools/biomuta/biomuta.php?gene=%s	UNIPROT		BioMuta curated single-nucleotide variation and disease association database
+chitars	ChiTaRS			ChiTaRS		http://chitars.md.biu.ac.il/bin/search.pl?searchtype=gene_name&searchstr=%s&%d=1	UNIPROT		"ChiTaRS: a database of human, mouse and fruit fly chimeric transcripts and RNA-sequencing data"
+complexportal	ComplexPortal			ComplexPortal		https://www.ebi.ac.uk/complexportal/complex/%s	UNIPROT		ComplexPortal: manually curated resource of macromolecular complexes
+cptac	CPTAC			CPTAC		https://assays.cancer.gov/%s	UNIPROT		The CPTAC Assay portal
+crc64	CRC64			CRC64			UNIPROT		
+dip	DIP			DIP		https://dip.doe-mbi.ucla.edu/dip/Browse.cgi?ID=%s	UNIPROT		Database of interacting proteins
+disprot	DisProt			DisProt		https://disprot.org/%s	UNIPROT		Database of protein disorder
+dmdm	DMDM			DMDM		http://bioinf.umbc.edu/dmdm/gene_prot_page.php?search_type=protein&id=%s	UNIPROT		Domain mapping of disease mutations (DMDM)
+dnasu	DNASU			DNASU		https://dnasu.org/DNASU/AdvancedSearchOptions.do?geneName=%s	UNIPROT		The DNASU plasmid repository
+drugbank	DrugBank			DrugBank		https://www.drugbank.ca/drugs/%s	UNIPROT		Drug and drug target database
+eggnog	eggNOG			eggNOG		http://eggnogdb.embl.de/#/app/results?seqid=%s&target_nogs=%s|uniprot_gn_id|eggnog	UNIPROT		evolutionary genealogy of genes: Non-supervised Orthologous Groups
+embl	EMBL			EMBL	0	|	UNIPROT		EMBL nucleotide sequence database
+embl_cds	EMBL-CDS			EMBL-CDS	0		UNIPROT		
+esther	ESTHER			ESTHER		http://bioweb.supagro.inra.fr/ESTHER/gene_locus?name=%s&class=Gene_locus	UNIPROT		ESTHER database of the Alpha/Beta-hydrolase fold superfamily of proteins
+genecards	GeneCards			GeneCards		https://www.genecards.org/cgi-bin/carddisp.pl?gene=%s	UNIPROT		"GeneCards: human genes, protein and diseases"
+genedb	GeneDB			GeneDB		https://www.genedb.org/gene/%s	UNIPROT		GeneDB pathogen genome database from Sanger Institute
+gene_orfname	Gene_ORFName			Gene_ORFName			UNIPROT		
+genereviews	GeneReviews			GeneReviews		https://www.ncbi.nlm.nih.gov/books/NBK1116/?term=%s	UNIPROT		"GeneReviews a resource of expert-authored, peer-reviewed disease descriptions."
+gene_synonym	Gene_Synonym			Gene_Synonym			UNIPROT		
+genetree	GeneTree			GeneTree		http://www.ensemblgenomes.org/id-genetree/%s	UNIPROT		Ensembl GeneTree
+genomernai	GenomeRNAi			GenomeRNAi		http://genomernai.org/genedetails/%s	UNIPROT		Database of phenotypes from RNA interference screens in Drosophila and Homo sapiens
+gi	GI			GI	0		UNIPROT		
+glyconnect	GlyConnect			GlyConnect		https://glyconnect.expasy.org/browser/proteins/%s	UNIPROT		GlyConnect protein glycosylation platform
+guidetopharmacology	GuidetoPHARMACOLOGY			GuidetoPHARMACOLOGY		http://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=%s	UNIPROT		IUPHAR/BPS Guide to PHARMACOLOGY
+hogenom	HOGENOM			HOGENOM		http://hogenom.univ-lyon1.fr/query_sequence?seq=%s|uniprot_gn_id	UNIPROT		The HOGENOM Database of Homologous Genes from Fully Sequenced Organisms
+hpa	HPA			HPA		http://www.proteinatlas.org/tissue_profile.php?antibody_id=%s	UNIPROT		Human Protein Atlas
+kegg	KEGG			KEGG		https://www.genome.jp/dbget-bin/www_bget?%s	UNIPROT		KEGG: Kyoto Encyclopedia of Genes and Genomes
+ko	KO			KO		https://www.genome.jp/dbget-bin/www_bget?ko:%s	UNIPROT		KEGG Orthology (KO)
+merops	MEROPS			MEROPS		https://www.ebi.ac.uk/merops/cgi-bin/pepsum?mid=%s	UNIPROT		MEROPS protease database
+mim	MIM			MIM		https://www.omim.org/entry/%s	UNIPROT		Online Mendelian Inheritance in Man (OMIM)
+mint	MINT			MINT		https://mint.bio.uniroma2.it/cgi-bin/protein.py?id=%s|uniprot_gn_id	UNIPROT		Molecular INTeraction database
+ncbi_taxid	NCBI_TaxID			NCBI_TaxID	0		UNIPROT		
+nextprot	neXtProt			neXtProt		https://www.nextprot.org/entry/%s	UNIPROT		neXtProt; the human protein knowledge platform
+oma	OMA			OMA		https://omabrowser.org/oma/group/%s|uniprot_gn_id	UNIPROT		Identification of Orthologs from Complete Genome Data
+orphanet	Orphanet			Orphanet		https://www.orpha.net/consor/cgi-bin/OC_Exp.php?Lng=GB&Expert=%s	UNIPROT		Orphanet; a database dedicated to information on rare diseases and orphan drugs
+orthodb	OrthoDB			OrthoDB		https://www.orthodb.org/?query=%s|uniprot_gn_id	UNIPROT		Database of Orthologous Groups
+patric	PATRIC			PATRIC		https://www.patricbrc.org/view/Feature/%s	UNIPROT		Pathosystems Resource Integration Center (PATRIC)
+peroxibase	PeroxiBase			PeroxiBase		http://peroxibase.toulouse.inra.fr/display_perox/view_perox/%s	UNIPROT		"PeroxiBase, a peroxidase database"
+pharmgkb	PharmGKB			PharmGKB		https://www.pharmgkb.org/gene/%s	UNIPROT		The Pharmacogenetics and Pharmacogenomics Knowledge Base
+proteomicsdb	ProteomicsDB			ProteomicsDB		https://www.proteomicsdb.org/proteomicsdb/#protein/proteinDetails/%s	UNIPROT		ProteomicsDB: a multi-organism proteome resource
+rebase	REBASE			REBASE		http://rebase.neb.com/rebase/enz/%s.html	UNIPROT		Restriction enzymes and methylases database
+string	STRING			STRING		https://string-db.org/network/%s	UNIPROT		STRING: functional protein association networks
+swisslipids	SwissLipids			SwissLipids		https://www.swisslipids.org/#/entity/%s/	UNIPROT		SwissLipids knowledge resource for lipid biology
+tcdb	TCDB			TCDB		http://www.tcdb.org/search/result.php?tc=%s	UNIPROT		Transport Classification Database
+treefam	TreeFam			TreeFam		http://www.treefam.org/family/%s	UNIPROT		TreeFam database of animal gene trees
+unipathway	UniPathway			UniPathway		http://www.unipathway.org?upid=%s&entryac=%s|unipathway|uniprot_gn_id	UNIPROT		UniPathway: a resource for the exploration and annotation of metabolic pathways
+uniref100	UniRef100			UniRef100			UNIPROT		
+uniref50	UniRef50			UniRef50			UNIPROT		
+uniref90	UniRef90			UniRef90			UNIPROT		

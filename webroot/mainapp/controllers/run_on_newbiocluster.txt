@@ -1,0 +1,6 @@
+# 有参编译检测V2
+wgs_v2.wgs_v2
+# wgs_v2.report中所有的交互分析
+regexp(^wgs_v2.report\.\w+$)
+# 单独一个交互分析
+wgs_v2.report.cnv_compare

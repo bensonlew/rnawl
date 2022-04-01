@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+BCFFILTER=$1
+INPUT1=$2
+INPUT2=$3
+VCF_RESULT=$4
+VCF_ORIGIN=$5
+$BCFFILTER filter -s LowQual -e "%QUAL< $INPUT1 || DP< $INPUT2" -o $VCF_RESULT $VCF_ORIGIN

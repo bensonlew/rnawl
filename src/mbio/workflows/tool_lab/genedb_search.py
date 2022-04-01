@@ -1,0 +1,194 @@
+# -*- coding: utf-8 -*-
+# __author__ = 'liubinxu'
+from mainapp.controllers.project.meta_controller import MetaController
+from mainapp.libs.param_pack import group_detail_sort
+from bson import ObjectId
+import datetime
+import shutil
+import re,os
+import time
+import xlsxwriter
+from biocluster.workflow import Workflow
+from biocluster.config import Config
+
+class GenedbSearchWorkflow(Workflow):
+    """
+    基因集venn图
+    """
+    def __init__(self, wsheet_object):
+        self._sheet = wsheet_object
+        super(GenedbSearchWorkflow, self).__init__(wsheet_object)
+        options = [
+            {"name": "task_id", "type": "string"},
+            {"name": "task_name", "type": "string", "default": ""},
+            {"name": "file_id", "type": "string"},
+            {"name": "task_type", "type": "int"},
+            {"name": "submit_location", "type": "string"},
+            {"name": "search_string", "type": 'infile', 'format': 'ref_rna_v2.common'},
+            {"name": "search_file", 'type': 'infile', 'format': 'ref_rna_v2.common'},
+            {"name": "search_field", "type": "string"},
+            {"name": "target_field", "type": "string", "default": "all"},
+            {"name": "species", "type": "string"},
+            {"name": "main_id", "type": "string", "default": "5e78861fd041a47fdffffb4c"},
+            {"name": "update_info", "type": "string"},
+        ]
+        self.add_option(options)
+        self.revise_infiles()
+        self.set_options(self._sheet.options())
+        self.search_fields = list()
+        self.target_fields = list()
+        self.id_list = list()
+        self.search_list = list()
+        self.target_list = list()
+
+    def run(self):
+        self.start_listener()
+        self.fire("start")
+        relations = []
+        if self.option("search_file").is_set:
+            with open(self.option("search_file").prop['path'], 'r') as f:
+                f.readline()
+                for line in f:
+                    self.id_list.append(line.strip())
+
+        elif self.option("search_string") != "":
+            with open(self.option("search_string").prop['path'], 'r') as f:
+                f.readline()
+                for line in f:
+                    self.id_list.append(line.strip())
+
+        if self.option("task_name") == "":
+            time_now = datetime.datetime.now()
+            name = time_now.strftime("%Y%m%d_%H%M%S")
+            self.option("task_name", name)
+
+
+        '''
+        elif self.option("search_string") != "":
+            for line in self.option("search_string").split("|"):
+                self.id_list = line.strip().split(",")
+        '''
+
+        # 获取基因组数据库物种信息
+
+        self.sgdb_genome = self.api.api("gene_db.genome")
+        self.sgdb_logic = self.api.api("gene_db.logic")
+        self.sgdb_idmapping = self.api.api("gene_db.id_mapping")
+
+        genome_dict = self.sgdb_genome.get_genome_info(self.option("species"))
+        field2url, field2name = self.sgdb_logic.get_field2url()
+
+        if self.option("target_field").split(",")[-1] in ["all", "mixed"]:
+            self.target_list = genome_dict["tran_ids"]
+        else:
+            self.target_list = self.option("target_field").split(",")
+
+        if self.option("search_field").split(",")[-1] == "mixed":
+            # self.search_list = self.option("search_field").split(",")
+            self.search_list = ["entrezgene_id", "ensembl_gene_id", "ensembl_gene_id", "uniprot_gn_id", "external_gene_name", "ucsc", "gene_synonym"]
+        else:
+            self.search_list = self.option("search_field").split(",")
+
+        # print field2url, field2name
+
+        results = self.sgdb_idmapping.search_tran_id(
+            self.option("species"),
+            self.search_list,
+            "all",
+            self.id_list
+        )
+
+        workbook = xlsxwriter.Workbook(os.path.join(self.output_dir, self.option("task_name") + '_gene_id.xlsx'))
+        worksheet = workbook.add_worksheet()
+        row = 0
+        col =0
+        worksheet.write(row, col, "select_id")
+        # print "field is {}".format(self.target_list)
+        for field in self.target_list:
+            col += 1
+            worksheet.write(row, col, field2name.get(field, ""))
+
+        row = 1
+        col = 0
+        url_set = set()
+
+        id_list = list()
+        for result in results:
+            result_list = [result.get(field, "") for field in self.target_list]
+            if result_list in id_list:
+                continue
+            else:
+                id_list.append(result_list)
+            # print result
+            select_ids = set(result.values()).intersection(set(self.id_list))
+            worksheet.write(row, col, ",".join(select_ids))
+            for field in self.target_list:
+                col += 1
+                ids = result.get(field, "")
+                worksheet.write(row, col, ids)
+                url_format = field2url.get(field, "")
+                if ids != "" and url_format != "":
+                    if url_format.startswith("exturl|"):
+                        url_format = url_format.replace("exturl|", genome_dict["base_url"])
+
+                    if "|" in url_format:
+                        fl = url_format.split("|")[1:]
+                        f2 = [result.get(f, "").split("|")[0] for f in fl]
+                        url_format = url_format.split("|")[0]
+                        try:
+                            url = url_format %tuple(f2)
+                        except:
+                            print("url is {} id is {}".format(url_format, f2))
+                            url = ""
+
+                    else:
+                        try:
+                            url = url_format %ids.split("|")[0]
+                        except:
+                            url = ""
+                    if url != "":
+                        url_set.add(url)
+                        if len(url_set) > 65530:
+                            pass
+                        else:
+                            worksheet.write_url(row, col, url, string=ids)
+            row += 1
+            col = 0
+        workbook.close()
+
+        self.set_db()
+        self.end()
+
+
+    def end(self):
+        super(GenedbSearchWorkflow, self).end()
+
+    def get_workflow_output_dir(self):
+        workflow_output = self._sheet.output
+        if re.match(r'tsanger:', workflow_output):
+            workflow_output = workflow_output.replace('tsanger:', '/mnt/ilustre/tsanger-data/')
+        elif re.match(r'sanger:', workflow_output):
+            workflow_output = workflow_output.replace('sanger:', '/mnt/ilustre/data/')
+        elif re.match(r'^\w+://\S+/.+$', workflow_output):
+            pass
+        else:
+            self.set_error("json output wrong")
+        self.workflow_output = workflow_output
+        return workflow_output
+
+
+    def set_db(self):
+        target_dir = self.get_workflow_output_dir() + "/" + self.option("task_name") + '_gene_id.xlsx'
+        result_dir = self.add_upload_dir(self.output_dir)
+
+        db = Config().get_mongo_client(mtype="tool_lab")[Config().get_mongo_dbname("tool_lab")]
+        col1 = db["sgdb_id_search"]
+        col1.update({"_id": ObjectId(self.option("main_id"))}, {"$set": {"result_dir": target_dir, "status":"end"}}, upsert=True)
+
+
+        '''
+        genedb_api.import_cerna_sankey(
+            self.option('main_id'),
+            sankey_file
+        )
+        '''

@@ -1,0 +1,50 @@
+library(magrittr)
+library(data.table,warn.conflicts = FALSE)
+library(RcppRoll) #移动平均��?
+library(stringr)  #处理字符��?
+library(dtplyr)
+library(dplyr,warn.conflicts = FALSE)    #处理表格
+library(xlsx)
+#/mnt/ilustre/users/sanger-dev/app/program/R-3.3.1/bin/Rscript data_analysis.R family_joined_tab.Rdata
+
+args <- commandArgs()
+file_F = args[6]
+#load('family_joined_tab.Rdata') #加载bed
+load(args[6])
+out_path = args[7]
+
+#父本名称
+# dad.id=bed$dad.id[1]
+dad.id = sort(unique(bed$dad.id))
+cat(dad.id)
+test.pos.n=sum(bed$is.test==T)#测试位点��?
+err.pos.n=sum(bed$is.mis==T) #错配位点��?
+err.rate = (err.pos.n / test.pos.n*100) %>% round(2) #错配��?
+
+#父权��?
+cpi=prod(bed$pi, na.rm = T)
+fq=format(cpi,scientific = T, digits = 3)
+
+#深度
+dp=mean(bed$dad.dp, na.rm = T)%>%round(2)
+
+#有效��?
+eff.rate=paste0(round(sum(bed$is.test & bed$mustbe,na.rm = T)/sum(bed$mustbe,na.rm = T)*100, 2),"% : ",sum(bed$is.test & bed$mustbe, na.rm = T),"/",sum(bed$mustbe, na.rm = T))
+#无效��?
+ineff.rate=paste0(round(sum(bed$is.test & bed$mustnotbe,na.rm = T)/sum(bed$mustnotbe,na.rm = T)*100, 2),"% : ",sum(bed$is.test & bed$mustnotbe, na.rm = T),"/",sum(bed$mustnotbe, na.rm = T))
+
+#匹配信息
+result=ifelse(err.pos.n / test.pos.n < 0.15 & (cpi) > 10000, "Yes","No")
+
+analysis <- data.frame(dad.id,test.pos.n,err.pos.n, err.rate, fq, dp, eff.rate, ineff.rate, result)
+
+# mom.id = bed$mom.id[1]
+# preg.id = bed$preg.id[1]
+mom.id = sort(unique(bed$mom.id))
+cat(mom.id)
+preg.id = sort(unique(bed$preg.id))
+cat(preg.id)
+file_name_Rdata = paste(dad.id,mom.id,preg.id,'family_analysis.Rdata',sep = "_")
+file_name_txt = paste(dad.id,mom.id,preg.id,'family_analysis.txt',sep = "_")
+save(analysis, file= paste(out_path,file_name_Rdata[1],sep="/"))
+write.table(analysis, file = paste(out_path,file_name_txt[1],sep="/"), row.names = F, quote = F, sep="\t")

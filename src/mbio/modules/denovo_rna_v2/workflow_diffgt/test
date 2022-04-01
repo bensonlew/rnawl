@@ -1,0 +1,52 @@
+51 candidates:
+    diff_geneset_all_pipline.py:20: from mbio.packages.ref_rna_v2.copy_file import CopyFile
+    diff_geneset_all_pipline.py:30:             # {"name": "geneset_names", "type": "infile", "format": "denovo_rna_v2.common"},
+    diff_geneset_all_pipline.py:45:         self.file_prepare = self.add_module("denovo_rna_v2.workflow_diffgt.diff_geneset_all")
+    diff_geneset_all_pipline.py:46:         self.cluster = self.add_tool("denovo_rna_v2.exp_cluster")
+    diff_geneset_all_pipline.py:90:                 geneset_analysis = self.add_module("denovo_rna_v2.workflow_diffgt.diff_geneset_analysis")
+    diff_geneset_all_pipline.py:259:             "name": "denovo_rna_v2.workflow_diffgt.diff_geneset_all_pipline",
+    diff_geneset_all.py:25:             # {"name": "geneset_names", "type": "infile", "format": "denovo_rna_v2.common"},
+    diff_geneset_all.py:38:         self.common = self.add_tool("denovo_rna_v2.diffgt4work.annot_prepare")
+    diff_geneset_all.py:83:             diff_geneset = self.add_tool("denovo_rna_v2.diffgt4work.diff_geneset_prepare")
+    diff_geneset_all.py:144:             "name": "denovo_rna_v2.workflow_diffgt.diff_geneset_all",
+    diff_geneset_all.py:147:                 diff_path= "/mnt/ilustre/users/sanger-dev/workspace/20200923/MedicalTranscriptome_denovo_rna_v2_workflow_20200923_153802009/DiffexpBatch/output",
+    diff_geneset_all.py:148:                 annot_result ="/mnt/ilustre/users/sanger-dev/workspace/20200923/MedicalTranscriptome_denovo_rna_v2_workflow_20200923_153802009/AnnotMerge__1/output",
+    diff_geneset_all.py:153:                 gene_count_file ="/mnt/ilustre/users/sanger-dev/workspace/20200923/MedicalTranscriptome_denovo_rna_v2_workflow_20200923_153802009/Quant/output/gene.count.matrix",
+    diff_geneset_analysis.py:19: from mbio.packages.denovo_rna_v2.copy_file import CopyFile
+    diff_geneset_analysis.py:41:             {'name': 'go_list', 'type': 'infile', 'format': 'denovo_rna_v2.go_list'},
+    diff_geneset_analysis.py:43:             {'name': 'kegg_table', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:44:             {'name': 'kegg_table2', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:45:             {'name': 'all_list', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:46:             {'name': 'add_info', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:47:             # {'name': 'reactome_annot', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:48:             # {'name': 'do_list', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:57:             {'name': 'gene_list', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:58:             {'name': 'gene_multi', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:59:             {'name': 'go_class', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:60:             {'name': 'cog_class', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:62:             # {'name': 'do_class', 'type': 'infile', 'format': 'denovo_rna_v2.common'},
+    diff_geneset_analysis.py:66:         self.kegg_class_tool = self.add_tool("denovo_rna_v2.diffgt4work.diff_kegg_class")
+    diff_geneset_analysis.py:67:         self.go_enrich_tool = self.add_tool("denovo_rna_v2.diff_geneset.diff_go_enrich")
+    diff_geneset_analysis.py:68:         self.kegg_enrich_tool = self.add_module("denovo_rna_v2.workflow_diffgt.diff_kegg_enrich")
+    diff_geneset_analysis.py:86:             #     self.reactome_class_tool = self.add_tool("denovo_rna_v2.diff_geneset.diff_reactome_class")
+    diff_geneset_analysis.py:90:             #     self.reactome_enrich_tool = self.add_module("denovo_rna_v2.diff_geneset.diff_reactome_enrich")
+    diff_geneset_analysis.py:96:             #         self.do_class_tool = self.add_tool("denovo_rna_v2.diff_geneset.diff_do_class")
+    diff_geneset_analysis.py:100:             #         self.do_enrich_tool = self.add_tool("denovo_rna_v2.diff_geneset.diff_do_enrich")
+    diff_geneset_analysis.py:414:                 "name": "denovo_rna_v2.diff_geneset.diff_geneset_analysis",
+    diff_geneset_analysis.py:417:                     task_id='denovo_rna_v2',
+    diff_geneset_prepare.py:24:             # {"name": "geneset_names", "type": "infile", "format": "denovo_rna_v2.common"},
+    diff_geneset_prepare.py:34:         self.common = self.add_tool("denovo_rna_v2.diff_geneset.annot_prepare")
+    diff_geneset_prepare.py:77:             diff_geneset = self.add_tool("denovo_rna_v2.diff_geneset.diff_geneset_prepare")
+    diff_geneset_prepare.py:138:             "name": "denovo_rna_v2.diff_geneset.diff_geneset_prepare",
+    diff_geneset_prepare.py:143:                 task_id ="denovo_rna_v2",
+    diff_kegg_enrich_new.py:41:         # self.common = self.add_tool("denovo_rna_v2.diff_geneset.annot_prepare")
+    diff_kegg_enrich_new.py:56:         self.enrich_tool = self.add_tool('denovo_rna_v2.diff_geneset.diff_kegg_rich')
+    diff_kegg_enrich_new.py:67:         self.kegg_class = self.add_tool('denovo_rna_v2.diffgt4work.diff_kegg_class')
+    diff_kegg_enrich_new.py:145:             "name": "denovo_rna_v2.diff_geneset.diff_kegg_enrich",
+    diff_kegg_enrich_new.py:153:                 task_id ="denovo_rna_v2",
+    diff_kegg_enrich.py:17: from mbio.packages.denovo_rna_v2.copy_file import CopyFile
+    diff_kegg_enrich.py:42:         # self.common = self.add_tool("denovo_rna_v2.diff_geneset.annot_prepare")
+    diff_kegg_enrich.py:57:         self.enrich_tool = self.add_tool('denovo_rna_v2.diff_geneset.diff_kegg_rich')
+    diff_kegg_enrich.py:68:         self.kegg_class = self.add_tool('denovo_rna_v2.diffgt4work.diff_kegg_class')
+    diff_kegg_enrich.py:155:             "name": "denovo_rna_v2.diff_geneset.diff_kegg_enrich",
+    diff_kegg_enrich.py:163:                 task_id ="denovo_rna_v2",

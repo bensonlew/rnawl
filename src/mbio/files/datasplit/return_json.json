@@ -1,0 +1,114 @@
+{
+	"sequcing_id": "01",
+	"sequcing_sn": "test_01",
+	"html_path": "html/abs/dir",
+	"parent_sample":[
+		{//第一个父样本
+		"mj_sn":"test00001",
+		"sample_id":"f0001",
+		"stat":{//父样本统计数据
+			"total_reads": 1132089,
+			"merge_rate": 0.99552,
+			"short_reads": 89335,
+			"no_index_reads": 177876,
+			"chimera_reads": 6610,
+			"primer_missmatch_reads": 3901,
+			"valid_reads": 1127016
+			},
+		"fastq_info":{
+			"fastq1": {//父样本第一条序列信息
+				"file_path": "fastq1/abs/dir",
+				"quilty_table": "table/abs/dir",
+				"boxplot_png": "png1/abs/dir",
+				"nucl_png" "png2/abs/dir",
+				"q20": 0.88,
+				"q30": 0.79
+				},
+			"fastq2": {//父样本第二条序列信息
+				"file_path": "fastq1/abs/dir",
+				"quilty_table": "table/abs/dir",
+				"boxplot_png": "png1/abs/dir",
+				"nucl_png" "png2/abs/dir",
+				"q20": 0.88,
+				"q30": 0.79
+				}
+			}
+		},
+		{//第二个父样本
+		"mj_sn":"H1506240027",
+		"sample_id":"f0002",
+		"stat":{//父样本统计数据
+			"total_reads": 1592455,
+			"merge_rate": 0,
+			"short_reads": 0,
+			"no_index_reads": 0,
+			"chimera_reads": 0,
+			"primer_missmatch_reads": 0,
+			"valid_reads": 1592455
+			},
+		"fastq_info":{
+			"fastq1": {//父样本第一条序列信息
+				"file_path": "fastq1/abs/dir",
+				"quilty_table": "table/abs/dir",
+				"boxplot_png": "png1/abs/dir",
+				"nucl_png" "png2/abs/dir",
+				"q20": 0.88,
+				"q30": 0.79
+				},
+			"fastq2": {//父样本第二条序列信息
+				"file_path": "fastq1/abs/dir",
+				"quilty_table": "table/abs/dir",
+				"boxplot_png": "png1/abs/dir",
+				"nucl_png" "png2/abs/dir",
+				"q20": 0.88,
+				"q30": 0.79
+				}
+			}
+		}
+	],
+	"child_sample":[
+		{//第一个子样本
+		"mj_sn": "H1504230126",
+		"sample_id":"c0001",
+		"stat": {
+			"total_reads": 56077,
+			"short_reads": 1800,
+			"valid_reads": 54277
+			},
+		"fastq_info":{
+			"fastq1": {
+				"file_path": "fastq1/abs/dir"
+				}
+			}
+		},
+		{//第二个子样本
+		"mj_sn": "H1504230127",
+		"sample_id":"c0002",
+		"stat": {
+			"total_reads": 56077,
+			"short_reads": 1800,
+			"valid_reads": 54277
+			},
+		"fastq_info":{
+			"fastq1": {
+				"file_path": "fastq1/abs/dir"
+				}
+			}
+		},
+		{//第三个子样本
+		"mj_sn": "H1504230128",
+		"sample_id":"c0003",
+		"stat": {
+			"total_reads": 56077,
+			"short_reads": 1800,
+			"valid_reads": 54277
+			},
+		"fastq_info":{
+			"fastq1": {
+				"file_path": "fastq1/abs/dir"
+				}
+			}
+		}
+	]
+
+}

@@ -1,0 +1,271 @@
+# -*- coding: utf-8 -*-
+# __author__ = 'shenghe'
+from biocluster.agent import Agent
+from biocluster.tool import Tool
+import os
+from biocluster.core.exceptions import OptionError
+
+
+class BlastAgent(Agent):
+    """
+    ncbi blast+ 2.3.0  注意：在outfmt为6时不按照ncbi格式生成table，而是按照特殊的表头类型，参见packages.align.blast.xml2table
+    version 1.0
+    author: shenghe
+    last_modify: 2016.6.15
+    """
+
+    def __init__(self, parent):
+        super(BlastAgent, self).__init__(parent)
+        self._fasta_type = {'Protein': 'prot', 'DNA': 'nucl'}
+        self._blast_type = {'nucl': {'nucl': ['blastn', 'tblastn'],
+                                     'prot': ['blastx']},
+                            'prot': {'nucl': [],
+                                     'prot': ['blastp']}}
+        self._database_type = {'nt': 'nucl', 'nr': 'prot', 'kegg': 'prot', 'swissprot': 'prot', 'rfam': 'nucl',
+                               'string': 'prot', 'archaea': 'prot', 'viruses': 'prot', 'fungi': 'prot',
+                               'viridiplantae': 'prot', 'eukaryota_other': 'prot', 'eukaryota': 'prot',
+                               'craniata': 'prot', 'bacteria': 'prot', 'cgc': 'nucl', 'nt_20180827': 'nucl',
+                               '16s': 'nucl', 'nt_bac': 'nucl','nt_v20200604': 'nucl','swissprot_v20200617': 'prot',
+                               'nt_v20210917': 'nucl'}
+        options = [
+            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # 输入文件
+            {"name": "query_type", "type": "string"},  # 输入的查询序列的格式，为nucl或者prot
+            {"name": "database", "type": "string", "default": "nr"},
+            # 比对数据库 nt nr string swissprot kegg customer_mode
+            {"name": "nr_species", "type": "string"},
+            {"name": "w_size", "type": "string","default": ""}, # 按照程序默认值
+            # nr分类物种模式：Archaea Viruses Fungi Viridiplantae Eukaryota_other Eukaryota Craniata Bacteria
+            {"name": "outfmt", "type": "int", "default": 5},  # 输出格式，数字遵从blast+
+            {"name": "outfmt_format", "type": "string"},  # outfmt为6的时候自定义输出格式
+            {"name": "blast", "type": "string"},  # 设定blast程序有blastn，blastx，blastp，tblastn，此处需要严格警告使用者必须选择正确的比对程序
+            {"name": "reference", "type": "infile", "format": "sequence.fasta"},  # 参考序列  选择customer时启用
+            {"name": "reference_type", "type": "string"},  # 参考序列(库)的类型  为nucl或者prot
+            {"name": "evalue", "type": "float", "default": 1e-5},  # evalue值
+            {"name": "num_threads", "type": "int", "default": 10},  # cpu数
+            {"name": "memory", "type": "int", "default": 20},  # 内存G
+            {"name": "num_alignment", "type": "int", "default": 5},  # 序列比对最大输出条数，默认500
+            {"name": "outxml", "type": "outfile", "format": "align.blast.blast_xml"},  # 输出格式为5时输出
+            {"name": "outtable", "type": "outfile", "format": "align.blast.blast_table"},  # 输出格式为6时输出
+            # 当输出格式为非5，6时，只产生文件不作为outfile
+        ]
+        self.add_option(options)
+        self.step.add_steps('blast')
+        self.on('start', self.step_start)
+        self.on('end', self.step_end)
+        self.queue = 'BLAST'  # 投递到指定的队列BLAST
+
+    def step_start(self):
+        self.step.blast.start()
+        self.step.update()
+
+    def step_end(self):
+        self.step.blast.finish()
+        self.step.update()
+
+    def check_options(self):
+        if not self.option("query").is_set:
+            raise OptionError("必须设置参数query", code="31100201")
+        if self.option('query_type') not in ['nucl', 'prot']:
+            raise OptionError('query_type查询序列的类型为nucl(核酸)或者prot(蛋白):%s', variables=(self.option('query_type')), code="31100202")
+        else:
+            if self._fasta_type[self.option('query').prop['seq_type']] != self.option('query_type'):
+                raise OptionError(
+                    '文件检查发现查询序列为:%s 而需要的文件类型为:%s', variables=(
+                        self._fasta_type[self.option('query').prop['seq_type'], self.option('query_type')]), code="31100203")
+        if self.option("database") == 'customer_mode':
+            if not self.option("reference").is_set:
+                raise OptionError("使用自定义数据库模式时必须设置reference", code="31100204")
+            if self.option('reference_type') not in ['nucl', 'prot']:
+                raise OptionError('reference_type参考序列的类型为nucl(核酸)或者prot(蛋白):%s', variables=(self.option('query_type')), code="31100205")
+            else:
+                if self._fasta_type[self.option('reference').prop['seq_type']] != self.option('reference_type'):
+                    raise OptionError(
+                        '文件检查发现参考序列为:%s, 而需要的文件类型为:%s', variables=(
+                            self._fasta_type[self.option('reference').prop['seq_type'], self.option('reference_type')]), code="31100206")
+        elif self.option("database").lower() not in ["nt","nt_v20200604", "nt_v20210917","nr", "string", 'kegg', 'swissprot', 'rfam', 'archaea',
+                                                     'viruses', 'fungi', 'viridiplantae', 'eukaryota_other','eukaryota', 'craniata',
+                                                     'bacteria', 'cgc', 'nt_20180827', '16s','nt_bac', "swissprot_v20200617"] and self.option("database") not in ['fgr/amoA_archaea_202012',
+                                                     'fgr/amoA_bacteria_202012', 'nt', "nt_v20200604", "nt_v20210917","nr_v20210917",'fgr/amoA_AOB_like_202012',
+                                                     'fgr/amoA_comammox_202012', 'fgr/nosZ_202012',
+                                                     'fgr/nosZ_atypical_1_202012', 'fgr/nosZ_atypical_2_202012',
+                                                     'fgr/nirK_202012', 'fgr/nirS_202012', 'fgr/mcrA_202012', 'fgr/nifH_202012',
+                                                     'fgr/pmoA_202012', 'fgr/mmoX_202012']:
+            raise OptionError("数据库%s不被支持", variables=(self.option("database")), code="31100207")
+        else:
+            if self.option("database").lower() in ["nt", "nr", "string", 'kegg', 'swissprot', "nt_v20200604", "nt_v20210917", "swissprot_v20200617","nr_v20210917"]:
+                self.option('reference_type', self._database_type[self.option("database").lower()])
+        if not 15 > self.option('outfmt') > -1:
+            raise OptionError('outfmt遵循blast+输出规则，必须为0-14之间：%s', variables=(self.option('outfmt')), code="31100208")
+        if not 1 > self.option('evalue') >= 0:
+            raise OptionError('E-value值设定必须为[0-1)之间：%s', variables=(self.option('evalue')), code="31100209")
+        if not 0 < self.option('num_alignment') < 1001:
+            raise OptionError('序列比对保留数必须设置在1-1000之间:%s', variables=(self.option('num_alignment')), code="31100210")
+        if self.option("database").lower() in ["nt","nt_v20200604", "nt_v20210917", "nr", "string", 'kegg', 'swissprot', 'rfam',"nr_v20210917",
+                                               'archaea','viruses', 'fungi', 'viridiplantae', 'eukaryota_other',
+                                               'eukaryota', 'craniata', 'bacteria', 'cgc', 'nt_20180827', '16s',
+                                               'nt_bac', "swissprot_v20200617"]:
+            if self.option('blast') not in self._blast_type[self.option('query_type')][self.option('reference_type')]:
+                raise OptionError(
+                    '程序不试用于提供的查询序列和库的类型，请仔细检查，核酸比对核酸库只能使用blastn或者tblastn，\
+                    核酸比对蛋白库只能使用blastp， 蛋白比对蛋白库只能使用blastp, 或者没有提供blast参数', code="31100211")
+        return True
+
+    def set_resource(self):
+        self._cpu = self.option('num_threads')
+        self._memory = str(self.option('memory')) + 'G'
+
+    def end(self):
+        result_dir = self.add_upload_dir(self.output_dir)
+        result_dir.add_relpath_rules([
+            [".", "", "结果输出目录"],
+        ])
+        result_dir.add_regexp_rules([
+            [r".+_vs_.+\.xml", "xml", "blast比对输出结果，xml格式"],
+            [r".+_vs_.+\.xls", "xls", "blast比对输出结果，表格(制表符分隔)格式"],
+            [r".+_vs_.+\.txt", "txt", "blast比对输出结果，非xml和表格(制表符分隔)格式"],
+            [r".+_vs_.+\.txt_\d+\.xml", "xml", "Blast比对输出多xml结果，输出格式为14的单个比对结果文件,主结果文件在txt文件中"],
+            [r".+_vs_.+\.txt_\d+\.json", "json", "Blast比输出对多json结果，输出格式为13的单个比对结果文件,主结果文件在txt文件中"],
+        ])
+        # print self.get_upload_files()
+        super(BlastAgent, self).end()
+
+
+class BlastTool(Tool):
+    def __init__(self, config):
+        super(BlastTool, self).__init__(config)
+        self._version = "2.3.0"
+        if self.option("database") in ['nt', 'string', 'swissprot', 'kegg', 'rfam', 'cgc', "swissprot_v20200617"]:
+            self.db_path = os.path.join(self.config.SOFTWARE_DIR, "database/align/ncbi/db")
+        elif self.option("database") == "nr":  # add 6 lines by khl 20170217
+            if not self.option("nr_species"):
+                self.db_path = os.path.join(self.config.SOFTWARE_DIR, 'database/align/ncbi/db/nr_db_20160623/nr')
+            else:
+                self.db_path = os.path.join(self.config.SOFTWARE_DIR, 'database/align/ncbi/db/nr_db_20160623/{}'.format(
+                    self.option('nr_species')))
+                self.logger.info(self.db_path)
+        elif self.option("database") == "nt_20180827":
+            self.db_path = os.path.join(self.config.SOFTWARE_DIR, "database/align/ncbi/db/nt/nt_20180827")
+        elif self.option("database") == "nt_v20200604":
+            self.db_path = os.path.join(self.config.SOFTWARE_DIR, "database/align/ncbi/db/nt/nt_v20200604/db_blast-2.3.0+")
+        elif self.option("database") == "nt_v20210917":
+            self.db_path = os.path.join(self.config.SOFTWARE_DIR, "database/align/ncbi/db/nt/nt_v20210917")
+        elif self.option("database") == "16s":
+            self.db_path = os.path.join(self.config.SOFTWARE_DIR, "database/bacgenome/16S")
+        elif self.option("database") == "nt_bac":
+            self.db_path = os.path.join(self.config.SOFTWARE_DIR, "database/align/ncbi/db/nt/nt_bac")
+        elif self.option("database").split("/")[0] == "fgr":
+            self.db_path = os.path.join(self.config.SOFTWARE_DIR, "database/Framebot/")
+        elif self.option("database") == 'customer_mode':
+            self.db_path = os.path.join(self.work_dir, 'customer_blastdb')
+        self.logger.info(self.option("nr_species"))
+        self.cmd_path = "bioinfo/align/ncbi-blast-2.3.0+/bin"  # 执行程序路径必须相对于 self.config.SOFTWARE_DIR
+        self.set_environ(BLASTDB=self.db_path)
+
+    def run_makedb_and_blast(self):
+        """
+        运行makeblastdb和blast
+
+        :return:
+        """
+        db_name = os.path.splitext(os.path.basename(self.option("reference").prop['path']))[0]
+        cmd = os.path.join(self.cmd_path, "makeblastdb")
+        # self.db_path = os.path.join(self.work_dir, 'customer_blastdb')
+        cmd += " -dbtype %s -in %s -parse_seqids -out %s " % (self.option('reference_type'),
+                                                              self.option("reference").prop['path'],
+                                                              os.path.join(self.db_path, db_name))
+        self.logger.info("开始运行makeblastdb，生成结果库文件放在工作目录的customer_blastdb下")
+        makedb_obj = self.add_command("makeblastdb", cmd).run()
+        self.wait(makedb_obj)
+        if makedb_obj.return_code == 0:
+            self.logger.info("makeblastdb运行完成")
+            self.run_blast(db_name)
+        else:
+            self.set_error("makeblastdb运行出错!", code="31100201")
+
+    def run_blast(self, db_name):
+        """
+        运行Blast
+
+        :param db_name: blastdb名称
+        :return:
+        """
+        if db_name == "nt_v20210917":
+            db = os.path.join(self.db_path, "nt")
+        else:
+            db = os.path.join(self.db_path, db_name)
+        query_name = os.path.splitext(os.path.basename(self.option("query").prop['path']))[0]
+        cmd = os.path.join(self.cmd_path, self.option('blast'))
+        if db_name.split("/")[0] == "fgr":
+            db_name = db_name.split("/")[1]
+        outputfile = os.path.join(self.output_dir, query_name + "_vs_" + db_name)
+        outfmt = self.option('outfmt')
+        if self.option('outfmt') == 5:
+            outputfile += '.xml'
+        elif self.option('outfmt') == 6 and not self.option('outfmt_format'):
+            # outputfile += '.xls'
+            outputfile += '.xml'
+            outfmt = 5  # 为了保证table格式输出表头完全一致，输出为6时，选用5xml为输出结果，后面再通过统一的xml2table转换
+        else:
+            outputfile += '.txt'
+        # cmd += " -query %s -db %s -out %s -evalue %s -outfmt %s -max_hsps 10 -num_threads %s -max_target_seqs %s" % (
+        #     self.option("query").prop['path'], db, outputfile,
+        #     self.option("evalue"), outfmt, self.option("num_threads"), self.option('num_alignment'))
+        # if "w_size"  in self.get_option_object().keys() and self.option("w_size") != "":
+        #     cmd += " -word_size {}".format(self.option("w_size"))
+        cmd += " -query %s -db %s -out %s -evalue %s -max_hsps 10 -num_threads %s -max_target_seqs %s" % (
+            self.option("query").prop['path'], db, outputfile,
+            self.option("evalue"), self.option("num_threads"), self.option('num_alignment'))
+        if "w_size"  in self.get_option_object().keys() and self.option("w_size") != "":
+            cmd += " -word_size {}".format(self.option("w_size"))
+        if self.option('outfmt') == 6 and self.option('outfmt_format'):
+            cmd += " -outfmt '6 delim=, %s'" % (self.option('outfmt_format'))
+        else:
+            cmd += " -outfmt %s" % (outfmt)
+        self.logger.info("开始运行blast")
+        blast_command = self.add_command("blast", cmd)
+        blast_command.run()
+        self.wait()
+        if blast_command.return_code == 0:
+            self.logger.info("运行blast完成")
+            if self.option('outfmt') == 6 and not self.option('outfmt_format'):
+                self.logger.info('程序输出结果为6(table)，实际需要结果为5(xml)，开始调用程序xml2table转换')
+                from mbio.packages.align.blast.xml2table import xml2table
+                xml2table(outputfile, outputfile[:-3] + 'xls')
+                blast_xml = self.work_dir + "/" + os.path.basename(outputfile)
+                os.system("mv {} {}".format(outputfile, blast_xml))
+                self.option("outxml", blast_xml)
+                self.logger.info('程序table格式转换完成，旧xml文件已移除')
+                self.option('outtable', outputfile[:-3] + 'xls')
+            elif self.option('outfmt') == 6 and self.option('outfmt_format'):
+                with open(outputfile, "r+") as f:
+                    content = f.read()
+                    f.seek(0, 0)
+                    f.write('\t'.join(self.option('outfmt_format').split(" ")) + "\n")
+                    f.write(content)
+            elif self.option('outfmt') == 5:
+                self.logger.info(outputfile)
+                self.option('outxml', outputfile)
+            self.end()
+        else:
+            self.set_error("blast运行出错!", code="31100202")
+
+    def run(self):
+        """
+        运行
+        :return:
+        """
+        super(BlastTool, self).run()
+        if self.option("database") == 'customer_mode':
+            self.run_makedb_and_blast()
+        else:
+            if self.option("database") == "nr":
+                if not self.option("nr_species"):
+                    self.run_blast(self.option("database"))
+                else:
+                    self.run_blast(self.option("nr_species"))
+            elif self.option("database") in ["nt_20180827", "nt_v20200604","nt_v20211009"]:
+                self.run_blast("nt")
+            elif self.option("database") == "nt_bac":
+                self.run_blast("nt_bac")
+            else:
+                self.run_blast(self.option("database"))

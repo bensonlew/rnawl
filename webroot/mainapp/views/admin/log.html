@@ -1,0 +1,102 @@
+$def with (controller)
+$var title: $controller.title
+$var is_admin: $controller.is_admin
+$var username: $controller.username
+$var nav_index: $controller.nav_index
+      <div class="row">
+        <div class="col-md-12">
+          <!--breadcrumbs start -->
+          <ul class="breadcrumb">
+            <li><a href="main"><i class="fa fa-home"></i> 首页</a></li>
+            <li><a href="workflow">Workflow流程</a></li>
+            <li class="active">$controller.title</li>
+          </ul>
+          <!--breadcrumbs end -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel">
+            <header class="panel-heading">
+              $controller.title
+            </header>
+            <ul class="nav nav-tabs" role="tablist" id="search">
+              <li role="presentation" class="active"><a href="#findbar" aria-controls="findbar" role="tab" data-toggle="tab">定位</a></li>
+              <li role="presentation"><a href="#filterbar" aria-controls="filterbar" role="tab" data-toggle="tab">筛选</a></li>
+              $if controller.type == "workflow":
+                <li role="presentation"><a href="api?table_search=$controller.workflow_id&data_type=task_id" target="_blank">API日志</a></li>
+            </ul>
+            <div class="tab-content" style="padding-top: 10px">
+              <div class="row tab-pane active" role="tabpanel" id="findbar">
+                <div class="col-lg-10" style="margin-left: 20px">
+                      <div class="form-inline">
+                        <div class="form-group">
+                          <input tabindex="1" type="radio" id="input-1" name="logtype" value="error" checked>
+                          <label for="input-1">错误</label>&nbsp;&nbsp;
+                        </div>
+                        <div class="form-group">
+                          <input tabindex="2" type="radio" id="input-2" value="warning" name="logtype">
+                          <label for="input-2">警告</label>&nbsp;&nbsp;
+                        </div>
+                        <div class="form-group">
+                          <input tabindex="3" type="radio" id="input-3" value="trace" name="logtype">
+                          <label for="input-3">Traceback</label>&nbsp;&nbsp;
+                        </div>
+                        <div class="form-group">
+                          <input tabindex="4" type="radio" id="input-4" value="print" name="logtype">
+                          <label for="input-4">PRINT</label>&nbsp;&nbsp;
+                        </div>
+                        <div class="form-group">
+                          <input tabindex="5" type="radio" id="input-5" value="key" name="logtype">
+                          <label for="input-5">关键字</label>
+                          <input type="text" name="key_search" class="form-control input-sm col-lg-push-1" placeholder="Search Key"/>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-default prev"><i class="fa fa-arrow-left"></i></button>
+                        <button type="button" class="btn btn-sm btn-default next"><i class="fa fa-arrow-right"></i></button>
+                      </div>
+
+                </div>
+              </div>
+              <div class="row tab-pane" role="tabpanel" id="filterbar">
+                  <div class="col-lg-5 pull-right">
+
+                    <div class="box-tools m-b-15">
+                      <div class="input-group">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">关键字<span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a data-type="key">关键字</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a data-type="time">输出时间</a></li>
+                          </ul>
+                        </div>
+                        <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search"/>
+
+
+                        <div class="input-group-btn">
+                          <button class="btn btn-sm btn-default search" data-id="$controller.id" data-type="key" data-url="log?cluster=$controller.cluster"><i class="fa fa-search"></i></button>
+                        </div>
+
+                      </div>
+                    </div>
+              </div>
+            </div>
+
+            <div class="panel-body">
+              <p class="text-muted">$controller.type【$controller.workflow_id】：$controller.log_path</p>
+              <pre><code style="height:500px" class="log">$:controller.code</code></pre>
+              <div class="table-foot">
+                    <h6>第<span class="badge"> $controller.current_page </span>页,共 $controller.list_model.total_page 页
+                      ,共 $controller.list_model.total 行日志</h6>
+                    $:controller.pager.get_pager()
+              </div>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+        </div>
+      </div>
+<script type="text/javascript">
+  var print_lines = $controller.print_lines;
+  var start_date = '$controller.start_date';
+  var end_date = '$controller.end_date';
+</script>

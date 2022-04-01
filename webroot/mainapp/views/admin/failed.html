@@ -1,0 +1,39 @@
+$def with (content, url)
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>退出登陆</title>
+
+  </head>
+  <body>
+    <table>
+        <tr><td colspan="3"><h2>$content</h2></td> </tr>
+        <tr>
+        <td>该页面将在 </td>
+        <td> <strong><div id= "time"> 5 </div></strong> </td>
+        <td>秒后自动跳转 </td>
+        </tr>
+    </table>
+
+    <script language="javascript">
+        var times=6;
+        var url='$url';
+        clock();
+        function clock()
+        {
+            window.setTimeout('clock()',1000);
+            times=times-1;
+            time.innerHTML =times;
+            if(times == 0){
+                if(url == ""){
+                    window.history.back();
+                }
+                else{
+                    window.location=url;
+                }
+            }
+
+        }
+    </script>
+  </body>
+ </html>

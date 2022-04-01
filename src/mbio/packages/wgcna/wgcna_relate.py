@@ -1,0 +1,128 @@
+# coding=utf-8
+import subprocess
+import argparse
+import pandas as pd
+
+"""
+1. Correlate the module eigengenes with the trait
+2. Correlate each gene with the trait
+"""
+# get arguments
+parser = argparse.ArgumentParser(description="wgcna step3: relate module/gene to traits")
+parser.add_argument('-datExpr', type=str, metavar="exp_matrix_file", required=True,
+                    help="expression matrix file, for gene/traits relationship calculation")
+parser.add_argument('-MEs', type=str, metavar="module eigengenes", required=True,
+                    help="module eigengenes, for module/traits relationship calculation")
+parser.add_argument('-traits', type=str, required=True, metavar="phenotype_data",
+                    help="sample name in row, traits data in column")
+parser.add_argument('-corType', type=str, metavar="correlation_type", default="pearson",
+                    help="correlation type, 'pearson' or 'spearman', 'kendall'")
+parser.add_argument('-nThreads', type=int, default=16, )
+parser.add_argument('-block_Rdata', type=str, default=None, )
+args = parser.parse_args()
+
+
+# read expr
+if args.block_Rdata != None:
+    r_cmds = \
+"""
+# module and traits relation
+library('WGCNA')
+enableWGCNAThreads()
+datME = read.table('{eigengenes}', header=T, sep="\\t", row.names=1)
+traits = read.table("{traits}", header=T, sep="\\t", row.names=1)
+if (dim(traits)[2] == 1 & class(traits[1,1])=="factor"){bracket1} 
+    tmp = model.matrix(~0+ traits[,1])
+    colnames(tmp) = levels(traits[,1])
+    traits = tmp
+{bracket2}
+correlation = signif(cor(t(datME), traits, use="p", method="{cor_type}", nThreads={threads}), 3)
+pvalues = signif(corPvalueStudent(correlation, nSamples = dim(traits)[1]), 3)
+write.table(correlation, 'module_trait.correlation.xls', col.names=NA, quote=F, sep='\\t', row.names=T)
+write.table(pvalues, 'module_trait.correlation_pvalues.xls', col.names=NA, quote=F, sep='\\t', row.names=T)
+# gene and traits relation
+exp = read.table('{exp_matrix}', header=T, row.names=1)
+correlation2_all = signif(cor(t(exp), traits, use="p", method="{cor_type}"), 3)
+
+load("{rdata}")
+# 过滤不在block的数据
+# correlation2 = correlation2_all[(! is.na(bwnet$blocks)), ]
+
+#modify by fwy 20210715适应单列表格
+correlation2 = subset(correlation2_all,(! is.na(bwnet$blocks)))
+
+write.table(correlation2, 'gene_trait.correlation.xls', col.names=NA, quote=F, sep='\\t', row.names=T)
+traitColors = numbers2colors(correlation2_all, signed = FALSE, colors=greenWhiteRed(100))
+
+membership = cbind(colnames(datExpr), bwnet$colors, bwnet$blocks)
+write.table(membership, 'color.list', col.names=F, quote=F, sep='\\t', row.names=F)
+
+block_number = length(bwnet$dendrograms)
+for (i in c(1:block_number)){bracket1}
+block_traitColors = traitColors[(! is.na(bwnet$blocks) ) & bwnet$blocks==i,]
+all_color = cbind(bwnet$color[bwnet$blockGenes[[i]]], block_traitColors)
+
+labels = c(c("Module colors"), colnames(correlation2))
+pdf(paste('block_', i, '_gene_trait.correlation.pdf', sep=''), width=12, height=9)
+plotDendroAndColors(bwnet$dendrograms[[i]], all_color, labels, main = paste("Gene dendrogram and module colors in block", i),dendroLabels = FALSE, hang = 0.03,addGuide = TRUE, guideHang = 0.05)
+dev.off()
+png(paste('block_', i, '_gene_trait.correlation.png', sep=''), width=1200, height=900, type = "cairo")
+plotDendroAndColors(bwnet$dendrograms[[i]], all_color, labels, main = paste("Gene dendrogram and module colors in block", i),dendroLabels = FALSE, hang = 0.03,addGuide = TRUE, guideHang = 0.05)
+dev.off()
+{bracket2}
+ """.format(
+        eigengenes=args.MEs,
+        traits=args.traits,
+        cor_type=args.corType,
+        threads=args.nThreads,
+        exp_matrix=args.datExpr,
+        bracket1="{",
+        bracket2="}",
+        rdata=args.block_Rdata
+    )
+else:
+    r_cmds = \
+"""
+# module and traits relation
+library('WGCNA')
+enableWGCNAThreads()
+datME = read.table('{eigengenes}', header=T, sep="\\t", row.names=1)
+traits = read.table("{traits}", header=T, sep="\\t", row.names=1)
+if (dim(traits)[2] == 1 & class(traits[1,1])=="factor"){bracket1} 
+    tmp = model.matrix(~0+ traits[,1])
+    colnames(tmp) = levels(traits[,1])
+    traits = tmp
+{bracket2}
+correlation = signif(cor(t(datME), traits, use="p", method="{cor_type}", nThreads={threads}), 3)
+pvalues = signif(corPvalueStudent(correlation, nSamples = dim(traits)[1]), 3)
+write.table(correlation, 'module_trait.correlation.xls', col.names=NA, quote=F, sep='\\t', row.names=T)
+write.table(pvalues, 'module_trait.correlation_pvalues.xls', col.names=NA, quote=F, sep='\\t', row.names=T)
+# gene and traits relation
+exp = read.table('{exp_matrix}', header=T, row.names=1)
+correlation2 = signif(cor(t(exp), traits, use="p", method="{cor_type}"), 3)
+write.table(correlation2, 'gene_trait.correlation.xls', col.names=NA, quote=F, sep='\\t', row.names=T)
+traitColors = numbers2colors(correlation2, signed = FALSE, colors=greenWhiteRed(100))
+""".format(
+        eigengenes=args.MEs,
+        traits=args.traits,
+        cor_type=args.corType,
+        threads=args.nThreads,
+        exp_matrix=args.datExpr,
+        bracket1="{",
+        bracket2="}",
+    )
+
+
+with open('wgcna_relate_analysis.r', 'w') as f:
+    f.write(r_cmds)
+subprocess.check_call("Rscript wgcna_relate_analysis.r", shell=True)
+
+
+# 添加colorlist作图使用
+color_list = pd.read_table('color.list', header=None)
+groups = color_list.groupby(1).groups
+with open('module_size.stat.xls', 'w') as f:
+    f.write("module\tsize\tseqs\n")
+    for each in groups:
+        genes = color_list.iloc[groups[each], :][0]
+        f.write("{}\t{}\t{}\n".format(each, len(genes), ";".join(genes)))

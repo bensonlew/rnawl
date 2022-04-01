@@ -1,0 +1,2106 @@
+{
+    "ref_rna_v2": {
+        "genesetgo_rich": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "", 
+            "type": "", 
+            "method": "多重检验校正方法"
+        }, 
+        "genesetcorrsf": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "cor_cutoff": "相关性系数cutoff",
+            "padjust_way": "多重检验校正方法",
+            "geneset_id": "基因集名称",
+            "sig_type": "显著性水平",
+            "qvalue": "显著性水平cutoff",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "corr_way": "相关性算法"
+        }, 
+        "wgcnaprepare": {
+            "me": "表达量均值",
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "geneset_id": "基因集名称",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数"
+        }, 
+        "genesetvenn": {
+            "geneset_ids": "基因集名称",
+            "exp_level": "表达量水平",
+            "geneset_id": "基因集名称"
+        }, 
+        "expgraph": {
+            "exp_id": "表达量统计表",
+            "exp_level": "表达量水平",
+            "type": "基因/转录本分类",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情"
+        }, 
+        "splicingrmats_stat": {
+            "splicing_id": "可变剪切结果表",
+            "pvalue_fdr": "显著水平",
+            "psi": "差异AS筛选参数 ΔPSI",
+            "fdr": "显著水平cutoff"
+        }, 
+        "expcorr": {
+            "scm": "聚类方式",
+            "corr_method": "相关性算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "距离算法",
+            "exp_level": "表达量水平",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "type": "序列类型",
+            "Draw_in_groups": "以分组的均值分析"
+        }, 
+        "wgcnapipeline": {
+            "me": "表达量均值",
+            "minModuleSize": "minModuleSize",
+            "corr_method": "相关系数计算方法",
+            "group_dict": "样本分组方案详情",
+            "minKMEtoStay": "minKMEtoStay",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "exp_level": "表达量水平",
+            "power": "soft power(β值)",
+            "geneset_id": "基因集名称",
+            "mergeCutHeight": "mergeCutHeight",
+            "trait_path": "表型数据",
+            "file_id": "", 
+            "networkType": "networkType",
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "trait_type": "表型数据类型",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数",
+            "exp_id": "表达量统计表"
+        }, 
+        "genesetgo": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "", 
+            "type": ""
+        },
+        "genefusion": {
+            "min_sum_frags": "min_sum_frags",
+            "min_junction_reads": "min_junction_reads",
+            "min_novel_junction_support": "min_novel_junction_support",
+            "min_FFPM": "min_FFPM",
+            "min_spanning_frags_only": "min_spanning_frags_only"
+        },
+        "genefusionvenn": {
+            "filter_threshold": "融合基因至少存在于该组？%的样本中",
+            "group_id": "样本分组方案名称",
+            "use_group": "分析方式",
+            "fusion_id": "基因融合分析结果表",
+            "group_dict": "样本分组方案详情"
+        },
+        "expbatch": {
+            "has_batch": "已知批次信息",
+            "exp_id": "表达量统计表",
+            "exp_level": "表达量水平",
+            "batch_method": "去除软件",
+            "batch_matrix": "批次信息表路径"
+        }, 
+        "genesetcog": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "", 
+            "type": ""
+        }, 
+        "tfstat": {
+            "tf_predict_id": "转录因子预测结果表 ",
+            "e_value": "Hmmscan E-value",
+            "families": "转录因子家族",
+            "geneset_id": "基因集名称"
+        }, 
+        "exppca": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "type": "序列类型",
+            "Draw_in_groups": "以分组的均值分析"
+        }, 
+        "masigpro": {
+            "geneset_id": "基因集名称",
+            "exp_level": "表达量水平",
+            "cluster": "聚类数目",
+            "design": "时序样本信息表",
+            "exp_id": "表达量统计表",
+            "design_id": "", 
+            "method": "时序聚类算法"
+        }, 
+        "wgcnarelate": {
+            "corr_method": "相关系数计算方法",
+            "exp_level": "表达量水平",
+            "trait_path": "表型数据表",
+            "file_id": "", 
+            "wgcna_module_id": "模块识别分析结果表",
+            "trait_type": "表型数据类型"
+        }, 
+        "diff_detail": {
+            "is_batch": "批次处理",
+            "has_batch": "批次信息表",
+            "batch_matrix": "批次信息表路径",
+            "exp_level": "表达量水平",
+            "group_dict": "样本分组方案详情",
+            "correct_method": "多重检验校正方法",
+            "stat_type": "显著性水平",
+            "control_id": "差异分组方案名称",
+            "fc": "上/下调差异倍数",
+            "diff_method": "差异分析软件",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "type": "序列类型",
+            "stat_cutoff": "显著性水平cutoff",
+            "tpm_filter_threshold": "表达量筛选"
+        }, 
+        "wgcnamodule": {
+            "minModuleSize": "minModuleSize",
+            "power": "soft power(β值)",
+            "minKMEtoStay": "minKMEtoStay",
+            "wgcna_prepare_id": "模块预处理结果表",
+            "exp_level": "表达量水平",
+            "mergeCutHeight": "mergeCutHeight",
+            "networkType": "networkType"
+        }, 
+        "expvenn": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "threshold": "表达量阈值",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "type": "序列类型"
+        }, 
+        "wgcnanetwork": {
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "exp_level": "表达量水平",
+            "wgcna_relate_id": "模块分析结果表",
+            "module": "选择模块"
+        }, 
+        "genesetgo_acyclic": {
+            "top_num": "显示富集程度前多少的GO term",
+            "significant_value": "显著性cutoff",
+            "go_enrich_id": "GO富集分析结果表",
+            "significant_diff": "Pvalue类型"
+        }, 
+        "splicingrmats_model": {
+            "splicing_id": "可变剪切结果表",
+            "as_type": "兴趣事件类型",
+            "event_type": "可变剪切事件定量模式",
+            "gene_id": "兴趣 gene ID"
+        }, 
+        "genesetkegg_rich": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "", 
+            "type": "", 
+            "method": "多重检验校正方法"
+        }, 
+        "stem": {
+            "correction": "", 
+            "exp_level": "表达量水平",
+            "pheno_id": "", 
+            "number": "时序模式数目",
+            "pheno_file": "时序样本信息表",
+            "geneset_id": "基因集名称",
+            "significance": "显著趋势P值",
+            "exp_id": "表达量统计表",
+            "method": "时序聚类算法",
+            "unit": "时序间隔最大值"
+        }, 
+        "genesetkegg": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "type": ""
+        }, 
+        "asprofile_detail": {
+            "software": "分析软件"
+        }, 
+        "snp": {
+            "method_type": "分析软件"
+        }, 
+        "ppinetwork": {
+            "taxon": "参考物种类别",
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "score": "综合值",
+            "combine_score": "综合值前多少的互作组",
+            "species": "参考物种名称"
+        }, 
+        "exp_detail": {
+            "exp_type": "表达量指标",
+            "method": "表达量软件"
+        }, 
+        "asprofilediff": {
+            "filter": "", 
+            "diff_type": "比较类型",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情"
+        }, 
+        "tfpredict": {
+            "tf_sub_db": "分类",
+            "organism": "物种",
+            "evalue": "Evalue",
+            "E": "Hmmscan E-value",
+            "s": "转录因子数据库",
+            "blast_all": "与所有物种比对"
+        }, 
+        "splicingrmats": {
+            "group_id": "样本分组方案名称",
+            "control_id": "差异AS分组方案名称",
+            "compare_plan": "差异AS分组详情",
+            "group_dict": "样本分组方案详情"
+        }, 
+        "genesetgsea": {
+            "group_dict": "样本分组方案详情",
+            "preranked": "预排序文件 ",
+            "geneset_id": "基因集名称",
+            "c2": "MSigDB二级分类",
+            "c1": "MSigDB一级分类",
+            "anno_type": "该项目注释结果GO/KEGG",
+            "kegg_type": "KEGG一级分类",
+            "go_type": "GO一级分类",
+            "geneset_source": "先验基因集",
+            "go_genesets": "目标GO ID",
+            "exp_id": "表达量统计表",
+            "min_num": "先验基因集最小值",
+            "sort_method": "排序算法",
+            "kegg_type2": "KEGG二级分类",
+            "level": "序列类型",
+            "kegg_genesets": "目标MAP ID",
+            "plot_top_x": "选择展示NES前多少的gene set",
+            "upload_genesets_file": "自定义基因集",
+            "genesets": "MSigDB基因集",
+            "permutation_type": "Permutation type",
+            "group_id": "样本分组方案名称",
+            "max_num": "先验基因集最大值"
+        }, 
+        "genesetcirc": {
+            "geneset_type": "基因集序列类型",
+            "enrich_type": "富集结果GO/KEGG",
+            "enrich_id": "富集结果表名称",
+            "p_type": "显著性水平",
+            "p_thre": "显著性水平cutoff",
+            "anno_num_thre": "显示富集程度前多少的GO Term或KEGG Pathway",
+            "diff_id": "差异结果表名称",
+            "compare_group": "差异分组",
+            "go_type": "展示水平",
+            "anno_list": "目标GO/KEGG Pathway IDs",
+            "geneset_id": "目标Gene/Transcript ids"
+        }, 
+        "splicingrmats_diffcomp": {
+            "significant_value": "显著水平cutoff",
+            "significant_diff": "显著水平",
+            "main_id": "比较组别选择",
+            "delta_PSI": "差异AS筛选参数ΔPSI"
+        }, 
+        "genesetipath": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "type": ""
+        }, 
+        "tfbspredict": {
+            "seqdb_file_id": "启动子序列文件",
+            "backward": "转录起始点下游",
+            "motifs_user": "MEME文件",
+            "group_dict": "样本分组方案详情",
+            "geneset_id": "基因集名称",
+            "tf_predict_id": "转录因子预测结果表",
+            "corr_cutoff": "pvalue阈值(Corr)",
+            "seqdb": "",
+            "corr_pvalue": "转录因子与靶基因相关性cor",
+            "thresh": "pvalue阈值（FIMO)",
+            "motifs_file_id": "", 
+            "forward": "转录起始点上游",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "organism": "", 
+            "tf_selected": "选择转录因子"
+        }, 
+        "transcripts": {},
+        "stop_record": {},
+        "extract_seq": {},
+        "genesetcluster": {
+            "scm": "样本聚类算法",
+            "gcm": "基因聚类算法",
+            "exp_level": "表达量水平",
+            "use_group": "以分组的均值分析",
+            "gcd": "基因距离算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "样本距离算法",
+            "n_clusters": "基因子聚类数目",
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "gct": "基因聚类方式",
+            "exp_id": "表达量统计表",
+            "sct": "样本聚类方式",
+            "group_id": "样本分组方案名称"
+        }
+    },
+    "denovo_rna_v2": {
+        "expbatch": {
+            "has_batch": "已知批次信息",
+            "exp_id": "表达量统计表",
+            "exp_level": "表达量水平",
+            "batch_method": "去除软件",
+            "batch_matrix": "批次信息表路径"
+        },
+        "snp_detail": {
+            "method": "分析软件"
+        },
+        "genesetcorrsf": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "cor_cutoff": "相关性系数cutoff",
+            "padjust_way": "多重检验校正方法",
+            "geneset_id": "基因集名称",
+            "sig_type": "显著性水平",
+            "qvalue": "显著性水平cutoff",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "corr_way": "相关性算法"
+        },
+        "wgcnaprepare": {
+            "me": "表达量均值",
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "geneset_id": "基因集名称",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数"
+        },
+        "exppca": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "draw_in_groups": "以分组的均值分析"
+        },
+        "annotationstat": {
+            "swissprot_similarity": "Swiss-prot Similarity",
+            "nr_evalue": "NR(GO) E-value",
+            "cog_similarity": "COG Similarity",
+            "cog_evalue": "COG E-value",
+            "kegg_similarity": "KEGG Similarity",
+            "swissprot_identity": "Swiss-prot Identity",
+            "nr_similarity": "NR(GO) Similarity",
+            "pfam_evalue": "Pfam E-value",
+            "kegg_evalue": "KEGG E-value",
+            "swissprot_evalue": "Swiss-prot E-value",
+            "nr_identity": "NR(GO) Identity",
+            "cog_identity": "COG Identity",
+            "kegg_identity": "KEGG Identity"
+        },
+        "expgraph": {
+            "exp_id": "表达量统计表",
+            "exp_level": "表达量水平",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情"
+        },
+        "expcorr": {
+            "scm": "聚类方式",
+            "corr_method": "相关性算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "距离算法",
+            "exp_level": "表达量水平",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "draw_in_groups": "以分组的均值分析"
+        },
+        "wgcnapipeline": {
+            "me": "表达量均值",
+            "minModuleSize": "minModuleSize",
+            "corr_method": "相关系数计算方法",
+            "group_dict": "样本分组方案详情",
+            "minKMEtoStay": "minKMEtoStay",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "exp_level": "表达量水平",
+            "power": "soft power(β值)",
+            "geneset_id": "基因集名称",
+            "mergeCutHeight": "mergeCutHeight",
+            "trait_path": "表型数据",
+            "file_id": "",
+            "networkType": "networkType",
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "trait_type": "表型数据类型",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数",
+            "exp_id": "表达量统计表"
+        },
+        "genesetgo": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "",
+            "type": "功能注释结果"
+        },
+        "blast": {
+            "subject_source": "Subject序列来源",
+            "max_hsps": "Maximum number of hits to report",
+            "evalue": "e-value值",
+            "exp_level": "基因集水平",
+            "geneset_id": "基因集名称",
+            "program": "比对工具",
+            "subject_target": "Subject数据库",
+            "query_type": "Query序列类型",
+            "query_source": "Query序列来源",
+            "organism_name": "Subject物种",
+            "genome_id": "参考基因组版本"
+        },
+        "genesetcog": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "",
+            "type": "功能注释结果"
+        },
+        "genesetvenn": {
+            "geneset_ids": "基因集名称",
+            "exp_level": "表达量水平"
+        },
+        "masigpro": {
+            "geneset_id": "基因集名称",
+            "exp_level": "表达量水平",
+            "cluster": "聚类数目",
+            "design": "时序样本信息表",
+            "exp_id": "表达量统计表",
+            "design_id": "",
+            "method": "时序聚类算法"
+        },
+        "wgcnarelate": {
+            "corr_method": "相关系数计算方法",
+            "exp_level": "表达量水平",
+            "trait_path": "表型数据表",
+            "file_id": "",
+            "wgcna_module_id": "模块识别分析结果表",
+            "trait_type": "表型数据类型"
+        },
+        "diff_detail": {
+            "is_batch": "批次处理",
+            "has_batch": "批次信息表",
+            "batch_matrix": "批次信息表路径",
+            "exp_level": "表达量水平",
+            "group_dict": "样本分组方案详情",
+            "correct_method": "多重检验校正方法",
+            "stat_type": "显著性水平",
+            "control_id": "差异分组方案名称",
+            "fc": "上/下调差异倍数",
+            "diff_method": "差异分析软件",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "stat_cutoff": "显著性水平cutoff",
+            "filter_method": "表达量筛选",
+            "tpm_filter_threshold": "表达量筛选阈值"
+        },
+        "wgcnamodule": {
+            "minModuleSize": "minModuleSize",
+            "power": "soft power(β值)",
+            "minKMEtoStay": "minKMEtoStay",
+            "wgcna_prepare_id": "模块预处理结果表",
+            "exp_level": "表达量水平",
+            "mergeCutHeight": "mergeCutHeight",
+            "networkType": "networkType"
+        },
+        "wgcnanetwork": {
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "exp_level": "表达量水平",
+            "wgcna_relate_id": "模块分析结果表",
+            "module": "选择模块"
+        },
+        "genesetgo_acyclic": {
+            "top_num": "显示富集程度前多少的GO term",
+            "significant_value": "显著性cutoff",
+            "go_enrich_id": "GO富集分析结果表",
+            "significant_diff": "Pvalue类型"
+        },
+        "genesetkegg_rich": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "",
+            "type": "",
+            "method": "多重检验校正方法"
+        },
+        "ssr": {
+            "rept_1": "SSR motif长度为1时最少重复次数",
+            "rept_2": "SSR motif长度为2时最少重复次数",
+            "rept_3": "SSR motif长度为3时最少重复次数",
+            "rept_4": "SSR motif长度为4时最少重复次数",
+            "rept_5": "SSR motif长度为5时最少重复次数",
+            "rept_6": "SSR motif长度为6时最少重复次数",
+            "ssr_distance": "复合SSR长度"
+        },
+        "genesetkegg": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "type": "功能注释结果"
+        },
+        "genesetgo_rich": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "",
+            "type": "功能注释结果",
+            "method": "多重检验校正方法"
+        },
+        "ppinetwork": {
+            "taxon": "参考物种类别",
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "score": "综合值",
+            "combine_score": "综合值前多少的互作组",
+            "species": "参考物种名称"
+        },
+        "exp_detail": {
+            "exp_type": "表达量指标",
+            "method": "表达量软件"
+        },
+        "genesetgsea": {
+            "group_dict": "样本分组方案详情",
+            "preranked": "预排序文件 ",
+            "geneset_id": "基因集名称",
+            "c2": "MSigDB二级分类",
+            "c1": "MSigDB一级分类",
+            "anno_type": "该项目注释结果GO/KEGG",
+            "kegg_type": "KEGG一级分类",
+            "go_type": "GO一级分类",
+            "geneset_source": "先验基因集",
+            "go_genesets": "目标GO ID",
+            "exp_id": "表达量统计表",
+            "min_num": "先验基因集最小值",
+            "sort_method": "排序算法",
+            "kegg_type2": "KEGG二级分类",
+            "level": "序列类型",
+            "kegg_genesets": "目标MAP ID",
+            "plot_top_x": "选择展示NES前多少的gene set",
+            "upload_genesets_file": "自定义基因集",
+            "genesets": "MSigDB基因集",
+            "permutation_type": "Permutation type",
+            "group_id": "样本分组方案名称",
+            "max_num": "先验基因集最大值"
+        },
+        "genesetcirc": {
+            "geneset_type": "基因集序列类型",
+            "enrich_type": "富集结果GO/KEGG",
+            "enrich_id": "富集结果表名称",
+            "p_type": "显著性水平",
+            "p_thre": "显著性水平cutoff",
+            "anno_num_thre": "显示富集程度前多少的GO Term或KEGG Pathway",
+            "diff_id": "差异结果表名称",
+            "compare_group": "差异分组",
+            "go_type": "展示水平",
+            "anno_list": "目标GO/KEGG Pathway IDs",
+            "geneset_id": "目标Gene/Transcript ids"
+        },
+        "genesetipath": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "type": "功能注释结果"
+        },
+        "expvenn": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "threshold": "表达量阈值",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称"
+        },
+        "stem": {
+            "correction": "",
+            "exp_level": "表达量水平",
+            "pheno_id": "",
+            "number": "时序模式数目",
+            "pheno_file": "时序样本信息表",
+            "geneset_id": "基因集名称",
+            "significance": "显著趋势P值",
+            "exp_id": "表达量统计表",
+            "method": "时序聚类算法",
+            "unit": "时序间隔最大值"
+        },
+        "genesetcluster": {
+            "scm": "样本聚类算法",
+            "gcm": "基因聚类算法",
+            "exp_level": "表达量水平",
+            "use_group": "以分组的均值分析",
+            "gcd": "基因距离算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "样本距离算法",
+            "n_clusters": "基因子聚类数目",
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "gct": "基因聚类方式",
+            "exp_id": "表达量统计表",
+            "sct": "样本聚类方式",
+            "group_id": "样本分组方案名称"
+        },
+        "get_seq_multi": {
+            "seq_id": "序列IDs",
+            "set_type": "序列类型"
+        }
+    },
+    "whole_transcriptome": {
+        "cerna": {
+            "micorr_pvalue_method": "pvalue校正方法",
+            "group_id": "样本分组方案名称",
+            "mi_min_num": "ceRNA共有miRNA的个数",
+            "group_dict": "样本分组方案详情",
+            "micorr_pvalue_cutoff": "miRNA与ceRNA表达量相关性显著性水平cutoff",
+            "target_id": "miRNA-靶RNA运行结果表",
+            "micorr_cutoff": "miRNA与ceRNA表达量相关性cutoff",
+            "micorr_pvalue_type": "miRNA与ceRNA表达量相关性显著性水平",
+            "targetset_id": "非miRNA转录本集",
+            "cecorr_pvalue_method": "pvalue校正方法",
+            "retain_type": "调控网络选择",
+            "cecorr_pvalue_cutoff": "ceRNA与ceRNA表达量相关性显著性水平cutoff",
+            "cecorr_cutoff": "ceRNA与ceRNA表达量相关性小于",
+            "miset_id": "miRNA转录本集",
+            "cecorr_pvalue_type": "ceRNA与ceRNA表达量相关性显著性水平"
+        },
+        "cerna_sankey": {
+            "relation_file": "上传miRNA-ceRNA关系文件路径",
+            "file_id": "",
+            "relation_string": "输入miRNA-ceRNA关系对",
+            "relation_type": "提供miRNA-ceRNA关系方式"
+        },
+        "diff_circrna": {
+            "is_batch": "批次处理",
+            "has_batch": "批次信息表",
+            "batch_matrix": "批次信息表路径",
+            "level": "分析水平",
+            "group_dict": "样本分组方案详情",
+            "correct_method": "多重检验校正方法",
+            "stat_type": "显著性水平",
+            "control_id": "差异分组方案名称",
+            "fc": "上/下调差异倍数",
+            "diff_method": "差异分析软件",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "stat_cutoff": "显著性水平cutoff",
+            "tpm_filter_threshold": "表达量筛选",
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "filter": "表达量筛选",
+            "threshold": "表达量筛选阈值"
+        },
+        "diff_mrna": {
+            "is_batch": "批次处理",
+            "has_batch": "批次信息表",
+            "batch_matrix": "批次信息表路径",
+            "level": "分析水平",
+            "group_dict": "样本分组方案详情",
+            "correct_method": "多重检验校正方法",
+            "stat_type": "显著性水平",
+            "control_id": "差异分组方案名称",
+            "fc": "上/下调差异倍数",
+            "diff_method": "差异分析软件",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "stat_cutoff": "显著性水平cutoff",
+            "tpm_filter_threshold": "表达量筛选",
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "filter": "表达量筛选",
+            "threshold": "表达量筛选阈值",
+            "background": "背景选择"
+        },
+        "diff_lncrna": {
+            "is_batch": "批次处理",
+            "has_batch": "批次信息表",
+            "batch_matrix": "批次信息表路径",
+            "level": "分析水平",
+            "group_dict": "样本分组方案详情",
+            "correct_method": "多重检验校正方法",
+            "stat_type": "显著性水平",
+            "control_id": "差异分组方案名称",
+            "fc": "上/下调差异倍数",
+            "diff_method": "差异分析软件",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "stat_cutoff": "显著性水平cutoff",
+            "tpm_filter_threshold": "表达量筛选",
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "filter": "表达量筛选",
+            "threshold": "表达量筛选阈值"
+        },
+        "diff_mirna": {
+            "is_batch": "批次处理",
+            "has_batch": "批次信息表",
+            "batch_matrix": "批次信息表路径",
+            "level": "分析水平",
+            "group_dict": "样本分组方案详情",
+            "correct_method": "多重检验校正方法",
+            "stat_type": "显著性水平",
+            "control_id": "差异分组方案名称",
+            "fc": "上/下调差异倍数",
+            "diff_method": "差异分析软件",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "stat_cutoff": "显著性水平cutoff",
+            "tpm_filter_threshold": "表达量筛选",
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "filter": "表达量筛选",
+            "threshold": "表达量筛选阈值"
+        },
+        "expbatch": {
+            "has_batch": "已知批次信息",
+            "exp_id": "表达量统计表",
+            "exp_level": "表达量水平",
+            "batch_method": "去除软件",
+            "batch_matrix": "批次信息表路径"
+        },
+        "expgraph_circrna": {
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情",
+            "level": "分析水平"
+        },
+        "expgraph_lncrna": {
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情",
+            "level": "分析水平"
+        },
+        "expgraph_mrna": {
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情",
+            "level": "分析水平"
+        },
+        "expgraph_mirna": {
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情",
+            "level": "分析水平"
+        },
+        "exppca": {
+            "kind": "序列类型",
+            "group_dict": "样本分组方案详情",
+            "level": "分析水平",
+            "library": "分析文库",
+            "take_mean": "以分组的均值分析",
+            "group_id": "样本分组方案名称"
+        },
+        "expcorr": {
+            "corr_method": "相关性算法",
+            "group_dict": "样本分组方案详情",
+            "group_id": "样本分组方案名称",
+            "kind": "序列类型",
+            "level": "分析水平",
+            "take_log": "取对数（log10）分析",
+            "library": "分析文库",
+            "dist_method": "距离算法",
+            "take_mean": "以分组的均值分析",
+            "clus_method": "聚类方式"
+        },
+        "expvenn_circrna": {
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "group_dict": "样本分组方案详情",
+            "level": "分析水平",
+            "threshold": "表达量过滤",
+            "group_id": "样本分组方案名称"
+        },
+        "expvenn_mrna": {
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "group_dict": "样本分组方案详情",
+            "level": "分析水平",
+            "threshold": "表达量过滤",
+            "group_id": "样本分组方案名称"
+        },
+        "expvenn_lncrna": {
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "group_dict": "样本分组方案详情",
+            "level": "分析水平",
+            "threshold": "表达量过滤",
+            "group_id": "样本分组方案名称"
+        },
+        "expvenn_mirna": {
+            "category": "RNA类型",
+            "kind": "序列类型",
+            "group_dict": "样本分组方案详情",
+            "level": "分析水平",
+            "threshold": "表达量过滤",
+            "group_id": "样本分组方案名称"
+        },
+        "geneset_upload": {
+            "level": "基因集水平"
+        },
+        "genesetcirc": {
+            "geneset_type": "基因集序列类型",
+            "enrich_type": "富集结果GO/KEGG",
+            "enrich_id": "富集结果表名称",
+            "p_type": "显著性水平",
+            "p_thre": "显著性水平cutoff",
+            "anno_num_thre": "显示富集程度前多少的GO Term或KEGG Pathway",
+            "diff_id": "差异结果表名称",
+            "compare_group": "差异分组",
+            "go_type": "展示水平",
+            "anno_list": "目标GO/KEGG Pathway IDs",
+            "geneset_id": "目标Gene/Transcript ids",
+            "level": "分析水平"
+        },
+        "genesetcluster": {
+            "scm": "样本聚类算法",
+            "gcm": "基因聚类算法",
+            "level": "分析水平",
+            "use_group": "以分组的均值分析",
+            "gcd": "基因距离算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "样本距离算法",
+            "n_clusters": "基因子聚类数目",
+            "category": "RNA类型",
+            "geneset_id": "基因集名称",
+            "gct": "基因聚类方式",
+            "exp_id": "表达量统计表",
+            "sct": "样本聚类方式",
+            "group_id": "样本分组方案名称"
+        },
+        "genesetcog": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "level": "分析水平",
+            "anno_type": "注释类型"
+        },
+        "genesetcorrsf": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "cor_cutoff": "相关性系数cutoff",
+            "padjust_way": "多重检验校正方法",
+            "geneset_id": "基因集名称",
+            "sig_type": "显著性水平",
+            "qvalue": "显著性水平cutoff",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "corr_way": "相关性算法",
+            "level": "分析水平"
+        },
+        "genesetgo": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "level": "分析水平",
+            "anno_type": "注释类型"
+        },
+        "genesetgo_acyclic": {
+            "top_num": "显示富集程度前多少的GO term",
+            "significant_value": "显著性cutoff",
+            "go_enrich_id": "GO富集分析结果表",
+            "significant_diff": "Pvalue类型"
+        },
+        "genesetgo_rich": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "",
+            "type": "",
+            "method": "多重检验校正方法",
+            "level": "分析水平"
+        },
+        "genesetgsea": {
+            "group_dict": "样本分组方案详情",
+            "preranked": "预排序文件 ",
+            "geneset_id": "基因集名称",
+            "c2": "MSigDB二级分类",
+            "c1": "MSigDB一级分类",
+            "anno_type": "该项目注释结果GO/KEGG",
+            "kegg_type": "KEGG一级分类",
+            "go_type": "GO一级分类",
+            "geneset_source": "先验基因集",
+            "go_genesets": "目标GO ID",
+            "exp_id": "表达量统计表",
+            "min_num": "先验基因集最小值",
+            "sort_method": "排序算法",
+            "kegg_type2": "KEGG二级分类",
+            "level": "序列类型",
+            "kegg_genesets": "目标MAP ID",
+            "plot_top_x": "选择展示NES前多少的gene set",
+            "upload_genesets_file": "自定义基因集",
+            "genesets": "MSigDB基因集",
+            "permutation_type": "Permutation type",
+            "group_id": "样本分组方案名称",
+            "max_num": "先验基因集最大值"
+        },
+        "genesetipath": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "level": "分析水平"
+        },
+        "genesetkegg": {
+            "geneset_id": "基因集名称",
+            "level": "分析水平"
+        },
+        "genesetkegg_rich": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "富集分析类型",
+            "level": "分析水平",
+            "method": "多重检验校正方法"
+        },
+        "genesetvenn": {
+            "category": "RNA类型",
+            "geneset_id": "基因集名称",
+            "level": "分析水平"
+        },
+        "masigpro": {
+            "geneset_id": "基因集名称",
+            "cluster": "聚类数目",
+            "design": "时序样本信息表",
+            "exp_id": "表达量统计表",
+            "design_id": "",
+            "method": "时序聚类算法",
+            "category": "RNA类型",
+            "level": "分析水平"
+        },
+        "ppinetwork": {
+            "taxon": "参考物种类别",
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "score": "综合值",
+            "combine_score": "综合值前多少的互作组",
+            "species": "参考物种名称",
+            "level": "分析水平"
+        },
+        "snp": {
+            "method_type": "分析软件"
+        },
+        "splicingrmats": {
+            "group_id": "样本分组方案名称",
+            "control_id": "差异AS分组方案名称",
+            "compare_plan": "差异AS分组详情",
+            "group_dict": "样本分组方案详情"
+        },
+        "splicingrmats_diffcomp": {
+            "significant_value": "显著水平cutoff",
+            "significant_diff": "显著水平",
+            "main_id": "比较组别选择",
+            "delta_PSI": "差异AS筛选参数ΔPSI"
+        },
+        "splicingrmats_model": {
+            "splicing_id": "可变剪切结果表",
+            "as_type": "兴趣事件类型",
+            "event_type": "可变剪切事件定量模式",
+            "gene_id": "兴趣 gene ID"
+        },
+        "splicingrmats_stat": {
+            "splicing_id": "可变剪切结果表",
+            "pvalue_fdr": "显著水平",
+            "psi": "差异AS筛选参数 ΔPSI",
+            "fdr": "显著水平cutoff"
+        },
+        "stem": {
+            "correction": "",
+            "pheno_id": "",
+            "number": "时序模式数目",
+            "pheno_file": "时序样本信息表",
+            "geneset_id": "基因集名称",
+            "significance": "显著趋势P值",
+            "exp_id": "表达量统计表",
+            "method": "时序聚类算法",
+            "unit": "时序间隔最大值",
+            "category": "RNA类型",
+            "level": "分析水平"
+        },
+        "targe": {
+            "c_min_support": "靶circRNA-候选靶基因确定标准",
+            "m_min_support": "靶mRNA-候选靶基因确定标准",
+            "l_min_support": "靶lncRNA-候选靶基因确定标准",
+            "m_psrobot": "靶mRNA-软件psRobot",
+            "m_miranda": "靶mRNA-软件miRanda",
+            "m_targetfinder": "靶mRNA-软件targetfinder",
+            "m_targetscan": "靶mRNA-软件TargetScan",
+            "m_rnahybrid": "靶mRNA-软件RNAhybrid",
+            "c_psrobot": "靶circRNA-软件psRobot",
+            "c_targetfinder": "靶circRNA-软件targetfinder",
+            "c_targetscan": "靶circRNA-软件TargetScan",
+            "c_rnahybrid": "靶circRNA-软件RNAhybrid",
+            "c_miranda": "靶circRNA-软件miRanda",
+            "l_miranda": "靶lncRNA-软件miRanda",
+            "l_psrobot": "靶lncRNA-软件psRobot",
+            "l_targetfinder": "靶lncRNA-软件targetfinder",
+            "l_rnahybrid": "靶lncRNA-软件RNAhybrid",
+            "l_targetscan": "靶lncRNA-软件TargetScan",
+            "c_miranda_energy": "靶circRNA-miRanda energy cutoff",
+            "m_miranda_energy": "靶mRNA-miRanda energy cutoff",
+            "l_miranda_energy": "靶lncRNA-miRanda energy cutoff",
+            "l_rnahybird_energy": "靶lncRNA-RNAhybrid energy cutoff",
+            "c_rnahybird_energy": "靶circRNA-RNAhybrid energy cutoff",
+            "m_rnahybird_energy": "靶mRNA-RNAhybrid energy cutoff",
+            "l_targetfinder_score": "靶lncRNA-targetfinder score cutoff",
+            "m_targetfinder_score": "靶mRNA-targetfinder score cutoff",
+            "c_targetfinder_score": "靶circRNA-targetfinder score cutoff",
+            "l_ps_robot_score": "靶lncRNA-psRobot score cutoff",
+            "c_ps_robot_score": "靶circRNA-psRobot score cutoff",
+            "m_ps_robot_score": "靶mRNA-psRobot score cutoff",
+            "targetset_id": "非miRNA转录本集",
+            "miset_id": "miRNA转录本集",
+            "m_rnahybird_pvalue": "靶mRNA-RNAhybrid p-value cutoff",
+            "l_rnahybird_pvalue": "靶lncRNA-RNAhybrid p-value cutoff",
+            "c_rnahybird_pvalue": "靶circRNA-RNAhybrid p-value cutoff",
+            "c_miranda_score": "靶circRNA-miRanda score cutoff",
+            "m_miranda_score": "靶mRNA-miRanda score cutoff",
+            "l_miranda_score": "靶lncRNA-miRanda score cutoff",
+            "l_rnahybird_num": "靶lncRNA-RNAhybrid number of hits per target",
+            "m_rnahybird_num": "靶mRNA-RNAhybrid number of hits per target",
+            "c_rnahybird_num": "靶circRNA-RNAhybrid number of hits per target",
+            "c_miranda_strict": "靶circRNA-miRanda strict",
+            "l_miranda_strict": "靶lncRNA-miRanda strict",
+            "m_miranda_strict": "靶mRNA-miRanda strict"
+        },
+        "targe_cistrans": {
+            "pvalue_cutoff": "显著性水平cutoff",
+            "pvalue_type": "显著性水平",
+            "group_dict": "样本分组方案详情",
+            "corr_cutoff": "相关性系数",
+            "up_dis": "cis上游作用距离",
+            "padjust_way": "多重检验校正方法",
+            "lncset_id": "lncRNA 转录本集",
+            "down_dis": "cis下游作用距离",
+            "targetset_id": "基因集",
+            "group_id": "样本分组方案名称",
+            "corr_way": "相关性算法"
+        },
+        "tfbspredict": {
+            "seqdb_file_id": "启动子序列文件",
+            "backward": "转录起始点下游",
+            "motifs_user": "MEME文件",
+            "group_dict": "样本分组方案详情",
+            "geneset_id": "基因集名称",
+            "tf_predict_id": "转录因子预测结果表",
+            "corr_cutoff": "pvalue阈值(Corr)",
+            "seqdb": "",
+            "corr_pvalue": "转录因子与靶基因相关性cor",
+            "thresh": "pvalue阈值（FIMO)",
+            "motifs_file_id": "",
+            "forward": "转录起始点上游",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "organism": "",
+            "tf_selected": "选择转录因子",
+            "is_corr": "TF与基因表达相关性计算"
+        },
+        "tfpredict": {
+            "tf_sub_db": "分类",
+            "organism": "物种",
+            "evalue": "Evalue",
+            "E": "Hmmscan E-value",
+            "s": "转录因子数据库",
+            "blast_all": "与所有物种比对"
+        },
+        "tfstat": {
+            "tf_predict_id": "转录因子预测结果表",
+            "e_value": "Hmmscan E-value",
+            "families": "转录因子家族",
+            "geneset_id": "基因集名称",
+            "level": "分析水平"
+        },
+        "wgcnaprepare": {
+            "me": "表达量均值",
+            "group_dict": "样本分组方案详情",
+            "geneset_id": "基因集名称",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数",
+            "category": "RNA类型",
+            "level": "分析水平"
+        },
+        "wgcnapipeline": {
+            "me": "表达量均值",
+            "minModuleSize": "minModuleSize",
+            "corr_method": "相关系数计算方法",
+            "group_dict": "样本分组方案详情",
+            "minKMEtoStay": "minKMEtoStay",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "power": "soft power(β值)",
+            "geneset_id": "基因集名称",
+            "mergeCutHeight": "mergeCutHeight",
+            "trait_path": "表型数据",
+            "file_id": "",
+            "networkType": "networkType",
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "trait_type": "表型数据类型",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数",
+            "exp_id": "表达量统计表",
+            "category": "RNA类型",
+            "level": "分析水平"
+        },
+        "wgcnarelate": {
+            "corr_method": "相关系数计算方法",
+            "trait_path": "表型数据表",
+            "file_id": "",
+            "wgcna_module_id": "模块识别分析结果表",
+            "trait_type": "表型数据类型",
+            "level": "分析水平"
+        },
+        "wgcnamodule": {
+            "minModuleSize": "minModuleSize",
+            "power": "soft power(β值)",
+            "minKMEtoStay": "minKMEtoStay",
+            "wgcna_prepare_id": "模块预处理结果表",
+            "mergeCutHeight": "mergeCutHeight",
+            "networkType": "networkType",
+            "level": "分析水平"
+        },
+        "wgcnanetwork": {
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "wgcna_relate_id": "模块分析结果表",
+            "module": "选择模块",
+            "level": "分析水平"
+        }
+    },
+    "lnc_rna": {
+        "expbatch": {
+            "has_batch": "已知批次信息",
+            "exp_id": "表达量统计表",
+            "exp_level": "表达量水平",
+            "batch_method": "去除软件",
+            "batch_matrix": "批次信息表路径"
+        },
+        "cerna": {
+            "smallrna": "",
+            "smallrna_exp": "miRNA表达量矩阵",
+            "micorr_pvalue_cutoff": "miRNA与ceRNA表达量相关性显著性水平cutoff",
+            "micorr_pvalue_method": "pvalue校正方法",
+            "micorr_cutoff": "miRNA与ceRNA表达量相关性cutoff",
+            "corr_pvalue_cutoff": "ceRNA与ceRNA表达量相关性显著性水平cutoff",
+            "miranda_energy": "miRNA靶基因预测miranda energy cutoff",
+            "miranda_strict": "miRNA靶基因预测miranda strict",
+            "ps_robot_score": "miRNA靶基因预测psrobot score cutoff",
+            "corr_method": "相关性算法",
+            "group_dict": "样本分组方案详情",
+            "corr_cutoff": "相关性cutoff",
+            "corr_pvalue_type": "ceRNA与ceRNA表达量相关性显著性水平",
+            "mirbase_category": "miRbase一级分类",
+            "exp_level": "表达量水平",
+            "lncset_id": "lncRNA集",
+            "geneset_id": "mRNA集",
+            "miranda_score": "miRNA靶基因预测miranda score cutoff",
+            "mirbase_specie": "miRbase具体物种",
+            "corr_pvalue_method": "pvalue校正方法",
+            "exp_id": "表达量结果表",
+            "group_id": "样本分组方案名称"
+        },
+        "circos": {
+            "diff_group": "差异组别",
+            "top_ref_num": "丰度前几染色体作图",
+            "target_cistrans": "靶基因预测结果表",
+            "target_trans": "靶基因trans作用预测结果表",
+            "target_cis": "靶基因cis作用预测结果表",
+            "diff_exp": "表达量差异分析结果表"
+        },
+        "diff_detail": {
+            "is_batch": "批次处理",
+            "has_batch": "批次信息表",
+            "batch_matrix": "批次信息表路径",
+            "exp_level": "表达量水平",
+            "group_dict": "样本分组方案详情",
+            "correct_method": "多重检验校正方法",
+            "stat_type": "显著性水平",
+            "control_id": "差异分组方案名称",
+            "fc": "上/下调差异倍数",
+            "diff_method": "差异分析软件",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "stat_cutoff": "显著性水平cutoff",
+            "rna_type": "RNA类型",
+            "filter_method": "表达量筛选方法",
+            "tpm_filter_threshold": "表达量筛选阈值",
+            "type": "序列类型"
+        },
+        "exp_detail": {
+            "exp_type": "表达量指标",
+            "method": "表达量软件"
+        },
+        "expgraph": {
+            "exp_id": "表达量统计表",
+            "exp_level": "表达量水平",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情",
+            "rna_type": "RNA类型",
+            "type": "序列类型"
+        },
+        "expcorr": {
+            "scm": "聚类方式",
+            "corr_method": "相关性算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "距离算法",
+            "exp_level": "表达量水平",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "draw_in_groups": "以分组的均值分析",
+            "rna_type": "RNA类型",
+            "log_base": "取对数（log10）分析",
+            "type": "序列类型"
+        },
+        "exppca": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "draw_in_groups": "以分组的均值分析",
+            "rna_type": "RNA类型",
+            "type": "序列类型"
+        },
+        "expvenn": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "threshold": "表达量阈值",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "rna_type": "RNA类型",
+            "type": "序列类型"
+        },
+        "geneset_upload": {
+            "gene_type": "基因集类型",
+            "trait_path": "文件路径"
+        },
+        "genesetcirc": {
+            "geneset_type": "基因集序列类型",
+            "enrich_type": "富集结果GO/KEGG",
+            "enrich_id": "富集结果表名称",
+            "p_type": "显著性水平",
+            "p_thre": "显著性水平cutoff",
+            "anno_num_thre": "显示富集程度前多少的GO Term或KEGG Pathway",
+            "diff_id": "差异结果表名称",
+            "compare_group": "差异分组",
+            "go_type": "展示水平",
+            "anno_list": "目标GO/KEGG Pathway IDs",
+            "geneset_id": "目标Gene/Transcript ids"
+        },
+        "genesetkegg_rich": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "",
+            "type": "",
+            "method": "多重检验校正方法"
+        },
+        "genesetkegg": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": ""
+        },
+        "genesetgo_rich": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "",
+            "type": "",
+            "method": "多重检验校正方法"
+        },
+        "genesetgo": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "",
+            "type": ""
+        },
+        "genesetcog": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": ""
+        },
+        "genesetcorrsf": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "cor_cutoff": "相关性系数cutoff",
+            "padjust_way": "多重检验校正方法",
+            "geneset_id": "基因集名称",
+            "sig_type": "显著性水平",
+            "qvalue": "显著性水平cutoff",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "corr_way": "相关性算法",
+            "level": "分析水平",
+            "l_geneset_id": "lncRNA集",
+            "m_geneset_id": "mRNA集"
+        },
+        "genesetgo_rich_heatmap": {
+            "p_value": "Pvalue cutoff",
+            "pvalue_type": "Pvalue类型",
+            "enrich_type": "富集分析类型",
+            "geneset_enrich_ids": "富集分析结果表",
+            "geneset_type": "分析水平",
+            "go_level": "GO展示水平",
+            "top_num": "显示富集程度前多少的GO Term或KEGG Pathway",
+            "ids_list": "目标GO/KEGG Pathway IDs"
+        },
+        "genesetvenn": {
+            "geneset_type": "RNA类型",
+            "geneset_ids": "基因集名称",
+            "gene_type": "分析水平"
+        },
+        "genesetipath": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称"
+        },
+        "genesetgo_acyclic": {
+            "top_num": "显示富集程度前多少的GO term",
+            "significant_value": "显著性cutoff",
+            "go_enrich_id": "GO富集分析结果表",
+            "significant_diff": "Pvalue类型"
+        },
+        "genesetcluster": {
+            "scm": "样本聚类算法",
+            "gcm": "基因聚类算法",
+            "exp_level": "表达量水平",
+            "use_group": "以分组的均值分析",
+            "gcd": "基因距离算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "样本距离算法",
+            "n_clusters": "基因子聚类数目",
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "gct": "基因聚类方式",
+            "exp_id": "表达量统计表",
+            "sct": "样本聚类方式",
+            "group_id": "样本分组方案名称"
+        },
+        "loccon": {
+            "ways": "保守性得分文件",
+            "geneset_id": "lncRNA转录本集",
+            "genome": "参考基因组",
+            "sequence": "分析序列",
+            "lncrna_id": "单个lncRNA id"
+        },
+        "ortholog": {
+            "geneset_id": "lncRNA转录本集",
+            "evalue": "Evalue",
+            "species": "比对物种",
+            "identity": "Identity",
+            "sequence": "分析序列",
+            "lncrna_id": "单个lncRNA id"
+        },
+        "ppinetwork": {
+            "taxon": "参考物种类别",
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "combine_score": "综合值前多少的互作组",
+            "species": "参考物种名称"
+        },
+        "seqcon": {
+            "new_genome": "比对物种",
+            "geneset_id": "lncRNA转录本集",
+            "old_genome": "原始物种",
+            "sequence": "分析序列",
+            "lncrna_id": "单个lncRNA id"
+        },
+        "snp": {
+            "method_type": "分析软件"
+        },
+        "splicingrmats": {
+            "group_id": "样本分组方案名称",
+            "control_id": "差异AS分组方案名称",
+            "compare_plan": "差异AS分组详情",
+            "group_dict": "样本分组方案详情"
+        },
+        "splicingrmats_stat": {
+            "splicing_id": "可变剪切结果表",
+            "significant_value": "显著水平cutoff",
+            "significant_diff": "显著水平",
+            "delta_psi": "差异AS筛选参数 ΔPSI"
+        },
+        "splicingrmats_model": {
+            "splicing_id": "可变剪切结果表",
+            "as_type": "兴趣事件类型",
+            "event_type": "可变剪切事件定量模式",
+            "gene_id": "兴趣 gene ID"
+        },
+        "splicingrmats_diffcomp": {
+            "significant_value": "显著水平cutoff",
+            "significant_diff": "显著水平",
+            "delta_psi": "差异AS筛选参数ΔPSI",
+            "splicing_ids": "比较组别选择"
+        },
+        "targe_cistrans": {
+            "up_dis": "cis上游作用距离(kb)",
+            "down_dis": "cis下游作用距离(kb)",
+            "pvalue_cutoff": "显著性水平cutoff",
+            "pvalue_type": "显著性水平",
+            "padjust_way": "多重检验校正方法",
+            "corr_cutoff": "相关性系数",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情",
+            "corr_way": "相关性算法"
+        },
+        "tfbspredict": {
+            "seqdb_file_id": "启动子序列文件",
+            "backward": "转录起始点下游",
+            "motifs_user": "MEME文件",
+            "group_dict": "样本分组方案详情",
+            "geneset_id": "基因集名称",
+            "tf_predict_id": "转录因子预测结果表",
+            "corr_cutoff": "pvalue阈值(Corr)",
+            "seqdb": "",
+            "corr_pvalue": "转录因子与靶基因相关性cor",
+            "thresh": "pvalue阈值（FIMO)",
+            "motifs_file_id": "",
+            "forward": "转录起始点上游",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "organism": "",
+            "tf_selected": "选择转录因子",
+            "gene_type": "基因集类型"
+        },
+        "tfstat": {
+            "tf_predict_id": "转录因子预测结果表",
+            "e_value": "Hmmscan E-value",
+            "families": "转录因子家族",
+            "geneset_id": "基因集名称",
+            "geneset_type": "分析水平"
+        },
+        "tfpredict": {
+            "organism": "物种",
+            "evalue": "Evalue",
+            "E": "Hmmscan E-value",
+            "s": "转录因子数据库",
+            "blast_all": "与所有物种比对"
+        },
+        "wgcnapipeline": {
+            "me": "表达量均值",
+            "minModuleSize": "minModuleSize",
+            "corr_method": "相关系数计算方法",
+            "group_dict": "样本分组方案详情",
+            "minKMEtoStay": "minKMEtoStay",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "power": "soft power(β值)",
+            "geneset_id": "基因集名称",
+            "mergeCutHeight": "mergeCutHeight",
+            "trait_path": "表型数据",
+            "file_id": "",
+            "networkType": "networkType",
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "trait_type": "表型数据类型",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数",
+            "exp_id": "表达量统计表",
+            "exp_level": "分析水平",
+            "lncset_id": " lncRNA集"
+        },
+        "wgcnaprepare": {
+            "me": "表达量均值",
+            "group_dict": "样本分组方案详情",
+            "geneset_id": "基因集名称",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数",
+            "lncset_id": "lncRNA集",
+            "exp_level": "分析水平"
+        },
+        "wgcnamodule": {
+            "minModuleSize": "minModuleSize",
+            "power": "soft power(β值)",
+            "minKMEtoStay": "minKMEtoStay",
+            "wgcna_prepare_id": "模块预处理结果表",
+            "mergeCutHeight": "mergeCutHeight",
+            "networkType": "networkType",
+            "exp_level": "分析水平"
+        },
+        "wgcnanetwork": {
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "wgcna_relate_id": "模块分析结果表",
+            "module": "选择模块",
+            "exp_level": "分析水平"
+        },
+        "wgcnarelate": {
+            "corr_method": "相关系数计算方法",
+            "trait_path": "表型数据表",
+            "file_id": "",
+            "wgcna_module_id": "模块识别分析结果表",
+            "trait_type": "表型数据类型",
+            "exp_level": "分析水平"
+        }
+    },
+    "small_rna": {
+        "expbatch": {
+            "has_batch": "已知批次信息",
+            "exp_id": "表达量统计表",
+            "batch_method": "去除软件",
+            "batch_matrix": "批次信息表路径"
+        },
+        "genesetgo": {
+            "geneset_id": "靶基因集名称",
+            "anno_type": "靶基因功能富集数据库"
+        },
+        "genesetgo_acyclic": {
+            "top_num": "显示富集程度前多少的GO term",
+            "significant_value": "显著性cutoff",
+            "go_enrich_id": "靶基因GO富集分析结果表",
+            "significant_diff": "Pvalue类型"
+        },
+        "genesetgo_rich": {
+            "geneset_id": "靶基因集名称",
+            "anno_type": "靶基因功能富集数据库",
+            "method": "多重检验校正方法"
+        },
+        "genesetcog": {
+            "geneset_id": "靶基因集名称",
+            "anno_type": "靶基因功能注释数据库"
+        },
+        "minet": {
+            "tf_db": "转录因子数据库（JASPAR）一级分类",
+            "mirnaset_id": "miRNA集名称",
+            "geneset_id": "靶基因集名称",
+            "target_id": "靶基因预测结果表",
+            "corr_method": "相关性算法",
+            "corr_threshold": "相关性系数",
+            "corr_pvalue_type": "表达量相关性显著性水平",
+            "corr_pvalue_threshold": "表达量相关性显著性cutoff",
+            "tf_pvalue_threshold": "p-value阈值（FIMO)",
+            "tss_up": "转录调控区确定：miRNA TSS 上游",
+            "tss_down": "转录调控区确定：miRNA TSS 下游",
+            "tf_sub_db": "转录因子数据库（JASPAR）二级分类"
+        },
+        "genesetkegg_rich": {
+            "geneset_id": "靶基因集名称",
+            "anno_type": "靶基因功能富集数据库",
+            "method": "多重检验校正方法"
+        },
+        "exppca": {
+            "group_dict": "样本分组方案详情",
+            "group_id": "样本分组方案名称"
+        },
+        "genesetvenn": {
+            "geneset_ids": "基因集名称",
+            "gene_type": "基因集类型"
+        },
+        "diff_detail": {
+            "is_batch": "批次处理",
+            "has_batch": "批次信息表",
+            "batch_matrix": "批次信息表路径",
+            "group_dict": "样本分组方案详情",
+            "correct_method": "多重检验校正方法",
+            "stat_type": "显著性水平",
+            "control_id": "差异分组方案名称",
+            "fc": "上/下调差异倍数",
+            "diff_method": "差异分析软件",
+            "group_id": "样本分组方案名称",
+            "stat_cutoff": "显著性水平cutoff",
+            "prob": "Prob"
+        },
+        "genesetkegg": {
+            "geneset_id": "靶基因集名称",
+            "anno_type": "靶基因功能注释数据库"
+        },
+        "expvenn": {
+            "group_dict": "样本分组方案详情",
+            "threshold": "表达量阈值",
+            "group_id": "样本分组方案名称",
+            "seq_type": "miRNA类型"
+        },
+        "mapping_circs": {
+            "group_id": "样本分组方案名称",
+            "chr_num": "选择丰度前多少的染色体作图",
+            "group_dict": "样本分组方案详情"
+        },
+        "expgraph": {
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情",
+            "seq_type": "miRNA类型"
+        },
+        "targe": {
+            "miranda_energy": "miRanda energy cutoff",
+            "ps_robot_score": "psRobot score cutoff",
+            "targetfinder": "targetfinder",
+            "rnahybrid_energy": "RNAhybrid energy cutoff",
+            "psrobot": "psRobot",
+            "miranda": "miRanda",
+            "rnahybrid_num": "RNAhybrid number of hits per target",
+            "rnahybrid": "RNAhybrid",
+            "targetfinder_score": "targetfinder score cutoff",
+            "miranda_score": "miRanda score cutoff",
+            "miranda_strict": "miRanda strict",
+            "min_support": "候选靶基因确定标准",
+            "rnahybrid_pvalue": "RNAhybrid p-value cutoff"
+        },
+        "ppinetwork": {
+            "taxon": "参考物种类别",
+            "geneset_id": "靶基因集名称",
+            "combine_score": "综合值前多少的互作组",
+            "species": "参考物种名称"
+        },
+        "expcorr": {
+            "scm": "聚类方式",
+            "corr_method": "相关性算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "距离算法",
+            "group_id": "样本分组方案名称",
+            "use_log": "取对数（log10）分析"
+        },
+        "genesetcluster": {
+            "scm": "样本聚类算法",
+            "gcm": "miRNA聚类算法",
+            "use_group": "以分组的均值分析",
+            "gcd": "miRNA距离算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "样本距离算法",
+            "n_clusters": "miRNA子聚类数目",
+            "geneset_id": "miRNA集名称",
+            "gct": "miRNA聚类方式",
+            "sct": "样本聚类方式",
+            "group_id": "样本分组方案名称"
+        }
+    },
+    "medical_transcriptome": {
+        "exp_detail": {
+            "exp_type": "表达量指标",
+            "method": "表达量软件",
+            "level": "分析水平"
+        },
+        "genesetreactome_rich": {
+            "geneset_id": "基因集名称",
+            "method": "多重检验校正方法"
+        },
+        "genesetcirc": {
+            "level": "基因集序列类型",
+            "enrich_type": "富集结果GO/KEGG",
+            "enrich_id": "富集结果表名称",
+            "p_type": "显著性水平",
+            "p_thre": "显著性水平cutoff",
+            "anno_num_thre": "显示富集程度前多少的GO Term或KEGG Pathway",
+            "diff_id": "差异结果表名称",
+            "compare_group": "差异分组",
+            "go_type": "展示水平",
+            "anno_list": "目标GO/KEGG Pathway IDs",
+            "geneset_id": "目标Gene/Transcript ids"
+        },
+        "snp": {
+            "method_type": "软件",
+            "algorithm": "算法"
+        },
+        "diffgene_batch_analysis": {
+            "diff_id": "差异分析结果表",
+            "geneset_names": "基因集名称"
+        },
+        "geneset_seq_download": {
+            "geneset_id": "基因集名称",
+            "extract_info": "提取信息",
+            "level": "分析水平"
+        },
+        "genesetcorrsf": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "cor_cutoff": "相关性系数cutoff",
+            "padjust_way": "多重检验校正方法",
+            "geneset_id": "基因集名称",
+            "sig_type": "显著性水平",
+            "qvalue": "显著性水平cutoff",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "corr_way": "相关性算法",
+            "level": "分析水平",
+            "pvalue": "显著性水平cutoff"
+        },
+        "wgcnaprepare": {
+            "me": "表达量均值",
+            "group_dict": "样本分组方案详情",
+            "geneset_id": "基因集名称",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数",
+            "level": "分析水平"
+        },
+        "diffgenevenn": {
+            "geneset_ids": "基因集名称",
+            "level": "分析水平"
+        },
+        "diffgenedisgenet_rich": {
+            "el": "EL",
+            "ei": "EI",
+            "padjust_method": "多重检验校正方法",
+            "geneset_id": "基因集名称",
+            "score": "Score",
+            "dsi": "DSI",
+            "dpi": "DPI"
+        },
+        "genesetgsva": {
+            "anno_type": "该项目注释类型",
+            "group_dict": "样本分组方案详情",
+            "level": "序列类型",
+            "sub_type": "二级分类",
+            "geneset_source": "先验基因集",
+            "plot_top_x": "选择展示NES前多少的gene set",
+            "preranked": "预排序文件",
+            "genesets": "MSigDB基因集",
+            "geneset_id": "基因集名称",
+            "upload_genesets_file": "自定义基因集",
+            "permutation_type": "Permutation type",
+            "control_id": "对照组名称",
+            "c2": "MSigDB二级分类",
+            "c1": "MSigDB一级分类",
+            "anno_value": "目标ID",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "max_num": "先验基因集最大值",
+            "min_num": "先验基因集最小值",
+            "es_method": "ES"
+        },
+        "expgraph": {
+            "exp_id": "表达量统计表",
+            "level": "表达量水平",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情",
+            "kind": "RNA类型"
+        },
+        "expcorr": {
+            "scm": "聚类方式",
+            "corr_method": "相关性算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "距离算法",
+            "level": "表达量水平",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "Draw_in_groups": "以分组的均值分析",
+            "log_base": "取对数（log10）分析",
+            "kind": "序列类型"
+        },
+        "wgcnapipeline": {
+            "me": "表达量均值",
+            "minModuleSize": "minModuleSize",
+            "corr_method": "相关系数计算方法",
+            "group_dict": "样本分组方案详情",
+            "minKMEtoStay": "minKMEtoStay",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "level": "表达量水平",
+            "power": "soft power(β值)",
+            "geneset_id": "基因集名称",
+            "mergeCutHeight": "mergeCutHeight",
+            "trait_path": "表型数据",
+            "file_id": "",
+            "networkType": "networkType",
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "trait_type": "表型数据类型",
+            "group_id": "样本分组方案名称",
+            "cv": "变异系数",
+            "exp_id": "表达量统计表"
+        },
+        "genesetgo": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "level": "分析水平"
+        },
+        "expbatch": {
+            "has_batch": "已知批次信息",
+            "exp_id": "表达量统计表",
+            "level": "表达量水平",
+            "batch_method": "去除软件",
+            "batch_matrix": "批次信息表路径"
+        },
+        "genesetdo_rich": {
+            "geneset_id": "基因集名称",
+            "method": "多重检验校正方法"
+        },
+        "tfstat": {
+            "tf_predict_id": "转录因子预测结果表",
+            "e_value": "Hmmscan E-value",
+            "families": "转录因子家族",
+            "geneset_id": "基因集名称",
+            "level": "分析水平"
+        },
+        "expdistribution": {
+            "group_dict": "样本分组方案详情",
+            "level": "表达量水平",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "kind": "序列类型"
+        },
+        "exppca": {
+            "group_dict": "样本分组方案详情",
+            "level": "表达量水平",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "Draw_in_groups": "以分组的均值分析",
+            "kind": "序列类型"
+        },
+        "masigpro": {
+            "geneset_id": "基因集名称",
+            "cluster": "聚类数目",
+            "design": "时序样本信息表",
+            "exp_id": "表达量统计表",
+            "design_id": "",
+            "method": "时序聚类算法",
+            "exp_level": "分析水平"
+        },
+        "splicingrmats": {
+            "group_id": "样本分组方案名称",
+            "control_id": "差异AS分组方案名称",
+            "compare_plan": "差异AS分组详情",
+            "group_dict": "样本分组方案详情"
+        },
+        "splicingrmats_model": {
+            "splicing_id": "可变剪切结果表",
+            "as_type": "兴趣事件类型",
+            "event_type": "可变剪切事件定量模式",
+            "gene_id": "兴趣 gene ID"
+        },
+        "splicingrmats_diffcomp": {
+            "significant_value": "显著水平cutoff",
+            "significant_diff": "显著水平",
+            "main_id": "比较组别选择",
+            "delta_PSI": "差异AS筛选参数ΔPSI"
+        },
+        "splicingrmats_stat": {
+            "splicing_id": "可变剪切结果表",
+            "pvalue_fdr": "显著水平cutoff",
+            "fdr": "显著水平",
+            "psi": "差异AS筛选参数 ΔPSI"
+        },
+        "wgcnarelate": {
+            "corr_method": "相关系数计算方法",
+            "trait_path": "表型数据表",
+            "file_id": "",
+            "wgcna_module_id": "模块识别分析结果表",
+            "trait_type": "表型数据类型",
+            "level": "分析水平"
+        },
+        "diffgenedo": {
+            "geneset_id": "基因集名称"
+        },
+        "specimen_extract": {
+            "extract_info": "提取信息"
+        },
+        "snpsearch": {
+            "target_genes": "目标基因",
+            "region": "功能区域",
+            "geneset_snp": "基因集名称",
+            "sample": "样本选择",
+            "depth_comare": "深度(depth)",
+            "depth": "深度(depth)",
+            "id_type": "Gene ID/Gene name",
+            "snp_id": "SNP/InDel分析结果表",
+            "type": "分析类型"
+        },
+        "asprofilesearch": {
+            "target_genes": "目标基因",
+            "sample": "样本",
+            "geneset_asprofile": "基因集名称",
+            "type": "事件类型",
+            "id_type": "Gene ID/Gene name"
+        },
+        "genefusion": {
+            "min_sum_frags": "min_sum_frags",
+            "min_junction_reads": "min_junction_reads",
+            "min_novel_junction_support": "min_novel_junction_support",
+            "min_FFPM": "min_FFPM",
+            "min_spanning_frags_only": "min_spanning_frags_only"
+        },
+        "diffgene": {
+            "is_batch": "批次处理",
+            "has_batch": "批次信息表",
+            "batch_matrix": "批次信息表路径",
+            "level": "表达量水平",
+            "group_dict": "样本分组方案详情",
+            "correct_method": "多重检验校正方法",
+            "stat_type": "显著性水平",
+            "control_id": "差异分组方案名称",
+            "fc": "上/下调差异倍数",
+            "diff_method": "差异分析软件",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "stat_cutoff": "显著性水平cutoff",
+            "filter_method": "表达量筛选方法",
+            "tpm_filter_threshold": "表达量筛选阈值",
+            "prob": "Prob"
+        },
+        "tfbspredict": {
+            "seqdb_file_id": "启动子序列文件",
+            "backward": "转录起始点下游",
+            "motifs_user": "MEME文件",
+            "group_dict": "样本分组方案详情",
+            "geneset_id": "基因集名称",
+            "tf_predict_id": "转录因子预测结果表",
+            "corr_cutoff": "pvalue阈值(Corr)",
+            "seqdb": "",
+            "corr_pvalue": "转录因子与靶基因相关性cor",
+            "thresh": "pvalue阈值（FIMO)",
+            "motifs_file_id": "",
+            "forward": "转录起始点上游",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "organism": "",
+            "tf_selected": "选择转录因子",
+            "level": "基因集类型",
+            "is_corr": "TF与基因表达相关性计算"
+        },
+        "wgcnanetwork": {
+            "threshold": "筛选节点间权重值大于多少的连线进行分析",
+            "top": "筛选模块内连通性前多少个节点进行分析",
+            "wgcna_relate_id": "模块分析结果表",
+            "module": "选择模块",
+            "level": "分析水平"
+        },
+        "diffgenecirc": {
+            "level": "基因集序列类型",
+            "enrich_type": "富集结果GO/KEGG",
+            "enrich_id": "富集结果表名称",
+            "p_type": "显著性水平",
+            "p_thre": "显著性水平cutoff",
+            "anno_num_thre": "显示富集程度前多少的GO Term或KEGG Pathway",
+            "diff_id": "差异结果表名称",
+            "compare_group": "差异分组",
+            "go_type": "展示水平",
+            "anno_list": "目标GO/KEGG Pathway IDs",
+            "geneset_id": "目标Gene/Transcript ids"
+        },
+        "genesetkegg_rich": {
+            "geneset_id": "基因集名称",
+            "level": "基因集序列类型",
+            "method": "多重检验校正方法"
+        },
+        "genefusionvenn": {
+            "filter_threshold": "融合基因至少存在于该组？%的样本中",
+            "group_id": "样本分组方案名称",
+            "use_group": "分析方式",
+            "fusion_id": "基因融合分析结果表",
+            "group_dict": "样本分组方案详情"
+        },
+        "stem": {
+            "level": "表达量水平",
+            "number": "时序模式数目",
+            "pheno_file": "时序样本信息表",
+            "geneset_id": "基因集名称",
+            "significance": "显著趋势P值",
+            "exp_id": "表达量统计表",
+            "method": "时序聚类算法",
+            "unit": "时序间隔最大值",
+            "cluster": "时序模式数目"
+        },
+        "asprofilediff": {
+            "diff_type": "比较类型",
+            "group_id": "样本分组方案名称",
+            "group_dict": "样本分组方案详情"
+        },
+        "genesetkegg": {
+            "geneset_id": "基因集名称",
+            "level": "基因集序列类型"
+        },
+        "genesetdisgenet_rich": {
+            "el": "EL",
+            "ei": "EI",
+            "padjust_method": "多重检验校正方法",
+            "geneset_id": "基因集名称",
+            "score": "Score",
+            "dsi": "DSI",
+            "dpi": "DPI"
+        },
+        "genesetgo_rich": {
+            "level": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "anno_type": "",
+            "method": "多重检验校正方法"
+        },
+        "ppinetwork": {
+            "level": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "combine_score": "综合值前多少的互作组",
+            "species": "参考物种名称",
+            "score": "综合值"
+        },
+        "diffgenecluster": {
+            "level": "表达量水平",
+            "scm": "样本聚类算法",
+            "gcm": "基因聚类算法",
+            "level": "表达量水平",
+            "use_group": "以分组的均值分析",
+            "gcd": "基因距离算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "样本距离算法",
+            "n_clusters": "基因子聚类数目",
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "gct": "基因聚类方式",
+            "exp_id": "表达量统计表",
+            "sct": "样本聚类方式",
+            "group_id": "样本分组方案名称"
+        },
+        "tfpredict": {
+            "organism": "物种",
+            "evalue": "Evalue",
+            "E": "Hmmscan E-value",
+            "s": "转录因子数据库",
+            "blast_all": "与所有物种比对"
+        },
+        "genesetgsea": {
+            "anno_type": "该项目注释类型",
+            "group_dict": "样本分组方案详情",
+            "level": "序列类型",
+            "sub_type": "二级分类",
+            "geneset_source": "先验基因集",
+            "plot_top_x": "选择展示NES前多少的gene set",
+            "preranked": "预排序文件",
+            "genesets": "MSigDB基因集",
+            "geneset_id": "基因集名称",
+            "upload_genesets_file": "自定义基因集",
+            "permutation_type": "Permutation type",
+            "control_group": "对照组名称",
+            "c2": "MSigDB二级分类",
+            "c1": "MSigDB一级分类",
+            "anno_value": "目标ID",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "max_num": "先验基因集最大值",
+            "min_num": "先验基因集最小值",
+            "sort_method": "排序算法"
+        },
+        "genesetdo": {
+            "geneset_id": "基因集名称"
+        },
+        "wgcnamodule": {
+            "minModuleSize": "minModuleSize",
+            "power": "soft power(β值)",
+            "minKMEtoStay": "minKMEtoStay",
+            "wgcna_prepare_id": "模块预处理结果表",
+            "mergeCutHeight": "mergeCutHeight",
+            "networkType": "networkType",
+            "level": "分析水平"
+        },
+        "genesetipath": {
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "level": "分析水平"
+        },
+        "expvenn": {
+            "group_dict": "样本分组方案详情",
+            "exp_level": "表达量水平",
+            "threshold": "表达量阈值",
+            "exp_id": "表达量统计表",
+            "group_id": "样本分组方案名称",
+            "type": "序列类型"
+        },
+        "genesetreactome": {
+            "geneset_id": "基因集名称"
+        },
+        "genesetcluster": {
+            "exp_level": "表达量水平",
+            "scm": "样本聚类算法",
+            "gcm": "基因聚类算法",
+            "level": "表达量水平",
+            "use_group": "以分组的均值分析",
+            "gcd": "基因距离算法",
+            "group_dict": "样本分组方案详情",
+            "scd": "样本距离算法",
+            "n_clusters": "基因子聚类数目",
+            "geneset_type": "基因集序列类型",
+            "geneset_id": "基因集名称",
+            "gct": "基因聚类方式",
+            "exp_id": "表达量统计表",
+            "sct": "样本聚类方式",
+            "group_id": "样本分组方案名称"
+        },
+        "asprofile": {
+            "software": "分析软件"
+        }
+    },
+    "common": {
+        "task_type": "任务类型",
+        "project_sn": "项目id",
+        "submit_location": "分析模块",
+        "task_id": "任务id"
+    }
+}

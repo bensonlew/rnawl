@@ -1,0 +1,31 @@
+{   
+	"split_id": "21"
+	"sequcing_id": "01",
+    "sequcing_sn": "test_01",
+	"program": "bcl2fastq",
+	"file_path":"/mnt/ilustre/upload/miseq/m4/150807_M03152_0063_000000000-AHGPH",
+	"config": {
+	"index_mismatch":0, 
+	"ignore_missing_bcl": true,
+	"base_mask":"y301,i6,y301"
+	},
+	"parent_sample":[
+		{"sample_id": "f0001", "mj_sn": "test00001", "sample_name":"MJ20150727_1", "cus_sample_name": "MJ20150727_1", "index":"CCAACA", "lane":"1", "project":"meta", "has_child": true, "program": "miseq_split"},
+		{"sample_id": "f0002", "mj_sn":"H1506240027", "sample_name":"73", "cus_sample_name": "bei73", "index":"AGCACC","lane":"1", "project": "DNA", "has_child": false, "program": ""}],
+
+	"child_sample":[
+		{"sample_id": "c0001", "mj_sn":"H1504230126", "sample_name":"MJ20150727_1", "cus_sample_name": "1", "config":{"index":"NB67", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0002", "mj_sn":"H1504230127", "sample_name":"MJ20150727_1", "cus_sample_name": "2", "config":{"index":"NB68", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0003", "mj_sn":"H1504230128", "sample_name":"MJ20150727_1", "cus_sample_name": "3", "config":{"index":"NB69", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0004", "mj_sn":"H1504230129", "sample_name":"MJ20150727_1", "cus_sample_name": "4", "config":{"index":"NB70", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0005", "mj_sn":"H1504230130", "sample_name":"MJ20150727_1", "cus_sample_name": "5", "config":{"index":"NB71", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0006", "mj_sn":"H1504230131", "sample_name":"MJ20150727_1", "cus_sample_name": "6", "config":{"index":"NB72", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0007", "mj_sn":"H1504230132", "sample_name":"MJ20150727_1", "cus_sample_name": "7", "config":{"index":"NB49", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0008", "mj_sn":"H1504230133", "sample_name":"MJ20150727_1", "cus_sample_name": "8", "config":{"index":"NB50", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0009", "mj_sn":"H1504230134", "sample_name":"MJ20150727_1", "cus_sample_name": "9", "config":{"index":"NB51", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0010", "mj_sn":"H1504230135", "sample_name":"MJ20150727_1", "cus_sample_name": "10", "config":{"index":"NB52", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0011", "mj_sn":"H1504230136", "sample_name":"MJ20150727_1", "cus_sample_name": "11", "config":{"index":"NB53", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0012", "mj_sn":"H1504230137", "sample_name":"MJ20150727_1", "cus_sample_name": "12", "config":{"index":"NB54", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0013", "mj_sn":"H1504230138", "sample_name":"MJ20150727_1", "cus_sample_name": "13", "config":{"index":"NB55", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}},
+		{"sample_id": "c0014", "mj_sn":"H1504230139", "sample_name":"MJ20150727_1", "cus_sample_name": "14", "config":{"index":"NB56", "primer":"1737F_2043R", "index_miss":0, "primer_miss":2, "filter.min":200}}]
+	}

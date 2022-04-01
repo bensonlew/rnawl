@@ -1,0 +1,25 @@
+$def with (form)
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h1>调用测试</h1>
+
+<form method="POST" action="pipeline?cluster=isanger">
+    $:form.render()
+</form>
+</body>
+<script type="text/javascript">
+var select=document.getElementById("cluster");
+select.onchange = function test()
+  {
+
+  var form=document.getElementsByTagName("form")[0];
+   form.setAttribute("action","pipeline?cluster="+select.value)
+  }
+
+</script>
+</html>

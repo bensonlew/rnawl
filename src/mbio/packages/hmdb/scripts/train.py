@@ -1,0 +1,274 @@
+# -*- coding: utf-8 -*-
+# !/usr/bin/env python
+# __author__ = 'guhaidong'
+
+import argparse
+import numpy as np
+import pandas as pd
+from sklearn import model_selection
+# from ml import MlGroup
+
+
+def option():
+    par = argparse.ArgumentParser()
+    par.add_argument("-m", metavar='[method]',
+                     choices=['lr', 'lda', 'svm', 'bayes', 'tree', 'knn', 'randomforest', 'gradient', 'sgd', 'ada'],
+                     required=True, help='classifier method: svm,bayes,tree,knn,randomforest,gradient等')
+    par.add_argument("-i", metavar='[train_file]', required=True, help='input train file')
+    par.add_argument("-t", metavar='[file_type]', choices=['txt', 'excel'], required=False, default='txt',
+                     help='input file type')
+    par.add_argument("-g", metavar='[group_table]', help='input group_table for train, txt format')
+    par.add_argument("-model", metavar='[model]', required=False, help='train result model for classify')
+    par.add_argument("-mode", metavar='[mode]', choices=['train', 'class'], required=True,
+                     help='want to train or classify?')
+    par.add_argument("-o", metavar='[output]', help='classified output table')
+    par.add_argument("-disease", metavar='[disease]', help='disease')
+    args = par.parse_args()
+    return args
+
+
+class Train(object):
+    def __init__(self, **argv):
+        super(Train, self).__init__()
+        self.clf = ""  # 模型
+        self.x = ""
+        self.y = ""
+        self.x_train = ""
+        self.y_train = ""
+        self.x_test = ""
+        self.y_test = ""
+        self.method = argv['method']
+        self.file = argv['file']
+        self.file_type = argv['file_type']
+        self.model = argv['model']
+        self.mode = argv['mode']
+        self.disease = argv['disease']
+        print "=======CHECK GROUP FILE========"
+        if 'group' in argv.keys():
+            self.group = argv['group']
+            print "yes,%s" % self.group
+        else:
+            self.group = False
+            print "no group file,%s" % self.group
+        if 'output' in argv.keys():
+            self.output = argv['output']
+        marker_crc = [
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Lachnospiraceae;g__Roseburia;s__Roseburia_hominis",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Clostridiaceae;g__Clostridium;s__Clostridium_sp._CAG:465",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Fusobacteria;c__Fusobacteriia;o__Fusobacteriales;f__Fusobacteriaceae;g__Fusobacterium;s__Fusobacterium_nucleatum",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Verrucomicrobia;c__Verrucomicrobiae;o__Verrucomicrobiales;f__Akkermansiaceae;g__Akkermansia;s__Akkermansia_muciniphila",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Bacteroidetes;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Bacteroides;s__Bacteroides_fragilis",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Clostridiaceae;g__Clostridium;s__Clostridium_hathewayi_CAG:224",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Lachnospiraceae;g__Lachnoclostridium;s__[Clostridium]_symbiosum"
+        ]  # 需配置,CRC的marker
+        marker_t2d = [
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Ruminococcaceae;g__Ruminococcus;s__Ruminococcus_obeum_CAG:39",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Lachnospiraceae;g__Roseburia;s__Roseburia_inulinivorans_CAG:15",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Lachnospiraceae;g__Roseburia;s__Roseburia_inulinivorans",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Lachnospiraceae;g__Roseburia;s__Roseburia_intestinalis_CAG:13",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Bacteroidetes;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Bacteroides;s__Bacteroides_pectinophilus_CAG:437",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Lachnospiraceae;g__Roseburia;s__Roseburia_intestinalis",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Ruminococcaceae;g__Faecalibacterium;s__Faecalibacterium_prausnitzii",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Spirochaetes;c__Spirochaetia;o__Spirochaetales;f__Spirochaetaceae;g__Spirochaeta;s__Spirochaeta_smaragdinae"
+        ]
+        marker_obesity = [
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Ruminococcaceae;g__Faecalibacterium;s__Faecalibacterium_prausnitzii",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacteriales;f__Enterobacteriaceae;g__Escherichia;s__Escherichia_coli",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Ruminococcaceae;g__Ruminiclostridium;s__[Clostridium]_leptum",
+            "d__Bacteria;k__unclassified_d__Bacteria;p__Actinobacteria;c__Actinobacteria;o__Bifidobacteriales;f__Bifidobacteriaceae;g__Bifidobacterium;s__Bifidobacterium_pseudocatenulatum"
+            # "d__Bacteria;k__unclassified_d__Bacteria;p__Verrucomicrobia;c__Verrucomicrobiae;o__Verrucomicrobiales;f__Akkermansiaceae;g__Akkermansia;s__Akkermansia_muciniphila",
+            # "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Clostridiaceae;g__Clostridium;s__Clostridium_hathewayi_CAG:224",
+            # "d__Bacteria;k__unclassified_d__Bacteria;p__Firmicutes;c__Clostridia;o__Clostridiales;f__Lachnospiraceae;g__Lachnoclostridium;s__[Clostridium]_symbiosum"
+        ]
+        self.marker_list = {
+            'crc': marker_crc,
+            't2d': marker_t2d,
+            'obesity': marker_obesity
+        }
+        self.index_list = []  # 储存用来建模的物种
+
+    def get_train_data(self):
+        if self.file_type == 'txt':
+            data = self.get_txt()
+        elif self.file_type == 'excel':
+            data = self.get_excel()
+        # self.x,self.y = np.split(data,[len(data[0])-1,],axis=1)  # 最后一列为分类标签，此时以数字表示
+        self.y, self.x = np.split(data, [1, ], axis=1)  # 第一列为分类标签，此时以数字显示
+        self.x_train, self.x_test, self.y_train, self.y_test = model_selection.train_test_split(self.x, self.y,
+                                                                                                 test_size=0.2)
+        # print self.y_test.shape
+        # print self.y_train.shape
+
+    def get_data(self):
+        if self.file_type == 'txt':
+            data = self.get_txt()
+        elif self.file_type == 'excel':
+            data = self.get_excel()
+        self.x_test = data
+
+    def get_excel(self):
+        if self.group:
+            from ml import MlGroup
+            ml_group = MlGroup(self.group)
+            raw = pd.read_excel(self.file, header=None)
+            raw = raw.replace(ml_group.desease_hash).astype(float).drop([0], axis=1)  # 更改分类标签，去掉物种列
+        else:
+            raw = pd.read_excel(self.file, header=True)
+            raw = raw.astype(float).drop([0], axis=1)
+        data = raw.values.T
+        return data
+
+    def get_txt(self):
+        if self.mode == 'train':
+            from ml import MlGroup
+            raw = pd.read_table(self.file, header=None,low_memory=False, index_col=0)
+            raw_mark = pd.read_table(self.file, low_memory=False, index_col=0)
+            ml_group = MlGroup(self.group)
+            # raw_top = raw.replace(ml_group.desease_hash).drop([0], axis=1).astype(float)
+            raw_top = raw.replace(ml_group.desease_hash).astype(float)
+            if self.marker_list[self.disease] != []:
+                raw_mark = raw_mark[ml_group.get_sample_list(['Healthy'])].loc[self.marker_list[self.disease]]
+                mark_file = self.model.split("_")[0] + "_mark.xls"
+                raw_mark.to_csv(mark_file, sep="\t")
+            # raw_top_marker = raw_top.loc[self.marker_list]
+            self.index_list = raw_top.index.tolist()[1:]
+        else:
+            raw = pd.read_table(self.file, low_memory=False, index_col=0)
+            index_file = self.model.split("_")[0] + "_index"
+            index_table = pd.read_table(index_file, header=None, index_col=0)
+            raw_top = pd.merge(index_table, raw, right_index=True, left_index=True, how='left').fillna(0)
+            i = raw_top.columns[-1]
+            sum = raw_top[i].astype(float).sum()
+            raw_top[i] = raw_top[i].astype(float).apply(lambda x: x/sum)
+            if self.marker_list[self.disease] != []:
+                raw_top_marker = raw_top.loc[self.marker_list[self.disease]]
+                # print raw_top_marker  # 没有计算百分数
+                raw_top_marker[i].to_csv(self.output,sep="\t", header=None)
+            raw_top = raw_top[1:].drop([1],axis=1).astype(float)
+            # col_num = raw_top.columns.size
+            # for i in range(1,col_num):
+            #     sum = raw_top[i].astype(float).sum()
+            #     raw_top[i] = raw_top[i].astype(float).apply(lambda x: x/sum)
+            print raw_top.values.T
+        data = raw_top.values.T
+        # print data
+        return data
+
+    def train(self):
+        if self.method == 'lr':
+            from sklearn.linear_model import LogisticRegression
+            self.clf = LogisticRegression()
+        elif self.method == 'lda':
+            from sklearn.decomposition import LatentDirichletAllocation
+            self.clf = LatentDirichletAllocation(n_topics=30, max_iter=50, learning_method='batch')
+        elif self.method == 'svm':
+            from sklearn import svm
+            self.clf = svm.SVC(C=0.8, kernel='rbf', gamma=20, decision_function_shape='ovr')
+        elif self.method == 'bayes':
+            from sklearn import naive_bayes
+            self.clf = naive_bayes.GaussianNB()
+        elif self.method == 'tree':
+            from sklearn import tree
+            self.clf = tree.DecisionTreeClassifier(
+                criterion='gini')  # criterion = ['gini', 'information gain', 'chi-square']
+        elif self.method == 'knn':
+            from sklearn.neighbors import KNeighborsClassifier
+            self.clf = KNeighborsClassifier(n_neighbors=2)
+        elif self.method == 'randomforest':
+            from sklearn.ensemble import RandomForestClassifier
+            self.clf = RandomForestClassifier(n_estimators=600, oob_score=True, criterion="gini", min_samples_split=10, max_depth=10)
+        elif self.method == 'gradient':
+            from sklearn.ensemble import GradientBoostingClassifier
+            self.clf = GradientBoostingClassifier(n_estimators=100, learning_rate=1.0, max_depth=1, random_state=0)
+        elif self.method == 'sgd':
+            from sklearn.linear_model import SGDClassifier
+            self.clf = SGDClassifier(loss="log", alpha=0.01, max_iter=200, fit_intercept=True)
+        elif self.method == 'ada':
+            from sklearn.ensemble import AdaBoostClassifier
+            self.clf = AdaBoostClassifier(n_estimators=100)
+        fit = self.clf.fit(self.x_train, self.y_train.ravel())
+        if self.method == 'randomforest' and self.mode == 'train':
+            self.export_index(fit)
+        # from sklearn import cross_validation, metrics
+        # from sklearn import metrics
+        # print "oob_score: %f" % self.clf.oob_score_
+        #     if self.method == 'randomforest' and self.mode == "train":
+        #         print "Feature importance:" # % fit.feature_importances_
+        #         importance_table = pd.DataFrame(data={"gene": self.index_list,"importances": fit.feature_importances_.tolist()})
+        #         importance_table.sort_values(by='importances', ascending=False, inplace=True)
+        #         index_file = self.model.split("_")[0] + "_index"
+        #         importance_table.to_csv(index_file, sep="\t", index=False)
+
+    def export_index(self, return_fit):
+        print "Export Feature Importance:"
+        importance_table = pd.DataFrame(data={"gene": self.index_list,"importances": return_fit.feature_importances_.tolist()})
+        importance_table.sort_values(by='importances', ascending=False, inplace=True)
+        index_file = self.model.split("_")[0] + "_index"
+        importance_table.to_csv(index_file, sep="\t", index=False)
+
+    def test_score(self):
+        from sklearn import metrics
+        y1_predprob = self.clf.predict_proba(self.x_train)[:,1]
+        y2_predprob = self.clf.predict_proba(self.x_test)[:, 1]
+        y1_pred = self.clf.predict(self.x_train)
+        y2_pred = self.clf.predict(self.x_test)
+        print "================DEBUG================"
+        # print "name: y1_predprob, len: %s, value: %s" % (len(y1_predprob), y1_predprob)
+        # print "name: y2_predprob, len: %s, value: %s" % (len(y2_predprob), y2_predprob)
+        # print "name: y_train, len: %s, value: %s" % (len(self.y_train.ravel()), self.y_train.ravel())
+        # print "name: y_test, len: %s, value: %s" % (len(self.y_test.ravel()), self.y_test.ravel())
+        print "==============DEBUG END=============="
+        print "=========Model Test Report==========="
+        print "AUC Score (Train): %f" % metrics.roc_auc_score(self.y_train.ravel(), y1_predprob)
+        print "AUC Score (Test): %f" % metrics.roc_auc_score(self.y_test.ravel(), y2_predprob)
+        # print "F1 Score (Train): %f" % metrics.f1_score(self.y_train.ravel(), y1_pred)
+        # print "F2 Score (Test): %f" % metrics.f1_score(self.y_test.ravel(), y2_pred)
+        # print "Recall Score (Train): %f" % metrics.recall_score(self.y_train.ravel(), y1_pred)
+        # print "Recall Score (Test): %f" % metrics.recall_score(self.y_test.ravel(), y2_pred)
+        report = metrics.classification_report(self.y_test.ravel(),y2_pred, target_names=["class 0", "class 1"])
+        print report
+        print self.clf.score(self.x_train, self.y_train)
+        print self.clf.score(self.x_test, self.y_test)
+
+    def save_model(self):
+        from sklearn.externals import joblib
+        joblib.dump(self.clf, self.model, compress=3)
+
+    def save_pic(self):
+        import ml
+        save_file = self.model + '.draw'
+        # ml.combine(self.clf.predict_proba(self.x_train)[:,1], self.y_train.ravel(), save_file)
+        ml.combine(self.clf.predict_proba(self.x_train), self.y_train.ravel(), save_file)
+
+    def open_model(self):
+        from sklearn.externals import joblib
+        self.clf = joblib.load(self.model)
+
+    def predict(self):
+        result = [self.clf.predict(self.x_test), self.clf.predict_proba(self.x_test)[:,1]]
+        return result
+
+    def run(self):
+        if self.mode == 'train':
+            self.get_train_data()
+            self.train()
+            self.test_score()
+            if self.model:
+                self.save_model()
+            self.save_pic()
+            return "train done"
+        elif self.mode == 'class':
+            self.get_data()
+            self.open_model()
+            f = open(self.output,"a")
+            predict_result = self.predict()
+            print ">>>check"
+            print predict_result
+            f.write("risk_prob\t%s\n" % self.predict()[1][0])
+            f.close()
+
+
+if __name__ == "__main__":
+    opts = option()
+    train_object = Train(method=opts.m, file=opts.i, file_type=opts.t, model=opts.model, mode=opts.mode, group=opts.g, output=opts.o, disease=opts.disease)
+    print train_object.run()

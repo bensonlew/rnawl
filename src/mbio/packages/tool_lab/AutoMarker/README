@@ -1,0 +1,17 @@
+# 胶图编辑程序依赖环境说明
+——————————————————————————————————————
+# 开发环境 python3.6
+
+# 依赖包(必需)：
+opencv-python        4.5.1.48
+openpyxl             3.0.6
+pandas               1.1.5
+Pillow               8.1.0
+tensorflow           1.15.0（CPU）
+xlrd                 2.0.1
+xlwt                 1.3.0
+# 其他依赖请查看tensorflow_req.txt文件
+
+# 请确保模型和字体文件放于程序的同一目录下
+# 使用方法：
+python PicEdit.py -i [input_file] -t [input_table] -o [out_file]

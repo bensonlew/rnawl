@@ -1,0 +1,51 @@
+# -*- coding: utf-8 -*-
+# __author__ = 'zhangpeng'
+# last_modify:20170328
+import datetime
+from biocluster.config import Config
+from mainapp.models.mongo.core.base import Base
+
+import json
+
+
+class RefDiff(Base):
+    def __init__(self):
+        super(RefDiff, self).__init__(bind_object)
+        self._project_type = 'ref_rna'
+        #self.client = Config().mongo_client
+        #self.db_name = Config().MONGODB + '_ref_rna'
+        #self.db = self.client[self.db_name]
+
+    def add_express(self, rsem_dir=None, samples=None, params=None, name=None, bam_path=None, project_sn=None, task_id=None):
+        insert_data = {
+            'project_sn': project_sn,
+            'task_id': task_id,
+            'name': name if name else 'express_matrix_' + str(datetime.datetime.now().strftime("%Y%m%d_%H%M%S")),
+            'desc': '表达量计算主表',
+            'created_ts': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'params': (json.dumps(params, sort_keys=True, separators=(',', ':')) if isinstance(params, dict) else params),
+            'specimen': samples,
+            'status': 'start',
+            'bam_path': bam_path,
+        }
+        collection = self.db['sg_denovo_express']
+        express_id = collection.insert_one(insert_data).inserted_id
+        return express_id
+
+    def add_express_diff(self, params, samples=None, compare_column=None, name=None, project_sn=None, task_id=None, samples_detail=None, express_id=None):
+        insert_data = {
+            'project_sn': project_sn,
+            'task_id': task_id,
+            'name': name if name else 'gene_express_diff_stat_' + str(datetime.datetime.now().strftime("%Y%m%d_%H%M%S")),
+            'desc': '表达量差异检测主表',
+            'created_ts': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'params': (json.dumps(params, sort_keys=True, separators=(',', ':')) if isinstance(params, dict) else params),
+            'specimen': samples,
+            'status': 'start',
+            'compare_column': compare_column,
+            'group_detail': samples_detail,
+            'express_id': express_id
+        }
+        collection = self.db['sg_ref_express_diff']
+        express_diff_id = collection.insert_one(insert_data).inserted_id
+        return express_diff_id

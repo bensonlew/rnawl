@@ -1,0 +1,81 @@
+$def with (controller)
+$var title: $controller.title
+$var is_admin: $controller.is_admin
+$var username: $controller.username
+$var nav_index: $controller.nav_index
+       <div class="row">
+        <div class="col-md-12">
+          <!--breadcrumbs start -->
+          <ul class="breadcrumb">
+            <li><a href="main"><i class="fa fa-home"></i> 首页</a></li>
+            <li><a href="workflow">Workflow流程</a></li>
+            <li class="active">$controller.title</li>
+          </ul>
+          <!--breadcrumbs end -->
+        </div>
+      </div>
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="panel">
+                <header class="panel-heading">
+                  $controller.title
+                </header>
+                <div class="panel-body">
+                  <p class="text-muted">$controller.workflow_id：$controller.log_files</p>
+                  <pre><code style="height:500px" class="apilog">$:controller.code</code></pre>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+        </div>
+<div class="modal fade" tabindex="-1" role="dialog" id="ApiLogJsonModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Json Data</h4>
+      </div>
+      <div class="modal-body">
+        <pre><code class="json" style="height:400px"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<div class="modal fade" tabindex="0" role="dialog" id="urlModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">UrlEncode Data</h4>
+      </div>
+      <div class="modal-body" style="height:300px;overflow-y:scroll;">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<div class="modal fade" tabindex="-2" role="dialog" id="ApiLogURLJsonModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">UrlDecode Data</h4>
+      </div>
+      <div class="modal-body">
+        <pre><code class="json" style="height:400px"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<script type="text/javascript">
+  var start_date = '$controller.start_time';
+  var end_date = '$controller.end_time';
+</script>

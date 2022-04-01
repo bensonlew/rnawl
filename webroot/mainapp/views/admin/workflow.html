@@ -1,0 +1,265 @@
+$def with (controller)
+$var title: $controller.title
+$var is_admin: $controller.is_admin
+$var username: $controller.username
+$var nav_index: $controller.nav_index
+      <div class="row">
+        <div class="col-md-12">
+          <!--breadcrumbs start -->
+          <ul class="breadcrumb">
+            <li><a href="main"><i class="fa fa-home"></i> 首页</a></li>
+            <li class="active">$controller.title</li>
+          </ul>
+          <!--breadcrumbs end -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel">
+            <header class="panel-heading">
+              $controller.title
+            </header>
+              <ul class="nav nav-tabs" role="tablist">
+                $if controller.params.status not in ['running','queue','error','success','paused']:
+                    <li role="presentation" class="active"><a role="tab" data-toggle="tab">全部</a></li>
+                $else:
+                    <li role="presentation"><a href="workflow" role="tab">全部</a></li>
+                $if controller.params.status == "queue":
+                    <li role="presentation" class="active"><a  role="tab" data-toggle="tab">排队中</a></li>
+                $else:
+                    <li role="presentation"><a  href="workflow?status=queue" role="tab">排队中</a></li>
+                $if controller.params.status == "running":
+                    <li role="presentation" class="active"><a  role="tab" data-toggle="tab">运行中</a></li>
+                $else:
+                    <li role="presentation"><a  href="workflow?status=running" role="tab">运行中</a></li>
+                $if controller.params.status == "error":
+                    <li role="presentation" class="active"><a  role="tab" data-toggle="tab">错误</a></li>
+                $else:
+                    <li role="presentation"><a  href="workflow?status=error" role="tab">错误</a></li>
+                $if controller.params.status == "success":
+                    <li role="presentation" class="active"><a  role="tab" data-toggle="tab">成功</a></li>
+                $else:
+                    <li role="presentation"><a  href="workflow?status=success" role="tab">成功</a></li>
+                $if controller.params.status == "paused":
+                    <li role="presentation" class="active"><a  role="tab" data-toggle="tab">暂停</a></li>
+                $else:
+                    <li role="presentation"><a  href="workflow?status=paused" role="tab">暂停</a></li>
+            </ul>
+            <div class="panel-body table-responsive">
+              <form method="get">
+              <div class="row">
+                <div class="col-lg-5 pull-right">
+                  <div class="box-tools m-b-15">
+                    <div class="input-group search-type-bar">
+
+                        <div class="input-group-btn">
+                          <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RUN ID<span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a data-type="run_id">RUN ID</a></li>
+                            <li><a data-type="path">PATH</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a data-type="add_time">提交时间</a></li>
+                            <li><a data-type="run_time">开始时间</a></li>
+                            <li><a data-type="end_time">结束时间</a></li>
+                          </ul>
+                        </div>
+                        <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search" value="$controller.params.table_search"/>
+                        <div class="input-group-btn">
+                          $if controller.params.data_type:
+                            <input name="data_type" value="$controller.params.data_type" type="hidden"/>
+                          $else:
+                            <input name="data_type" value="run_id" type="hidden"/>
+                        <button class="btn btn-sm btn-default" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </form>
+              $if int(controller.list_model.total) > 0:
+                  <table class="table table-hover">
+                    <tr>
+                      <th>RUN ID</th>
+                      <th>PATH</th>
+                      <th>DIR</th>
+                      <th>JSON</th>
+                      <th>Log</th>
+                      <th>CPU/Mem</th>
+                      <th>状态</th>
+                      <th>添加</th>
+                      <th>结束</th>
+                      <th>耗时</th>
+                      <th>集群</th>
+                      <th>操作</th>
+                    </tr>
+                    $for data in controller.list_data:
+                      <tr>
+                        <td>
+                          $if data.type == "module":
+                            <i class="fa fa-maxcdn" data-toggle="tooltip" title="module直接调用"></i>
+                          $elif data.type == "tool":
+                            <i class="fa fa-tumblr" data-toggle="tooltip" title="tool直接调用"></i>
+                          $else:
+                            <i class="fa fa-wordpress" data-toggle="tooltip" title="Workflow类型调用"></i>
+                          $if data.batch_id or int(data.batch)==1:
+                            <i class="fa fa-th" data-toggle="tooltip" title="批处理子任务"></i>
+                          $if int(data.instant) == 1:
+                            <i class="fa fa-arrow-down" data-toggle="tooltip" title="即时计算任务"></i>
+                          <a href="detail?run_id=$data.workflow_id">$data.workflow_id</a></td>
+                        <td>
+                            $if data.type == "module":
+                                <button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="<a href='pymodule?cluster=$data.cluster&name=mbio.modules.$data.path'>$data.path</a>&nbsp;&nbsp;<a href='workflow?table_search=$data.path&data_type=path'>查看全部流程</a>">View</button>
+                            $elif data.type == "tool":
+                                <button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="<a href='pymodule?cluster=$data.cluster&name=mbio.tools.$data.path'>$data.path</a>&nbsp;&nbsp;<a href='workflow?table_search=$data.path&data_type=path'>查看全部流程</a>">View</button>
+                            $else:
+                                <button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="<a href='pymodule?cluster=$data.cluster&name=mbio.workflows.$data.path'>$data.path</a>&nbsp;&nbsp;<a href='workflow?table_search=$data.path&data_type=path'>查看全部流程</a>">View</button>
+
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs" data-toggle="dialog" data-content="<a target='_blank' href='/workdir/$data.work_dir_url?cluster=$data.cluster'>$data.work_dir</a>">View</button></td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs" data-wid="$data.id" data-toggle="modal" data-target="#jsonModal" aria-label="Json数据">View</button></td>
+                        <td>
+                            <a target="_blank" class="btn btn-default btn-xs" role="button" href="log?cluster=$data.cluster&id=$data.id">View</a></td>
+
+                        <td>$("%.2f" % data.cpu_used)/$("%.2f" % data.memory_used)</td>
+                        <td>
+                          $if int(data.has_run) == 0:
+                              <button type="button" class="btn btn-default btn-xs" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="运行节点:$data.server">排队中</button>
+                          $elif int(data.is_error) == 1:
+                              <button type="button" class="btn btn-danger btn-xs" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 结束时间$data.end_time, 运行节点:$data.server, PID：$data.pid,错误信息:$data.error,重运行时间:$data.rerun_time">错误</button>
+                          $elif int(data.is_end) == 1:
+                              <button type="button" class="btn btn-success btn-xs" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 结束时间$data.end_time, 运行节点:$data.server, PID：$data.pid, 重运行时间:$data.rerun_time">成功</button>
+                          $elif int(data.paused) == 1:
+                              <button type="button" class="btn btn-warning btn-xs" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 运行节点:$data.server, PID：$data.pid">暂停中</button>
+                          $elif int(data.rerun) == 1:
+                              <button type="button" class="btn btn-warning btn-xs" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 运行节点:$data.server, PID：$data.pid, 重运行时间:$data.rerun_time">重运行中</button>
+                          $else:
+                              <button type="button" class="btn btn-info btn-xs" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.run_time, 运行节点:$data.server, PID：$data.pid">运行中</button>
+                        </td>
+                        <td>$data.add_time</td><td> $data.end_time_str</td><td>$data.spend_time</td><td>$data.cluster</td>
+                        <td>
+                          $if int(data.has_run) == 0:
+                            <a></a>
+                          $elif int(data.is_error) == 1:
+                              <a class="btn btn-primary control-rerun btn-xs" data-wid="$data.id" data-url="rerun?cluster=$data.cluster" data-toggle="modal" data-target="#rerunModal" aria-label="重运行"><i class="fa fa-refresh" aria-hidden="true"></i>重运行</a>
+                          $elif int(data.is_end) == 1:
+                              <a class="btn btn-primary control-rerun btn-xs" data-wid="$data.id" data-url="rerun?cluster=$data.cluster" data-toggle="modal" data-target="#rerunModal" aria-label="重运行"><i class="fa fa-refresh" aria-hidden="true"></i>重运行</a>
+                          $elif int(data.paused) == 1:
+                              <a class="btn btn-danger control-stop btn-xs" data-wid="$data.id" data-url="rerun?cluster=$data.cluster" data-workflow="$data.workflow_id" data-client="$data.client"  aria-label="终止"><i class="fa fa-stop" aria-hidden="true"></i>终止</a>
+                              <a class="btn btn-success control-continue btn-xs" data-wid="$data.id" data-workflow="$data.workflow_id" data-client="$data.client" aria-label="继续"><i class="fa fa-forward" aria-hidden="true"></i>继续</a>
+                          $else:
+                              <a class="btn btn-danger control-stop btn-xs" data-wid="$data.id" data-url="rerun?cluster=$data.cluster" data-workflow="$data.workflow_id" data-client="$data.client" aria-label="终止"><i class="fa fa-stop" aria-hidden="true"></i>终止</a>
+                              <a class="btn btn-warning control-pause btn-xs" data-wid="$data.id" data-url="rerun?cluster=$data.cluster" data-workflow="$data.workflow_id" data-client="$data.client" aria-label="暂停"><i class="fa fa-pause" aria-hidden="true"></i>暂停</a>
+                        </td>
+                      </tr>
+                  </table>
+                  <div class="table-foot">
+                    <h6>第<span class="badge"> $controller.current_page </span>页,共 $controller.list_model.total_page 页
+                      ,共 $controller.list_model.total 条记录</h6>
+                    $:controller.pager.get_pager()
+                  </div>
+              $else:
+                  <div class="table-foot">没有数据！</div>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+        </div>
+      </div>
+
+<div class="modal fade" id="rerunModal" tabindex="-1" role="dialog" aria-labelledby="rerunModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><a class="btn btn-warning"><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i>警告</a></h4>
+      </div>
+      <div class="modal-body">
+          <div class="alert alert-warning" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              重运行只能用于如下情况：需要长时间运行的流程、因代码错误或添加新功能时跳过已运行部分用于节省时间。如果未作任何修改，错误不会自动修正，还是会出现同样的错误！<br/>
+              重运行的流程会在原工作目录下运行，并将所有指定的Tool跳过投递运行步骤而直接结束，且利用之前运行的结果，但其他部分代码(Workflow/Module/Agent等)都会正常运行。所以重运行时必须确保原目录数据并未改动。<br/>
+              重运行并不会处理文件重复冲突，数据库重复冲突等，需要你在编程时考虑这些问题。<br/>
+              重运行并不会在本系统中做任何更改，因此你在页面上看不到任何变化，你需要自行跟踪日志文件。
+          </div>
+          <div class="alert alert-danger" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              请注意：批处理流程的重运行会导致所有子流程重新投递运行,如果你不需要重运行部分子流程，你需要逐个重运行子流程，并在程序逻辑中自行判断子流程状态。</strong><br/>
+          </div>
+
+        <form class="form-horizontal" id="rerun-form">
+              <div class="form-group">
+                <label for="step_names" class="col-sm-2 control-label">Steps</label>
+                <div class="col-sm-10">
+                  <input type="text" name="step_names" class="form-control" id="step_names" placeholder="需要跳过的步骤名，多个使用逗号分割"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input name="skip_all" value=1 type="checkbox" checked/> 跳过所有正常完成的Tool
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="api_path" class="col-sm-2 control-label">API</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" name="api_path" id="api_path" placeholder="Update_status API的自动加载路径,空表示使用原设置,None表示不更新状态"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input name="import_data" value=1 type="checkbox" checked/> 是否导入Report Data,只对@report_check修饰过的方法生效
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input name="import_end" value=1 type="checkbox" checked/> 运行结束后再导入Report Data,只对@report_check修饰过的方法生效
+                    </label>
+                  </div>
+                </div>
+              </div>
+            <input name="wid" value=0 type="hidden"/>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary submit">确定重运行</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="jsonModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Json Data</h4>
+      </div>
+      <div class="modal-body">
+        <pre><code class="json" style="height:400px" id="jsoncode">
+        </code></pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<script type="text/javascript">
+
+  var search_key = "$controller.params.table_search"
+  var time_from = "$controller.params.time_from"
+  var time_to = "$controller.params.time_to"
+
+</script>

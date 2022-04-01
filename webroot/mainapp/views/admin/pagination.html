@@ -1,0 +1,18 @@
+$def with (pager)
+<ul class="pagination pagination-sm no-margin pull-right">
+  <li><a href="$:pager.url(1)">首页</a></li>
+  $if pager.current_page == 1:
+    <li class="disabled"><span><span aria-hidden="true">上一页</span></span></li>
+  $else:
+    <li><a href="$:pager.url(pager.previous)"><span aria-hidden="true">上一页</span></a></li>
+  $for i in pager.page_list:
+    $if pager.current_page == i:
+      <li class="active"><span>$i<span class="sr-only"></span></span></li>
+    $else:
+      <li><a href="$:pager.url(i)">$i</a></li>
+  $if pager.current_page == pager.last:
+      <li class="disabled"><span><span aria-hidden="true">下一页</span></span></li>
+  $else:
+      <li><a href="$:pager.url(pager.next_page)"><span aria-hidden="true">下一页</span></a></li>
+  <li><a href="$:pager.url(pager.last)">尾页</a></li>
+</ul>

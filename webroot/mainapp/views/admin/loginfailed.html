@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>登陆失败</title>
+    <meta http-equiv= "Refresh" content="5;url=/admin/login">
+  </head>
+  <body>
+    <table>
+        <tr><td colspan="3"><h2>登陆失败，请返回登陆页面重试！</h2></td> </tr>
+        <tr>
+        <td>该页面将在 </td>
+        <td> <strong><div id= "time"> 5 </div></strong> </td>
+        <td>秒后自动跳转 </td>
+        </tr>
+    </table>
+
+    <script language="javascript">
+        var times=6;
+        clock();
+        function clock()
+        {
+            window.setTimeout('clock()',1000);
+            times=times-1;
+            time.innerHTML =times;
+        }
+    </script>
+  </body>
+ </html>

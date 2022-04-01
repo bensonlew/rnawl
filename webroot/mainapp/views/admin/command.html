@@ -1,0 +1,61 @@
+$def with (controller)
+$var title: $controller.title
+$var is_admin: $controller.is_admin
+$var username: $controller.username
+$var nav_index: $controller.nav_index
+      <div class="row">
+        <div class="col-md-12">
+          <!--breadcrumbs start -->
+          <ul class="breadcrumb">
+            <li><a href="main"><i class="fa fa-home"></i> 首页</a></li>
+            <li class="active">$controller.title</li>
+          </ul>
+          <!--breadcrumbs end -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel">
+            <header class="panel-heading">
+              $controller.title
+            </header>
+            <div class="panel-body table-responsive">
+              $if int(controller.list_model.total) > 0:
+                  <table class="table table-hover">
+                    <tr>
+                      <th>Name</th>
+                      <th>CMD</th>
+                      <th>PID</th>
+                      <th>开始时间</th>
+                      <th>结束时间</th>
+                      <th>最大使用</th>
+                      <th>平均使用</th>
+                      <th>子进程</th>
+                      <th>次数</th>
+                      <th>返回码</th>
+                    </tr>
+                    $for data in controller.list_data:
+                        <tr>
+                        <td><i class="fa fa-hand-o-right" aria-hidden="true" data-toggle="tooltip" title="Command命令"></i>$data.name<a href="detail?run_id=$data.parent_run_id" role="button" target="_blank" class="btn btn-default btn-xs">Tool</a></td>
+                        <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog-cmd" data-content="$data.cmd">View</button></td>
+                         <td>$data.main_pid</td>
+                        <td>$data.start_time</td>
+                        <td>$data.end_time</td>
+                        <td>$("%.3f" % data.cpu_used)/$data.mem_used</td>
+                        <td>$("%.3f" % data.avg_cpu_used)/$data.avg_mem_used</td>
+                        <td>$data.sub_process_num</td>
+                        <td>$data.run_times</td>
+                        <td>$data.return_code</tr>
+                  </table>
+                  <div class="table-foot">
+                    <h6>第<span class="badge"> $controller.current_page </span>页,共 $controller.list_model.total_page 页
+                      ,共 $controller.list_model.total 条记录</h6>
+                    $:controller.pager.get_pager()
+                  </div>
+              $else:
+                  <div class="table-foot">没有数据！</div>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+        </div>
+      </div>

@@ -1,0 +1,108 @@
+$def with (controller)
+$var title: $controller.title
+$var is_admin: $controller.is_admin
+$var username: $controller.username
+$var nav_index: $controller.nav_index
+      <div class="row">
+        <div class="col-md-12">
+          <!--breadcrumbs start -->
+          <ul class="breadcrumb">
+            <li><a href="main"><i class="fa fa-home"></i> 首页</a></li>
+            <li class="active">$controller.title</li>
+          </ul>
+          <!--breadcrumbs end -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel">
+            <header class="panel-heading">
+              $controller.title
+            </header>
+            <div class="panel-body table-responsive">
+              <form method="get">
+              <div class="row">
+                <div class="col-lg-5 pull-right">
+                  <div class="box-tools m-b-15">
+                    <div class="input-group search-type-bar">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RUN ID<span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a data-type="run_id">RUN ID</a></li>
+                            <li><a data-type="path">PATH</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a data-type="run_time">开始时间</a></li>
+                            <li><a data-type="end_time">结束时间</a></li>
+                          </ul>
+                        </div>
+                        <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search" value="$controller.params.table_search"/>
+                        <div class="input-group-btn">
+                          $if controller.params.data_type:
+                            <input name="data_type" value="$controller.params.data_type" type="hidden"/>
+                          $else:
+                            <input name="data_type" value="run_id" type="hidden"/>
+                        <button class="btn btn-sm btn-default" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </form>
+              $if int(controller.list_model.total) > 0:
+                  <table class="table table-hover">
+                    <tr>
+                      <th>RUN ID</th>
+                      <th>PATH</th>
+                      <th>DIR</th>
+                      <th>LOG</th>
+                      <th>资源</th>
+                      <th>W/Q/R(秒)</th>
+                      <th>Request</th>
+                      <th>最大使用</th>
+                      <th>平均使用</th>
+                      <th>Host</th>
+                      <th>次数</th>
+                      <th>状态</th>
+                    </tr>
+                    $for data in controller.list_data:
+                        <tr>
+                        <td><i class="fa fa-tumblr" aria-hidden="true" data-toggle="tooltip" title="Tool工具"></i><a href="detail?run_id=$data.run_id" data-toggle="tooltip" title="$data.run_id">$data.short_name</a></td>
+                        <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog-path" data-content="<a href='pymodule?name=$data.path'>$data.path</a>&nbsp;&nbsp;<a href='tool?table_search=$data.path&data_type=path'>查看全部</a>">View</button></td>
+                        <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog" data-content="<a target='_blank' href='/workdir/$data.work_dir_url'>$data.work_dir</a>">View</button></td>
+                        <td><a target="_blank" class="btn btn-default btn-xs" role="button" href="log?id=$data.id&type=tool">View</a></td>
+                        <td><button type="button" class="btn btn-default btn-xs" data-toggle="dialog" data-content="<a target='_blank' href='/workdir/$data.work_dir_url/All_resource.txt'>$data.work_dir/All_resource.txt</a>">View</button></td>
+                        <td>$data.wait_spend_time/$data.queue_spend_time/$data.run_spend_time
+                        $if data.run_spend_time > 18000:
+                            <button type="button" class="btn btn-danger btn-xs" data-toggle="tooltip" title="运行时间过长，请设法优化程序运行！"><i class="fa fa-bell" aria-hidden="true"></i></button>
+                        </td>
+                        <td>$data.request_cpu/$data.request_memory</td>
+                        <td>$("%.3f" % data.cpu_used)/$data.mem_used
+                        $if data.resource_alert:
+                            <button type="button" class="btn btn-danger btn-xs" data-toggle="tooltip" title="$data.resource_alert"><i class="fa fa-close" aria-hidden="true"></i></button>
+                        </td>
+                        <td>$("%.3f" % data.avg_cpu_used)/$data.avg_mem_used</td>
+                        <td>$data.run_host</td>
+                        <td>$data.run_times</td>
+                        $if int(data.success) != 1:
+                            <td><button type="button" class="btn btn-danger btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.start_time, 结束时间$data.end_time, 运行节点:$data.run_host,任务类型：$data.job_type , Job ID：$data.job_id, 主进程ID：$data.process_id, 子进程数：$data.sub_process_num,错误信息:$data.info">错误</button></td>
+                        $else:
+                            <td><button type="button" class="btn btn-info btn-xs" data-placement="left" data-toggle="popover" data-trigger="focus" title="更多详情"  data-content="开始时间$data.start_time, 结束时间$data.end_time, 运行节点:$data.run_host,任务类型：$data.job_type , Job ID：$data.job_id, 主进程ID：$data.process_id, 子进程数：$data.sub_process_num">查看</button></td>
+                        </tr>
+                  </table>
+                  <div class="table-foot">
+                    <h6>第<span class="badge"> $controller.current_page </span>页,共 $controller.list_model.total_page 页
+                      ,共 $controller.list_model.total 条记录</h6>
+                    $:controller.pager.get_pager()
+                  </div>
+              $else:
+                  <div class="table-foot">没有数据！</div>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+        </div>
+      </div>
+<script type="text/javascript">
+  var search_key = "$controller.params.table_search"
+  var time_from = "$controller.params.time_from"
+  var time_to = "$controller.params.time_to"
+</script>
