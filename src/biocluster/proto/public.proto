@@ -1,0 +1,18 @@
+
+syntax = "proto3";
+
+package public;
+
+option go_package = ".;wfmpb";
+// 传递workflow信息
+message  Workflow {
+    bool instant = 1;
+    string workflow_id = 2;
+    int32 process_id = 3;
+}
+
+// 是否成功
+message Success {
+    bool ok = 1;
+    string reason = 2;
+}

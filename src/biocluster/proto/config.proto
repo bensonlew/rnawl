@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package configserver;
+
+option go_package = ".;wfmpb";
+
+service ConfigServer {
+    rpc GetProjectBucket(ProjectType) returns (RegionBucket) {};
+    rpc GetMongoDB(DBType) returns (MongoDBInfo) {};
+    rpc GetRgwAccount(BucketInfo) returns (RgwAccount) {};
+    rpc GetBucketFromPath(Path) returns (RegionBucket) {};
+    rpc GetWebAuth(ProjectType) returns (WebAuth) {};
+}
+
+message ProjectType {
+    string type = 1;
+}
+
+message RegionBucket {
+    string url = 1;
+}
+
+message BucketInfo {
+    string region = 1;
+    string bucket = 2;
+}
+
+message RgwAccount {
+    string host = 1;
+    int32 port = 2;
+    bool issecure = 3;
+    string accesskey = 4;
+    string secretkey = 5; 
+}
+
+message WebAuth {
+    string key = 1;
+    string client = 2;
+    string bindsid =3;
+    int32 interfaceid =4;
+    string envname =5;
+    string url = 6;
+}
+
+message DBType {
+    string type = 1;
+    string version = 2;
+    string projectid = 3;
+}
+
+message MongoDBInfo {
+    string uri = 1;
+    string dbname = 2;
+    string refuri = 3;
+    string refdbname = 4;
+}
+
+message Path {
+    string path = 1;
+}

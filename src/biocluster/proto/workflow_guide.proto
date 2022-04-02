@@ -1,0 +1,155 @@
+//用于WFM与Workflow通信格式标准
+syntax = "proto3";
+
+package workflowguid;
+
+option go_package = ".;wfmpb";
+
+import "public.proto";
+
+// 定义Workflow运行过程中与WFM的通信协议 
+service WorkflowGuide {
+    // 获取最新的与workflow相关的tool状态信息,当收到WFM的signal信号时执行
+    // 当WFM多次通知，但是workflow无响应时，可以任务workflow被卡死
+    rpc GetToolsStates(public.Workflow) returns (stream State) {}
+    // WFM对于超过2小时没有任何通信发生,且没有Tool或子任务运行的workflow(非即时任务),认为其发生死循环等异常情况,将强制终止
+    // 对于进行IO阻塞需要超过2小时的情况(如大规模导表等),则需要在workflow中执行stop_timeout_check方法来阻止WFM强制终止进程情况的发生
+    // StopTimeout告诉WFM,停止对该workflow进行超时检测和强制终止
+    rpc StopTimeoutCheck(public.Workflow) returns (public.Success) {}
+    // 发送步骤信息
+    rpc SendStep(Step) returns (public.Success) {}
+    // 更新状态
+    rpc Update(Status) returns (public.Success) {}
+    // 获取运行配置
+    rpc GetRunInfo(public.Workflow) returns(RunConfig){}
+    // 提交Batch并返回BatchID,对于重运行的任务,自动根据Path和参数匹配到原ID,并返回原BatchID
+    rpc AddBatch(Batch) returns (BatchID){}
+    // 提交tool任务    
+    rpc Submit(Job) returns (JobSuccess) {}
+    // 删除tool任务
+    rpc Delete(Tool) returns (public.Success) {}
+}
+
+// 给NTM发送即时tool任务
+service NtmJob {
+    rpc Submit(Job) returns (JobSuccess) {}
+    rpc StopWork(public.Workflow) returns (public.Success) {}
+}
+
+// tool状态信息
+message State{
+    string workflow_id = 1;
+    string tool_id = 2;
+    string state = 3;
+    int32 jobid = 4;
+    string jobtype = 5;
+    int32 process_id = 6;
+    string host = 7;
+    int32 version = 8;
+    bytes data = 9;
+}
+
+
+// 步骤信息
+message Step {
+    string task_id = 1;
+    string api = 2;
+    int32 process_id =3;
+    string update_info = 4;
+    bytes data = 5;
+    int32 dbversion = 6;
+    int64 api_id = 7;
+    int64 workflowRecordID = 8;
+    int32 index = 9;
+}
+
+
+// 流程状态信息
+
+message Status {
+    enum Statu {
+        // 正常结束
+        end = 0; 
+        // 运行出现错误
+        error = 1;
+        // 接收到终止指令退出运行
+        stop = 2;
+        // 暂停运行
+        pause = 3;
+        // 退出暂停恢复运行
+        continue = 4;
+        // 暂停超时退出运行
+        // pause_timeout = 5;
+        start = 5;
+    }
+    Statu statu = 1;
+    public.Workflow workflow = 2;
+    bytes message = 3;
+}
+
+
+// 任务
+message Job {
+    bool instant = 1;
+    string workflow_id = 2;
+    int32 process_id = 3;
+    string tool_id = 4;
+    string job_name = 5;
+    string work_dir = 6;
+    int32 cpu = 7;
+    string memory = 8;
+    string queue = 9;
+    int32 version = 11;
+    string toolname = 12;
+    string py_version = 13;
+    string cluster = 14;
+}
+
+message JobSuccess {
+    bool ok = 1;
+    bool skip = 2;
+    string reason = 3;    
+}
+
+// Tool任务
+message Tool {
+    string tool_id = 1;
+    string workflow_id = 2;
+    int32 process_id = 3;
+    string reason = 4;
+    int32 version = 5;
+}
+
+// 运行配置
+message RunConfig {
+    string platform = 1;
+    string defaut_queue = 2;
+    string workspace = 3;
+    string software_dir = 4;
+    string script_dir = 5;
+    string package_dir = 6;
+}
+
+// batch 
+message Batch{
+    string parent = 1;
+    // path
+    string name = 2;
+    // batch  type 
+    string type = 3;
+    string UPDATE_STATUS_API = 4;
+    bool IMPORT_REPORT_DATA = 5;
+    bool IMPORT_REPORT_AFTER_END = 6;
+    string output = 7;
+    bytes options = 8;
+    int32 dbversion = 9;
+}
+
+//batch id
+message BatchID{
+    bool ok = 1;
+    string reason = 2;
+    string batch_id = 3;
+    string workdir =4;
+    bool skip = 5;
+}

@@ -1,0 +1,54 @@
+
+syntax = "proto3";
+
+package filetrans;
+
+option go_package = ".;wfmpb";
+import "public.proto";
+
+service FileTransServer {
+    // 批量下载请求, 允许下载文件夹
+    rpc Trans(FileTrans) returns (public.Success) {}
+    // 等待所有传输任务完成
+    rpc Wait(WorkflowOrTool) returns (stream Progress) {}
+    // 批量下载文件,不接受文件夹
+    rpc TransFile(stream FileTrans) returns (public.Success) {}
+}
+
+message FileTrans {
+    string workflow_id = 1;
+    // tool_id 可以为空
+    string tool_id = 2;
+    string host = 3;
+    int32 processid = 4;
+    // true upload false download
+    bool upload = 5; 
+    string frompath = 6;
+    string topath = 7;
+    string basepath = 8;
+    bool usecache = 9;
+}
+
+
+message Progress {
+    int32 total = 1;
+    int64 total_size = 2;
+    int32 trans_number = 3;
+    int64 trans_size = 4;
+    int64 cache_size = 5;
+    int32 cache_number = 6;
+    int64 error_size = 7;
+    int32 error_number = 8;
+    bool end = 9;
+    string info = 10;
+    int64 speed = 11;
+}
+
+
+message WorkflowOrTool {
+    string workflow_id = 1;
+    // tool_id 可以为空
+    string tool_id = 2;
+    string host = 3;
+    int32 processid = 4;
+}

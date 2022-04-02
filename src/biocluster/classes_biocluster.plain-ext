@@ -1,0 +1,148 @@
+graph 1 140.81 38.333
+node "biocluster.api.database.base.ApiManager" 26.889 19.056 5.4444 2.4306 "{ApiManager|call_record\ldebug : bool\lplay_mode\l|add_call_record(api_name, func_name, args, kwargs)\lapi(name)\ldel_api(name)\lget_\
+call_records_list()\lload_call_records_list(record_list)\lplay()\l}" solid record black black
+node "biocluster.api.database.base.Base" 20.542 19.056 3.3194 2.0139 "{Base|bind_object\ldb\lmanager : NoneType\lpath\lproject_type\lref_db\l|set_project_type_as_workflow()\l}" solid record black black
+node "biocluster.basic.Basic" 39.139 27.194 5.7222 8.0556 "{Basic|IMPORT_REPORT_AFTER_END : bool\lIMPORT_REPORT_DATA : bool\lUPDATE_STATUS_API : NoneType\lapi\lchildren\ldebug\lfullname\lid\llogger\lname\loutput_\
+dir\lparent\lsem : BoundedSemaphore, _AtomicBoundedSemaphore\lsheet\lstage_id : NoneType\lstep\lupload_dir\lwork_dir\l|add_child()\ladd_\
+option(option)\ladd_result_mapping(mapping, cover)\ladd_upload_dir(dir_path)\lcheck_options()\lclone_upload_dir_from(obj)\lcreate_\
+work_dir()\lend()\lget_option_object(name)\lget_upload_files()\lget_workflow()\llink(from_path, to_path, cover)\lon_rely(rely, func, \
+data)\loption(name, value)\lrun()\lrun_check_options()\lset_error(value, variables, code)\lset_options(options)\l}" solid record black black
+node "biocluster.batch.Batch" 51.403 19.056 2.2361 3.2639 "{Batch|actor\lconfig\lhas_run\lid\llogger\lversion : int\lwork_dir\l|end(data)\lerror(data)\lget_workflow()\lrun()\lset_options(\
+options)\lset_run()\l}" solid record black black
+node "biocluster.core.function.CJsonEncoder" 39.153 2.7778 1.6111 0.98611 "{CJsonEncoder|\l|default(obj)\l}" solid record black black
+node "biocluster.api.database.base.CallRecord" 41.792 2.7778 1.5 2.2222 "{CallRecord|api_manager\lapi_name\largs\lfunc_name\lkwargs\lreturn_value\l|get_record()\lrun()\l}" solid record black black
+node "biocluster.core.exceptions.CodeError" 37.222 37.118 3.3611 1.8056 "{CodeError|bind_object : NoneType\lcode\linfo\lvalue : str\lvariables : NoneType, tuple, str\l|json()\l}" solid record black black
+node "biocluster.command.Command" 44.542 2.7778 2.6667 5.5556 "{Command|cmd\lconfig\ldefault_return_code : int\lend_time\lhas_run\lignore_error : bool\lis_end\lis_error\lis_running\lname\lpid\lreturn_\
+code\lrun_times\lsoftware_dir\lstart_time\lsub_process_num\lthreading_lock : lock\ltool\lwork_dir\l|join_thread()\lkill()\lrerun()\lrun()\lset_\
+cmd(cmd)\l}" solid record black black
+node "biocluster.config.Config" 12.861 10.708 7.9444 8.8889 "{Config|DBVersion : NoneType\lJOB_PLATFORM : str\lJOB_QUEUE : str\lPACKAGE_DIR : str\lPROJECT_TYPE : str\lProjectID : str\lRGW_ENABLE : \
+bool\lSCRIPT_DIR : str\lSOFTWARE_DIR\lWFM_INSTANT_TIMEOUT : int\lWFM_SUBMIT_TIMEOUT : int\lWORK_DIR\lbiodb_mongo_client\lcurrent_\
+mode : NoneType, str\lcurrent_tool_id : str\lcurrent_workflow_id : str\lget_workdir_time : int\lmongo_client\lntm_port : NoneType, \
+int\lrcf\lwfm_port : int, NoneType\lwpm_user\l|convert_path_to_http(path)\lconvert_real_path(path)\lget_api_type(client)\lget_bucket_\
+from_path(path)\lget_convert_list()\lget_file_type(file_path)\lget_mongo_client(mtype, ref, db_version)\lget_mongo_client_type(mtype, \
+ref, db_version)\lget_mongo_dbname(mtype, ref, db_version)\lget_netdata_config(type_name)\lget_netdata_lib(type_name)\lget_project_\
+region_bucket(project_type)\lget_rgw_conn(region, bucket, new)\lget_webauth(ptype)\lget_work_dir()\linit_config(project_type, workflow_\
+id, wfm_grpc_port, instant, ntm_grpc_port)\linit_config_from_data(wsheet, workflow_id)\linit_current_tool_id(tool_id)\l}" solid record black black
+node "biocluster.proto.config_pb2_grpc.ConfigServerServicer" 48.347 2.7778 4.0278 1.8194 "{ConfigServerServicer|\l|GetBucketFromPath(request, context)\lGetMongoDB(request, context)\lGetProjectBucket(request, context)\lGetRgwAccount(\
+request, context)\lGetWebAuth(request, context)\l}" solid record black black
+node "biocluster.proto.config_pb2_grpc.ConfigServerStub" 51.833 2.7778 2.25 1.8056 "{ConfigServerStub|GetBucketFromPath\lGetMongoDB\lGetProjectBucket\lGetRgwAccount\lGetWebAuth\l|}" solid record black black
+node "biocluster.iofile.Directory" 54.597 2.7778 2.6667 1.8056 "{Directory|file_number\lfiles\l|add_files(file_type, path)\lcheck()\lget_info()\lget_size()\l}" solid record black black
+node "biocluster.core.exceptions.Error" 63.028 10.708 0.77778 0.97222 "{Error|value\l|}" solid record black black
+node "biocluster.core.event.EventHandler" 70.139 2.7778 2.9722 2.2222 "{EventHandler|is_start\lname\lparent : NoneType\l|bind(func, bindobject, data)\lfire(para)\lrestart()\lstart()\lstop()\l}" solid record black black
+node "biocluster.core.event.EventObject" 40.139 33.667 2.7639 3.0556 "{EventObject|events : dict\lis_end\lis_start\l|add_event(event, loop)\lcheck_event_name(name)\lfire(name, para)\lon(name, func, \
+data)\lrestart_listener()\lset_end()\lstart_listener()\lstop_listener()\lwait()\l}" solid record black black
+node "biocluster.core.exceptions.EventStopError" 59.486 2.7778 1.8194 0.98611 "{EventStopError|\l|}" solid record black black
+node "biocluster.core.exceptions.ExitError" 61.236 2.7778 1.1806 0.98611 "{ExitError|\l|}" solid record black black
+node "biocluster.iofile.File" 57.25 2.7778 2.1389 2.8472 "{File|gzip_path\lis_gzip\lungzip_path\l|check()\lget_first_lines(line)\lget_last_lines(line)\lget_md5()\lget_reader()\lget_size()\lgzip()\lungzip()\l}" solid record black black
+node "biocluster.iofile.FileBase" 55.931 10.708 2.8333 3.2639 "{FileBase|api\lformat\lis_set\loption : NoneType\lparent : NoneType\lpath\lprop\lsize\l|check()\lget_info()\llink(link_path)\lset_\
+path(path)\lset_property(name, value)\l}" solid record black black
+node "biocluster.core.exceptions.FileError" 43.056 33.667 2.5556 1.3889 "{FileError|bind_object : NoneType\lfile_name : NoneType\loption : NoneType\l|json()\l}" solid record black black
+node "biocluster.proto.filetrans_pb2_grpc.FileTransServerServicer" 73.764 2.7778 3.7778 1.4028 "{FileTransServerServicer|\l|Trans(request, context)\lTransFile(request_iterator, context)\lWait(request, context)\l}" solid record black black
+node "biocluster.proto.filetrans_pb2_grpc.FileTransServerStub" 77.056 2.7778 2.3056 1.3889 "{FileTransServerStub|Trans\lTransFile\lWait\l|}" solid record black black
+node "biocluster.api.file.fileapicache.Fileapicache" 6.4167 27.194 4.1111 2.4306 "{Fileapicache|config\llogger : RootLogger, Logger, NoneType\ltransfer\ltype_name\l|download(to_path)\lfile_iter(file_list, upload)\lget_\
+file_list()\lget_sig()\lupload(from_path)\l}" solid record black black
+node "biocluster.api.file.filelistcache.Filelistcache" 2.0556 27.194 4.1111 2.0139 "{Filelistcache|config\llogger : Logger, RootLogger, NoneType\ltransfer\ltype_name\l|download(to_path)\lfile_iter(file_list, upload)\lupload(\
+from_path)\l}" solid record black black
+node "biocluster.iofile.GZipTool" 80.653 2.7778 4.3889 1.5972 "{GZipTool|buf_size\lfin : TextIOWrapper, GzipFile, NoneType\lfout : NoneType, TextIOWrapper, GzipFile\l|compress(src, dst)\ldecompress(\
+gz_file, dst)\l}" solid record black black
+node "biocluster.api.file.httpcache.Httpcache" 10.792 27.194 4.1389 2.0139 "{Httpcache|config\llogger : Logger, NoneType, RootLogger\ltransfer\ltype_name\l|download(to_path)\lfile_iter(file_list, upload)\lupload(\
+from_path)\l}" solid record black black
+node "biocluster.core.actor.LocalActor" 51.403 10.708 5.7222 1.8056 "{LocalActor|auto_break : bool\lrunning : bool\lsem : BoundedSemaphore, _AtomicBoundedSemaphore\lskip : bool\l|close()\lreceive(message)\l}" solid record black black
+node "biocluster.core.event.LoopEventHandler" 84.583 2.7778 2.9722 2.2222 "{LoopEventHandler|is_start\lname\lparent : NoneType\l|bind(func, bindobject, data)\lfire(para)\lrestart()\lstart()\lstop()\l}" solid record black black
+node "biocluster.core.exceptions.MaxLengthError" 63.028 2.7778 1.9028 0.98611 "{MaxLengthError|\l|}" solid record black black
+node "biocluster.module.Module" 42.847 19.056 2.4028 2.4444 "{Module|\l|add_module(path)\ladd_tool(path)\ladd_tool_report(data)\lcount_used()\lend()\lfind_tool_by_id(toolid)\lget_report_data()\lrun()\l}" solid record black black
+node "biocluster.api.file.lib.transfer.MultiFileTransfer" 8.6806 19.056 4.7778 1.8056 "{MultiFileTransfer|config\llogger : RootLogger, NoneType, Logger\l|add_download(from_path, to_path, base_path)\ladd_upload(from_\
+path, to_path, base_path)\lperform()\ltrans_file(file_iter)\l}" solid record black black
+node "biocluster.proto.workflow_guide_pb2_grpc.NtmJobServicer" 87.819 2.7778 2.9861 1.1944 "{NtmJobServicer|\l|StopWork(request, context)\lSubmit(request, context)\l}" solid record black black
+node "biocluster.proto.workflow_guide_pb2_grpc.NtmJobStub" 90.292 2.7778 1.4444 1.1806 "{NtmJobStub|StopWork\lSubmit\l|}" solid record black black
+node "biocluster.option.Option" 43.042 37.118 2.3194 2.4306 "{Option|bind_obj : NoneType\lcheck\lformat\lformat_list\lis_set\lname\ltype\lvalue\l|run_file_check(name)\l}" solid record black black
+node "biocluster.core.exceptions.OptionError" 37.222 33.667 2.5556 1.1806 "{OptionError|bind_object : NoneType\loption : NoneType\l|json()\l}" solid record black black
+node "biocluster.package.Package" 92.611 2.7778 2.6944 2.4306 "{Package|class_name\lmodule\lname\lprocesses\ltool\l|run()\lrun_function(func_name)\lrun_method(func_name)\lwait()\l}" solid record black black
+node "biocluster.package.PackageBase" 95.931 2.7778 3.4306 1.1806 "{PackageBase|tool\l|run()\lset_error(value, variables, code)\l}" solid record black black
+node "biocluster.package.PackageManager" 17.431 19.056 2.4028 1.3889 "{PackageManager|packages\l|add_package(pkg)\lget(path, class_name)\lwait()\l}" solid record black black
+node "biocluster.package.PackageProcess" 98.806 2.7778 1.8194 1.8056 "{PackageProcess|error_info\lpackage\l|is_alive()\lis_error()\ljoin(timeout)\lrun()\l}" solid record black black
+node "biocluster.rpc.RPC" 35.625 10.708 3.1944 1.4028 "{RPC|\l|close()\lget_tool_state(signum, frame)\lrun()\l}" solid record black black
+node "biocluster.basic.Rely" 102.83 2.7778 5.7222 1.8056 "{Rely|name\lrely\lsatisfy\lsem : BoundedSemaphore, _AtomicBoundedSemaphore\lsem : _AtomicBoundedSemaphore, BoundedSemaphore\l|}" solid record black black
+node "biocluster.core.actor.RemoteData" 23.181 19.056 1.4583 1.4028 "{RemoteData|\l|load()\lsave()\lsync(tag)\l}" solid record black black
+node "biocluster.api.file.remote.RemoteFile" 15.181 33.667 2.0694 1.3889 "{RemoteFile|path\ltype\l|download(to_path)\lupload(from_path)\l}" solid record black black
+node "biocluster.api.file.remote.RemoteFileManager" 14.847 19.056 2.25 2.2222 "{RemoteFileManager|config\lfile_obj\llocal_path\lmd5\lpath\ltype\l|download(to_path)\lupload(from_path)\l}" solid record black black
+node "biocluster.rpc.Report" 35.625 2.7778 2.1944 0.97222 "{Report|workflow\l|report(state, agent)\l}" solid record black black
+node "biocluster.basic.ResultFile" 106.99 2.7778 2.0833 2.8472 "{ResultFile|base_path\lcode : str\ldcode\ldescription : str\lfile_type : str\lformat : str\lfull_path\llock : int\lrelpath : bytes, \
+str\lsize\l|}" solid record black black
+node "biocluster.core.exceptions.RunningError" 34.889 33.667 1.6111 0.97222 "{RunningError|bind_object\l|json()\l}" solid record black black
+node "biocluster.api.file.s3cache.S3cache" 15.181 27.194 4.1389 2.6389 "{S3cache|bucket\lconfig\lconn\lkey\llogger : RootLogger, NoneType, Logger\ltransfer\ltype_name\l|download(to_path)\lfile_iter(file_\
+list, upload)\lupload(from_path)\l}" solid record black black
+node "biocluster.wsheet.Sheet" 109.57 2.7778 2.5972 1.3889 "{Sheet|data\l|option(name)\loptions()\lset_option(name, value)\l}" solid record black black
+node "biocluster.core.actor.State" 112.06 2.7778 1.8611 1.1806 "{State|data : NoneType\lname\l|}" solid record black black
+node "biocluster.basic.Step" 47.167 27.194 1.6944 2.6389 "{Step|desc\lhas_change\linfo\lname\lname\lspend_time\lstats\l|clean_change()\lfinish(info)\lstart(info)\l}" solid record black black
+node "biocluster.basic.StepMain" 47.167 19.056 5.7222 3.6806 "{StepMain|api_type\lbind_obj\llast_index : int\lprogress\lsem : _AtomicBoundedSemaphore, BoundedSemaphore\l|add_api_data(name, value)\ladd_\
+steps()\lexit_pause(info)\lfailed(info)\lfinish(info)\lpause(info)\lstart(info)\lterminated(info)\lupdate()\lupload_files()\l}" solid record black black
+node "biocluster.tool.Tool" 26.889 27.194 7.9722 8.4722 "{Tool|api\lcommands\lconfig\lexit_signal : bool\lid\linstant : bool\lis_end\lis_wait : bool\llogger : NoneType, Logger\lname\loutput_\
+dir\lpackage\lprocess_queue : NoneType\lreceive_exit_signal : bool\lremote\lshared_callback_action : NoneType\lstates\lversion : \
+int\lwork_dir\lworkflow_id\l|add_command(name, cmd, script_dir, default_return_code, ignore_error, shell)\ladd_state(name, data)\lcheck_\
+options()\lend()\lexit(status)\lget_option_object(name)\lkill_all_commonds()\lload_config()\lload_package(path)\loption(name, value)\lrun()\lrun_\
+check_options()\lsave_output()\lset_environ()\lset_error(error_data, variables, code)\lset_options(options)\lunset_environ()\lwait()\l}" solid record black black
+node "biocluster.proto.tool_guide_pb2_grpc.ToolGuideServicer" 115.17 2.7778 3.8611 1.4028 "{ToolGuideServicer|\l|Keepalive(request, context)\lOptionData(request, context)\lSendState(request_iterator, context)\l}" solid record black black
+node "biocluster.proto.tool_guide_pb2_grpc.ToolGuideStub" 118.19 2.7778 1.6944 1.3889 "{ToolGuideStub|Keepalive\lOptionData\lSendState\l|}" solid record black black
+node "biocluster.core.exceptions.TransferError" 65.042 2.7778 1.6111 0.98611 "{TransferError|\l|}" solid record black black
+node "biocluster.core.exceptions.UnknownEventError" 67.25 2.7778 2.2917 0.98611 "{UnknownEventError|\l|}" solid record black black
+node "biocluster.basic.UploadDir" 120.97 2.7778 3.3611 2.0139 "{UploadDir|file_list\lpath\lpath\lupload_path : bytes, str\l|add_regexp_rules(match_rules)\ladd_relpath_rules(match_rules)\lmatch()\l}" solid record black black
+node "biocluster.core.watcher.Watcher" 123.94 2.7778 2.0694 1.1944 "{Watcher|\l|add(func, interval)\lstopall()\l}" solid record black black
+node "biocluster.proto.webapi_pb2_grpc.WebApiServicer" 126.67 2.7778 2.875 1.4028 "{WebApiServicer|\l|Control(request, context)\lS3delete(request, context)\lSubmit(request, context)\l}" solid record black black
+node "biocluster.proto.webapi_pb2_grpc.WebApiStub" 129.08 2.7778 1.4444 1.3889 "{WebApiStub|Control\lS3delete\lSubmit\l|}" solid record black black
+node "biocluster.logger.Wlog" 132.12 2.7778 4.1389 2.8472 "{Wlog|file_handler : FileHandler\lformat : str\lformatter : Formatter\llevel : int\llog_path\llogger : RootLogger, NoneType, Logger\lstream_\
+handler : StreamHandler\lstream_on : bool\lworkflow : NoneType\l|destroy()\lget_logger(name)\l}" solid record black black
+node "biocluster.workflow.Workflow" 35.625 19.056 11.528 6.3889 "{Workflow|IMPORT_REPORT_AFTER_END : bool\lIMPORT_REPORT_DATA : bool\lUPDATE_STATUS_API\lconfig\ldebug : bool\lis_skip : bool\llast_\
+event_fire : NoneType\llast_get_message : NoneType\lpause : bool\lproject_type\lrpc_server\lsheet\ltask_option_data : dict\l|add_\
+batch(path, ignore_error, batch_type, upload_dir, up_api_name, import_report_data, import_report_after_end)\ladd_module(path)\ladd_\
+return_mongo_id(collection_name, table_id, desc, add_in_sg_status)\ladd_task_option(name, value)\ladd_tool(path)\lend()\lexit(exitcode, \
+data, terminated)\lfind_tool_by_id(toolid)\lget_batch(batch_id)\lrun()\lsave_error_manual_post_data()\lset_return_msg(msg)\lstep_\
+start()\lstop_timeout_check()\lupload_to_s3(from_file, to_path, cover)\l}" solid record black black
+node "biocluster.proto.workflow_guide_pb2_grpc.WorkflowGuideServicer" 136.39 2.7778 3.875 2.4444 "{WorkflowGuideServicer|\l|AddBatch(request, context)\lDelete(request, context)\lGetRunInfo(request, context)\lGetToolsStates(request, \
+context)\lSendStep(request, context)\lStopTimeoutCheck(request, context)\lSubmit(request, context)\lUpdate(request, context)\l}" solid record black black
+node "biocluster.proto.workflow_guide_pb2_grpc.WorkflowGuideStub" 139.69 2.7778 2.2222 2.4306 "{WorkflowGuideStub|AddBatch\lDelete\lGetRunInfo\lGetToolsStates\lSendStep\lStopTimeoutCheck\lSubmit\lUpdate\l|}" solid record black black
+edge "biocluster.api.database.base.ApiManager" "biocluster.basic.Basic" 10 27.631 20.266 28.134 20.967 28.865 21.801 29.736 22.25 32.259 23.55 33.631 21.529 36.083 22.958 36.146 22.995 36.208 23.033 36.269 23.073 api 35.681 22.604 solid black
+edge "biocluster.api.database.base.ApiManager" "biocluster.tool.Tool" 4 26.889 20.266 26.889 20.953 26.889 21.863 26.889 22.796 api 27.042 22.604 solid black
+edge "biocluster.basic.Basic" "biocluster.core.event.EventObject" 4 39.761 31.216 39.803 31.488 39.844 31.752 39.882 31.999 solid black
+edge "biocluster.basic.Basic" "biocluster.core.exceptions.OptionError" 4 37.947 31.216 37.753 31.868 37.573 32.474 37.441 32.918 bind_object 38.361 31.785 solid black
+edge "biocluster.basic.Basic" "biocluster.core.exceptions.RunningError" 7 36.421 31.215 36.216 31.527 36.014 31.837 35.819 32.139 35.63 32.434 35.425 32.765 35.256 33.042 bind_object 36.653 31.785 solid black
+edge "biocluster.batch.Batch" "biocluster.core.event.EventObject" 10 51.505 20.684 51.577 23.368 51.287 28.721 48.139 31.431 47.04 32.376 42.96 31.512 41.653 32.139 41.651 32.14 41.65 32.14 41.649 32.141 solid black
+edge "biocluster.config.Config" "biocluster.api.database.base.Base" 7 16.836 13.858 17.514 14.483 18.183 15.164 18.75 15.861 19.257 16.485 19.702 17.271 20.021 17.906 _config 18.84 15.507 solid black
+edge "biocluster.config.Config" "biocluster.batch.Batch" 10 16.837 11.763 21.044 12.816 27.891 14.394 33.903 15.153 35.696 15.379 48.682 14.811 50.153 15.861 50.621 16.195 50.914 16.732 51.097 17.271 config 49.694 15.507 solid black
+edge "biocluster.config.Config" "biocluster.api.file.fileapicache.Fileapicache" 7 8.8875 12.549 7.5826 13.364 6.2817 14.463 5.5556 15.861 4.6737 17.56 5.6254 23.196 6.1363 25.817 config 5.8611 19.056 solid black
+edge "biocluster.config.Config" "biocluster.api.file.filelistcache.Filelistcache" 7 8.8838 12.344 7.3098 13.175 5.6219 14.338 4.5417 15.861 2.3008 19.021 2.0244 23.831 2.025 26.021 config 4.8472 19.056 solid black
+edge "biocluster.config.Config" "biocluster.api.file.httpcache.Httpcache" 7 12.05 15.148 12.013 15.389 11.977 15.628 11.944 15.861 11.427 19.562 11.045 23.975 10.88 26.026 config 12.25 19.056 solid black
+edge "biocluster.config.Config" "biocluster.api.file.lib.transfer.MultiFileTransfer" 4 10.636 15.15 10.098 16.22 9.5722 17.267 9.2015 18.005 config 10.778 15.507 solid black
+edge "biocluster.config.Config" "biocluster.api.file.remote.RemoteFileManager" 4 13.918 15.15 14.149 16.118 14.376 17.067 14.547 17.786 config 14.319 15.507 solid black
+edge "biocluster.config.Config" "biocluster.api.file.s3cache.S3cache" 7 12.725 15.148 12.679 17.811 12.699 20.933 12.986 22.25 13.254 23.48 13.845 24.776 14.346 25.731 config 13.292 19.056 solid black
+edge "biocluster.config.Config" "biocluster.workflow.Workflow" 4 16.835 11.692 20.264 12.584 25.324 14.035 29.705 15.849 config 29.167 15.507 solid black
+edge "biocluster.iofile.Directory" "biocluster.iofile.FileBase" 4 54.746 3.6752 54.96 4.9442 55.359 7.3094 55.635 8.9412 solid black
+edge "biocluster.core.exceptions.EventStopError" "biocluster.core.exceptions.Error" 7 59.647 3.2667 59.838 3.8219 60.175 4.7652 60.514 5.5556 61.234 7.2335 62.216 9.1518 62.713 10.1 solid black
+edge "biocluster.core.exceptions.ExitError" "biocluster.core.exceptions.Error" 4 61.344 3.2682 61.654 4.6357 62.546 8.5712 62.89 10.088 solid black
+edge "biocluster.iofile.File" "biocluster.iofile.FileBase" 4 57.016 4.1954 56.794 5.5207 56.462 7.5126 56.223 8.9417 solid black
+edge "biocluster.core.exceptions.FileError" "biocluster.core.exceptions.CodeError" 7 42.531 34.355 42.284 34.641 41.97 34.961 41.639 35.194 40.849 35.75 39.873 36.193 39.039 36.512 solid black
+edge "biocluster.core.exceptions.FileError" "biocluster.option.Option" 7 42.76 34.355 42.628 34.734 42.516 35.216 42.583 35.653 42.588 35.683 42.593 35.713 42.599 35.743 _value 42.903 35.549 solid black
+edge "biocluster.core.actor.LocalActor" "biocluster.batch.Batch" 4 51.403 11.605 51.403 12.944 51.403 15.519 51.403 17.259 actor 51.66 15.507 solid black
+edge "biocluster.core.exceptions.MaxLengthError" "biocluster.core.exceptions.Error" 4 63.028 3.2682 63.028 4.6357 63.028 8.5712 63.028 10.088 solid black
+edge "biocluster.module.Module" "biocluster.basic.Basic" 7 42.36 20.273 42.114 20.87 41.806 21.602 41.514 22.25 41.397 22.51 41.275 22.777 41.15 23.045 solid black
+edge "biocluster.api.file.lib.transfer.MultiFileTransfer" "biocluster.api.file.fileapicache.Fileapicache" 4 8.434 19.953 8.0391 21.368 7.2622 24.151 6.7962 25.821 transfer 8.0972 22.604 solid black
+edge "biocluster.api.file.lib.transfer.MultiFileTransfer" "biocluster.api.file.filelistcache.Filelistcache" 10 8.1494 19.953 7.6854 20.66 6.9532 21.631 6.0972 22.25 5.3801 22.769 4.8963 22.369 4.2361 22.958 3.3126 23.783 2.7225 25.092 2.3923 26.034 transfer 5.9861 22.604 solid black
+edge "biocluster.api.file.lib.transfer.MultiFileTransfer" "biocluster.api.file.httpcache.Httpcache" 4 8.9105 19.953 9.2943 21.428 10.065 24.39 10.491 26.027 transfer 10.014 22.604 solid black
+edge "biocluster.api.file.lib.transfer.MultiFileTransfer" "biocluster.api.file.s3cache.S3cache" 13 9.2852 19.954 9.7722 20.629 10.499 21.558 11.264 22.25 11.538 22.498 11.619 22.561 11.958 22.708 12.389 22.896 12.616 22.668 12.986 22.958 13.869 23.651 14.433 24.798 14.768 25.722 transfer 12.361 22.604 solid black
+edge "biocluster.option.Option" "biocluster.core.exceptions.FileError" 7 43.202 35.909 43.21 35.823 43.217 35.736 43.222 35.653 43.245 35.281 43.219 34.871 43.181 34.522 option 43.556 35.549 solid black
+edge "biocluster.core.exceptions.OptionError" "biocluster.core.exceptions.CodeError" 4 37.222 34.254 37.222 34.751 37.222 35.482 37.222 36.079 solid black
+edge "biocluster.package.PackageManager" "biocluster.tool.Tool" 7 17.578 19.744 17.758 20.437 18.119 21.515 18.75 22.25 19.838 23.516 21.335 24.551 22.749 25.34 package 19.507 22.604 solid black
+edge "biocluster.rpc.RPC" "biocluster.workflow.Workflow" 4 35.625 11.403 35.625 12.343 35.625 14.103 35.625 15.696 rpc_server 36.153 15.507 solid black
+edge "biocluster.core.actor.RemoteData" "biocluster.tool.Tool" 7 23.311 19.75 23.45 20.406 23.696 21.418 24.042 22.25 24.118 22.434 24.2 22.619 24.286 22.804 _remote_data 24.91 22.604 solid black
+edge "biocluster.rpc.Report" "biocluster.rpc.RPC" 4 35.625 3.2624 35.625 4.5557 35.625 8.1777 35.625 9.8404 _report 35.986 5.9097 solid black
+edge "biocluster.core.exceptions.RunningError" "biocluster.core.exceptions.CodeError" 7 35.164 34.151 35.344 34.453 35.589 34.851 35.819 35.194 36.022 35.496 36.252 35.816 36.466 36.107 solid black
+edge "biocluster.api.file.s3cache.S3cache" "biocluster.api.file.remote.RemoteFile" 4 15.181 28.509 15.181 29.802 15.181 31.746 15.181 32.836 solid black
+edge "biocluster.basic.StepMain" "biocluster.basic.Basic" 7 45.473 20.889 45.05 21.337 44.595 21.814 44.167 22.25 43.513 22.917 42.801 23.625 42.125 24.29 _main_step 44.458 22.604 solid black
+edge "biocluster.basic.StepMain" "biocluster.basic.Step" 4 47.167 20.89 47.167 22.354 47.167 24.382 47.167 25.736 solid black
+edge "biocluster.tool.Tool" "biocluster.core.exceptions.OptionError" 10 30.875 29.872 32.098 30.604 33.473 31.345 34.806 31.889 35.235 32.064 35.42 31.903 35.819 32.139 36.166 32.343 36.479 32.66 36.72 32.95 bind_object 35.375 31.785 solid black
+edge "biocluster.tool.Tool" "biocluster.core.exceptions.RunningError" 7 30.052 31.426 30.234 31.59 30.42 31.745 30.611 31.889 31.619 32.647 32.999 33.139 33.916 33.406 bind_object 31.181 31.785 solid black
+edge "biocluster.core.exceptions.TransferError" "biocluster.core.exceptions.Error" 4 64.92 3.2682 64.572 4.6357 63.569 8.5712 63.182 10.088 solid black
+edge "biocluster.core.exceptions.UnknownEventError" "biocluster.core.exceptions.Error" 7 67.045 3.2672 66.803 3.8227 66.38 4.7664 65.972 5.5556 65.103 7.2387 63.96 9.1607 63.387 10.106 solid black
+edge "biocluster.workflow.Workflow" "biocluster.basic.Basic" 4 37.001 22.246 37.115 22.509 37.231 22.776 37.347 23.045 solid black
+edge "biocluster.workflow.Workflow" "biocluster.core.exceptions.RunningError" 10 35.123 22.247 35.109 22.332 35.096 22.417 35.083 22.5 35.052 22.704 35.031 22.753 35.014 22.958 34.705 26.762 34.812 31.351 34.866 33.013 bind_object 35.583 27.194 solid black
+stop

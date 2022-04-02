@@ -1,0 +1,164 @@
+graph 1 62.471 7.5
+node biocluster 20.228 0.25 1.2222 0.5 biocluster solid box black black
+node "biocluster.api" 21.881 0.25 1.5694 0.5 "biocluster.api" solid box black black
+node "biocluster.api.database" 24.186 0.25 2.5278 0.5 "biocluster.api.database" solid box black black
+node "biocluster.api.database.base" 18.617 3.25 3.0417 0.5 "biocluster.api.database.base" solid box black black
+node "biocluster.api.file" 45.256 0.25 1.9444 0.5 "biocluster.api.file" solid box black black
+node "biocluster.api.file.fileapicache" 11.436 2.25 3.1806 0.5 "biocluster.api.file.fileapicache" solid box black black
+node "biocluster.api.file.filelistcache" 14.881 2.25 3.1944 0.5 "biocluster.api.file.filelistcache" solid box black black
+node "biocluster.api.file.httpcache" 8.103 2.25 2.9861 0.5 "biocluster.api.file.httpcache" solid box black black
+node "biocluster.api.file.lib" 47.603 0.25 2.25 0.5 "biocluster.api.file.lib" solid box black black
+node "biocluster.api.file.lib.transfer" 4.4224 3.25 3.1111 0.5 "biocluster.api.file.lib.transfer" solid box black black
+node "biocluster.api.file.remote" 8.6308 3.25 2.7083 0.5 "biocluster.api.file.remote" solid box black black
+node "biocluster.api.file.s3cache" 4.4224 2.25 2.7917 0.5 "biocluster.api.file.s3cache" solid box black black
+node "biocluster.api.to_file" 50.103 0.25 2.2361 0.5 "biocluster.api.to_file" solid box black black
+node "biocluster.api.to_file.parameter" 53.145 0.25 3.3333 0.5 "biocluster.api.to_file.parameter" solid box black black
+node "biocluster.basic" 32.436 1.25 1.7778 0.5 "biocluster.basic" solid box black black
+node "biocluster.batch" 32.436 2.25 1.8194 0.5 "biocluster.batch" solid box black black
+node "biocluster.command" 41.089 3.25 2.2222 0.5 "biocluster.command" solid box black black
+node "biocluster.config" 11.159 4.25 1.8611 0.5 "biocluster.config" solid box black black
+node "biocluster.core" 55.909 0.25 1.6944 0.5 "biocluster.core" solid box black black
+node "biocluster.core.actor" 35.228 3.25 2.2639 0.5 "biocluster.core.actor" solid box black black
+node "biocluster.core.event" 22.075 3.25 2.3056 0.5 "biocluster.core.event" solid box black black
+node "biocluster.core.exceptions" 16.7 4.25 2.8194 0.5 "biocluster.core.exceptions" solid box black black
+node "biocluster.core.function" 32.436 4.25 2.5694 0.5 "biocluster.core.function" solid box black black
+node "biocluster.core.singleton" 28.381 5.25 2.6667 0.5 "biocluster.core.singleton" solid box black black
+node "biocluster.core.watcher" 25.811 3.25 2.5556 0.5 "biocluster.core.watcher" solid box black black
+node "biocluster.iofile" 32.436 3.25 1.75 0.5 "biocluster.iofile" solid box black black
+node "biocluster.logger" 48.075 3.25 1.9028 0.5 "biocluster.logger" solid box black black
+node "biocluster.module" 43.034 0.25 1.9861 0.5 "biocluster.module" solid box black black
+node "biocluster.option" 27.978 2.25 1.8889 0.5 "biocluster.option" solid box black black
+node "biocluster.package" 37.645 3.25 2.0694 0.5 "biocluster.package" solid box black black
+node "biocluster.proto" 17.381 5.25 1.7917 0.5 "biocluster.proto" solid box black black
+node "biocluster.proto.config_pb2" 14.284 6.25 2.9306 0.5 "biocluster.proto.config_pb2" solid box black black
+node "biocluster.proto.config_pb2_grpc" 14.492 5.25 3.4722 0.5 "biocluster.proto.config_pb2_grpc" solid box black black
+node "biocluster.proto.filetrans_pb2" 2.478 5.25 3.1528 0.5 "biocluster.proto.filetrans_pb2" solid box black black
+node "biocluster.proto.filetrans_pb2_grpc" 5.2419 4.25 3.6944 0.5 "biocluster.proto.filetrans_pb2_grpc" solid box black black
+node "biocluster.proto.public_pb2" 9.8808 7.25 2.9306 0.5 "biocluster.proto.public_pb2" solid box black black
+node "biocluster.proto.public_pb2_grpc" 58.742 0.25 3.4722 0.5 "biocluster.proto.public_pb2_grpc" solid box black black
+node "biocluster.proto.tool_guide_pb2" 47.2 4.25 3.3472 0.5 "biocluster.proto.tool_guide_pb2" solid box black black
+node "biocluster.proto.tool_guide_pb2_grpc" 44.922 3.25 3.8889 0.5 "biocluster.proto.tool_guide_pb2_grpc" solid box black black
+node "biocluster.proto.webapi_pb2" 10.839 6.25 3.0278 0.5 "biocluster.proto.webapi_pb2" solid box black black
+node "biocluster.proto.webapi_pb2_grpc" 10.186 5.25 3.5694 0.5 "biocluster.proto.webapi_pb2_grpc" solid box black black
+node "biocluster.proto.workflow_guide_pb2" 39.061 6.25 3.875 0.5 "biocluster.proto.workflow_guide_pb2" solid box black black
+node "biocluster.proto.workflow_guide_pb2_grpc" 34.631 5.25 4.4167 0.5 "biocluster.proto.workflow_guide_pb2_grpc" solid box black black
+node "biocluster.rpc" 30.103 4.25 1.5833 0.5 "biocluster.rpc" solid box black black
+node "biocluster.tool" 38.617 2.25 1.6389 0.5 "biocluster.tool" solid box black black
+node "biocluster.workflow" 26.784 0.25 2.1667 0.5 "biocluster.workflow" solid box black black
+node "biocluster.wpm" 61.603 0.25 1.7361 0.5 "biocluster.wpm" solid box black black
+node "biocluster.wsheet" 48.575 2.25 1.9722 0.5 "biocluster.wsheet" solid box black black
+edge "biocluster.api.database.base" "biocluster.config" 4 17.094 3.4624 15.647 3.6511 13.506 3.9301 12.23 4.0964 solid black
+edge "biocluster.api.database.base" "biocluster.core.function" 7 20.141 3.4405 20.361 3.4626 20.585 3.4833 20.797 3.5 25.286 3.8524 26.473 3.5211 31.009 4.0001 solid black
+edge "biocluster.api.file.fileapicache" "biocluster.api.file.lib.transfer" 4 9.8448 2.4845 8.7362 2.6382 7.2594 2.8429 6.1269 2.9998 solid black
+edge "biocluster.api.file.fileapicache" "biocluster.config" 4 11.403 2.5018 11.355 2.8379 11.269 3.4554 11.212 3.8557 solid black
+edge "biocluster.api.file.fileapicache" "biocluster.core.exceptions" 4 12.071 2.5018 13.041 2.8651 14.888 3.557 15.932 3.9481 solid black
+edge "biocluster.api.file.fileapicache" "biocluster.core.function" 10 13.031 2.4884 13.074 2.4925 13.116 2.4964 13.159 2.5 19.823 3.0661 21.595 1.9438 28.2 3 29.444 3.1988 30.836 3.6518 31.674 3.9507 solid black
+edge "biocluster.api.file.fileapicache" "biocluster.proto" 7 11.587 2.5035 11.894 2.9719 12.644 4.0061 13.561 4.5 14.633 5.0773 15.087 4.7705 16.348 5.001 solid black
+edge "biocluster.api.file.fileapicache" "biocluster.proto.filetrans_pb2" 10 9.8417 2.4865 9.7987 2.4912 9.7561 2.4957 9.7141 2.5 8.8909 2.584 2.8487 2.3956 2.2835 3 1.8128 3.5035 2.0854 4.3786 2.2988 4.8716 solid black
+edge "biocluster.api.file.filelistcache" "biocluster.api.file.lib.transfer" 10 13.282 2.4844 13.236 2.4898 13.19 2.495 13.145 2.5 10.485 2.7915 9.8109 2.7733 7.1447 3 6.8133 3.0282 6.4594 3.0586 6.12 3.088 solid black
+edge "biocluster.api.file.filelistcache" "biocluster.config" 7 14.362 2.5003 14.061 2.6405 13.676 2.8245 13.339 3 12.763 3.3003 12.117 3.6706 11.679 3.9273 solid black
+edge "biocluster.api.file.filelistcache" "biocluster.core.exceptions" 7 15.088 2.504 15.306 2.7554 15.661 3.1602 15.978 3.5 16.1 3.6309 16.237 3.7718 16.359 3.895 solid black
+edge "biocluster.api.file.filelistcache" "biocluster.core.function" 10 16.485 2.2774 20.178 2.3176 29.065 2.4688 30.311 3 30.609 3.1267 30.572 3.3189 30.839 3.5 31.094 3.6728 31.397 3.8239 31.669 3.9434 solid black
+edge "biocluster.api.file.filelistcache" "biocluster.proto" 10 14.374 2.5011 14.178 2.6209 13.976 2.7868 13.867 3 13.564 3.594 13.444 3.9842 13.867 4.5 14.554 5.3388 15.2 4.807 16.346 5.0019 solid black
+edge "biocluster.api.file.filelistcache" "biocluster.proto.filetrans_pb2" 10 13.283 2.4866 13.236 2.4913 13.19 2.4958 13.145 2.5 12.568 2.5529 3.165 2.6053 2.7419 3 2.2372 3.4708 2.3031 4.3559 2.3927 4.8599 solid black
+edge "biocluster.api.file.httpcache" "biocluster.api.file.lib.transfer" 4 7.2073 2.5005 6.6797 2.6399 6.0098 2.8168 5.4593 2.9622 solid black
+edge "biocluster.api.file.httpcache" "biocluster.config" 7 9.047 2.5017 9.3979 2.6174 9.7872 2.7801 10.103 3 10.442 3.2364 10.739 3.6072 10.931 3.8811 solid black
+edge "biocluster.api.file.httpcache" "biocluster.core.exceptions" 7 9.102 2.5005 10.165 2.7516 11.898 3.1585 13.395 3.5 14.086 3.6577 14.86 3.8303 15.485 3.9686 solid black
+edge "biocluster.api.file.httpcache" "biocluster.core.function" 13 9.5988 2.4892 9.6376 2.4931 9.6761 2.4967 9.7141 2.5 11.703 2.6728 25.829 2.2354 27.672 3 27.971 3.1238 27.911 3.355 28.2 3.5 28.265 3.5324 29.805 3.7955 31.009 3.998 solid black
+edge "biocluster.api.file.httpcache" "biocluster.proto" 16 9.1388 2.5007 9.5875 2.6218 10.112 2.7887 10.561 3 10.924 3.1704 10.969 3.2917 11.311 3.5 11.703 3.7385 11.834 3.7426 12.214 4 12.505 4.1969 12.504 4.3591 12.825 4.5 14.234 5.1179 14.766 4.7345 16.344 5.0006 solid black
+edge "biocluster.api.file.httpcache" "biocluster.proto.filetrans_pb2" 10 6.6089 2.4311 4.7388 2.6412 1.776 2.9773 1.7558 3 1.3123 3.4978 1.5036 3.8829 1.7558 4.5 1.8181 4.6525 1.929 4.7905 2.0454 4.9047 solid black
+edge "biocluster.api.file.lib.transfer" "biocluster.config" 4 5.9805 3.4888 7.2401 3.6706 8.9802 3.9217 10.088 4.0815 solid black
+edge "biocluster.api.file.lib.transfer" "biocluster.core.exceptions" 7 5.9841 3.432 6.2238 3.456 6.4685 3.4795 6.7002 3.5 9.6869 3.7647 13.181 4.0064 15.148 4.1363 solid black
+edge "biocluster.api.file.lib.transfer" "biocluster.core.function" 7 5.9795 3.4166 6.3603 3.4491 6.7669 3.4797 7.1447 3.5 17.696 4.0675 20.428 3.0232 31.007 4.0002 solid black
+edge "biocluster.api.file.lib.transfer" "biocluster.proto" 10 5.7468 3.5003 6.4735 3.6355 7.3892 3.8146 8.2002 4 9.0526 4.1948 9.241 4.3535 10.103 4.5 12.806 4.9595 13.574 4.5882 16.342 5.0004 solid black
+edge "biocluster.api.file.lib.transfer" "biocluster.proto.filetrans_pb2" 7 3.9515 3.5024 3.7283 3.6301 3.4679 3.802 3.2697 4 3.0136 4.2557 2.798 4.6081 2.6568 4.8712 solid black
+edge "biocluster.api.file.lib.transfer" "biocluster.proto.filetrans_pb2_grpc" 4 4.625 3.5042 4.7232 3.6208 4.843 3.7629 4.9508 3.8908 solid black
+edge "biocluster.api.file.lib.transfer" "biocluster.proto.public_pb2" 10 5.7513 3.5005 6.3548 3.6304 6.9846 3.8047 7.2141 4 8.14 4.7881 7.4757 5.6301 8.3252 6.5 8.5075 6.6867 8.7464 6.8316 8.9822 6.9416 solid black
+edge "biocluster.api.file.remote" "biocluster.config" 4 9.2491 3.5017 9.5993 3.6364 10.04 3.8058 10.41 3.948 solid black
+edge "biocluster.api.file.s3cache" "biocluster.api.file.lib.transfer" 4 4.4224 2.5042 4.4224 2.6114 4.4224 2.7401 4.4224 2.8595 solid black
+edge "biocluster.api.file.s3cache" "biocluster.api.file.remote" 4 5.4465 2.5005 6.0574 2.6416 6.8349 2.8212 7.4687 2.9676 solid black
+edge "biocluster.api.file.s3cache" "biocluster.config" 10 5.0784 2.5007 5.3983 2.6286 5.7822 2.8011 6.103 3 6.3972 3.1824 6.3856 3.3556 6.7002 3.5 7.0031 3.639 8.8687 3.9179 10.089 4.0896 solid black
+edge "biocluster.api.file.s3cache" "biocluster.core.exceptions" 10 5.4049 2.5 5.794 2.6175 6.2353 2.7818 6.603 3 6.8848 3.1672 6.8443 3.3691 7.1447 3.5 7.5046 3.6569 12.53 3.9827 15.144 4.143 solid black
+edge "biocluster.api.file.s3cache" "biocluster.core.function" 13 5.8196 2.4415 6.0396 2.4645 6.2648 2.4852 6.478 2.5 7.6276 2.5797 26.165 2.5233 27.214 3 27.489 3.1247 27.406 3.3585 27.672 3.5 28.962 4.1853 29.502 3.7901 31.011 4.0002 solid black
+edge "biocluster.api.file.s3cache" "biocluster.proto" 16 3.3861 2.5014 3.1334 2.6106 2.8926 2.7694 2.7419 3 2.6203 3.186 2.5937 3.3344 2.7419 3.5 3.4086 4.2454 6.2559 3.7138 7.2141 4 7.6849 4.1407 7.726 4.3712 8.2002 4.5 11.659 5.4396 12.733 4.5051 16.34 5.0005 solid black
+edge "biocluster.api.file.s3cache" "biocluster.proto.filetrans_pb2" 7 3.0259 2.317 1.9311 2.3914 0.53409 2.5703 0.17243 3 -0.46156 3.7532 0.87575 4.5312 1.7667 4.9414 solid black
+edge "biocluster.basic" "biocluster.api.database.base" 10 31.542 1.3223 30.196 1.4203 27.719 1.6431 26.909 2 26.592 2.1395 26.632 2.3686 26.311 2.5 25.093 3 21.781 2.855 20.278 2.9945 solid black
+edge "biocluster.basic" "biocluster.batch" 4 32.436 1.5042 32.436 1.6114 32.436 1.7401 32.436 1.8595 solid black
+edge "biocluster.basic" "biocluster.core.event" 13 31.545 1.3958 30.978 1.5042 30.241 1.6914 29.645 2 29.337 2.1591 29.367 2.3675 29.047 2.5 26.729 3.4608 25.911 2.672 23.422 3 23.405 3.0024 23.387 3.0048 23.368 3.0073 solid black
+edge "biocluster.basic" "biocluster.core.exceptions" 7 31.545 1.3044 28.418 1.4546 18.069 2.0221 16.978 3 16.742 3.2116 16.684 3.5766 16.678 3.8553 solid black
+edge "biocluster.basic" "biocluster.core.function" 13 33.328 1.3107 35.049 1.4056 38.948 1.6423 42.214 2 42.602 2.0424 48.903 2.7054 49.159 3 49.304 3.168 49.312 3.3394 49.159 3.5 48.634 4.0486 37.816 4.1921 33.865 4.2263 solid black
+edge "biocluster.basic" "biocluster.logger" 4 33.327 1.3355 35.591 1.5248 41.744 2.0859 46.98 2.999 solid black
+edge "biocluster.basic" "biocluster.option" 4 31.545 1.4583 30.831 1.614 29.826 1.8331 29.065 1.9991 solid black
+edge "biocluster.basic" "biocluster.proto" 7 31.982 1.5012 31.091 1.9563 29.043 2.9549 27.214 3.5 24.084 4.4329 20.235 4.933 18.421 5.132 solid black
+edge "biocluster.basic" "biocluster.proto.workflow_guide_pb2" 10 33.33 1.2682 36.786 1.289 49.116 1.4048 49.686 2 50.462 2.8099 50.182 3.7596 49.339 4.5 48.15 5.545 43.784 5.9726 41.14 6.1385 solid black
+edge "biocluster.basic" "biocluster.proto.workflow_guide_pb2_grpc" 13 33.327 1.2753 35.334 1.3103 40.358 1.4504 44.52 2 44.794 2.0363 49.233 2.7852 49.409 3 49.737 3.4026 49.094 4.437 49.006 4.5 48.526 4.8425 40.933 5.0802 36.982 5.1814 solid black
+edge "biocluster.basic" "biocluster.wsheet" 7 33.325 1.2618 35.648 1.2662 42.086 1.3421 47.395 2 47.412 2.0022 47.43 2.0045 47.448 2.0068 solid black
+edge "biocluster.batch" "biocluster.config" 10 31.523 2.3345 30.842 2.3855 29.887 2.4534 29.047 2.5 23.687 2.7977 22.305 2.3288 16.978 3 15.277 3.2144 13.335 3.6705 12.18 3.9647 solid black
+edge "biocluster.batch" "biocluster.core.actor" 4 33.116 2.5005 33.506 2.6363 33.998 2.8078 34.409 2.9511 solid black
+edge "biocluster.batch" "biocluster.core.event" 7 31.525 2.3372 29.275 2.5183 23.622 2.9744 23.422 3 23.405 3.0023 23.387 3.0046 23.369 3.007 solid black
+edge "biocluster.batch" "biocluster.iofile" 4 32.436 2.5042 32.436 2.6114 32.436 2.7401 32.436 2.8595 solid black
+edge "biocluster.batch" "biocluster.logger" 4 33.347 2.3058 36.306 2.4426 45.534 2.8733 46.98 3.0042 solid black
+edge "biocluster.batch" "biocluster.proto" 10 31.702 2.5007 30.836 2.7944 29.367 3.338 28.2 4 27.878 4.1828 27.88 4.3702 27.534 4.5 25.887 5.1161 20.665 5.2191 18.421 5.2345 solid black
+edge "biocluster.batch" "biocluster.proto.workflow_guide_pb2" 7 33.35 2.306 35.022 2.3922 38.439 2.6138 38.811 3 39.556 3.7734 39.331 5.188 39.167 5.8611 solid black
+edge "biocluster.batch" "biocluster.proto.workflow_guide_pb2_grpc" 7 32.84 2.5008 33.037 2.6304 33.267 2.8044 33.436 3 33.935 3.576 34.305 4.3954 34.493 4.8657 solid black
+edge "biocluster.config" "biocluster.core.singleton" 7 12.091 4.3196 12.905 4.3679 14.117 4.4395 15.172 4.5 19.432 4.744 24.465 5.0215 26.906 5.1554 solid black
+edge "biocluster.config" "biocluster.proto" 7 12.091 4.4658 12.156 4.478 12.221 4.4895 12.284 4.5 14.037 4.7912 14.534 4.6898 16.341 4.9995 solid black
+edge "biocluster.config" "biocluster.proto.config_pb2" 10 11.469 4.5001 11.652 4.6418 11.887 4.8273 12.089 5 12.338 5.2129 12.357 5.3198 12.631 5.5 12.896 5.6745 13.209 5.8258 13.491 5.9452 solid black
+edge "biocluster.config" "biocluster.proto.config_pb2_grpc" 4 11.97 4.5005 12.444 4.6387 13.044 4.8138 13.54 4.9585 solid black
+edge "biocluster.config" "biocluster.proto.public_pb2" 7 10.228 4.377 9.4778 4.4895 8.5102 4.6904 8.2697 5 7.75 5.6687 8.7189 6.4815 9.3665 6.9196 solid black
+edge "biocluster.config" "biocluster.proto.workflow_guide_pb2_grpc" 10 12.091 4.3253 12.904 4.3772 14.116 4.4509 15.172 4.5 21.688 4.8026 23.322 4.7284 29.839 5 30.634 5.0331 31.503 5.0744 32.28 5.1131 solid black
+edge "biocluster.core.event" "biocluster.core.exceptions" 4 20.922 3.4725 20.11 3.6194 19.016 3.8173 18.145 3.9748 solid black
+edge "biocluster.core.watcher" "biocluster.core.exceptions" 7 24.531 3.4741 24.466 3.4832 24.402 3.4919 24.339 3.5 22.237 3.7695 19.799 3.9883 18.253 4.1153 solid black
+edge "biocluster.core.watcher" "biocluster.core.singleton" 4 26.121 3.5018 26.58 3.8542 27.442 4.5159 27.959 4.9122 solid black
+edge "biocluster.iofile" "biocluster.core.exceptions" 4 31.557 3.3182 28.996 3.4764 21.522 3.9382 18.257 4.1399 solid black
+edge "biocluster.iofile" "biocluster.core.function" 4 32.436 3.5042 32.436 3.6114 32.436 3.7401 32.436 3.8595 solid black
+edge "biocluster.logger" "biocluster.core.singleton" 7 47.119 3.4788 47.076 3.4864 47.034 3.4935 46.992 3.5 43.691 4.0117 33.665 4.823 29.863 5.1213 solid black
+edge "biocluster.module" "biocluster.basic" 4 42.037 0.35535 40.028 0.53965 35.511 0.95401 33.471 1.1412 solid black
+edge "biocluster.module" "biocluster.core.function" 16 44.032 0.47873 44.075 0.48623 44.117 0.49337 44.159 0.5 46.139 0.81751 46.754 0.32876 48.645 1 49.419 1.275 49.806 1.2786 50.2 2 50.527 2.5994 50.412 3.0891 49.867 3.5 49.232 3.9781 37.922 4.1671 33.868 4.2196 solid black
+edge "biocluster.option" "biocluster.api.file.remote" 4 27.032 2.3114 23.914 2.4681 13.946 2.969 10.133 3.1606 solid black
+edge "biocluster.option" "biocluster.core.exceptions" 13 27.029 2.4697 26.965 2.4808 26.901 2.491 26.839 2.5 25.506 2.6927 22.027 2.4501 20.797 3 20.502 3.1319 20.556 3.3505 20.27 3.5 19.65 3.8231 18.901 4.0044 18.25 4.1062 solid black
+edge "biocluster.option" "biocluster.core.function" 10 28.924 2.3982 29.501 2.5061 30.239 2.6919 30.839 3 31.147 3.1581 31.164 3.2862 31.436 3.5 31.614 3.6396 31.814 3.7882 31.988 3.9152 solid black
+edge "biocluster.option" "biocluster.iofile" 7 28.924 2.4685 29.604 2.6157 30.542 2.8194 31.367 3 31.385 3.0039 31.403 3.0078 31.421 3.0118 solid black
+edge "biocluster.package" "biocluster.core.exceptions" 7 36.609 3.4844 36.57 3.4901 36.53 3.4954 36.492 3.5 32.971 3.9231 22.278 4.1422 18.254 4.2114 solid black
+edge "biocluster.package" "biocluster.core.function" 7 36.608 3.4774 36.569 3.4851 36.53 3.4926 36.492 3.5 35.62 3.6683 34.641 3.8464 33.863 3.9852 solid black
+edge "biocluster.proto.config_pb2_grpc" "biocluster.proto.config_pb2" 4 14.44 5.5042 14.417 5.6114 14.39 5.7401 14.364 5.8595 solid black
+edge "biocluster.proto.filetrans_pb2" "biocluster.proto.public_pb2" 7 3.0431 5.5009 3.7132 5.7743 4.8688 6.2217 5.8947 6.5 6.6683 6.7099 7.5427 6.8787 8.275 7.0015 solid black
+edge "biocluster.proto.filetrans_pb2_grpc" "biocluster.proto.filetrans_pb2" 4 4.5693 4.5005 4.1831 4.6363 3.6955 4.8078 3.2883 4.9511 solid black
+edge "biocluster.proto.filetrans_pb2_grpc" "biocluster.proto.public_pb2" 7 5.3928 4.503 5.6946 4.9614 6.4182 5.9653 7.2835 6.5 7.6138 6.7041 8.0022 6.8531 8.3766 6.9614 solid black
+edge "biocluster.proto.tool_guide_pb2_grpc" "biocluster.proto.tool_guide_pb2" 4 45.48 3.5017 45.792 3.6352 46.185 3.8029 46.516 3.9443 solid black
+edge "biocluster.proto.webapi_pb2" "biocluster.proto.public_pb2" 4 10.602 6.5042 10.485 6.6231 10.342 6.7687 10.214 6.8985 solid black
+edge "biocluster.proto.webapi_pb2_grpc" "biocluster.proto.public_pb2" 10 9.6979 5.5008 9.506 5.6215 9.3065 5.788 9.2002 6 9.1006 6.1986 9.1192 6.2931 9.2002 6.5 9.2585 6.6489 9.3626 6.7857 9.4721 6.9 solid black
+edge "biocluster.proto.webapi_pb2_grpc" "biocluster.proto.webapi_pb2" 4 10.348 5.5042 10.424 5.6184 10.518 5.7572 10.602 5.883 solid black
+edge "biocluster.proto.workflow_guide_pb2" "biocluster.proto.public_pb2" 7 37.123 6.3402 35.892 6.3879 34.265 6.4496 32.825 6.5 24.818 6.78 15.237 7.0742 11.492 7.1876 solid black
+edge "biocluster.proto.workflow_guide_pb2_grpc" "biocluster.proto.public_pb2" 7 33.988 5.5002 33.152 5.7955 31.638 6.2878 30.297 6.5 26.685 7.0717 15.644 7.2 11.487 7.2283 solid black
+edge "biocluster.proto.workflow_guide_pb2_grpc" "biocluster.proto.workflow_guide_pb2" 4 35.709 5.5005 36.355 5.6422 37.177 5.8227 37.846 5.9695 solid black
+edge "biocluster.rpc" "biocluster.proto" 7 29.311 4.401 29.079 4.4375 28.824 4.474 28.589 4.5 24.859 4.9125 20.404 5.1208 18.421 5.1988 solid black
+edge "biocluster.rpc" "biocluster.proto.public_pb2" 7 30.128 4.5 30.144 4.7835 30.12 5.2516 29.839 5.5 28.475 6.7053 15.995 7.1003 11.491 7.2042 solid black
+edge "biocluster.rpc" "biocluster.proto.workflow_guide_pb2_grpc" 7 30.899 4.4686 30.945 4.4794 30.99 4.49 31.034 4.5 31.769 4.6684 32.593 4.8385 33.267 4.9726 solid black
+edge "biocluster.tool" "biocluster.api.database.base" 10 37.794 2.3034 36.779 2.3516 35.002 2.435 33.478 2.5 27.843 2.7405 26.422 2.5851 20.797 3 20.63 3.0124 20.455 3.0275 20.28 3.0441 solid black
+edge "biocluster.tool" "biocluster.command" 4 39.222 2.5017 39.564 2.6364 39.995 2.8058 40.357 2.948 solid black
+edge "biocluster.tool" "biocluster.config" 10 37.794 2.3027 34.694 2.4493 23.891 2.9625 23.811 3 23.538 3.1282 23.625 3.3704 23.353 3.5 23.322 3.5149 15.208 3.9965 12.234 4.1725 solid black
+edge "biocluster.tool" "biocluster.core.actor" 4 37.797 2.4992 37.313 2.6379 36.699 2.8141 36.192 2.9594 solid black
+edge "biocluster.tool" "biocluster.core.exceptions" 10 37.797 2.3029 34.793 2.4462 24.565 2.9384 24.409 3 24.086 3.1266 24.13 3.3652 23.811 3.5 22.842 3.9098 20.038 4.0997 18.254 4.1812 solid black
+edge "biocluster.tool" "biocluster.core.function" 10 39.437 2.2822 40.777 2.3389 43.203 2.569 42.325 3.5 41.683 4.1818 34.84 3.8979 33.909 4 33.893 4.0017 33.878 4.0034 33.863 4.0051 solid black
+edge "biocluster.tool" "biocluster.iofile" 4 37.796 2.393 36.676 2.5691 34.671 2.8846 33.456 3.0757 solid black
+edge "biocluster.tool" "biocluster.logger" 4 39.437 2.3226 41.198 2.4508 45.307 2.762 46.98 3.0003 solid black
+edge "biocluster.tool" "biocluster.package" 4 38.377 2.5042 38.258 2.6231 38.112 2.7687 37.982 2.8985 solid black
+edge "biocluster.tool" "biocluster.proto" 13 38.757 2.5029 38.898 2.7803 39.064 3.2337 38.811 3.5 38.074 4.2766 30.228 3.7506 29.186 4 28.654 4.1274 28.592 4.3681 28.061 4.5 26.255 4.9488 20.736 5.146 18.421 5.2105 solid black
+edge "biocluster.tool" "biocluster.proto.tool_guide_pb2" 7 39.439 2.2585 41.805 2.2514 48.5 2.2944 49.159 3 49.541 3.4099 48.926 3.7399 48.287 3.9555 solid black
+edge "biocluster.tool" "biocluster.proto.tool_guide_pb2_grpc" 4 39.441 2.391 40.404 2.5394 42.021 2.7888 43.25 2.9782 solid black
+edge "biocluster.workflow" "biocluster.api.database.base" 4 26.129 0.50209 24.641 1.0435 21.011 2.3649 19.404 2.9496 solid black
+edge "biocluster.workflow" "biocluster.api.file.lib.transfer" 16 25.698 0.48479 25.657 0.49041 25.616 0.49553 25.575 0.5 17.639 1.3797 15.546 0.057956 7.6169 1 5.4866 1.2531 4.2454 0.33329 2.8947 2 2.7547 2.1726 2.7764 2.3118 2.8947 2.5 3.014 2.6899 3.1976 2.832 3.3967 2.9379 solid black
+edge "biocluster.workflow" "biocluster.api.file.remote" 10 25.698 0.48332 25.656 0.48936 25.616 0.49496 25.575 0.5 23.463 0.76439 7.9077 0.42321 6.478 2 6.0858 2.4325 6.7115 2.7534 7.3877 2.9597 solid black
+edge "biocluster.workflow" "biocluster.basic" 4 27.873 0.45134 28.894 0.62683 30.407 0.88711 31.407 1.0591 solid black
+edge "biocluster.workflow" "biocluster.batch" 4 27.465 0.50178 28.511 0.86654 30.506 1.5626 31.625 1.9529 solid black
+edge "biocluster.workflow" "biocluster.config" 13 25.698 0.48506 25.657 0.49061 25.616 0.49563 25.575 0.5 24.348 0.63271 4.4364 0.38425 3.3669 1 2.3743 1.5714 1.9681 2.6556 2.7419 3.5 2.8646 3.6339 7.8398 4.0015 10.082 4.1608 solid black
+edge "biocluster.workflow" "biocluster.core.exceptions" 10 25.7 0.48557 24.864 0.65847 23.778 0.88755 23.339 1 20.337 1.7689 18.509 0.51395 16.659 3 16.477 3.2438 16.509 3.596 16.574 3.8621 solid black
+edge "biocluster.workflow" "biocluster.core.function" 13 27.868 0.2803 31.852 0.34364 45.546 0.5893 47.464 1 48.617 1.247 49.264 1.0213 49.922 2 50.316 2.5847 50.002 3.1199 49.409 3.5 48.759 3.9159 37.841 4.1436 33.867 4.213 solid black
+edge "biocluster.workflow" "biocluster.logger" 10 27.87 0.26177 32.217 0.26444 48.189 0.3848 49.686 2 49.837 2.163 49.806 2.313 49.686 2.5 49.56 2.696 49.368 2.8405 49.159 2.9468 solid black
+edge "biocluster.workflow" "biocluster.proto" 22 25.698 0.48247 25.656 0.48875 25.615 0.49463 25.575 0.5 22.532 0.9062 21.608 0.057533 18.686 1 17.879 1.2604 17.715 1.46 17.061 2 16.829 2.1919 16.809 2.2798 16.603 2.5 15.974 3.1729 15.515 3.1448 15.172 4 15.09 4.2063 15.042 4.3197 15.172 4.5 15.25 4.6077 15.83 4.7987 16.375 4.9591 solid black
+edge "biocluster.workflow" "biocluster.proto.public_pb2" 16 27.868 0.28485 32.47 0.37527 50.194 0.73902 51.353 1 52.688 1.3007 54.172 0.86788 54.172 2.2361 54.172 2.2361 54.172 2.2361 54.172 5.2639 54.172 8.175 44.037 6.3283 41.131 6.5 29.79 7.1701 16.101 7.2365 11.487 7.2385 solid black
+edge "biocluster.workflow" "biocluster.proto.workflow_guide_pb2" 13 27.867 0.28067 32.087 0.34854 47.292 0.61748 49.422 1 51.127 1.306 53.117 0.50467 53.117 2.2361 53.117 2.2361 53.117 2.2361 53.117 4.2639 53.117 5.4581 45.057 5.9746 41.144 6.155 solid black
+edge "biocluster.workflow" "biocluster.proto.workflow_guide_pb2_grpc" 13 27.87 0.28444 32.149 0.36741 47.645 0.68819 48.645 1 49.429 1.2448 49.806 1.2786 50.2 2 50.664 2.85 50.124 3.9547 49.339 4.5 48.841 4.8457 41.011 5.0832 36.984 5.183 solid black
+edge "biocluster.workflow" "biocluster.rpc" 7 26.727 0.5018 26.637 0.93662 26.511 1.8725 26.909 2.5 27.415 3.2995 28.424 3.758 29.173 4.0007 solid black
+stop

@@ -1,0 +1,48 @@
+//用于WFM与Workflow通信格式标准
+syntax = "proto3";
+
+package webapi;
+
+option go_package = ".;wfmpb";
+
+import "public.proto";
+
+// Wfm与web端接口通信，接收工作流任务,接收control cmd
+service WebApi {
+    // 发送任务
+    rpc Submit(Task) returns (public.Success) {}
+    // Control操作
+    rpc Control(Command) returns(public.Success) {}
+    // 文件删除
+    rpc S3delete (Proinfo) returns (public.Success) {}
+}
+
+// Instant任务信息
+message Task {
+    string id = 1;
+    string client =2;
+    string json =3;
+    bool instant =4;
+}
+
+// control cmd
+message Command {
+    string id =1;
+    enum Cmd {
+        stop = 0;
+        // 暂停运行
+        pause = 1;
+        // 退出暂停恢复运行
+        continue = 2;
+    }
+    Cmd msg = 2;
+}
+// 删除的项目信息
+message Proinfo {
+    // 项目id
+    string projectid = 1;
+    // 任务id
+    string taskid = 2;
+    // 前端需要的uniqneid
+    string uniqueid = 3;
+}

@@ -1,0 +1,74 @@
+//用于NTM与Tool通信格式标准
+syntax = "proto3";
+
+package ntmpb;
+
+option go_package = ".;ntmpb";
+
+
+
+// tool运行期间与ntm的通信
+service ToolGuide {
+    // 发送状态
+    rpc SendState(stream State) returns  (Success) {}
+    // 发送参数信息
+    rpc OptionData(Options) returns (Success) {}
+    // keepalive
+    rpc Keepalive(Tool) returns (Success) {}
+    // // 批量请求下载
+    // rpc Download(stream FileTrans) returns (Success) {}
+    // // 批量上传请求
+    // rpc Upload(stream FileTrans) returns (Success) {}
+    // // 等待所有传输任务完成
+    // rpc Wait(Tool) returns (stream Progress) {}
+    // // 下载文件，并等待下载完成
+    // rpc GetFile(FileTrans) returns (stream Progress) {}
+    // // 等待workflow 对应的数据库启动，并获取其配置
+    // rpc GetDatabase(Tool) returns (Database) {}
+}
+
+
+// service NTMManager {
+//     rpc Kill(Tool) returns  (Success) {}
+//     rpc Offline(Reason) returns  (Success) {}
+// }
+
+// tool状态信息
+message State{
+    string workflow_id = 1;
+    string tool_id = 2;
+    string state = 3;
+    int32 jobid = 4;
+    string jobtype = 5;
+    int32 process_id = 6;
+    string host = 7;
+    int32 version = 8;
+    bytes data = 9;
+}
+
+// 是否成功
+message Success {
+    bool ok = 1;
+    string reason = 2;
+}
+
+message Options {
+    string workflow_id = 1;
+    string tool_id = 2;
+    int32 jobid = 3;
+    string jobtype = 4;
+    int32 process_id = 5;
+    int32 version = 6;
+    bytes data = 7;
+}
+
+
+// Tool任务
+message Tool {
+    string tool_id = 1;
+    string workflow_id = 2;
+    int32 process_id = 3;
+    int32 version = 4;
+    int32 jobid = 5;
+    string jobtype = 6;
+}
