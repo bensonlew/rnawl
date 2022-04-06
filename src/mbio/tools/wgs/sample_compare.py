@@ -66,7 +66,7 @@ class SampleCompareTool(Tool):
         self.script_path = self.config.PACKAGE_DIR + "/wgs/sample_vcf.pl"
         self.script_path1 = self.config.PACKAGE_DIR + "/wgs/single_vcf.pl"
         self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.distribution_graph_path = self.config.PACKAGE_DIR + "/wgs/distribution_graph.py"
 
     def sampletosample(self):

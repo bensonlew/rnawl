@@ -48,7 +48,7 @@ class FastxTool(Tool):
         super(FastxTool, self).__init__(config)
         self._version = 1.0
         self.fastx_dir = "bioinfo/seq/fastx_toolkit_0.0.14/"
-        self.python_dir = "program/Python/bin/python"
+        self.python_dir = "miniconda2/bin/python"
         self.q20q30_stat = os.path.join(Config().SOFTWARE_DIR, "datasplit/bin/q20q30_stat.py")
         self.gnuplot = os.path.join(Config().SOFTWARE_DIR, "bioinfo/plot/gnuplot/bin")
         self.lib_path = os.path.join(Config().SOFTWARE_DIR, "library/lib")

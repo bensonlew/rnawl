@@ -34,7 +34,7 @@ class FastaStatisticsAgent(Agent):
 class FastaStatisticsTool(Tool):
 	def __init__(self, config):
 		super(FastaStatisticsTool, self).__init__(config)
-		self.python_path = "program/Python/bin/python"
+		self.python_path = "miniconda2/bin/python"
 		self.python_script = self.config.PACKAGE_DIR + "/tool_lab/fasta_information-v3.py"
 				
 		

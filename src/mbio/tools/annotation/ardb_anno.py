@@ -54,8 +54,8 @@ class ArdbAnnoTool(Tool):
     def __init__(self, config):
         super(ArdbAnnoTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
-        #self.python_path = "program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
+        #self.python_path = "miniconda2/bin/python"
         # self.python_script = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/meta_ardb_mongo.py'
         self.python_script = self.config.PACKAGE_DIR + '/annotation/mg_annotation/meta_ardb_mongo.py'
         self.sh_path = 'bioinfo/align/scripts/cat.sh'

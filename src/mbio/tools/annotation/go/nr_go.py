@@ -80,7 +80,7 @@ class NrGoTool(Tool):
         self.end()
 
     def nr2go(self):
-        cmd1 = 'program/Python/bin/python {}'.format(self.nr2go_script)
+        cmd1 = 'miniconda2/bin/python {}'.format(self.nr2go_script)
         cmd1 += ' %s %s %s %s' % (self.option('blastout').prop['path'],
                                   self.idmapping_db,
                                   self.option("p"),

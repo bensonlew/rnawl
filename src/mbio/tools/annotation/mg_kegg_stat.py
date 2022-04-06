@@ -53,8 +53,8 @@ class MgKeggStatTool(Tool):
     def __init__(self, config):
         super(MgKeggStatTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = "program/Python/bin/python"
-        # self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
+        # self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         self.python_script = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/meta_kegg_stat.py'
         self.python_script2 = self.config.PACKAGE_DIR + '/annotation/mg_annotation/kegg_pathway_img_v94.py'
         self.perl = '/program/perl-5.24.0/bin/perl'

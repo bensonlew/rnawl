@@ -57,7 +57,7 @@ class GoAnnotAgent(Agent):
 class GoAnnotTool(Tool):
     def __init__(self, config):
         super(GoAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.idmapping_db = AnnotConfig().get_file_path(
             file ="idmapping.tb",
             db = "pir",

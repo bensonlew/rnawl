@@ -53,7 +53,7 @@ class CircosPreTool(Tool):
         self.ncrna_script_path = self.config.PACKAGE_DIR + '/bacgenome/ncRNA_legend.pl'
         self.cog_script_path = self.config.PACKAGE_DIR + '/bacgenome/gene_cog_type.py'
         self.perl_path = '/program/perl-5.24.0/bin/perl'
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
 
     def run(self):
         """

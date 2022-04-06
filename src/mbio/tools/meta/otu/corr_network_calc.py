@@ -1,4 +1,4 @@
-## !/mnt/ilustre/users/sanger-dev/app/program/Python/bin/python
+## !/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/python
 # -*- coding: utf-8 -*-
 # __author__ = "hongdongxuan"
 
@@ -82,7 +82,7 @@ class CorrNetworkCalcTool(Tool):
     def __init__(self, config):
         super(CorrNetworkCalcTool, self).__init__(config)
         self._version = '1.0.1'
-        self.python_path = 'program/Python/bin/python '
+        self.python_path = 'miniconda2/bin/python '
         self.script_path = os.path.join(Config().SOFTWARE_DIR, "bioinfo/meta/scripts/corr_net_calc.py")
 
     def run_CorrNetworkCalc(self):

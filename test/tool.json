@@ -1,0 +1,13 @@
+{
+    "type": "tool",
+    "_full_name": "MedicalTranscriptome.ExpCorr",
+	"name": "medical_transcriptome.exp_corr",
+    "options": {
+		"scm": "complete",
+		"corr_method": "pearson",
+		"log_base": null,
+		"scd": "euclidean",
+		"exp": "/home/liubinxu/work/rnawl/test/expression_matrix.xls",
+		"output": null
+    }
+}

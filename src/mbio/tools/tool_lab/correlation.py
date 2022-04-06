@@ -82,7 +82,7 @@ class CorrelationTool(Tool):
         self.cluster_method = self.option('cluster') if self.option('cluster') != 'no' else "complete"  # 如果不聚类，
         # 后面不导表
         # self.cmd_path = os.path.join(self.config.SOFTWARE_DIR, '/corr_heatmap.r')
-        # self.cmd_path = '{}/program/Python/bin/python {}/src/mbio/packages/metabolome/scripts/cluster.py'\
+        # self.cmd_path = '{}/miniconda2/bin/python {}/src/mbio/packages/metabolome/scripts/cluster.py'\
         #     .format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
 
     def get_corr_table(self):

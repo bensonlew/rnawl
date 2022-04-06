@@ -51,7 +51,7 @@ class ReactomeAnnotAgent(Agent):
 class ReactomeAnnotTool(Tool):
     def __init__(self, config):
         super(ReactomeAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         # self.xml2table_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/xml2table.py')
         self.txml2gxml_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/txml2gxml.py')
         self.reactome_transition_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/reactome_transition.py')

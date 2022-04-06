@@ -71,7 +71,7 @@ class TopologyAgent(Agent):
 class TopologyTool(Tool):
     def __init__(self, config):
         super(TopologyTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         #self._path = self.config.PACKAGE_DIR + "/metabolome/impact_value.py"
         if self.option("version") in ['kegg']:
             self.db_path = self.config.SOFTWARE_DIR + "/database/metabolome/topo_json/"

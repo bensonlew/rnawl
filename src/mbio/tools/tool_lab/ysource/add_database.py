@@ -48,7 +48,7 @@ class AddDatabaseTool(Tool):
     def __init__(self, config):
         super(AddDatabaseTool, self).__init__(config)
         self._version = '1.0'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.script = self.config.PACKAGE_DIR + '/tool_lab/yoogene/yfull/add_source_database.py'
 
     def run(self):

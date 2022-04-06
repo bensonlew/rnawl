@@ -55,7 +55,7 @@ class ExpBuildTool(Tool):
     def __init__(self, config):
         super(ExpBuildTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'exp_build': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome_v1_1/formation/exp_build.py')

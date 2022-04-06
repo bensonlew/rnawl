@@ -79,7 +79,7 @@ class Qiime2BayesTool(Tool):
     """
     def __init__(self, config):
         super(Qiime2BayesTool, self).__init__(config)
-        self.qiime_path = "program/Python/bin/python"
+        self.qiime_path = "miniconda2/bin/python"
         self.shell = "program/sh"
         self.shell_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/qiime2_bayes.sh")
         self.shell_path2 = os.path.join(self.config.PACKAGE_DIR, "metaasv/train_bayes.sh")

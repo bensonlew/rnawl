@@ -66,7 +66,7 @@ class SeqReverseTool(Tool):
     def __init__(self, config):
         super(SeqReverseTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.perl =  '/program/perl/perls/perl-5.24.0/bin/perl'
         self.tool_path_old=self.config.PACKAGE_DIR+"/tool_lab/seq_reverse.py"
         self.tool_path= self.config.PACKAGE_DIR + "/tool_lab/seq_reverse.pl"

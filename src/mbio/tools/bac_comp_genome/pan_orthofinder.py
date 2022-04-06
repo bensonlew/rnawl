@@ -55,7 +55,7 @@ class PanOrthofinderTool(Tool):
         self.perl5path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
         self.set_environ(PATH=self.path, PERL5LIB=self.perl5path)
         self.fasta = self.option("infile_dir").prop['path']
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.python_script = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/OrthoFinder-master/orthofinder"
         self.out = self.work_dir + '/out_result'
         self.config_json = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/OrthoFinder-master/orthofinder/config.json"

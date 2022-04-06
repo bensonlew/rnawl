@@ -57,7 +57,7 @@ class RmatsBamTool(Tool):
     def __init__(self, config):
         super(RmatsBamTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS2/rmats.py')

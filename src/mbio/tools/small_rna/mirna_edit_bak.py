@@ -78,7 +78,7 @@ class MirnaEditBakTool(Tool):
         self.set_environ(PATH=self.anaconda2)
         # set program path, '/mnt/ilustre/users/sanger-dev/app' will be attached to the frontier of path
         self.bowtie = 'bioinfo/miRNA/anaconda2/bin/bowtie'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.rnafold = 'bioinfo/miRNA/anaconda2/bin/RNAfold'
         self.perl = 'program/perl-5.24.0/bin/perl'
         # set file path

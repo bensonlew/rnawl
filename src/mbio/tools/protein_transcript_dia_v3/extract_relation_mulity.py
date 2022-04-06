@@ -46,7 +46,7 @@ class ExtractRelationMulityAgent(Agent):
 class ExtractRelationMulityTool(Tool):
     def __init__(self, config):
         super(ExtractRelationMulityTool, self).__init__(config)
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.extract = self.config.PACKAGE_DIR + "/protein_transcript_labelfree/extract_relation_mulity.py"
 
     def extract_relation(self):

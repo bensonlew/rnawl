@@ -56,7 +56,7 @@ class AnnoFunSelectAgent(Agent):
 class AnnoFunSelectTool(Tool):
     def __init__(self, config):
         super(AnnoFunSelectTool, self).__init__(config)
-        self.python_path =  "/program/Python/bin/python"
+        self.python_path =  "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/annotation/mg_annotation/function_select.py'
 
     def run(self):

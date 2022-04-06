@@ -56,7 +56,7 @@ class RrnaAlignTool(Tool):
     """
     def __init__(self, config):
         super(RrnaAlignTool, self).__init__(config)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.blast_path = "/bioinfo/align/ncbi-blast-2.3.0+/bin/"
         self.gtdb_database = self.config.SOFTWARE_DIR + "/database/GTDB/GTDB_rrna/bac120_ssu_reps_r95"
 

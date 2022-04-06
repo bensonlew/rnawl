@@ -55,7 +55,7 @@ class PanVariationTool(Tool):
         self.perl_path = "/program/perl/perls/perl-5.24.0/bin/perl"
         self.perl_script = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/PGAP-1.2.1/PGAP.pl"
         self.out = self.work_dir + '/out_result'
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.format_convert = self.config.PACKAGE_DIR + "/bac_comp_genome/format_convert.py"
 
     def format_covert(self):

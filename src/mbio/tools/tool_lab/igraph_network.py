@@ -65,7 +65,7 @@ class IgraphNetworkTool(Tool):
         self.r_igraph = self.config.PACKAGE_DIR + "/tool_lab/igraph_network/igraph_network.py"
         self.color_dict = ""
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         # self.gcc = software_dir + '/gcc/5.1.0/bin'
         # self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         # self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)

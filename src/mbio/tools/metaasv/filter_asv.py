@@ -66,7 +66,7 @@ class FilterAsvTool(Tool):
     def __init__(self, config):
         super(FilterAsvTool, self).__init__(config)
         self.keep_list = list()  # 处理物种筛选中的保留的逻辑
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.python_script = os.path.join(self.config.PACKAGE_DIR, 'metaasv/filter_asv.py')
 
     def run_get_relative(self):

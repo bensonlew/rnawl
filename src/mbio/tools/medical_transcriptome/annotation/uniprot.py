@@ -52,7 +52,7 @@ class UniprotAnnotAgent(Agent):
 class UniprotAnnotTool(Tool):
     def __init__(self, config):
         super(UniprotAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.xml2table_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/xml2table.py')
         self.txml2gxml_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/txml2gxml.py')
         self.get_venn_list_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/get_venn_list.py')

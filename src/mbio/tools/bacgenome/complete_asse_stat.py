@@ -42,7 +42,7 @@ class CompleteAsseStatTool(Tool):
         self.fa = self.option("fa").prop['path']
         self.table = self.option("table").prop['path']
         self.ample = self.option('sample_name')
-        self.perl_path = "/program/Python/bin/python"
+        self.perl_path = "/miniconda2/bin/python"
         self.perl_script = self.config.PACKAGE_DIR + "/bacgenome/"
 
     def run_asse_stat(self):

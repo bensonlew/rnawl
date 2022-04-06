@@ -65,7 +65,7 @@ class RmatsTool(Tool):
         python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
         self.set_environ(PATH=python_path)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             # 'python': 'bioinfo/rna/miniconda2/bin/python'
         }
         self.script = {

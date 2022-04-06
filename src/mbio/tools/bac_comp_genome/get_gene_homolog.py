@@ -52,7 +52,7 @@ class GetGeneHomologTool(Tool):
         self.type = self.option("type")
         self.clusters = self.option("clusters")
         self.gene_dir = self.option("gene_path")
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/'
         self.out = self.work_dir + "/all.homolog.fna"
 

@@ -38,7 +38,7 @@ class GbInfoTool(Tool):
     def __init__(self, config):
         super(GbInfoTool, self).__init__(config)
         self.gb_info = self.config.PACKAGE_DIR + '/tool_lab/gb_info.py'
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
 
     def run(self):
         super(GbInfoTool, self).run()

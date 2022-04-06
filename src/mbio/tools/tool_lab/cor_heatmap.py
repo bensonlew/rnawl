@@ -74,7 +74,7 @@ class CorHeatmapTool(Tool):
         self.r_path = self.config.SOFTWARE_DIR + '/program/R-3.3.1/bin/Rscript'
         self.hcluster_script_path = self.config.SOFTWARE_DIR + "/bioinfo/statistical/scripts/"
         self.Rscript_path = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin/"
-        self.cmd_path = '{}/program/Python/bin/python {}/statistical/pearsonsCorrelation.py'\
+        self.cmd_path = '{}/miniconda2/bin/python {}/statistical/pearsonsCorrelation.py'\
             .format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
         # self.cmd_path=os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/statistical/scripts/pearsonsCorrelation.py')
         self.table1 = self.option('table1').prop['path']

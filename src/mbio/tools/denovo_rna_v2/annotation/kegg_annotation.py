@@ -80,7 +80,7 @@ class KeggAnnotationTool(Tool):
     def __init__(self, config):
         super(KeggAnnotationTool, self).__init__(config)
         self._version = "2.0"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         # self.taxonomy_path = self.config.SOFTWARE_DIR + "/database/KEGG/species/{}.ko.txt".format(self.option("taxonomy"))
         # self.kegg_path = self.config.SOFTWARE_DIR + "/bioinfo/annotation/scripts/kegg_annotation.py"
         #self.config.PACKAGE_DIR + "/denovo_rna_v2/new_annotation_query.py"

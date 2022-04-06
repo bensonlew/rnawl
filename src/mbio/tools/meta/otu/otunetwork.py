@@ -143,7 +143,7 @@ class OtunetworkTool(Tool):
         运行calc_otu_network.py
         """
         real_otu_path = self.formattable(self.otu_table)
-        cmd = self.config.SOFTWARE_DIR + '/program/Python/bin/python '
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/python '
         cmd += self.cmd_path
         cmd += ' -i %s -o %s' % (real_otu_path, self.work_dir + '/otu_network')
         if self.option('grouptable').is_set:

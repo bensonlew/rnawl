@@ -43,7 +43,7 @@ class CrisprcasfinderTool(Tool):
         self.db = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/CRISPRCasFinder/src/sel392v2.so"
         self.db2 = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/CRISPRCasFinder/CasFinder-2.0.3"
         self.perl = "/program/perl/perls/perl-5.24.0/bin/perl"
-        self.python    = "/program/Python/bin/python"
+        self.python    = "/miniconda2/bin/python"
         self.perl_script = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/CRISPRCasFinder/"
         self.script = self.config.PACKAGE_DIR + '/tool_lab/'
 

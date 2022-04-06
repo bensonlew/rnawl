@@ -63,7 +63,7 @@ class PanPgapTool(Tool):
         self.perl_script = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/PGAP-1.2.1/PGAP.pl"
         self.out = self.work_dir + '/out_result'
         self.format_convert = self.config.PACKAGE_DIR + "/bac_comp_genome/format_convert.py"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
 
 
     def format_covert(self):

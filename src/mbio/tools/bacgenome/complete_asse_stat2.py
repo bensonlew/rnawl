@@ -42,7 +42,7 @@ class CompleteAsseStat2Tool(Tool):
     def __init__(self, config):
         super(CompleteAsseStat2Tool, self).__init__(config)
         self.perl_path = "/program/perl-5.24.0/bin/perl"
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         # self.fa = os.path.join(self.work_dir, "all.fa")
         self.python_script = self.config.PACKAGE_DIR + "/bacgenome/complete_get_seq.py"
         self.perl_script = self.config.PACKAGE_DIR + "/bacgenome/complete_stat2.pl"

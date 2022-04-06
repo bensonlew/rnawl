@@ -51,7 +51,7 @@ class Circexplorer2Tool(Tool):
         self.program = {
             'Circexplorer2': 'bioinfo/rna/miniconda2/bin/CIRCexplorer2',
             'bwa': 'install_packages/bwa-0.7.16a/bwa',
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'perl': 'program/perl-5.24.0/bin/perl',
 
 

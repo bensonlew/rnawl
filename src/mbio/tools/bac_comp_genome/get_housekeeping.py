@@ -50,7 +50,7 @@ class GetHousekeepingTool(Tool):
         self.core_gene_blast = self.option("core_gene_blast").prop["path"]
         self.sample_list = self.option("sample_list")
         self.core_names = self.option("core_names")
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/'
         self.out = self.work_dir + "/all.housekeeping.fna"
 

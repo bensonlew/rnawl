@@ -59,7 +59,7 @@ class ExtractDesAgent(Agent):
 class ExtractDesTool(Tool):
     def __init__(self, config):
         super(ExtractDesTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
 
     def run(self):
         super(ExtractDesTool, self).run()

@@ -63,7 +63,7 @@ class IntronStatAgent(Agent):
 class IntronStatTool(Tool):
     def __init__(self, config):
         super(IntronStatTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
 
     def run(self):
         super(IntronStatTool, self).run()

@@ -83,7 +83,7 @@ class SingleCorrelationTool(Tool):
     def __init__(self, config):
         super(SingleCorrelationTool, self).__init__(config)
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')
-        self.cmd_path = '{}/program/Python/bin/python {}/statistical/pearsonsCorrelation.py'\
+        self.cmd_path = '{}/miniconda2/bin/python {}/statistical/pearsonsCorrelation.py'\
             .format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
         self.env_table = self.option("envtable").prop['path']
         self.real_otu = self.option("otutable").prop['path']

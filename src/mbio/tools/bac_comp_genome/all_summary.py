@@ -43,7 +43,7 @@ class AllSummaryTool(Tool):
     def __init__(self, config):
         super(AllSummaryTool, self).__init__(config)
         self._version = "1.0"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/'
         self.out = self.work_dir + "/all.summary.xls"
 

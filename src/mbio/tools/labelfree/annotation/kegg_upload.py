@@ -65,7 +65,7 @@ class KeggUploadTool(Tool):
     def __init__(self, config):
         super(KeggUploadTool, self).__init__(config)
         self._version = "2.0"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.kegg_files_dict = AnnotConfig().get_file_dict(db="kegg", version=self.option("kegg_version"))
         self.taxonomy_path = self.kegg_files_dict['species'] + "/{}.ko.txt".format(self.option("taxonomy"))
         # self.taxonomy_path = self.config.SOFTWARE_DIR + "/database/KEGG/species/{}.ko.txt".format(self.option("taxonomy"))

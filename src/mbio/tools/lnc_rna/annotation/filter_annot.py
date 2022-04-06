@@ -73,7 +73,7 @@ class FilterAnnotAgent(Agent):
 class FilterAnnotTool(Tool):
     def __init__(self, config):
         super(FilterAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.filter_blast_xml_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/filter_blast_xml.py')
         self.filter_pfam_domain_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/filter_pfam_domain.py')
         self.filter_blast2go_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/filter_blast2go.py')

@@ -106,7 +106,7 @@ class GoAnnotationTool(Tool):
         self.run_gomerge()
 
     def run_gomerge(self):
-        cmd1 = 'program/Python/bin/python {}'.format(self.merge_go)
+        cmd1 = 'miniconda2/bin/python {}'.format(self.merge_go)
         cmd1 += ' %s %s' % (self.option('blast2go_annot').prop['path'], 'GO.list')
         # Config.DB_HOST,Config.DB_USER,Config.DB_PASSWD
         self.logger.info("运行mergeGO.py")
@@ -122,7 +122,7 @@ class GoAnnotationTool(Tool):
         self.run_annotation()
 
     def run_annotation(self):
-        cmd2 = 'program/Python/bin/python {}'.format(self.annot_go)
+        cmd2 = 'miniconda2/bin/python {}'.format(self.annot_go)
         cmd2 += ' %s  %s %s' % (
             self.work_dir + '/GO.list', self.work_dir, self.go_obo)
 
@@ -147,7 +147,7 @@ class GoAnnotationTool(Tool):
         self.set_out()
 
     def run_annotation2(self):
-        cmd2 = 'program/Python/bin/python {}'.format(self.annot_go2)
+        cmd2 = 'miniconda2/bin/python {}'.format(self.annot_go2)
         cmd2 += ' %s  %s %s' % (
             self.work_dir + '/GO.list', self.work_dir, self.go_obo)
 

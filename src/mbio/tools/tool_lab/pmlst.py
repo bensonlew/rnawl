@@ -43,7 +43,7 @@ class PmlstTool(Tool):
         self.lib = self.config.SOFTWARE_DIR + "/program/Python35/lib"
         self.set_environ(PATH=self.path, LD_LIBRARY_PATH=self.lib)
         self.db = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/pmlst/pmlst_db/"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.python2 = "/program/Python35/bin/python"
         self.python_script = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/pmlst/"
         self.blastn = self.config.SOFTWARE_DIR + "/bioinfo/align/ncbi-blast-2.3.0+/bin/blastn"

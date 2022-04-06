@@ -42,7 +42,7 @@ class CardAnnoTool(Tool):
     def __init__(self, config):
         super(CardAnnoTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         self.db = self.config.SOFTWARE_DIR + "/database/card/card_function.xls"
         self.python_script = self.config.PACKAGE_DIR + '/bac_comp_genome/anno_card.py'
         self.sh_path = 'bioinfo/align/scripts/cat.sh'

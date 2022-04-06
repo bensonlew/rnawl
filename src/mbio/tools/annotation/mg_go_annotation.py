@@ -72,7 +72,7 @@ class MgGoAnnotationTool(Tool):
         self.end()
 
     def run_gomerge(self):
-        cmd1 = 'program/Python/bin/python {}/bioinfo/annotation/scripts/goMerge.py'.format(
+        cmd1 = 'miniconda2/bin/python {}/bioinfo/annotation/scripts/goMerge.py'.format(
             self.config.SOFTWARE_DIR)
         cmd1 += ' %s %s' % (self.option("blast2go_annot").prop['path'], 'GO.list')
         self.logger.info("运行mergeGO.py")
@@ -91,7 +91,7 @@ class MgGoAnnotationTool(Tool):
 
     def run_annotation(self):
         self.run_filter(self.work_dir + '/GO.list',self.work_dir + '/GO_2.list')
-        cmd2 = 'program/Python/bin/python {} {}'.format(self.annot_go, self.work_dir + '/GO_2.list')
+        cmd2 = 'miniconda2/bin/python {} {}'.format(self.annot_go, self.work_dir + '/GO_2.list')
         self.logger.info("运行goAnnot.py")
         self.logger.info(cmd2)
         command = self.add_command("run_annotation", cmd2, ignore_error=True)
@@ -105,7 +105,7 @@ class MgGoAnnotationTool(Tool):
             self.set_error("运行run_annotation出错")
 
     def run_go_gene_anno(self):
-        cmd3 = 'program/Python/bin/python {}/annotation/go/go_anno.py'.format(
+        cmd3 = 'miniconda2/bin/python {}/annotation/go/go_anno.py'.format(
             self.config.PACKAGE_DIR)
         cmd3 += ' -i %s -o %s' % (self.work_dir + '/go1234level_statistics.xls',self.work_dir + '/all.go.annotation.xls')
         self.logger.info("运行go_anno.py")

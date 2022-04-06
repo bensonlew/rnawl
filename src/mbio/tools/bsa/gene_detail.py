@@ -59,7 +59,7 @@ class GeneDetailTool(Tool):
     def __init__(self, config):
         super(GeneDetailTool, self).__init__(config)
         self.gene_detail = self.config.PACKAGE_DIR + "/bsa/gene_detail.py"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
 
     def run_find_gene_detail(self):
         """

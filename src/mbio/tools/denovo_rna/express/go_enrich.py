@@ -82,7 +82,7 @@ class GoEnrichTool(Tool):
         self.go_enrich_path = self.goatools_path + '/scripts/find_enrichment.py'
         self.obo = self.config.SOFTWARE_DIR + '/database/GO/go-basic.obo'
         self.set_environ(PYTHONPATH=self.config.SOFTWARE_DIR + self.goatools_path)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.out_enrich_fp = os.path.join(self.output_dir, 'go_enrich_{}.xls'.format(
             os.path.splitext(os.path.basename(self.option('diff_list').path))[0]))
         self.out_go_graph = self.output_dir + '/go_lineage'

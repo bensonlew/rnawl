@@ -57,7 +57,7 @@ class TfPredict2Tool(Tool):
     def __init__(self, config):
         super(TfPredict2Tool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.jaspar_profile = software_dir + '/bioinfo/rna/JASPAR-profile-inference-master/infer_profile.py'
         self.jaspar_db =  software_dir + '/bioinfo/rna/JASPAR-profile-inference-master/'
         self.jaspar_file_dir = software_dir + "/database/JASPAR2020"

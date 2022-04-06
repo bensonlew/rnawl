@@ -43,7 +43,7 @@ class CutfastaTool(Tool):
     def __init__(self, config):
         super(CutfastaTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'cutfasta': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/circrna/cutfasta.py')

@@ -56,7 +56,7 @@ class MirparaTool(Tool):
             os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/lnc_rna/miRPara/required_packages/ct2out'),
             os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/lnc_rna/miRPara/required_packages/libsvm-3.14')
         ]))
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.perl = 'bioinfo/lnc_rna/miniconda2/bin/perl'
         self.mirpara_pretreat_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/mirpara_pretreat.py')
         self.mirpara_pl = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/lnc_rna/miRPara/miRPara.pl')

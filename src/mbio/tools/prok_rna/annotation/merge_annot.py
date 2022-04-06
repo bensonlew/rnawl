@@ -92,7 +92,7 @@ class MergeAnnotTool(Tool):
         self.database = self.option("database").split(",")
         self.b2g_user = "biocluster102"
         self.b2g_password = "sanger-dev-123"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.merge_scripts = self.config.PACKAGE_DIR + "/prok_rna/merge.py"
         self.goAnnot = self.config.PACKAGE_DIR + "/prok_rna/goAnnot.py"
         self.goSplit = self.config.PACKAGE_DIR + "/prok_rna/goSplit.py"

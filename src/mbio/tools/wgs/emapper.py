@@ -57,7 +57,7 @@ class EmapperTool(Tool):
         self.set_environ(PATH=self.config.SOFTWARE_DIR + "/bioinfo/align/diamond-0.8.35/")
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + "/bioinfo/align/diamond-0.8.35/")
         self.emapper_path = self.config.SOFTWARE_DIR + "/bioinfo/WGS/eggnog-mapper/emapper.py"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
 
     def Emapper(self):
         """

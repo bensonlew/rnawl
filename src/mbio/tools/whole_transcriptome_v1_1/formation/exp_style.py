@@ -45,7 +45,7 @@ class ExpStyleTool(Tool):
     def __init__(self, config):
         super(ExpStyleTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'exp_style': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/formation/exp_style.py')

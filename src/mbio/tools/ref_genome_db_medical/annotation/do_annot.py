@@ -53,7 +53,7 @@ class DoAnnotAgent(Agent):
 class DoAnnotTool(Tool):
     def __init__(self, config):
         super(DoAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.do_transition_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/do_transition.py')
         self.do_relation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/do_relation.py')
         self.do_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/do_annotation.py')

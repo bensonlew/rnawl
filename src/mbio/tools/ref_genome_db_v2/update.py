@@ -62,7 +62,7 @@ class UpdateTool(Tool):
             self.set_error("文件上传失败!!")
 
     def update_mongo(self):
-        cmd = "{} {} --genome_ids {}".format(self.config.SOFTWARE_DIR + '/program/Python/bin/python', self.update_mongo_script, self.option("genome_id"))
+        cmd = "{} {} --genome_ids {}".format(self.config.SOFTWARE_DIR + '/miniconda2/bin/python', self.update_mongo_script, self.option("genome_id"))
         self.logger.info(cmd)
         try:
             subprocess.check_output(cmd, shell=True)

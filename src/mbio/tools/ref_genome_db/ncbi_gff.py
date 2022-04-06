@@ -66,7 +66,7 @@ class NcbiGffTool(Tool):
         super(NcbiGffTool, self).__init__(config)
         self._version = "v1.0.1"
         self.ncbi_gff = self.config.PACKAGE_DIR + "/ref_genome_db/ncbi_gff.py"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
 
 
     def run(self):

@@ -50,7 +50,7 @@ class RegionAnnoAgent(Agent):
 class RegionAnnoTool(Tool):
     def __init__(self, config):
         super(RegionAnnoTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.region_anno_path = self.config.PACKAGE_DIR + "/wgs_v2/region_anno.py"
         self.ko_path = self.config.SOFTWARE_DIR + "/database/KEGG/kegg_2017-05-01/kegg/pathway/ko/"
         self.image_magick = self.config.SOFTWARE_DIR + "/program/ImageMagick/bin/convert"

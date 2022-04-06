@@ -72,7 +72,7 @@ class BlastTool(Tool):
             self.db_path = os.path.join(self.work_dir, 'custom_blastdb')
         self.cmd_path = "bioinfo/align/ncbi-blast-2.3.0+/bin"  # 执行程序路径必须相对于 self.config.SOFTWARE_DIR
         self.set_environ(BLASTDB=self.db_path)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + "/toolapps/annno_taxon.py"
 
     def run_makedb_and_blast(self):

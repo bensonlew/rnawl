@@ -48,7 +48,7 @@ class SplitBedAgent(Agent):
 class SplitBedTool(Tool):
     def __init__(self, config):
         super(SplitBedTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.split_bed_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/split_bed.py')
 
     def run(self):

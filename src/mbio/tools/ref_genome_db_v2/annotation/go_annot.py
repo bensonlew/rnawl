@@ -54,7 +54,7 @@ class GoAnnotAgent(Agent):
 class GoAnnotTool(Tool):
     def __init__(self, config):
         super(GoAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.go_transition_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/go_transition.py')
         self.go_relation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/go_relation.py')
         self.go_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/go_annotation2.py')

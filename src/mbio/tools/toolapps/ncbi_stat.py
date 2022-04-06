@@ -51,7 +51,7 @@ class NcbiStatTool(Tool):
     """
     def __init__(self, config):
         super(NcbiStatTool, self).__init__(config)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + "/toolapps/"
 
 

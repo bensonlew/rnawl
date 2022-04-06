@@ -63,7 +63,7 @@ class RmatsTTool(Tool):
     def __init__(self, config):
         super(RmatsTTool, self).__init__(config)
         self.program = {
-                # 'python': 'program/Python/bin/python',
+                # 'python': 'miniconda2/bin/python',
                 'python': 'bioinfo/ref_rna_v3/rmats/miniconda3/bin/python3.7'
         }
         self.script = {

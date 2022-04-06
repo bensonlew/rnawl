@@ -56,7 +56,7 @@ class SeqStatTool(Tool):
         super(SeqStatTool, self).__init__(config)
         self.logger.info("开始进行seq_stat的序列统计")
         self.stat_seq = os.path.join(self.config.PACKAGE_DIR, "bac_comp_genome/seq_stat.py")
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
 
     def seq_stat(self):
         """

@@ -45,7 +45,7 @@ class ProteinPictureTool(Tool):
     def __init__(self, config):
         super(ProteinPictureTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'picture': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/get_protein_infomation_from_picture.py'),

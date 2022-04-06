@@ -40,8 +40,8 @@ class FunctionSetAgent(Agent):
 class FunctionSetTool(Tool):
     def __init__(self, config):
         super(FunctionSetTool, self).__init__(config)
-        #self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
-        self.python_path = "program/Python/bin/python"
+        #self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + '/annotation/function_set_produce.py'
 
     def run(self):

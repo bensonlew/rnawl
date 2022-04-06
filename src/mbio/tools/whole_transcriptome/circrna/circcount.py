@@ -42,7 +42,7 @@ class CirccountTool(Tool):
     def __init__(self, config):
         super(CirccountTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'circcount': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/circrna/circcount.py')

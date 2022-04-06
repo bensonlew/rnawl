@@ -46,7 +46,7 @@ class Tool(object):
         """
         初始化并加载config
 
-        :param config: PickleConfig对象
+        :param config: PickleConfig 对象
         :return:
         """
         super(Tool, self).__init__()
@@ -54,7 +54,7 @@ class Tool(object):
         self._name = ""
         self._full_name = ""
         self._id = ""
-        self._work_dir = ""
+        self._work_dir = "./"
         self._commands = {}
         self._states = []
         self._output_path = ""
@@ -62,7 +62,7 @@ class Tool(object):
         self._end = False
         self._options = {}
         self.version = 0
-        self.instant = False  # 本地进程模式
+        self.instant = True  # 本地进程模式
         self.load_config()
         self.logger = Wlog(self).get_logger('')
         # self.main_thread = threading.current_thread()
@@ -235,14 +235,14 @@ class Tool(object):
         try:
             self._send_state_times += 1
             self.logger.debug("ntm_port:{}".format(self.config.ntm_port))
-            with grpc.insecure_channel('localhost:%s' % self.config.ntm_port) as channel:
-                stub = tool_guide_pb2_grpc.ToolGuideStub(channel)
-                response = stub.OptionData(option_data)
-                if response.ok:
-                    self.logger.info("发送optiondata成功")
-                else:
-                    self.logger.debug("ntm服务拒绝接受optiondata, 原因: %s" % response.reason)
-                self._send_state_times = 0
+            # with grpc.insecure_channel('localhost:%s' % self.config.ntm_port) as channel:
+            #     stub = tool_guide_pb2_grpc.ToolGuideStub(channel)
+            #     response = stub.OptionData(option_data)
+            #     if response.ok:
+            #         self.logger.info("发送optiondata成功")
+            #     else:
+            #         self.logger.debug("ntm服务拒绝接受optiondata, 原因: %s" % response.reason)
+            #     self._send_state_times = 0
 
         except Exception as e:
             exstr = traceback.format_exc()
@@ -445,40 +445,41 @@ class Tool(object):
         return self
 
     def _send_state(self, state):
-        self._send_state_times += 1
+        pass
+        # self._send_state_times += 1
 
-        def get_state_data(state):
-            yield tool_guide_pb2.State(
-                workflow_id=state.workflow_id,
-                tool_id=state.tool_id,
-                jobid=state.jobid,
-                jobtype=state.jobtype,
-                state=state.state,
-                process_id=state.process_id,
-                host=state.host,
-                version=state.version,
-                data=state.data)
-        try:
-            with grpc.insecure_channel('localhost:%s' % self.config.ntm_port) as channel:
-                stub = tool_guide_pb2_grpc.ToolGuideStub(channel)
-                response = stub.SendState(get_state_data(state))
-                if response.ok:
-                    self.logger.info("发送state %s成功" % state.state)
-                else:
-                    self.logger.debug("ntm服务拒绝接受state %s, 原因: %s" % (state.state, response.reason))
-                self._send_state_times = 0
+        # def get_state_data(state):
+        #     yield tool_guide_pb2.State(
+        #         workflow_id=state.workflow_id,
+        #         tool_id=state.tool_id,
+        #         jobid=state.jobid,
+        #         jobtype=state.jobtype,
+        #         state=state.state,
+        #         process_id=state.process_id,
+        #         host=state.host,
+        #         version=state.version,
+        #         data=state.data)
+        # try:
+        #     with grpc.insecure_channel('localhost:%s' % self.config.ntm_port) as channel:
+        #         stub = tool_guide_pb2_grpc.ToolGuideStub(channel)
+        #         response = stub.SendState(get_state_data(state))
+        #         if response.ok:
+        #             self.logger.info("发送state %s成功" % state.state)
+        #         else:
+        #             self.logger.debug("ntm服务拒绝接受state %s, 原因: %s" % (state.state, response.reason))
+        #         self._send_state_times = 0
 
-        except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            sys.stdout.flush()
-            if self._send_state_times > 5:
-                self.logger.error("发送state %s超过3次仍然失败,退出运行" % state.state)
-                raise e
-            else:
-                self.logger.error("发送state %s失败,30秒后重新尝试" % state.state)
-                time.sleep(30)
-                self._send_state(state)
+        # except Exception as e:
+        #     exstr = traceback.format_exc()
+        #     print(exstr)
+        #     sys.stdout.flush()
+        #     if self._send_state_times > 5:
+        #         self.logger.error("发送state %s超过3次仍然失败,退出运行" % state.state)
+        #         raise e
+        #     else:
+        #         self.logger.error("发送state %s失败,30秒后重新尝试" % state.state)
+        #         time.sleep(30)
+        #         self._send_state(state)
 
     # def _send_local_state(self, state):
     #     self.save_report()
@@ -830,7 +831,10 @@ class Tool(object):
         """
         c = Config()
         for name in vars(self.config).keys():
+            if name == "name":
+                continue
             if hasattr(self, name):
+                print(name, getattr(self.config, name))
                 setattr(self, name, getattr(self.config, name))
             else:
                 setattr(c, name, getattr(self.config, name))

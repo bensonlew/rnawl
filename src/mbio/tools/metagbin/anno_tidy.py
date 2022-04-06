@@ -182,7 +182,7 @@ class AnnoTidyTool(Tool):
         self.option("tidy_summary", self.output_dir + "/Summary/" + self.option("sample") + "_anno_summary.xls")
 
     def run_pathway_img(self, kegg_xml, output_dir, pathway_ko, pathway, ko, loc):
-        cmd = "{}/program/Python/bin/python {} -i {} -o {} -p {} -ko {} -KO {}".format("", self.kegg_img, kegg_xml,
+        cmd = "{}/miniconda2/bin/python {} -i {} -o {} -p {} -ko {} -KO {}".format("", self.kegg_img, kegg_xml,
                                                                                        output_dir, pathway_ko, pathway,ko)
         self.logger.info(cmd)
         command = self.add_command(loc, cmd).run()

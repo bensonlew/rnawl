@@ -51,7 +51,7 @@ class FastqExtractRawTool(Tool):
     def __init__(self, config):
         super(FastqExtractRawTool, self).__init__(config)
         self._version = 1.0
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.get_raw_seq = self.config.PACKAGE_DIR + "/datasplit/get_raw_seq.py"
 
     def run_get_raw(self):

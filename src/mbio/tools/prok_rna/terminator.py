@@ -62,7 +62,7 @@ class TerminatorTool(Tool):
         self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
         self.program = {
             'transterm': 'bioinfo/prok_rna/transterm_hp_v2.09/transterm',
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'parafly': 'program/parafly-r2013-01-21/bin/bin/ParaFly',
         }
         self.file = {

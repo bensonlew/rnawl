@@ -71,7 +71,7 @@ class BlastAnnotationAgent(Agent):
 class BlastAnnotationTool(Tool):
     def __init__(self, config):
         super(BlastAnnotationTool, self).__init__(config)
-        self.python = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.python = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         self.blast_filter = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/blast_filter.py'
         m = re.match(r"(gene_.+)blastout_table.xls", os.path.basename(self.option("blastout_table").prop["path"]))
         n = re.match(r"(.+)blastout_table.xls", os.path.basename(self.option("blastout_table").prop["path"]))
@@ -101,7 +101,7 @@ class BlastAnnotationTool(Tool):
 
     def run_blast_filter(self):
         self.logger.info("add_command开始进行blast参数筛选")
-        cmd = '{} {} {} {} {} {} {} {}'.format("program/Python/bin/python", self.blast_filter, self.option("blastout_table").prop["path"], self.blast_path, self.option("evalue"), self.option("score"), self.option("similarity"), self.option("identity"))
+        cmd = '{} {} {} {} {} {} {} {}'.format("miniconda2/bin/python", self.blast_filter, self.option("blastout_table").prop["path"], self.blast_path, self.option("evalue"), self.option("score"), self.option("similarity"), self.option("identity"))
         command_obj = self.add_command("blast_filter", cmd).run()
         self.wait(command_obj)
         if command_obj.return_code == 0:

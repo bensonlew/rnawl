@@ -52,7 +52,7 @@ class Blast2orfTool(Tool):
         super(Blast2orfTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
         package_dir = self.config.PACKAGE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.blast2orf = package_dir + '/denovo_rna_v2/blast2orf.py'
 
 

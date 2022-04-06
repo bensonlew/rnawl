@@ -60,7 +60,7 @@ class RankAbundanceTool(Tool):
 
     def __init__(self, config):
         super(RankAbundanceTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.python_script = os.path.join(self.config.PACKAGE_DIR, 'metaasv/rank_abundance.py')
         self.step = self.option("step")
 

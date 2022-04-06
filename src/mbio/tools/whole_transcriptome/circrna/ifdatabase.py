@@ -44,7 +44,7 @@ class IfdatabaseTool(Tool):
     def __init__(self, config):
         super(IfdatabaseTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'basetomine': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/circrna/base2minetest.py')

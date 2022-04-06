@@ -59,7 +59,7 @@ class AnnotMergeTool(Tool):
         if "kegg_species" not in self._options:
             self._options["kegg_species"] = Option({"name": "kegg_species", "type": "string", "default": None})
         # software and script
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.merge_py = os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/annotation/merge.py')
         self.merge_query_gene_py = os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/annotation/merge_gene_query.py')
         self.go_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/go_annotation.py')

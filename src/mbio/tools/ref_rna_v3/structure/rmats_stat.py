@@ -57,7 +57,7 @@ class RmatsStatTool(Tool):
     def __init__(self, config):
         super(RmatsStatTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'rmats_stats': os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v3/structure/rmats_stat.py')

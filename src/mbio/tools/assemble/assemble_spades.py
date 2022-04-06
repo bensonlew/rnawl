@@ -47,7 +47,7 @@ class AssembleSpadesAgent(Agent):
 class AssembleSpadesTool(Tool):
     def __init__(self, config):
         super(AssembleSpadesTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.spades = self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/SPAdes-3.11.0-Linux/bin/spades.py"
 
     def run_spades(self):

@@ -55,7 +55,7 @@ class ExpCorrTool(Tool):
     def __init__(self, config):
         super(ExpCorrTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         # self.cluster_toolbox = software_dir + '/bioinfo/rna/scripts/cluster_toolbox.py'
         self.cluster_toolbox = self.config.PACKAGE_DIR + '/itraq_and_tmt/cluster_toolbox.py'
         self.gcc = software_dir + '/gcc/5.1.0/bin'

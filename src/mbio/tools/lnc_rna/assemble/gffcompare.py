@@ -56,7 +56,7 @@ class GffcompareTool(Tool):
     def __init__(self, config):
         super(GffcompareTool, self).__init__(config)
         self.gffcompare = 'bioinfo/rna/gffcompare-0.9.8.Linux_x86_64/gffcompare'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.filter_gtf_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/filter_gtf.py')
         self.merged_gtf = os.path.join(self.work_dir, 'merged.gtf')
         self.outprefix = os.path.join(self.work_dir, 'gffcmp')

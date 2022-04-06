@@ -34,7 +34,7 @@ class BlastRfamStatTool(Tool):
     def __init__(self, config):
         super(BlastRfamStatTool, self).__init__(config)
         self._version = 1.0
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.rfam_stat = self.config.PACKAGE_DIR + "/datasplit/blast_rfam_stat.py"
         self.rfam_seed = self.config.SOFTWARE_DIR + "/database/align/ncbi/db/rfam_v14.6/Rfam.seed"
         # self.rfam_seed = self.config.SOFTWARE_DIR + "/database/Rfam/Rfam.seed"

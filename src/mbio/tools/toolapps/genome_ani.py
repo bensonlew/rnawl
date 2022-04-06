@@ -51,7 +51,7 @@ class GenomeAniTool(Tool):
     """
     def __init__(self, config):
         super(GenomeAniTool, self).__init__(config)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + "/toolapps/"
         self.gtdb_genomes = self.config.SOFTWARE_DIR + "/database/GTDB/release95/fastani/database/"
         self.gtdb_taxon = self.config.SOFTWARE_DIR + "/database/GTDB/GTDB_NCBI_bac_taxon.xls"

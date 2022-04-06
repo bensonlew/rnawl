@@ -258,6 +258,7 @@ class Basic(EventObject):
         :param value: 当value==None时，获取参数值 当value!=None时，设置对应的参数值
         :return: 参数对应的值
         """
+        # print("name {} value {}".format(name, value))
         if name not in self._options.keys():
             # raise Exception("参数%s不存在，请先添加参数" % name)
             self.logger.warning("参数%s不存在，请确认是否需要先添加参数，pass" % name)

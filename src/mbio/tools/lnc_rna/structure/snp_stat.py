@@ -52,7 +52,7 @@ class SnpStatAgent(Agent):
 class SnpStatTool(Tool):
     def __init__(self, config):
         super(SnpStatTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.snp_statistics_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/snp_statistics.py')
 
     def run(self):

@@ -42,7 +42,7 @@ class CorrelationAgent(Agent):
 class CorrelationTool(Tool):
     def __init__(self, config):
         super(CorrelationTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/metagenomic/scripts/cal_correlation.py'
 
     def run(self):

@@ -138,7 +138,7 @@ class CupTracerTool(Tool):
 		super(CupTracerTool, self).__init__(config)
 		self._cpu = 4
 			
-		self.Python_path = '/program/Python/bin/python '
+		self.Python_path = '/miniconda2/bin/python '
 		self.cmd_path = self.config.SOFTWARE_DIR + '/CUPTracer.py'
 		# self.script_path = "bioinfo/meta/scripts/beta_diver.sh"
 		self.R_path = os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.1/bin/R')

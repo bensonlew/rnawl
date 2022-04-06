@@ -47,7 +47,7 @@ class MongoGenePredictTool(Tool):
         self.db_path = self.config.SOFTWARE_DIR +"/database/MajorbioDB"
         # self.old_db_path = self.config.SOFTWARE_DIR +"/bioinfo/compare_genome/refseq/Database/"
         self.old_db_path = self.work_dir + "/../../../seq/" +self.option("sample")
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/'
 

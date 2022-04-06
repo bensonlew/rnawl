@@ -48,7 +48,7 @@ class RmatsStatAgent(Agent):
 class RmatsStatTool(Tool):
     def __init__(self, config):
         super(RmatsStatTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.process_rmats_output_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/process_rmats_stat.py')
         self.rmats_output = os.path.join(self.work_dir, 'rmats_output')
         if os.path.isdir(self.rmats_output):

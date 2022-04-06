@@ -70,7 +70,7 @@ class AnnotFinalAgent(Agent):
 class AnnotFinalTool(Tool):
     def __init__(self, config):
         super(AnnotFinalTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.statistics_py = os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/annotation/statistics.py')
         self.query_py = os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/annotation/query.py')
         self.query_gene_py = os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/annotation/query_gene.py')

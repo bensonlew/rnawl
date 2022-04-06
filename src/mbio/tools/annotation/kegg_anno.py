@@ -45,7 +45,7 @@ class KeggAnnoTool(Tool):
     def __init__(self, config):
         super(KeggAnnoTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         if self.option("description") in ['false']:## 真菌用,细菌增加了酶等描述信息，真菌未加，为区分开还是分开
             self.python_script = self.config.PACKAGE_DIR + '/fungi_genome/kegg_xlm_mongo.py'
         else:## 细菌用细菌用
@@ -106,7 +106,7 @@ class KeggAnnoTool(Tool):
         os.remove(level)
 
     def run_pathway_img(self):
-        cmd = "{}/program/Python/bin/python {} -i {} -o {} -p {} -ko {} -KO {}".format("", self.python_script2,
+        cmd = "{}/miniconda2/bin/python {} -i {} -o {} -p {} -ko {} -KO {}".format("", self.python_script2,
                                                                                        self.option("kegg_xml").prop[
                                                                                            "path"], self.output_dir,
                                                                                        self.work_dir + "/pathwaw_KO.xls",

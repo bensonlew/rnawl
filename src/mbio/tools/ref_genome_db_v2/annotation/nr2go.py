@@ -92,7 +92,7 @@ class Nr2goTool(Tool):
         self.option("blastout").convert2table("blast_table.xls")
 
     def nr2go(self):
-        cmd1 = 'program/Python/bin/python {}'.format(self.nr2go_script)
+        cmd1 = 'miniconda2/bin/python {}'.format(self.nr2go_script)
         cmd1 += ' %s %s %s %s' % ("blast_table.xls",
                                   self.idmapping_db,
                                   self.option("p"),

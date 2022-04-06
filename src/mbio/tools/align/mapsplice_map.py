@@ -115,7 +115,7 @@ class MapspliceMapTool(Tool):
         super(MapspliceMapTool, self).__init__(config)
         self._version = "v2.1.8"
         self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/MapSplice-v2.1.8/mapsplice.py"
-        self.Python_path = "program/Python/bin/python"
+        self.Python_path = "miniconda2/bin/python"
         self.double_anchor_dic = {0: "", 1: "--non-canonical-double-anchor"}
         self.single_anchor_dic = {0: "", 1: "--non-canonical-single-anchor"}
         self.fusion_dic = {0: "", 1: "--fusion"}

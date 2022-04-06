@@ -53,7 +53,7 @@ class ClassifyQuantTool(Tool):
     """
     def __init__(self, config):
         super(ClassifyQuantTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.QcStatIntergration = self.config.PACKAGE_DIR + "/lnc_rna/get_classify_quant.py"
 
     def run_ClassifyQuant(self):

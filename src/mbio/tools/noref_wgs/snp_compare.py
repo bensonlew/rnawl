@@ -53,7 +53,7 @@ class SnpCompareTool(Tool):
         self.multiple = self.config.PACKAGE_DIR + "/noref_wgs/noref_SNPselection-Multiple.pl"
         self.single = self.config.PACKAGE_DIR + "/noref_wgs/noref_SNPselection-Single.pl"
         self.stat = self.config.PACKAGE_DIR + "/noref_wgs/compare_stat.py"
-        self.Python_path = '/program/Python/bin/python'
+        self.Python_path = '/miniconda2/bin/python'
 
     def run_snp_compare(self):
 

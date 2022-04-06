@@ -71,7 +71,7 @@ class PlotCircosTool(Tool):
         self.perl_path = '/program/perl-5.24.0/bin/perl'
         self.config_path = self.config.PACKAGE_DIR + '/bacgenome/circos_confi.py'
         self.circos_path = self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/circos-0.69-6/bin/circos'
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.legend_py = self.config.PACKAGE_DIR + '/bacgenome/circos_legend.py'
 
     def run(self):

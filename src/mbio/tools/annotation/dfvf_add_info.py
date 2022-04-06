@@ -54,7 +54,7 @@ class DfvfAddInfoTool(Tool):
     def __init__(self, config):
         super(DfvfAddInfoTool, self).__init__(config)
         self.data_path = os.path.join(self.config.SOFTWARE_DIR, "database/DFVF/DFVF.data")
-        self.python_path = os.path.join(self.config.SOFTWARE_DIR, "/program/Python/bin/python")
+        self.python_path = os.path.join(self.config.SOFTWARE_DIR, "/miniconda2/bin/python")
 
     def run_addinfo(self):
         outputfile = os.path.join(self.output_dir, "result.out.xls")

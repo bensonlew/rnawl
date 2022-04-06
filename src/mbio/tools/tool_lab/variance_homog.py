@@ -49,7 +49,7 @@ class VarianceHomogAgent(Agent):
 class VarianceHomogTool(Tool):
     def __init__(self, config):
         super(VarianceHomogTool, self).__init__(config)
-        self.python_path =  "/program/Python/bin/python"
+        self.python_path =  "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/tool_lab/variance_homog.py'
 
     def run(self):

@@ -44,7 +44,7 @@ class UploadProteinMetabolomeTool(Tool):
     def __init__(self, config):
         super(UploadProteinMetabolomeTool, self).__init__(config)
         self._version = 1.0
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.find_sample_rawdatas = self.config.PACKAGE_DIR + "/datasplit/find_sample_rawdatas.py"
 
     def get_sample_rawdata(self):

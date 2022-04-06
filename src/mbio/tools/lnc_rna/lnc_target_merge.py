@@ -70,7 +70,7 @@ class LncTargetMergeTool(Tool):
     """
     def __init__(self, config):
         super(LncTargetMergeTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.lncrna_target = self.config.PACKAGE_DIR + "/lnc_rna/lncrna_target.py"
         self.parafly = self.config.SOFTWARE_DIR + "/program/parafly-r2013-01-21/bin/bin/ParaFly"
         self.perl = '/program/perl-5.24.0/bin/'

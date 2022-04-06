@@ -36,7 +36,7 @@ if os.path.exists(outFile):
 执行make_otu_network.py 计算otu网络的相关信息并生成文件
 完成后由于make_otu_network.py生成的是一个文件夹，使用os和shutil的命令将文件全部移动到输出路径下
 """
-command = Config().SOFTWARE_DIR + '/program/Python/bin/python '
+command = Config().SOFTWARE_DIR + '/miniconda2/bin/python '
 command += Config().SOFTWARE_DIR + '/program/Python/bin/make_otu_network.py'
 command += ' -i %s -o %s -m %s' %(inFile, outFile, env_table)
 os.system(command)

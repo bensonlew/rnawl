@@ -305,7 +305,7 @@ class AnnoTidyTool(Tool):
         self.option("tidy_summary", self.output_dir + "/Summary/" + self.option("sample") + "_anno_summary.xls")
 
     def run_pathway_img(self, kegg_xml, output_dir, pathway_ko, pathway, ko, loc):
-        cmd = "{}/program/Python/bin/python {} -i {} -o {} -p {} -ko {} -KO {} -png_file True -bac True".format("", self.kegg_img, kegg_xml,
+        cmd = "{}/miniconda2/bin/python {} -i {} -o {} -p {} -ko {} -KO {} -png_file True -bac True".format("", self.kegg_img, kegg_xml,
                                                                                        output_dir, pathway_ko, pathway,
                                                                                        ko)
         cmd += '  -html {}/database/Annotation/all/KEGG/version_202007_meta/html/'.format(self.config.SOFTWARE_DIR)   #-png_file True

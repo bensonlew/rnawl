@@ -66,7 +66,7 @@ class CnvCompareTool(Tool):
     def __init__(self, config):
         super(CnvCompareTool, self).__init__(config)
         self.cnv_diff_path = self.config.PACKAGE_DIR + "/wgs_v2/cnv_compare.py"
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python '
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python '
         
     def cnv_diff(self):
         """

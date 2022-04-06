@@ -51,7 +51,7 @@ class StatisticsAgent(Agent):
 class StatisticsTool(Tool):
     def __init__(self, config):
         super(StatisticsTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.script = {
             'statistics': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/timeseries/statistics.py'),
         }

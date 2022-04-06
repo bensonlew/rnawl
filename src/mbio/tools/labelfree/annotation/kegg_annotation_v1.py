@@ -70,7 +70,7 @@ class KeggAnnotationTool(Tool):
         self.run_path_search()
 
     def run_path_search(self):
-        cmd = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/pathSearch.py'.format(
+        cmd = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/pathSearch.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd += ' %s %s %s %s' % (self.option('blastout').prop['path'], self.work_dir +
                                  '/kegg_table.xls', self.work_dir + '/pid.txt', self.work_dir + '/pathway_table.xls')
@@ -92,7 +92,7 @@ class KeggAnnotationTool(Tool):
         self.run_kegg_layer()
 
     def run_kegg_layer(self):
-        cmd1 = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/keggLayer.py'.format(
+        cmd1 = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/keggLayer.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd1 += ' %s %s %s' % (self.work_dir + '/pathway_table.xls', self.work_dir +
                                '/kegg_layer.xls', self.work_dir + '/kegg_taxonomy.xls')
@@ -114,7 +114,7 @@ class KeggAnnotationTool(Tool):
         self.run_get_pic()
 
     def run_get_pic(self):
-        cmd2 = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/getPic.py'.format(
+        cmd2 = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/getPic.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd2 += ' %s %s' % (self.work_dir + '/pid.txt',
                             self.work_dir + '/pathways')

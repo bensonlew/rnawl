@@ -78,8 +78,8 @@ class SimplePieTool(Tool):
     def __init__(self, config):
         super(SimplePieTool, self).__init__(config)
         self._version = 1.0
-        self.Python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python '
-        self.Python_path2 = '/program/Python/bin/python '
+        self.Python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python '
+        self.Python_path2 = '/miniconda2/bin/python '
         self.path = self.config.SOFTWARE_DIR + '/bioinfo/statistical/scripts/simple_operation.py'
         self.software = 'program/parafly-r2013-01-21/bin/bin/ParaFly'
 

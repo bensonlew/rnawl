@@ -40,7 +40,7 @@ class CompleteGetSeqAgent(Agent):
 class CompleteGetSeqTool(Tool):
     def __init__(self, config):
         super(CompleteGetSeqTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.fa = os.path.join(self.work_dir, "all.fa")
         self.python_script = self.config.PACKAGE_DIR + "/bacgenome/complete_get_seq.py"
 

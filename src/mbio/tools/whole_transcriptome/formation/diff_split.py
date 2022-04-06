@@ -41,7 +41,7 @@ class DiffSplitTool(Tool):
     def __init__(self, config):
         super(DiffSplitTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'diff_split': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/formation/diff_split.py')

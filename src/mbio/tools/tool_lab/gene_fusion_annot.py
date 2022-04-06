@@ -45,7 +45,7 @@ class GeneFusionAnnotTool(Tool):
         self.pub_json = os.path.join(self.config.SOFTWARE_DIR,"database","COSMIC","v92","pub_id2name_final.json")
         self.cosmic_file_path = os.path.join(self.config.SOFTWARE_DIR,"database","COSMIC","v92","COSMIC_mini.csv")
         self.input_file = ""
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.cosmic_annot_package = os.path.join(self.config.PACKAGE_DIR,"tool_lab","cosmic_extract.py")
 
     def cosmic_fusion_annot(self):

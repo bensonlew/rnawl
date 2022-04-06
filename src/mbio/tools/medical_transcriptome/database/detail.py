@@ -56,7 +56,7 @@ class DetailTool(Tool):
     def __init__(self, config):
         super(DetailTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'detail': os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/database/detail.py')

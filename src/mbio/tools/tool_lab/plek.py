@@ -52,7 +52,7 @@ class PlekTool(Tool):
         super(PlekTool, self).__init__(config)
         self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'plek': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/tool_lab/PLEK.1.2/PLEK.py'),

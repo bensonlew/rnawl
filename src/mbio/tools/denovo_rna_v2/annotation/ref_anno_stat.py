@@ -204,7 +204,7 @@ class RefAnnoStatTool(Tool):
         self._version = '1.0.1'
         self.b2g_user = "biocluster102"
         self.b2g_password = "sanger-dev-123"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.html_path = "/database/KEGG/map_html"
         self.denovo_stat = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/denovo_stat/'
         self.go_annot = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/goAnnot.py'

@@ -58,7 +58,7 @@ class AnnotGetidAgent(Agent):
 class AnnotGetidTool(Tool):
     def __init__(self, config):
         super(AnnotGetidTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.gffread = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/cufflinks-2.2.1/gffread')
         self.getid = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/getid.py')
         self.id_mapping_dict = dict({

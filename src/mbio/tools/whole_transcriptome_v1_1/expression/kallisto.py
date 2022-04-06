@@ -59,7 +59,7 @@ class KallistoTool(Tool):
         super(KallistoTool, self).__init__(config)
         self.program = {
             'kallisto': 'bioinfo/rna/kallisto-0.46.1/kallisto',
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'abundance': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/expression/abundance.py')

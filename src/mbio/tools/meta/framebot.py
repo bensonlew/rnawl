@@ -73,7 +73,7 @@ class FramebotTool(Tool):
         self._version = '1.0'
         self.framebor_path = self.config.SOFTWARE_DIR + '/bioinfo/meta/RDPTools-2.0.2/RDPTools/'
         self.java_path =  "/program/sun_jdk1.8.0/bin/java"
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)

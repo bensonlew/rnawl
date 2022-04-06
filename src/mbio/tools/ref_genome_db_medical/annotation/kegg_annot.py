@@ -66,7 +66,7 @@ class KeggAnnotTool(Tool):
     def __init__(self, config):
         super(KeggAnnotTool, self).__init__(config)
         self.set_environ(LD_LIBRARY_PATH=os.path.join(self.config.SOFTWARE_DIR, 'library/lib/lib'))
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.kegg_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/kegg_annotation_v3.py')
         self.kegg_annotation_spe_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/kegg_annotation_spe_v3.py')
         self.txml2gxml_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/txml2gxml.py')

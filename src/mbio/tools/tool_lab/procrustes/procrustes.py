@@ -63,7 +63,7 @@ class ProcrustesTool(Tool):
         self.gcc_lib = os.path.join(self.config.SOFTWARE_DIR, 'gcc/5.1.0/lib64')
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.program = {
-            'python': "program/Python/bin/python",
+            'python': "miniconda2/bin/python",
         }
         self.script = {
             'procrustes': os.path.join(self.config.SOFTWARE_DIR, "program/Python/bin/transform_coordinate_matrices.py"),

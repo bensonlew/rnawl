@@ -71,7 +71,7 @@ class ExpcorrMitargetTool(Tool):
     def __init__(self, config):
         super(ExpcorrMitargetTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.ExpCorrsf_toolbox = self.config.PACKAGE_DIR + '/lnc_rna/exp_corr_mitarget.py'
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'

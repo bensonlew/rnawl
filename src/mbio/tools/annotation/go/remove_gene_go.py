@@ -62,7 +62,7 @@ class RemoveGeneGoTool(Tool):
         self.end()
 
     def run_remove_gene(self):
-        cmd1 = '/program/Python/bin/python {}/annotation/go/go_remove_gene.py'.format(self.config.PACKAGE_DIR)
+        cmd1 = '/miniconda2/bin/python {}/annotation/go/go_remove_gene.py'.format(self.config.PACKAGE_DIR)
         cmd1 += ' -a %s -i %s -o %s' % (self.option("gene_anno").prop['path'],self.option("go1234level_out").prop['path'], self.work_dir + '/go1234level_statistics_new.xls')
         self.logger.info("运行run_remove_gene.py")
         command = self.add_command('run_go_anno_all', cmd1).run()

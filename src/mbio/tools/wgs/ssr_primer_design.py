@@ -47,7 +47,7 @@ class SsrPrimerDesignTool(Tool):
         self.ssr_p3in_path = self.config.PACKAGE_DIR + "/wgs/sample.ssr.p3in.pl"
         self.ssr_p3out_path = self.config.PACKAGE_DIR + "/wgs/sample.ssr.p3out.pl"
         self.primer3_path = self.config.SOFTWARE_DIR + "/bioinfo/WGS/primer3/src/"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.primer_download = self.config.PACKAGE_DIR + "/wgs/primer_download.py"
 
     def run_ssr_primer_in(self):

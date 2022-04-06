@@ -54,7 +54,7 @@ class GapFaTool(Tool):
         self.dnaA = self.config.SOFTWARE_DIR + "/database/bacgenome/dnaA/dnaA.faa"
         self.blast_table = os.path.join(self.work_dir, "blast.xls")
         self.script = self.config.PACKAGE_DIR + '/bacgenome/gap_fill2.py'
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
 
     def make_db(self):
         # 骨架序列建库

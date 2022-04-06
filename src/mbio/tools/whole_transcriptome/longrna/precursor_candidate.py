@@ -53,7 +53,7 @@ class PrecursorCandidateTool(Tool):
         super(PrecursorCandidateTool, self).__init__(config)
         self.makeblastdb = 'bioinfo/align/ncbi-blast-2.3.0+/bin/makeblastdb'
         self.blastn = 'bioinfo/align/ncbi-blast-2.3.0+/bin/blastn'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.file_in = self.option('file_in').prop['path']
         self.hairpin_fa = os.path.join(
             self.config.SOFTWARE_DIR,

@@ -72,7 +72,7 @@ class ResfinderTool(Tool):
         self.scripts = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/resfinder/run_resfinder.py"
         self.resfinder_pheno = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/resfinder/db_resfinder/phenotypes.txt"
         self.disinfinder_pheno = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/resfinder/db_disinfinder/phenotypes.txt"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.stat = self.config.PACKAGE_DIR + "/bacgenome/resfinder_stat.py"
 
 

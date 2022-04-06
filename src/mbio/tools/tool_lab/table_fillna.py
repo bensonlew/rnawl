@@ -45,7 +45,7 @@ class TableFillnaTool(Tool):
     def __init__(self, config):
         super(TableFillnaTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'Rscript': os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.1/lib64/R/bin/Rscript')
         }
         self.script = {

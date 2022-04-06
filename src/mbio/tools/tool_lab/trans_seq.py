@@ -95,7 +95,7 @@ class TransSeqTool(Tool):
     def __init__(self, config):
         super(TransSeqTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.perl =  'program/perl/perls/perl-5.24.0/bin/'
         self.tool_path=self.config.PACKAGE_DIR+"/tool_lab/trans_seq.py"
         self.transeq_path = self.config.SOFTWARE_DIR + "/bioinfo/tool_lab/transeq/"

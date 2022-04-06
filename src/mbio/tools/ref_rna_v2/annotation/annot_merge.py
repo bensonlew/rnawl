@@ -54,7 +54,7 @@ class AnnotMergeTool(Tool):
     def __init__(self, config):
         super(AnnotMergeTool, self).__init__(config)
         # software and script
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.merge_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/merge.py')
         self.go_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/go_annotation.py')
         self.go_annotation2_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/go_annotation2.py')

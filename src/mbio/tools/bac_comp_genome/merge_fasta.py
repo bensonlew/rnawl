@@ -45,7 +45,7 @@ class MergeFastaTool(Tool):
         self._version = "1.0"
         self.fasta_dir = self.option("fasta_dir").prop["path"]
         self.sample_list = self.option("sample_list")
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/'
         self.out = self.output_dir + "/all.align.fasta"
 

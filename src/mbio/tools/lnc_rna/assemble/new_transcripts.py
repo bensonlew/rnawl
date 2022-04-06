@@ -69,7 +69,7 @@ class NewTranscriptsAgent(Agent):
 class NewTranscriptsTool(Tool):
     def __init__(self, config):
         super(NewTranscriptsTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.perl = '/program/perl/perls/perl-5.24.0/bin/perl'
         self.gffread = 'bioinfo/rna/cufflinks-2.2.1/gffread'
         self.add_class_code_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/add_class_code.py')

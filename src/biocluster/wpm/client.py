@@ -21,7 +21,7 @@ class Run(object):
     """
     def __init__(self):
         self.json_data = {}
-        self.instant = False
+        self.instant = True
         self.client = "client03"
         self.config = Config()
         self.timeout = 600

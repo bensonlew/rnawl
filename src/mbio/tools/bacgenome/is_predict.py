@@ -47,7 +47,7 @@ class IsPredictTool(Tool):
         self.fasta = self.option("input_fa").prop['path']
         self.fa_file = os.path.basename(self.fasta)
         self.sample = self.option("sample")
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.script_path = self.config.PACKAGE_DIR + '/bacgenome/'
 
     def run_is(self):

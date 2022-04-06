@@ -134,7 +134,7 @@ class RmatsBamTool(Tool):
         super(RmatsBamTool, self).__init__(config)
         self._version = "v3.2.5"
         self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/rMATS.3.2.5/RNASeq-MATS.py "
-        self.Python_path = 'program/Python/bin/python'
+        self.Python_path = 'miniconda2/bin/python'
     
     def run_rmats(self):
         """

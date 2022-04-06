@@ -62,8 +62,8 @@ class ConsensusStatAgent(Agent):
 class ConsensusStatTool(Tool):
     def __init__(self, config):
         super(ConsensusStatTool, self).__init__(config)
-        self.Python_path = '/program/Python/bin/python'
-        self.Python_all_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.Python_path = '/miniconda2/bin/python'
+        self.Python_all_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         self.consensus_stat_path = self.config.PACKAGE_DIR + "/noref_wgs/consensus_stat.py"
         self.snp_depth_density_path = self.config.PACKAGE_DIR + "/noref_wgs/snp_depth_density.py"
         self.tag_dep_path = self.config.PACKAGE_DIR + "/noref_wgs/tag_dep.py"

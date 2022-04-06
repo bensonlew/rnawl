@@ -72,7 +72,7 @@ class ModelOrganismTool(Tool):
         self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
         self.program = {
             'blastn': 'bioinfo/ref_rna_v2/miniconda2/bin/blastn',
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.file = {
             'db': os.path.join(self.config.SOFTWARE_DIR, "database/prok_rna"),

@@ -70,7 +70,7 @@ class KeggAnnotTool(Tool):
     def __init__(self, config):
         super(KeggAnnotTool, self).__init__(config)
         self.set_environ(LD_LIBRARY_PATH=os.path.join(self.config.SOFTWARE_DIR, 'library/lib/lib'))
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.kegg_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'rna/annotation/kegg_annotation_v2.py')
         self.rscript = os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.3/bin/Rscript')
         self.map4_r = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/map4.r')

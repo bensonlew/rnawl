@@ -87,7 +87,7 @@ class AnnotQueryAgent(Agent):
 class AnnotQueryTool(Tool):
     def __init__(self, config):
         super(AnnotQueryTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.annotation_query_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/annotation_query.py')
 
     def run(self):

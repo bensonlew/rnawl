@@ -102,7 +102,7 @@ class DiffGenesetTool(Tool):
     def __init__(self, config):
         super(DiffGenesetTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = os.path.join(software_dir,'program/Python/bin/python')
+        self.python_path = os.path.join(software_dir,'miniconda2/bin/python')
         self.diff_geneset = self.config.PACKAGE_DIR + "/medical_transcriptome/geneset/diff_geneset.py"
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'

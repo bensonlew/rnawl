@@ -55,7 +55,7 @@ class EggnogAnnotAgent(Agent):
 class EggnogAnnotTool(Tool):
     def __init__(self, config):
         super(EggnogAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         # self.xml2table_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/xml2table.py')
         self.txml2gxml_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/txml2gxml.py')
         self.cog_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/cog_annotation.py')

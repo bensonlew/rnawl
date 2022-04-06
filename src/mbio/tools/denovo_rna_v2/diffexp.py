@@ -116,7 +116,7 @@ class DiffexpTool(Tool):
     def __init__(self, config):
         super(DiffexpTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.diff_toolbox = self.config.PACKAGE_DIR + "/denovo_rna_v2/diff_toolbox.py"
         # self.diff_toolbox = self.config.PACKAGE_DIR + "/denovo_rna_v2/diff_toolbox_new.py"
         self.gcc = software_dir + '/gcc/5.1.0/bin'

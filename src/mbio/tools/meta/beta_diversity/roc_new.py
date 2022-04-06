@@ -113,7 +113,7 @@ class RocNewTool(Tool):
         super(RocNewTool, self).__init__(config)
         self._version = '1.0.1'
         self.biom_path = "/program/Python/bin/"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
         self.sum_taxa_path = "/program/Python/bin/"
         self.script_path = "/bioinfo/taxon/scripts/"

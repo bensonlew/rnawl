@@ -47,7 +47,7 @@ class SrnaFoldTool(Tool):
     """
     def __init__(self, config):
         super(SrnaFoldTool, self).__init__(config)
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.srna_annot = self.config.PACKAGE_DIR + "/prok_rna/sRNA_fold.py"
 
     def SrnaFold(self):

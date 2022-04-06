@@ -54,7 +54,7 @@ class GetGenomeTool(Tool):
     """
     def __init__(self, config):
         super(GetGenomeTool, self).__init__(config)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + "/toolapps/"
         self.gtdb_16s = self.config.SOFTWARE_DIR + "/database/GTDB/GTDB_rrna/bac120_ssu_reps_r95.fna"
         self.gtdb_genomes = self.config.SOFTWARE_DIR + "/database/GTDB/release95/fastani/database/"

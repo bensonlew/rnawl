@@ -60,7 +60,7 @@ class BamReadsdistributionTool(Tool):
         super(BamReadsdistributionTool, self).__init__(config)
         self.prefix = os.path.join(self.work_dir, os.path.basename(self.option('bam').path)[:-4])
         self.program = {
-            'python': self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+            'python': self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         }
         self.script = {
             'read_distribution': os.path.join(self.config.SOFTWARE_DIR,

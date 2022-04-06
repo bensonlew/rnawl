@@ -70,9 +70,9 @@ class String2cogTool(Tool):
     def __init__(self, config):
         super(String2cogTool, self).__init__(config)
         self._version = '1.0'  # to be changed
-        # self.cmd_path = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/string2cog.py'.format(
+        # self.cmd_path = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/string2cog.py'.format(
         #    self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
-        self.cmd_path = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/string2cog_mongo.py'.format(
+        self.cmd_path = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/string2cog_mongo.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)  # 修改（sqlite3数据库换成mongo数据库；2016.11.15；zengjing）
 
     def run(self):

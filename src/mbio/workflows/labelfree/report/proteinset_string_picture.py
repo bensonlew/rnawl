@@ -38,7 +38,7 @@ class ProteinsetStringPictureWorkflow(Workflow):
         ]
         self.add_option(options)
         self.set_options(self._sheet.options())
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         self.script = self.config.PACKAGE_DIR + '/labelfree/get_string_picture.py'
         self._sheet.output = self._sheet.output.replace('interaction_results', 'interaction_results/5_Proteinset/06_StringPic')
         self.inter_dirs = []

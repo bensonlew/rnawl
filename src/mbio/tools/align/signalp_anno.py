@@ -58,7 +58,7 @@ class SignalpAnnoTool(Tool):
         self.signalp_path = self.config.SOFTWARE_DIR + '/bioinfo//Genomic/Sofware/signalp-4.1/signalp'
         self.signalp_sh = 'bioinfo/Genomic/Sofware/signalp-4.1/signalp.sh'
         self.python_script_path = self.config.PACKAGE_DIR + '/bacgenome/add_gene_info.py '
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
 
     def run(self):
         """

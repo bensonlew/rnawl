@@ -61,7 +61,7 @@ class Data2DenoiseTool(Tool):
     """
     def __init__(self, config):
         super(Data2DenoiseTool, self).__init__(config)
-        self.qiime_path = "program/Python/bin/python"
+        self.qiime_path = "miniconda2/bin/python"
         self.shell_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/data2_denoise.sh")
         self.miniconda3 = os.path.join(self.config.SOFTWARE_DIR, "program/miniconda3/bin")
         self.shell = "program/sh"

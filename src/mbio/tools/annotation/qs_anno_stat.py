@@ -45,7 +45,7 @@ class QsAnnoStatTool(Tool):
         self._version = "1.0"
         self.perl_path = '/program/perl-5.24.0/bin/perl'
         self.script = self.config.PACKAGE_DIR  + '/annotation/qs_anno_abundance.pl'
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.script_path = self.config.PACKAGE_DIR + "/metagenomic/scripts/anno_qs_graph.py"
         self.result_name = ''
 

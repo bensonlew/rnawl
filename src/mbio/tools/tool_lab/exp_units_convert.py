@@ -72,7 +72,7 @@ class ExpUnitsConvertTool(Tool):
     def __init__(self, config):
         super(ExpUnitsConvertTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'exp_units_convert': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/exp_units_convert.py')

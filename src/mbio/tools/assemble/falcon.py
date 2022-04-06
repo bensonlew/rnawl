@@ -44,7 +44,7 @@ class FalconAgent(Agent):
 class FalconTool(Tool):
     def __init__(self, config):
         super(FalconTool, self).__init__(config)
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         self.cfg = self.config.PACKAGE_DIR + "/bacgenome/run_falcon_cfg.pl"
         self.falcon = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/falcon/bin/fc_run"

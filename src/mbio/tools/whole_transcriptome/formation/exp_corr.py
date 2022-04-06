@@ -51,7 +51,7 @@ class ExpCorrTool(Tool):
     def __init__(self, config):
         super(ExpCorrTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'rscript': 'bioinfo/rconda/bin/Rscript',
         }
         self.script = {

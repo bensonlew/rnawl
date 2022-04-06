@@ -125,7 +125,7 @@ class LefseTool(Tool):
         super(LefseTool, self).__init__(config)
         self._version = '1.0.1'
         self.biom_path = "/program/Python/bin/"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.perl_path = "/program/perl/perls/perl-5.24.0/bin/perl"
         self.sum_taxa_path = "/program/Python/bin/"
         self.taxon_path = self.config.PACKAGE_DIR + "/metagenomic/scripts/"

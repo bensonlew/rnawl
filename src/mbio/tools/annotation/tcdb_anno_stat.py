@@ -41,7 +41,7 @@ class TcdbAnnoStatTool(Tool):
     def __init__(self, config):
         super(TcdbAnnoStatTool, self).__init__(config)
         self._version = "1.0"
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.script = self.config.PACKAGE_DIR + '/annotation/abund_stat_z.py'
 
 

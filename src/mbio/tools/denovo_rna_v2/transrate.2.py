@@ -60,7 +60,7 @@ class TransrateTool(Tool):
         self.software_dir = self.config.SOFTWARE_DIR
         self.hisat_path = 'bioinfo/align/hisat2/hisat2-2.1.0/'
         self.samtools_path =  '/bioinfo/align/samtools-1.3.1/'
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.cmd_run = '/bioinfo/denovo_rna_v2/run_cmd.sh'
         self.transrate = '/bioinfo/denovo_rna_v2/transrate-1.0.3-linux-x86_64_new/transrate'
 

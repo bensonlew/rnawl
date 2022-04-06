@@ -64,7 +64,7 @@ class RfamStatAgent(Agent):
 class RfamStatTool(Tool):
     def __init__(self, config):
         super(RfamStatTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.rfam_stat = self.config.PACKAGE_DIR + "/small_rna/rfam_stat.py"
         self.rfam_seed = self.config.SOFTWARE_DIR + "/database/Rfam_12.3/Rfam.seed"
 

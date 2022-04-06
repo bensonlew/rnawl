@@ -47,7 +47,7 @@ class AsprofileTool(Tool):
     def __init__(self, config):
         super(AsprofileTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'perl': 'program/perl/perls/perl-5.24.0/bin/perl',
             'extract_as': 'bioinfo/ref_rna_v2/ASprofile/extract-as'
         }

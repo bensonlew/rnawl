@@ -60,7 +60,7 @@ class Kraken2Tool(Tool):
         self.brakren = "/bioinfo/metaGenomic/Bracken-master/"
         self.brakren_src = self.config.PACKAGE_DIR + "/metagenomic/est_abundance.py"
         self.kraken = "/bioinfo/metaGenomic/kraken2-2.0.8-beta/bin/"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
 
     def run_kraken2(self):
         """

@@ -83,7 +83,7 @@ class DistanceTool(Tool):
         # self.real_otu = self.gettable()  # 获取真实的丰度表路劲
         # self.biom = self.biom_otu_table()  # 传入丰度表需要转化为biom格式
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'distance': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/distance_kit.py')

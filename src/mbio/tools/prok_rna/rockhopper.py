@@ -66,8 +66,8 @@ class RockhopperTool(Tool):
         super(RockhopperTool, self).__init__(config)
         python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
         self.set_environ(PATH=python_path)
-        self.python_rel = '/program/Python/bin/python'
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.python_rel = '/miniconda2/bin/python'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         self.rock_index = self.config.PACKAGE_DIR + "/prok_rna/rockhopper_index.py"
         self.rock_run = self.config.PACKAGE_DIR + "/prok_rna/rockhopper_run.py"
         self.rock2bed = self.config.PACKAGE_DIR + "/prok_rna/rockhopper_to_bed.py"

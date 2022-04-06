@@ -51,7 +51,7 @@ class PacbioAsTool(Tool):
         self.set_environ(PATH=self.python)
         self.set_environ(PATH=self.r)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'rscript': os.path.join(software_dir, 'program/R-3.3.1/bin/Rscript'),
             'makeblastdb': "bioinfo/align/ncbi-blast-2.3.0+/bin/makeblastdb",
             'blastn': "bioinfo/align/ncbi-blast-2.3.0+/bin/blastn"

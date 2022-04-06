@@ -64,7 +64,7 @@ class DistanceCalcTool(Tool):
         self._version = "1.0"
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')
         self.program = {
-            'python': "program/Python/bin/python",
+            'python': "miniconda2/bin/python",
         }
         self.script = {
             'beta_div':  os.path.join(self.config.SOFTWARE_DIR, "program/Python/bin/beta_diversity.py")

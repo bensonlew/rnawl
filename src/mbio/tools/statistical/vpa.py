@@ -93,7 +93,7 @@ class VpaTool(Tool):
         判断当前所选的样本和环境因子表中，是否在某一环境因子下所有无种的数值相同
         若存在这种情况则无法进行VPA分析
         """
-        cmd = '/program/Python/bin/python ' + self.config.PACKAGE_DIR + '/metagenomic/scripts/check_vap_input.py {} {}'.format(
+        cmd = '/miniconda2/bin/python ' + self.config.PACKAGE_DIR + '/metagenomic/scripts/check_vap_input.py {} {}'.format(
                 self.option('species_table').prop['path'], self.option('env_table').prop['path'])
         command = self.add_command('check_vap_input', cmd)
         command.run()

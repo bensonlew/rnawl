@@ -103,7 +103,7 @@ class AnnotStatTool(Tool):
         super(AnnotStatTool, self).__init__(config)
         self.b2g_user = "biocluster102"
         self.b2g_password = "sanger-dev-123"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.denovo_stat = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/ref_stat/'
         # self.go_annot = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/goAnnot.py'
         self.go_annot = self.config.PACKAGE_DIR + "/rna/annotation/goAnnot.py"

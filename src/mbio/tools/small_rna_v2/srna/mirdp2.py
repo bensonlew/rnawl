@@ -94,7 +94,7 @@ class Mirdp2Tool(Tool):
         self.bowtie_bash = "bioinfo/align/bowtie-1.2.3-linux-x86_64/bowtie"
         self.mirdp2_bash = "bioinfo/miRNA/miRDP2-v1.1.4/miRDP2-v1.1.4_pipeline_modify.bash"
         self.mirdp2_scripts = self.config.SOFTWARE_DIR + "/bioinfo/miRNA/miRDP2-v1.1.4/scripts/"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.bowtie_bash = '/bioinfo/align/bowtie-1.2.3-linux-x86_64/'
         self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/align/bowtie-1.2.3-linux-x86_64/'
         self.rnafold = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/mirdeep2_0.1.3/ViennaRNA-2.4.14/bin/'

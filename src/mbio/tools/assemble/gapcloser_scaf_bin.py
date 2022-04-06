@@ -63,7 +63,7 @@ class GapcloserScafBinTool(Tool):
         self.gapcloser = "/bioinfo/metaGenomic/SOAPdenovo2/v1.12-r6/bin/GapCloser"
         self.remove_seq_scaf = self.work_dir + '/' + 'remove.300.fna'
         self.scaf = self.work_dir + '/' + 'last.gapcloser.fna'
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + "/bacgenome/"
         #config_file = self.option('config')
 

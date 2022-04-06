@@ -34,7 +34,7 @@ class ToolNglocAgent(Agent):
 class ToolNglocTool(Tool):
     def __init__(self, config):
         super(ToolNglocTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
 
     def run_tiqu(self):
         """

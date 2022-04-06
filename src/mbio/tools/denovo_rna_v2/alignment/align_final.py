@@ -50,7 +50,7 @@ class AlignFinalTool(Tool):
     def __init__(self, config):
         super(AlignFinalTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'gtftogenepred': 'bioinfo/align/ucsc_tools/gtfToGenePred',
             'genepredtobed': 'bioinfo/align/ucsc_tools/genePredToBed',
             'bedtools': 'bioinfo/denovo_rna_v2/miniconda2/bin/bedtools',

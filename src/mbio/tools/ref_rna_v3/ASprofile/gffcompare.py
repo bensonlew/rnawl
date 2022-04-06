@@ -100,7 +100,7 @@ class GffcompareTool(Tool):
         self.program = {
             'gffcompare': 'bioinfo/rna/gffcompare-0.9.8.Linux_x86_64/gffcompare',
             'cuffcompare': 'bioinfo/rna/cufflinks-2.2.1/cuffcompare',
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'gffread': 'bioinfo/rna/cufflinks-2.2.1/gffread',
         }
         self.script = {

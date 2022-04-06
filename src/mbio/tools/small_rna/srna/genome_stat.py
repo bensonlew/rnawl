@@ -73,7 +73,7 @@ class GenomeStatAgent(Agent):
 class GenomeStatTool(Tool):
     def __init__(self, config):
         super(GenomeStatTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.intersectBed = self.config.SOFTWARE_DIR + "/bioinfo/seq/bedtools-2.25.0/bin/intersectBed"
         intersect_bed_v2170 = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/miniconda3/bin/intersectBed')
         if os.path.isfile(intersect_bed_v2170):

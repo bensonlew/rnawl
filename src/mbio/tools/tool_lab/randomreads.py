@@ -49,7 +49,7 @@ class RandomreadsTool(Tool):
         java_dir = os.path.join(self.config.SOFTWARE_DIR, 'program/sun_jdk1.8.0/bin')
         self.set_environ(PATH=java_dir)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'randomreads': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/Randomreads.py'),

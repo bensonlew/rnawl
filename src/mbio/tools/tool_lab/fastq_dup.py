@@ -54,7 +54,7 @@ class FastqDupTool(Tool):
         super(FastqDupTool, self).__init__(config)
         self._version = "v1.0"
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'fastq_dup': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/seq/scripts/fastq_dup.py')

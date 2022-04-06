@@ -48,7 +48,7 @@ class AddGeneInfoTool(Tool):
         super(AddGeneInfoTool, self).__init__(config)
         self._version = "1.0"
         self.script_path = self.config.PACKAGE_DIR + '/bacgenome/add_gene_info.py '
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
 
     def run(self):
         """

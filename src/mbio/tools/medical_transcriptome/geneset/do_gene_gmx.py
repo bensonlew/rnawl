@@ -51,7 +51,7 @@ class DoGeneGmxAgent(Agent):
 class DoGeneGmxTool(Tool):
     def __init__(self,config):
         super(DoGeneGmxTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.do2gene = self.config.PACKAGE_DIR + "/medical_transcriptome/do2gene.py"
 
     def run_dag(self):

@@ -53,7 +53,7 @@ class Eggnog2cogTool(Tool):
     def __init__(self, config):
         super(Eggnog2cogTool, self).__init__(config)
         package_dir = self.config.PACKAGE_DIR
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.mg_cog_mongo = package_dir + '/prok_rna/mg_cog_mongo.py'
 
 

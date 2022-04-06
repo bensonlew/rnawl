@@ -59,7 +59,7 @@ class GeneStructureAgent(Agent):
 class GeneStructureTool(Tool):
     def __init__(self, config):
         super(GeneStructureTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
         self.exon_seq = self.config.PACKAGE_DIR + "/wgs/gene_exon_seq.pl"
         self.gene_alt = self.config.PACKAGE_DIR + "/wgs/gene_alt.py"

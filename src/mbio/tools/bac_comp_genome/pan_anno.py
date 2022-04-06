@@ -44,7 +44,7 @@ class PanAnnoAgent(Agent):
 class PanAnnoTool(Tool):
     def __init__(self, config):
         super(PanAnnoTool, self).__init__(config)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.merge_cluster = self.config.PACKAGE_DIR + "/bac_comp_genome/merge_cluster.py"
         self.out = self.work_dir + '/cluster_anno.xls'
 

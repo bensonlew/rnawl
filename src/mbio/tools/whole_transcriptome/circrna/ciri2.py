@@ -56,7 +56,7 @@ class Ciri2Tool(Tool):
 
         self.program = {
             'bwa': 'install_packages/bwa-0.7.16a/bwa',
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'perl': 'program/perl-5.24.0/bin/perl'
         }
         self.file = {

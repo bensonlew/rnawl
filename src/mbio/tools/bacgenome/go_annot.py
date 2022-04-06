@@ -87,7 +87,7 @@ class GoAnnotTool(Tool):
         self.run_not_level()
 
     def run_not_level(self):
-        cmd = '{}/program/Python/bin/python {}/annotation/go/go_desc.py'.format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
+        cmd = '{}/miniconda2/bin/python {}/annotation/go/go_desc.py'.format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
         cmd += ' {} {}'.format(self.work_dir  + "/go_statistics2.xls", self.work_dir + '/go_statistics.xls' )
         self.logger.info('运行go_desc.py')
         self.logger.info(cmd)

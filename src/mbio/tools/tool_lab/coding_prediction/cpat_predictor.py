@@ -58,7 +58,7 @@ class CpatPredictorAgent(Agent):
 class CpatPredictorTool(Tool):
     def __init__(self, config):
         super(CpatPredictorTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         env_path = ':'.join([
             os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.3/bin/'),
             os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin')

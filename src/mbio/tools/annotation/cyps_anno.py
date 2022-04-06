@@ -47,7 +47,7 @@ class CypsAnnoTool(Tool):
     def __init__(self, config):
         super(CypsAnnoTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + '/annotation/scripts/meta_cyps_mongo.py'
         #self.python_script ='/mnt/ilustre/users/sanger-dev/sg-users/zhangqingchen/test/cyps_test/package/meta_cyps_mongo.py'
         self.sh_path = 'bioinfo/align/scripts/cat.sh'

@@ -48,7 +48,7 @@ class GffGenomePredictTool(Tool):
         self.gff = self.option("gff").prop['path']
         self.prodigal_path = self.config.SOFTWARE_DIR +"/bioinfo/metaGenomic/Prodigal-2.6.3/prodigal"
         self.perl_path = "/program/perl-5.24.0/bin/perl"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.perl_script = self.config.PACKAGE_DIR + "/toolapps/"
         self.diamond = "/bioinfo/align/diamond-0.8.35/diamond"
         self.transeq = "/bioinfo/seq/EMBOSS-6.6.0/emboss/transeq"

@@ -59,7 +59,7 @@ class PrimerDesignTool(Tool):
         self.set_environ(PATH=self.config.SOFTWARE_DIR + "/gcc/5.1.0/bin")
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + "/gcc/5.1.0/lib64")
         self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.p3in_path = self.config.PACKAGE_DIR + "/wgs_v2/1.p3in.pl"
         self.p3out_path = self.config.PACKAGE_DIR + "/wgs_v2/11.p3out"
         self.primer3_path = self.config.SOFTWARE_DIR + "/bioinfo/WGS/primer3/src/"

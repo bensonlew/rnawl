@@ -45,7 +45,7 @@ class SvCompareAgent(Agent):
 class SvCompareTool(Tool):
     def __init__(self, config):
         super(SvCompareTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.sv_compare_path = self.config.PACKAGE_DIR + "/wgs_v2/sv_compare.py"
 
     def get_sv_config(self):

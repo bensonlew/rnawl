@@ -53,7 +53,7 @@ class MetabolomeCleandataAgent(Agent):
 class MetabolomeCleandataTool(Tool):
     def __init__(self, config):
         super(MetabolomeCleandataTool, self).__init__(config)
-        self.python_path =  'program/Python/bin/python'
+        self.python_path =  'miniconda2/bin/python'
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin')
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/program/R-3.5.1/bin')
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')

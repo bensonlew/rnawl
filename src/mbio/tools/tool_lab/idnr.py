@@ -52,7 +52,7 @@ class IdnrTool(Tool):
         self.anno = self.record['anno_path_v2']
 
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'id2nr': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/id2nr.py')

@@ -70,7 +70,7 @@ class MetagPredictCombineTool(Tool):
     def __init__(self, config):
         super(MetagPredictCombineTool, self).__init__(config)
         self._version = "1"
-        self.python_path = '/program/Python/bin/python '
+        self.python_path = '/miniconda2/bin/python '
         # self.gene_stat_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/gene_stat.py'
         self.gene_stat_path = self.config.PACKAGE_DIR + '/gene_structure/gene_stat.py'
         self.set_environ(LD_LIBRARY_PATH = self.config.SOFTWARE_DIR + '/bioinfo/seq/EMBOSS-6.6.0/lib')

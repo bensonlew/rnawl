@@ -40,7 +40,7 @@ class NetworkAgent(Agent):
 class NetworkTool(Tool):
     def __init__(self, config):
         super(NetworkTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.cmd_path = self.config.SOFTWARE_DIR + '/bioinfo/meta/scripts/calc_otu_network.py'
 
     def run(self):

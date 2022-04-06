@@ -54,7 +54,7 @@ class MergeCeTool(Tool):
         super(MergeCeTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
         self.perl_path = 'program/perl-5.24.0/bin/perl'
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.net_merge = self.config.PACKAGE_DIR + '/whole_transcriptome/ce_net_merge.py'
 
     def run_net_merge(self):

@@ -83,7 +83,7 @@ class GsekeggTool(Tool):
         self._C_INCLUDE_PATH = software_dir + "/bioinfo/ref_rna_v3/clusterprofile_4.1/miniconda3/include/:$C_INCLUDE_PATH"
         self.set_environ(PATH=self._PATH, C_INCLUDE_PATH=self._C_INCLUDE_PATH, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'rscript': 'bioinfo/ref_rna_v3/clusterprofile_4.1/miniconda3/bin/Rscript',
         }
         self.script = {

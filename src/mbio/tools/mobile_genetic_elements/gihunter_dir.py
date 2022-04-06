@@ -42,7 +42,7 @@ class GihunterDirAgent(Agent):
 class GihunterDirTool(Tool):
     def __init__(self, config):
         super(GihunterDirTool, self).__init__(config)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + "/mobile_genetic_elements/gihunter_dir.py"
         self.genome = self.option("genome_fa").prop['path']
         self.rnt =self.option("rnt")

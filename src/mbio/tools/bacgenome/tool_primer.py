@@ -43,7 +43,7 @@ class ToolPrimerAgent(Agent):
 class ToolPrimerTool(Tool):
     def __init__(self, config):
         super(ToolPrimerTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
 
     def run_tiqu(self):
         """

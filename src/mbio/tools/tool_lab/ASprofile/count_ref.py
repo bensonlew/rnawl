@@ -45,7 +45,7 @@ class CountRefTool(Tool):
     def __init__(self, config):
         super(CountRefTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'count_ref': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/ref_rna_v2/ASprofile/count_ref.py'),

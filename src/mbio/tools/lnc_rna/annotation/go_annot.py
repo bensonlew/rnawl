@@ -57,7 +57,7 @@ class GoAnnotAgent(Agent):
 class GoAnnotTool(Tool):
     def __init__(self, config):
         super(GoAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.go_merge_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/go_merge.py')
         self.go_annot_py = os.path.join(self.config.PACKAGE_DIR, 'rna/annotation/go_annotation2.py')
         self.go_split_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/go_split.py')

@@ -58,7 +58,7 @@ class ModelTool(Tool):
         self.file_name = self.option('model') + '_' + tmp_model_type + '_model'
         self.model_path = self.config.SOFTWARE_DIR + '/bioinfo/model/' + self.file_name
         self.script = self.config.PACKAGE_DIR + '/hmdb/scripts/train.py'
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
 
     def run_model(self):
         self.logger.info("运行模型预测")

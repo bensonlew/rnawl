@@ -51,7 +51,7 @@ class CircfinderTool(Tool):
         super(CircfinderTool, self).__init__(config)
         self.program = {
             'star': 'bioinfo/rna/star-2.5/bin/Linux_x86_64/',
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'perl': 'program/perl-5.24.0/bin/perl'
 
         }

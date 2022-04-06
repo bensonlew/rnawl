@@ -47,7 +47,7 @@ class MetagenCogStatTool(Tool):
     def __init__(self, config):
         super(MetagenCogStatTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.python_script = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/meta_genomic_cog_stat.py'
 
     def run(self):

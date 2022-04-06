@@ -52,7 +52,7 @@ class LncrnaSeqConsTool(Tool):
         super(LncrnaSeqConsTool, self).__init__(config)
         self.gtftogenepred = 'bioinfo/align/ucsc_tools/gtfToGenePred'
         self.genepredtobed = 'bioinfo/align/ucsc_tools/genePredToBed'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.liftover = 'bioinfo/align/ucsc_tools/liftOver'
         self.bedtools = 'bioinfo/rna/bedtools2-master/bin/bedtools'
         self.filter_bed_by_name_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/filter_bed_by_name.py')

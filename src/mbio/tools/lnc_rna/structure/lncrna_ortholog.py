@@ -55,7 +55,7 @@ class LncrnaOrthologAgent(Agent):
 class LncrnaOrthologTool(Tool):
     def __init__(self, config):
         super(LncrnaOrthologTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.makeblastdb = 'bioinfo/align/ncbi-blast-2.3.0+/bin/makeblastdb'
         self.blastn = 'bioinfo/align/ncbi-blast-2.3.0+/bin/blastn'
         self.filter_fasta_by_id_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/filter_fasta_by_id.py')

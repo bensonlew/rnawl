@@ -48,7 +48,7 @@ class QcStatIntergrationTool(Tool):
     """
     def __init__(self, config):
         super(QcStatIntergrationTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.QcStatIntergration = self.config.PACKAGE_DIR + "/lnc_rna/get_qc_stat_intergration.py"
 
     def run_QcStatIntergration(self):

@@ -50,8 +50,8 @@ class TransferAnnotAgent(Agent):
 class TransferAnnotTool(Tool):
     def __init__(self, config):
         super(TransferAnnotTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
-        self.python = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.cog_summary_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/cog_summary.py')
         self.down_py =  self.config.PACKAGE_DIR + '/rna/download_froms3.py'
 

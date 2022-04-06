@@ -58,7 +58,7 @@ class CmscanTool(Tool):
     def __init__(self, config):
         super(CmscanTool, self).__init__(config)
         self.cmscan = 'bioinfo/lnc_rna/miniconda2/bin/cmscan'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.scantbl2tsv = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/scantbl2tsv.py')
         self.tblout = os.path.join(self.work_dir, 'cmscan.tblout')
         self.Rfam_clanin = os.path.join(self.config.SOFTWARE_DIR, 'database/lnc_rna/Rfam/Rfam.clanin')

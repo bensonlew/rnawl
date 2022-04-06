@@ -49,7 +49,7 @@ class RmatsDiffcompAgent(Agent):
 class RmatsDiffcompTool(Tool):
     def __init__(self,config):
         super(RmatsDiffcompTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.process_rmats_detail_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/process_rmats_detail.py')
         self.diffcomp_txt = os.path.join(self.work_dir, 'diffcomp.txt')
 

@@ -73,7 +73,7 @@ class KeggEditorTool(Tool):
     def __init__(self, config):
         super(KeggEditorTool, self).__init__(config)
         self._version = '1.0'
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.map_path = self.config.PACKAGE_DIR + "/ref_rna_v2/map4.r"
         self.r_path = self.config.SOFTWARE_DIR + "/program/R-3.3.3/bin/Rscript"
         if os.path.exists("/usr/bin/convert"):

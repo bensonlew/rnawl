@@ -51,7 +51,7 @@ class IsomiridTool(Tool):
     """
     def __init__(self, config):
         super(IsomiridTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.isomiRID = self.config.PACKAGE_DIR + "/small_rna/isomiRID.py"
         self.bowtie = self.config.SOFTWARE_DIR + "/bioinfo/align/bowtie-1.1.2/bowtie"
         self.bowtie_build = self.config.SOFTWARE_DIR + "/bioinfo/align/bowtie-1.1.2/bowtie-build"

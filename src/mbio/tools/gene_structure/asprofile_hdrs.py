@@ -60,7 +60,7 @@ class AsprofileHdrsTool(Tool):
         super(AsprofileHdrsTool, self).__init__(config)
         self._version = "vb-1.0.4"
         self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/ASprofile.b-1.0.4/"
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
 
     def run_hdrs(self):
         """

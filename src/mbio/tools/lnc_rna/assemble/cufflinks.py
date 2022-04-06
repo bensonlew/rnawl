@@ -83,7 +83,7 @@ class CufflinksTool(Tool):
         super(CufflinksTool, self).__init__(config)
         self.cufflinks = 'bioinfo/rna/cufflinks-2.2.1/cufflinks'
         self.sh = 'program/sh'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.gffread = 'bioinfo/rna/cufflinks-2.2.1/gffread'
         self.fasta_range_sh = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/fasta_range.sh')
         self.bioawk_path = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/seq/bioawk/')

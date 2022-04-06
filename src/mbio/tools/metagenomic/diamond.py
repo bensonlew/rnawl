@@ -73,7 +73,7 @@ class DiamondTool(Tool):
                 os.mkdir(self.db_path)
         self.cmd_path = "bioinfo/align/diamond-0.8.35/diamond"  # 执行程序路径必须相对于 self.config.SOFTWARE_DIR
         self.set_environ(BLASTDB=self.db_path)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + "/toolapps/annno_taxon.py"
 
     def run_makedb_and_blast(self):

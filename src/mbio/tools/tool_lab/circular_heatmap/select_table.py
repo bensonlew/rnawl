@@ -60,7 +60,7 @@ class SelectTableTool(Tool):
         self._version = "v1.0"
         self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'profile': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/circular_heatmap/profile_select.py'),

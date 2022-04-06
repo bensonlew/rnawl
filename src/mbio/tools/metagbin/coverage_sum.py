@@ -50,7 +50,7 @@ class CoverageSumTool(Tool):
     def __init__(self, config):
         super(CoverageSumTool, self).__init__(config)
         self.depth =self.option('depth_files').prop['path']
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.cover =self.config.PACKAGE_DIR + "/metagbin/metagbin_coverage.py"
 
     def run_summarize_depth(self):

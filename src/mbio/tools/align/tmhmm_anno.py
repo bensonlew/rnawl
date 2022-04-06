@@ -52,7 +52,7 @@ class TmhmmAnnoTool(Tool):
         self.perl_path = 'program/perl-5.24.0/bin/perl '
         self.script_path = self.config.PACKAGE_DIR + '/annotation/signalp_tmhmmtxt2xls.pl'
         self.python_script_path = self.config.PACKAGE_DIR + '/bacgenome/add_gene_info.py '
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
 
     def run(self):
         """

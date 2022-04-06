@@ -53,7 +53,7 @@ class PickleConfig(object):
         self.SCRIPT_DIR = None
         self.wfm_port = 7321
         self.ntm_port = 7322
-        self.instant = False
+        self.instant = True
         self.current_workflow_id = ""
         self.current_tool_id = ""
         self.DBVersion = None
@@ -144,7 +144,8 @@ class Agent(Basic):
         # self._not_found_times = 0
         # self._load_report_error = 0
         self._grpc_times = 0
-        self.instant = self.get_workflow().sheet.instant
+        # self.instant = self.get_workflow().sheet.instant
+        self.instant = True
         self._submit_times = 0
 
     def _call_state_callback(self, message):
@@ -201,9 +202,6 @@ class Agent(Basic):
         """
         self.logger.warning(self.name + "没有定义消息对应的处理函数" + message.state + "!")
         
-        def caculator():
-
-
 
     @property
     def queue(self):

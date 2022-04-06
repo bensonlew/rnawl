@@ -68,7 +68,7 @@ class LncrnaPredictAgent(Agent):
 class LncrnaPredictTool(Tool):
     def __init__(self, config):
         super(LncrnaPredictTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.perl_path = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl'
         gcc_path = self.config.SOFTWARE_DIR + '/gcc/8.1.0/bin'
         gcc_lib = self.config.SOFTWARE_DIR + '/gcc/8.1.0/lib:'

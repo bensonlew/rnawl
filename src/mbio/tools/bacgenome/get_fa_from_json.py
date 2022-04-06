@@ -45,7 +45,7 @@ class GetFaFromJsonTool(Tool):
     def __init__(self, config):
         super(GetFaFromJsonTool, self).__init__(config)
         self.script = self.config.PACKAGE_DIR + '/bacgenome/get_fa_by_json.py'
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.json = json.dumps(self.option("genome_json"))
 
     def run_fa(self):

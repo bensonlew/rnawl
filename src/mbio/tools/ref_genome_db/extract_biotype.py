@@ -56,7 +56,7 @@ class ExtractBiotypeAgent(Agent):
 class ExtractBiotypeTool(Tool):
     def __init__(self, config):
         super(ExtractBiotypeTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.gff_biotype = self.config.PACKAGE_DIR + "/ref_genome_db/ncbi_gff_biotype.py"
 
     def run(self):

@@ -51,7 +51,7 @@ class DraftPlasmidPredictTool(Tool):
         self.set_environ(PATH=self.path, LD_LIBRARY_PATH=self.lib)
         self.shell_path = "/program/sh"
         self.database = self.config.SOFTWARE_DIR + "/database"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/bacgenome/'
 
 

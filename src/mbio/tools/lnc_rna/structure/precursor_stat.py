@@ -50,7 +50,7 @@ class PrecursorStatAgent(Agent):
 class PrecursorStatTool(Tool):
     def __init__(self, config):
         super(PrecursorStatTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.hairpin_fa = os.path.join(
             self.config.SOFTWARE_DIR,
             'database/mirbase/species/{}/{}.hairpin.fa'.format(self.option('species'), self.option('species'))

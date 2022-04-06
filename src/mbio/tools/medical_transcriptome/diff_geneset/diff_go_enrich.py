@@ -66,7 +66,7 @@ class DiffGoEnrichTool(Tool):
     def __init__(self, config):
         super(DiffGoEnrichTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'find_enrichment': os.path.join(
@@ -92,7 +92,7 @@ class DiffGoEnrichTool(Tool):
         # self.go_enrich_path = self.goatools_path + '/scripts/find_enrichment.py'
         # self.obo = self.config.SOFTWARE_DIR + '/database/GO/go-basic.obo'
         # self.set_environ(PYTHONPATH=self.config.SOFTWARE_DIR + self.goatools_path)
-        # self.python_path = 'program/Python/bin/python'
+        # self.python_path = 'miniconda2/bin/python'
         # self.out_enrich_fp = self.output_dir + '/go_enrich_' + os.path.splitext(os.path.basename(self.option('diff_list').path))[0] + '.xls'
         # self.out_go_graph = self.output_dir + '/go_lineage'
         # self.image_magick_path = self.config.SOFTWARE_DIR + '/program/ImageMagick/bin/'

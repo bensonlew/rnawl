@@ -39,7 +39,7 @@ class AnnoSecretoryTool(Tool):
     def __init__(self, config):
         super(AnnoSecretoryTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + '/bac_comp_genome/secretory_anno.py'
         self.ref = self.config.SOFTWARE_DIR + "/database/Secretory/Secretion_System.xls"
 

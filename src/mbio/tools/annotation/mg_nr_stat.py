@@ -67,7 +67,7 @@ class MgNrStatTool(Tool):
     def __init__(self, config):
         super(MgNrStatTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.python_script = self.config.SOFTWARE_DIR + '/bioinfo/taxon/scripts/mg_nr_profile.py'
 
     def run(self):

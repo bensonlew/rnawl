@@ -38,7 +38,7 @@ class BlastNtStatTool(Tool):
         super(BlastNtStatTool, self).__init__(config)
         self._version = 1.0
         self.perl = "program/perl-5.24.0/bin/perl"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.xml_table = self.config.SOFTWARE_DIR + "/bioinfo/seq/scripts/blast_result.pl"
         self.nt_stat = self.config.PACKAGE_DIR + "/datasplit/nt_stat.py"
 

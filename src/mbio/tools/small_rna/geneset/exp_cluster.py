@@ -64,7 +64,7 @@ class ExpClusterTool(Tool):
     def __init__(self, config):
         super(ExpClusterTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.cluster_toolbox = self.config.PACKAGE_DIR + '/small_rna/cluster_toolbox.py'
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'

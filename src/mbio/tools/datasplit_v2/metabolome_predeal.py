@@ -88,7 +88,7 @@ class MetabolomePredealTool(Tool):
     def __init__(self, config):
         super(MetabolomePredealTool, self).__init__(config)
         self._version = 1.0
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.python3 = "program/Python35/bin/python"
         python_lib = os.path.join(self.config.SOFTWARE_DIR, "program/Python35/lib")
         python_path = os.path.join(self.config.SOFTWARE_DIR, "program/Python35/bin")

@@ -47,7 +47,7 @@ class StatisticsAgent(Agent):
 class StatisticsTool(Tool):
     def __init__(self, config):
         super(StatisticsTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.statistics_py = os.path.join(self.config.PACKAGE_DIR, 'tool_lab/expression/statistics.py')
 
     def run(self):

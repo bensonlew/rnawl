@@ -50,7 +50,7 @@ class AntismashSumTool(Tool):
         super(AntismashSumTool, self).__init__(config)
         self.dir = self.option("dir")
         self.sample_list = self.option("sample_list").prop['path']
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + "/bac_comp_genome/"
 
     def run_antismash_stat(self):

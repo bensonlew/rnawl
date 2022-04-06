@@ -54,7 +54,7 @@ class MobileStatTool(Tool):
         self.scaf_seq = self.option("genome").prop["path"]
         self.dir =self.option('dir')
         self.sample = self.option('sample_name')
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + "/mobile_genetic_elements/"
 
     def run_mobilestat(self):

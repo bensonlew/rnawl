@@ -41,7 +41,7 @@ class PalindromeTool(Tool):
     def __init__(self, config):
         super(PalindromeTool, self).__init__(config)
         self.program = {
-            'python': os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin/python')
+            'python': os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin/python')
         }
         self.script = {
             'palindrome': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/palindrome.py')

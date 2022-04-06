@@ -47,7 +47,7 @@ class BuscoTool(Tool):
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/augustus/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/augustus/scripts')
         self.set_environ(AUGUSTUS_CONFIG_PATH=self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/augustus/config')
         self.set_environ(LD_LIBRARY_PATH = self.config.SOFTWARE_DIR + '/program/miniconda2/pkgs/boost-cpp-1.64.0-1/lib')  #add for ningbo zouguanqing 20181029
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         self.perl_script = self.config.PACKAGE_DIR + "/fungi_genome/"
         self.busco = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/busco-master/scripts/run_BUSCO.py"

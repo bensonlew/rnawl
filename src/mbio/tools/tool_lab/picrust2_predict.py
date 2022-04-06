@@ -88,7 +88,7 @@ class Picrust2PredictTool(Tool):
         self.picrust2_script = self.config.SOFTWARE_DIR + "/bioinfo/meta/picrust2/picrust2-2.2.0-b/scripts/picrust2_pipeline.py"
         self.deactivate = self.config.SOFTWARE_DIR + "/program/miniconda3/bin/deactivate"
         self.pick_annotation = self.config.PACKAGE_DIR + "/meta/scripts/pick_annotation.py"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.ref_dir_18s = self.config.SOFTWARE_DIR + "/bioinfo/meta/picrust2/picrust2-2.2.0-b/picrust2/default_files/fungi/fungi_18S"
         self.custom_trait_tables_18s = self.config.SOFTWARE_DIR + "/bioinfo/meta/picrust2/picrust2-2.2.0-b/picrust2/default_files/fungi/ec_18S_counts.txt.gz"
         self.marker_gene_table_18s = self.config.SOFTWARE_DIR + "/bioinfo/meta/picrust2/picrust2-2.2.0-b/picrust2/default_files/fungi/18S_counts.txt.gz"

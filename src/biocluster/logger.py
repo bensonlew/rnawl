@@ -24,6 +24,7 @@ class Wlog(object):
         self.level = logging.DEBUG
         self.stream_on = True
         self.workflow = workflow
+        print("Workflow {}".format(self.workflow))
         if workflow:
             self.log_path = workflow.work_dir + "/log.txt"
             self.file_handler = logging.FileHandler(self.log_path)

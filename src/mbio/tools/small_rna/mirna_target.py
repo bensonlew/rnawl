@@ -53,7 +53,7 @@ class MirnaTargetTool(Tool):
     """
     def __init__(self, config):
         super(MirnaTargetTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.MirnaTarget = self.config.PACKAGE_DIR + "/small_rna/mirna_target.py"
         self.perl = '/program/perl-5.24.0/bin/'
         self.set_environ(PATH=self.config.SOFTWARE_DIR + self.perl)

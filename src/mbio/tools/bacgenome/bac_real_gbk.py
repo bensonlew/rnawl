@@ -84,7 +84,7 @@ class BacRealGbkTool(Tool):
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         self.perl_script = self.config.PACKAGE_DIR + "/bacgenome/"
         self.list = []
-        self.python = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.python = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         self.python_scrit = self.config.PACKAGE_DIR + "/bacgenome/gbk_rm_ty_tbl.py"
         self.tbl2asn = "bioinfo/Genomic/Sofware/tbl2asn/linux64.tbl2asn"
         self.template_sbt = self.config.PACKAGE_DIR + "/bacgenome/template.sbt"

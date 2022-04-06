@@ -48,7 +48,7 @@ class LncrnaClassTool(Tool):
 
     def __init__(self, config):
         super(LncrnaClassTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
         self.bed2intersect_script = self.config.PACKAGE_DIR + '/lnc_rna/bed2intersect.py'
         self.gtf2bed_script = self.config.PACKAGE_DIR + '/lnc_rna/gtf2bed.pl'

@@ -41,7 +41,7 @@ class BsjreadsTool(Tool):
     def __init__(self, config):
         super(BsjreadsTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'bsjreads': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/circrna/bsjreads.py')

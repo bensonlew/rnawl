@@ -63,7 +63,7 @@ class RecalAnnoAbuAgent(Agent):
 class RecalAnnoAbuTool(Tool):
     def __init__(self, config):
         super(RecalAnnoAbuTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.perl_path = self.perl_path = '/program/perl-5.24.0/bin/perl'
         self.nr_script = self.config.PACKAGE_DIR + '/annotation/mg_annotation/nr_anno_abudance.pl'
         self.cog_script = self.config.PACKAGE_DIR + '/annotation/mg_annotation/eggNOG_anno_abundance.pl'

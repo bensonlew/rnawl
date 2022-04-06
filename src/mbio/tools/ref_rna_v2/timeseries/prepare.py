@@ -58,7 +58,7 @@ class PrepareTool(Tool):
     def __init__(self, config):
         super(PrepareTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'prepare': os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/timeseries/prepare.py'),

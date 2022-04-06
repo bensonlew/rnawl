@@ -58,7 +58,7 @@ class CorrelationTool(Tool):
     def __init__(self, config):
         super(CorrelationTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
@@ -68,7 +68,7 @@ class CorrelationTool(Tool):
         self.set_environ(PATH=self.r_path, R_HOME=self._r_home, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
         self.cmd_path = os.path.join(
             self.config.SOFTWARE_DIR, 'bioinfo/statistical/scripts/plot-hcluster_tree.pl')
-        self.correlation_path = '/program/Python/bin/python {}/bac_comp_genome/correlation.py' \
+        self.correlation_path = '/miniconda2/bin/python {}/bac_comp_genome/correlation.py' \
             .format(self.config.PACKAGE_DIR)
 
     def run_hcluster(self):

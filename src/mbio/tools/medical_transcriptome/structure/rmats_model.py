@@ -62,7 +62,7 @@ class RmatsModelTool(Tool):
         self._LD_LIBRARY_PATH = self.config.SOFTWARE_DIR + "/program/ImageMagick/lib/:$LD_LIBRARY_PATH"
         self.samtools_path = os.path.join(self.config.SOFTWARE_DIR, "bioinfo/align/samtools-1.7/samtools")
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'convert': 'program/ImageMagick/bin/convert'
         }
         self.script = {

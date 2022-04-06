@@ -51,7 +51,7 @@ class DiffDoClassAgent(Agent):
 class DiffDoClassTool(Tool):
     def __init__(self, config):
         super(DiffDoClassTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.do_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/annotation/do_class.py')
 
 

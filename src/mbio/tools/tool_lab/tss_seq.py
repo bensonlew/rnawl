@@ -55,8 +55,8 @@ class TssSeqTool(Tool):
     """
     def __init__(self, config):
         super(TssSeqTool, self).__init__(config)
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
-        self.python = '/program/Python/bin/python'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.bedtool_path = 'bioinfo/seq/bedtools-2.25.0/bin/bedtools'
 
         self.filter_list =None

@@ -48,7 +48,7 @@ class ExpCorrTool(Tool):
         super(ExpCorrTool, self).__init__(config)
         # old setting
         software_dir = self.config.SOFTWARE_DIR
-        # self.python_path = 'program/Python/bin/python'
+        # self.python_path = 'miniconda2/bin/python'
         # self.cluster_toolbox = self.config.PACKAGE_DIR + '/denovo_rna_v2/cluster_toolbox.py'
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
@@ -59,7 +59,7 @@ class ExpCorrTool(Tool):
         # self.set_environ(PATH=self.r_path, R_HOME=self._r_home, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
 
         # new setting, remove unnecessary definitions
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.cluster_toolbox = os.path.join(self.config.PACKAGE_DIR, 'small_rna/cluster_toolbox.py')
         self._PATH = os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.1/bin')
         self._LD_LIBRARY_PATH = os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.1/lib64/R/lib')

@@ -68,7 +68,7 @@ class RpkmSaturationTool(Tool):
             os.path.join(self.work_dir, 'satur'), os.path.basename(self.option('bam').path)[:-4]
         )
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'perl': 'program/perl/perls/perl-5.24.0/bin/perl'
         }
         self.script = {

@@ -39,7 +39,7 @@ class PlotTreeTool(Tool):
     def __init__(self, config):
         super(PlotTreeTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path ="/program/Python/bin/python"
+        self.python_path ="/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + '/bac_comp_genome/common_anno.py'
         self.databases = self.option("database_list").split(",")
         self.dir = self.option("dir")

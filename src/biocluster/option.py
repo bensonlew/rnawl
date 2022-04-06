@@ -370,6 +370,7 @@ class Option(object):
         :param check:
         :return:
         """
+        path = str(path)
         class_name = self.bind_obj.__class__.__name__
         self_class_path = get_classpath_by_object(self.bind_obj)
         paths = self_class_path.split(".")[2:]
@@ -383,6 +384,8 @@ class Option(object):
         else:
             raise Exception("类名称不正确!")
         try:
+            print("format_path", format_path)
+            print("path", path)
             file_obj = load_class_by_path(format_path, "File")()
             file_obj.set_path(path)
             start = datetime.now()
@@ -404,6 +407,8 @@ class Option(object):
                     self.bind_obj.logger.debug("检测完成，耗时:%s s,文件%s,格式：%s, 函数:%s" %
                                                ((end - start).seconds, path, format_path, function_name))
                 else:
+                    print(path, format_path)
+                    print("开始检测文件%s,格式：%s, 函数:%s" % (path, format_path, "check"))
                     self.bind_obj.logger.debug("开始检测文件%s,格式：%s, 函数:%s" % (path, format_path, "check"))
                     getattr(file_obj, "check")()
                     end = datetime.now()
@@ -433,6 +438,7 @@ class Option(object):
         """
         文件检测错误后的处理
         """
+        print("value: %s" % value)
         # class_name = self.bind_obj.__class__.__name__
         # if re.search(r"Tool$", class_name):
         #     self.bind_obj.set_error(error)

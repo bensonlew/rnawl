@@ -42,7 +42,7 @@ class CircrpmTool(Tool):
     def __init__(self, config):
         super(CircrpmTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'circrpm': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/circrna/circrpm.py')

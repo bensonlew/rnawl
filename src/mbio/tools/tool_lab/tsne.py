@@ -52,7 +52,7 @@ class TsneTool(Tool):
         self.set_environ(PATH=self.python)
         self.set_environ(PATH=self.r)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'rscript': os.path.join(software_dir, 'program/R-3.3.1/bin/Rscript'),
         }
         self.script = {

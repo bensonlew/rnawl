@@ -51,7 +51,7 @@ class DuogeneTool(Tool):
         self.set_environ(PATH=self.python)
         self.set_environ(PATH=self.r)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'rscript': 'bioinfo/ref_rna_v3/hisat2/miniconda3/bin/Rscript',
         }
         self.script = {

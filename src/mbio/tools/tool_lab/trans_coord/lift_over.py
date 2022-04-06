@@ -61,7 +61,7 @@ class LiftOverTool(Tool):
     def __init__(self, config):
         super(LiftOverTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.perl =  'program/perl/perls/perl-5.24.0/bin/'
         self.tool_path= self.config.PACKAGE_DIR+"/tool_lab/trans_coord/CoordTrans.pl"
         self.ucsctool_path = self.config.SOFTWARE_DIR + "/bioinfo/align/ucsc_tools"

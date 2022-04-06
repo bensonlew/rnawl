@@ -70,7 +70,7 @@ class RnaeditingTool(Tool):
                 bam_list.write(str(bam_files)+"\n")
         
         
-        cmd = self.config.SOFTWARE_DIR + '/program/Python/bin/python '
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/python '
         cmd += self.cmd_path
         cmd += ' -rbl %s -rsf %s -tdp %s -ops %s -psl %s -nsl %s' % (self.work_dir/bam_list.txt,self.options("ref_hg19.fa").prop["path"],self.config.SOFTWARE_DIR + '/bioinfo/rna/RDDpred_v1.1/ToolBox.Dir',self.work_dir/RNA_Editing/RDD_prefix,self.config.SOFTWARE_DIR + '/bioinfo/rna/RDDpred_v1.1/PriorData/hg19.PublicSites.txt',self.config.SOFTWARE_DIR + '/bioinfo/rna/RDDpred_v1.1/PriorData/hg19.MES_Sites.txt')
         self.logger.info('开始运行RDDpred并检测编辑位点')

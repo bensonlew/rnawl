@@ -85,7 +85,7 @@ class MirPreferTool(Tool):
             self.set_environ(PERL5LIB=self.essential_lib)
         self.samtools = self.config.SOFTWARE_DIR + '/bioinfo/rna/miniconda3/bin/'
         self.bowtie_bash = "bioinfo/align/bowtie-1.2.3-linux-x86_64/bowtie"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.mir_prefer = self.config.SOFTWARE_DIR + "/bioinfo/miRNA/miR-PREFeR-master/"
         self.mir_prefer_config = self.config.SOFTWARE_DIR + "/bioinfo/miRNA/miR-PREFeR-master/example/config.example"
         self.bowtie_bash = '/bioinfo/align/bowtie-1.2.3-linux-x86_64/'

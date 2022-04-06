@@ -49,7 +49,7 @@ class DiffStringPicturesTool(Tool):
         super(DiffStringPicturesTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'string': self.config.PACKAGE_DIR + '/tool_lab/get_string_picture.py',

@@ -37,7 +37,7 @@ class DownloadTool(Tool):
     def __init__(self, config):
         super(DownloadTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.download_path = self.config.PACKAGE_DIR + '/tool_lab/download4ncbi.py'
         self.miniconda = software_dir + '/bioinfo/ref_rna_v3/gene_fusion/miniconda3/bin'
         self.set_environ(PATH=self.miniconda)

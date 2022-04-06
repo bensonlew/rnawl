@@ -54,7 +54,7 @@ class WgcnaRelateTool(Tool):
     def __init__(self, config):
         super(WgcnaRelateTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.wgcna_relate = self.config.PACKAGE_DIR + '/wgcna/wgcna_relate.py'
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'

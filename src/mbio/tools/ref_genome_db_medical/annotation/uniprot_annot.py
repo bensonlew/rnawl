@@ -51,7 +51,7 @@ class UniprotAnnotAgent(Agent):
 class UniprotAnnotTool(Tool):
     def __init__(self, config):
         super(UniprotAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.tids2gids = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/tids2gids.py')
         self.get_venn_list_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/get_venn_list.py')
         self.prefix = "annot_uniprot"

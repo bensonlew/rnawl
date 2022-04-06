@@ -61,7 +61,7 @@ class GenePredictTool(Tool):
         self.genemark_path = self.config.SOFTWARE_DIR + \
                              "/bioinfo/Genomic/Sofware/genemark_suite_linux_64/gmsuite/gmsn.pl"
         self.choose_seq = self.config.PACKAGE_DIR + "/bac_comp_genome/"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
 
 
     def get_gene_from_gff(self):

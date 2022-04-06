@@ -60,7 +60,7 @@ class GbkToGffTool(Tool):
         super(GbkToGffTool, self).__init__(config)
         self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'gbk2gff': os.path.join(self.config.PACKAGE_DIR, "prok_rna/gbk_to_gff.py"),

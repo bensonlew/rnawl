@@ -31,7 +31,7 @@ class TransSepTool(Tool):
     def __init__(self, config):
         super(TransSepTool, self).__init__(config)
         self.trans_sep = self.config.PACKAGE_DIR + '/tool_lab/change_sign.py'
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
 
     def run(self):
         super(TransSepTool, self).run()

@@ -48,7 +48,7 @@ class SeqConversionTool(Tool):
         super(SeqConversionTool, self).__init__(config)
         self._version = "v1.0"
         self.program = {
-            'python': os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin/python')
+            'python': os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin/python')
         }
         self.script = {
             'seq_conversion': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/seq_conversion.py')

@@ -42,7 +42,7 @@ class TwoComponentTool(Tool):
     def __init__(self, config):
         super(TwoComponentTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + '/annotation/senser_regulator.py'
         self.database = self.config.SOFTWARE_DIR + '/database/bacgenome/Pfam_two_component/senser_regulator.database'
 

@@ -50,7 +50,7 @@ class AtcgBiasTool(Tool):
     """
     def __init__(self, config):
         super(AtcgBiasTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.AtcgBias = self.config.PACKAGE_DIR + "/small_rna/atcg_bias.py"
 
     def run_AtcgBias(self):

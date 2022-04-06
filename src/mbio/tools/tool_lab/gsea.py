@@ -152,7 +152,7 @@ class GseaTool(Tool):
         self.data_outdir = None
         self.name2id = dict()
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'Rscript': 'program/R-3.3.1/bin/Rscript'
         }
         self.script = {

@@ -57,7 +57,7 @@ class GeneTidyTool(Tool):
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         self.perl_script = self.config.PACKAGE_DIR + "/bac_comp_genome/"
         self.script_tidy = self.config.PACKAGE_DIR + '/bacgenome/ '
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.transeq = "/bioinfo/seq/EMBOSS-6.6.0/emboss/transeq"
         self.sample_name = self.option("sample_name")
         self.trans_table = self.config.SOFTWARE_DIR + '/database/bacgenome/trans_table/code.dic'

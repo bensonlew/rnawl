@@ -53,7 +53,7 @@ class CreateConfigTool(Tool):
         super(CreateConfigTool, self).__init__(config)
         self.pe_list = self.option('PE_list').prop['path']
         self.sample_name = self.option('sample_name')
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + "/bacgenome/"
         self.config_file = self.work_dir + "/" + self.sample_name + ".config"
 

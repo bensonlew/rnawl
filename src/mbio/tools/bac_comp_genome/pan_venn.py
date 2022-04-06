@@ -46,8 +46,8 @@ class PanVennTool(Tool):
         # self.venn_path = self.config.SOFTWARE_DIR + '/bioinfo/plot/scripts/'
         self.venn_path = self.config.PACKAGE_DIR + '/graph/scripts/venn_table.py'  # 将scripts的脚本移到packages中使用，凡是涉及的都已改动 add by zhujuan 20171113
         self.venn_path_mg = self.config.PACKAGE_DIR + '/graph/scripts/venn_table_mg.py'
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
-        self.python_path2 = '/program/Python/bin/python'  # 用于小工具
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
+        self.python_path2 = '/miniconda2/bin/python'  # 用于小工具
         self.petal_path = self.config.PACKAGE_DIR + '/bac_comp_genome/pan_venn_table.py'
         self.new_venn_path = self.config.PACKAGE_DIR + '/bac_comp_genome/pan_venn.py'
         self.out = self.work_dir + '/venn_table.xls'

@@ -48,7 +48,7 @@ class SecAnnoStatTool(Tool):
         super(SecAnnoStatTool, self).__init__(config)
         self._version = "1.0"
         self.sec_stat_path = self.config.PACKAGE_DIR + "/metagenomic/sec_stat.py "
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.r_path = 'program/R-3.3.1/bin/Rscript'
         self.type_list = []
         self.name_to_name = {}

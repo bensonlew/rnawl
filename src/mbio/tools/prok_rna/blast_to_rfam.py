@@ -68,7 +68,7 @@ class BlastToRfamTool(Tool):
         # self.blast_path = "bioinfo/align/ncbi-blast-2.3.0+/bin"
         self.blast_path = "/bioinfo/ref_rna_v2/miniconda2/bin/"
         self.set_environ(PATH=self.blast_path)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.rfam_stat = self.config.PACKAGE_DIR + "/prok_rna/rfam_stat.py"
         # self.rfam_seed = self.config.SOFTWARE_DIR + "/database/Rfam_12.3/Rfam.seed"
         self.rfam_seed = self.config.SOFTWARE_DIR + "/database/Annotation/other2019/rfam14.1/Rfam.seed"

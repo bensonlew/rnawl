@@ -67,7 +67,7 @@ class MgKeggLevelTool(Tool):
         self.perl_path = '/program/perl-5.24.0/bin/perl'
         # self.perl_script = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/mg_kegg_level_abu.pl'
         self.perl_script = self.config.PACKAGE_DIR + '/metagenomic/anno_profile/kegg_level_profile.pl'
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.python_script = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/mg_kegg_level_mongo.py'
         self.sh_path = 'bioinfo/align/scripts/cat.sh'
         self.cat_path = "../../../../../.." + self.config.PACKAGE_DIR + '/sequence/scripts/cat_seq.sh'

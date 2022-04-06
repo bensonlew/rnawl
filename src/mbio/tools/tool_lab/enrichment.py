@@ -78,7 +78,7 @@ class EnrichmentTool(Tool):
         self._C_INCLUDE_PATH = software_dir + "/bioinfo/rna/miniconda2/include/:C_INCLUDE_PATH"
         self.set_environ(PATH=self._PATH, C_INCLUDE_PATH=self._C_INCLUDE_PATH, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'rscript': 'bioinfo/rna/miniconda2/bin/Rscript',
         }
         self.script = {

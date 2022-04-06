@@ -86,7 +86,7 @@ class BoxPlotTool(Tool):
     def __init__(self, config):
         super(BoxPlotTool, self).__init__(config)
         self._version = 1.0
-        self.Python_path = '/program/Python/bin/python '
+        self.Python_path = '/miniconda2/bin/python '
         self.box_path = self.config.SOFTWARE_DIR + '/bioinfo/statistical/scripts/boxplot.py '
 
     def create_common_table(self):

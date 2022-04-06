@@ -136,7 +136,7 @@ class GoAnnotTool(Tool):
             self.set_error('运行b2g出错', code="31201501")
 
     def run_gomerge(self):
-        cmd1 = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/goMerge.py'.format(
+        cmd1 = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/goMerge.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd1 += ' %s %s' % (
             self.work_dir + '/blast2go.annot', 'GO.list')
@@ -157,7 +157,7 @@ class GoAnnotTool(Tool):
         self.run_annotation()
 
     def run_annotation(self):
-        cmd2 = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/goAnnot.py'.format(
+        cmd2 = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/goAnnot.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd2 += ' %s %s %s %s' % (
             self.work_dir + '/GO.list', 'localhost', self.b2g_user, self.b2g_password)  # 10.100.203.193
@@ -178,7 +178,7 @@ class GoAnnotTool(Tool):
         self.run_not_level()
 
     def run_gosplit(self):
-        cmd3 = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/goSplit.py'.format(
+        cmd3 = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/goSplit.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd3 += ' %s' % self.work_dir + '/go_detail.xls'
         self.logger.info("运行goSplit.py")
@@ -198,7 +198,7 @@ class GoAnnotTool(Tool):
         self.end()
 
     def run_not_level(self):
-        cmd = '{}/program/Python/bin/python {}/annotation/go/go_desc.py'.format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
+        cmd = '{}/miniconda2/bin/python {}/annotation/go/go_desc.py'.format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
         cmd += ' {} {}'.format(self.work_dir + '/blast2go.annot', self.work_dir + '/go_statistics.xls' )
         self.logger.info('运行go_desc.py')
         self.logger.info(cmd)
@@ -244,7 +244,7 @@ class GoAnnotTool(Tool):
     #         self.set_error('运行b2g出错', code="31201501")
     #
     # def run_gomerge(self):
-    #     cmd1 = 'program/Python/bin/python {}/annotation/goMerge.py'.format(
+    #     cmd1 = 'miniconda2/bin/python {}/annotation/goMerge.py'.format(
     #         self.config.PACKAGE_DIR)
     #     cmd1 += ' %s %s' % (self.option("blast2go_annot").prop['path'], 'GO.list')
     #     self.logger.info("运行mergeGO.py")
@@ -258,7 +258,7 @@ class GoAnnotTool(Tool):
     #         self.set_error('running mergeGO.py error', code="31205501")
     #
     # # def run_annotation(self):
-    # #     cmd2 = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/goAnnot.py'.format(
+    # #     cmd2 = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/goAnnot.py'.format(
     # #         self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
     # #     cmd2 += ' %s %s %s %s' % (
     # #         self.work_dir + '/GO.list', 'localhost', self.b2g_user, self.b2g_password)  # 10.100.203.193
@@ -277,7 +277,7 @@ class GoAnnotTool(Tool):
     # #         self.set_error("运行goAnnot.py出错", code="31201503")
     #
     # # def run_gomerge(self):
-    # #     cmd1 = 'program/Python/bin/python {}/bioinfo/annotation/scripts/goMerge.py'.format(
+    # #     cmd1 = 'miniconda2/bin/python {}/bioinfo/annotation/scripts/goMerge.py'.format(
     # #         self.config.SOFTWARE_DIR)
     # #     cmd1 += ' %s %s' % (self.option("blast2go_annot").prop['path'], 'GO.list')
     # #     self.logger.info("运行mergeGO.py")
@@ -295,7 +295,7 @@ class GoAnnotTool(Tool):
     # #         self.set_error('running mergeGO.py error', code="31205501")
     #
     # def run_annotation(self):
-    #     cmd2 = 'program/Python/bin/python {} {}'.format(self.annot_go, self.work_dir + '/GO.list')
+    #     cmd2 = 'miniconda2/bin/python {} {}'.format(self.annot_go, self.work_dir + '/GO.list')
     #     self.logger.info("运行goAnnot.py")
     #     self.logger.info(cmd2)
     #     command = self.add_command("run_annotation", cmd2, ignore_error=True)
@@ -309,7 +309,7 @@ class GoAnnotTool(Tool):
     #         self.set_error("运行run_annotation出错")
     #
     # def run_go_gene_anno(self):
-    #     cmd3 = 'program/Python/bin/python {}/annotation/go/go_anno.py'.format(
+    #     cmd3 = 'miniconda2/bin/python {}/annotation/go/go_anno.py'.format(
     #         self.config.PACKAGE_DIR)
     #     cmd3 += ' -i %s -o %s' % (self.work_dir + '/go1234level_statistics.xls',self.work_dir + '/all.go.annotation.xls')
     #     self.logger.info("运行go_anno.py")
@@ -346,7 +346,7 @@ class GoAnnotTool(Tool):
     #                 w.write("{}\t{}\t{}\n".format(gene, go, go_des))
     #
     # def run_not_level(self):
-    #     cmd = '{}/program/Python/bin/python {}/annotation/go/go_desc.py'.format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
+    #     cmd = '{}/miniconda2/bin/python {}/annotation/go/go_desc.py'.format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
     #     cmd += ' {} {}'.format(self.work_dir  + "/go_statistics2.xls", self.work_dir + '/go_statistics.xls' )
     #     self.logger.info('运行go_desc.py')
     #     self.logger.info(cmd)

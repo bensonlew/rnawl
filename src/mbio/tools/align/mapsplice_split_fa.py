@@ -61,7 +61,7 @@ class MapspliceSplitFaTool(Tool):
         super(MapspliceSplitFaTool, self).__init__(config)
         self._version = "v2.1.8"
         self.cmd_path = self.config.SOFTWARE_DIR+"/bioinfo/rna/MapSplice-v2.1.8/"
-        self.Python_path = 'program/Python/bin/python '
+        self.Python_path = 'miniconda2/bin/python '
 
     def run_mapsplice_split(self):
         """

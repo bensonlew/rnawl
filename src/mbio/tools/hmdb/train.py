@@ -67,7 +67,7 @@ class TrainTool(Tool):
         self.our_prof = self.config.SOFTWARE_DIR + '/bioinfo/model/data/' + self.option("disease") + "_reads_percent.xls"  # 我们的丰度表
         self.our_group = self.config.SOFTWARE_DIR + '/bioinfo/model/data/' + self.option("disease") + "_group" # 我们的分组表
         self.script = self.config.PACKAGE_DIR + '/hmdb/scripts/user_train.py'
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.train_prof = 'percent_file.txt'
         self.train_group = 'group.txt'
 

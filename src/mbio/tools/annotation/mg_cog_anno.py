@@ -45,7 +45,7 @@ class MgCogAnnoTool(Tool):
     def __init__(self, config):
         super(MgCogAnnoTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + '/annotation/mg_annotation/mg_cog_annotation.py'
 
     def run(self):

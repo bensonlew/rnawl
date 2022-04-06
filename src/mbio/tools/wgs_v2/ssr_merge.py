@@ -39,7 +39,7 @@ class SsrMergeAgent(Agent):
 class SsrMergeTool(Tool):
     def __init__(self, config):
         super(SsrMergeTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.ssr_merge_path = self.config.PACKAGE_DIR + "/wgs_v2/ssr_merge.py"
         self.ref_misa_path = self.config.SOFTWARE_DIR + "/database/dna_geneome/" + self.option("ref_misa")
         if not os.path.exists(self.ref_misa_path):

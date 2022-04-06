@@ -43,7 +43,7 @@ class SrnaPredictTool(Tool):
         self.seqstat = self.config.SOFTWARE_DIR + "/bioinfo/seq/biosquid_1.9g+cvs20050121/bin/seqstat"
         self.conda = self.config.SOFTWARE_DIR + "/program/miniconda3/"
         self.python_script = self.config.PACKAGE_DIR + "/bacgenome/"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.set_environ(PATH=self.conda + "bin")
 
     def seq_stat(self):

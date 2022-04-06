@@ -56,7 +56,7 @@ class FastxClipperTool(Tool):
     def __init__(self, config):
         super(FastxClipperTool, self).__init__(config)
         self.fastxtoolkit_path = 'bioinfo/seq/fastx_toolkit_0.0.14/'
-        self.python =  "program/Python/bin/python"
+        self.python =  "miniconda2/bin/python"
         self.cut_tail = self.config.PACKAGE_DIR + "/small_rna/cut_tail.py"
 
     def fastxclipper(self):

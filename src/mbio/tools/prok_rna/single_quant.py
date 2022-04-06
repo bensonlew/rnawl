@@ -58,7 +58,7 @@ class SingleQuantTool(Tool):
     def __init__(self, config):
         super(SingleQuantTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.quant_toolbox = self.config.PACKAGE_DIR + '/prok_rna/single_quant_toolbox.py'
         self.rsem_path = software_dir + '/bioinfo/ref_rna_v3/RSEM/miniconda3/bin/'
         #self.rsem_path = software_dir + '/bioinfo/rna/RSEM-1.3.1/'

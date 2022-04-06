@@ -42,7 +42,7 @@ class CircdetailTool(Tool):
     def __init__(self, config):
         super(CircdetailTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'circdetail': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/circrna/detail.py')

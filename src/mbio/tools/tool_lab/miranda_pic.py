@@ -53,7 +53,7 @@ class MirandaPicTool(Tool):
         super(MirandaPicTool, self).__init__(config)
         self._version = "v1.0"
         self.program = {
-            'python': os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin/python'),
+            'python': os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin/python'),
             'miranda': os.path.join(self.config.SOFTWARE_DIR, "bioinfo/miRNA/miRanda-3.3a/bin/miranda")
         }
         self.script = {

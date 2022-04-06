@@ -49,7 +49,7 @@ class FamilyStatAgent(Agent):
 class FamilyStatTool(Tool):
     def __init__(self, config):
         super(FamilyStatTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.family_statistics_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/family_statistics.py')
         self.tabular = os.path.join(self.output_dir, 'lncRNA_family.tabular')
 

@@ -49,7 +49,7 @@ class GetOrthologTool(Tool):
         self.sample_list = self.option("sample_list")
         self.type = self.option("type")
         self.gene_dir = self.option("gene_path")
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/'
         if not os.path.exists(self.output_dir + "/fasta"):
             os.mkdir(self.output_dir + "/fasta")

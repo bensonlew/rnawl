@@ -50,7 +50,7 @@ class RmatsDiffcompTool(Tool):
     def __init__(self,config):
         super(RmatsDiffcompTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'rmats_diffcomp': os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/structure/rmats_diffcomp.py')

@@ -41,7 +41,7 @@ class AnnoKeggTool(Tool):
     def __init__(self, config):
         super(AnnoKeggTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + '/bac_comp_genome/kegg_anno.py'
 
     def run(self):

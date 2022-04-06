@@ -82,7 +82,7 @@ class RmatsTool(Tool):
         super(RmatsTool, self).__init__(config)
         python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
         self.set_environ(PATH=python_path)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.rmats_py = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS2/rmats.py')
         self.process_rmats_output_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/process_rmats_output.py')
         self.rmats_output = os.path.join(self.work_dir, 'rmats_output')

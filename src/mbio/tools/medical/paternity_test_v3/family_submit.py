@@ -1,4 +1,4 @@
-# !/mnt/ilustre/users/sanger-dev/app/program/Python/bin/python
+# !/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/python
 # -*- coding: utf-8 -*-
 # __auther__ = 'hongdong'
 from biocluster.core.exceptions import OptionError

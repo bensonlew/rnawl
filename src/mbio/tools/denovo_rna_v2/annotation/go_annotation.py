@@ -111,7 +111,7 @@ class GoAnnotationTool(Tool):
 
     def run_nr2go(self):
         self.convert_xml2table()
-        cmd1 = 'program/Python/bin/python {}'.format(self.nr2go_script)
+        cmd1 = 'miniconda2/bin/python {}'.format(self.nr2go_script)
         cmd1 += ' %s %s %s %s' % ("blast_table.xls",
                                   self.idmapping_db,
                                   10,
@@ -172,7 +172,7 @@ class GoAnnotationTool(Tool):
         self.run_gomerge()
 
     def run_gomerge(self):
-        cmd1 = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/goMerge.py'.format(
+        cmd1 = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/goMerge.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd1 += ' %s %s' % (
             self.work_dir + '/blast2go.annot', 'GO.list')
@@ -193,7 +193,7 @@ class GoAnnotationTool(Tool):
         self.run_annotation()
 
     def run_annotation(self):
-        cmd2 = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/goAnnot.py'.format(
+        cmd2 = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/goAnnot.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd2 += ' %s %s %s %s' % (
             self.work_dir + '/GO.list', 'localhost', self.b2g_user, self.b2g_password)  # 10.100.203.193
@@ -214,7 +214,7 @@ class GoAnnotationTool(Tool):
         self.end()
 
     def run_gosplit(self):
-        cmd3 = '{}/program/Python/bin/python {}/bioinfo/annotation/scripts/goSplit.py'.format(
+        cmd3 = '{}/miniconda2/bin/python {}/bioinfo/annotation/scripts/goSplit.py'.format(
             self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd3 += ' %s' % self.work_dir + '/go_detail.xls'
         self.logger.info("运行goSplit.py")

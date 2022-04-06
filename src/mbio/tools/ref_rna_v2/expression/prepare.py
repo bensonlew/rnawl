@@ -48,7 +48,7 @@ class PrepareAgent(Agent):
 class PrepareTool(Tool):
     def __init__(self, config):
         super(PrepareTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.prepare_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/expression/prepare.py')
         self.t2g_pairs = os.path.join(self.output_dir, 't2g.pairs')
         self.g2t_pairs = os.path.join(self.output_dir, 'g2t.pairs')

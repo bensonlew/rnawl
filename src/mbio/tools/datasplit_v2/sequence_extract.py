@@ -42,7 +42,7 @@ class SequenceExtractTool(Tool):
         self._version = 1.0
         self.perl = "program/perl-5.24.0/bin/perl"
         self.fastq_extract = self.config.PACKAGE_DIR + "/datasplit/fastq_extract.pl"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.fastq_extract_fasta = self.config.PACKAGE_DIR + "/datasplit/fastq_extract_fasta.py"
 
     def run_fastq_extract(self):

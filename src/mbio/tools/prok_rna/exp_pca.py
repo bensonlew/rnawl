@@ -51,7 +51,7 @@ class ExpPcaTool(Tool):
     def __init__(self, config):
         super(ExpPcaTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         # self.cluster_toolbox = software_dir + '/bioinfo/rna/scripts/cluster_toolbox.py'
         self.cluster_toolbox = self.config.PACKAGE_DIR + '/denovo_rna_v2/cluster_toolbox.py'
         self.gcc = software_dir + '/gcc/5.1.0/bin'

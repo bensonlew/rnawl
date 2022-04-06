@@ -75,7 +75,7 @@ class StringtieMergeTool(Tool):
         super(StringtieMergeTool, self).__init__(config)
         self.stringtie = 'bioinfo/rna/stringtie-1.3.4d/stringtie'
         self.gffread = 'bioinfo/rna/cufflinks-2.2.1/gffread'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.filter_gtf_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/filter_gtf.py')
         self.merge_raw_gtf = os.path.join(self.work_dir, 'merge.raw.gtf')
         self.merge_filter_gtf = os.path.join(self.work_dir, 'merge.filter.gtf')

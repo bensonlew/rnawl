@@ -61,7 +61,7 @@ class ConcoctTool(Tool):
         self.path=self.config.SOFTWARE_DIR + "/program/Python/bin"
         self.LD_LIBRARY_PATH = self.config.SOFTWARE_DIR + "/library/gsl23/lib"
         self.set_environ(PATH=self.path,LD_LIBRARY_PATH=self.LD_LIBRARY_PATH)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.python_script = self.config.SOFTWARE_DIR + "/program/Python/bin/"
         self.cut_sh = "../../../../../.." + self.config.PACKAGE_DIR + '/metagbin/concoct_cut.sh'
         self.cov_sh ="../../../../../.." + self.config.PACKAGE_DIR + '/metagbin/concoct_coverage.sh'

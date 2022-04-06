@@ -39,7 +39,7 @@ class TransposonCombinAgent(Agent):
 class TransposonCombinTool(Tool):
     def __init__(self, config):
         super(TransposonCombinTool, self).__init__(config)
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.script_path = self.config.PACKAGE_DIR + '/mobile_genetic_elements/'
         self.sample = self.option("sample")
 

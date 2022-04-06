@@ -51,7 +51,7 @@ class SmallrnaFamilyAnalyseTool(Tool):
     """
     def __init__(self, config):
         super(SmallrnaFamilyAnalyseTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.FamilyAnalyse = self.config.PACKAGE_DIR + "/small_rna/smallrna_family_analyse.py"
 
     def run_FamilyAnalyse(self):

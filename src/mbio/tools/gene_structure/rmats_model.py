@@ -97,7 +97,7 @@ class RmatsModelTool(Tool):
     def __init__(self, config):
         super(RmatsModelTool, self).__init__(config)
         self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/rmats2sashimiplot-master/src/rmats2sashimiplot/rmats2sashimiplot.py "
-        self.Python_path = 'program/Python/bin/python'
+        self.Python_path = 'miniconda2/bin/python'
     
     def run_rmats(self):
         """

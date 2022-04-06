@@ -53,8 +53,8 @@ class PhiAnnoTool(Tool):
     def __init__(self, config):
         super(PhiAnnoTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
-        #self.python_path = "program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
+        #self.python_path = "miniconda2/bin/python"
         try:
             if self.option("project") == "meta":
                 self.python_script = self.config.PACKAGE_DIR + '/annotation/meta_phi.py'

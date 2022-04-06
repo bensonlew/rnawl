@@ -70,7 +70,7 @@ class ResetGenesetAgent(Agent):
 class ResetGenesetTool(Tool):
     def __init__(self, config):
         super(ResetGenesetTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/annotation/mg_annotation/geneset_reset.py'
 
     def run(self):

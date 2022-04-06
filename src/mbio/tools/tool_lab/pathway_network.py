@@ -51,7 +51,7 @@ class PathwayNetworkTool(Tool):
             self.anno_dir = os.path.join(self.config.SOFTWARE_DIR,"database","Tool_lab","pathway_network","kegg")
         else:
             self.anno_dir =  os.path.join(self.config.SOFTWARE_DIR,"database","Tool_lab","pathway_network","go")
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.network_file = os.path.join(self.config.PACKAGE_DIR,"tool_lab","network_pathway_ana.py")
         python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
         self.set_environ(PATH=python_path)

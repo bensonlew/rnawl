@@ -82,7 +82,7 @@ class MireapTool(Tool):
         self.randfold = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/mirdeep2/essentials/randfold-2.0/'
         self.lib_rna = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/mirdeep2/essentials/ViennaRNA-1.8.4/Perl/blib/arch/auto/RNA/'
         self.RNA = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/mirdeep2/essentials/ViennaRNA-1.8.4/Perl/blib/lib/'
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(LD_LIBRARY_PATH=self.lib_rna)

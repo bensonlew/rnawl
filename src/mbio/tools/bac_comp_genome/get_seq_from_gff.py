@@ -51,7 +51,7 @@ class GetSeqFromGffAgent(Agent):
 class GetSeqFromGffTool(Tool):
     def __init__(self, config):
         super(GetSeqFromGffTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/'
 

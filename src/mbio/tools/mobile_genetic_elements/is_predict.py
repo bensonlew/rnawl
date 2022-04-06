@@ -48,7 +48,7 @@ class IsPredictTool(Tool):
         self.fasta = self.option("input_fa").prop['path']
         self.fa_file = os.path.basename(self.fasta)
         self.sample = self.fa_file.split(".fna")[0]
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.script_path = self.config.PACKAGE_DIR + '/mobile_genetic_elements/'
 
     def run_is(self):

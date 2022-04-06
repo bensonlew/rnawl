@@ -52,7 +52,7 @@ class BlastDetailTool(Tool):
     """
     def __init__(self, config):
         super(BlastDetailTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/bacgenome/blast_detail.py'
 
     def run_stat(self):

@@ -56,7 +56,7 @@ class VariantCompareTool(Tool):
         super(VariantCompareTool, self).__init__(config)
         self.perl_path = 'program/perl-5.24.0/bin/perl'
         self.variant_filter_path = self.config.PACKAGE_DIR + "/dna_evolution/variant_filter.pl"
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.chromosome_window_path = self.config.PACKAGE_DIR + "/dna_evolution/step_calc.py"
 
     def run_variant_compare(self):

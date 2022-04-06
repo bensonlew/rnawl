@@ -70,7 +70,7 @@ class AnnovarTool(Tool):
     def __init__(self, config):
         super(AnnovarTool, self).__init__(config)
         self.gtftogenepred = 'bioinfo/gene-structure/annovar/gtfToGenePred'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.perl = 'program/perl-5.24.0/bin/perl'
         self.clean_vcf_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/clean_vcf.py')
         self.genepred2refgene_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/genepred2refgene.py')

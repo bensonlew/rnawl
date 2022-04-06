@@ -67,7 +67,7 @@ class RmatsTool(Tool):
         self.set_environ(PATH=python_path)
         if self.option("version") == "rMATS.4.0.2":
             self.program = {
-                'python': 'program/Python/bin/python',
+                'python': 'miniconda2/bin/python',
             }
             self.script = {
                 'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS2/rmats.py'),
@@ -79,7 +79,7 @@ class RmatsTool(Tool):
         elif self.option("version") == "rMATS.4.1.1":
             self.program = {
                 'python3': 'bioinfo/ref_rna_v3/rmats_4.1.1/miniconda3/bin/python',
-                'python': 'program/Python/bin/python',
+                'python': 'miniconda2/bin/python',
             }
             self.script = {
                 'rmats': os.path.join(self.config.SOFTWARE_DIR,

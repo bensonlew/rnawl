@@ -51,7 +51,7 @@ class FormatTaxonAgent(Agent):
 class FormatTaxonTool(Tool):
     def __init__(self, config):
         super(FormatTaxonTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.taxon_clean =os.path.join(self.config.PACKAGE_DIR, "meta/scripts/taxon_clean.py")
     def run_taxon(self):
         os.system("dos2unix {}".format(self.option('in_taxon_table').prop['path'])) ## add_by qingchen.zhang @20200813

@@ -61,8 +61,8 @@ class CompFunctionAgent(Agent):
 class CompFunctionTool(Tool):
     def __init__(self, config):
         super(CompFunctionTool, self).__init__(config)
-        #self.python = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
-        self.python = '/program/Python/bin/python'
+        #self.python = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/comp_function.py'
 
     def run(self):

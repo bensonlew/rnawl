@@ -48,7 +48,7 @@ class PrompterPredictTool(Tool):
         self.genome1 = self.config.SOFTWARE_DIR + '/bioinfo/gene-structure/prompredict/PromPredict_genome_V1'
         self.genome2 = self.config.SOFTWARE_DIR + '/bioinfo/gene-structure/prompredict/PromPredict_genome_V2'
         self.mulseq = self.config.SOFTWARE_DIR + '/bioinfo/gene-structure/prompredict/PromPredict_mulseq'
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.pre_path = self.config.PACKAGE_DIR + '/mobile_genetic_elements/pro_prepare.pl'
         self.script_path = self.config.PACKAGE_DIR + '/mobile_genetic_elements/'
         self.bedtools = self.config.SOFTWARE_DIR + "/bioinfo/seq/bedtools-2.25.0/bin/bedtools"

@@ -66,7 +66,7 @@ class AutocountTool(Tool):
         self.script_combineresult = self.config.PACKAGE_DIR + '/tool_lab/yoogene/yfull/combine_result.py'
         self.snp_info = os.path.join(self.software_dir,"database/Tool_lab/ysource/Y_20200801_list_fix.txt")
         self.perl = "program/perl-5.24.0/bin/perl"
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
 
     def run(self):
         '''

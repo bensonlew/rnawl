@@ -64,7 +64,7 @@ class ExtractDetailSeqTool(Tool):
     def __init__(self, config):
         super(ExtractDetailSeqTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'seq_extract1': os.path.join(self.config.PACKAGE_DIR, 'small_rna_v2/seq_extract.py'),

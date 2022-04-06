@@ -69,7 +69,7 @@ class Pdf2imageTool(Tool):
         self.set_environ(PATH=self.poppler_path)
         self.program = {
             # 'python': 'bioinfo/rna/miniconda2/bin/python'
-            'python':'program/Python/bin/python'
+            'python':'miniconda2/bin/python'
         }
         self.script = {
             'pdf2image': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/pdf2img_v2.py')

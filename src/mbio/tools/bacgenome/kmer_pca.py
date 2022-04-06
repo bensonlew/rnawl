@@ -42,7 +42,7 @@ class KmerPcaAgent(Agent):
 class KmerPcaTool(Tool):
     def __init__(self, config):
         super(KmerPcaTool, self).__init__(config)
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         self.R_path = 'program/R-3.3.1/bin/Rscript'
         self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/CONCOCT-develop/scripts/cut_up_fasta.py"

@@ -47,7 +47,7 @@ class StrCasecontrolTool(Tool):
         self.program = {
             'ExpansionHunterDenovo': '/mnt/ilustre/users/sanger-dev/sg-users/zoujiaxun/STR/script/ExpansionHunterDenovo/ExpansionHunterDenovo-v0.9.0-linux_x86_64/bin/ExpansionHunterDenovo',
             'casecontrol': '/mnt/ilustre/users/sanger-dev/sg-users/zoujiaxun/STR/script/ExpansionHunterDenovo/ExpansionHunterDenovo-v0.9.0-linux_x86_64/scripts/casecontrol.py',
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'combat': os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v3/batch/combat.r'),

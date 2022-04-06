@@ -24,7 +24,7 @@ class BsmapModule(Module):
         self.file = {'ratio': os.path.join(self.output_dir, 'meth.txt')}
         self.script = {'methratio': os.path.join(self.get_workflow().config.SOFTWARE_DIR,
                                                  'bioinfo/wgbs/miniconda3/bin/methratio.py')}
-        self.program = {'python': os.path.join(self.get_workflow().config.SOFTWARE_DIR, 'program/Python/bin/python')}
+        self.program = {'python': os.path.join(self.get_workflow().config.SOFTWARE_DIR, 'miniconda2/bin/python')}
 
     def check_options(self):
         for k, v in self._options.items():

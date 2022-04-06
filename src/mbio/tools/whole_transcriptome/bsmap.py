@@ -47,7 +47,7 @@ class BsmapTool(Tool):
         super(BsmapTool, self).__init__(config)
         self.program = {
             'bsmap': 'bioinfo/wgbs/miniconda3/bin/bsmap',
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'methratio': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/wgbs/miniconda3/bin/methratio.py')

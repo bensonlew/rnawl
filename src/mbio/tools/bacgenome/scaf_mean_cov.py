@@ -40,7 +40,7 @@ class ScafMeanCovTool(Tool):
     def __init__(self, config):
         super(ScafMeanCovTool, self).__init__(config)
         self.script = self.config.PACKAGE_DIR + '/bacgenome/depth_mean.py'
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.depth = self.work_dir + "/" + 'cov.txt'
         self.depth_mean = self.work_dir + "/" + "cov_mean.txt"
         self.samtools = self.config.SOFTWARE_DIR + "/bioinfo/align/samtools-1.4/bin/samtools"

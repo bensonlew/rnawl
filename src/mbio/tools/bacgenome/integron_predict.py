@@ -42,7 +42,7 @@ class IntegronPredictTool(Tool):
         self.python = "/program/Python35/bin/integron_finder"
         self.names = self.option("sample")
         self.fasta = self.work_dir + "/" + self.names
-        self.python2 = "/program/Python/bin/python"
+        self.python2 = "/miniconda2/bin/python"
         self.packages = self.config.PACKAGE_DIR + "/bacgenome/tiqu_sequence.py"
         self.stat = self.work_dir + "/Results_Integron_Finder_" + self.names+ "/"+ self.names +".integrons"
 

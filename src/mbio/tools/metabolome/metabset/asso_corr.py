@@ -63,9 +63,9 @@ class AssoCorrTool(Tool):
         self.hcluster_script_path = self.config.SOFTWARE_DIR + "/bioinfo/statistical/scripts/"
         self.Rscript_path = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin/"
         '''
-        self.cmd_path = '{}/program/Python/bin/python {}/statistical/pearsonsCorrelation.py'\
+        self.cmd_path = '{}/miniconda2/bin/python {}/statistical/pearsonsCorrelation.py'\
             .format(self.config.SOFTWARE_DIR, self.config.PACKAGE_DIR)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.cluster_script = self.config.PACKAGE_DIR + "/metabolome/scripts/corr_cluster.py"
 
     def run(self):

@@ -55,7 +55,7 @@ class NineQuadrantTool(Tool):
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'r': '/program/R-3.3.1/bin/Rscript'
         }
         self.script = {

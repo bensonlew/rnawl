@@ -50,7 +50,7 @@ class DiffPrepareTool(Tool):
     def __init__(self, config):
         super(DiffPrepareTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'diff_prepare': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/formation/diff_prepare.py')

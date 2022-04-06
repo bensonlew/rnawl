@@ -91,7 +91,7 @@ class AnnotId2goTool(Tool):
                 fo.write("\t".join([id_dict['transcript_id'], id_dict['uniprot_gn_id']]) + "\n")
 
     def id2go(self):
-        cmd1 = 'program/Python/bin/python {}'.format(self.nr2go_script)
+        cmd1 = 'miniconda2/bin/python {}'.format(self.nr2go_script)
         cmd1 += ' %s %s %s %s' % ("temp_ids.tsv",
                                   self.idmapping_db,
                                   self.option("p"),

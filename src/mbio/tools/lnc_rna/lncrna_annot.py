@@ -99,7 +99,7 @@ class LncrnaAnnotTool(Tool):
         super(LncrnaAnnotTool, self).__init__(config)
         self._version = "2.3.0"
         self.cmd_path = "bioinfo/align/ncbi-blast-2.3.0+/bin"   # 执行程序路径必须相对于 self.config.SOFTWARE_DIR
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.xml2table = self.config.PACKAGE_DIR + '/lnc_rna/xml2lncannot.py'
 
     def run_makedb_and_blast(self):

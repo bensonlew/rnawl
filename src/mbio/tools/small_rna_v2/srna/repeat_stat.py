@@ -65,7 +65,7 @@ class RepeatStatAgent(Agent):
 class RepeatStatTool(Tool):
     def __init__(self, config):
         super(RepeatStatTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.repeat_stat = self.config.PACKAGE_DIR + "/small_rna/repeat_stat.py"
 
     def run(self):

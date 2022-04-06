@@ -35,7 +35,7 @@ class NormalTestAgent(Agent):
 class NormalTestTool(Tool):
 	def __init__(self, config):
 		super(NormalTestTool, self).__init__(config)
-		self.python_path = "program/Python/bin/python"
+		self.python_path = "miniconda2/bin/python"
 		self.python_script = self.config.PACKAGE_DIR + "/tool_lab/ks_testv2.py"
 
 	def run_calccalc(self):

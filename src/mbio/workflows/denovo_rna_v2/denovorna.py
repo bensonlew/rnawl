@@ -399,7 +399,7 @@ class DenovornaWorkflow(Workflow):
         except:
             raise Exception("删除记录失败")
         # self.script = os.path.join(self.config.PACKAGE_DIR, 'project_demo/delete_demo.py')
-        # self.program = os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin/python')
+        # self.program = os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin/python')
         # cmd = '{} {}'.format(self.program, self.script)
         # cmd += ' {} {}'.format(self.task_id, 'denovo_rna_v2')
         # code = os.system(cmd)

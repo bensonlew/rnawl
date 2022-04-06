@@ -43,7 +43,7 @@ class ProbioAnnoTool(Tool):
     def __init__(self, config):
         super(ProbioAnnoTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + '/annotation/mg_annotation/probio.py'
         self.ref_file = self.config.SOFTWARE_DIR + "/database/Probio/Probio_for_all.txt"
 

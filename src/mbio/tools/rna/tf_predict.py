@@ -61,7 +61,7 @@ class TfPredictTool(Tool):
     def __init__(self, config):
         super(TfPredictTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.tf_predict = self.config.PACKAGE_DIR + '/transcription_factor/tf_predict.py'
         self.hmmscan = software_dir + '/bioinfo/align/hmmer-3.1b2-linux-intel-x86_64/binaries/hmmscan'
         self.diamond = software_dir + '/bioinfo/align/diamond-0.8.35/diamond'

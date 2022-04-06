@@ -84,7 +84,7 @@ class SsrTool(Tool):
         # 变量名不能有.  这个表示从属关系，只能用下划线
         self._version = '1.0'
         self.r_path = self.config.SOFTWARE_DIR + "/program/R-3.3.3/bin/Rscript"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         # 有些软件的路径不需要加self.config.SOFTWARE_DIR，这个需要自己测试下, 这个 + 后面的路径一定要加/开始，要不然会出错
         #self.primer3_core = "bioinfo/denovo_rna_v2/SSR/misa/primer3_core"

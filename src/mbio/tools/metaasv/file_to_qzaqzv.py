@@ -63,7 +63,7 @@ class FileToQzaqzvTool(Tool):
     """
     def __init__(self, config):
         super(FileToQzaqzvTool, self).__init__(config)
-        self.qiime_path = "program/Python/bin/python"
+        self.qiime_path = "miniconda2/bin/python"
         self.shell = "program/sh"
         self.shell_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/file2qza.sh")
         self.fasta_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/fasta2qzaqzv.sh")

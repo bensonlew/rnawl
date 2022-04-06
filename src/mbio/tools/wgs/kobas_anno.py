@@ -62,7 +62,7 @@ class KobasAnnoTool(Tool):
         # 会报configuration file does not exist
         self.set_environ(PATH=self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin")
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/program/R-3.3.1/lib64/R/lib')
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.annotation_path = self.config.SOFTWARE_DIR + "/bioinfo/WGS/kobas-3.0/scripts/annotate.py"
         self.sqlite3_path = self.config.SOFTWARE_DIR + "/bioinfo/WGS/kobas-3.0/sqlite3"
 

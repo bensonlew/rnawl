@@ -204,7 +204,7 @@ class EstimatorsTool(Tool):
             return False
 
     def get_est_table(self):
-        cmd = 'program/Python/bin/python {}/bioinfo/meta/scripts/make_estimators_table.py'.format(self.config.SOFTWARE_DIR)
+        cmd = 'miniconda2/bin/python {}/bioinfo/meta/scripts/make_estimators_table.py'.format(self.config.SOFTWARE_DIR)
         command = self.add_command("get_est_table", cmd)
         command.run()
         self.wait(command)

@@ -46,7 +46,7 @@ class KeggAnnoTool(Tool):
     def __init__(self, config):
         super(KeggAnnoTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         if self.option("database") in ['kegg_v94.2']:
             self.python_script = self.config.PACKAGE_DIR + '/metagbin/kegg_xlm_mongo2.py'
             self.python_script2 = self.config.PACKAGE_DIR + '/annotation/mg_annotation/kegg_pathway_img_v94.py'
@@ -108,7 +108,7 @@ class KeggAnnoTool(Tool):
         os.remove(level)
 
     def run_pathway_img(self):
-        cmd = "{}/program/Python/bin/python {} -i {} -o {} -p {} -ko {} -KO {}".format("", self.python_script2,
+        cmd = "{}/miniconda2/bin/python {} -i {} -o {} -p {} -ko {} -KO {}".format("", self.python_script2,
                                                                                        self.option("kegg_xml").prop[
                                                                                            "path"], self.output_dir,
                                                                                        self.work_dir + "/pathwaw_KO.xls",

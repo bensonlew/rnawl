@@ -61,7 +61,7 @@ class MergeFileTool(Tool):
         super(MergeFileTool, self).__init__(config)
         self.sh_path = "../../../../../.." + self.config.PACKAGE_DIR + '/sequence/scripts/'
         self.merge_path = "../../../../../.." + self.config.PACKAGE_DIR + '/sequence/scripts/'
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.python_script = os.path.join(self.config.PACKAGE_DIR, 'metaasv/merge_table2.py')
         self.seqkit = self.config.SOFTWARE_DIR + "/bioinfo/meta/seqkit/seqkit"
 

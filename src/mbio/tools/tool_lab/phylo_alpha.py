@@ -49,7 +49,7 @@ class PhyloAlphaAgent(Agent):
 class PhyloAlphaTool(Tool):
     def __init__(self, config):
         super(PhyloAlphaTool, self).__init__(config)
-        self.python_path =  'program/Python/bin/python'
+        self.python_path =  'miniconda2/bin/python'
         self.r_path = self.config.SOFTWARE_DIR + '/program/miniconda3/envs/R/bin/Rscript'
         self.mafft =self.config.SOFTWARE_DIR + '/bioinfo/align/mafft-7.299-with-extensions/bin/mafft'
         self.fastree = self.config.SOFTWARE_DIR + '/bioinfo/phylogenetic/fasttree2.1.9/FastTreeMP'

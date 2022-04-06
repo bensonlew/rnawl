@@ -55,7 +55,7 @@ class DiffDoEnrichTool(Tool):
     def __init__(self, config):
         super(DiffDoEnrichTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
 
         obo_fp=self.config.SOFTWARE_DIR + "/database/Annotation/all/DO/version_20200813/doid.obo"

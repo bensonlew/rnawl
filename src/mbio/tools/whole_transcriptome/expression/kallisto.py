@@ -61,7 +61,7 @@ class KallistoTool(Tool):
         self.set_environ(PATH=python_path)
         self.program = {
             'kallisto': 'bioinfo/rna/kallisto-0.46.1/kallisto',
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'abundance': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/expression/abundance.py')

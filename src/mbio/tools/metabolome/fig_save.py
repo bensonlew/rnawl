@@ -49,7 +49,7 @@ class FigSaveTool(Tool):
         super(FigSaveTool, self).__init__(config)
         base_dir = self.config.SOFTWARE_DIR + '/bioinfo/figsave'
         py_ld = self.config.SOFTWARE_DIR + '/program/Python/lib:' + base_dir + "/lib"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.fig_save = base_dir + '/fig_save'
         self.set_environ(PATH=self.fig_save, PYTHONPATH=base_dir + '/lib/python2.7/site-packages',
                          LD_LIBRARY_PATH=py_ld)

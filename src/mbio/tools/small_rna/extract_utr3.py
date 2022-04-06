@@ -63,9 +63,9 @@ class ExtractUtr3Tool(Tool):
     """
     def __init__(self, config):
         super(ExtractUtr3Tool, self).__init__(config)
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         self.perl_path = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin'
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.bedtool_path = self.config.SOFTWARE_DIR + '/bioinfo/seq/bedtools-2.25.0/bin/bedtools'
         self.MOODS = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/MOODS/python/build/lib.linux-x86_64-2.7'
         self.mood_script = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/MOODS/python/scripts/moods_dna.py'

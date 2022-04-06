@@ -50,7 +50,7 @@ class AssembleStatAgent(Agent):
 class AssembleStatTool(Tool):
     def __init__(self, config):
         super(AssembleStatTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.get_number_list_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/get_number_list.py')
         self.step_count_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/step_count.py')
         self.class_code_count_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/class_code_count.py')

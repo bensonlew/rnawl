@@ -58,7 +58,7 @@ class IslandStatTool(Tool):
         self.scaf_seq = self.option("genome").prop["path"]
         self.dir =self.option('dir')
         self.sample = self.option('sample_name')
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         self.script = self.config.PACKAGE_DIR + "/mobile_genetic_elements/"
 

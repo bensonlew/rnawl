@@ -65,7 +65,7 @@ class AddStatAgent(Agent):
 class AddStatTool(Tool):
     def __init__(self, config):
         super(AddStatTool, self).__init__(config)
-        self.Python_path = '/program/Python/bin/python '
+        self.Python_path = '/miniconda2/bin/python '
         # self.stat_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/contig_stat.py '
         self.stat_path = self.config.PACKAGE_DIR + '/assemble/contig_stat.py '
 

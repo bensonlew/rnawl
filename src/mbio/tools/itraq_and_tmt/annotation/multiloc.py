@@ -68,7 +68,7 @@ class MultilocTool(Tool):
         }
         self.parafly = '/bioinfo/denovo_rna_v2/trinityrnaseq-Trinity-v2.5.0/trinity-plugins/ParaFly-0.1.0/bin/ParaFly'
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = self.config.SOFTWARE_DIR +  '/program/Python/bin/python'
+        self.python_path = self.config.SOFTWARE_DIR +  '/miniconda2/bin/python'
         # self.multiloc2_prediction = software_dir + '/bioinfo/itraq_and_tmt/MultiLoc2-26-10-2009/src/multiloc2_prediction.py'
         self.multiloc2_prediction = software_dir + '/bioinfo/itraq_and_tmt/MultiLoc_20200622/MultiLoc2/MultiLoc2/src/multiloc2_prediction.py'
         self.blast_path = software_dir + "/bioinfo/itraq_and_tmt/blast-2.2.23/bin/"

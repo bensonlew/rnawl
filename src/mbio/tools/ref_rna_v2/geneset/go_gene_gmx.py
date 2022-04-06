@@ -53,7 +53,7 @@ class GoGeneGmxAgent(Agent):
 class GoGeneGmxTool(Tool):
     def __init__(self,config):
         super(GoGeneGmxTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.go2gene = self.config.PACKAGE_DIR + "/ref_rna_v2/go2gene.py"
         self.obo = self.config.SOFTWARE_DIR + '/database/GO/go-basic.obo'
 

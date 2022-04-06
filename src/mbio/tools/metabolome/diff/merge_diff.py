@@ -63,7 +63,7 @@ class MergeDiffTool(Tool):
 
     def __init__(self, config):
         super(MergeDiffTool, self).__init__(config)
-        self.python_path =  "/program/Python/bin/python"
+        self.python_path =  "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/metabolome/scripts/merge_table.py'
 
     def run(self):

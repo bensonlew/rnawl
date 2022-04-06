@@ -29,7 +29,7 @@ class DiffStringPicturesModule(Module):
         ]
         self.add_option(options)
         self.config = Config()
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         self.script = self.config.PACKAGE_DIR + '/itraq_and_tmt/get_string_picture.py'
         self.tools = list()
 

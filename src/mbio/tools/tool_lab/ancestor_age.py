@@ -67,7 +67,7 @@ class AncestorAgeTool(Tool):
         self.ageout = open(os.path.join(self.work_dir, "{}_ancestor_age.txt".format(self.s1)), 'w')
         self._version = '1.0'
         self.software_dir = self.config.SOFTWARE_DIR
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.script = os.path.join(
             self.software_dir, 'bioinfo/tool_lab/ancestor_age/ancestor_age.py')
         self.file = {

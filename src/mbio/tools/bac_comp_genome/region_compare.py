@@ -55,7 +55,7 @@ class RegionCompareAgent(Agent):
 class RegionCompareTool(Tool):
     def __init__(self, config):
         super(RegionCompareTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.mum_path = self.config.SOFTWARE_DIR +\
             '/bioinfo/compare_genome/software/MUMmer3.23'
         self.mash_path = self.config.SOFTWARE_DIR +\

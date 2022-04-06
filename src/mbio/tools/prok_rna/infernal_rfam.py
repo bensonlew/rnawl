@@ -64,7 +64,7 @@ class InfernalRfamTool(Tool):
         self.input_file = self.option("query").prop["path"]
         self.program = {
             'infernal': 'bioinfo/prok_rna/miniconda3/bin/cmscan',
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'seqkit': 'bioinfo/seq/seqkit',
         }
         self.script = {

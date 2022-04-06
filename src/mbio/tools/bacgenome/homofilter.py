@@ -56,7 +56,7 @@ class HomofilterTool(Tool):
     """
     def __init__(self, config):
         super(HomofilterTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.script = self.config.PACKAGE_DIR + "/bacgenome/homofilter.py"
 
     def run_homofilter(self):

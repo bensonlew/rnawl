@@ -77,7 +77,7 @@ class CdhitMergeTool(Tool):
         super(CdhitMergeTool, self).__init__(config)
         self._version = '1.0'
         self.perl_path = '/program/perl-5.24.0/bin/perl '
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.merge_path = self.config.SOFTWARE_DIR + '/bioinfo/uniGene/cd-hit-v4.6.1-2012-08-27/clstr_merge.pl'
         self.sort_clstr_path = self.config.SOFTWARE_DIR + '/bioinfo/uniGene/scripts/sort_clstr.pl'
         self.trans_path = 'bioinfo/seq/emboss6.6/bin/transeq'

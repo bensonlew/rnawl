@@ -53,7 +53,7 @@ class GsvaTool(Tool):
     def __init__(self, config):
         super(GsvaTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'Rscript': 'program/R-3.3.1/bin/Rscript'
         }
         self.script = {

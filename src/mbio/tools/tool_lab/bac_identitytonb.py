@@ -81,7 +81,7 @@ class BacIdentitytonbTool(Tool):
         # self.perl = 'program/perl-5.24.0/bin/perl'
         # 20211102 更新数据库，改用taxonkit搜索物种名
         self.python_script = self.config.PACKAGE_DIR + "/tool_lab/bac_identity/getNtTaxontonb.py"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         # self.nt = os.path.join(self.software_dir, "database/Tool_lab/bac_identity/NT_20211102/nt")
         self.nt = os.path.join(self.software_dir, "database/align/ncbi/db/nt/nt_v20211009/nt")
         # self.nt_tax = os.path.join(

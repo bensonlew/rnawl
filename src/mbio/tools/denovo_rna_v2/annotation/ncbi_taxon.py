@@ -50,7 +50,7 @@ class NcbiTaxonTool(Tool):
     def __init__(self, config):
         super(NcbiTaxonTool, self).__init__(config)
         self._version = "1.0"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.taxon_tree = self.config.PACKAGE_DIR + "/denovo_rna_v2/taxon_treeview.py"
 
     class result_thread(threading.Thread):

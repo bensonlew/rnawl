@@ -54,7 +54,7 @@ class MasigproTool(Tool):
     def __init__(self, config):
         super(MasigproTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'rscript': 'bioinfo/rna/miniconda2/bin/Rscript'
         }
         self.script = {

@@ -152,7 +152,7 @@ class QiimeAssignTool(Tool):
             ref_tax = self.option('ref_taxon').prop['path']
             fasta_size = os.path.getsize(ref_fas) / 1024.00 / 1024.00 / 1024.00
             max_memory = QiimeAssignTool.max_memory_func(fasta_size)
-            cmd = '/program/Python/bin/python ' + self.train_taxon + ' -t ' + ref_tax + ' -s ' + ref_fas +\
+            cmd = '/miniconda2/bin/python ' + self.train_taxon + ' -t ' + ref_tax + ' -s ' + ref_fas +\
                   ' -o ' + self.work_dir + '/RDP_trained' + ' -m ' + str(max_memory)
             trainer = self.add_command('train', cmd)
             self.logger.info('开始对自定义分类库文件进行RDP训练')
@@ -175,7 +175,7 @@ class QiimeAssignTool(Tool):
             prop_file = os.path.join(self.config.SOFTWARE_DIR, 'database/taxon_db/train_RDP_taxon',
 
                                      prop_dir, 'Classifier.properties')
-        cmd = '/program/Python/bin/python ' + self.RDP_classifier + ' -p ' + prop_file + ' -q seqs.fasta' + ' -o '\
+        cmd = '/miniconda2/bin/python ' + self.RDP_classifier + ' -p ' + prop_file + ' -q seqs.fasta' + ' -o '\
               + self.work_dir + '/seqs_taxon' + ' -c ' + str(self.option('confidence')) + ' -m ' + str(max_memory)
         classifier = self.add_command('classifiy', cmd)
         self.logger.info('开始进行序列分类')

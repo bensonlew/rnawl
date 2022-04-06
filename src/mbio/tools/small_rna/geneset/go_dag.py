@@ -55,7 +55,7 @@ class GoDagAgent(Agent):
 class GoDagTool(Tool):
     def __init__(self,config):
         super(GoDagTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.go_graph = os.path.join(self.config.PACKAGE_DIR, 'small_rna/go_graph.py')
         self.obo = os.path.join(self.config.SOFTWARE_DIR, 'database/GO/go-basic.obo')
 

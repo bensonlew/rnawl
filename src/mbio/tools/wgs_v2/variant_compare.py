@@ -59,7 +59,7 @@ class VariantCompareTool(Tool):
 
     def __init__(self, config):
         super(VariantCompareTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.variant_filter_path = self.config.PACKAGE_DIR + \
             "/wgs_v2/variant_compare_filter.py"
 

@@ -185,7 +185,7 @@ class IdsMappingTool(Tool):
     def run_filter(self):
         cmd_objs = []
         tool_path = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/lnc_db/ids_mapping.py')
-        python = 'program/Python/bin/python'
+        python = 'miniconda2/bin/python'
         self.logger.debug('fa filter START =====================')
         for db_name, str_cmd_params in self.params_parser():
             cmd = '{python} {tool} {params}'.format(python=python, tool=tool_path, params=str_cmd_params)

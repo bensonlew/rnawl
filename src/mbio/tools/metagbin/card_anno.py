@@ -55,8 +55,8 @@ class CardAnnoTool(Tool):
     def __init__(self, config):
         super(CardAnnoTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
-        #self.python_path = "program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
+        #self.python_path = "miniconda2/bin/python"
         # self.python_script = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/meta_card_mongo.py'
         self.python_script = self.config.PACKAGE_DIR + '/annotation/mg_annotation/mg_anno_card.py' ##fix_by qingchen.zhang @20200812 card
         self.python_dna_script = self.config.PACKAGE_DIR + '/metagbin/dna_card.py' ## 老的

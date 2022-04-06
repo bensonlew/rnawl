@@ -50,7 +50,7 @@ class TransposonPredictTool(Tool):
         self.python_s = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/mobile_genetic_elements/tncomp_finder-master/TnComp_finder.py"
         self.fasta = self.option("input_fa").prop['path']
         self.python = "/program/Python35/bin/python3"
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         self.script_path = self.config.PACKAGE_DIR + '/mobile_genetic_elements/'
         self.names = os.path.basename(self.option("input_fa").prop['path']).split(".fna")[0]
 

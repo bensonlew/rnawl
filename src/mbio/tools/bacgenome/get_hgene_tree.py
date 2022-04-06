@@ -54,7 +54,7 @@ class GetHgeneTreeTool(Tool):
     def __init__(self, config):
         super(GetHgeneTreeTool, self).__init__(config)
         self.gene =self.option('seq_faa').prop['path']
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.perl_path = "/program/perl-5.24.0/bin/perl"
         self.perl_script = self.config.PACKAGE_DIR + "/bacgenome/"
         self.diamond = "/bioinfo/align/diamond-0.8.35/diamond"

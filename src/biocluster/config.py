@@ -44,7 +44,7 @@ class Config(object):
         self._workdir = self.rcf.get("Command", "work_dir")
         self.wpm_user = self.rcf.get("Command", "user")
         self.SCRIPT_DIR = ""
-        self.PACKAGE_DIR = ""
+        self.PACKAGE_DIR = self.rcf.get("Command", "package_dir")
         self._init_config_times = 0
         self.wfm_port = os.getenv("WFM_PORT")
         self._mongodb_info = {}

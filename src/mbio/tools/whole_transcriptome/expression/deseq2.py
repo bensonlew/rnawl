@@ -46,7 +46,7 @@ class Deseq2Tool(Tool):
     def __init__(self, config):
         super(Deseq2Tool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'rscript': 'bioinfo/rconda/bin/Rscript',
         }
         self.script = {

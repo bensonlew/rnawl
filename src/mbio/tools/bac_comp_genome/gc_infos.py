@@ -46,7 +46,7 @@ class GcInfosAgent(Agent):
 class GcInfosTool(Tool):
     def __init__(self, config):
         super(GcInfosTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/gc_infos.py'
 
     def run(self):

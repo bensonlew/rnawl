@@ -79,7 +79,7 @@ class MetabClusterTool(Tool):
         self._r_home = os.path.join(self.config.SOFTWARE_DIR, "program/R-3.3.1/lib64/R")
         self.set_environ(PATH=env_path, R_HOME=self._r_home, LD_LIBRARY_PATH=ld_lib_path)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
         }
         self.script = {
             'cluster': os.path.join(self.config.PACKAGE_DIR, 'metabolome/scripts/corr_cluster.py')

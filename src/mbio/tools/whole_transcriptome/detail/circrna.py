@@ -44,7 +44,7 @@ class CircrnaTool(Tool):
             'gffread': 'bioinfo/rna/cufflinks-2.2.1/gffread',
             'gtftogenepred': 'bioinfo/align/ucsc_tools/gtfToGenePred',
             'genepredtobed': 'bioinfo/align/ucsc_tools/genePredToBed',
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'bedtools': 'bioinfo/ref_rna_v2/miniconda2/bin/bedtools'
         }
         self.script = {

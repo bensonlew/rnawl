@@ -109,7 +109,7 @@ class PpinetworkTopologyTool(Tool):
         """
         real_ppi_table = self.ppi_table
         node_table = self.option('nodetable')
-        cmd = self.config.SOFTWARE_DIR + '/program/Python/bin/python '
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/python '
         cmd += self.cmd_path
         cmd += " -i %s -o %s -n %s " % (real_ppi_table, self.work_dir + '/PPI_result', node_table)
         if self.option('combine_score'):

@@ -49,7 +49,7 @@ class HtseqCountTool(Tool):
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'htseq_count': 'bioinfo/rna/HTSeq-0.6.1/scripts/htseq-count',
             'samtools': '/bioinfo/align/samtools-1.3.1/samtools'
         }

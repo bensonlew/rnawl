@@ -78,7 +78,7 @@ class BlastTool(Tool):
             self.db_path = os.path.join(self.work_dir, 'custom_blastdb', db_name)
         self.cmd_path = "bioinfo/align/ncbi-blast-2.3.0+/bin"  # 执行程序路径必须相对于 self.config.SOFTWARE_DIR
         # self.set_environ(BLASTDB=self.db_path)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + "/metaasv/anno_taxonomy.py"
         self.taxon_db = os.path.join(self.config.SOFTWARE_DIR, "database/taxon_db/blastdb", database_name+ ".tax")
         # self.taxon_db = os.path.join("/mnt/ilustre/users/sanger-dev/home/zhangqingchen/metaasv/database", database_name+ ".tax")

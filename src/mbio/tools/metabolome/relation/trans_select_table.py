@@ -46,7 +46,7 @@ class TransSelectTableAgent(Agent):
 class TransSelectTableTool(Tool):
     def __init__(self, config):
         super(TransSelectTableTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/metabolome/scripts/profile_select.py'
 
     def run(self):

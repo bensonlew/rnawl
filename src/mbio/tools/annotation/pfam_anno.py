@@ -48,7 +48,7 @@ class PfamAnnoAgent(Agent):
 class PfamAnnoTool(Tool):
     def __init__(self, config):
         super(PfamAnnoTool, self).__init__(config)
-        self.python_path =  self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python_path =  self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         self.script_path = self.config.PACKAGE_DIR + "/annotation/scripts/meta_pfam_mongo.py"
         if self.option("version") in ["pfam_v33.1"]:
             self.pfam_table_path = self.config.SOFTWARE_DIR + "/database/pfam_33.1/Pfam-A.database.xls"

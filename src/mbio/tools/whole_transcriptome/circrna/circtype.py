@@ -43,7 +43,7 @@ class CirctypeTool(Tool):
     def __init__(self, config):
         super(CirctypeTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'circtype': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/circrna/circRNAtype.py')

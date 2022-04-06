@@ -53,7 +53,7 @@ class GffFaaFnnFormatTool(Tool):
         self.maker_format = os.path.join(self.config.PACKAGE_DIR, "fungi_genome/gff_maker_format.pl")
         self.gff_add =os.path.join(self.config.PACKAGE_DIR, "fungi_genome/gff_add_info.py")
         self.perl_path = "/program/perl-5.24.0/bin/perl"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
 
 
     def run_cmd1(self):

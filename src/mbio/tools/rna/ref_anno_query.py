@@ -72,7 +72,7 @@ class RefAnnoQueryAgent(Agent):
 class RefAnnoQueryTool(Tool):
     def __init__(self, config):
         super(RefAnnoQueryTool, self).__init__(config)
-        self.python = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         # self.query_path = self.config.SOFTWARE_DIR + "/bioinfo/annotation/scripts/ref_annotation_query.py"
         self.query_path = self.config.SOFTWARE_DIR + "/bioinfo/annotation/scripts/new_annotation_query.py"
 

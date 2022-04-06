@@ -45,7 +45,7 @@ class KmerfinderTool(Tool):
         self.path = self.config.SOFTWARE_DIR + "/program/Python35/bin"
         self.lib = self.config.SOFTWARE_DIR + "/program/Python35/lib"
         self.set_environ(PATH=self.path, LD_LIBRARY_PATH=self.lib)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.python2 = "/program/Python35/bin/python"
         self.python_script = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/kmerfinder_v3/"
         self.blastn = self.config.SOFTWARE_DIR + "/bioinfo/align/ncbi-blast-2.3.0+/bin/blastn"

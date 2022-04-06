@@ -66,7 +66,7 @@ class RnaeditingTool(Tool):
             for bam_files in os.listdir(self.option("rna_bam_dir").prop["path"]):
                 bam_list.write(os.path.join(self.option("rna_bam_dir").prop["path"], bam_files) + "\n")
 
-        cmd = 'program/Python/bin/python {} -rbl {} -rsf {} -tdp {} -ops {} -psl {} ' \
+        cmd = 'miniconda2/bin/python {} -rbl {} -rsf {} -tdp {} -ops {} -psl {} ' \
                '-nsl {}'.format(self.cmd_path, os.path.join(self.work_dir, "bam_list.txt"),
                                 self.option("ref_hg19.fa").prop["path"],
                                 self.config.SOFTWARE_DIR + '/bioinfo/rna/RDDpred_v1.1.Dir/ToolBox.Dir',
@@ -89,7 +89,7 @@ class RnaeditingTool(Tool):
             raise Exception("运行RDDpred.py失败")
 
     def reassign_run(self):
-        cmd = 'program/Python/bin/python {} {} {}'.format(os.path.join(self.script_path,'rna_edit_reassign.py'), self.result, self.output_dir)
+        cmd = 'miniconda2/bin/python {} {} {}'.format(os.path.join(self.script_path,'rna_edit_reassign.py'), self.result, self.output_dir)
 
         self.logger.info('开始运行RDDpred并检测编辑位点')
         self.logger.debug(cmd)

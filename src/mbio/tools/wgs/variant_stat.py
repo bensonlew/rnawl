@@ -42,7 +42,7 @@ class VariantStatTool(Tool):
     def __init__(self, config):
         super(VariantStatTool, self).__init__(config)
         self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl "
-        self.python_path = "program/Python/bin/python "
+        self.python_path = "miniconda2/bin/python "
         self.script1 = self.config.PACKAGE_DIR + "/wgs/snp.stat.pl"
         self.script2 = self.config.PACKAGE_DIR + "/wgs/indel.stat.pl"
         self.script3 = self.config.PACKAGE_DIR + "/wgs_v2/snp_mutation_distribution.py"

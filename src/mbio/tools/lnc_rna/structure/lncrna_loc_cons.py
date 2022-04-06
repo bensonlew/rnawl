@@ -55,7 +55,7 @@ class LncrnaLocConsTool(Tool):
         super(LncrnaLocConsTool, self).__init__(config)
         self.gtftogenepred = 'bioinfo/align/ucsc_tools/gtfToGenePred'
         self.genepredtobed = 'bioinfo/align/ucsc_tools/genePredToBed'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.bwtool = 'bioinfo/lnc_rna/bwtool/bwtool-master/build/bin/bwtool'
         self.rscript = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/lnc_rna/miniconda2/bin/Rscript')
         self.filter_bed_by_name_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/filter_bed_by_name.py')

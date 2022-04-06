@@ -78,8 +78,8 @@ class SimpleBarTool(Tool):
     def __init__(self, config):
         super(SimpleBarTool, self).__init__(config)
         self._version = 1.0
-        self.Python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python '
-        self.Python_path2 = '/program/Python/bin/python '
+        self.Python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python '
+        self.Python_path2 = '/miniconda2/bin/python '
         self.path = self.config.PACKAGE_DIR + '/statistical/simple_operation.py'
         self.software = 'program/parafly-r2013-01-21/bin/bin/ParaFly'
 

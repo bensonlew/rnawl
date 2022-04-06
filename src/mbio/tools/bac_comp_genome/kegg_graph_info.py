@@ -47,7 +47,7 @@ class KeggGraphInfoAgent(Agent):
 class KeggGraphInfoTool(Tool):
     def __init__(self, config):
         super(KeggGraphInfoTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.package_path = self.config.PACKAGE_DIR +\
             '/bac_comp_genome/kegg_graph_info.py'
         self._graph_info = self.config.SOFTWARE_DIR +\

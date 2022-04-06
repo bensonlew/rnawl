@@ -62,7 +62,7 @@ class ExtractDetailSeqTool(Tool):
     def __init__(self, config):
         super(ExtractDetailSeqTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'seq_extract': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/seq_extract_detail_new.py')

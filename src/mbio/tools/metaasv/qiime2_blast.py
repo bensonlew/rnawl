@@ -77,7 +77,7 @@ class Qiime2BlastTool(Tool):
     """
     def __init__(self, config):
         super(Qiime2BlastTool, self).__init__(config)
-        self.qiime_path = "program/Python/bin/python"
+        self.qiime_path = "miniconda2/bin/python"
         self.shell = "program/sh"
         self.shell_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/qiime2_blast.sh")
         self.miniconda3 = self.config.SOFTWARE_DIR + "/program/miniconda3/bin"

@@ -45,7 +45,7 @@ class FastxV2Tool(Tool):
         super(FastxV2Tool, self).__init__(config)
         self._version = 1.0
         self.fastx_dir = "bioinfo/seq/fastx_toolkit_0.0.14/"
-        self.python_dir = "program/Python/bin/python"
+        self.python_dir = "miniconda2/bin/python"
         self.q20q30_stat = self.config.SOFTWARE_DIR + "/bioinfo/seq/scripts/q20q30_stat.py"
         self.fastqs, fastqs = list(), list()
         if self.option("list_file").is_set:

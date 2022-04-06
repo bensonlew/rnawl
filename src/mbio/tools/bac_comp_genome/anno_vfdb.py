@@ -42,7 +42,7 @@ class AnnoVfdbTool(Tool):
     def __init__(self, config):
         super(AnnoVfdbTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path ="/program/Python/bin/python"
+        self.python_path ="/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + '/bac_comp_genome/anno_vfdb.py'
         self.sh_path = 'bioinfo/align/scripts/cat.sh'
         self.ref = self.config.SOFTWARE_DIR + "/database/VFDB/vfdb_all.xls"

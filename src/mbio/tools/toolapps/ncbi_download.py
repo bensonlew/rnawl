@@ -43,7 +43,7 @@ class NcbiDownloadTool(Tool):
     def __init__(self, config):
         super(NcbiDownloadTool, self).__init__(config)
         self.samplelist = self.option("sample_list")
-        self.python = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
+        self.python = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + "/toolapps/"
         self.path = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/edirect:" +self.config.SOFTWARE_DIR + "/../.aspera/connect/bin:" +self.config.SOFTWARE_DIR + "/program/:"
         self.set_environ(PATH=self.path)

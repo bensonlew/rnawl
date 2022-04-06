@@ -49,7 +49,7 @@ class SrnaAnnotationTool(Tool):
     """
     def __init__(self, config):
         super(SrnaAnnotationTool, self).__init__(config)
-        self.python_path = '/program/Python/bin/python'
+        self.python_path = '/miniconda2/bin/python'
         if self.option('rfam'):
             self.srna_annot = self.config.PACKAGE_DIR + "/prok_rna/sRNA_annotation_v3.py"
         else:

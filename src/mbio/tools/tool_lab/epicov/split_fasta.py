@@ -39,7 +39,7 @@ class SplitFastaTool(Tool):
     """
     def __init__(self, config):
         super(SplitFastaTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
 
     def run_split_fasta(self, fasta, prefix='split', num=1):
         i = 1

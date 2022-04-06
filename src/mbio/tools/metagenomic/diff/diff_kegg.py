@@ -59,7 +59,7 @@ class DiffKeggTool(Tool):
         super(DiffKeggTool, self).__init__(config)
         self.r_path = '/program/R-3.3.1/bin/Rscript'
         self.pic_path = self.config.PACKAGE_DIR + "/annotation/mg_annotation/kegg_pathway_img.py"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.html_path = self.config.SOFTWARE_DIR + "/database/KEGG/map_html/"
 
     def run_pic(self):

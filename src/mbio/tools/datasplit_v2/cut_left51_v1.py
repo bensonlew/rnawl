@@ -47,7 +47,7 @@ class CutLeft51Tool(Tool):
     def __init__(self, config):
         super(CutLeft51Tool, self).__init__(config)
         self._version = 1.0
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.cut_left = self.config.PACKAGE_DIR + "/datasplit/cut_left51_v1.py"
 
     def run_single_cut_left51(self):

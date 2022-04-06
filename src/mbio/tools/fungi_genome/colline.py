@@ -63,7 +63,7 @@ class CollineTool(Tool):
         self.set_environ(PATH=self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/Sibelia-3.0.6-Linux/bin")
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/Sibelia-3.0.6-Linux/lib")
         self.sibelia_path = "bioinfo/Genomic/Sofware/Sibelia-3.0.6-Linux/bin/Sibelia"
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.perl_path = '/program/perl-5.24.0/bin/perl'
         self.circos_path = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/circos-0.69-6/bin/circos"
         self.conf_path = os.path.join(self.config.SOFTWARE_DIR, "database/fungi_circos_conf/circos.conf")

@@ -58,7 +58,7 @@ class GffG2t2pAgent(Agent):
 class GffG2t2pTool(Tool):
     def __init__(self, config):
         super(GffG2t2pTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
 
     def run(self):
         super(GffG2t2pTool, self).run()

@@ -133,7 +133,7 @@ class DiffexpBatchTool(Tool):
     def __init__(self, config):
         super(DiffexpBatchTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         # self.diff_toolbox = self.config.PACKAGE_DIR + "/ref_rna_v3/batch/diff_toolbox_batch.py"
         #self.diff_toolbox = self.config.PACKAGE_DIR + "/medical_transcriptome/batch/diff_toolbox_batch_new.py"
         self.diff_toolbox = self.config.PACKAGE_DIR + "/medical_transcriptome/batch/diff_toolbox_zjx.py"

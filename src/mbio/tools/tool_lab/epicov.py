@@ -59,7 +59,7 @@ class EpiCovTool(Tool):
     def __init__(self, config):
         super(EpiCovTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
 
     def run(self):

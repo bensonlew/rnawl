@@ -63,7 +63,7 @@ class SelectTableAgent(Agent):
 class SelectTableTool(Tool):
     def __init__(self, config):
         super(SelectTableTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/sequence/scripts/profile_select.py'
 
     def run(self):

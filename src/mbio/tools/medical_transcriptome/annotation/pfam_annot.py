@@ -54,7 +54,7 @@ class PfamAnnotAgent(Agent):
 class PfamAnnotTool(Tool):
     def __init__(self, config):
         super(PfamAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.pfam_gene_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/pfam_gene.py')
         self.get_venn_list_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/get_venn_list.py')
         self.prefix = os.path.basename(self.option('pfam_domain').path)[:-4]

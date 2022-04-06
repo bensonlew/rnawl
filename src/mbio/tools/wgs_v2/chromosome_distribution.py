@@ -74,7 +74,7 @@ class ChromosomeDistributionTool(Tool):
     def __init__(self, config):
         super(ChromosomeDistributionTool, self).__init__(config)
         self.window_sliding = self.config.PACKAGE_DIR + "/wgs_v2/window_sliding.py"
-        self.python_path = 'program/Python/bin/python '
+        self.python_path = 'miniconda2/bin/python '
         self.pos_file = ""
 
     def run_window_sliding(self):

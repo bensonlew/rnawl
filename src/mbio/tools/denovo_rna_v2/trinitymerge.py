@@ -51,7 +51,7 @@ class TrinityMergeTool(Tool):
     def __init__(self, config):
         super(TrinityMergeTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.trinitymerge = software_dir + '/bioinfo/rna/scripts/trinitymerge.py'
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'

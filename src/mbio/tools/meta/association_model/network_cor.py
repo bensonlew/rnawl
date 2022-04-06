@@ -40,7 +40,7 @@ class NetworkCorAgent(Agent):
 class NetworkCorTool(Tool):
     def __init__(self, config):
         super(NetworkCorTool, self).__init__(config)
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.cmd_path = self.config.PACKAGE_DIR + '/metagenomic/scripts/corr_net_calc.py'
 
     def run(self):

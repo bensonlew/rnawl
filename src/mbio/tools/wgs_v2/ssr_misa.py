@@ -39,7 +39,7 @@ class SsrMisaTool(Tool):
     def __init__(self, config):
         super(SsrMisaTool, self).__init__(config)
         self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.ssr_misa_path = self.config.PACKAGE_DIR + "/wgs_v2/sample_ssr_misa.pl"
         self.ssr_stat_path = self.config.PACKAGE_DIR + "/wgs_v2/ssr_misa_stat.py"
 

@@ -89,7 +89,7 @@ class Mirdeep2Tool(Tool):
         if self.config.SOFTWARE_DIR == "/mnt/ilustre/users/sanger-dev/app":
             self.set_environ(PERL5LIB=self.essential_lib)
         self.samtools = self.config.SOFTWARE_DIR + '/bioinfo/rna/miniconda3/bin/'
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.mirdeep = self.config.SOFTWARE_DIR + "/bioinfo/miRNA/mirdeep2_0.1.3/mirdeep2-0.1.3/bin/"
         self.mirdeep_lib = self.config.SOFTWARE_DIR + "/bioinfo/miRNA/mirdeep2_0.1.3/mirdeep2-0.1.3/lib/perl5/"
         self.rnafold = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/mirdeep2_0.1.3/ViennaRNA-2.4.14/bin/'

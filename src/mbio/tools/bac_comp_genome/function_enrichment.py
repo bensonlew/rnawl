@@ -51,7 +51,7 @@ class FunctionEnrichmentAgent(Agent):
 class FunctionEnrichmentTool(Tool):
     def __init__(self, config):
         super(FunctionEnrichmentTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/enrichment.py'
 
     def run(self):

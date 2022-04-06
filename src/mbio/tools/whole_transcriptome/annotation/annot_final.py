@@ -56,7 +56,7 @@ class AnnotFinalAgent(Agent):
 class AnnotFinalTool(Tool):
     def __init__(self, config):
         super(AnnotFinalTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.statistics_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/statistics.py')
         self.query_py = os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/annotation/query.py')
         self.statistics_tsv = os.path.join(self.output_dir, 'statistics.tsv')

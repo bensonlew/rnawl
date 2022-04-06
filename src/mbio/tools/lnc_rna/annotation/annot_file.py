@@ -52,7 +52,7 @@ class AnnotFileAgent(Agent):
 class AnnotFileTool(Tool):
     def __init__(self, config):
         super(AnnotFileTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.get_isoform2unigene_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/get_isoform2unigene.py')
         self.i2u = os.path.join(self.work_dir, 'i2u')
 

@@ -288,7 +288,7 @@ class MedicalTranscriptomeWorkflow(Workflow):
     @tryforgood
     def delete_mongo_data(self):
         # self.script = os.path.join(self.config.PACKAGE_DIR, 'project_demo/delete_demo.py')
-        # self.program = os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin/python')
+        # self.program = os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin/python')
         delete = DeleteDemoMongo(self.task_id, 'medical_transcriptome')
         try:
             delete.run()

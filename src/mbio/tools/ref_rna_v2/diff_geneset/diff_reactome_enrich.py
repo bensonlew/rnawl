@@ -55,7 +55,7 @@ class DiffReactomeEnrichTool(Tool):
     def __init__(self, config):
         super(DiffReactomeEnrichTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
 
         self.script = {

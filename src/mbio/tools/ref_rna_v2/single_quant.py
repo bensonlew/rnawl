@@ -59,7 +59,7 @@ class SingleQuantTool(Tool):
     def __init__(self, config):
         super(SingleQuantTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         # self.quant_toolbox = software_dir + '/bioinfo/rna/scripts/single_quant_toolbox.py'
         self.quant_toolbox = self.config.PACKAGE_DIR + '/denovo_rna_v2/single_quant_toolbox.py'
 

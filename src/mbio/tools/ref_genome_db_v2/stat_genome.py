@@ -37,7 +37,7 @@ class StatGenomeTool(Tool):
     def __init__(self, config):
         super(StatGenomeTool, self).__init__(config)
         self.seqkit = 'bioinfo/seq/seqkit'
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.stat_annotation = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db/stat_annotation.py')
         self.trinity_stat = 'bioinfo/denovo_rna_v2/trinityrnaseq-Trinity-v2.5.0/util/TrinityStats.pl'
         self.stat_merge = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db/stat_merge.py')

@@ -77,7 +77,7 @@ class SrnaStatAgent(Agent):
 class SrnaStatTool(Tool):
     def __init__(self, config):
         super(SrnaStatTool, self).__init__(config)
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
 
     def run(self):
         super(SrnaStatTool, self).run()

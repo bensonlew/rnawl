@@ -77,7 +77,7 @@ class DeblurDenoiseSingleTool(Tool):
     """
     def __init__(self, config):
         super(DeblurDenoiseSingleTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.shell = "program/sh"
         self.shell_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/deblur.sh")
         self.miniconda3 = self.config.SOFTWARE_DIR + "/program/miniconda3/bin:" + self.config.SOFTWARE_DIR + "/program/miniconda3/envs/qiime2-2020.2/bin"

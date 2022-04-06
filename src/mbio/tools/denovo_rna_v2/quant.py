@@ -80,7 +80,7 @@ class QuantTool(Tool):
     def __init__(self, config):
         super(QuantTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.quant_toolbox = self.config.PACKAGE_DIR + '/denovo_rna_v2/quant_toolbox.py'
         self.rsem_path = software_dir + '/bioinfo/rna/RSEM-1.2.31/bin/'
         self.kallisto_path = software_dir + '/bioinfo/rna/kallisto_linux-v0.43.1/'

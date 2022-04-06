@@ -58,7 +58,7 @@ class FunguildTool(Tool):
     def __init__(self, config):
         super(FunguildTool, self).__init__(config)
         self._version = '1.0'
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.script1_path = self.config.PACKAGE_DIR + "/meta/guilds_v1_1.py"
         self.taxon_table = self.option('taxon_table').path
 

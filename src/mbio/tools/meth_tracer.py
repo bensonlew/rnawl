@@ -159,7 +159,7 @@ class MethTracerTool(Tool):
 			self._cpu = 1
 			#self._memory = '5G'
 			
-		self.Python_path = '/program/Python/bin/python '
+		self.Python_path = '/miniconda2/bin/python '
 		self.java_path = self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0/bin/java'
 		self.cmd_path = self.config.SOFTWARE_DIR + '/ctMethTracer.py'
 		# self.script_path = "bioinfo/meta/scripts/beta_diver.sh"

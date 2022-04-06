@@ -49,7 +49,7 @@ class DeCarrierTool(Tool):
         super(DeCarrierTool, self).__init__(config)
         self.perl_path = "program/perl-5.24.0/bin/perl"
         self.software_dir = self.config.SOFTWARE_DIR
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.phred = 'bioinfo/de_carrier/genome/bin/phred'
         # self.phredpar_dat = self.config.SOFTWARE_DIR+'bioinfo/de_carrier/genome/lib/phredpar.dat'
         self.set_environ(PHRED_PARAMETER_FILE=self.config.SOFTWARE_DIR + '/bioinfo/de_carrier/genome/lib/phredpar.dat')

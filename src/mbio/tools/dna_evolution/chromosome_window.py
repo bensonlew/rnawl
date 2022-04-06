@@ -51,7 +51,7 @@ class ChromosomeWindowAgent(Agent):
 class ChromosomeWindowTool(Tool):
     def __init__(self, config):
         super(ChromosomeWindowTool, self).__init__(config)
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.chromosome_window_path = self.config.PACKAGE_DIR + "/dna_evolution/step_calc.py"
 
     def run_chromosome_windows(self):

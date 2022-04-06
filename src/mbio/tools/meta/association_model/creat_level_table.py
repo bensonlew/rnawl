@@ -67,7 +67,7 @@ class CreatLevelTableTool(Tool):
     def __init__(self, config):
         super(CreatLevelTableTool, self).__init__(config)
         self._version = "1.0"
-        self.python_path = "/program/Python/bin/python"
+        self.python_path = "/miniconda2/bin/python"
         self.script = self.config.PACKAGE_DIR + '/metagenomic/scripts/creat_level_table.py'
 
     def run(self):

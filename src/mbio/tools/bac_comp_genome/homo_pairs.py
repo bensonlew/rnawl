@@ -45,7 +45,7 @@ class HomoPairsAgent(Agent):
 class HomoPairsTool(Tool):
     def __init__(self, config):
         super(HomoPairsTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.diamond = self.config.SOFTWARE_DIR + '/bioinfo/align/diamond-0.9.11/diamond'
         self.package = self.config.PACKAGE_DIR + '/bac_comp_genome/homo_pairs.py'
 

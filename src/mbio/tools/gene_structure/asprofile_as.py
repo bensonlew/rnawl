@@ -85,7 +85,7 @@ class AsprofileAsTool(Tool):
         super(AsprofileAsTool, self).__init__(config)
         self._version = "vb-1.0.4"
         self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/ASprofile.b-1.0.4/"
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.perl_path = 'program/perl-5.24.0/bin/perl'
 
     def run_extract_as(self):

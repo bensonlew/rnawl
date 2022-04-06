@@ -42,7 +42,7 @@ class ExpGraphTool(Tool):
     def __init__(self, config):
         super(ExpGraphTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'exp_graph': os.path.join(self.config.PACKAGE_DIR, 'whole_transcriptome/formation/exp_graph.py')

@@ -52,7 +52,7 @@ class AlignBeginTool(Tool):
     def __init__(self, config):
         super(AlignBeginTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'get_denovo_seq': os.path.join(self.config.PACKAGE_DIR, 'denovo_rna_v2/alignment/get_denovo_seq.py')

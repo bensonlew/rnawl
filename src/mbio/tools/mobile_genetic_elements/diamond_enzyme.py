@@ -39,7 +39,7 @@ class DiamondEnzymeTool(Tool):
         self.db_path = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/mobile_genetic_elements/database/all"
         self.db_des = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/mobile_genetic_elements/database/all.des.xls"
         self.cmd_path = "bioinfo/align/diamond-0.9.11/diamond"
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.python_script = self.config.PACKAGE_DIR + "/mobile_genetic_elements/enzyme_type.py"
         self.set_environ(BLASTDB=self.db_path)
         self.query_name = os.path.splitext(os.path.basename(self.option("query").prop['path']))[0]

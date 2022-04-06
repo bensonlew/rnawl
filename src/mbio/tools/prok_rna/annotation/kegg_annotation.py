@@ -72,7 +72,7 @@ class KeggAnnotationTool(Tool):
     def __init__(self, config):
         super(KeggAnnotationTool, self).__init__(config)
         self._version = "2.0"
-        self.python = "program/Python/bin/python"
+        self.python = "miniconda2/bin/python"
         self.kegg_files_dict = AnnotConfig().get_file_dict(db="kegg", version=self.option("kegg_version"))
         self.kegg_map_html = self.kegg_files_dict['html'] + '/'
         self.ko_txt = self.kegg_files_dict['species'] + '/{}.ko.txt'.format(self.option('taxonomy'))

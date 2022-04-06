@@ -49,7 +49,7 @@ class NrAnnotAgent(Agent):
 class NrAnnotTool(Tool):
     def __init__(self, config):
         super(NrAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.xml2table_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/xml2table.py')
         self.xml = self.option('blast_xml').prop['path']
         if self.xml[-4:] == '.xml':

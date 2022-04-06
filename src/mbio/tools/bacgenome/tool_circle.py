@@ -33,7 +33,7 @@ class ToolCircleAgent(Agent):
 class ToolCircleTool(Tool):
     def __init__(self, config):
         super(ToolCircleTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
 
     def run_cog_total(self):
         """

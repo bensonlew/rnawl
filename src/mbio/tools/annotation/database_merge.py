@@ -54,7 +54,7 @@ class DatabaseMergeAgent(Agent):
 class DatabaseMergeTool(Tool):
     def __init__(self, config):
         super(DatabaseMergeTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.script_path = self.config.PACKAGE_DIR + "/annotation/mg_annotation/overview_merge.py"
 
     def run(self):

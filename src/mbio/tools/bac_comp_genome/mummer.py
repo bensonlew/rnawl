@@ -53,7 +53,7 @@ class MummerAgent(Agent):
 class MummerTool(Tool):
     def __init__(self, config):
         super(MummerTool, self).__init__(config)
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
         self.package_path = self.config.PACKAGE_DIR + '/bac_comp_genome/mummer.py'
         self.mum_path = self.config.SOFTWARE_DIR + '/bioinfo/compare_genome/software/MUMmer3.23'
 

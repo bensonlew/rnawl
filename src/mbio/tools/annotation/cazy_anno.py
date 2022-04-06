@@ -80,7 +80,7 @@ class CazyAnnoAgent(Agent):
 class CazyAnnoTool(Tool):
     def __init__(self, config):
         super(CazyAnnoTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/annotation/scripts/cazy_anno.py"
         self.class_def = self.config.SOFTWARE_DIR + "/database/CAZyDB/class_definition.txt"
         # self.FamInfo = self.config.SOFTWARE_DIR + "/database/CAZyDB/FamInfo.txt"

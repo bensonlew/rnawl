@@ -47,7 +47,7 @@ class SplitFastaSizeTool(Tool):
 
     def __init__(self, config):
         super(SplitFastaSizeTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.divide_src = self.config.PACKAGE_DIR + '/sequence/fasta_split_by_size.py'
 
     def split_fasta(self):

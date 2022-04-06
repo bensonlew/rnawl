@@ -54,8 +54,8 @@ class TcdbAnnoTool(Tool):
         super(TcdbAnnoTool, self).__init__(config)
         self.logger.info(">>>init super success")
         self._version = "1.0"
-        self.python_path = self.config.SOFTWARE_DIR + "/program/Python/bin/python"
-        # self.python_path = "program/Python/bin/python"
+        self.python_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/python"
+        # self.python_path = "miniconda2/bin/python"
         self.python_script2 = self.config.PACKAGE_DIR + '/annotation/dna_tcdb_bac.py'#add by qingchen.zhang20190717
         self.python_script = self.config.PACKAGE_DIR + '/annotation/dna_tcdb.py'
         self.sh_path = 'bioinfo/align/scripts/cat.sh'

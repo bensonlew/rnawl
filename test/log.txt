@@ -1,0 +1,107 @@
+2022-04-05 09:11:30    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:12:53    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:13:06    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:14:15    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:17:31    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:18:53    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:19:39    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:24:11    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:28:35    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:30:46    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:31:20    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:33:06    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:34:08    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:34:20    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:34:41    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:37:35    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:38:51    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:40:51    Run(Run)    ERROR : Failed: {"info": "'ascii' codec can't decode byte 0xe6 in position 3: ordinal not in range(128)", "code": "O001", "name": "Run.ExpCorr", "variables": null, "error_type": "option", "option": "exp"} 
+2022-04-05 09:47:01    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:47:01    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:47:01    root    DEBUG : hostname:liubinxu-local pid:3561956 ppid:1793498
+2022-04-05 09:48:19    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:48:19    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:48:19    root    DEBUG : hostname:liubinxu-local pid:3562721 ppid:1793498
+2022-04-05 09:51:33    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:51:33    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:51:33    root    DEBUG : hostname:liubinxu-local pid:3564622 ppid:1793498
+2022-04-05 09:52:02    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:52:02    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:52:02    root    DEBUG : hostname:liubinxu-local pid:3564984 ppid:1793498
+2022-04-05 09:54:01    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:54:01    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:54:01    root    DEBUG : hostname:liubinxu-local pid:3566176 ppid:1793498
+2022-04-05 09:54:37    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:54:37    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:54:37    root    DEBUG : hostname:liubinxu-local pid:3566618 ppid:1793498
+2022-04-05 09:56:00    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:56:00    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:56:00    root    DEBUG : hostname:liubinxu-local pid:3567593 ppid:1793498
+2022-04-05 09:57:17    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:57:17    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:57:17    root    DEBUG : hostname:liubinxu-local pid:3568408 ppid:1793498
+2022-04-05 09:57:17    root    DEBUG : ntm_port:None
+2022-04-05 09:57:17    root    ERROR : 发送optiondata失败,30秒后重新尝试
+2022-04-05 09:57:47    root    DEBUG : ntm_port:None
+2022-04-05 09:57:47    root    ERROR : 发送optiondata失败,30秒后重新尝试
+2022-04-05 09:58:18    root    DEBUG : ntm_port:None
+2022-04-05 09:58:18    root    ERROR : 发送optiondata失败,30秒后重新尝试
+2022-04-05 09:58:37    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:58:37    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:58:37    root    DEBUG : hostname:liubinxu-local pid:3569375 ppid:1793498
+2022-04-05 09:58:37    root    DEBUG : ntm_port:None
+2022-04-05 09:59:53    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:59:53    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 09:59:53    root    DEBUG : hostname:liubinxu-local pid:3570194 ppid:1793498
+2022-04-05 09:59:53    root    DEBUG : ntm_port:None
+2022-04-05 09:59:53    root    INFO : 开始运行!
+2022-04-05 09:59:53    root    INFO : 命令内容为/mnt/lustre/users/sanger-dev/app/miniconda2/bin/python /denovo_rna_v2/cluster_toolbox.py -exp /home/liubinxu/work/rnawl/test/expression_matrix.xls --ngc -scm complete -scd euclidean --corr -corr_method pearson -out .//ExpCorr 
+2022-04-05 09:59:53    root    ERROR : 运行出错:模块Run.ExpCorr运行出错,ErrorCode: R001, 运行的命令文件不存在
+2022-04-05 10:31:13    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 10:31:13    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 10:31:13    root    DEBUG : hostname:liubinxu-local pid:3588904 ppid:1793498
+2022-04-05 10:31:13    root    DEBUG : ntm_port:None
+2022-04-05 10:31:13    root    INFO : 开始运行!
+2022-04-05 10:31:13    root    INFO : 命令内容为/mnt/lustre/users/sanger-dev/app/miniconda2/bin/python /denovo_rna_v2/cluster_toolbox.py -exp /home/liubinxu/work/rnawl/test/expression_matrix.xls --ngc -scm complete -scd euclidean --corr -corr_method pearson -out .//ExpCorr 
+2022-04-05 10:31:13    root    ERROR : 运行出错:模块Run.ExpCorr运行出错,ErrorCode: R001, 运行的命令文件不存在
+2022-04-05 10:31:38    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 10:31:38    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 10:31:38    root    DEBUG : hostname:liubinxu-local pid:3589235 ppid:1793498
+2022-04-05 10:31:38    root    DEBUG : ntm_port:None
+2022-04-05 10:31:38    root    INFO : 开始运行!
+2022-04-05 10:31:38    root    INFO : 命令内容为/mnt/lustre/users/sanger-dev/app/miniconda2/bin/python /denovo_rna_v2/cluster_toolbox.py -exp /home/liubinxu/work/rnawl/test/expression_matrix.xls --ngc -scm complete -scd euclidean --corr -corr_method pearson -out .//ExpCorr 
+2022-04-05 10:31:38    root    ERROR : 运行出错:模块Run.ExpCorr运行出错,ErrorCode: R001, 运行的命令文件不存在
+2022-04-05 10:35:50    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 10:35:50    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 10:35:50    root    DEBUG : hostname:liubinxu-local pid:3592028 ppid:1793498
+2022-04-05 10:35:50    root    DEBUG : ntm_port:None
+2022-04-05 10:35:50    root    INFO : 开始运行!
+2022-04-05 10:35:50    root    INFO : 命令内容为/mnt/lustre/users/sanger-dev/app/miniconda2/bin/python /denovo_rna_v2/cluster_toolbox.py -exp /home/liubinxu/work/rnawl/test/expression_matrix.xls --ngc -scm complete -scd euclidean --corr -corr_method pearson -out .//ExpCorr 
+2022-04-05 10:35:50    root    ERROR : 运行出错:模块Run.ExpCorr运行出错,ErrorCode: R001, 运行的命令文件不存在
+2022-04-05 10:43:58    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 10:43:58    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 10:43:58    root    DEBUG : hostname:liubinxu-local pid:3596891 ppid:1793498
+2022-04-05 10:43:58    root    DEBUG : ntm_port:None
+2022-04-05 10:43:58    root    INFO : 开始运行!
+2022-04-05 10:43:58    root    INFO : 命令内容为/mnt/lustre/users/sanger-dev/app/miniconda2/bin/python /home/liubinxu/work/rnawl/src/mbio/packages/denovo_rna_v2/cluster_toolbox.py -exp /home/liubinxu/work/rnawl/test/expression_matrix.xls --ngc -scm complete -scd euclidean --corr -corr_method pearson -out .//ExpCorr 
+2022-04-05 10:43:58    root    ERROR : 运行出错:模块Run.ExpCorr运行出错,ErrorCode: R001, 运行的命令文件不存在
+2022-04-05 21:05:37    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 21:05:37    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-05 21:05:37    root    DEBUG : hostname:liubinxu-local pid:3931849 ppid:1793498
+2022-04-05 21:05:37    root    DEBUG : ntm_port:None
+2022-04-05 21:05:37    root    INFO : 开始运行!
+2022-04-05 21:05:37    root    INFO : 命令内容为/home/liubinxu/miniconda2/bin/python /home/liubinxu/work/rnawl/src/mbio/packages/denovo_rna_v2/cluster_toolbox.py -exp /home/liubinxu/work/rnawl/test/expression_matrix.xls --ngc -scm complete -scd euclidean --corr -corr_method pearson -out .//ExpCorr 
+2022-04-05 21:05:37    root    DEBUG : 开始启动Command exp_corr 子进程subprocess 
+2022-04-05 21:05:37    root    DEBUG : Command exp_corr subprocess生成: <subprocess.Popen object at 0x7f24a5a55750>, PID: 3931865 
+2022-04-05 21:05:37    root    DEBUG : 开始检测Command exp_corr输出
+2022-04-05 21:05:42    root    ERROR : 运行出错:模块Run.ExpCorr运行出错,ErrorCode: R006, 命令 exp_corr 返回码: -11 , 运行未能正常完成!
+2022-04-06 20:10:30    Run.ExpCorr(Run.ExpCorr)    DEBUG : 开始检测文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-06 20:10:30    Run.ExpCorr(Run.ExpCorr)    DEBUG : 检测完成，耗时:0 s,文件/home/liubinxu/work/rnawl/test/expression_matrix.xls,格式：ref_rna_v2.express_matrix, 函数:check
+2022-04-06 20:10:30    root    DEBUG : hostname:liubinxu-local pid:185481 ppid:1793498
+2022-04-06 20:10:30    root    DEBUG : ntm_port:None
+2022-04-06 20:10:30    root    INFO : 开始运行!
+2022-04-06 20:10:30    root    INFO : 命令内容为/home/liubinxu/miniconda2/bin/python /home/liubinxu/work/rnawl/src/mbio/packages/denovo_rna_v2/cluster_toolbox.py -exp /home/liubinxu/work/rnawl/test/expression_matrix.xls --ngc -scm complete -scd euclidean --corr -corr_method pearson -out .//ExpCorr 
+2022-04-06 20:10:30    root    DEBUG : 开始启动Command exp_corr 子进程subprocess 
+2022-04-06 20:10:30    root    DEBUG : Command exp_corr subprocess生成: <subprocess.Popen object at 0x7f04f88dabd0>, PID: 185498 
+2022-04-06 20:10:30    root    DEBUG : 开始检测Command exp_corr输出
+2022-04-06 20:10:31    root    ERROR : 运行出错:模块Run.ExpCorr运行出错,ErrorCode: R006, 命令 exp_corr 返回码: -11 , 运行未能正常完成!

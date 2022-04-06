@@ -48,7 +48,7 @@ class O2plsdaTool(Tool):
         self.path = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin"
         self.lib = self.config.SOFTWARE_DIR + "/program/R-3.3.3/lib64/R/lib"
         self.set_environ(PATH=self.path, LD_LIBRARY_PATH=self.lib)
-        self.python = "/program/Python/bin/python"
+        self.python = "/miniconda2/bin/python"
         self.R = "/program/R-3.3.1/bin/Rscript"
         self.script = self.config.PACKAGE_DIR + '/tool_lab/'
 

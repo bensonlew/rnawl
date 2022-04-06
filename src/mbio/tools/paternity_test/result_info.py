@@ -1,4 +1,4 @@
-## !/mnt/ilustre/users/sanger-dev/app/program/Python/bin/python
+## !/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/python
 # -*- coding: utf-8 -*-
 # __author__ = "moli.zhou"
 #last_modify:20161123

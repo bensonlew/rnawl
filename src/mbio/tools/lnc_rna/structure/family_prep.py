@@ -45,7 +45,7 @@ class FamilyPrepAgent(Agent):
 class FamilyPrepTool(Tool):
     def __init__(self, config):
         super(FamilyPrepTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.family_prepare_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/family_prepare.py')
 
     def run(self):

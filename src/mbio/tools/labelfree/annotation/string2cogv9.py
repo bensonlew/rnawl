@@ -70,7 +70,7 @@ class String2cogv9Tool(Tool):
     def __init__(self, config):
         super(String2cogv9Tool, self).__init__(config)
         self._version = '1.0'  # to be changed
-        self.python = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.python = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         # self.cog_xml = self.config.SOFTWARE_DIR + '/bioinfo/annotation/scripts/string2cog_v9.py'
         self.cog_xml = self.config.PACKAGE_DIR + "/denovo_rna_v2/String2Cog.pl"
         self.cog_table = self.config.PACKAGE_DIR + "/denovo_rna_v2/cog_annot.py"

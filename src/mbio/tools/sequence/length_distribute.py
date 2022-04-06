@@ -71,7 +71,7 @@ class LengthDistributeAgent(Agent):
 class LengthDistributeTool(Tool):
     def __init__(self, config):
         super(LengthDistributeTool, self).__init__(config)
-        # self.Python_path = 'program/Python/bin/python '
+        # self.Python_path = 'miniconda2/bin/python '
         self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
         # self.stat_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/seq-distribut.pl '
 

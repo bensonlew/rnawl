@@ -58,7 +58,7 @@ class CpcPredictorAgent(Agent):
 class CpcPredictorTool(Tool):
     def __init__(self, config):
         super(CpcPredictorTool, self).__init__(config)
-        self.python_path = "program/Python/bin/python"
+        self.python_path = "miniconda2/bin/python"
         self.env_path = self.config.SOFTWARE_DIR + '/program/Python/bin'
 
         self.set_environ(PATH=self.env_path)

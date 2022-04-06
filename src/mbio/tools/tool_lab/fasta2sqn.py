@@ -44,7 +44,7 @@ class Fasta2sqnTool(Tool):
         #self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/library/glibc-2.14/lib/')
         self.env = 'export LD_LIBRARY_PATH={}:$LD_LIBRARY_PATH'.format(self.config.SOFTWARE_DIR + '/library/glibc-2.14/lib/')
         self.fasta2sqn = self.config.PACKAGE_DIR + '/tool_lab/fasta2sqn.py'
-        self.python = '/program/Python/bin/python'
+        self.python = '/miniconda2/bin/python'
 
     def run(self):
         super(Fasta2sqnTool, self).run()

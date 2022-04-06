@@ -76,7 +76,7 @@ class TfbsPredictTool(Tool):
     def __init__(self, config):
         super(TfbsPredictTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'program/Python/bin/python'
+        self.python_path = 'miniconda2/bin/python'
         self.tfbs_predict = self.config.PACKAGE_DIR + '/transcription_factor/tfbs_predict.py'
         self.gtfParser = self.config.PACKAGE_DIR + '/transcription_factor/parseGTF.pl'
         self.fimo = software_dir + '/bioinfo/rna/meme_4.12.0/bin/fimo'

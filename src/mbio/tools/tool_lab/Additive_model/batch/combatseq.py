@@ -47,7 +47,7 @@ class CombatseqTool(Tool):
     def __init__(self, config):
         super(CombatseqTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python',
+            'python': 'miniconda2/bin/python',
             'rscript': 'program/R-3.3.1/bin/Rscript',
         }
         self.script = {

@@ -55,7 +55,7 @@ class RockhopperIndexTool(Tool):
     """
     def __init__(self, config):
         super(RockhopperIndexTool, self).__init__(config)
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/python'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'
         self.python_path_faa = self.config.SOFTWARE_DIR + '/bioinfo/prok_rna/miniconda2/bin/python'
         self.rock_index = self.config.PACKAGE_DIR + "/prok_rna/rockhopper_index.py"
         self.bedtool_path = self.config.SOFTWARE_DIR + '/bioinfo/seq/bedtools-2.25.0/bin/bedtools'

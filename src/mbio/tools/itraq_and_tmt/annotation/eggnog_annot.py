@@ -53,7 +53,7 @@ class EggnogAnnotAgent(Agent):
 class EggnogAnnotTool(Tool):
     def __init__(self, config):
         super(EggnogAnnotTool, self).__init__(config)
-        self.python = 'program/Python/bin/python'
+        self.python = 'miniconda2/bin/python'
         self.xml2table_py = os.path.join(self.config.PACKAGE_DIR, 'itraq_and_tmt/annotation/xml2table.py')
         self.cog_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'itraq_and_tmt/annotation/cog_annotation.py')
         self.cog_summary_py = os.path.join(self.config.PACKAGE_DIR, 'itraq_and_tmt/annotation/cog_summary.py')

@@ -41,7 +41,7 @@ class TableTransposeTool(Tool):
     def __init__(self, config):
         super(TableTransposeTool, self).__init__(config)
         self.program = {
-            'python': 'program/Python/bin/python'
+            'python': 'miniconda2/bin/python'
         }
         self.script = {
             'table_kit': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/table_kit.py')
