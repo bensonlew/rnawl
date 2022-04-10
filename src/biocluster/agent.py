@@ -557,16 +557,21 @@ class Agent(Basic):
         # if self.get_workflow().sheet.instant:
         #     self._run_mode = "process"
         self.save_class_path()
-        self.save_config()
+        path = self.save_config()
 
+        with open(path, "rb") as f:
+            pickle_config = pickle.load(f)
+
+        self.obj = load_class_by_path(self.pathname, "Tool")(pickle_config)
+        self.obj.run()
         # self.job = self._job_manager.add_job(self)
         # self._job_manager.run_job(self.job)
-        self._status = "Q"
-        # if not self.get_workflow().sheet.instant:
-        self.actor.start()
+        # self._status = "Q"
+                    # if not self.get_workflow().sheet.instant:
+        # self.actor.start()
 
-        self._submit_job()
-        gevent.sleep(0)
+        # self._submit_job()
+        # gevent.sleep(0) 
 
     # def __set_rerun_dir(self):
     #     dir_path = self._work_dir
