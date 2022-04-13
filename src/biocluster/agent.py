@@ -368,6 +368,7 @@ class Agent(Basic):
         path = os.path.join(self.work_dir, self.name + "_class.pk")
         class_name = str(type(self))
         tool_path = get_classpath_by_object(self)
+        self.tool_path = tool_path
         class_list = {"tool": get_classpath_by_object(self)}   # 类文件路径
         file_class_paths = []  #
         for option in self._options.values():
@@ -561,8 +562,8 @@ class Agent(Basic):
 
         with open(path, "rb") as f:
             pickle_config = pickle.load(f)
-
-        self.obj = load_class_by_path(self.pathname, "Tool")(pickle_config)
+        tool_path = self.tool_path.split("mbio.tools.")[1]
+        self.obj = load_class_by_path(tool_path, "Tool")(pickle_config)
         self.obj.run()
         # self.job = self._job_manager.add_job(self)
         # self._job_manager.run_job(self.job)

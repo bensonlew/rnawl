@@ -94,17 +94,18 @@ class Config(object):
             self.wfm_port = 7321
         self.ntm_port = ntm_grpc_port if ntm_grpc_port else 7322
         try:
-            with grpc.insecure_channel('localhost:%s' % wfm_grpc_port) as channel:
-                stub = workflow_guide_pb2_grpc.WorkflowGuideStub(channel)
-                response = stub.GetRunInfo(public_pb2.Workflow(instant=instant, workflow_id=workflow_id,
-                                                               process_id=int(os.getpid())))
-                self.JOB_PLATFORM = response.platform
-                self.JOB_QUEUE = response.defaut_queue
-                # self.WORK_DIR = "/mnt/ilustre/users/sanger-dev/bc2/workspace/"
-                self.WORK_DIR = response.workspace
-                # self.SOFTWARE_DIR = response.software_dir
-                self.SCRIPT_DIR = response.script_dir
-                self.PACKAGE_DIR = response.package_dir
+            pass
+            # with grpc.insecure_channel('localhost:%s' % wfm_grpc_port) as channel:
+            #     stub = workflow_guide_pb2_grpc.WorkflowGuideStub(channel)
+            #     response = stub.GetRunInfo(public_pb2.Workflow(instant=instant, workflow_id=workflow_id,
+            #                                                    process_id=int(os.getpid())))
+            #     self.JOB_PLATFORM = response.platform
+            #     self.JOB_QUEUE = response.defaut_queue
+            #     # self.WORK_DIR = "/mnt/ilustre/users/sanger-dev/bc2/workspace/"
+            #     self.WORK_DIR = response.workspace
+            #     # self.SOFTWARE_DIR = response.software_dir
+            #     self.SCRIPT_DIR = response.script_dir
+            #     self.PACKAGE_DIR = response.package_dir
         except Exception as e:
             exstr = traceback.format_exc()
             print(exstr)

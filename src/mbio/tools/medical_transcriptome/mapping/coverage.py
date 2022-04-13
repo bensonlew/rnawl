@@ -66,7 +66,7 @@ class CoverageTool(Tool):
         }
         self.script = {
             'genebody_coverage': os.path.join(self.config.SOFTWARE_DIR,
-                                              'bioinfo/ref_rna_v2/miniconda2/bin/geneBody_coverage.py')
+                                              'miniconda2/bin/geneBody_coverage.py')
         }
         self.file = {
             'bam': '{}.bam'.format(self.prefix),

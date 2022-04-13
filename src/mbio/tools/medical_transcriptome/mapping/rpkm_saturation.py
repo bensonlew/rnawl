@@ -73,7 +73,7 @@ class RpkmSaturationTool(Tool):
         }
         self.script = {
             'RPKM_saturation': os.path.join(self.config.SOFTWARE_DIR,
-                                            'bioinfo/ref_rna_v2/miniconda2/bin/RPKM_saturation.py'),
+                                            'miniconda2/bin/RPKM_saturation.py'),
             'saturation2plot': os.path.join(self.config.SOFTWARE_DIR,
                                             'bioinfo/plot/scripts/saturation2plot.pl')
         }

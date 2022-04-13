@@ -29,6 +29,7 @@ class Run(Basic):
     def __init__(self, tp="Tool", name=None, sheet=None):
         super(Run, self).__init__()
         self.tp = tp.capitalize()
+        
         self.pathname = name
         self._full_name = "Run"
         # self.parent = None
@@ -39,6 +40,9 @@ class Run(Basic):
         
         if self.tp=="Tool":
             self.agent = load_class_by_path(self.pathname, "Agent")(self)
+        elif self.tp=="Workflow":
+            a  = load_class_by_path(self.pathname, "Workflow")
+            self.workflow = a(self.sheet)
         else:
             self.obj = load_class_by_path(self.pathname, self.tp)(self)
             
@@ -48,7 +52,10 @@ class Run(Basic):
                 "SOFTWARE_DIR": "/home/liubinxu/miniconda2/bin"
 
             }
+
         )
+        self.sheet.work_dir  = "./"
+        self.sheet.id = "test"
 
     def _update(self, error_type, error_str):
         pass
@@ -116,6 +123,8 @@ class Run(Basic):
 
             self.obj = load_class_by_path(self.pathname, "Tool")(pickle_config)
             self.obj.run()
+        elif self.tp == 'Workflow':
+            self.workflow.run()
         else:
             self.obj.set_options(options)
             self.obj.run()

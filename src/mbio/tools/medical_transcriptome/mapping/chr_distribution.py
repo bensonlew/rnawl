@@ -55,7 +55,7 @@ class ChrDistributionTool(Tool):
         super(ChrDistributionTool, self).__init__(config)
         self.sample = os.path.basename(self.option('bam').path)[:-4]
         self.program = {
-            'samtools': 'bioinfo/rna/miniconda2/bin/samtools'
+            'samtools': 'miniconda2/bin/samtools'
         }
         self.file = {
             'tmp': os.path.join(self.work_dir, '{}.bam_chr_stat.xls'.format(self.sample)),

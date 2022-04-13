@@ -56,6 +56,8 @@ class Workflow(Basic):
 
         super(Workflow, self).__init__(**kwargs)
         self.sheet = wsheet
+        print(self)
+        print("id {} name {}".format(self._id, self._name))
 
         self._return_msg = []  # 需要返回给任务调用进程的值,支持常用数据类型
         # self.last_update = datetime.datetime.now()
@@ -148,6 +150,8 @@ class Workflow(Basic):
     #     """
     #     self._tools_report_data.append(data)
 
+    def revise_infiles(self):
+        pass
     def step_start(self):
         """
         流程开始api更新
@@ -501,14 +505,16 @@ class Workflow(Basic):
             message=msg,
         )
         try:
-            with grpc.insecure_channel('localhost:%s' % self.config.wfm_port) as channel:
-                stub = workflow_guide_pb2_grpc.WorkflowGuideStub(channel)
-                response = stub.Update(statu)
-                self.logger.info('response:%s' % response)
-                if response.ok:
-                    self.logger.info("发送status %s 成功" % status)
-                else:
-                    self.logger.debug("wfm服务拒绝接受status %s, 原因: %s" % (status, response.reason))
+            pass
+
+            # with grpc.insecure_channel('localhost:%s' % self.config.wfm_port) as channel:
+            #     stub = workflow_guide_pb2_grpc.WorkflowGuideStub(channel)
+            #     response = stub.Update(statu)
+                # self.logger.info('response:%s' % response)
+                # if response.ok:
+                #     self.logger.info("发送status %s 成功" % status)
+                # else:
+                #     self.logger.debug("wfm服务拒绝接受status %s, 原因: %s" % (status, response.reason))
         except Exception as e:
             exstr = traceback.format_exc()
             print(exstr)

@@ -258,7 +258,7 @@ class Basic(EventObject):
         :param value: 当value==None时，获取参数值 当value!=None时，设置对应的参数值
         :return: 参数对应的值
         """
-        # print("name {} value {}".format(name, value))
+        print("name {} value {} options {}".format(name, value, self._options))
         if name not in self._options.keys():
             # raise Exception("参数%s不存在，请先添加参数" % name)
             self.logger.warning("参数%s不存在，请确认是否需要先添加参数，pass" % name)
@@ -339,6 +339,8 @@ class Basic(EventObject):
             if re.search((b + "$"), class_name):
                 # return re.sub((b + "$"), '', class_name).lower()
                 return re.sub((b + "$"), '', class_name)
+        print("class_name {}".format(class_name))
+
         return class_name
 
     def __get_full_name(self):
@@ -354,6 +356,7 @@ class Basic(EventObject):
         """
         对于同一模块的子模块中多个同类型模块编号
         """
+        print("name {}".format(self.name))
         identifier = self._name
         count = 0
         if self._parent and isinstance(self._parent, Basic):
@@ -364,6 +367,7 @@ class Basic(EventObject):
                 identifier = "%s.%s" % (self._parent.id, identifier)
         if count > 0:
             identifier += str(count)
+        print("identifier {}".format(identifier))
         return identifier
 
     def add_child(self, *child):
@@ -390,6 +394,8 @@ class Basic(EventObject):
             return self._logger
         else:
             workflow = self.get_workflow()
+            print(self)
+            print("id {}".format(self.id))
             self._logger = Wlog(workflow).get_logger(self._full_name + "(" + self.id + ")")
             return self._logger
 

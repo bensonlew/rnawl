@@ -85,7 +85,7 @@ class StarTool(Tool):
     def __init__(self, config):
         super(StarTool, self).__init__(config)
         self.star_path = "bioinfo/rna/star-2.5/bin/Linux_x86_64/"  # 设置star的路径
-        #self.star_path = "bioinfo/ref_rna_v2/miniconda2/bin/"  # 设置star的路径
+        #self.star_path = "miniconda2/bin/"  # 设置star的路径
         self.shell_path = 'bioinfo/rna/scripts'
         self.genomeDir_path2 = os.path.join(self.work_dir, "ref_star_index2")
         self.genomeDir_path1 = os.path.join(self.work_dir, "ref_star_index1")
