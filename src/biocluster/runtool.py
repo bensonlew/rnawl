@@ -1,194 +1,228 @@
+#!/bin/env python
 # -*- coding: utf-8 -*-
 # __author__ = 'guoquan'
 
-"""
-功能基本类
-"""
-import imp
-from biocluster.core.function import load_class_by_path, get_classpath_by_object
-from biocluster.basic import Basic
-from biocluster.config import Config
-import time
-import copy
 import argparse
-import json
-import os
 import pickle
+# from biocluster.agent import PickleConfig
+import os
+from biocluster.core.function import load_class_by_path, daemonize
+import traceback
+import re
+import time
+import platform
+from biocluster.core.exceptions import RunningError, CodeError
+import json
 import sys
-from biocluster.wsheet import Sheet
-from biocluster.core.exceptions import ExitError
+import grpc
+import socket
+from biocluster.proto import tool_guide_pb2_grpc, tool_guide_pb2
 
-PY3 = False
+os.environ["LANG"] ="en_US.UTF-8"
 
+parser = argparse.ArgumentParser(description="run a tool on remote server")
+parser.add_argument("-b", "--daemon", action="store_true", help="run in daemon background mode")
+parser.add_argument("-d", "--debug", action="store_true", help="run in debug mode,will not use network!")
+parser.add_argument("-p", "--port", type=int, help="the ntm service port")
+parser.add_argument("-c", "--cpu", type=int, help="request cpu for tool")
+parser.add_argument("-m", "--mem", type=int, help="request memory for tool")
+parser.add_argument("tool", type=str, help="the tool name to run")
+args = parser.parse_args()
 
+os.environ['current_mode'] = "tool"
+if args.port:
+    os.environ["NTM_PORT"] = str(args.port)
+request_cpu = 0
+request_memory = 0
+if args.cpu:
+    request_cpu = args.cpu
+if args.mem:
+    request_memory = args.mem
 
-class Run(Basic):
-    """
-    功能基本类
-    """
-    def __init__(self, tp="Tool", name=None, sheet=None):
-        super(Run, self).__init__()
-        self.tp = tp.capitalize()
-        
-        self.pathname = name
-        self._full_name = "Run"
-        # self.parent = None
-        self.sheet = sheet
-        self.sheet_update()
-        self._work_dir = "./"
-        self.debug = False
-        
-        if self.tp=="Tool":
-            self.agent = load_class_by_path(self.pathname, "Agent")(self)
-        elif self.tp=="Workflow":
-            a  = load_class_by_path(self.pathname, "Workflow")
-            self.workflow = a(self.sheet)
+def main():
+    hostname = socket.gethostname()
+    print (hostname)
+    ntm_file = "ntm_no"
+    if os.path.exists(ntm_file):
+        os.remove(ntm_file)
+    name = args.tool
+    class_file = name + "_class.pk"
+    if args.daemon:
+        daemonize(stdout="%s.daemon.o" % name, stderr="%s.daemon.e" % name)
+        write_pid()
+    # with open(class_file, "r") as f:
+    with open(class_file, "rb") as f:
+        class_list = pickle.load(f)
+    for file_class in class_list['files']:
+        load_class_by_path(file_class, "File")
+    # print class_list['tool']
+    paths = class_list['tool'].split(".")
+    paths.pop(0)
+    paths.pop(0)
+    tool = load_class_by_path(".".join(paths), "Tool")
+    config_file = name + ".pk"
+    # with open(config_file, "r") as f:
+    with open(config_file, "rb") as f:
+        config = pickle.load(f)
+    # print vars(config)
+    if args.debug:
+        config.DEBUG = True
+    else:
+        config.DEBUG = False
+    if args.port:
+        config.ntm_port = args.port
+    # else:
+        # config.ntm_port = 7322
+    config.current_mode = "tool"
+    config.request_cpu = request_cpu
+    config.request_memory = request_memory
+    ss = tool_send_state(config, "runtool", "")
+    if ss:
+        with open("ntm_no", "w") as f:
+            f.write("%s" % platform.uname()[1])
+        print ("发送state %s超过3次仍然失败,ntm服务grpc不正常,退出运行" % "runtool")
+        raise ss
+    t = None
+    try:
+        t = tool(config)
+        t.run()
+    except MemoryError as e:
+        exstr = traceback.format_exc()
+        sys.stderr.write(exstr)
+        sys.stdout.write(exstr)
+        sys.stderr.flush()
+        t.add_state("memory_limit", "MemoryError:检测到内存使用时出现错误!")
+    except Exception as e:
+        exstr = traceback.format_exc()
+        sys.stderr.write(exstr)
+        sys.stdout.write(exstr)
+        sys.stderr.flush()
+        finded = False
+        if t:
+            t._end = True
+            # t.save_report()
+            if "SLURM_JOB_ID" in os.environ.keys():
+                time.sleep(1)
+                t.logger.debug("开始检测SLURM STDERR输出...")
+                slurm_error_path = os.path.join(t.work_dir, "%s_%s.err" % (t.name, os.environ["SLURM_JOB_ID"]))
+                error_msg = ""
+                exceeded = False
+                cancelled = False
+                with open(slurm_error_path, "r") as f:
+                    f.seek(0, 2)
+                    size = os.path.getsize(slurm_error_path)
+                    point = 5000 if size > 5000 else size
+                    f.seek(-point, 2)
+                    lines = f.readlines()
+                    for line in lines:
+                        if re.match(r"^slurmstepd:", line):
+                            error_msg += line
+                            if re.search(r"memory limit", line):
+                                exceeded = True
+                            elif re.search(r"CANCELLED", line):
+                                cancelled = True
+                if exceeded:
+                    t.logger.info("检测到内存使用超过申请数被系统杀死!")
+                    t.add_state("memory_limit", error_msg)
+                    finded = True
+                elif cancelled:
+                    t.logger.info("检测到任务被取消!")
+                    t.add_state("cancelled", error_msg)
+                    finded = True
+            if not finded:
+                t.set_error(e)
         else:
-            self.obj = load_class_by_path(self.pathname, self.tp)(self)
-            
-    def sheet_update(self):
-        self.sheet._data.update({
-                "PACKAGE_DIR": "/home/liubinxu/work/rnawl/src/mbio/packages",
-                "SOFTWARE_DIR": "/home/liubinxu/miniconda2/bin"
+            print "workflow_id:{}, tool-id:{}".format(config.current_workflow_id, config.current_tool_id)
+            ss = tool_send_state(config, "error", e)
+            if ss:
+                raise ss
+    sys.exit(0)
 
-            }
 
-        )
-        # self.sheet.work_dir  = "./"
-        self.sheet.id = "test"
+send_state_times = 0
 
-    def _update(self, error_type, error_str):
-        pass
-            
-    def get_options(self):
-        return self.obj._options
 
-    def exit(self, exitcode=1, data=None, terminated=False):
-        """
-        立即退出当前流程
+def send_state(state_data, config):
+    global send_state_times
+    send_state_times += 1
 
-        :param exitcode:
-        :param data:
-        :param terminated:
-        :return:
-        """
-        # exstr = traceback.format_exc()
-        # print exstr
+    def get_state_data(state):
+        yield tool_guide_pb2.State(
+            workflow_id=state.workflow_id,
+            tool_id=state.tool_id,
+            jobid=state.jobid,
+            jobtype=state.jobtype,
+            state=state.state,
+            process_id=state.process_id,
+            host=state.host,
+            version=state.version,
+            data=state.data)
+    try:
+        with grpc.insecure_channel('localhost:%s' % config.ntm_port) as channel:
+            stub = tool_guide_pb2_grpc.ToolGuideStub(channel)
+            response = stub.SendState(get_state_data(state_data))
+            if response.ok:
+                print ("发送state %s成功" % state_data.state)
+            else:
+                print ("ntm服务拒绝接受state %s, 原因: %s" % (state_data.state, response.reason))
+            return ""
+    except Exception as e:
+        exstr = traceback.format_exc()
+        print(exstr)
         sys.stdout.flush()
-        print("data {}".format(data))
-        # self.end_unfinish_job()
-        if isinstance(data, dict) and "error_type" in data.keys() and "info" in data.keys():
-            error_str = json.dumps(data)
-            if PY3:
-                error_str = bytes(json.dumps(data), encoding='utf-8')
-            # self._save_report_data(data)
+        if send_state_times > 5:
+            print ("发送state %s超过3次仍然失败,退出运行" % state_data.state)
+            # raise e
+            return e
         else:
-            error_str = str(data)
-            # self._save_report_data()
-        if terminated:
-            self.step.terminated(data)
-        else:
-            self.step.failed(data)
-        self.step.update()
-        self._update("error", error_str)  # 退出流程不再给wfm发送error状态
-        self.logger.error("Failed: %s " % error_str)
-        # self.rpc_server.close()
-        print("Failed: %s " % error_str)
-        raise ExitError(error_str)
+            print ("发送state %s失败,30秒后重新尝试" % state_data.state)
+            time.sleep(30)
+            return send_state(state_data, config)
 
-    @property
-    def step(self):
-        """
-        主步骤
+def tool_send_state(config, state, error):
+    """
+    给ntm发送状态，检测ntm服务grpc是否正常
+    """
+    jobid = 0
+    if "SLURM_JOB_ID" in os.environ.keys():
+        try:
+            jobid = int(os.environ["SLURM_JOB_ID"])
+        except:
+            pass
+    if "PBS_JOBID" in os.environ.keys():
+        try:
+            jobid = int(os.environ["PBS_JOBID"])
+        except:
+            pass
+    if isinstance(error, CodeError):
+        error_msg = error.json()
+        error_msg["name"] = getattr(config, "_id")
+    else:
+        error_msg = {"error_type": "running",
+                     "name": getattr(config, "_id"),
+                     "code": "R001",
+                     "variables": None,
+                     "info": str(error)
+                     }
+    state_data = tool_guide_pb2.State(
+        workflow_id=config.current_workflow_id,
+        tool_id=config.current_tool_id,
+        jobid=jobid,
+        jobtype="SLURM",
+        state=state,
+        process_id=int(os.getpid()),
+        host=platform.uname()[1],
+        version=0,
+        data=json.dumps(error_msg),
+    )
+    print "workflow_id:{}, tool-id:{}".format(config.current_workflow_id, config.current_tool_id)
+    ss = send_state(state_data, config)
+    return ss
 
-        :return:
-        """
-        return self._main_step
-
-    def run(self):
-        if self.tp == 'Tool':
-            '''
-            tool 使用agent的检查方法检查
-            '''
-            agent = load_class_by_path(self.pathname, "Agent")(self)
-            print(agent)
-            options = self.sheet.options()
-            agent.set_options(options)
-            agent.check_options()
-            # path = os.path.join(self.workdir, self.name + ".pk")
-            path = agent.save_config()
-            print("path :%s", path)
-            with open(path, "rb") as f:
-                pickle_config = pickle.load(f)
-
-            self.obj = load_class_by_path(self.pathname, "Tool")(pickle_config)
-            self.obj.run()
-        elif self.tp == 'Workflow':
-            self.workflow.run()
-        else:
-            self.obj.set_options(options)
-            self.obj.run()
-
-    def set_options(self, options):
-        """
-        批量设置参数值
-
-        :param options: dict key是参数名,value是参数值
-        :return:
-        """
-        if not isinstance(options, dict):
-            raise Exception("参数格式错误!")
-        for name, value in options.items():
-            self.option(name, value)
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-tp", type=str, required=False, 
-                        help = "one in Workflow, Module, Tool")
-    parser.add_argument("-name", type=str, required=False,
-                        help = "path joined by ."
-                        )
-    parser.add_argument("-par", type=bool, default=False)
-    parser.add_argument("-json", type=str, required=False,
-                        help = "paramters for tools and so on",
-                        default = None
-                        )
-    parser.add_argument("-options", type=str, required=False,
-                        help = "options like para1=para1 para2=para2",
-                        default = None
-                        )
-    args = parser.parse_args()
-    print(args)
-
-    sheet = dict()
-
-    if args.json:
-        with open(args.json, "r") as f:
-            sheet = json.load(f)
+def write_pid():
+    with open("run.pid", "w") as f:
+        f.write("%s" % os.getpid())
 
 
-    ## 如果添加参数根据参数替换
-    if args.tp and args.name:
-        sheet["type"] = args.tp
-        sheet["name"] = args.name
-
-
-
-    if args.options:
-            for opt in args.options.split(" "):
-                for k,v in opt.split("="):
-                    sheet["options"].update({k: v})
-        
-    run = Run(tp = sheet["type"], name = sheet["name"], sheet = Sheet(jsonfile = args.json))
-
-    if args.par:
-        opt = run.get_options()
-        print(json.dumps(opt, indent=4))
-    else:    
-        run.run()
-    
-
-        
-
-
-
+if __name__ == '__main__':
+    main()
