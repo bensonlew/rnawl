@@ -80,7 +80,7 @@ class StringtieMergeTool(Tool):
         super(StringtieMergeTool, self).__init__(config)
         self._version = "v1.0.1"
         # self.stringtie_merge_path = 'bioinfo/rna/stringtie-1.3.4d/'
-        self.stringtie_merge_path = 'bioinfo/ref_rna_v2/miniconda2/bin/'
+        self.stringtie_merge_path = 'miniconda2/bin/'
         self.gffread_path = "bioinfo/rna/cufflinks-2.2.1/"
         tmp = os.path.join(self.config.SOFTWARE_DIR, self.stringtie_merge_path)
         tmp_new = tmp + ":$PATH"

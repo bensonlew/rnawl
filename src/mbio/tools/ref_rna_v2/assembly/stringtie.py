@@ -40,7 +40,7 @@ class StringtieTool(Tool):
     def __init__(self, config):
         super(StringtieTool, self).__init__(config)
         self.program = {
-            "stringtie": "bioinfo/ref_rna_v2/miniconda2/bin/stringtie"
+            "stringtie": "miniconda2/bin/stringtie"
         }
         sample_name = os.path.basename(self.option("sample_bam").path)[:-4]
         self.file = {

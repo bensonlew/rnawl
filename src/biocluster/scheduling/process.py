@@ -70,8 +70,15 @@ def local_process_run(agent, process_queue, shared_callback_action):
         workflow.rpc_server.close()
         # Watcher().stopall()
         gevent.sleep(0)
+        print("agent work_dir {}".format(agent.work_dir))
+        print("agent name {}".format(agent.name))
         os.chdir(agent.work_dir)
         log = os.path.join(agent.work_dir, "%s_%s.err" % (agent.name, os.getpid()))
+        if os.path.exists(log):
+            pass
+        else:
+            os.system("touch %s" % log)
+        print("log: %s" % log)
         so = file(log, 'a+')
         se = file(log, 'a+', 0)
         os.dup2(so.fileno(), sys.stdout.fileno())

@@ -126,7 +126,7 @@ class BlastTool(Tool):
                self.logger.info(self.db_path)
         self.logger.info(self.option("nr_species"))
         # self.cmd_path = "bioinfo/align/ncbi-blast-2.3.0+/bin"   # 执行程序路径必须相对于 self.config.SOFTWARE_DIR
-        self.cmd_path = "bioinfo/ref_rna_v2/miniconda2/bin"  # 执行程序路径必须相对于 self.config.SOFTWARE_DIR
+        self.cmd_path = "miniconda2/bin"  # 执行程序路径必须相对于 self.config.SOFTWARE_DIR
         self.set_environ(BLASTDB=self.db_path)
 
     def run_makedb_and_blast(self):

@@ -65,7 +65,7 @@ class LiftOverTool(Tool):
         self.perl =  'program/perl/perls/perl-5.24.0/bin/'
         self.tool_path= self.config.PACKAGE_DIR+"/tool_lab/trans_coord/CoordTrans.pl"
         self.ucsctool_path = self.config.SOFTWARE_DIR + "/bioinfo/align/ucsc_tools"
-        self.lastz_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v2/miniconda2/bin"
+        self.lastz_path = self.config.SOFTWARE_DIR + "/miniconda2/bin"
         self.parafly = "/program/parafly-r2013-01-21/src/ParaFly"
         self.set_environ(PATH=self.ucsctool_path)
         self.set_environ(PATH=self.lastz_path)

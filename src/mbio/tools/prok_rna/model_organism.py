@@ -71,7 +71,7 @@ class ModelOrganismTool(Tool):
         super(ModelOrganismTool, self).__init__(config)
         self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
         self.program = {
-            'blastn': 'bioinfo/ref_rna_v2/miniconda2/bin/blastn',
+            'blastn': 'miniconda2/bin/blastn',
             'python': 'miniconda2/bin/python',
         }
         self.file = {

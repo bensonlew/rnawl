@@ -64,7 +64,7 @@ class BamAddrgTool(Tool):
     def __init__(self, config):
         super(BamAddrgTool, self).__init__(config)
         self.picard_path = self.config.SOFTWARE_DIR + "/bioinfo/gene-structure/"
-        # self.samtools_path ="bioinfo/ref_rna_v2/miniconda2/bin/"
+        # self.samtools_path ="miniconda2/bin/"
         self.samtools_path = "bioinfo/align/samtools-1.8/"
         self.sample_name = ''
         self.tmp_path = self.work_dir + "/tmp/"

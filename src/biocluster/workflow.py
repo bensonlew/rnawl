@@ -22,13 +22,13 @@ import types
 import traceback
 from .core.watcher import Watcher
 from .scheduling.job import JobManager
-from .wpm.db import ReportModel
+# from .wpm.db import ReportModel
 from .core.exceptions import MaxLengthError, RunningError
 from .batch import Batch
 import json
 import copy
 import shutil
-from biocluster.api.file.lib.s3 import S3TransferManager
+# from biocluster.api.file.lib.s3 import S3TransferManager
 import glob
 from boto.s3.bucket import Bucket
 
@@ -271,8 +271,8 @@ class Workflow(Basic):
         self.end_unfinish_job()
         self.stop_timeout_check()
         self._upload_result()
-        manager = S3TransferManager()
-        manager.wait(end=True)
+        # manager = S3TransferManager()
+        # manager.wait(end=True)
         self._import_report_data()
         self._save_report_data()
         self._update("set_end")
@@ -622,7 +622,7 @@ class Workflow(Basic):
                 self.logger.debug("运行数据发送完成!")
             except MaxLengthError, e:
                 self.logger.debug("保存到Log共享内存出错，直接保存到Mysql: %s" % e)
-                self.__report_to_mysql(data)
+                # self.__report_to_mysql(data)
             except Exception, e:
                 exstr = traceback.format_exc()
                 print exstr

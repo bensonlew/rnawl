@@ -90,7 +90,7 @@ class OrfTool(Tool):
         super(OrfTool, self).__init__(config)
         self.transdecoder_path = "bioinfo/gene-structure/TransDecoder-3.0.0/"
         # self.hmmscan_path = "bioinfo/align/hmmer-3.1b2-linux-intel-x86_64/binaries/"
-        self.hmmscan_path = "bioinfo/ref_rna_v2/miniconda2/bin/"
+        self.hmmscan_path = "miniconda2/bin/"
         # self.pfam_db = self.config.SOFTWARE_DIR + "/database/Pfam/Pfam-A.hmm"
         self.pfam_db = AnnotConfig().get_file_path(
             file ="Pfam-A",

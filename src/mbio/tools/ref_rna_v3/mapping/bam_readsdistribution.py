@@ -64,7 +64,7 @@ class BamReadsdistributionTool(Tool):
         }
         self.script = {
             'read_distribution': os.path.join(self.config.SOFTWARE_DIR,
-                                              'bioinfo/ref_rna_v2/miniconda2/bin/read_distribution.py')
+                                              'miniconda2/bin/read_distribution.py')
         }
         self.file = {
             'txt': '{}.reads_distribution.txt'.format(self.prefix)

@@ -66,7 +66,7 @@ class BlastToRfamTool(Tool):
     def __init__(self, config):
         super(BlastToRfamTool, self).__init__(config)
         # self.blast_path = "bioinfo/align/ncbi-blast-2.3.0+/bin"
-        self.blast_path = "/bioinfo/ref_rna_v2/miniconda2/bin/"
+        self.blast_path = "/miniconda2/bin/"
         self.set_environ(PATH=self.blast_path)
         self.python = "miniconda2/bin/python"
         self.rfam_stat = self.config.PACKAGE_DIR + "/prok_rna/rfam_stat.py"

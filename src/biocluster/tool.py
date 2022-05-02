@@ -21,7 +21,7 @@ import psutil
 import traceback
 from .package import PackageManager, Package
 import shutil
-from biocluster.api.file.lib.s3 import S3TransferManager
+# from biocluster.api.file.lib.s3 import S3TransferManager
 import glob
 from .core.exceptions import OptionError, RunningError, CodeError
 from boto.s3.bucket import Bucket
@@ -732,8 +732,8 @@ class Tool(object):
         target_dir = False
         if re.match(r"/$", to_path):
             target_dir = True
-        self.s3transfer = S3TransferManager()
-        self.s3transfer.base_path = self.work_dir
+        # self.s3transfer = S3TransferManager()
+        # self.s3transfer.base_path = self.work_dir
         m = re.match(r"^([\w\-]+)://([\w\-]+)/(.*)$", from_file)
         if not m:
             raise Exception("下载路径%s格式不正确!" % from_file)
@@ -784,7 +784,7 @@ class Tool(object):
         target_dir = False
         if re.match(r"/$", to_path):
             target_dir = True
-        self.s3transfer = S3TransferManager(base_path=self.work_dir, overwrite=cover)
+        # self.s3transfer = S3TransferManager(base_path=self.work_dir, overwrite=cover)
         source = os.path.join(self.work_dir, from_file)
         for f in glob.glob(os.path.join(source)):
             if target_dir:

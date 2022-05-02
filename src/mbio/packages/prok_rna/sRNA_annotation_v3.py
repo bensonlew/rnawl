@@ -19,7 +19,7 @@ class srna_annot(object):
         self.evalue = evalue
         self.rfam = rfam
         # self.blastn_path = Config().SOFTWARE_DIR + '/bioinfo/align/ncbi-blast-2.3.0+/bin/blastn'
-        self.blastn_path = Config().SOFTWARE_DIR + '/bioinfo/ref_rna_v2/miniconda2/bin/blastn'
+        self.blastn_path = Config().SOFTWARE_DIR + '/miniconda2/bin/blastn'
 
         self.db_path = Config().SOFTWARE_DIR + '/database/prok_rna/sRNA_Anno/'
         self.parafly = Config().SOFTWARE_DIR + '/program/parafly-r2013-01-21/src/ParaFly'

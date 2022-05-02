@@ -340,7 +340,7 @@ if __name__ == "__main__":
                              'Default: bowtie2')
     parser.add_argument('-mapper_path', type=str, metavar="mapper_path",
                         # default='/mnt/ilustre/users/sanger-dev/app/bioinfo/align/bowtie2-2.2.9/',
-                        default='/mnt/ilustre/users/sanger-dev/app/bioinfo/ref_rna_v2/miniconda2/bin/',
+                        default='/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/',
                         help='RSEM argument. Absolute path of alignment tool/mapper')
 
     args = parser.parse_args()

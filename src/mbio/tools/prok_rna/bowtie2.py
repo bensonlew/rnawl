@@ -71,7 +71,7 @@ class Bowtie2Tool(Tool):
         python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
         self.set_environ(PATH=python_path)
         # self.bowtie_path = self.config.SOFTWARE_DIR + "/bioinfo/align/bowtie2-2.2.9/"
-        self.bowtie_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v2/miniconda2/bin/"
+        self.bowtie_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.samtool_path = self.config.SOFTWARE_DIR + "/program/Python/bin/samtools"
     
     def run_build_index(self):

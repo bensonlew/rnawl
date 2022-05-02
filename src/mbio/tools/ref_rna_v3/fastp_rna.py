@@ -77,9 +77,9 @@ class FastpRnaAgent(Agent):
 class FastpRnaTool(Tool):
     def __init__(self, config):
         super(FastpRnaTool, self).__init__(config)
-        self.fastp_path = 'bioinfo/ref_rna_v3/R_4.1/miniconda3/bin/fastp'
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + 'bioinfo/ref_rna_v3/R_4.1/miniconda3/bin')
-        self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + 'bioinfo/ref_rna_v3/R_4.1/miniconda3/lib')
+        self.fastp_path = 'miniconda2/bin/fastp'
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + 'miniconda2/bin')
+        self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + 'miniconda2/lib')
 
     def run(self):
         super(FastpRnaTool, self).run()

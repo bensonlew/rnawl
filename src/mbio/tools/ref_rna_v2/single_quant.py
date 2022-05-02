@@ -82,13 +82,13 @@ class SingleQuantTool(Tool):
 
         # self.bowtie2_path = software_dir + '/bioinfo/align/bowtie2-2.3.4.3-linux-x86_64/'
 
-        # self.bowtie2_path = software_dir + '/bioinfo/ref_rna_v2/miniconda2/bin/'
+        # self.bowtie2_path = software_dir + '/miniconda2/bin/'
         self.bowtie2_path = software_dir + '/bioinfo/ref_rna_v3/bowtie2/miniconda3/bin/'
 
         # self.bowtie_path = software_dir + '/bioinfo/align/bowtie-1.1.2/'
-        self.bowtie_path = software_dir + '/bioinfo/ref_rna_v2/miniconda2/bin/'
+        self.bowtie_path = software_dir + '/miniconda2/bin/'
         # self.star_path = software_dir + "/bioinfo/rna/star-2.5/bin/Linux_x86_64/"
-        self.star_path = software_dir + "/bioinfo/ref_rna_v2/miniconda2/bin/"
+        self.star_path = software_dir + "/miniconda2/bin/"
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         self.perl = software_dir + '/program/perl/perls/perl-5.24.0/bin/'

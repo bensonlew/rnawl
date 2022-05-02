@@ -68,7 +68,7 @@ class ChrDistributionTool(Tool):
         self.python_path = "program/Python/bin/"
         self.python_full_path = self.config.SOFTWARE_DIR + "/program/Python/bin/"
         # self.samtools_path = self.config.SOFTWARE_DIR + "/bioinfo/align/samtools-1.3.1/"
-        self.samtools_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v2/miniconda2/bin/"
+        self.samtools_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.chr_distribution_path = self.config.SOFTWARE_DIR + "/bioinfo/gene-structure/scripts/reads_distribution.py"
         self.bam_name = ""
 

@@ -43,8 +43,8 @@ class BlastnTool(Tool):
     def __init__(self, config):
         super(BlastnTool, self).__init__(config)
         self.program = {
-            # 'makeblastdb': 'bioinfo/ref_rna_v2/miniconda2/bin/makeblastdb',
-            # 'blastn': 'bioinfo/ref_rna_v2/miniconda2/bin/blastn'
+            # 'makeblastdb': 'miniconda2/bin/makeblastdb',
+            # 'blastn': 'miniconda2/bin/blastn'
             'blat': 'bioinfo/align/ucsc_tools/blat'
         }
         self.file = {

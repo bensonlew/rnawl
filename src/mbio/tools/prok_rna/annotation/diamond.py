@@ -112,7 +112,7 @@ class DiamondTool(Tool):
                 soft_version=self.option("diamond_version"))
 
         if self.option("diamond_version") == "v0.9.24.125":
-            self.cmd_path = "bioinfo/ref_rna_v2/miniconda2/bin"
+            self.cmd_path = "miniconda2/bin"
         else:
             self.cmd_path = "bioinfo/align/diamond-0.8.35" 
 
@@ -133,7 +133,7 @@ class DiamondTool(Tool):
         if self.option("diamond_version") == "v2.0.13":
             self.cmd_path = "bioinfo/align/diamond-2.0.13"
         elif self.option("diamond_version") == "v0.9.24.125":
-            self.cmd_path = "bioinfo/ref_rna_v2/miniconda2/bin"
+            self.cmd_path = "miniconda2/bin"
         else:
             self.cmd_path = "bioinfo/align/diamond-0.8.35" 
 

@@ -60,7 +60,7 @@ class MrnaTool(Tool):
             'gtftogenepred': 'bioinfo/align/ucsc_tools/gtfToGenePred',
             'genepredtobed': 'bioinfo/align/ucsc_tools/genePredToBed',
             'python': 'miniconda2/bin/python',
-            'bedtools': 'bioinfo/ref_rna_v2/miniconda2/bin/bedtools'
+            'bedtools': 'miniconda2/bin/bedtools'
         }
         self.script = {
             'get_gene_bed': os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/get_gene_bed.py'),

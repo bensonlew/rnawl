@@ -12,6 +12,27 @@ class Error(Exception):
     def __str__(self):
         return str(self.value)
 
+class ExitError(Error):
+    """
+    用于主动跟踪程序退出
+    """
+    pass
+
+
+
+
+class MaxLengthError(Error):
+    """
+    参数错误
+    """
+    pass
+
+class TransferError(Error):
+    """
+    文件传输失败时触发
+    """
+    pass
+
 
 class CodeError(Exception):
     """
@@ -58,6 +79,11 @@ class CodeError(Exception):
         else:
             return self.value
 
+class OptionError(CodeError):
+    """
+    参数错误
+    """
+    pass   
 
 class EventStopError(Error):
     """

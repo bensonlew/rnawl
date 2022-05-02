@@ -456,11 +456,12 @@ class Basic(EventObject):
         if self.is_end:
             raise Exception("一个对象不能多次被结束，不能多次运行end方法!")
         if not os.listdir(self.output_dir):
-            self.logger.warning("输出目录%s为空,你确定已经设置了输出目录?" % self.output_dir)
+            # print("output directory {}".format(self.output_dir))
+            self.logger.warning(u"输出目录%s为空,你确定已经设置了输出目录?" % self.output_dir)
         for option in self._options.values():
             if option.type == 'outfile':
                 if not option.value.is_set:
-                    self.logger.warning("输出参数%s没有设置输出文件路径,你确定此处不需要设置?" % option.name)
+                    self.logger.warning(u"输出参数%s没有设置输出文件路径,你确定此处不需要设置?" % option.name)
         self.logger.debug("获取输出目录信息完成")
         self.set_end()
         unfinished = []

@@ -292,8 +292,9 @@ class MedicalTranscriptomeWorkflow(Workflow):
         #             self.delete_mongo_data()
 
         if self._sheet.rerun:
-            self.logger.info("该项目重运行中，先删除mongo库中已有数据")
-            self.delete_mongo_data()
+            pass
+            # self.logger.info("该项目重运行中，先删除mongo库中已有数据")
+            # self.delete_mongo_data()
 
         self.annot_config_dict = AnnotConfig().get_group_option_detail(section=self.option("annot_group"))
 

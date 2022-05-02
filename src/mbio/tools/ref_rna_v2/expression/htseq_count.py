@@ -52,9 +52,9 @@ class HtseqCountTool(Tool):
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.program = {
             'python': 'miniconda2/bin/python',
-            # 'python': 'bioinfo/ref_rna_v2/miniconda2/bin/python',
+            # 'python': 'miniconda2/bin/python',
             # 'htseq_count': 'bioinfo/rna/HTSeq-0.6.1/scripts/htseq-count',
-            # 'htseq_count': 'bioinfo/ref_rna_v2/miniconda2/bin/htseq-count',
+            # 'htseq_count': 'miniconda2/bin/htseq-count',
             # 'python': 'bioinfo/ref_rna_v3/HTSeq/miniconda2/bin/python',
             'htseq_count': 'bioinfo/ref_rna_v3/HTSeq/miniconda2/bin/htseq-count',
             'samtools': '/bioinfo/align/samtools-1.3.1/samtools'

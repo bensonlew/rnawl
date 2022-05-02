@@ -1,4 +1,4 @@
-#!/mnt/ilustre/users/sanger-dev/app/bioinfo/ref_rna_v2/miniconda2/bin/python
+#!/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/python
 '''
 Calculate the RNA-seq reads coverage over gene body. 
 

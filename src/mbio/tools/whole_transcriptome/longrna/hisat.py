@@ -79,9 +79,9 @@ class HisatTool(Tool):
         super(HisatTool, self).__init__(config)
         self.hisat_path = 'bioinfo/align/hisat2/hisat2-2.1.0/'
         # self.samtools_path = self.config.SOFTWARE_DIR + '/bioinfo/align/samtools-1.3.1/'
-        self.samtools_path = self.config.SOFTWARE_DIR + '/bioinfo/ref_rna_v2/miniconda2/bin/'
+        self.samtools_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         # self.sort_path = self.config.SOFTWARE_DIR + '/bioinfo/align/samtools-1.3.1/'
-        self.sort_path = self.config.SOFTWARE_DIR + '/bioinfo/ref_rna_v2/miniconda2/bin/'
+        self.sort_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
 
     def hisat_build(self):
         """

@@ -55,7 +55,7 @@ class BcftoolVcfTool(Tool):
         super(BcftoolVcfTool, self).__init__(config)
         self._version = '1.0.1'
         # self.bcftools = "bioinfo/seq/bcftools-1.7/"
-        self.bcftools_path = "bioinfo/ref_rna_v2/miniconda2/bin/bcftools"
+        self.bcftools_path = "miniconda2/bin/bcftools"
     def bcftools_concat(self):
         """
         进行vcf文件合并

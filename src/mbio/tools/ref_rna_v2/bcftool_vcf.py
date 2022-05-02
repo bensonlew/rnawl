@@ -55,7 +55,7 @@ class BcftoolVcfTool(Tool):
     def __init__(self, config):
         super(BcftoolVcfTool, self).__init__(config)
         self._version = '1.0.1'
-        self.bcftools = "bioinfo/ref_rna_v2/miniconda2/bin/"
+        self.bcftools = "miniconda2/bin/"
 
     def run(self):
         super(BcftoolVcfTool, self).run()

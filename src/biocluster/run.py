@@ -54,7 +54,7 @@ class Run(Basic):
             }
 
         )
-        self.sheet.work_dir  = "./"
+        # self.sheet.work_dir  = "./"
         self.sheet.id = "test"
 
     def _update(self, error_type, error_str):

@@ -1,4 +1,4 @@
- -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # __author__ = 'guoquan'
 
 """Tool远程代理"""
@@ -455,9 +455,10 @@ class Agent(Basic):
         self.set_resource()
         self._run_time = datetime.datetime.now()
         workflow = self.get_workflow()
-        if workflow.sheet.rerun and \
-                (workflow.is_skip or workflow.sheet.skip_all_success or
-                 (workflow.sheet.skip_tools and self.id in workflow.sheet.skip_tools)):
+        # if workflow.sheet.rerun and \
+        #         (workflow.is_skip or workflow.sheet.skip_all_success or
+        #          (workflow.sheet.skip_tools and self.id in workflow.sheet.skip_tools)):
+        if workflow.sheet.rerun:
             self.__set_rerun_dir()
             is_sucess = False
             path = os.path.join(self.work_dir, self.name + ".status.pk")
@@ -622,18 +623,19 @@ class Agent(Basic):
 
     def _load_resource_used_file(self):
         path = os.path.join(self.work_dir, self.name + ".resource_used.pk")
-        if os.path.exists(path):
-            with open(path, "w") as f:
-                try:
-                    output = pickle.load(f)
-                    self.memory_used = output["memory"]
-                    self.cpu_used = output["cpu"]
-                except EOFError:
-                    gevent.sleep(2)
-                    self._load_resource_used_file()
-        else:
-            self.memory_used = 0
-            self.cpu_used = 0
+        # if os.path.exists(path):
+        #     print("path %s" % path)
+        #     with open(path, "w") as f:
+        #         try:
+        #             output = pickle.load(f)
+        #             self .memory_used = output["memory"]
+        #             self.cpu_used = output["cpu"]
+        #         except EOFError:
+        #             gevent.sleep(2)
+        #             self._load_resource_used_file()
+        # else:
+        self.memory_used = 0
+        self.cpu_used = 0
 
     def error_callback(self, data):
         """

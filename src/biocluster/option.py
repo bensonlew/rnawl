@@ -146,12 +146,12 @@ class Option(object):
                 else:
                     file_path = path_list[0]
                     file_format = None
-                if self._type == "infile":  # 远程文件复制
-                    remote_file = RemoteFileManager(file_path)
-                    if remote_file.type != "local":
-                        self.bind_obj.logger.info("发现参数%s为远程文件%s,开始复制..." % (self.name, value))
-                        remote_file.download(os.path.join(self.bind_obj.work_dir, "remote_input", self.name))
-                        file_path = remote_file.local_path
+                # if self._type == "infile":  # 远程文件复制
+                #     remote_file = RemoteFileManager(file_path)
+                #     if remote_file.type != "local":
+                #         self.bind_obj.logger.info("发现参数%s为远程文件%s,开始复制..." % (self.name, value))
+                #         remote_file.download(os.path.join(self.bind_obj.work_dir, "remote_input", self.name))
+                #         file_path = remote_file.local_path
                 if os.path.exists(file_path):
                     # if self.type == "infile":  # 检查输出文件是否满足要求
                         # class_obj = load_class_by_path(self._options[name].format, "File")

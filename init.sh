@@ -157,3 +157,5 @@ export PATH=$HOME/miniconda2/bin:$PATH
 conda install r-base=3.5.1
 conda install rpy2
 install.packages("fastcluster")
+conda install -c bioconda fastp
+conda install -c bioconda blast

@@ -68,7 +68,7 @@ class NetchainsubsetTool(Tool):
         self.tool_path=self.config.PACKAGE_DIR+"/tool_lab/trans_coord/split_fasta_sgene.py"
         self.chainMergeSort_path = self.config.SOFTWARE_DIR+ "/bioinfo/align/ucsc_tools/"
         self.ucsctool_path =  "/bioinfo/align/ucsc_tools/"
-        self.lastz_path = "/bioinfo/ref_rna_v2/miniconda2/bin/"
+        self.lastz_path = "/miniconda2/bin/"
         # self.parafly = "/program/parafly-r2013-01-21/src/ParaFly"
         self.set_environ(PATH=self.chainMergeSort_path)
         self.set_environ(PATH=self.lastz_path)

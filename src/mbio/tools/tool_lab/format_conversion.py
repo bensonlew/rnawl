@@ -69,7 +69,7 @@ class FormatConversionTool(Tool):
         self.perl = 'program/perl/perls/perl-5.24.0/bin/perl'
         self.gfftool_path = self.config.PACKAGE_DIR+"/tool_lab/gff_tool.py"
         self.gtftool_path = self.config.PACKAGE_DIR+"/tool_lab/gtf_tool.py"
-        self.conver2bed_path=self.config.SOFTWARE_DIR+"/bioinfo/ref_rna_v2/miniconda2/bin"
+        self.conver2bed_path=self.config.SOFTWARE_DIR+"/miniconda2/bin"
         self.set_environ(PATH=self.conver2bed_path)
 
     def run(self):

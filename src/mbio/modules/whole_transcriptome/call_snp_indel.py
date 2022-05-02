@@ -46,7 +46,7 @@ class CallSnpIndelModule(Module):
         self.ref_index2 = ""
         self.samples = []
         self.bampredeals = []
-        self.samtools_path = Config().SOFTWARE_DIR + "/bioinfo/ref_rna_v2/miniconda2/bin/"
+        self.samtools_path = Config().SOFTWARE_DIR + "/miniconda2/bin/"
         self.picard_path = Config().SOFTWARE_DIR + "/bioinfo/gene-structure/"
         self.java_path = Config().SOFTWARE_DIR + "/program/sun_jdk1.8.0/bin/java"
         self.annovars = []

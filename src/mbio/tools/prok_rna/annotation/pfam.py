@@ -74,7 +74,7 @@ class PfamTool(Tool):
     def __init__(self, config):
         super(PfamTool, self).__init__(config)
         # self.hmmscan_path = "bioinfo/align/hmmer-3.1b2-linux-intel-x86_64/binaries/"
-        self.hmmscan_path = "bioinfo/ref_rna_v2/miniconda2/bin/"
+        self.hmmscan_path = "miniconda2/bin/"
         # self.pfam_db = self.config.SOFTWARE_DIR + "/database/Pfam/Pfam-A.hmm"# hmm参考库
         self.pfam_db = AnnotConfig().get_file_path(
             file ="Pfam-A",

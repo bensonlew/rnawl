@@ -38,7 +38,7 @@ class StringtieMergeTool(Tool):
     def __init__(self, config):
         super(StringtieMergeTool, self).__init__(config)
         self.program = {
-            "stringtie": "bioinfo/ref_rna_v2/miniconda2/bin/stringtie"
+            "stringtie": "miniconda2/bin/stringtie"
         }
         self.file = {
             "out_gtf": os.path.join(self.output_dir, "out.gtf"),
