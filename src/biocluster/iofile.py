@@ -12,10 +12,6 @@ from .core.function import get_dir_size, load_class_by_path
 import gzip
 import gevent
 import glob
-import types
-import sys
-
-PY3 = sys.version_info[0] == 3
 
 
 class FileBase(object):
@@ -116,7 +112,7 @@ class FileBase(object):
         :param path: 路径
         """
         if not os.path.exists(path):
-            raise Exception("%s不存在，请先设置正确的文件或文件夹路径路径!" % path)
+            raise Exception("请先设置正确的文件或文件夹路径路径!")
         self.set_property("path", path)
         # self.get_info()
         self._is_set = True
@@ -297,7 +293,7 @@ class File(FileBase):
             return None
 
     def _create_unzip_path(self):
-        m = re.match(r"^(.*)\.gz$", self.path)
+        m = re.match("^(.*)\.gz$", self.path)
         if m:
             return m.group(1)
         else:
@@ -326,6 +322,7 @@ class File(FileBase):
         :param line: 指定需要读取几行
         :return: list数组。每一行为一个数组元素，去除了最后的换行符
         """
+        data = []
         line_size = -100
         with self.get_reader() as f:
             while True:
@@ -341,7 +338,6 @@ class File(FileBase):
                     lines = f.readlines()
                     if len(lines) >= line + 1:
                         data = [l.strip() for l in lines[-line:]]
-                        break
                     else:
                         line_size *= 2
         return data
@@ -387,26 +383,14 @@ class Directory(FileBase):
             is_file = True
         elif isinstance(module, Directory):
             is_dir = True
-        if PY3:
-            check = isinstance(path, str)
-        else:
-            check = isinstance(path, types.StringTypes)
-        if check:
-            if re.match(r"^/|^\.\.", path):
-                raise Exception("不能使用绝对路径或切换到其他目录!")
-            for f in glob.glob(os.path.join(self.path, path)):
-                if (os.path.isfile(f) and is_file) or (os.path.isdir(f) and is_dir):
+        if re.match("^/|^\.\.", path):
+            raise Exception("不能使用绝对路径或切换到其他目录!")
+        for f in glob.glob(os.path.join(self.path, path)):
+            if (os.path.isfile(f) and is_file) or (os.path.isdir(f) and is_dir):
                     module = class_module()
-                    module.option = self.option
-                    module.parent = self
                     module.set_path(f)
+                    module.parent = self
                     self._file_list.append(module)
-        else:
-            module = class_module()
-            module.option = self.option
-            module.parent = self
-            module.set_path(path)
-            self._file_list.append(module)
 
     @property
     def file_number(self):

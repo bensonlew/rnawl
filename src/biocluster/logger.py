@@ -2,6 +2,7 @@
 # __author__ = 'xuting'
 
 import logging
+from .config import Config
 from .core.singleton import singleton
 
 
@@ -14,23 +15,23 @@ class Wlog(object):
     def __init__(self, workflow=None):
         """
         """
-        # log_level = {'debug': logging.DEBUG,
-        #              'info': logging.INFO,
-        #              'warning': logging.WARNING,
-        #              'error': logging.ERROR,
-        #              'critical': logging.CRITICAL}
-        self.format = "%(asctime)s    %(name)s    %(levelname)s : %(message)s"
+        config = Config()
+        log_level = {'debug': logging.DEBUG,
+                     'info': logging.INFO,
+                     'warning': logging.WARNING,
+                     'error': logging.ERROR,
+                     'critical': logging.CRITICAL}
+        self.format = config.LOG_FORMAT
         self.formatter = logging.Formatter(self.format, "%Y-%m-%d %H:%M:%S")
-        self.level = logging.DEBUG
-        self.stream_on = True
+        self.level = log_level[config.LOG_LEVEL.lower()]
+        self.streem_on = config.LOG_STREEM
         self.workflow = workflow
-        print("Workflow {}".format(self.workflow))
         if workflow:
             self.log_path = workflow.work_dir + "/log.txt"
             self.file_handler = logging.FileHandler(self.log_path)
             self.file_handler.setLevel(self.level)
             self.file_handler.setFormatter(self.formatter)
-        if self.stream_on:
+        if self.streem_on:
             self.stream_handler = logging.StreamHandler()
             self.stream_handler.setLevel(self.level)
             self.stream_handler.setFormatter(self.formatter)
@@ -59,5 +60,5 @@ class Wlog(object):
         logger.setLevel(self.level)
         if self.workflow:
             logger.addHandler(self.file_handler)
-        if self.stream_on:
+        if self.streem_on:
             logger.addHandler(self.stream_handler)

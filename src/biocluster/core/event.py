@@ -7,12 +7,10 @@ from gevent.event import AsyncResult
 import inspect
 # from gevent.lock import BoundedSemaphore
 # import socket
-from .exceptions import EventStopError, UnknownEventError, CodeError, ExitError
+from .exceptions import EventStopError, UnknownEventError, CodeError
 import traceback
 from datetime import datetime
 import sys
-
-PY3 = sys.version_info[0] == 3
 
 
 class EventHandler(object):
@@ -27,7 +25,7 @@ class EventHandler(object):
         self._name = name
         self._event = AsyncResult()
         self._func = []
-        self._green_lets = []
+        self._greenlets = []
         self._start = False
         self.parent = None
         # self.sem = BoundedSemaphore()
@@ -54,31 +52,19 @@ class EventHandler(object):
         :param data: 需要传递给事件处理函数的数据
         :return: waiter函数
         """
+
         def waiter():
             para = self._event.get()
             start = datetime.now()
             if hasattr(bindobject, "logger"):
-                print (type(func))
-                # bindobject.logger.debug("Event %s , Function %s 开始执行..." % (self.name, func.func_name))
-                if PY3:
-                    bindobject.logger.debug("Event %s , Function %s 开始执行..." % (self.name, func))
-                else:
-                    bindobject.logger.debug("Event %s , Function %s 开始执行..." % (self.name, func.func_name))
-            # if hasattr(bindobject, "get_workflow"):
-            #     bindobject.get_workflow().last_event_fire = datetime.now()
-            args = []
-            if PY3:
-                spec = inspect.signature(func)
-                for i in spec.parameters.keys():
-                    args.append(i)
-            else:
-                spec = inspect.getargspec(func)
-                args = spec.args
-                if inspect.ismethod(func):
-                    args.pop(0)
+                bindobject.logger.debug("Event %s , Function %s 开始执行..." % (self.name, func.func_name))
+            argspec = inspect.getargspec(func)
+            args = argspec.args
             try:
                 if self.is_start:
                     event_data = {"bind_object": bindobject, "event": self, "data": data}
+                    if inspect.ismethod(func):
+                        args.pop(0)
                     length = len(args)
                     if length == 0:
                         func()
@@ -97,13 +83,9 @@ class EventHandler(object):
                             raise Exception("指定的绑定函数%s为bound method,参数超过限制个数!" % func)
                         else:
                             raise Exception("指定的绑定函数%s为unbound function,参数超过限制个数!" % func)
-            except ExitError:
-                print("以下为调试信息,用于跟踪调试程序自动退出原因，不代表发生错误!")
-                ex_str = traceback.format_exc()
-                print(ex_str)
-            except Exception as e:
-                ex_str = traceback.format_exc()
-                print(ex_str)
+            except Exception, e:
+                exstr = traceback.format_exc()
+                print exstr
                 sys.stdout.flush()
                 if isinstance(e, CodeError):
                     e.bind_object = bindobject
@@ -111,13 +93,8 @@ class EventHandler(object):
                     bindobject.set_error(e)
             end = datetime.now()
             if hasattr(bindobject, "logger"):
-                # bindobject.logger.debug("Event %s, Function %s 执行完毕，耗时%s s。" % (self.name, func.func_name,
-                #                         (end - start).seconds))
-                if PY3:
-                    bindobject.logger.debug("Event %s, Function 执行完毕，耗时%s s。" % (self.name, (end - start).seconds))
-                else:
-                    bindobject.logger.debug("Event %s, Function %s 执行完毕，耗时%s s。" % (self.name, func.func_name,
-                                           (end - start).seconds))
+                bindobject.logger.debug("Event %s, Function %s 执行完毕，耗时%s s。" % (self.name, func.func_name,
+                                        (end - start).seconds))
         return waiter
 
     def bind(self, func, bindobject, data=None):
@@ -171,7 +148,6 @@ class EventHandler(object):
         # with self.sem:
         if self.is_start:
             self._event.set(para)
-            sys.stdout.flush()
         else:
             # print self.name, self
             raise EventStopError("模块%s, 事件%s尚未开始监听或已经运行，不能被触发!有子模块未完成而此模块先结束"
@@ -185,7 +161,7 @@ class EventHandler(object):
         :return: self
         """
         for item in self._func:
-            self._green_lets.append(gevent.spawn(item))
+            self._greenlets.append(gevent.spawn(item))
         self._start = True
         return self
 
@@ -198,15 +174,15 @@ class EventHandler(object):
         :return: self
         """
         current = gevent.getcurrent()
-        for gl in self._green_lets:
+        for gl in self._greenlets:
             if gl is current:
                 raise Exception("模块%s, 不能在当前事件触发的函数中停止当前事件监听!" % self.parent)
         if self._event.ready():
-            if len(self._green_lets) > 0:
-                gevent.joinall(self._green_lets)
+            if len(self._greenlets) > 0:
+                gevent.joinall(self._greenlets)
         else:
-            if len(self._green_lets) > 0:
-                gevent.killall(self._green_lets, block=False)
+            if len(self._greenlets) > 0:
+                gevent.killall(self._greenlets, block=False)
         self._start = False
         return self
 
@@ -220,7 +196,7 @@ class EventHandler(object):
             # raise Exception("%s事件已经启动监听，需的调用EventHandler.stop方法停止后才能重新启动!" % self.name)
             self.stop()
         self._event = AsyncResult()
-        self._green_lets = []
+        self._greenlets = []
         self.start()
         return self
 
@@ -475,11 +451,7 @@ class EventObject(object):
         :param name: string 事件名
         :return: bool
         """
-        if PY3:
-            check = isinstance(name, str)
-        else:
-            check = isinstance(name, types.StringTypes)
-        if not check:
+        if not isinstance(name, types.StringTypes):
             raise Exception("事件名称必须为字符串")
         elif not name.islower():
             raise Exception("事件名称必须都是小写字母！")

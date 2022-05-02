@@ -83,6 +83,7 @@ class Sheet(object):
         获取参数值
 
         :param name:  参数名
+        :param component:
         """
 
         if self.type == "pipeline":
@@ -109,6 +110,7 @@ class Sheet(object):
         """
         获取所有Option
 
+        :param component:
         :return: dict name/value
         """
         data = self._data['options']

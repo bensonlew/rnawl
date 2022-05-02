@@ -37,8 +37,8 @@ class Module(Basic):
             "run_id": self.id,
             "path": get_classpath_by_object(self),
             "work_dir": self.work_dir,
-            "start_time": self._start_time if self._start_time else int(time.time()),
-            "end_time": self._end_time if self._end_time else int(time.time()),
+            "start_time": self._start_time,
+            "end_time": self._end_time,
             "tool_num": len(self.children),
             "tools": self._tools_report_data,
             "modules": []

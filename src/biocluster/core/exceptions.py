@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # __author__ = 'guoquan'
 
-# import json
+import json
 
 
 class Error(Exception):
@@ -28,25 +28,9 @@ class CodeError(Exception):
             self.value = str(value)
         else:
             self.value = value
-        if variables:
-            if isinstance(variables, list) or isinstance(variables, tuple):
-                self.variables = tuple([str(i) for i in variables])
-                if self.value.count("%s") != len(self.variables):
-                    if self.value.count("%s") == 1:
-                        self.variables = str(self.variables)
-                    else:
-                        raise Exception("错误参数说明%s和变量%s个数不能对应！" % (self.value, str(self.variables)))
-            else:
-                if self.value.count("%s") > 1:
-                    raise Exception("错误参数说明\"%s\"和变量\"%s\"个数不能对应！" % (self.value, str(self.variables)))
-                else:
-                    self.variables = (str(variables),)
-        else:
-            self.variables = variables
-        if code.startswith(prefix):
-            self._code = code
-        else:
-            self._code = "%s%s" % (prefix, code)
+
+        self.variables = tuple(variables) if isinstance(variables, list) else variables
+        self._code = "%s%s" % (prefix, code)
         self.bind_object = None
         Exception.__init__(self, self.__str__())
 
@@ -87,13 +71,6 @@ class UnknownEventError(Error):
     事件未定义异常，发生此异常时是由于事件尚未定义时触发此事件
     """
 
-    pass
-
-
-class ExitError(Error):
-    """
-    用于主动跟踪程序退出
-    """
     pass
 
 
@@ -186,12 +163,5 @@ class RunningError(CodeError):
 class MaxLengthError(Error):
     """
     参数错误
-    """
-    pass
-
-
-class TransferError(Error):
-    """
-    文件传输失败时触发
     """
     pass

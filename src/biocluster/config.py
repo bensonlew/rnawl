@@ -5,934 +5,403 @@
 
 import ConfigParser
 import socket
-# import random
+import random
 import os
 from .core.singleton import singleton
 # import struct
-# import platform
+import platform
 import re
-# import importlib
-# import web
+import importlib
+import web
 # import subprocess
 from pymongo import MongoClient
-# import subprocess
-# from IPy import IP
+import subprocess
+from IPy import IP
 import boto.s3.connection
-import boto
-# import threading
-import grpc
-from .proto import workflow_guide_pb2_grpc
-from .proto import public_pb2, config_pb2, config_pb2_grpc
-import traceback
-import sys
-import gevent
-import web
 
+web.config.debug = False
+
+
+def get_from_friendly_size(size):
+    pattern = re.compile(r'([\d\.]+)([gmk])', re.I)
+    match = re.match(pattern, size)
+    normal_size = 0
+    if match:
+        unit = match.group(2)
+        if unit.upper() == "G":
+            normal_size = int(match.group(1)) * 1024 * 1024 * 1024
+        elif unit.upper() == "M":
+            normal_size = int(match.group(1)) * 1024 * 1024
+        elif unit.upper() == "K":
+            normal_size = int(match.group(1)) * 1024
+    else:
+        pattern = re.compile(r'([\d\.]+)', re.I)
+        match = re.match(pattern, size)
+        if match:
+            normal_size = int(match.group(1))
+    return normal_size
 
 
 @singleton
 class Config(object):
-
     def __init__(self):
         self.rcf = ConfigParser.RawConfigParser()
-        self.rcf.read(os.path.dirname(os.path.realpath(__file__)) + "/main.conf")
-        self.PROJECT_TYPE = ""
-        self.JOB_PLATFORM = ""
-        self.JOB_QUEUE = ""
-        self.WORK_DIR = self.rcf.get("Command", "work_dir")
+        self.rcf.read(os.path.dirname(os.path.realpath(__file__))+"/main.conf")
+        # basic
+        self.WORK_DIR = self.rcf.get("Basic", "work_dir")
+        # network
+        self._listen_ip = None
+        self._listen_port = None
+        # self.LISTEN_PORT = self.get_listen_port()
+        # tool
+        self.KEEP_ALIVE_TIME = int(self.rcf.get("Tool", "keep_alive_time"))
+        self.MAX_KEEP_ALIVE_TIME = int(self.rcf.get("Tool", "max_keep_alive_time"))
+        self.MAX_FIRE_KAO_TIMES = int(self.rcf.get("Tool", "max_fire_kao_times"))
+        self.MAX_WAIT_TIME = int(self.rcf.get("Tool", "max_wait_time"))
+        self.MAX_FIRE_WTO_TIMES = int(self.rcf.get("Tool", "max_fire_wto_times"))
+        self.RUN_START_TIMEOUT = int(self.rcf.get("Tool", "run_start_timeout"))
+        # log
+        self.LOG_LEVEL = self.rcf.get("Log", "level")
+        # self.LOG_DIR = self.rcf.get("Log", "log_dir")
+        streem_on = self.rcf.get("Log", "stream")
+        self.LOG_STREEM = True if streem_on and streem_on.lower() == "on" else False
+        self.LOG_FORMAT = self.rcf.get("Log", "format")
+        # command
+        # self.STDOUT_DIR = self.rcf.get("Command", "stdout_dir")
         self.SOFTWARE_DIR = self.rcf.get("Command", "software_dir")
-        self._workdir = self.rcf.get("Command", "work_dir")
-        self.wpm_user = self.rcf.get("Command", "user")
-        self.SCRIPT_DIR = ""
+        self.SCRIPT_DIR = self.rcf.get("Command", "script_dir")
         self.PACKAGE_DIR = self.rcf.get("Command", "package_dir")
-        self._init_config_times = 0
-        self.wfm_port = os.getenv("WFM_PORT")
-        self._mongodb_info = {}
+        # record = self.rcf.get("Resource", "record")
+        # self.RECORD_RESOURCE_USE = True if record and record.lower() == "on" else False
+
+        # job
+        self.JOB_PLATFORM = self.rcf.get("Job", "platform")
+        self.MAX_JOB_NUMBER = int(self.rcf.get("Job", 'max_job_number'))
+        self.MAX_CPU_USED = int(self.rcf.get("Job", 'max_cpu_used'))
+        self.MAX_MEMORY_USED = float(self.rcf.get("Job", 'max_memory_used'))
+        self.JOB_MASTER_IP = self.rcf.get(self.JOB_PLATFORM, "master_ip")
+        self.JOB_QUEUE = self.rcf.get(self.JOB_PLATFORM, "queue")
+
+        # db
+        self.DB_TYPE = self.rcf.get("DB", "dbtype")
+        self.DB_HOST = self.rcf.get("DB", "host")
+        self.DB_USER = self.rcf.get("DB", "user")
+        self.DB_PASSWD = self.rcf.get("DB", "passwd")
+        self.DB_NAME = self.rcf.get("DB", "db")
+        self.DB_PORT = self.rcf.get("DB", "port")
+
+        # service mode
+        # self.SERVICE_LOG = self.rcf.get("SERVICE", "log")
+        # self.SERVICE_LOOP = int(self.rcf.get("SERVICE", "loop"))
+        # self.SERVICE_PROCESSES = int(self.rcf.get("SERVICE", "processes"))
+        # self.SERVICE_PID = self.rcf.get("SERVICE", "pid")
+
+        # SSH
+        #self.SSH_DEFAULT_IP = self.rcf.get("SSH", "default_ip")
+        # SSH1
+        #self.SSH1_MODE = self.rcf.get("SSH1", "mode")
+        #self.SSH1_IP_LIST = re.split('\s*,\s*', self.rcf.get("SSH1", "ip_list"))
+
+        # PAUSE
+        self.MAX_PAUSE_TIME = int(self.rcf.get("PAUSE", "max_time"))
+
+        # API_UPDATE
+        self.update_exclude_api = re.split('\s*,\s*', self.rcf.get("API_UPDATE", "exclude_api"))
+        self.UPDATE_MAX_RETRY = int(self.rcf.get("API_UPDATE", "max_retry"))
+        self.UPDATE_RETRY_INTERVAL = int(self.rcf.get("API_UPDATE", "retry_interval"))
+        self.UPDATE_LOG = self.rcf.get("API_UPDATE", "log")
+        # self.UPLOAD_LOG = self.rcf.get("API_UPDATE", "upload_log")
+
+        # Mongo
+        self.MONGO_URI = self.rcf.get("MONGO", "uri")
+        self.MONGO_BIO_URI = self.rcf.get("MONGO", "bio_uri")
+        self._mongo_client = None
+        self.MONGODB = self.rcf.get("MONGO", "mongodb")
+        self._biodb_mongo_client = None
         self._mongo_type_client = {}
-        self._webauth_info = {}
-        self.current_workflow_id = ""
+
+        # mysql
+        self._db_client = None
+
+        # WPM
+        listen_data = re.split(":", self.rcf.get("WPM", "listen"))
+        self.wpm_listen = (listen_data[0], int(listen_data[1]))
+        self.wpm_authkey = self.rcf.get("WPM", "authkey")
+        self.wpm_user = self.rcf.get("WPM", "user")
+        log_listen_data = re.split(":", self.rcf.get("WPM", "logger_listen"))
+        self.wpm_logger_listen = (log_listen_data[0], int(log_listen_data[1]))
+        self.wpm_logger_authkey = self.rcf.get("WPM", "logger_authkey")
+        self.wpm_log_file = self.rcf.get("WPM", "log_file")
+        self.wpm_instant_timeout = int(self.rcf.get("WPM", "instant_timeout"))
+        self.wpm_pid_dir = self.rcf.get("WPM", "pid_dir")
+        self.wpm_servers = re.split('\s*,\s*', self.rcf.get("WPM", "servers"))
+
+        # INTERFACE
+        self.WEB_INTERFACE_DOMAIN = self.rcf.get("INTERFACE", "domain")
+        self.WEB_INTERFACE_CLIENT = self.rcf.get("INTERFACE", "client")
+        self.WEB_INTERFACE_KEY = self.rcf.get("INTERFACE", "key")
+
         self._rgw_conn = {}
-        self._rgw_account = {}
-        self._grpc_times = 0
-        self._project_region_bucket = {}
-        self._path_region_bucket = {}
-        self.current_tool_id = ""
-        self.current_mode = None
-        self.ntm_port = os.getenv("NTM_PORT")
-        self.WFM_INSTANT_TIMEOUT = 600  # 设置即时任务通过grpc请求发起任务运行超时时间
-        self.WFM_SUBMIT_TIMEOUT = 300   # 设置投递任务通过grpc请求发起任务响应超时
-        self.RGW_ENABLE = True  # 是否将文件传输到对象存储上去
-        self.get_workdir_time = 0
-        self.DBVersion = None
-        self.ProjectID = ""
+        rgw_enable = str(self.rcf.get("RGW", "enable"))
+        self.RGW_ENABLE = True if re.match(r"^y", rgw_enable, re.I) else False
 
-        # self.init_config(project_type="", workflow_id="", grpc_port=self.ntm_port)
-
-    def init_config_from_data(self,wsheet,workflow_id):
-        self.PROJECT_TYPE = wsheet.PROJECT_TYPE
-        self.current_workflow_id = workflow_id
-        self.JOB_PLATFORM = wsheet.platform
-        self.JOB_QUEUE = wsheet.defautqueue
-        # self.WORK_DIR = "/mnt/ilustre/users/sanger-dev/bc2/workspace/"
-        self.WORK_DIR = wsheet.workspace
-        # self.SOFTWARE_DIR = response.software_dir
-        self.SCRIPT_DIR = wsheet.scriptdir
-        self.PACKAGE_DIR = wsheet.packagedir
-        if wsheet.wfm_port:
-            self.wfm_port = wsheet.wfm_port
+    def get_wpm_limit(self, server):
+        if self.rcf.has_option("WPM", server + "_limit"):
+            return int(self.rcf.get("WPM", server + "_limit"))
         else:
-            self.wfm_port = 7321
-        self.ntm_port = wsheet.ntm_port if wsheet.ntm_port else 7322
-
-    def init_config(self, project_type, workflow_id, wfm_grpc_port=7321, instant=False, ntm_grpc_port=7322):
-        self._init_config_times += 1
-        self.PROJECT_TYPE = project_type
-        self.current_workflow_id = workflow_id
-        if wfm_grpc_port:
-            self.wfm_port = wfm_grpc_port
-        else:
-            self.wfm_port = 7321
-        self.ntm_port = ntm_grpc_port if ntm_grpc_port else 7322
-        try:
-            pass
-            # with grpc.insecure_channel('localhost:%s' % wfm_grpc_port) as channel:
-            #     stub = workflow_guide_pb2_grpc.WorkflowGuideStub(channel)
-            #     response = stub.GetRunInfo(public_pb2.Workflow(instant=instant, workflow_id=workflow_id,
-            #                                                    process_id=int(os.getpid())))
-            #     self.JOB_PLATFORM = response.platform
-            #     self.JOB_QUEUE = response.defaut_queue
-            #     # self.WORK_DIR = "/mnt/ilustre/users/sanger-dev/bc2/workspace/"
-            #     self.WORK_DIR = response.workspace
-            #     # self.SOFTWARE_DIR = response.software_dir
-            #     self.SCRIPT_DIR = response.script_dir
-            #     self.PACKAGE_DIR = response.package_dir
-        except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            sys.stdout.flush()
-            if self._init_config_times > 6:
-                print("获取配置发生错误超过6次,退出运行: %s" % e)
-                sys.stdout.flush()
-                raise e
-            else:
-                print("获取配置发生错误10秒后重试: %s" % e)
-                sys.stdout.flush()
-                gevent.sleep(10)
-                self.init_config(project_type, workflow_id, wfm_grpc_port, instant, ntm_grpc_port)
-
-    def init_current_tool_id(self, tool_id):
-        self.current_tool_id = tool_id
+            return int(self.rcf.get("WPM", "limit_per_server"))
 
     @property
     def mongo_client(self):
-        # db_version = 0
-        # if self.DBVersion:
-        #     db_version = self.DBVersion
-        # else:
-        #     try:
-        #         data = web.input()
-        #         if hasattr(data, "db_version"):
-        #             db_version = data.db_version
-        #     except:
-        #         pass
-        # try:
-        #     db_version = int(db_version)
-        # except:
-        #     pass
-        # print "config mongo_client dbversion:{}".format(db_version)
-        # mdbclienttype = "{}_{}".format("default", db_version)
-        # mdbinfotype = "{}_{}".format("default", db_version)
-        # self._get_project_db_config(db_version=db_version)
-        # dburi = self._mongodb_info[mdbinfotype]["uri"]
-        # if mdbclienttype not in self._mongo_type_client.keys():
-        #     self._mongo_type_client[mdbclienttype] = MongoClient(dburi, connect=False)
-
-        mdbclienttype = self.get_mongo_client_type()
-
-        return self._mongo_type_client[mdbclienttype]
+        if not self._mongo_client:
+            self._mongo_client = MongoClient(self.MONGO_URI, connect=False)
+        return self._mongo_client
 
     @property
     def biodb_mongo_client(self):
-        # db_version = 0
-        # if self.DBVersion:
-        #     db_version = self.DBVersion
-        # else:
-        #     try:
-        #         data = web.input()
-        #         if hasattr(data, "db_version"):
-        #             print "webinput dbversion:{}".format(data.db_version)
-        #             db_version = data.db_version
-        #     except:
-        #         pass
-        # try:
-        #     db_version = int(db_version)
-        # except:
-        #     pass
-        # print "config biodb_mongo_client dbversion:{}".format(db_version)
-        # mdbclienttype = "{}_ref_{}".format("default", db_version)
-        # mdbinfotype = "{}_{}".format("default", db_version)
-        # self._get_project_db_config(db_version=db_version)
-        # dburi = self._mongodb_info[mdbinfotype]["refuri"]
-        # if mdbclienttype not in self._mongo_type_client.keys():
-        #     self._mongo_type_client[mdbclienttype] = MongoClient(dburi, connect=False)
+        if not self._biodb_mongo_client:
+            self._biodb_mongo_client = MongoClient(self.MONGO_BIO_URI, connect=False)
+        return self._biodb_mongo_client
 
-        mdbclienttype = self.get_mongo_client_type(ref=True)
-
-        return self._mongo_type_client[mdbclienttype]
-
-    def get_mongo_client_type(self, mtype="default", ref=False, db_version=0):
-        # dbversion = 0
-        db_projectsn = ""
-        dydb = 0
-        try:
-            data = web.input()
-            if hasattr(data, "db_version"):
-                db_version = data.db_version
-            if hasattr(data, "project_sn"):
-                db_projectsn = data.db_projectsn
-            if hasattr(data, "dydb"):
-                dydb = data.dydb
-        except:
-            pass
-        if self.DBVersion:
-            db_version = self.DBVersion
-        if dydb == 0:
-            db_projectsn = ""
-        if self.ProjectID !="":
-            db_projectsn = self.ProjectID
-        try:
-            db_version = int(db_version)
-        except:
-            pass
-
-        # mongodb info type 全局变量中存储mongo的数据库信息
-        mdbinfotype= "{}_{}".format(mtype, db_version)
-        if mdbinfotype not in self._mongodb_info.keys():
-            self._get_project_db_config(mtype=mtype,db_version=db_version,project_id=db_projectsn)
-
-        if ref:
-            dburi = self._mongodb_info[mdbinfotype]["refuri"]
-            mdbclienttype = "%s_ref_%s" % (mtype, db_version)
-        else:
-            dburi = self._mongodb_info[mdbinfotype]["uri"]
-            mdbclienttype = "%s_%s" % (mtype, db_version)
-        if mdbclienttype not in self._mongo_type_client.keys():
-            self._mongo_type_client[mdbclienttype] = MongoClient(dburi, connect=False)
-
-        return mdbclienttype
-
-
-    def get_mongo_client(self, mtype="default", ref=False, db_version=0):
-        """
-        mdbinfotype：mongodbname info type  每个项目的参考库与数据库的uri与dbname的信息
-        mdbclienttype: mongodb client type  每个项目的client连接，包含参考库与数据库
-        :param mtype: 项目类型
-        :param ref:  是否为参考库
-        :param db_version: 数据库的版本，默认为0，可以设置1
-        :return:
-        """
-        # if mtype:
-        #     if ref:
-        #         type_key = "%s_ref" % mtype
-        #     else:
-        #         type_key = mtype
-        #     if type_key not in self._mongo_type_client.keys():
-        #         if self.rcf.has_option("MONGO", "%s_uri" % type_key):
-        #             self._mongo_type_client[type_key] = MongoClient(self.rcf.get("MONGO", "%s_uri" % type_key),
-        #                                                             connect=False)
-        #         else:
-        #             if ref:
-        #                 if self.rcf.has_option("MONGO", "%s_uri" % mtype):
-        #                     self._mongo_type_client[type_key] = self.get_mongo_client(mtype=mtype)
-        #                 else:
-        #                     self._mongo_type_client[type_key] = self.biodb_mongo_client
-        #             else:
-        #                 self._mongo_type_client[type_key] = self.mongo_client
-        #     return self._mongo_type_client[type_key]
-        # else:
-        #     if not ref:
-        #         return self.mongo_client
-        #     else:
-        #         return self.biodb_mongo_client
-        # print "DBVersion is:{}".format(self.DBVersion)
-        # if self.DBVersion:
-        #     print "this way"
-        #     db_version = self.DBVersion
-        # else:
-        #     try:
-        #         data = web.input()
-        #         if hasattr(data, "db_version"):
-        #             print "webinput dbversion:{}".format(data.db_version)
-        #             db_version = data.db_version
-        #     except:
-        #         pass
-        # try:
-        #     db_version = int(db_version)
-        # except:
-        #     pass
-        # print "config dbversion:{}".format(db_version)
-
-        # # mongodb info type 全局变量中存储mongo的数据库信息
-        # mdbinfotype= "{}_{}".format(mtype, db_version)
-        # if mdbinfotype not in self._mongodb_info.keys():
-        #     self._get_project_db_config(mtype=mtype,db_version=dbversion,project_id=dbprojectsn)
-
-        # if ref:
-        #     dburi = self._mongodb_info[mdbinfotype]["refuri"]
-        #     mdbclienttype = "%s_ref_%s" % (mtype, db_version)
-        # else:
-        #     dburi = self._mongodb_info[mdbinfotype]["uri"]
-        #     mdbclienttype = "%s_%s" % (mtype, db_version)
-        # if mdbclienttype not in self._mongo_type_client.keys():
-        #     self._mongo_type_client[mdbclienttype] = MongoClient(dburi, connect=False)
-        mdbclienttype = self.get_mongo_client_type(mtype,ref,db_version)
-        return self._mongo_type_client[mdbclienttype]
-
-    def get_mongo_dbname(self, mtype="default", ref=False, db_version=0):
-        """
-        获取数据库的名字
-        :param mtype:
-        :param ref:
-        :param db_version:
-        :return:
-        """
-        # if self.DBVersion:
-        #     db_version = self.DBVersion
-        # else:
-        #     try:
-        #         data = web.input()
-        #         if hasattr(data, "db_version"):
-        #             db_version = data.db_version
-        #     except:
-        #         pass
-        # try:
-        #     db_version = int(db_version)
-        # except:
-        #     pass
-        try:
-            data = web.input()
-            if hasattr(data, "db_version"):
-                db_version = data.db_version
-        except:
-            pass
-        if self.DBVersion:
-            db_version = self.DBVersion
-        try:
-            db_version = int(db_version)
-        except:
-            pass
-        mdbinfotype = "{}_{}".format(mtype, db_version)
-        print("mdbinfotype:%s", mdbinfotype)
-        if mdbinfotype not in self._mongodb_info.keys():
-            # self._get_project_db_config(mtype, db_version)
-            self.get_mongo_client_type(mtype,ref,db_version)
-        if ref:
-            return self._mongodb_info[mdbinfotype]["refdbname"]
-        else:
-            return self._mongodb_info[mdbinfotype]["dbname"]
-
-    def _get_project_db_config(self, mtype="default", db_version=0,project_id=""):
-        self._grpc_times += 1
-        #env_dist = os.environ
-        current_mode = self.current_mode if self.current_mode else os.getenv("current_mode")
-        if current_mode is None:
-            raise Exception("无法确定当前运行模式,此种情况只发生在未经过Workflow或Tool调用，直接import biocluster.config，导致config模块不知道当前处于何种模式运行,"
-                            "如要解决当前问题,请在运行当前命令前使用环境变量传递当前模式: export current_mode=workflow;export WFM_PORT=[portnumber],"
-                            "或export current_mode=tool;export NTM_PORT=[portnumber], portnumber值请查看WPM2生成的workflow json或咨询管理员")
-        if current_mode == "workflow":
-            port = self.wfm_port if self.wfm_port else os.getenv("WFM_PORT")
-        else:
-            port = self.ntm_port if self.ntm_port else os.getenv("NTM_PORT")
-        # if "current_mode" in env_dist.keys() and env_dist["current_mode"] == "tool":
-        #     self.current_mode = "tool"
-        # if self.current_mode == "tool":
-        #     port = self.ntm_port
-        # print ("_get_project_db_config_port:{}".format(port))
-        print("mtype:%s db_version:%s project_id:%s", (mtype, db_version, project_id))
-        try:
-            with grpc.insecure_channel('localhost:%s' % port) as channel:
-                stub = config_pb2_grpc.ConfigServerStub(channel)
-                response = stub.GetMongoDB(config_pb2.DBType(
-                    type=mtype,
-                    version=str(db_version),
-                    projectid = project_id,
-                ))
-                cfg = {
-                    "uri": response.uri,
-                    "dbname": response.dbname,
-                    "refuri": response.refuri,
-                    "refdbname": response.refdbname,
-                }
-                mdbinfotype = "{}_{}".format(mtype, db_version)
-                self._mongodb_info[mdbinfotype] = cfg
-                # print "self._mongodb_info:{}".format(self._mongodb_info)
-                self._grpc_times = 0
-                print("cfg:%s", cfg)
-        except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            sys.stdout.flush()
-            if self._grpc_times > 6:
-                print("获取mongodb配置发生错误超过6次,退出运行: %s" % e)
-                sys.stdout.flush()
-                raise e
-            # elif self._grpc_times > 3:
-            #     print("获取mongodb配置发生错误超过3次,换current_mode为tool重试: %s" % e)
-            #     sys.stdout.flush()
-            #     self.current_mode = "tool"
-            #     gevent.sleep(10)
-            #     self._get_project_db_config(mtype, db_version,project_id)
+    def get_mongo_client(self, mtype=None, ref=False):
+        if mtype:
+            if ref:
+                type_key = "%s_ref" % mtype
             else:
-                print("current_mode:%s port:%s" % (current_mode, port))
-                print("获取mongodb配置发生错误10秒后重试: %s" % e)
-                sys.stdout.flush()
-                gevent.sleep(10)
-                self._get_project_db_config(mtype, db_version,project_id)
-
-    def get_webauth(self, ptype = "tool_lab"):
-        self._get_webauth_config(ptype)
-        return self._webauth_info[ptype]
-
-    def _get_webauth_config(self, ptype="tool_lab"):
-        self._grpc_times += 1
-        # env_dist = os.environ
-        # port = self.wfm_port
-        # if "current_mode" in env_dist.keys() and env_dist["current_mode"] == "tool":
-        #     self.current_mode = "tool"
-        # if self.current_mode == "tool":
-        #     port = self.ntm_port
-        current_mode = self.current_mode if self.current_mode else os.getenv("current_mode")
-        if current_mode is None:
-            raise Exception("无法确定当前运行模式,此种情况只发生在未经过Workflow或Tool调用，直接import biocluster.config，导致config模块不知道当前处于何种模式运行,"
-                            "如要解决当前问题,请在运行当前命令前使用环境变量传递当前模式: export current_mode=workflow;export WFM_PORT=[portnumber],"
-                            "或export current_mode=tool;export NTM_PORT=[portnumber], portnumber值请查看WPM2生成的workflow json或咨询管理员")
-        if current_mode == "workflow":
-            port = self.wfm_port if self.wfm_port else os.getenv("WFM_PORT")
+                type_key = mtype
+            if type_key not in self._mongo_type_client.keys():
+                if self.rcf.has_option("MONGO", "%s_uri" % type_key):
+                    self._mongo_type_client[type_key] = MongoClient(self.rcf.get("MONGO", "%s_uri" % type_key),
+                                                                    connect=False)
+                else:
+                    if ref:
+                        if self.rcf.has_option("MONGO", "%s_uri" % mtype):
+                            self._mongo_type_client[type_key] = self.get_mongo_client(mtype=mtype)
+                        else:
+                            self._mongo_type_client[type_key] = self.biodb_mongo_client
+                    else:
+                        self._mongo_type_client[type_key] = self.mongo_client
+            return self._mongo_type_client[type_key]
         else:
-            port = self.ntm_port if self.ntm_port else os.getenv("NTM_PORT")
-        #print "get_webauth_config_port:{}".format(port)
-        hostname = socket.gethostname()
-        ip = socket.gethostbyname(hostname)
-        # print("获取webauth:hostname %s, ip %s,port %s",hostname,ip,port)
-       # print "获取webauth:hostname {}, ip {},port {}".format(hostname,ip,port)
-        try:
-            with grpc.insecure_channel('localhost:%s' % port) as channel:
-                stub = config_pb2_grpc.ConfigServerStub(channel)
-                response = stub.GetWebAuth(config_pb2.ProjectType(
-                    type=ptype,
-                ))
-                # authkey: 458b97de4c0bb5bf416c8cea208309ed
-                # client: client03
-                # binds_id: 5e8c0a091b1800007c006b1a
-                # interface_id: 1348
-                # env_name: offline
-                cfg = {
-                    "authkey": response.key,
-                    "client": response.client,
-                    "binds_id": response.bindsid,
-                    "env_name": response.envname,
-                    "interface_id":response.interfaceid,
-                    "url":response.url,
-                }
-                self._webauth_info[ptype] = cfg
-                self._grpc_times = 0
-        except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            sys.stdout.flush()
-            if self._grpc_times > 6:
-                print("获取webauth配置发生错误超过6次,退出运行: %s" % e)
-                sys.stdout.flush()
-                raise e
-            # elif self._grpc_times > 3:
-            #     print("获取webauth配置发生错误超过3次,换current_mode为tool重试: %s" % e)
-            #     sys.stdout.flush()
-            #     self.current_mode = "tool"
-            #     gevent.sleep(10)
-            #     self._get_webauth_config(ptype)
+            if not ref:
+                return self.mongo_client
             else:
-                print("获取webauth配置发生错误10秒后重试: %s" % e)
-                sys.stdout.flush()
-                gevent.sleep(10)
-                self._get_webauth_config(ptype)
+                return self.biodb_mongo_client
 
+    def get_mongo_dbname(self, mtype=None, ref=False):
+        if not mtype:
+            return self.MONGODB
+        else:
+            key = "%s_db_name" % mtype
+            if ref:
+                key = "%s_ref_db_name" % mtype
+            return self.rcf.get("MONGO", key)
 
-    def get_rgw_conn(self, region="s3", bucket="sanger", new=False):
-        key = "%s_%s" % (region, bucket)
-        if key not in self._rgw_account.keys():
-            self._grpc_times += 1
-            try:
-                # env_dist = os.environ
-                # port = self.wfm_port
-                # if "current_mode" in env_dist.keys() and env_dist["current_mode"] == "tool":
-                #     self.current_mode = "tool"
-                # if self.current_mode == "tool":
-                #     port = self.ntm_port
-                current_mode = self.current_mode if self.current_mode else os.getenv("current_mode")
-                if current_mode is None:
-                    raise Exception(
-                        "无法确定当前运行模式,此种情况只发生在未经过Workflow或Tool调用，直接import biocluster.config，导致config模块不知道当前处于何种模式运行,"
-                        "如要解决当前问题,请在运行当前命令前使用环境变量传递当前模式: export current_mode=workflow;export WFM_PORT=[portnumber],"
-                        "或export current_mode=tool;export NTM_PORT=[portnumber], portnumber值请查看WPM2生成的workflow json或咨询管理员")
-                if current_mode == "workflow":
-                    port = self.wfm_port if self.wfm_port else os.getenv("WFM_PORT")
-                else:
-                    port = self.ntm_port if self.ntm_port else os.getenv("NTM_PORT")
-                # print "get_rgw_conn_port:{}".format(port)
-                with grpc.insecure_channel('localhost:%s' % port) as channel:
-                    stub = config_pb2_grpc.ConfigServerStub(channel)
-                    response = stub.GetRgwAccount(config_pb2.BucketInfo(
-                        region=region,
-                        bucket=bucket,
-                    ))
-                    self._rgw_account[key] = response
-                    self._grpc_times = 0
-            except Exception as e:
-                exstr = traceback.format_exc()
-                print(exstr)
-                sys.stdout.flush()
-                if self._grpc_times > 6:
-                    print("获取rgw账户发生错误超过6次,退出运行: %s" % e)
-                    sys.stdout.flush()
-                    raise e
-                # if self._grpc_times > 3:
-                #     gevent.sleep(5)
-                #     self.current_mode == "tool"
-                #     print("获取rgw账户发生错误超过3次,使用ntm port:%s重试" % self.ntm_port)
-                #     self.get_rgw_conn(region, bucket)
-                else:
-                    print("获取rgw账户发生错误10秒后重试: %s" % e)
-                    sys.stdout.flush()
-                    gevent.sleep(10)
-                    self.get_rgw_conn(region, bucket)
-        if new:
-            conn = boto.connect_s3(
-                aws_access_key_id=self._rgw_account[key].accesskey,
-                aws_secret_access_key=self._rgw_account[key].secretkey,
-                host=self._rgw_account[key].host,
-                port=self._rgw_account[key].port,
-                is_secure=self._rgw_account[key].issecure,
+    def get_rgw_conn(self, region="s3", bucket="sanger"):
+
+        client_list = re.split(r"\s*,\s*", self.rcf.get("RGW", "clients"))
+        if self.rcf.has_option("RGW", "%s_%s_mapping" % (region, bucket)):
+            client = self.rcf.get("RGW", "%s_%s_mapping" % (region, bucket))
+        else:
+            client = self.rcf.get("RGW", "%s_default_mapping" % region)
+        if client not in client_list:
+            raise Exception("请先定义client %s" % client)
+        if client not in self._rgw_conn.keys():
+            self._rgw_conn[client] = boto.connect_s3(
+                aws_access_key_id=self.rcf.get("RGW", "%s_access_key" % client),
+                aws_secret_access_key=self.rcf.get("RGW", "%s_secret_key" % client),
+                host=self.rcf.get("RGW", "%s_host" % client),
+                port=int(self.rcf.get("RGW", "%s_port" % client)),
+                is_secure=False if re.match(r"False", self.rcf.get("RGW", "%s_is_secure" % client), re.I) else True,
                 # uncomment if you are not using ssl
                 calling_format=boto.s3.connection.OrdinaryCallingFormat(),
             )
-            self._rgw_conn[key] = conn
-            return conn
-        else:
-            if key not in self._rgw_conn.keys():
-                self._rgw_conn[key] = boto.connect_s3(
-                    aws_access_key_id=self._rgw_account[key].accesskey,
-                    aws_secret_access_key=self._rgw_account[key].secretkey,
-                    host=self._rgw_account[key].host,
-                    port=self._rgw_account[key].port,
-                    is_secure=self._rgw_account[key].issecure,
-                    # uncomment if you are not using ssl
-                    calling_format=boto.s3.connection.OrdinaryCallingFormat(),
-                )
-            return self._rgw_conn[key]
+        return self._rgw_conn[client]
 
-    # def get_rgw_download_chunk_size(self):
-    #     size = self.rcf.get("RGW", "download_chunk_size")
-    #     return get_from_friendly_size(size)
-    #
-    # def get_http_download_chunk_size(self):
-    #     size = self.rcf.get("HTTP", "download_chunk_size")
-    #     return get_from_friendly_size(size)
-    #
-    # def get_rgw_upload_chunk_size(self):
-    #     size = self.rcf.get("RGW", "upload_chunk_size")
-    #     return get_from_friendly_size(size)
-    #
-    # def get_rgw_min_size_to_split(self):
-    #     size = self.rcf.get("RGW", "min_size_to_split")
-    #     return get_from_friendly_size(size)
-    #
-    # def get_http_min_size_to_split(self):
-    #     size = self.rcf.get("HTTP", "min_size_to_split")
-    #     return get_from_friendly_size(size)
-    #
-    # def get_rgw_max_threads(self):
-    #     return int(self.rcf.get("RGW", "max_threads"))
+    def get_rgw_download_chunk_size(self):
+        size = self.rcf.get("RGW", "download_chunk_size")
+        return get_from_friendly_size(size)
+
+    def get_rgw_upload_chunk_size(self):
+        size = self.rcf.get("RGW", "upload_chunk_size")
+        return get_from_friendly_size(size)
+
+    def get_rgw_min_size_to_split(self):
+        size = self.rcf.get("RGW", "min_size_to_split")
+        return get_from_friendly_size(size)
+
+    def get_rgw_max_threads(self):
+        return int(self.rcf.get("RGW", "max_threads"))
 
     def get_project_region_bucket(self, project_type="default"):
-        # if self.rcf.has_option("RGW", "%s_bucket" % project_type):
-        #     return self.rcf.get("RGW", "%s_bucket" % project_type)
-        # else:
-        #     return self.rcf.get("RGW", "default_bucket")
-        if project_type in self._project_region_bucket.keys():
-            return self._project_region_bucket[project_type]
-        self._grpc_times += 1
-        try:
-            # env_dist = os.environ
-            # port = self.wfm_port
-            # if "current_mode" in env_dist.keys() and env_dist["current_mode"] == "tool":
-            #     self.current_mode = "tool"
-            # if self.current_mode == "tool":
-            #     port = self.ntm_port
-            current_mode = self.current_mode if self.current_mode else os.getenv("current_mode")
-            if current_mode is None:
-                raise Exception(
-                    "无法确定当前运行模式,此种情况只发生在未经过Workflow或Tool调用，直接import biocluster.config，导致config模块不知道当前处于何种模式运行,"
-                    "如要解决当前问题,请在运行当前命令前使用环境变量传递当前模式: export current_mode=workflow;export WFM_PORT=[portnumber],"
-                    "或export current_mode=tool;export NTM_PORT=[portnumber], portnumber值请查看WPM2生成的workflow json或咨询管理员")
-            if current_mode == "workflow":
-                port = self.wfm_port if self.wfm_port else os.getenv("WFM_PORT")
-            else:
-                port = self.ntm_port if self.ntm_port else os.getenv("NTM_PORT")
-           # print "get_project_region_bucket_port:{}".format(port)
-            with grpc.insecure_channel('localhost:%s' % port) as channel:
-                stub = config_pb2_grpc.ConfigServerStub(channel)
-                response = stub.GetProjectBucket(config_pb2.ProjectType(
-                    type=project_type,
-                ))
-                self._project_region_bucket[project_type] = response.url
-                self._grpc_times = 0
-        except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            sys.stdout.flush()
-            if self._grpc_times > 6:
-                print("获取project bucket配置发生错误超过3次,退出运行: %s" % e)
-                sys.stdout.flush()
-                raise e
-            # elif self._grpc_times > 3:
-            #     print("获取project bucket配置发生错误超过3次,换current_mode为tool重试: %s" % e)
-            #     sys.stdout.flush()
-            #     self.current_mode = "tool"
-            #     gevent.sleep(5)
-            #     self.get_project_region_bucket(project_type)
-            else:
-                print("获取project bucket配置发生错误10秒后重试: %s" % e)
-                sys.stdout.flush()
-                gevent.sleep(10)
-                self.get_project_region_bucket(project_type)
-        return self._project_region_bucket[project_type]
+        if self.rcf.has_option("RGW", "%s_bucket" % project_type):
+            return self.rcf.get("RGW", "%s_bucket" % project_type)
+        else:
+            return self.rcf.get("RGW", "default_bucket")
 
     def get_bucket_from_path(self, path):
-        # for k, v in self.rcf.items("PROJECT_MODULE"):
-        #     if v:
-        #         p_list = re.split(r'\s*\|\s*', v)
-        #         for p in p_list:
-        #             m = re.match(r"^regexp\((.+)\)$", p)
-        #             if m:
-        #                 exp = m.group(1)
-        #                 m1 = re.match(exp, path)
-        #                 if m1:
-        #                     return self.get_project_region_bucket(k)
-        #             else:
-        #                 if p == path:
-        #                     return self.get_project_region_bucket(k)
-        # return self.get_project_region_bucket()
-        if path in self._path_region_bucket.keys():
-            return self._path_region_bucket[path]
-        self._grpc_times += 1
+        for k, v in self.rcf.items("PROJECT_MODULE"):
+            if v:
+                p_list = re.split('\s*|\s*', v)
+                for p in p_list:
+                    m = re.match(r"^regexp\((.+)\)$", p)
+                    if m:
+                        exp = m.group(1)
+                        m1 = re.match(exp, path)
+                        if m1:
+                            return self.get_project_region_bucket(k)
+                    else:
+                        if p == path:
+                            return self.get_project_region_bucket(k)
+        return self.get_project_region_bucket()
+
+    @property
+    def LISTEN_IP(self):
+        if self._listen_ip is None:
+            self._listen_ip = self.get_listen_ip()
+        return self._listen_ip
+
+    def get_listen_ip(self):
+        """
+        获取配置文件中IP列表与本机匹配的IP作为本机监听地址
+        """
+        # def getip(ethname):
+        #     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #     fcn = importlib.import_module("fcntl")
+        #     return socket.inet_ntoa(fcn.ioctl(s.fileno(), 0X8915, struct.pack("256s", ethname[:15]))[20:24])
+        # set_ipl_ist = self.rcf.get("Network", "ip_list")
+        ip_ranges = self.rcf.get("Network", "ip_range")
+        range_list = re.split('\s*,\s*', ip_ranges)
+        ip_range_lists = []
+        for rg in range_list:
+            ip_range_lists.append(IP(rg))
+        if 'Windows' in platform.system():
+            local_ip_list = socket.gethostbyname_ex(socket.gethostname())
+            for lip in local_ip_list[2]:
+                for sip in ip_range_lists:
+                    if lip in sip:
+                        return lip
+        if platform.system() == 'Linux' or platform.system() == 'Darwin':
+            # return getip("eth1")
+            ipstr = '([0-9]{1,3}\.){3}[0-9]{1,3}'
+            ipconfig_process = subprocess.Popen("/sbin/ifconfig", stdout=subprocess.PIPE)
+            output = ipconfig_process.stdout.read()
+            ip_pattern = re.compile('(inet %s)' % ipstr)
+            if platform.system() == "Linux":
+                ip_pattern = re.compile('(inet addr:%s)' % ipstr)
+            pattern = re.compile(ipstr)
+            for ipaddr in re.finditer(ip_pattern, str(output)):
+                ip = pattern.search(ipaddr.group())
+                # print ip.group()
+                for sip in ip_range_lists:
+                    if ip.group() in sip:
+                        return ip.group()
+        raise Exception("内网Network网段设置错误,没有找到IP属于网段%s!" % ip_ranges)
+
+    @property
+    def LISTEN_PORT(self):
+        if self._listen_port:
+            return self._listen_port
+        else:
+            return self.get_listen_port()
+
+    def get_listen_port(self):
+        # writer = 'yuguo'
+        """
+        获取配置文件中start port，end_port ,
+        在其之间随机生成一个端口，返回一个未被占用的端口
+        """
+        start_port = self.rcf.get("Network", "start_port")
+        end_port = self.rcf.get("Network", "end_port")
+        ip = self.LISTEN_IP
+        lpt = random.randint(int(start_port), int(end_port)+1)
+        # nm = nmap.PortScanner()
+        # while 1:
+        #     x = random.randint(int(start_port), int(end_port)+1)
+        #     # 使用nmap检测端口状态
+        #     nm.scan(ip, str(x))
+        #     s = nm[ip]['tcp'][x]['state']
+        #     if s == 'closed':
+        #         return x
+        #         break
+        # while 1:
+        #     try:
+        #         ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        #         ss.connect((ip, int(lpt)))
+        #         ss.shutdown(2)
+        #         # lpt is opened
+        #         ss.close()
+        #     except:
+        #         # lpt is down
+        #         return lpt
+        #         break
+
         try:
-            # env_dist = os.environ
-            # if "current_mode" in env_dist.keys() and env_dist["current_mode"] == "tool":
-            #     self.current_mode = "tool"
-            # if self.current_mode == "tool":
-            #     port = self.ntm_port
-            # else:
-            #     port = self.wfm_port
-            current_mode = self.current_mode if self.current_mode else os.getenv("current_mode")
-            if current_mode is None:
-                raise Exception(
-                    "无法确定当前运行模式,此种情况只发生在未经过Workflow或Tool调用，直接import biocluster.config，导致config模块不知道当前处于何种模式运行,"
-                    "如要解决当前问题,请在运行当前命令前使用环境变量传递当前模式: export current_mode=workflow;export WFM_PORT=[portnumber],"
-                    "或export current_mode=tool;export NTM_PORT=[portnumber], portnumber值请查看WPM2生成的workflow json或咨询管理员")
-            if current_mode == "workflow":
-                port = self.wfm_port if self.wfm_port else os.getenv("WFM_PORT")
-            else:
-                port = self.ntm_port if self.ntm_port else os.getenv("NTM_PORT")
-            with grpc.insecure_channel('localhost:%s' % port) as channel:
-                stub = config_pb2_grpc.ConfigServerStub(channel)
-                response = stub.GetBucketFromPath(config_pb2.Path(
-                    path=path,
-                ))
-                #print ("url:{}".format(response))
-                self._path_region_bucket[path] = response.url
-                self._grpc_times = 0
-        except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            sys.stdout.flush()
-            if self._grpc_times > 6:
-                print("获取path bucket配置发生错误超过3次,退出运行: %s" % e)
-                sys.stdout.flush()
-                raise e
-            else:
-                print("获取path bucket配置发生错误10秒后重试: %s" % e)
-                sys.stdout.flush()
-                gevent.sleep(10)
-                self.get_bucket_from_path(path)
-        return self._path_region_bucket[path]
+            ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            ss.connect((ip, int(lpt)))
+            ss.shutdown(2)
+            ss.close()
+        except socket.error:
+            return lpt
+        else:
+            return self.get_listen_port()
 
-    # @property
-    # def LISTEN_IP(self):
-    #     if self._listen_ip is None:
-    #         self._listen_ip = self.get_listen_ip()
-    #     return self._listen_ip
-    #
-    # def get_listen_ip(self):
-    #     """
-    #     获取配置文件中IP列表与本机匹配的IP作为本机监听地址
-    #     """
-    #     # def getip(ethname):
-    #     #     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    #     #     fcn = importlib.import_module("fcntl")
-    #     #     return socket.inet_ntoa(fcn.ioctl(s.fileno(), 0X8915, struct.pack("256s", ethname[:15]))[20:24])
-    #     # set_ipl_ist = self.rcf.get("Network", "ip_list")
-    #     ip_ranges = self.rcf.get("Network", "ip_range")
-    #     range_list = re.split('\s*,\s*', ip_ranges)
-    #     ip_range_lists = []
-    #     for rg in range_list:
-    #         ip_range_lists.append(IP(rg))
-    #     if 'Windows' in platform.system():
-    #         local_ip_list = socket.gethostbyname_ex(socket.gethostname())
-    #         for lip in local_ip_list[2]:
-    #             for sip in ip_range_lists:
-    #                 if lip in sip:
-    #                     return lip
-    #     if platform.system() == 'Linux' or platform.system() == 'Darwin':
-    #         # return getip("eth1")
-    #         ipstr = '([0-9]{1,3}\.){3}[0-9]{1,3}'
-    #         ipconfig_process = subprocess.Popen("/sbin/ifconfig", stdout=subprocess.PIPE)
-    #         output = ipconfig_process.stdout.read()
-    #         if platform.linux_distribution()[1].startswith("7."):
-    #             ip_pattern = re.compile('(inet %s)' % ipstr)
-    #         else:
-    #         # if platform.system() == "Linux":
-    #             ip_pattern = re.compile('(inet addr:%s)' % ipstr)
-    #         pattern = re.compile(ipstr)
-    #         for ipaddr in re.finditer(ip_pattern, str(output)):
-    #             ip = pattern.search(ipaddr.group())
-    #             # print ip.group()
-    #             for sip in ip_range_lists:
-    #                 if ip.group() in sip:
-    #                     return ip.group()
-    #     raise Exception("内网Network网段设置错误,没有找到IP属于网段%s!" % ip_ranges)
-    #
-    # @property
-    # def LISTEN_PORT(self):
-    #     if self._listen_port:
-    #         return self._listen_port
-    #     else:
-    #         return self.get_listen_port()
+    def get_db(self):
+        if not self._db_client:
+            if self.DB_TYPE == "mysql":
+                # self._db_client = web.database(dbn=self.DB_TYPE, host=self.DB_HOST,
+                # db=self.DB_NAME, user=self.DB_USER, passwd=self.DB_PASSWD, port=int(self.DB_PORT))
+                import MySQLdb
+                self._db_client = MySQLdb.connect(host=self.DB_HOST, user=self.DB_USER, passwd=self.DB_PASSWD,
+                                                  db=self.DB_NAME, port=int(self.DB_PORT))
+        return self._db_client
 
-    # def get_listen_port(self):
-    #     # writer = 'yuguo'
-    #     """
-    #     获取配置文件中start port，end_port ,
-    #     在其之间随机生成一个端口，返回一个未被占用的端口
-    #     """
-    #     start_port = self.rcf.get("Network", "start_port")
-    #     end_port = self.rcf.get("Network", "end_port")
-    #     ip = self.LISTEN_IP
-    #     lpt = random.randint(int(start_port), int(end_port)+1)
-    #     # nm = nmap.PortScanner()
-    #     # while 1:
-    #     #     x = random.randint(int(start_port), int(end_port)+1)
-    #     #     # 使用nmap检测端口状态
-    #     #     nm.scan(ip, str(x))
-    #     #     s = nm[ip]['tcp'][x]['state']
-    #     #     if s == 'closed':
-    #     #         return x
-    #     #         break
-    #     # while 1:
-    #     #     try:
-    #     #         ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    #     #         ss.connect((ip, int(lpt)))
-    #     #         ss.shutdown(2)
-    #     #         # lpt is opened
-    #     #         ss.close()
-    #     #     except:
-    #     #         # lpt is down
-    #     #         return lpt
-    #     #         break
-    #
-    #     try:
-    #         ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    #         ss.connect((ip, int(lpt)))
-    #         ss.shutdown(2)
-    #         ss.close()
-    #     except socket.error:
-    #         return lpt
-    #     else:
-    #         return self.get_listen_port()
-
-    # def get_db(self):
-    #     if not self._db_client:
-    #         if self.DB_TYPE == "mysql":
-    #             # self._db_client = web.database(dbn=self.DB_TYPE, host=self.DB_HOST,
-    #             # db=self.DB_NAME, user=self.DB_USER, passwd=self.DB_PASSWD, port=int(self.DB_PORT))
-    #             import MySQLdb
-    #             self._db_client = MySQLdb.connect(host=self.DB_HOST, user=self.DB_USER, passwd=self.DB_PASSWD,
-    #                                               db=self.DB_NAME, port=int(self.DB_PORT))
-    #     return self._db_client
-    #
-
-    # @staticmethod
     def get_netdata_config(self, type_name):
-        #print ("work_dir:%s" % self.WORK_DIR)
-        # type_list = re.split(r"\s*,\s*", self.rcf.get("NETDATA", "types"))
-        # if type_name not in type_list:
-        #     raise Exception("Unkown netdata %s" % type_name)
-        # options = self.rcf.options("NETDATA")
-        # type_dict = {}
-        # for opt in options:
-        #     if re.match("^" + type_name, opt):
-        #         type_dict[opt] = self.rcf.get("NETDATA", opt)
-        # return type_dict
-        libs = {
-            "sanger_type": "httpcache",
-            "sanger_path": "http://bcl.i-sanger.com/data/",
-
-            "tsanger_type": "httpcache",
-            "tsanger_path": "http://bcl.tsanger.com/data/",
-
-            "tsg_type": "httpcache",
-            "tsg_path": "http://bcl.tsanger.com/data/",
-
-            "i-sanger_type": "httpcache",
-            "i-sanger_path": "http://bcl.i-sanger.com/data/",
-
-            "s3_type": "s3cache",
-            "s3_cache_dir": os.path.join(self.WORK_DIR, "s3cache"),
-
-            "http_type": "httpcache",
-            "http_cache_dir": os.path.join(self.WORK_DIR, "httpcache"),
-            # "http_cache_dir": "/mnt/lustre/users/sanger/workspace/httpcache",
-        }
+        type_list = re.split(r"\s*,\s*", self.rcf.get("NETDATA", "types"))
+        if type_name not in type_list:
+            raise Exception("Unkown netdata %s" % type_name)
+        options = self.rcf.options("NETDATA")
         type_dict = {}
-        for opt in libs.keys():
+        for opt in options:
             if re.match("^" + type_name, opt):
-                type_dict[opt] = libs[opt]
+                type_dict[opt] = self.rcf.get("NETDATA", opt)
         return type_dict
 
-    @staticmethod
-    def get_netdata_lib(type_name):
-        libs = {
-            "sanger": "httpcache",
-            "tsanger": "httpcache",
-            "tsg": "httpcache",
-            "i-sanger": "httpcache",
-            "s3": "s3cache",
-            "http": "httpcache",
-            "filelist": "filelistcache",
-            "fileapi": "fileapicache"
-        }
-        if type_name in libs.keys():
-            return libs[type_name]
+    def get_netdata_lib(self, type_name):
+        if type_name == "http":
+            return "http"
+        type_list = re.split(r"\s*,\s*", self.rcf.get("NETDATA", "types"))
+        if type_name not in type_list:
+            raise Exception("Unkown netdata %s" % type_name)
+        return self.rcf.get("NETDATA", "%s_type" % type_name)
 
-    # def get_api_type(self, client):
-    #     if self.rcf.has_option("API", client):
-    #         return self.rcf.get("API", client)
-    #     else:
-    #         return None
     def get_api_type(self, client):
-        api_dict = {"client01": "sanger", "client02": "split_data", "client03": "tsanger"}
-        if client in api_dict.keys():
-            return api_dict[client]
+        if self.rcf.has_option("API", client):
+            return self.rcf.get("API", client)
         else:
             return None
 
-    # def get_use_api_clients(self):
-    #     return self.rcf.options("API")
-    #
-    # @property
-    # def UPDATE_EXCLUDE_API(self):
-    #     if self._update_exclude_api is not None:
-    #         return self._update_exclude_api
-    #     if self.rcf.has_option("API_UPDATE", "exclude_api"):
-    #         exclude_api = self.rcf.get("API_UPDATE", "exclude_api")
-    #         if exclude_api.strip() != "":
-    #             self._update_exclude_api = re.split(r"\s*,\s*", exclude_api)
-    #             return self._update_exclude_api
-    #         else:
-    #             self._update_exclude_api = []
-    #             return self._update_exclude_api
-    #     else:
-    #         self._update_exclude_api = []
-    #         return self._update_exclude_api
-    #
-    # def __del__(self):
-    #     if self._mongo_client:
-    #         self.mongo_client.close()
-    #     if self._biodb_mongo_client:
-    #         self._biodb_mongo_client.close()
-    #
+    def get_use_api_clients(self):
+        return self.rcf.options("API")
 
-    def get_file_type(self, file_path):
-        type_name = "local"
-        m = re.match(r"^http://.*|^https://.*", file_path)
-        if m:
-            type_name = "http"
-        else:
-            m1 = re.match(r"^([\w\-]+)://.*", file_path)
-            if m1:
-                type_name = "s3"
+    @property
+    def UPDATE_EXCLUDE_API(self):
+        if self._update_exclude_api is not None:
+            return self._update_exclude_api
+        if self.rcf.has_option("API_UPDATE", "exclude_api"):
+            exclude_api = self.rcf.get("API_UPDATE", "exclude_api")
+            if exclude_api.strip() != "":
+                self._update_exclude_api = re.split(r"\s*,\s*", exclude_api)
+                return self._update_exclude_api
             else:
-                m2 = re.match(r"^([\w\-]+):/*(.*)$", file_path)
-                if m2:
-                    type_name = self.get_netdata_lib(m2.group(1))
-                    if type_name == "httpcache":
-                        type_name = "http"
-                else:
-                    for k, v in self.get_convert_list().items():
-                        if file_path.startswith(k):
-                            type_name = "http"
-        return type_name
-
-    @staticmethod
-    def get_convert_list():
-        # convert_list = re.split(r"\s*\|+\s*", self.rcf.get("HTTP", "path_to_convert"))
-        convert_list = {
-            "/mnt/ilustre/data/": "http://bcl.i-sanger.com/data/",
-            "/mnt/ilustre/tsanger-data/": "http://bcl.tsanger.com/data/",
-        }
-        # for c in convert_list:
-        #     m = re.match(r"^(.*)\((.*)\)$", c)
-        #     if m:
-        #         prefix = m.group(1)
-        #         to_prefix = m.group(2)
-        #         self._http_convert_list[prefix] = to_prefix
-        return convert_list
-
-    def convert_path_to_http(self, path):
-        m = re.match(r"^http://.*|^https://.*", path)
-        if m:
-            return path
+                self._update_exclude_api = []
+                return self._update_exclude_api
         else:
-            m1 = re.match(r"^([\w\-]+):/?(.*)$", path)
-            if m1:
-                head = m1.group(1)
-                key = m1.group(2)
-                return os.path.join(self.get_netdata_config(head)["%s_path" % head], key)
-            else:
-                for k, v in self.get_convert_list().items():
-                    if path.startswith(k):
-                        return path.replace(k, v)
-                return path
+            self._update_exclude_api = []
+            return self._update_exclude_api
 
-    def convert_real_path(self, path):
-        type_name = self.get_file_type(path)
-        if type_name == "s3" or type_name == "local":
-            return path
-        elif type_name == "http":
-            return self.convert_path_to_http(path)
-        else:
-            m = re.match(r"^([\w\-]+):/*(.*)$", self._remote_path)
-            if m:
-                file_type = m.group(1)
-                file_path = m.group(2)
-                return os.path.join(self.get_netdata_config(file_type)["%s_path" % file_type], file_path)
-        return path
-
-    def get_work_dir(self):
-        """
-        该函数是rna那边要用的
-        这部分是在接口中调用，因为接口中调用这一步的时候，还没有初始化init——config，所以这单独处理
-        :param :
-        :return:
-        """
-        # self.init_config() // 这里后续需要更换一个方法获取新的路径 byyuguo 20210615
-        return self._workdir
+    def __del__(self):
+        if self._mongo_client:
+            self.mongo_client.close()
+        if self._biodb_mongo_client:
+            self._biodb_mongo_client.close()

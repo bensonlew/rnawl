@@ -5,7 +5,6 @@ import gevent
 from .singleton import singleton
 import traceback
 import sys
-from .exceptions import CodeError
 
 
 @singleton
@@ -32,12 +31,10 @@ class Watcher(object):
                 # print "start watcher %s" % os.getpid()
                 try:
                     r = func()
-                except CodeError as e:
-                    raise e
-                except Exception as e:
-                    ex_str = traceback.format_exc()
-                    print("执行定时任务出错，即将重试...")
-                    print(ex_str, e)
+                except Exception, e:
+                    exstr = traceback.format_exc()
+                    print "执行定时任务出错，即将重试..."
+                    print exstr, e
                     sys.stdout.flush()
                     sys.stderr.flush()
                 else:

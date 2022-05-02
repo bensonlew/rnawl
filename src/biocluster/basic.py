@@ -14,19 +14,13 @@ import datetime
 import json
 # import urllib
 from biocluster.api.database.base import ApiManager
-from biocluster.core.function import filter_error_info, link, CJsonEncoder
+from biocluster.core.function import filter_error_info, link
 from .wsheet import Sheet
 import random
 from .batch import Batch
 import glob
 import shutil
 from .core.exceptions import RunningError, CodeError, OptionError, FileError
-import traceback
-import sys
-import grpc
-from .proto import workflow_guide_pb2, workflow_guide_pb2_grpc
-
-PY3 = sys.version_info[0] == 3
 
 
 class Rely(object):
@@ -46,7 +40,6 @@ class Rely(object):
                     raise Exception("依赖对象不正确!")
                 else:
                     self._relys.append(r)
-            self.sem = BoundedSemaphore(1)
             # self.add_rely(*rely)
 
     @property
@@ -82,7 +75,7 @@ class Rely(object):
 
         :return: bool
         """
-        with self.sem:
+        with Rely.sem:
             is_end = True
             if self._relys:
                 for r in self._relys:
@@ -258,11 +251,8 @@ class Basic(EventObject):
         :param value: 当value==None时，获取参数值 当value!=None时，设置对应的参数值
         :return: 参数对应的值
         """
-        # print("name {} value {} options {}".format(name, value, self._options))
         if name not in self._options.keys():
-            # raise Exception("参数%s不存在，请先添加参数" % name)
-            self.logger.warning("参数%s不存在，请确认是否需要先添加参数，pass" % name)
-            return
+            raise Exception("参数%s不存在，请先添加参数" % name)
         if value is None:
             return self._options[name].value
         else:
@@ -339,8 +329,6 @@ class Basic(EventObject):
             if re.search((b + "$"), class_name):
                 # return re.sub((b + "$"), '', class_name).lower()
                 return re.sub((b + "$"), '', class_name)
-        print("class_name {}".format(class_name))
-
         return class_name
 
     def __get_full_name(self):
@@ -356,7 +344,6 @@ class Basic(EventObject):
         """
         对于同一模块的子模块中多个同类型模块编号
         """
-        print("name {}".format(self.name))
         identifier = self._name
         count = 0
         if self._parent and isinstance(self._parent, Basic):
@@ -367,7 +354,6 @@ class Basic(EventObject):
                 identifier = "%s.%s" % (self._parent.id, identifier)
         if count > 0:
             identifier += str(count)
-        print("identifier {}".format(identifier))
         return identifier
 
     def add_child(self, *child):
@@ -394,8 +380,6 @@ class Basic(EventObject):
             return self._logger
         else:
             workflow = self.get_workflow()
-            print(self)
-            print("id {}".format(self.id))
             self._logger = Wlog(workflow).get_logger(self._full_name + "(" + self.id + ")")
             return self._logger
 
@@ -444,7 +428,7 @@ class Basic(EventObject):
         """
         if (child not in self.children) and (child not in self._batch_list):
             raise Exception("%s不是%s的子对象或Batch对象!" % (child.name, self.name))
-        child.set_end()
+        child.stop_listener()
         # with self.sem:
         self.__check_relys()
 
@@ -481,7 +465,7 @@ class Basic(EventObject):
         self.set_end()
         unfinished = []
         for c in self.children:
-            if c.is_start and (not c.is_end):
+            if not c.is_end:
                 unfinished.append(c.id)
         if len(unfinished) > 0:
             self.logger.warning("*************************************************************************************"
@@ -527,10 +511,9 @@ class Basic(EventObject):
                     if self.events[name].is_start:
                         raise Exception("rely条件已经被触发，无法再次绑定事件!")
                     else:
+                        self.events[name].stop()
                         self.on(name, func, data)
-                        if self.is_start:
-                            self.events[name].stop()
-                            self.events[name].restart()
+                        self.events[name].restart()
                     return
 
             rl = Rely(*rely_list)
@@ -546,14 +529,6 @@ class Basic(EventObject):
         """
         开始运行
         """
-        json.dumps({
-            "type": "module",
-            "_full_name": self.fullname,
-            "name": self.fullname,
-            "options": {}
-        },
-        self.fullname + self.id  + ".json",
-        indent=4)
         self.start_listener()
         paused = False
         workflow = self.get_workflow()
@@ -585,7 +560,6 @@ class Basic(EventObject):
         :param dir_path: 相对或绝对路径
         :return: UploadDir对象
         """
-        self.logger.info("output_dir:{}".format(dir_path))
         if not os.path.isdir(dir_path):
             raise Exception("上传路径%s必须目录" % dir_path)
         rel_path = os.path.relpath(dir_path, self.work_dir)
@@ -723,11 +697,6 @@ class Basic(EventObject):
         try:
             self.check_options()
         except Exception as e:
-            print("以下为调试信息，用于跟踪参数检查未通过的原因,不代表此处一定发生了错误!")
-            exstr = traceback.format_exc()
-            print(exstr)
-            print(e)
-            sys.stdout.flush()
             if isinstance(e, OptionError) or isinstance(e, FileError):
                 e.bind_object = self
                 self.set_error(e)
@@ -760,22 +729,20 @@ class Step(object):
 
     @property
     def info(self):
-        if isinstance(self._info, dict) and "error_type" in self._info.keys():
-            self._info["info"] = filter_error_info(str(self._info["info"]))
-            if "variables" in self._info.keys() and self._info["variables"]:
-                v = self._info["variables"]
-                if isinstance(v, list) or isinstance(v, tuple):
-                    self._info["variables"] = [filter_error_info(x) for x in v]
-            return self._info
+        if self.stats in ["terminated", "failed"]:
+            if isinstance(self._info, dict) and "error_type" in self._info.keys():
+                return self._info
+            else:
+                return {"error_type": "running", "code": "R001"}
         else:
-            return {"error_type": "running", "code": "R001"}
+            return self._info
 
     @property
     def desc(self):
         if isinstance(self._info, dict) and "error_type" in self._info.keys() and "info" in self._info.keys():
-            return filter_error_info(str(self._info["info"]))
+            return self._info["info"]
         else:
-            return filter_error_info(str(self._info))
+            return filter_error_info(self._info)
 
     @property
     def name(self):
@@ -825,8 +792,6 @@ class Step(object):
 
         :return:
         """
-        if not self._start_time:
-            self._start_time = datetime.datetime.now()
         self._info = info
         self._stats = "finish"
         self._has_state_change = True
@@ -850,8 +815,6 @@ class Step(object):
 
         :return:
         """
-        if not self._start_time:
-            self._start_time = datetime.datetime.now()
         if self._end_time:
             return (self._end_time - self._start_time).seconds
         else:
@@ -870,9 +833,6 @@ class StepMain(Step):
         self._info = ""
         self._api_data = {}
         self._steps_count = 0
-        self._send_rpc_times = 0
-        self.sem = BoundedSemaphore(1)
-        self.last_index=0
 
     def __getattr__(self, name):
         """
@@ -1011,21 +971,8 @@ class StepMain(Step):
         if workflow.sheet.interaction and self.bind_obj.sheet.output:
             index = self.bind_obj.sheet.output.find("interaction_results")
             if index > 0:
-                path = self.bind_obj.sheet.output[0:index]
-                m = re.match(r"^([\w\-]+)://(.*)$", path)
-                if m:
-                    dir_list.append({"path": m.group(2) + "interaction_results", "size": "",
-                                     "description": "交互分析结果目录", "format": "", "code": "D002",
-                                     "region": m.group(1)})
-                else:
-                    m1 = re.match(r"^\w+:(.*)$", path)
-                    if m1:
-                        dir_list.append({"path": m1.group(1) + "interaction_results", "size": "",
-                                         "description": "交互分析结果目录", "format": "", "code": "D002"})
-                    else:
-                        dir_list.append({"path": path + "interaction_results", "size": "",
-                                         "description": "交互分析结果目录", "format": "", "code": "D002"})
-
+                dir_list.append({"path": self.bind_obj.sheet.output[0:index] + "interaction_results", "size": "",
+                                 "description": "交互分析结果目录", "format": "", "code": "D002"})
         for up in self.bind_obj.upload_dir:
             for ifile in up.file_list:
                 if ifile["type"] == "file":
@@ -1043,7 +990,7 @@ class StepMain(Step):
                     file_list.append(tmp_dict)
                 elif ifile["type"] == "dir":
                     tmp_dict = dict()
-                    tmp_path = re.sub(r"\.$", "", ifile["path"])
+                    tmp_path = re.sub("\.$", "", ifile["path"])
                     # tmp_dict["path"] = os.path.join(self.bind_obj.sheet.output, tmp_path)
                     tmp_dict["path"] = tmp_path
                     # 远程路径直接加 文件与上传目录的相对路径
@@ -1064,148 +1011,71 @@ class StepMain(Step):
 
         :return:
         """
-        with self.sem:
-            if not self.api_type:
-                return
-            workflow = self.bind_obj.get_workflow()
-            if workflow.sheet.batch_id and self.stats == "start":
-                return
-            log_time = datetime.datetime.now()
-
-            json_obj = {
-                "task": {
-                    "task_id": workflow.sheet.id,
-                    "created_ts": log_time.strftime("%Y-%m-%d %H:%M:%S"),
-                    # "status": "run",
-                    "run_time": self.spend_time,
-                    "progress": self.progress
-                },
-                "log": []
-            }
-            if hasattr(workflow, "task_option_data"):
-                for k, v in workflow.task_option_data.items():
-                    json_obj['task'][k] = v
-                workflow.task_option_data.clear()
-            if self.has_change:
-                json_obj['task']['status'] = self.stats
-                workflow_log = {
-                    "status": self.stats,
-                    "run_time": self.spend_time,
-                    "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "desc": self.desc,
-                }
-                if self.stats == "failed" or self.stats == "terminated":
-                    workflow_log["error"] = self.info
-
-                json_obj['log'].append(workflow_log)
-                if self.stats == "finish" and len(self.bind_obj.upload_dir) > 0 and self.bind_obj.sheet.output:
-                    files, dirs = self.upload_files()
-                    m = re.match(r"^([\w\-]+)://(.*)$", self.bind_obj.sheet.output)
-                    if m:
-                        json_obj['region'] = m.group(1)
-                        json_obj['base_path'] = m.group(2)
-                    else:
-                        m1 = re.match(r"^\w+:(.*)$", self.bind_obj.sheet.output)
-                        if m1:
-                            json_obj['base_path'] = m1.group(1)
-                        else:
-                            json_obj['base_path'] = self.bind_obj.sheet.output
-                    json_obj['files'] = files
-                    json_obj['dirs'] = dirs
-                # if self.stats == "finish" or self.stats == "failed" or self.stats == "terminated":
-                #         (cpu, memory) = workflow.count_used()
-                #         json_obj['task']['cpu_used'] = cpu
-                #         json_obj['task']['memory_used'] = memory
-                self.clean_change()
-            for step in self._steps.values():
-                if step.has_change:
-                    state = {
-                        "step_name": step.name,
-                        "status": step.stats,
-                        "run_time": step.spend_time,
-                        "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                        "desc": step.desc
-                    }
-                    json_obj['log'].append(state)
-                    step.clean_change()
-            post_data = {
-                'sync_task_log': json_obj
-            }
-            for k, v in self._api_data.items():
-                post_data[k] = v
-            self._api_data.clear()
-            wpm_log_data = {
-                "task_id": workflow.sheet.id,
-                'api': self.api_type,
-                "data": post_data,
-                "process_id": os.getpid()
-            }
-            dbversion = 0
-            if self.bind_obj.sheet.DBVersion:
-                dbversion = self.bind_obj.sheet.DBVersion
-                wpm_log_data["dbversion"] = self.bind_obj.sheet.DBVersion
-            if "update_info" in self.bind_obj.sheet.options().keys():
-                wpm_log_data["update_info"] = self.bind_obj.sheet.option('update_info')
-            if self.stats == "finish" and len(self.bind_obj.upload_dir) > 0 and self.bind_obj.sheet.output:
-                file_path = os.path.join(workflow.work_dir, "post_result_data.json")
-                # with open(file_path, "w") as f:
-                with open(file_path, "wb") as f:
-                    json.dump(wpm_log_data, f, indent=4, cls=CJsonEncoder)
-            self.bind_obj.logger.info("SEND MSG: {}".format(json.dumps(wpm_log_data)))
-            # workflow.send_log(wpm_log_data)
-            # step_data = workflow_guide_pb2.Step(task_id=wpm_log_data["task_id"],
-            #                                     api=wpm_log_data["api"],
-            #                                     process_id=int(wpm_log_data["process_id"]),
-            #                                     update_info=wpm_log_data["update_info"] if "update_info" in
-            #                                                                                wpm_log_data.keys() else "",
-            #                                     data=json.dumps(post_data),
-            #                                     dbversion=dbversion,
-            #                                     )
-            dd = json.dumps(post_data)
-            if PY3:
-                dd = bytes(json.dumps(post_data), encoding='utf-8')
-            step_data = workflow_guide_pb2.Step(task_id=wpm_log_data["task_id"],
-                                                api=wpm_log_data["api"],
-                                                process_id=int(wpm_log_data["process_id"]),
-                                                update_info=wpm_log_data["update_info"] if "update_info" in
-                                                                                           wpm_log_data.keys() else "",
-                                                data=dd,
-                                                dbversion=dbversion,
-                                                index=self.last_index,
-                                                )
-            self._send_log(step_data)
-            if self.stats == "failed" or self.stats == "terminated" or self.stats == "finish":
-                self.last_index += 10000
-            else:
-                self.last_index += 1
-
-    def _send_log(self, data):
+        if not self.api_type:
+            return
         workflow = self.bind_obj.get_workflow()
-        try:
-            self._send_rpc_times += 1
-            with grpc.insecure_channel('localhost:%s' % workflow.config.wfm_port,
-                                       options=[
-                                                ('grpc.max_send_message_length', 209715200),
-                                                ('grpc.max_receive_message_length', 209715200),
-                                        ],) as channel:
-                stub = workflow_guide_pb2_grpc.WorkflowGuideStub(channel)
-                response = stub.SendStep(data, timeout=300)
-                if response.ok:
-                    self.bind_obj.logger.info("发送step成功")
-                else:
-                    self.bind_obj.logger.debug("wfm服务拒绝接受step, 原因: %s" % response.reason)
-                self._send_rpc_times = 0
-        except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            sys.stdout.flush()
-            if self._send_rpc_times > 3:
-                self.bind_obj.logger.error("发送step发生错误超过3次,退出运行: %s" % e)
-                raise e
-            else:
-                self.bind_obj.logger.error("发送step发生错误10秒后重试: %s" % e)
-                gevent.sleep(10)
-                self._send_log(data)
+        if workflow.sheet.batch_id and self.stats == "start":
+            return
+        log_time = datetime.datetime.now()
+
+        json_obj = {
+            "task": {
+                "task_id": workflow.sheet.id,
+                "created_ts": log_time.strftime("%Y-%m-%d %H:%M:%S"),
+                # "status": "run",
+                "run_time": self.spend_time,
+                "progress": self.progress
+            },
+            "log": []
+        }
+        if self.has_change:
+            json_obj['task']['status'] = self.stats
+            workflow_log = {
+                "status": self.stats,
+                "run_time": self.spend_time,
+                "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "desc": self.desc,
+                "error": self.info
+            }
+
+            json_obj['log'].append(workflow_log)
+            if self.stats == "finish" and len(self.bind_obj.upload_dir) > 0 and self.bind_obj.sheet.output:
+                files, dirs = self.upload_files()
+                json_obj['base_path'] = self.bind_obj.sheet.output
+                json_obj['files'] = files
+                json_obj['dirs'] = dirs
+            if self.stats == "finish" or self.stats == "failed" or self.stats == "terminated":
+                    (cpu, memory) = workflow.count_used()
+                    json_obj['task']['cpu_used'] = cpu
+                    json_obj['task']['memory_used'] = memory
+            self.clean_change()
+        for step in self._steps.values():
+            if step.has_change:
+                state = {
+                    "step_name": step.name,
+                    "status": step.stats,
+                    "run_time": step.spend_time,
+                    "time": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "desc": step.desc
+                }
+                json_obj['log'].append(state)
+                step.clean_change()
+        post_data = {
+            'sync_task_log': json_obj
+        }
+        for k, v in self._api_data:
+            post_data[k] = v
+        self._api_data.clear()
+        wpm_log_data = {
+            "task_id": workflow.sheet.id,
+            'api': self.api_type,
+            "data": post_data,
+            "process_id": os.getpid()
+        }
+        if "update_info" in self.bind_obj.sheet.options().keys():
+            wpm_log_data["update_info"] = self.bind_obj.sheet.option('update_info')
+        self.bind_obj.logger.info("SEND MSG: {}".format(json.dumps(wpm_log_data)))
+        workflow.send_log(wpm_log_data)
 
 
 class UploadDir(object):
@@ -1298,10 +1168,10 @@ class UploadDir(object):
             for f in glob.glob(full_path):
                 for sub_file in self._file_list:
                     if os.path.relpath(sub_file.relpath, os.path.relpath(f, self._dir_path)) == ".":
-                        sub_file.format = r_rule[1]
-                        sub_file.description = r_rule[2]
-                        sub_file.lock = r_rule[3] if len(r_rule) > 3 else 0
-                        sub_file.code = r_rule[4] if len(r_rule) > 4 else "001"
+                            sub_file.format = r_rule[1]
+                            sub_file.description = r_rule[2]
+                            sub_file.lock = r_rule[3] if len(r_rule) > 3 else 0
+                            sub_file.code = r_rule[4] if len(r_rule) > 4 else "001"
 
         for sub_file in self._file_list:
             if sub_file.file_type == "file" and sub_file.format == "":

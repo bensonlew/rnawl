@@ -12,10 +12,6 @@ import traceback
 from .core.exceptions import FileError, CodeError
 from .api.file.remote import RemoteFileManager
 import sys
-from datetime import datetime
-import types
-
-PY3 = sys.version_info[0] == 3
 
 
 class Option(object):
@@ -50,10 +46,10 @@ class Option(object):
             if 'format' not in opt.keys():
                 raise Exception("必须设置参数属性 format")
             else:
-                formats = re.split(r'\s*,\s*', opt['format'])
+                formats = re.split('\s*,\s*', opt['format'])
                 if len(formats) > 1:
                     if 'check' in opt.keys():
-                        checks = re.split(r'\s*,\s*', opt['check'])
+                        checks = re.split('\s*,\s*', opt['check'])
                         if len(checks) == 1:
                             for index in range(len(formats)):
                                 self._format_list.append(formats[index].strip())
@@ -142,48 +138,23 @@ class Option(object):
         :return:
         """
         if self._type in {'outfile', 'infile'}:
-            if PY3:
-                check = isinstance(value, str) or (isinstance(value, dict) and value["mapping_file"])
-            else:
-                check = isinstance(value, types.StringTypes) or (isinstance(value, dict) and value["mapping_file"])
-            if check:
-                if isinstance(value, dict) and value["mapping_file"]:
-                    if "format" in value.keys():
-                        file_format = value["format"]
-                    else:
-                        file_format = None
-                    file_path = "fileapi[%s](%s):%s" % (value["client"], value["task_id"], value["params_path"])
+            if isinstance(value, unicode) or isinstance(value, str):
+                path_list = value.split("||")
+                if len(path_list) > 1:
+                    file_path = path_list[1]
+                    file_format = path_list[0]
                 else:
-                    path_list = value.split("||")
-                    if len(path_list) > 1:
-                        file_path = path_list[1]
-                        file_format = path_list[0]
-                    else:
-                        file_path = path_list[0]
-                        file_format = None
+                    file_path = path_list[0]
+                    file_format = None
                 if self._type == "infile":  # 远程文件复制
-                    print("file_path: %s" % file_path)
-                    if os.path.exists(file_path):
-                        self._value.option = self
-                        self._value.set_path(value)
-                        self._value.check()
-                        self._value.parent = None
-                    elif self._value and hasattr(self._value, "self_managed") and self._value.self_managed is True:
-                        self.bind_obj.logger.debug("发现参数%s为自管理文件%s" % (self.name, value))
-                        self._value.option = self
-                        self._value.set_path(value)
-                        self._value.check()
-                        self._value.parent = None
-                        return
-                    else:
-                        remote_file = RemoteFileManager(file_path)
-                        if remote_file.type != "local":
-                            self.bind_obj.logger.info("发现参数%s为远程文件%s,开始复制..." % (self.name, value))
-                            remote_file.download(os.path.join(self.bind_obj.work_dir, "remote_input", self.name))
-                            file_path = remote_file.local_path
+                    remote_file = RemoteFileManager(file_path)
+                    if remote_file.type != "local":
+                        self.bind_obj.logger.info("发现参数%s为远程文件%s,开始复制..." % (self.name, value))
+                        remote_file.download(os.path.join(self.bind_obj.work_dir, "remote_input", self.name))
+                        file_path = remote_file.local_path
                 if os.path.exists(file_path):
                     # if self.type == "infile":  # 检查输出文件是否满足要求
-                    #     class_obj = load_class_by_path(self._options[name].format, "File")
+                        # class_obj = load_class_by_path(self._options[name].format, "File")
                     if file_format is not None:
                         if len(self._format_list) > 1:
                             if file_format not in self._format_list:
@@ -222,9 +193,7 @@ class Option(object):
                                     error_info += "格式%s:%s " % (format_path, file_obj_or_error)
                             if not has_pass:
                                 self.bind_obj.logger.error(error_info)
-                                # self._file_check_error("多格式文件检测未通过!", None, "012")
-                                err_str = "多格式文件检测未通过,%s" % (error_info)
-                                self._file_check_error(err_str, None, "012")
+                                self._file_check_error("多格式文件检测未通过!", None, "012")
                         else:
                             success, file_obj_or_error = self._check_file(self._format, self._check, file_path)
                             if success and file_obj_or_error:
@@ -237,7 +206,7 @@ class Option(object):
                     # e.bind_object = self.bind_obj
                     # e.option = self.name
                     # self.bind_obj.set_error(e)
-                    self._file_check_error("文件%s不存在！", (file_path, ), "002")
+                    self._file_check_error("文件%s不存在！", (os.path.basename(file_path)), "002")
             else:
                 if len(self._format_list) > 1:
                     has_pass = False
@@ -307,12 +276,8 @@ class Option(object):
                     raise OptionError("参数值类型不符合%s:%s", (self._type, value), "003")
             if self._type == "bool":
                 try:
-                    if PY3:
-                        check = isinstance(value, str)
-                    else:
-                        check = isinstance(value, types.StringTypes)
-                    if check:
-                        if re.match(r"^[\-+]?\d+$", value):
+                    if isinstance(value, str) or isinstance(value, unicode):
+                        if re.match(r"^[\-\+]?\d+$", value):
                             if int(value) > 0:
                                 value = True
                             else:
@@ -333,18 +298,14 @@ class Option(object):
                 if not isinstance(value, bool):
                     raise OptionError("参数值类型不符合%s:%s", (self._type, value), "003")
             if self._type == "string":
-                if PY3:
-                    check = not (isinstance(value, str))
-                else:
-                    check = not (isinstance(value, types.StringTypes))
-                if check:
+                if not (isinstance(value, unicode) or isinstance(value, str)):
                     raise OptionError("参数值类型不符合%s:%s", (self._type, value), "003")
             if self._type in {"infile", "outfile"}:
                 if not isinstance(value, FileBase):
                     raise OptionError("参数值类型不符合%s:%s", (self._type, value), "003")
             if self._type in ["int", "float"]:
                 if self._max and value > self._max:
-                    raise OptionError("参数值不能大于%s", self._max, "004")
+                        raise OptionError("参数值不能大于%s", self._max, "004")
                 if self._min and value < self._min:
                     raise OptionError("参数值不能小于%s", self._min, "005")
             if self._type in ["int", "float", "string"]:
@@ -362,7 +323,7 @@ class Option(object):
                     raise OptionError("参数值必须为数组!", None, "009")
         except OptionError as e:
             exstr = traceback.format_exc()
-            print(exstr)
+            print exstr
             sys.stdout.flush()
             e.bind_object = self.bind_obj
             e.option = self.name
@@ -376,7 +337,6 @@ class Option(object):
         :param check:
         :return:
         """
-        path = str(path)
         class_name = self.bind_obj.__class__.__name__
         self_class_path = get_classpath_by_object(self.bind_obj)
         paths = self_class_path.split(".")[2:]
@@ -390,37 +350,20 @@ class Option(object):
         else:
             raise Exception("类名称不正确!")
         try:
-            print("format_path", format_path)
-            print("path", path)
             file_obj = load_class_by_path(format_path, "File")()
             file_obj.set_path(path)
-            start = datetime.now()
             if check:
                 if hasattr(file_obj, check):
-                    self.bind_obj.logger.debug("开始检测文件%s,格式：%s, 函数:%s" % (path, format_path, check))
                     getattr(file_obj, check)()
-                    end = datetime.now()
-                    self.bind_obj.logger.debug("检测完成，耗时:%s s,文件%s,格式：%s, 函数:%s" %
-                                               ((end - start).seconds, path, format_path, check))
                 else:
                     raise Exception("文件类%s中未定义指定的检测函数%s!" %
                                     (format_path, check))
             else:
                 if hasattr(file_obj, function_name):
-                    self.bind_obj.logger.debug("开始检测文件%s,格式：%s, 函数:%s" % (path, format_path, function_name))
                     getattr(file_obj, function_name)()
-                    end = datetime.now()
-                    self.bind_obj.logger.debug("检测完成，耗时:%s s,文件%s,格式：%s, 函数:%s" %
-                                               ((end - start).seconds, path, format_path, function_name))
                 else:
-                    print(path, format_path)
-                    print("开始检测文件%s,格式：%s, 函数:%s" % (path, format_path, "check"))
-                    self.bind_obj.logger.debug("开始检测文件%s,格式：%s, 函数:%s" % (path, format_path, "check"))
                     getattr(file_obj, "check")()
-                    end = datetime.now()
-                    self.bind_obj.logger.debug("检测完成，耗时:%s s,文件%s,格式：%s, 函数:%s" %
-                                               ((end - start).seconds, path, format_path, "check"))
-        except FileError as e:
+        except FileError, e:
             e.bind_object = self.bind_obj
             e.option = self.name
             e.file_name = os.path.basename(path)
@@ -428,12 +371,12 @@ class Option(object):
             if loop:
                 self.bind_obj.logger.debug("检测未通过(以下为调试信息，可忽略):\n%s" % exstr)
             else:
-                print(exstr)
+                print exstr
             sys.stdout.flush()
             return False, e
-        except Exception as e:
+        except Exception, e:
             exstr = traceback.format_exc()
-            print(exstr)
+            print exstr
             sys.stdout.flush()
             # self._file_check_error(str(e))
             return False, e
@@ -443,8 +386,10 @@ class Option(object):
     def _file_check_error(self, value, variables=None, code="001"):
         """
         文件检测错误后的处理
+
+        :param error:
+        :return:
         """
-        print("value: %s" % value)
         # class_name = self.bind_obj.__class__.__name__
         # if re.search(r"Tool$", class_name):
         #     self.bind_obj.set_error(error)
@@ -463,9 +408,9 @@ class Option(object):
             if hasattr(self.value, name):
                 try:
                     getattr(self.value, name)(*args, **kwargs)
-                except FileError as e:
+                except FileError, e:
                     exstr = traceback.format_exc()
-                    print(exstr)
+                    print exstr
                     sys.stdout.flush()
                     e.bind_object = self.bind_obj
                     e.option = self.name
@@ -473,3 +418,4 @@ class Option(object):
                     self.bind_obj.set_error(e)
             else:
                 raise Exception("文件对象%s不存在检测方法%s" % (self.value.format, name))
+

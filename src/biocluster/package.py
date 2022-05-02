@@ -9,7 +9,6 @@ from .core.function import load_class_by_path, get_clsname_form_path
 import time
 from .core.exceptions import RunningError
 import traceback
-import sys
 
 
 class PackageManager(object):
@@ -105,10 +104,6 @@ class Package(object):
             else:
                 return False
         except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            print(e)
-            sys.stdout.flush()
             self._tool.set_error(e)
             raise e
 
@@ -120,10 +115,6 @@ class Package(object):
             else:
                 return self.run_function("main", *args, **kwargs)
         except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            print(e)
-            sys.stdout.flush()
             self._tool.set_error(e)
 
     def run_function(self, func_name, *args, **kwargs):
@@ -209,7 +200,7 @@ class PackageProcess(Process):
             except Exception as e:
                 name = "%s(Package: %s)" % (self.package.tool.id, self.package.name)
                 exstr = traceback.format_exc()
-                print(exstr)
+                print exstr
                 self.package.tool.logger.error("%s运行出错:%s" % (name, e))
                 self._return_queue.put({"_error_": "%s" % e})
                 raise e
@@ -267,3 +258,5 @@ class PackageBase(object):
         e = RunningError(value, variables, code)
         e.bind_object = self._tool
         raise e
+
+

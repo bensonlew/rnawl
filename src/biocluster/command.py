@@ -13,11 +13,7 @@ import threading
 import datetime
 import inspect
 import time
-# from .core.function import friendly_size
-import traceback
-import sys
-
-PY3 = sys.version_info[0] == 3
+from .core.function import friendly_size
 
 
 class Command(object):
@@ -150,8 +146,8 @@ class Command(object):
                 return True
             else:
                 return False
-        except Exception as e:
-            print(e)
+        except Exception, e:
+            print e
             return False
 
     @property
@@ -215,9 +211,9 @@ class Command(object):
         """
         try:
             self.tool.logger.debug("开始启动Command %s 子进程subprocess " % self.name)
-            self._start_run_time = int(time.time())
             if not self._is_sh:
                 command = self.software_dir + "/" + self.cmd
+                self._start_run_time = int(time.time())
                 args = shlex.split(command)
                 self._subprocess = subprocess.Popen(args, shell=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                                     env=os.environ, universal_newlines=True, bufsize=0)
@@ -228,11 +224,7 @@ class Command(object):
             self.tool.logger.debug("Command %s subprocess生成: %s, PID: %s " %
                                    (self.name, self._subprocess, self._subprocess.pid))
 
-        except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            print(e)
-            sys.stdout.flush()
+        except Exception, e:
             if self._subprocess:
                 self._subprocess.communicate()
             self._is_error = True
@@ -244,19 +236,9 @@ class Command(object):
                 func = None
                 if hasattr(self.tool, self.name + '_check'):
                     func = getattr(self.tool, self.name + '_check')
-                    args = []
-                    if PY3:
-                        spec = inspect.signature(func)
-                        for i in spec.parameters.keys():
-                            args.append(i)
-                    else:
-                        spec = inspect.getargspec(func)
-                        args = spec.args
-                        if inspect.ismethod(func):
-                            args.pop(0)
-                    # argspec = inspect.getargspec(func)
-                    # args = argspec.args
-                    if len(args) != 2:
+                    argspec = inspect.getargspec(func)
+                    args = argspec.args
+                    if len(args) != 3:
                         raise Exception("状态监测函数参数必须为3个(包括self)!")
                 count = 0
                 tmp_file = os.path.join(self.work_dir, self._name + ".o")
@@ -268,7 +250,7 @@ class Command(object):
                     while True:
                         line = self._subprocess.stdout.readline()
                         if line == b''and self._subprocess.poll() is not None:
-                            break
+                                break
                         if line:
                             count += 1
                             if count < 5000:
@@ -292,11 +274,7 @@ class Command(object):
                     # time_now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
                     f.write("%s\t运行结束，运行时长:%ss,exitcode:%s\n" % (datetime.datetime.now(), use_time,
                             self.return_code))
-            except IOError as e:
-                exstr = traceback.format_exc()
-                print(exstr)
-                print(e)
-                sys.stdout.flush()
+            except IOError, e:
                 self._is_error = True
                 self.tool.set_error("运行命令%s出错: %s" % (self.name, e))
         self._subprocess.communicate()
@@ -311,10 +289,7 @@ class Command(object):
 
         :return: self
         """
-        if self._is_sh:
-            command = self.cmd
-        else:
-            command = self.software_dir + "/" + self.cmd
+        command = self.software_dir + "/" + self.cmd
         self.tool.logger.info("命令内容为{}".format(command))
         # if self.is_running or self.has_run:
         #     raise OSError("命令已经运行，不能重复运行!")
@@ -326,16 +301,7 @@ class Command(object):
             self.tool.set_error("运行的命令文件不存在")
             raise Exception("你所运行的命令文件不存在，请确认!")
         self._thread = threading.Thread(target=self._run)
-        try:
-            self._thread.start()
-        except Exception as e:
-            exstr = traceback.format_exc()
-            print(exstr)
-            print(e)
-            os.system("ulimit -a")
-            os.system("cat /proc/sys/fs/file-nr")
-            sys.stdout.flush()
-            raise e
+        self._thread.start()
         self._has_run = True
         self._run_times += 1
         return self
@@ -384,61 +350,59 @@ class Command(object):
         if threading.currentThread() != self._thread:
             self._thread.join()
 
-    # def _set_resource_use(self, cpu, memory_rss, memory_vms):
-    #
-    #     if cpu > self._cpu_max_use:
-    #         self._cpu_max_use = cpu
-    #     if memory_rss > self._mem_max_rss:
-    #         self._mem_max_rss = memory_rss
-    #     if memory_vms > self._mem_max_vms:
-    #         self._mem_max_vms = memory_vms
-    #     self._cup_avg_use = (self._set_resource_count * self._cup_avg_use + cpu) / (self._set_resource_count + 1)
-    #     self._mem_avg_rss = (self._set_resource_count * self._mem_avg_rss + memory_rss) /
-    #     (self._set_resource_count + 1)
-    #     self._mem_avg_vms = (self._set_resource_count * self._mem_avg_vms + memory_vms) /
-    #     (self._set_resource_count + 1)
-    #     self._set_resource_count += 1
+    def _set_resource_use(self, cpu, memory_rss, memory_vms):
 
-    # def check_resource(self):
-    #     try:
-    #         if self.is_running:
-    #             main_process = psutil.Process(self._pid)
-    #             child_processes = main_process.children(recursive=True)
-    #             pid = main_process.pid
-    #             cmd = " ".join(main_process.cmdline())
-    #             cpu_percent = main_process.cpu_percent(interval=1)
-    #             memory_info = main_process.memory_info()
-    #             if len(child_processes) == 0:
-    #                 self._set_resource_use(cpu_percent, memory_info[0], memory_info[1])
-    #                 return [(pid, cmd, cpu_percent, memory_info)]
-    #             else:
-    #                 resource_list = [(pid, cmd, cpu_percent, memory_info)]
-    #                 cpu = cpu_percent
-    #                 memory_rss = memory_info[0]
-    #                 memory_vms = memory_info[1]
-    #                 for child in child_processes:
-    #                     if child not in self._all_processes:
-    #                         self._all_processes.append(child)
-    #                     pid = child.pid
-    #                     cmd = " ".join(child.cmdline())
-    #                     cpu_percent = child.cpu_percent()
-    #                     memory_info = child.memory_info()
-    #                     resource_list.append((pid, cmd, cpu_percent, memory_info))
-    #                     cpu += cpu_percent
-    #                     memory_rss += memory_info[0]
-    #                     memory_vms += memory_info[1]
-    #                 self._set_resource_use(cpu, memory_rss, memory_vms)
-    #                 return resource_list
-    #     except Exception, e:
-    #         self.tool.logger.debug("Command %s 监控资源时发生错误: %s" % (self.name, e))
-    #         return None
-    #
-    # def get_resource_use(self):
-    #     """
-    #     返回最近一次运行使用资源情况
-    #
-    #     :return:
-    #     """
-    #     r = (self._cpu_max_use, self._cup_avg_use, self._mem_max_rss, int(self._mem_avg_rss),
-    #          int(self._mem_max_vms), self._mem_avg_vms)
-    #     return r
+        if cpu > self._cpu_max_use:
+            self._cpu_max_use = cpu
+        if memory_rss > self._mem_max_rss:
+            self._mem_max_rss = memory_rss
+        if memory_vms > self._mem_max_vms:
+            self._mem_max_vms = memory_vms
+        self._cup_avg_use = (self._set_resource_count * self._cup_avg_use + cpu) / (self._set_resource_count + 1)
+        self._mem_avg_rss = (self._set_resource_count * self._mem_avg_rss + memory_rss) / (self._set_resource_count + 1)
+        self._mem_avg_vms = (self._set_resource_count * self._mem_avg_vms + memory_vms) / (self._set_resource_count + 1)
+        self._set_resource_count += 1
+
+    def check_resource(self):
+        try:
+            if self.is_running:
+                main_process = psutil.Process(self._pid)
+                child_processes = main_process.children(recursive=True)
+                pid = main_process.pid
+                cmd = " ".join(main_process.cmdline())
+                cpu_percent = main_process.cpu_percent(interval=1)
+                memory_info = main_process.memory_info()
+                if len(child_processes) == 0:
+                    self._set_resource_use(cpu_percent, memory_info[0], memory_info[1])
+                    return [(pid, cmd, cpu_percent, memory_info)]
+                else:
+                    resource_list = [(pid, cmd, cpu_percent, memory_info)]
+                    cpu = cpu_percent
+                    memory_rss = memory_info[0]
+                    memory_vms = memory_info[1]
+                    for child in child_processes:
+                        if child not in self._all_processes:
+                            self._all_processes.append(child)
+                        pid = child.pid
+                        cmd = " ".join(child.cmdline())
+                        cpu_percent = child.cpu_percent()
+                        memory_info = child.memory_info()
+                        resource_list.append((pid, cmd, cpu_percent, memory_info))
+                        cpu += cpu_percent
+                        memory_rss += memory_info[0]
+                        memory_vms += memory_info[1]
+                    self._set_resource_use(cpu, memory_rss, memory_vms)
+                    return resource_list
+        except Exception, e:
+            self.tool.logger.debug("Command %s 监控资源时发生错误: %s" % (self.name, e))
+            return None
+
+    def get_resource_use(self):
+        """
+        返回最近一次运行使用资源情况
+
+        :return:
+        """
+        r = (self._cpu_max_use, self._cup_avg_use, self._mem_max_rss, int(self._mem_avg_rss),
+             int(self._mem_max_vms), self._mem_avg_vms)
+        return r
