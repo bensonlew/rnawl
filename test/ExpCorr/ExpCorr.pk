@@ -12,7 +12,7 @@ Rp4
 (dp5
 S'SOFTWARE_DIR'
 p6
-S'/home/liubinxu'
+S'/home/rnawl'
 p7
 sS'_full_name'
 p8
@@ -248,7 +248,7 @@ p82
 (dp83
 S'path'
 p84
-S'/home/liubinxu/work/rnawl/test/expression_matrix.xls'
+S'/titan/rnawl/work/rnawl/test/expression_matrix.xls'
 p85
 sS'basename'
 p86
@@ -256,7 +256,7 @@ S'expression_matrix.xls'
 p87
 sS'dirname'
 p88
-S'/home/liubinxu/work/rnawl/test'
+S'/titan/rnawl/work/rnawl/test'
 p89
 sS'gene_number'
 p90
@@ -355,6 +355,6 @@ sS'ntm_port'
 p118
 NsS'PACKAGE_DIR'
 p119
-S'/home/liubinxu/work/rnawl/src/mbio/packages'
+S'/home/rnawl/work/rnawl/src/mbio/packages'
 p120
 sb.

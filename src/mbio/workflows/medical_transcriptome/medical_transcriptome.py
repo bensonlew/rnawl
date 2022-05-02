@@ -208,13 +208,25 @@ class MedicalTranscriptomeWorkflow(Workflow):
         except:
             self.logger.info("没标记瞎起劲")
 
-        self.database = Config().get_mongo_client(mtype='ref_rna_v2', dydb_forbid=True)[Config().get_mongo_dbname(mtype='ref_rna_v2', dydb_forbid=True)]
-        collection = self.database['sg_genome_db']
-        genome_info = collection.find_one({'genome_id': self.option('genome_id')})
-        if not genome_info:
-            self.set_error('数据库中不存在该物种的注释信息，程序退出', code='13700320')
+        # self.database = Config().get_mongo_client(mtype='ref_rna_v2', dydb_forbid=True)[Config().get_mongo_dbname(mtype='ref_rna_v2', dydb_forbid=True)]
+        # collection = self.database['sg_genome_db']
+        # genome_info = collection.find_one({'genome_id': self.option('genome_id')})
+        sg_genome_db = os.path.join(self.config.SOFTWARE_DIR, 'database/mongo/ref_rna_v2/sg_genome_db.json')
+        self.sg_genome_db_list = json.load(open(sg_genome_db, 'r'))
+
+        for genome_db in self.sg_genome_db_list:
+            # print(self.option('genome_id'))
+            if genome_db['genome_id'] == self.option('genome_id'):
+                # print(genome_db)
+                genome_info = genome_db
+                break
+        # else:
+            # self.set_error('数据库中不存在该物种的注释信息，程序退出', code='13700320')
         genome_path = os.path.join(self.config.SOFTWARE_DIR, 'database/Genome_DB_finish')
+        print("genome_path :%s", genome_path)
+        # print("genome_info :%s", genome_info)
         self.ref_annot_dir = os.path.join(genome_path, genome_info['anno_path_v2'])
+        print("ref_annot_dir :%s", self.ref_annot_dir)
         if not os.path.isdir(self.ref_annot_dir):
             self.set_error('数据库中不存在该物种的参考注释文件，程序退出', code='13700321')
         self.ref_genome = os.path.join(genome_path, genome_info['dna_fa'])
@@ -442,8 +454,13 @@ class MedicalTranscriptomeWorkflow(Workflow):
 
     @workfuncdeco
     def run(self):
+        # 
         self.add_steps()
+
+        print("start su")
         super(MedicalTranscriptomeWorkflow, self).run()
+       
+
 
     @workfuncdeco
     def add_steps(self):

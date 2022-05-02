@@ -20,7 +20,7 @@ import re
 import importlib
 import types
 import traceback
-# from .core.watcher import Watcher
+from .core.watcher import Watcher
 # from .scheduling.job import JobManager
 # from .wpm.db import ReportModel
 from .core.exceptions import RunningError, ExitError
@@ -281,18 +281,17 @@ class Workflow(Basic):
         """
         super(Workflow, self).run()
         self.logger.info("worklow is start")
-        # self._start_time = datetime.datetime.now()
-        # watcher = Watcher()
-        # watcher.add(self._check_batch, 10)
-        # if self.sheet.instant is not True and self.sheet.WPM:
-        #     watcher.add(self.__check, 2)
+        self._start_time = datetime.datetime.now()
+        watcher = Watcher()
+        watcher.add(self._check_batch, 10)
+
         # 停止
-        signal.signal(42, self._stop)
-        # 暂停
-        signal.signal(43, self._pause)
-        # 退出暂停
-        signal.signal(44, self._exit_pause)
-        self._update("start")  # 告诉WPM信号监听已经起来了
+        # signal.signal(42, self._stop)
+        # # 暂停
+        # signal.signal(43, self._pause)
+        # # 退出暂停
+        # signal.signal(44, self._exit_pause)
+        # self._update("start")  # 告诉WPM信号监听已经起来了
         self.rpc_server.run()
 
     def end(self):
@@ -685,35 +684,35 @@ class Workflow(Basic):
         self._update("continue")
         self.logger.info("检测到恢复运行指令，恢复所有模块运行!")
 
-    # def _check_batch(self):
-    #     if self.is_end is True:
-    #         return "exit"
-    #     has_batch_run = False
-    #     if len(self._batch_list) > 0:
-    #         for b in self._batch_list:
-    #             if b.is_start and not b.is_end:
-    #                 has_batch_run = True
-    #     if not has_batch_run:
-    #         return
-    #     try:
-    #         batch_list = json.loads(get_web_data({"batch_id": self.id}, self.logger, method="get"))
-    #     except Exception, e:
-    #         self.logger.warning("Web API返回内容格式错误: %s " % e)
-    #     else:
-    #         self.last_event_fire = datetime.datetime.now()
-    #         for b in batch_list:
-    #             batch = self.get_batch(b["workflow_id"])
-    #             if batch:
-    #                 if batch.is_end or not batch.is_start:
-    #                     continue
-    #                 if b["has_run"] == 1:
-    #                     if not batch.has_run:
-    #                         batch.set_run(b)
-    #                     if b["is_error"] == 1:
-    #                         batch.error(b)
-    #                     else:
-    #                         if b["is_end"] == 1:
-    #                             batch.end(b)
+    def _check_batch(self):
+        if self.is_end is True:
+            return "exit"
+        has_batch_run = False
+        if len(self._batch_list) > 0:
+            for b in self._batch_list:
+                if b.is_start and not b.is_end:
+                    has_batch_run = True
+        if not has_batch_run:
+            return
+        try:
+            batch_list = json.loads(get_web_data({"batch_id": self.id}, self.logger, method="get"))
+        except Exception, e:
+            self.logger.warning("Web API返回内容格式错误: %s " % e)
+        else:
+            self.last_event_fire = datetime.datetime.now()
+            for b in batch_list:
+                batch = self.get_batch(b["workflow_id"])
+                if batch:
+                    if batch.is_end or not batch.is_start:
+                        continue
+                    if b["has_run"] == 1:
+                        if not batch.has_run:
+                            batch.set_run(b)
+                        if b["is_error"] == 1:
+                            batch.error(b)
+                        else:
+                            if b["is_end"] == 1:
+                                batch.end(b)
 
     # def _save_report_data(self, error_data=None):
     #     try:

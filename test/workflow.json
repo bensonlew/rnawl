@@ -1,0 +1,10 @@
+{
+    "type": "workflow",
+    "_full_name": "tool_lab.corrheatmap",
+    "name": "tool_lab.corrheatmap",
+    "options": {
+        "main_id": "test",
+        "infile": "/titan/rnawl/work/rnawl/test/expression_matrix.xls"
+        
+    }
+}

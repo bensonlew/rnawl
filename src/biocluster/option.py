@@ -162,7 +162,13 @@ class Option(object):
                         file_path = path_list[0]
                         file_format = None
                 if self._type == "infile":  # 远程文件复制
-                    if self._value and hasattr(self._value, "self_managed") and self._value.self_managed is True:
+                    print("file_path: %s" % file_path)
+                    if os.path.exists(file_path):
+                        self._value.option = self
+                        self._value.set_path(value)
+                        self._value.check()
+                        self._value.parent = None
+                    elif self._value and hasattr(self._value, "self_managed") and self._value.self_managed is True:
                         self.bind_obj.logger.debug("发现参数%s为自管理文件%s" % (self.name, value))
                         self._value.option = self
                         self._value.set_path(value)

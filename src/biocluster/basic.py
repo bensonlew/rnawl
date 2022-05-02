@@ -258,7 +258,7 @@ class Basic(EventObject):
         :param value: 当value==None时，获取参数值 当value!=None时，设置对应的参数值
         :return: 参数对应的值
         """
-        print("name {} value {} options {}".format(name, value, self._options))
+        # print("name {} value {} options {}".format(name, value, self._options))
         if name not in self._options.keys():
             # raise Exception("参数%s不存在，请先添加参数" % name)
             self.logger.warning("参数%s不存在，请确认是否需要先添加参数，pass" % name)
@@ -546,6 +546,14 @@ class Basic(EventObject):
         """
         开始运行
         """
+        json.dumps({
+            "type": "module",
+            "_full_name": self.fullname,
+            "name": self.fullname,
+            "options": {}
+        },
+        self.fullname + self.id  + ".json",
+        indent=4)
         self.start_listener()
         paused = False
         workflow = self.get_workflow()

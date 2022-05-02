@@ -8,7 +8,7 @@ from .core.actor import LocalActor, RemoteData
 import pickle
 import os
 from .config import Config
-# from .scheduling.job import JobManager
+from .scheduling.job import JobManager
 from .core.function import get_classpath_by_object, load_class_by_path
 # import datetime
 import inspect
@@ -117,7 +117,7 @@ class Agent(Basic):
         # self.endpoint = self.get_workflow().rpc_server.endpoint
         # self.job = None
         self._run_mode = "Auto"      # 运行模式 Auto表示由 main.conf中的 platform参数决定
-        # self._job_manager = JobManager()
+        self._job_manager = JobManager()
         # self._run_time = None
         # self._start_run_time = datetime.datetime.now()
         # self._end_run_time = None
@@ -533,46 +533,46 @@ class Agent(Basic):
         """
         super(Agent, self).run()
         self.set_resource()
-        # self._run_time = datetime.datetime.now()
-        # workflow = self.get_workflow()
-        # if workflow.sheet.rerun and \
-        #         (workflow.is_skip or workflow.sheet.skip_all_success or
-        #          (workflow.sheet.skip_tools and self.id in workflow.sheet.skip_tools)):
-        #     self.__set_rerun_dir()
-        #     is_sucess = False
-        #     path = os.path.join(self.work_dir, self.name + ".status.pk")
-        #     if os.path.exists(path):
-        #         is_sucess = True
-        #     if is_sucess:
-        #         self._is_skip = True
-        #         self.fire('runstart', "pass")
-        #         gevent.spawn_later(3, self.finish_callback)
-        #     else:
-        #         self.__run()
-        # else:
-        self.__run()
+        self._run_time = datetime.datetime.now()
+        workflow = self.get_workflow()
+        if workflow.sheet.rerun and \
+                (workflow.is_skip or workflow.sheet.skip_all_success or
+                 (workflow.sheet.skip_tools and self.id in workflow.sheet.skip_tools)):
+            self.__set_rerun_dir()
+            is_sucess = False
+            path = os.path.join(self.work_dir, self.name + ".status.pk")
+            if os.path.exists(path):
+                is_sucess = True
+            if is_sucess:
+                self._is_skip = True
+                self.fire('runstart', "pass")
+                gevent.spawn_later(3, self.finish_callback)
+            else:
+                self.__run()
+        else:
+            self.__run()
 
     def __run(self):
         self.step.start()
         self.remote.save()
-        # if self.get_workflow().sheet.instant:
-        #     self._run_mode = "process"
+        if self.get_workflow().sheet.instant:
+             self._run_mode = "process"
         self.save_class_path()
         path = self.save_config()
 
         with open(path, "rb") as f:
             pickle_config = pickle.load(f)
-        tool_path = self.tool_path.split("mbio.tools.")[1]
-        self.obj = load_class_by_path(tool_path, "Tool")(pickle_config)
-        self.obj.run()
-        # self.job = self._job_manager.add_job(self)
-        # self._job_manager.run_job(self.job)
-        # self._status = "Q"
-                    # if not self.get_workflow().sheet.instant:
-        # self.actor.start()
+        # tool_path = self.tool_path.split("mbio.tools.")[1]
+        # self.obj = load_class_by_path(tool_path, "Tool")(pickle_config)
+        # self.obj.run()
+        self.job = self._job_manager.add_job(self)
+        self._job_manager.run_job(self.job)
+        self._status = "Q"
+        if not self.get_workflow().sheet.instant:
+            self.actor.start()
 
-        # self._submit_job()
-        # gevent.sleep(0) 
+        self._submit_job()
+        gevent.sleep(0) 
 
     # def __set_rerun_dir(self):
     #     dir_path = self._work_dir

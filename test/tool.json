@@ -7,7 +7,7 @@
 		"corr_method": "pearson",
 		"log_base": null,
 		"scd": "euclidean",
-		"exp": "/home/liubinxu/work/rnawl/test/expression_matrix.xls",
+		"exp": "/titan/rnawl/work/rnawl/test/expression_matrix.xls",
 		"output": null
     }
 }

@@ -1,7 +1,7 @@
-2022-04-06 20:10:30.615035	运行开始
+2022-04-11 12:11:25.042650	运行开始
 cannot find system Renviron
-/home/liubinxu/miniconda2/lib/python2.7/site-packages/rpy2/rinterface/__init__.py:186: RRuntimeWarning: Fatal error: unable to open the base package
+/home/rnawl/miniconda2/lib/python2.7/site-packages/rpy2/robjects/robject.py:6: UserWarning: Fatal error: unable to open the base package
 
 
-  warnings.warn(x, RRuntimeWarning)
-2022-04-06 20:10:31.495277	运行结束，运行时长:1s,exitcode:-11
+  rpy2.rinterface.initr()
+2022-04-11 12:11:26.651973	运行结束，运行时长:1s,exitcode:-11

@@ -60,7 +60,7 @@ class CorrheatmapTool(Tool):
         # self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         # self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
         # self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
-        self.rscript = 'bioinfo/rna/miniconda2/bin/Rscript'
+        self.rscript = 'miniconda2/bin/Rscript'
         self.corrheatmap_R = os.path.join(self.config.PACKAGE_DIR, 'tool_lab/corrheatmap.r')
 
     def do_corrheatmap(self):
