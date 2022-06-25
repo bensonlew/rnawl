@@ -47,10 +47,10 @@ class AllAnnoStat(object):
         self.stat_info = {}
         self.gene_names = {}
         self.gene2trans = {}
-        self.client = Config().get_mongo_client(mtype="ref_rna", ref=True)
-        self.ref_db = self.client[Config().get_mongo_dbname("ref_rna", ref=True)]  # 20171101 by zengjing 数据库连接方式修改
-        self.cog_string = self.ref_db.COG
-        self.kegg_ko = self.ref_db.kegg_ko_v1
+        # self.client = Config().get_mongo_client(mtype="ref_rna", ref=True)
+        # self.ref_db = self.client[Config().get_mongo_dbname("ref_rna", ref=True)]  # 20171101 by zengjing 数据库连接方式修改
+        # self.cog_string = self.ref_db.COG
+        # self.kegg_ko = self.ref_db.kegg_ko_v1
         self.kegg_version = kegg_version
         self.kegg_files_dict = AnnotConfig().get_file_dict(db="kegg", version=kegg_version)
         self.kegg_json = self.kegg_files_dict["br08901.json"]
@@ -67,7 +67,7 @@ class AllAnnoStat(object):
         # self.kegg_json = Config().SOFTWARE_DIR + "/database/KEGG/br08901.json"
         # self.kegg_des = Config().SOFTWARE_DIR + "/database/Annotation/other/ko.des.txt"
         '''
-        self.go = self.ref_db.GO
+        # self.go = self.ref_db.GO
         self.gloabl = ["map01100", "map01110", "map01120", "map01130", "map01200", "map01210", "map01212", "map01230",
                        "map01220"]
 
@@ -293,7 +293,7 @@ class AllAnnoStat(object):
         logging.debug('succeed in calling {}'.format(sys._getframe().f_code.co_name))
 
     def get_ko2des(self):
-        self.kegg_des = Config().SOFTWARE_DIR + "/database/Annotation/other/ko.des.txt"
+        # self.kegg_des = Config().SOFTWARE_DIR + "/database/Annotation/other/ko.des.txt"
         with open(self.kegg_des, 'r') as kegg_des_f:
             ko2des = [(line.strip().split("\t")[0][3:], line.strip().split("\t")[1].split(";")[-1].strip()) for line in
                       kegg_des_f.readlines()]
@@ -343,21 +343,26 @@ class AllAnnoStat(object):
                         self.stat_info[query_name].spe_path = pathway
 
     def get_go(self, gos_list):
-        cursor = self.go.find({})
-        go_term_dict = {document['go_id']: document for document in cursor}
+        # cursor = self.go.find({})
+        # go_term_dict = {document['go_id']: document for document in cursor}
+        # for line in open(gos_list):
+        #     eles = line.strip('\n').split('\t')
+        #     transcript_id = eles[0]
+        #     if transcript_id in self.stat_info:
+        #         go_data = list()
+        #         for go_id in eles[1].split(';'):
+        #             document = go_term_dict.get(go_id)
+        #             if document:
+        #                 go_item = '{}({}:{})'.format(go_id, document['ontology'], document['name'])
+        #             else:
+        #                 go_item = '{}(deleted:old GO)'.format(go_id)
+        #             go_data.append(go_item)
+        #         self.stat_info[transcript_id].go = '; '.join(go_data)
         for line in open(gos_list):
             eles = line.strip('\n').split('\t')
             transcript_id = eles[0]
             if transcript_id in self.stat_info:
-                go_data = list()
-                for go_id in eles[1].split(';'):
-                    document = go_term_dict.get(go_id)
-                    if document:
-                        go_item = '{}({}:{})'.format(go_id, document['ontology'], document['name'])
-                    else:
-                        go_item = '{}(deleted:old GO)'.format(go_id)
-                    go_data.append(go_item)
-                self.stat_info[transcript_id].go = '; '.join(go_data)
+                self.stat_info[transcript_id].go = eles[1]
         logging.debug('succeed in calling {}'.format(sys._getframe().f_code.co_name))
 
     def get_cog(self, cog_list):
@@ -384,24 +389,24 @@ class AllAnnoStat(object):
                             self.stat_info[query_name].cog_ids = cog + "({})".format(cog_des)
         logging.debug('succeed in calling {}'.format(sys._getframe().f_code.co_name))
 
-    def get_cog_group_categories(self, group):
-        """找到cog/nog/kogID对应的功能分类及功能分类描述、cog描述"""
-        group = group.split(";")
-        funs, ids = [], []
-        for item in group:
-            if item:
-                result = self.cog_string.find({'cog_id': item, 'version': 10.0})
-                for result_one in result:
-                    group = result_one["cog_categories"]
-                    group_des = result_one["categories_description"]
-                    cog_des = result_one["cog_description"]
-                    cog_fun = item + "(" + group + ":" + group_des + ")"
-                    cog_id = item + "(" + cog_des + ")"
-                    funs.append(cog_fun)
-                    ids.append(cog_id)
-        funs = "; ".join(funs)
-        ids = "; ".join(ids)
-        return funs, ids
+    # def get_cog_group_categories(self, group):
+    #     """找到cog/nog/kogID对应的功能分类及功能分类描述、cog描述"""
+    #     group = group.split(";")
+    #     funs, ids = [], []
+    #     for item in group:
+    #         if item:
+    #             result = self.cog_string.find({'cog_id': item, 'version': 10.0})
+    #             for result_one in result:
+    #                 group = result_one["cog_categories"]
+    #                 group_des = result_one["categories_description"]
+    #                 cog_des = result_one["cog_description"]
+    #                 cog_fun = item + "(" + group + ":" + group_des + ")"
+    #                 cog_id = item + "(" + cog_des + ")"
+    #                 funs.append(cog_fun)
+    #                 ids.append(cog_id)
+    #     funs = "; ".join(funs)
+    #     ids = "; ".join(ids)
+    #     return funs, ids
 
     def get_nr(self, blast_nr_table):
         """找到转录本ID对应NR库的最佳hit_name和描述"""

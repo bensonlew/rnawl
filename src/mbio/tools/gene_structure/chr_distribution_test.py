@@ -67,8 +67,8 @@ class ChrDistributionTestTool(Tool):
 
     def __init__(self, config):
         super(ChrDistributionTestTool, self).__init__(config)
-        self.python_path = "program/Python/bin/"
-        self.python_full_path = self.config.SOFTWARE_DIR + "/program/Python/bin/"
+        self.python_path = "miniconda2/bin/"
+        self.python_full_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.samtools_path = self.config.SOFTWARE_DIR + "/bioinfo/align/samtools-1.3.1/"
         self.circos_script = self.config.SOFTWARE_DIR + '/bioinfo/plot/scripts/circos_distribution.py'
         self.bam_name = ""

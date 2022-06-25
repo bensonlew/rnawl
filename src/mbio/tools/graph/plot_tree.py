@@ -86,7 +86,7 @@ class PlotTreeTool(Tool):
         super(PlotTreeTool, self).__init__(config)
         self.plot_tree_bar_path = self.config.SOFTWARE_DIR + '/bioinfo/meta/scripts/plot-treeygbar.pl'
         self.plot_tree_fan_path = self.config.SOFTWARE_DIR + '/bioinfo/meta/scripts/plot-tree.pl'
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         self.colors_num = 21  # 目前支持的颜色数量
         self.max_species_group_name = 0
 

@@ -54,7 +54,7 @@ class Minimap2Tool(Tool):
         super(Minimap2Tool, self).__init__(config)
         self._version = "v1.0"
         self.program = {
-            'samtools': 'bioinfo/align/samtools-1.8/samtools',
+            'samtools': 'miniconda2/bin/samtools',
             'minimap2_tsg': 'bioinfo/align/minimap2/minimap2-2.17_x64-linux/minimap2',
             'minimap2_others': 'bioinfo/align/minimap2/minimap2',
             'bwa': 'bioinfo/align/bwa-0.7.17/bwa',

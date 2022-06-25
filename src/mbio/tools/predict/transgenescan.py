@@ -62,7 +62,7 @@ class TransgenescanTool(Tool):
     def __init__(self, config):
         super(TransgenescanTool, self).__init__(config)
         self.genome_fasta = self.option("input_genome").prop['path']
-        self.perl_path = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "/miniconda2/bin/perl"
         self.transgenescan_path = self.config.SOFTWARE_DIR +"/bioinfo/metaGenomic/TransGeneScan-1.2.1/TransGeneScan1.2.1/"
         self.transgenescan_stat = self.config.PACKAGE_DIR + "/metagenomic/scripts/"
 

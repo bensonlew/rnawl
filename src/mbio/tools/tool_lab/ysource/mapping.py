@@ -43,7 +43,7 @@ class MappingTool(Tool):
         super(MappingTool, self).__init__(config)
         self._version = "v1.0"
         self.software_dir = self.config.SOFTWARE_DIR
-        self.samtools = 'program/Python/bin/samtools'
+        self.samtools = 'miniconda2/bin/samtools'
         self.bam = self.option("bam_file").prop["path"]
 
     def run(self):
@@ -56,7 +56,7 @@ class MappingTool(Tool):
 
     def run_samtoolsort(self):
         self.sort_bam = "aln-pe.sort.bam"
-        samtools = os.path.join(self.software_dir, 'program/Python/bin/samtools')
+        samtools = os.path.join(self.software_dir, 'miniconda2/bin/samtools')
         cmd = "{} sort -@ 10 {} >{}".format(samtools,self.bam,self.sort_bam)
         now_time = datetime.datetime.now().strftime("%Y%m%d_%H%M%S%f") + \
             "_" + str(random.randint(1, 10000))

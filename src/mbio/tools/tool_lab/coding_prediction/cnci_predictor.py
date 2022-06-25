@@ -59,7 +59,7 @@ class CnciPredictorTool(Tool):
     def __init__(self, config):
         super(CnciPredictorTool, self).__init__(config)
         self.python_path = "miniconda2/bin/python"
-        self.env_path = self.config.SOFTWARE_DIR + '/program/Python/bin'
+        self.env_path = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         self.set_environ(PATH=self.env_path)
         self.cnci_out_file = os.path.join(self.output_dir, 'cnci_output.txt')
 

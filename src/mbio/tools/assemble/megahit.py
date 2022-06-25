@@ -85,7 +85,7 @@ class MegahitAgent(Agent):
 class MegahitTool(Tool):
     def __init__(self, config):
         super(MegahitTool, self).__init__(config)
-        self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin:' + self.config.SOFTWARE_DIR + "/program/Python/bin"
+        self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin:' + self.config.SOFTWARE_DIR + "/miniconda2/bin"
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64:' + self.config.SOFTWARE_DIR + "/program/Python/lib"
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.megahit_path = '/bioinfo/metaGenomic/megahit/'

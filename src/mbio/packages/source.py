@@ -19,7 +19,7 @@ def envir(bind_obj, type="perl"):
             os.path.join(base_path, "program/nano"),
             os.path.join(base_path, "program/sun_jdk1.8.0/bin"),
             os.path.join(base_path, "program/R-3.3.1/bin"),
-            os.path.join(base_path, "program/perl/perls/perl-5.24.0/bin"),
+            os.path.join(base_path, "miniconda2/bin"),
             os.path.join(base_path, "program/vim/bin"),
             "/mnt/lustre/users/sanger/biocluster/bin",
             os.path.join(base_path, "library/bin")

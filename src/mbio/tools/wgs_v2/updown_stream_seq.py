@@ -39,7 +39,7 @@ class UpdownStreamSeqAgent(Agent):
 class UpdownStreamSeqTool(Tool):
     def __init__(self, config):
         super(UpdownStreamSeqTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.updownstreamseq = "/mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgs_v2/updownstreamseq.pl"
 
     def run_updownstreamseq(self):

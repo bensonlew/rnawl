@@ -90,7 +90,7 @@ class FastqProcessTool(Tool):
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/seq/seqtk-master')
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/align/samtools-1.4')
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/seq/samblaster-0.1.24')
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/program/Python/bin')  # cutadapt
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/miniconda2/bin')  # cutadapt
         
         self.ref1 = self.config.SOFTWARE_DIR + '/database/human/hg38.chromosomal_assembly/ref.fa'
         self.ref = self.config.SOFTWARE_DIR + '/database/human/hg38_nipt/nchr.fa'

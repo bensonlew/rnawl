@@ -53,7 +53,7 @@ class PanGenomeTool(Tool):
         self.set_environ(PATH=self.path, PERL5LIB=self.perl5path)
         # if self.option("pangenome") == 'pgap':
         self.fasta = self.option("infile_dir").prop['path']
-        self.perl_path = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "/miniconda2/bin/perl"
         self.perl_script = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/PGAP-1.2.1/PGAP.pl"
         self.out = self.work_dir + '/out_result'
         self.python = "/miniconda2/bin/python"
@@ -61,7 +61,7 @@ class PanGenomeTool(Tool):
         self.calculate_pangenome = self.config.PACKAGE_DIR + "/bac_comp_genome/calculate_pangenome.py"
         self.newgene = self.config.PACKAGE_DIR + "/bac_comp_genome/calculate_newgene.py"
         self.path = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/get_homologues-master:" + self.config.SOFTWARE_DIR + "/program/miniconda3/envs/R_v4/bin:"
-        self.perl5path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl5path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.library = self.config.SOFTWARE_DIR + "/program/miniconda3/envs/R_v4/lib"
         self.r_home = self.config.SOFTWARE_DIR + "/program/miniconda3/envs/R_v4/bin/R"
         self.c_include = self.config.SOFTWARE_DIR + "/program/miniconda3/envs/R_v4/include"

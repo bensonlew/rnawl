@@ -41,7 +41,7 @@ class FqToFaAgent(Agent):
 class FqToFaTool(Tool):
     def __init__(self, config):
         super(FqToFaTool, self).__init__(config)
-        self.perl = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "/miniconda2/bin/perl"
         self.fatofa = self.config.PACKAGE_DIR + "/metagenomic/fq_to_fa.pl"
         self.file = self.option("fastq").prop['path'].split("/")[-1]
         self.out = self.work_dir + "/" + self.file + ".fa"

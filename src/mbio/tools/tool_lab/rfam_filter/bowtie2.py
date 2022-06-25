@@ -73,7 +73,7 @@ class Bowtie2Tool(Tool):
         super(Bowtie2Tool, self).__init__(config)
         # self.bowtie_path = self.config.SOFTWARE_DIR + "/bioinfo/align/bowtie2-2.2.9/"
         self.bowtie_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
-        self.samtool_path = self.config.SOFTWARE_DIR + "/program/Python/bin/samtools"
+        self.samtool_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/samtools"
         self.seqtk = self.config.SOFTWARE_DIR + "/bioinfo/seq/seqtk-master/seqtk"
         self.left_reads = ""
         self.right_reads = ""

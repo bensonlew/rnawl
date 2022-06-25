@@ -54,7 +54,7 @@ class GsvaTool(Tool):
         super(GsvaTool, self).__init__(config)
         self.program = {
             'python': 'miniconda2/bin/python',
-            'Rscript': 'program/R-3.3.1/bin/Rscript'
+            'Rscript': 'bioinfo/miniconda2/bin/Rscript'
         }
         self.script = {
             'gsva': os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/gsva.r')

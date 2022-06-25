@@ -56,7 +56,7 @@ class MakeConfigTool(Tool):
     def __init__(self, config):
         super(MakeConfigTool, self).__init__(config)
         self.sample_ids = []
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.config_path = self.config.PACKAGE_DIR + "/wgs/denovo.make.config.pl"
 
     def get_fastq_list(self):

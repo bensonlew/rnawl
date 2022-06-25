@@ -67,7 +67,7 @@ class BamReadsdistributionAgent(Agent):
 class BamReadsdistributionTool(Tool):
     def __init__(self, config):
         super(BamReadsdistributionTool, self).__init__(config)
-        self.cmd_path = self.config.SOFTWARE_DIR + "/program/Python/bin/"
+        self.cmd_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.shell_path = "bioinfo/rna/scripts"
 
     def run_reads_distribution(self):

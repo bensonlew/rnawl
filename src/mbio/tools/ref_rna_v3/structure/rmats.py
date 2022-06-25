@@ -63,14 +63,14 @@ class RmatsAgent(Agent):
 class RmatsTool(Tool):
     def __init__(self, config):
         super(RmatsTool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         if self.option("version") == "rMATS.4.0.2":
             self.program = {
                 'python': 'miniconda2/bin/python',
             }
             self.script = {
-                'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS2/rmats.py'),
+                'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS4/rmats.py'),
                 'rmats_process': os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v3/structure/rmats_process_script.py')
             }
             self.dir = {

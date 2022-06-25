@@ -74,7 +74,7 @@ class MapperStatFilterTool(Tool):
         self.set_environ(PATH=self.perl)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/WGS/circos-0.69-6/bin')
         self.circo_script_path = self.config.PACKAGE_DIR + '/small_rna/draw_smallrna_mapping.circos.pl'
-        self.perl2_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl2_path = 'miniconda2/bin/perl'
         self.sample_names = list()
         self.chr_read = dict
 

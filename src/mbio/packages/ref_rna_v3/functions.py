@@ -28,8 +28,14 @@ def toolfuncdeco(func):
     return wrapper
 
 def runcmd(tool, cmd_name, cmd, shell=False, block=True):
+
     if shell:
-        cmd = tool.config.SOFTWARE_DIR + '/' + cmd
+        if cmd.split(" ")[0] in ["awk", "sh"]:
+            cmd = "/usr/bin/" + cmd
+        else:
+            cmd = tool.config.SOFTWARE_DIR + '/' + cmd
+
+    # print("cmd is {}".format(cmd))
     command = tool.add_command(cmd_name, cmd, shell=shell)
     command.run()
     command.no_check = True

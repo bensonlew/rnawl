@@ -53,7 +53,7 @@ class SamRnaModule(Module):
         self.end_times = 0
         self.samtools_tools = []
         #self.samtools_path = Config().SOFTWARE_DIR + "/bioinfo/align/samtools-1.6/samtools-1.6/samtools"
-        self.samtools_path = Config().SOFTWARE_DIR + "/bioinfo/align/samtools-1.8/"
+        self.samtools_path = Config().SOFTWARE_DIR + "/miniconda2/bin/"
         self.split = self.add_tool('ref_rna_v2.split_ref_fasta')
 
     def check_options(self):

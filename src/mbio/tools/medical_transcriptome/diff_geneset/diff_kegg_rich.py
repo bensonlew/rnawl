@@ -81,11 +81,11 @@ class DiffKeggRichTool(Tool):
         # self.kobas = '/bioinfo/annotation/kobas-2.1.1/src/kobas/scripts/'
         # self.kobas_path = self.config.SOFTWARE_DIR + '/bioinfo/annotation/kobas-2.1.1/src/'
         # self.set_environ(PYTHONPATH=self.kobas_path)
-        # self.r_path = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin:$PATH"
-        # self._r_home = self.config.SOFTWARE_DIR + "/program/R-3.3.1/lib64/R/"
-        # self._LD_LIBRARY_PATH = self.config.SOFTWARE_DIR + "/program/R-3.3.1/lib64/R/lib:$LD_LIBRARY_PATH"
+        # self.r_path = self.config.SOFTWARE_DIR + "/bioinfo/miniconda2/bin:$PATH"
+        # self._r_home = self.config.SOFTWARE_DIR + "/bioinfo/miniconda2/lib64/R/"
+        # self._LD_LIBRARY_PATH = self.config.SOFTWARE_DIR + "/bioinfo/miniconda2/lib64/R/lib:$LD_LIBRARY_PATH"
         # self.set_environ(PATH=self.r_path, R_HOME=self._r_home, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
         # self.all_list = self.option('all_list').prop['gene_list']
         # self.diff_list = self.option('diff_list').prop['gene_list']
         self.script_path = self.config.PACKAGE_DIR + "/ref_rna_v2/kegg_enrichment.py"
@@ -269,7 +269,7 @@ class DiffKeggRichTool(Tool):
                 ko_tmp = [x.split("%09")[0] for x in links_ko]  # ko gene_list
                 if pathway in self.map_dict:
                     for ko in self.map_dict[pathway].keys():  # 对背景色中的所有项进行循环
-                        self.logger.info(ko)
+                        # self.logger.info(ko)
                         if ko == "":
                             continue
                         if ko in ko_tmp:  # 当背景色在富集得出的表中时
@@ -287,7 +287,7 @@ class DiffKeggRichTool(Tool):
                 tmp[9] = lnk
                 str_ = "\t".join(tmp) + "\n"
                 fw.write(str_)
-        os.link(self.output_name, self.output_name + "_bak")
+        # os.link(self.output_name, self.output_name + "_bak")
         os.remove(self.output_name)
         os.link(self.output_name + "_new", self.output_name)
         self.set_output(self.output_name)

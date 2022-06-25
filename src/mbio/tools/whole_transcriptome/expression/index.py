@@ -49,7 +49,7 @@ class IndexAgent(Agent):
 class IndexTool(Tool):
     def __init__(self, config):
         super(IndexTool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.program = {
             'bowtie2': 'bioinfo/rna/miniconda3/bin/bowtie2',
@@ -63,7 +63,7 @@ class IndexTool(Tool):
         }
         self.dir = {
             'bowtie2_path': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/miniconda3/bin'),
-            'perl_path': os.path.join(self.config.SOFTWARE_DIR, 'program/perl/perls/perl-5.24.0/bin')
+            'perl_path': os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin')
         }
         self.set_environ(PATH=self.dir['perl_path'])
 

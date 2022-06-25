@@ -35,7 +35,7 @@ class SamtoolsViewAgent(Agent):
 class SamtoolsViewTool(Tool):
     def __init__(self, config):
         super(SamtoolsViewTool, self).__init__(config)
-        self.samtools_path = self.config.SOFTWARE_DIR + "/bioinfo/align/samtools-1.7/samtools"
+        self.samtools_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/samtools"
         self.samtools_sh_path = "bioinfo/WGS/samtools_view.sh"
 
     def run_samtools_view(self):

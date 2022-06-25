@@ -42,7 +42,7 @@ class PredictStatAgent(Agent):
 class PredictStatTool(Tool):
     def __init__(self, config):
         super(PredictStatTool, self).__init__(config)
-        # self.R = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin/Rscript"
+        # self.R = self.config.SOFTWARE_DIR + "/bioinfo/miniconda2/bin/Rscript"
         self.R = self.config.SOFTWARE_DIR + "/bioinfo/rna/miniconda2/bin/Rscript"
         self.Rscrip = self.config.PACKAGE_DIR + '/medical_transcriptome/predict_scatter.r'
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'

@@ -83,7 +83,7 @@ class KeggClassTool(Tool):
     def __init__(self, config):
         super(KeggClassTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
         self.r_path = self.config.SOFTWARE_DIR + "/program/R-3.3.3/bin/Rscript"
         self.map_path = self.config.SOFTWARE_DIR + "/bioinfo/annotation/scripts/map5.r"
 
@@ -289,8 +289,8 @@ class KeggClassTool(Tool):
             self.gene2set[i] = ",".join(gene2set[i])
         if self.gene2set.has_key(""):
             del self.gene2set[""]
-        self.logger.info("path is {}".format(";".join(path_ko.keys())))
-        self.logger.info("gene2set is {}".format(self.gene2set))
+        # self.logger.info("path is {}".format(";".join(path_ko.keys())))
+        # self.logger.info("gene2set is {}".format(self.gene2set))
         self.ko_genes= ko_genes  # ko与基因的对应关系
         self.category = geneset_ko  # 基因集与ko的对应关系
         self.path_ko = path_ko  # path小ko与基因大Ko的对应关系
@@ -360,7 +360,7 @@ class KeggClassTool(Tool):
             for ko in ko_list_unrepeat:
                 ko_genes_set = set(self.ko_genes[ko])
                 color_dict[ko] = []
-                self.logger.info("ko{}\tset1{}\tset2{}".format(ko_genes_set, gene1_list, gene2_list))
+                # self.logger.info("ko{}\tset1{}\tset2{}".format(ko_genes_set, gene1_list, gene2_list))
                 if len(self.geneset_gene) == 1:
                     if  ko_genes_set.intersection(gene1_list):
                         color_dict[ko].append("#0000cd")  # 蓝色

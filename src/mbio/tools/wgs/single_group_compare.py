@@ -70,7 +70,7 @@ class SingleGroupCompareTool(Tool):
     def __init__(self, config):
         super(SingleGroupCompareTool, self).__init__(config)
         self.script_path = self.config.PACKAGE_DIR + "/wgs/single_group_vcf.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         self.python = "miniconda2/bin/python"
         self.distribution_graph_path = self.config.PACKAGE_DIR + "/wgs/distribution_graph.py"
 

@@ -36,7 +36,7 @@ class InsertResultAgent(Agent):
 class InsertResultTool(Tool):
     def __init__(self, config):
         super(InsertResultTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.insertresult = "/mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgs_v2/insertresult.pl"
 
     def run_insertresult(self):

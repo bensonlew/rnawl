@@ -61,7 +61,7 @@ class SeqFilterTool(Tool):
     def __init__(self, config):
         super(SeqFilterTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.perl =  'program/perl/perls/perl-5.24.0/bin/'
+        self.perl =  'miniconda2/bin/'
         self.tool_path=self.config.PACKAGE_DIR+"/tool_lab/seq_filter.pl"
 
     def run(self):

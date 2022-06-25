@@ -58,7 +58,7 @@ class TranscriptAbstractTool(Tool):
         super(TranscriptAbstractTool, self).__init__(config)
         self.gffread_path = "bioinfo/rna/cufflinks-2.2.1/"
         self.long_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/scripts/"
-        self.python_path = "program/Python/bin/"
+        self.python_path = "miniconda2/bin/"
         self.length = self.config.SOFTWARE_DIR + "/bioinfo/annotation/scripts/fastalength"
 
     def run_gffread(self):

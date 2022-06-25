@@ -115,7 +115,7 @@ class MedicalTranscriptomeWorkflow(Workflow):
 
             ## 转录组功能注释
             #基础数据库注释版本
-            {"name": "annot_group", "type": "string", "default": "REFRNA_GROUP_202007"},
+            {"name": "annot_group", "type": "string", "default": "REFRNA_GROUP_202110"},
             # NR库分类 ['Animal, Plant', 'Protist', 'Fungi', 'All']
             {'name': 'nr_database', 'type': 'string', 'default': "metazoa"},
             # KEGG库分类 ['Animal, Plant', 'Protist', 'Fungi', 'All']
@@ -220,6 +220,7 @@ class MedicalTranscriptomeWorkflow(Workflow):
                 # print(genome_db)
                 genome_info = genome_db
                 break
+        self.genome_info = genome_info
         # else:
             # self.set_error('数据库中不存在该物种的注释信息，程序退出', code='13700320')
         genome_path = os.path.join(self.config.SOFTWARE_DIR, 'database/Genome_DB_finish')
@@ -559,6 +560,7 @@ class MedicalTranscriptomeWorkflow(Workflow):
             # self.annot_class_beta_ref = self.add_module('ref_rna_v2.annot_class_beta')
             self.gene_fa = self.add_tool('medical_transcriptome.gene_fa')
             self.detail = self.add_tool('medical_transcriptome.database.detail')
+            self.rely.append(self.detail)
             self.annot_merge = self.add_tool('medical_transcriptome.annotation.annot_merge')
             self.rely.append(self.annot_merge)
             if self.option('is_assemble'):
@@ -642,6 +644,7 @@ class MedicalTranscriptomeWorkflow(Workflow):
         chart_dict = {
             "type": "workflow",
             "samples": samples,
+            "annot_detail": "{table_dir}/allannot_class/all_annot_gene.xls".format(table_dir=self.annot_merge.output_dir),
             "qc_file_raw": "{table_dir}/qualityStat/{sample_name}.l.qual_stat,{table_dir}/qualityStat/{sample_name}.r.qual_stat".format(
                 table_dir=self.hiseq_reads_stat_raw.output_dir, sample_name='{sample_name}'),
             "qc_file_use": "{table_dir}/qualityStat/{sample_name}.l.qual_stat,{table_dir}/qualityStat/{sample_name}.r.qual_stat".format(
@@ -655,7 +658,10 @@ class MedicalTranscriptomeWorkflow(Workflow):
             "align_pos": "{table_dir}/distribution/{sample_name}.reads_distribution.txt".format(
                 table_dir=self.map_assessment.output_dir, sample_name='{sample_name}'),
             "align_chr": "{table_dir}/chr_stat/{sample_name}.bam_chr_stat.xls".format(
-                table_dir=self.map_assessment.output_dir, sample_name='{sample_name}')
+                table_dir=self.map_assessment.output_dir, sample_name='{sample_name}'),
+            "qc_data_stat": "{table_dir}/stat_results".format(table_dir=self.hiseq_reads_stat_use.output_dir),
+            "raw_data_stat": "{table_dir}/stat_results".format(table_dir=self.hiseq_reads_stat_raw.output_dir),
+            "align_stat": "{table_dir}/Comparison_results".format(table_dir=self.rnaseq_mapping.output_dir)
 
         }
         if self.option('fq_type') == "SE":
@@ -972,6 +978,7 @@ class MedicalTranscriptomeWorkflow(Workflow):
             fastq_dir = self.option('qc_dir')
         self.rnaseq_mapping.set_options({
             'ref_genome': self.option('ref_genome'),
+            'dna_index': self.genome_info["dna_index"],
             'genome_version': self.genome_version,
             'genome_annot_version': self.annot_version,
             'mapping_method': self.option('align_method').lower(),
@@ -1727,58 +1734,58 @@ class MedicalTranscriptomeWorkflow(Workflow):
         self.IMPORT_REPORT_DATA = True
         self.IMPORT_REPORT_AFTER_END = False
         self.stop_timeout_check()
-        if os.path.exists(os.path.join(self.work_dir, "ttttt")):
-            self.set_upload()
-        else:
-            if os.path.exists(os.path.join(self.work_dir,"temporary")):
-                shutil.rmtree(os.path.join(self.work_dir,"temporary"))
-            os.makedirs(os.path.join(self.work_dir,"temporary"))
-            self.export_temporary = os.path.join(self.work_dir,"temporary")
-            if "mapping" in self.analysis_content:
-                self.export_task_info()
-                self.export_genome_info()
-                self.export_sample_info()
-                self.export_qc_result()
+        # if os.path.exists(os.path.join(self.work_dir, "ttttt")):
+        #     self.set_upload()
+        # else:
+        #     if os.path.exists(os.path.join(self.work_dir,"temporary")):
+        #         shutil.rmtree(os.path.join(self.work_dir,"temporary"))
+        #     os.makedirs(os.path.join(self.work_dir,"temporary"))
+        #     self.export_temporary = os.path.join(self.work_dir,"temporary")
+        #     if "mapping" in self.analysis_content:
+        #         self.export_task_info()
+        #         self.export_genome_info()
+        #         self.export_sample_info()
+        #         self.export_qc_result()
 
-                '''
-                # if self.option('datatype') == 'rawdata':
-                #     self.export_ref_rna_qc_before()
-                # self.export_ref_rna_qc_after()
-                '''
+        #         '''
+        #         # if self.option('datatype') == 'rawdata':
+        #         #     self.export_ref_rna_qc_before()
+        #         # self.export_ref_rna_qc_after()
+        #         '''
 
-                self.export_ref_rna_qc_alignment()
-                self.export_ref_rna_qc_assessment()
-            if "annotation" in self.analysis_content:
-                if self.option('is_assemble'):
-                    self.export_ref_assembly()
-                self.export_annotation()
-            if "quantification" in self.analysis_content:
-                self.export_all_exp_matrix()
-                if self.option('sample_num') == 'multiple':
-                    self.export_all_exp_distribution()
-                    if len(self.option('group_table').prop['group_dict']) > 1:
-                        self.export_add_exp_venn()
-                    if self.option('group_table').prop['sample_number'] > 2:
-                        self.export_all_exp_pca()
-                        self.export_all_exp_corr()
-                    self.export_gene_detail()
-            if "other" in self.analysis_content:
-                if self.option('fq_type') == 'PE':
-                    self.export_gene_fusion()
-                if self.option('sample_num') == 'multiple':
-                    self.export_all_exp_diff()
-                    self.export_diff_geneset_analysis()
-                    if self.option('is_as') == 'True':
-                        self.export_rmats()
-                        # self.export_rmats_count()
-                if self.option('is_snp') == 'True':
-                    self.export_snp()
-                if self.option('is_somatic') == 'True':
-                    self.export_somatic()
+        #         self.export_ref_rna_qc_alignment()
+        #         self.export_ref_rna_qc_assessment()
+        #     if "annotation" in self.analysis_content:
+        #         if self.option('is_assemble'):
+        #             self.export_ref_assembly()
+        #         self.export_annotation()
+        #     if "quantification" in self.analysis_content:
+        #         self.export_all_exp_matrix()
+        #         if self.option('sample_num') == 'multiple':
+        #             self.export_all_exp_distribution()
+        #             if len(self.option('group_table').prop['group_dict']) > 1:
+        #                 self.export_add_exp_venn()
+        #             if self.option('group_table').prop['sample_number'] > 2:
+        #                 self.export_all_exp_pca()
+        #                 self.export_all_exp_corr()
+        #             self.export_gene_detail()
+        #     if "other" in self.analysis_content:
+        #         if self.option('fq_type') == 'PE':
+        #             self.export_gene_fusion()
+        #         if self.option('sample_num') == 'multiple':
+        #             self.export_all_exp_diff()
+        #             self.export_diff_geneset_analysis()
+        #             if self.option('is_as') == 'True':
+        #                 self.export_rmats()
+        #                 # self.export_rmats_count()
+        #         if self.option('is_snp') == 'True':
+        #             self.export_snp()
+        #         if self.option('is_somatic') == 'True':
+        #             self.export_somatic()
 
-            if self.option("report_img"):
-                self.export_report_img()
-            self.set_upload()
+        #     if self.option("report_img"):
+        #         self.export_report_img()
+        self.set_upload()
 
     # @workfuncdeco
     def set_upload(self):
@@ -1962,16 +1969,16 @@ class MedicalTranscriptomeWorkflow(Workflow):
         # genome_stat.to_csv(os.path.join(self.target_dir, '01Background', self.organism_name + ".genome_info.xls"),
         #                    sep="\t", header=True, index=False)
         ## software_info
-        software_info = os.path.join(self.target_dir, '04Background', "software_info.xls")
-        db = Config().get_mongo_client(mtype='medical_transcriptome', dydb_forbid=True)[Config().get_mongo_dbname(mtype='medical_transcriptome', dydb_forbid=True)]
-        my_collection = db['sg_software_database']
-        my_results = my_collection.find({})
-        with open(software_info, "w") as w:
-            w.write("\t".join(["Soft/Database", "Version", "Analysis", "Source"]) + "\n")
-            for collection in my_results:
-                w.write("\t".join(
-                    [str(collection["software_database"]), str(collection["version"]), str(collection["usage"]),
-                     str(collection["source"])]) + "\n")
+        # software_info = os.path.join(self.target_dir, '04Background', "software_info.xls")
+        # db = Config().get_mongo_client(mtype='medical_transcriptome', dydb_forbid=True)[Config().get_mongo_dbname(mtype='medical_transcriptome', dydb_forbid=True)]
+        # my_collection = db['sg_software_database']
+        # my_results = my_collection.find({})
+        # with open(software_info, "w") as w:
+        #     w.write("\t".join(["Soft/Database", "Version", "Analysis", "Source"]) + "\n")
+        #     for collection in my_results:
+        #         w.write("\t".join(
+        #             [str(collection["software_database"]), str(collection["version"]), str(collection["usage"]),
+        #              str(collection["source"])]) + "\n")
         ## sample_info
         sample_info = os.path.join(self.target_dir, '04Background', "sample_info.xls")
         if self.option('sample_num') == 'multiple':
@@ -2563,21 +2570,21 @@ class MedicalTranscriptomeWorkflow(Workflow):
             os.makedirs(os.path.join(self.target_dir, '03Gene_structure_analysis'))
             # AS
             self.logger.info('rmats_flag1')
-            if self.option('sample_num') == 'multiple' and self.option('is_as') == 'True' and self.option("as_method").lower() == "rmats":
-                self.logger.info('rmats_flag2')
-                set_rmats = Upload()
-                set_rmats.set_rmats(os.path.join(self.output_dir, 'altersplicing'), os.path.join(self.target_dir,'03Gene_structure_analysis', '01AS'),
-                          self.task_id)
-            elif self.option('is_as') == 'True' and self.option("as_method").lower() == "as_profile":
-                shutil.copytree(self.as_analysis.output_dir,
-                                os.path.join(self.target_dir, '03Gene_structure_analysis', '01AS'))
+            # if self.option('sample_num') == 'multiple' and self.option('is_as') == 'True' and self.option("as_method").lower() == "rmats":
+            #     self.logger.info('rmats_flag2')
+            #     set_rmats = Upload()
+            #     set_rmats.set_rmats(os.path.join(self.output_dir, 'altersplicing'), os.path.join(self.target_dir,'03Gene_structure_analysis', '01AS'),
+            #               self.task_id, self.option('control_file').prop("cmp_list"))
+            # elif self.option('is_as') == 'True' and self.option("as_method").lower() == "as_profile":
+            shutil.copytree(self.as_analysis.output_dir,
+                            os.path.join(self.target_dir, '03Gene_structure_analysis', '01AS'))
 
             self.logger.info('rmats_flag3')
 
             #SNP
             if self.option('sample_num') == 'multiple' and self.option('is_snp') == 'True':
                 os.makedirs(os.path.join(self.target_dir, '03Gene_structure_analysis','02SNP_InDel_Analysis'))
-                CopyFile().linkdir(os.path.join(self.work_dir, 'SnpTmp'), os.path.join(self.target_dir, '03Gene_structure_analysis','02SNP_InDel_Analysis'))
+                # CopyFile().linkdir(os.path.join(self.work_dir, 'SnpTmp'), os.path.join(self.target_dir, '03Gene_structure_analysis','02SNP_InDel_Analysis'))
                 rm_files = [os.path.join(self.target_dir, '03Gene_structure_analysis','02SNP_InDel_Analysis', 'snp_annotation.xls'),
                             os.path.join(self.target_dir,  '03Gene_structure_analysis','02SNP_InDel_Analysis','data_anno_pre.xls')]
                 for rm_file in rm_files:
@@ -2612,7 +2619,8 @@ class MedicalTranscriptomeWorkflow(Workflow):
                 set_gene_fusion.set_gene_fusion(self.gene_fusion.output_dir,os.path.join(self.target_dir,'03Gene_structure_analysis', '03GeneFusion','GeneFusion_Star_Fusion'))
                 # shutil.copytree(self.gene_fusion.output_dir,os.path.join(self.target_dir,'03Gene_structure_analysis', '03GeneFusion', 'GeneFusion_Star_Fusion'))
         self.move_chart_file()
-        self.def_upload()
+        super(MedicalTranscriptomeWorkflow, self).end()
+        # self.def_upload()
 
     def run_parameter(self, dir_path):
         document = self.database['sg_table_relation'].find_one({})
@@ -2749,7 +2757,7 @@ class MedicalTranscriptomeWorkflow(Workflow):
             intermediate_dir = intermediate_dir + "/"
         if not self.intermediate_result.endswith("/"):
             self.intermediate_result = self.intermediate_result + "/"
-        self.upload_to_s3(self.intermediate_result, intermediate_dir)
+        # self.upload_to_s3(self.intermediate_result, intermediate_dir)
 
         if self.option("report_img"):
             s3 = self._sheet.output.split(":")[0]

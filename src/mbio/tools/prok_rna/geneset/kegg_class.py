@@ -77,7 +77,7 @@ class KeggClassTool(Tool):
     def __init__(self, config):
         super(KeggClassTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
         self.r_path = self.config.SOFTWARE_DIR + "/program/R-3.3.3/bin/Rscript"
         self.kegg_files_dict = AnnotConfig().get_file_dict(db="kegg", version=self.option("kegg_version"))
 

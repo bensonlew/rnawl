@@ -83,7 +83,7 @@ class StringtieTool(Tool):
         # self.stringtie_path = 'bioinfo/rna/stringtie-1.3.3b/'
         # self.stringtie_path = 'bioinfo/rna/stringtie-1.3.4d/'
         # self.stringtie_path = 'miniconda2/bin/'
-        self.stringtie_path = "bioinfo/ref_rna_v3/stringtie/miniconda3/bin/"
+        self.stringtie_path = "miniconda2/bin/"
         self.gffread_path = "bioinfo/rna/cufflinks-2.2.1/"
 
     def run(self):

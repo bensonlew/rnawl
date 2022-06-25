@@ -81,7 +81,7 @@ class Bowtie2Tool(Tool):
         self.bowtie2_path = '/bioinfo/align/bowtie2-2.2.9/'
         self.index_prefix = ''
         self.samp_name = os.path.basename(self.option('fastq1').path).split('.')[0]
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         
 

@@ -63,7 +63,7 @@ class CnvCompareTool(Tool):
     def __init__(self, config):
         super(CnvCompareTool, self).__init__(config)
         self.cnv_diff_path = self.config.PACKAGE_DIR + "/wgs/cnv.diff.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         
     def cnv_diff(self):
         """

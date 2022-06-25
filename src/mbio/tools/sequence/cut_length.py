@@ -58,7 +58,7 @@ class CutLengthTool(Tool):
 
     def __init__(self, config):
         super(CutLengthTool, self).__init__(config)
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         # self.cut_length_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/split_length.pl '
         # self.combine_contig_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/combine_contig.pl '
         self.cut_length_path = self.config.PACKAGE_DIR + '/sequence/scripts/split_length.pl '

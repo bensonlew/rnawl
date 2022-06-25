@@ -64,7 +64,7 @@ class RockhopperTool(Tool):
     """
     def __init__(self, config):
         super(RockhopperTool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.python_rel = '/miniconda2/bin/python'
         self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/python'

@@ -19,7 +19,7 @@ class BiomFile(File):
         """
         """
         super(BiomFile, self).__init__()
-        self.biom_path = os.path.join(Config().SOFTWARE_DIR, "program/Python/bin/")
+        self.biom_path = os.path.join(Config().SOFTWARE_DIR, "miniconda2/bin/")
 
     def get_info(self):
         """

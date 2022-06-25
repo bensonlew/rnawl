@@ -66,7 +66,7 @@ class DoubleGroupCompareAgent(Agent):
 class DoubleGroupCompareTool(Tool):
     def __init__(self, config):
         super(DoubleGroupCompareTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.double_group = self.config.PACKAGE_DIR + "/wgs/double_group_vcf.pl"
 
     def run_double_group_vcf(self):

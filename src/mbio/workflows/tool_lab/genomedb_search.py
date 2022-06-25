@@ -52,7 +52,7 @@ class GenomedbSearchWorkflow(Workflow):
         results = list()
         esearch = self.config.SOFTWARE_DIR + '/bioinfo/biodb/edirect/esearch'
         efetch = self.config.SOFTWARE_DIR + '/bioinfo/biodb/edirect/efetch'
-        perl_path = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin'
+        perl_path = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         os.environ['PATH'] = perl_path  + ":" + os.environ['PATH']
         if self.search_type == "taxon":
             cmd = "{} -db assembly -query \"{} [TXID]\"  | {}  -format docsum  -json ".format(esearch, self.option("species"), efetch)

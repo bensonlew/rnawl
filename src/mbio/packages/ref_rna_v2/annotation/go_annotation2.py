@@ -155,7 +155,7 @@ class Term(object):
 
 class Terms(dict):
     """解析GO库的OBO文件，生成一个包含所有terms的对象，类似于一个可以查询的字典"""
-    def __init__(self, obo_fp=Config().SOFTWARE_DIR + "/database/Annotation/other2019/go.obo"):
+    def __init__(self, obo_fp=Config().SOFTWARE_DIR + "/database/Annotation/all/GO/version_20210918/go.obo"):
         """初始化所有的terms"""
         self.obo_fp = obo_fp
         self.parse_obo_file()

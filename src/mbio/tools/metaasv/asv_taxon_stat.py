@@ -85,9 +85,9 @@ class AsvTaxonStatTool(Tool):
     def __init__(self, config):
         super(AsvTaxonStatTool, self).__init__(config)
         self._version = 1.0
-        self._biom_path = "program/Python/bin/biom"
-        self._make_otu_table_path = "program/Python/bin/make_otu_table.py"
-        self._summarize_taxa_path = "program/Python/bin/summarize_taxa.py"
+        self._biom_path = "miniconda2/bin/biom"
+        self._make_otu_table_path = "miniconda2/bin/make_otu_table.py"
+        self._summarize_taxa_path = "miniconda2/bin/summarize_taxa.py"
         self._sum_tax_path = os.path.join(Config().SOFTWARE_DIR, "bioinfo/taxon/scripts/sum_tax.fix.pl")
         self.otu_taxon_dir = os.path.join(self.work_dir, "output", "tax_summary_a")
 

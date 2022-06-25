@@ -56,7 +56,7 @@ class AnnotMapdbModule(Module):
             {'name': 'kegg_version', 'type': 'string', 'default': "2019"},
             {"name": "nr_version", "type": "string", "default": "2019"},
             {"name": "swissprot_version", "type": "string", "default": "2019"},
-            {"name": "uniprot_version", "type": "string", "default": "202009"},
+            {"name": "uniprot_version", "type": "string", "default": "202109"},
             {"name": "string_version", "type": "string", "default": "2019"},
             {"name": "pir_version", "type": "string", "default": "2019"},
             {"name": "eggnog_version", "type": "string", "default": "2019"},
@@ -152,6 +152,7 @@ class AnnotMapdbModule(Module):
         opts.update({"db": "nr"})
         opts.update({"version": self.option("version")})
         opts.update({"nr_version": self.option("nr_version")})
+        print("blast opts: {}".format(opts))
         if self.option("diamond_version") >= "v2.0.13":
             opts.update({"sensitive": 1})
         i = 0

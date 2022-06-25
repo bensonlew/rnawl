@@ -469,12 +469,12 @@ class Basic(EventObject):
             if not c.is_end:
                 unfinished.append(c.id)
         if len(unfinished) > 0:
-            self.logger.warning("*************************************************************************************"
-                                "还有子对象%s没有运行完成,请确认此情况是否程序本意？如非故意如此, "
-                                "此问题可能会导致后续程序抛出EventStopError异常或严重的逻辑错误！"
-                                "请注意on_rely对象为数组时，只对on_rely语句执行时刻的已有数组成员有效，"
-                                "后期再添加的数组成员不能自动成为Rely对象!"
-                                "************************************************************************************"
+            self.logger.warning(u"*************************************************************************************"
+                                u"还有子对象%s没有运行完成,请确认此情况是否程序本意？如非故意如此, "
+                                u"此问题可能会导致后续程序抛出EventStopError异常或严重的逻辑错误！"
+                                u"请注意on_rely对象为数组时，只对on_rely语句执行时刻的已有数组成员有效，"
+                                u"后期再添加的数组成员不能自动成为Rely对象!"
+                                u"************************************************************************************"
                                 % unfinished)
         self.fire('end')
         self.logger.debug("触发end事件,Basic End结束")
@@ -1108,7 +1108,7 @@ class UploadDir(object):
         else:
             self._dir_path = os.path.abspath(dir_path)
             if not os.listdir(dir_path):
-                self._parent.logger.warning("文件夹%s为空，请确认是否已经拷贝？" % dir_path)
+                self._parent.logger.warning(u"文件夹%s为空，请确认是否已经拷贝？" % dir_path)
 
     def add_regexp_rules(self, match_rules):
         """
@@ -1176,7 +1176,7 @@ class UploadDir(object):
 
         for sub_file in self._file_list:
             if sub_file.file_type == "file" and sub_file.format == "":
-                self._parent.logger.warning("文件%s没有设置格式，确认此文件真的无法确认格式？" % sub_file.full_path)
+                self._parent.logger.warning(u"文件%s没有设置格式，确认此文件真的无法确认格式？" % sub_file.full_path)
         return self
 
     @property

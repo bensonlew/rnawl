@@ -80,13 +80,13 @@ class RmatsAgent(Agent):
 class RmatsTool(Tool):
     def __init__(self, config):
         super(RmatsTool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.python = 'miniconda2/bin/python'
-        self.rmats_py = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS2/rmats.py')
+        self.rmats_py = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS4/rmats.py')
         self.process_rmats_output_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/process_rmats_output.py')
         self.rmats_output = os.path.join(self.work_dir, 'rmats_output')
-        self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/rMATS.4.0.1/rMATS-turbo-Linux-UCS2/rmats.py"
+        self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/rMATS.4.0.1/rMATS-turbo-Linux-UCS4/rmats.py"
         self.dir = {
             'output': os.path.join(self.work_dir, 'rmats_output')
         }

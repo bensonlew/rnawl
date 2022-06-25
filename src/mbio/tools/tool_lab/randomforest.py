@@ -137,7 +137,7 @@ class RandomforestTool(Tool):
         i == 0, 改变 table 的行名, 生成文件 'reindex.table', 'reindex.map' 两个文件
         i == 1, 回复改变前的行名
         '''
-        cmd = '/program/perl/perls/perl-5.24.0/bin/perl ' +\
+        cmd = '/miniconda2/bin/perl ' +\
                 self.config.PACKAGE_DIR + '/meta/scripts/deal_index.pl -i {} -r {}'.format(table, i)
         command = self.add_command('deal_index' + n, cmd).run()
         self.wait(command)
@@ -185,7 +185,7 @@ class RandomforestTool(Tool):
             real_otu_path = new_otu
         self.deal_index(real_otu_path, 0)  # 输入表行名用行序号代替 by xieshicahng 20200527
         real_otu_path = 'reindex.table'  # 替换完行序号的文件 by xieshichang 20200527
-        cmd = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl ' + self.cmd_path
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl ' + self.cmd_path
         cmd += ' -i %s -o %s' % (real_otu_path, self.output_dir)
         if self.option('grouptable').is_set:
             cmd += ' -g %s -m %s' % ((self.option('grouptable').prop['group_scheme'])[0], self.group_table)

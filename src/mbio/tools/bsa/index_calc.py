@@ -77,7 +77,7 @@ class IndexCalcTool(Tool):
     def __init__(self, config):
         super(IndexCalcTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         self.mutmap_path = self.config.PACKAGE_DIR + '/bsa/mutmap.pl'
         self.qtlseq_path = self.config.PACKAGE_DIR + '/bsa/qtlseq.pl'
         self.gene_dict = defaultdict(set)

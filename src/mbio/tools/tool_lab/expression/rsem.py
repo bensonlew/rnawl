@@ -79,7 +79,7 @@ class RsemTool(Tool):
             self.rsem_calculate_expression = '/bioinfo/rna/RSEM-1.2.31/bin/rsem-calculate-expression'
         else:
             self.rsem_calculate_expression = '/bioinfo/rna/RSEM-1.3.1/rsem-calculate-expression'
-        self.perl = software_dir + '/program/perl/perls/perl-5.24.0/bin/'
+        self.perl = software_dir + '/miniconda2/bin/'
         self.set_environ(PATH=self.perl)
         if "dev" in self.config.PACKAGE_DIR:
             self.rsem_path = software_dir + '/bioinfo/rna/RSEM-1.2.31/bin'

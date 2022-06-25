@@ -57,7 +57,7 @@ class KallistoAgent(Agent):
 class KallistoTool(Tool):
     def __init__(self, config):
         super(KallistoTool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.program = {
             'kallisto': 'bioinfo/rna/kallisto-0.46.1/kallisto',

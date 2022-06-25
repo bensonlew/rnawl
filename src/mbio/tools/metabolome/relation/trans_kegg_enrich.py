@@ -47,7 +47,7 @@ class TransKeggEnrichAgent(Agent):
 class TransKeggEnrichTool(Tool):
     def __init__(self, config):
         super(TransKeggEnrichTool, self).__init__(config)
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
         self.script_path = self.config.PACKAGE_DIR + "/itraq_and_tmt/kegg_enrichment.py"
         if self.option("version") == "202007":
             self.k2e = self.config.SOFTWARE_DIR + "/database/Annotation/all/KEGG/version_202007_meta/K2enzyme.tab"

@@ -52,7 +52,7 @@ class CrisprRisearchTool(Tool):
     def __init__(self, config):
         super(CrisprRisearchTool, self).__init__(config)
         self.riserch = 'bioinfo/wgs_v2/risearch2.x'
-        self.perl = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "miniconda2/bin/perl"
         self.sgrna_region = self.config.PACKAGE_DIR + "/wgs_v2/sgrna.region.pl"
 
     def run_riserch2(self):

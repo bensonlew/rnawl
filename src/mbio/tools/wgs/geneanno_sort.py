@@ -48,7 +48,7 @@ class GeneannoSortTool(Tool):
     def __init__(self, config):
         super(GeneannoSortTool, self).__init__(config)
         self.sort_path = self.config.PACKAGE_DIR + "/wgs/sort_anno.summary.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
 
     def geneannosort(self):
         """

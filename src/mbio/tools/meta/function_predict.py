@@ -65,8 +65,8 @@ class FunctionPredictTool(Tool):
         设置软件、脚本、数据库的路径
         """
         self.set_environ(PYTHONPATH = self.config.SOFTWARE_DIR + "/bioinfo/meta/picrust-1.1.0/")
-        self.python_scripts = self.config.SOFTWARE_DIR + "/program/Python/bin/"
-        self.perl = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.python_scripts = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
+        self.perl = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.scripts = self.config.SOFTWARE_DIR + "/bioinfo/meta/16s_scripts/"
         self.picrust_path = self.config.SOFTWARE_DIR + "/bioinfo/meta/picrust-1.1.0/scripts/"
         self.Fundb = self.config.SOFTWARE_DIR + "/bioinfo/meta/16sFundb/rep_set/97_otus.fasta"  # 设置数据库文件路径，97_otus.fasta

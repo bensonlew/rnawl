@@ -89,7 +89,7 @@ class CazyAnnoTool(Tool):
         else:
             self.FamInfo = self.config.SOFTWARE_DIR + "/database/CAZyDB/FamInfo_v8.txt" ## fix_by qingchen.zhang @20200811 升级数据库
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/program/Python/lib')
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin')
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/miniconda2/bin')
         self.set_environ(PERLBREW_ROOT=self.config.SOFTWARE_DIR + '/program/perl')
         #self.perl_script = "bioinfo/annotation/scripts/profile.sumGenesAbund.pl"
         #self.python_script = self.config.PACKAGE_DIR + "/annotation/scripts/profile.sumGenesAbund.py"

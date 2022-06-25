@@ -39,7 +39,7 @@ class DiffGenesetAnalysisModule(Module):
             {"name": "annot_result", "type": "string", "default": None},
             {"name": "species", "type": "string", "default": "Homo_sapiens"},
             {'name': 'go_list', 'type': 'infile', 'format': 'medical_transcriptome.go_list'},
-            {'name': 'go_version', 'type': 'string', 'default': '20200628'},
+            {'name': 'go_version', 'type': 'string', 'default': '20210918'},
             {'name': 'kegg_table', 'type': 'infile', 'format': 'medical_transcriptome.common'},
             {'name': 'kegg_table2', 'type': 'infile', 'format': 'medical_transcriptome.common'},
             {'name': 'all_list', 'type': 'infile', 'format': 'medical_transcriptome.common'},

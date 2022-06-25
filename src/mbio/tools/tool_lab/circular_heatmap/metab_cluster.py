@@ -68,7 +68,7 @@ class MetabClusterTool(Tool):
     def __init__(self, config):
         super(MetabClusterTool, self).__init__(config)
         env_path = ':'.join([
-            os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'),
+            os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin'),
             os.path.join(self.config.SOFTWARE_DIR, 'gcc/5.1.0/bin'),
             os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.1/bin')
         ])

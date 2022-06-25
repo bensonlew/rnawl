@@ -61,7 +61,7 @@ class FastaSplitSgeneTool(Tool):
         super(FastaSplitSgeneTool, self).__init__(config)
         self._version = "v1.0.1"
         self.python_path = '/miniconda2/bin/python'
-        self.perl =  'program/perl/perls/perl-5.24.0/bin/'
+        self.perl =  'miniconda2/bin/'
         self.tool_path=self.config.PACKAGE_DIR+"/tool_lab/trans_coord/split_fasta_sgene.py"
 
     def run(self):

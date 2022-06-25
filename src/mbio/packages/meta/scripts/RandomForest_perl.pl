@@ -1,4 +1,4 @@
-#!/mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl
+#!/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl
 use strict;
 use warnings;
 use Getopt::Long;

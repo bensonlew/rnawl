@@ -56,7 +56,7 @@ class FastaStatTool(Tool):
     def __init__(self, config):
         super(FastaStatTool, self).__init__(config)
         self.seqstat_path = 'bioinfo/seq/scripts/'
-        # self.python_path = '/program/Python/bin/'
+        # self.python_path = '/miniconda2/bin/'
 
     def seqstat(self):
         """

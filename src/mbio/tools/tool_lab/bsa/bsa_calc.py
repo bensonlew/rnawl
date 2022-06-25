@@ -59,7 +59,7 @@ class BsaCalcTool(Tool):
     def __init__(self, config):
         super(BsaCalcTool, self).__init__(config)
         self.program = {
-            'perl': 'program/perl/perls/perl-5.24.0/bin/perl',
+            'perl': 'miniconda2/bin/perl',
         }
         self.script = {
             'vcf2table': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/bsa/vcf2table.pl'),

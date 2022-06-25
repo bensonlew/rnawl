@@ -66,8 +66,8 @@ class BamStatTool(Tool):
 
     def __init__(self, config):
         super(BamStatTool, self).__init__(config)
-        self.python_path = "program/Python/bin/"
-        self.python_full_path = self.config.SOFTWARE_DIR + "/program/Python/bin/"
+        self.python_path = "miniconda2/bin/"
+        self.python_full_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.bam_path = self.option("bam").prop["path"]
 
     def bamstat(self, bam):

@@ -70,12 +70,12 @@ class CorrelationTool(Tool):
 
     def __init__(self, config):
         super(CorrelationTool, self).__init__(config)
-        # self.python_path = "program/Python/bin/"
+        # self.python_path = "miniconda2/bin/"
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR+"/gcc/5.1.0/lib64:$LD_LIBRARY_PATH")
         self.fpkm_path = self.option("fpkm").prop["path"]
         self.Rscript_path = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin/"
         self.r_path = "/program/R-3.3.1/bin/"
-        self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/"
+        self.perl_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.hcluster_script_path = self.config.SOFTWARE_DIR + "/bioinfo/statistical/scripts/"
 
     def correlation_r(self):

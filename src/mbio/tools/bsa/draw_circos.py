@@ -74,7 +74,7 @@ class DrawCircosTool(Tool):
         super(DrawCircosTool, self).__init__(config)
         self._version = "1.0.1"
         self.script_path = self.config.PACKAGE_DIR + '/bsa/draw-circos.pl'
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
 
     def run_drawcircos(self):
         one_cmd = self.perl_path + self.script_path + \

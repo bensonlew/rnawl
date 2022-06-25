@@ -197,7 +197,7 @@ class EstimatorsTool(Tool):
             return self.option('otu_table').path
 
     def run_pd(self):
-        cmd = 'program/Python/bin/alpha_diversity.py'
+        cmd = 'miniconda2/bin/alpha_diversity.py'
         cmd += ' -i %s -m PD_whole_tree -o adiv_chao1_pd.txt -t %s' % (self.biom,self.option("newicktree").prop['path'])
         self.logger.info("开始pd运算")
         self.logger.info(cmd)

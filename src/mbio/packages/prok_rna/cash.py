@@ -152,7 +152,7 @@ if __name__ == "__main__":
     parser.add_argument('-o',type=str,metavar='outfile_prefix',required=True,
                         default="output")
     parser.add_argument('-samtools',type=str,metavar='path_of_samtools',required=True,
-                        default="/mnt/ilustre/users/sanger-dev/app/program/Python/bin/samtools")
+                        default="/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/samtools")
     args = parser.parse_args()
     toolbox=cash(
         case_bam=args.case_bam,

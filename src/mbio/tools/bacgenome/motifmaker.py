@@ -60,9 +60,9 @@ class MotifmakerTool(Tool):
         self.ipdsummary = "/bioinfo/Genomic/Sofware/smrtlink_10.1.0.1/smrtlink/smrtcmds/bin/ipdSummary"
         self.motifmaker = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/MultiMotifMaker-master/artifacts/MultiMotifMaker.jar"
         self.java = "/program/sun_jdk1.8.0/bin/java"
-        self.path = self.config.SOFTWARE_DIR + "/program/sun_jdk1.8.0/bin:"+ self.config.SOFTWARE_DIR + "/program/Python/bin:"
+        self.path = self.config.SOFTWARE_DIR + "/program/sun_jdk1.8.0/bin:"+ self.config.SOFTWARE_DIR + "/miniconda2/bin:"
         self.set_environ(PATH=self.path)
-        self.samtools = "/program/Python/bin/samtools"
+        self.samtools = "/miniconda2/bin/samtools"
         self.seq = self.option("input").prop["path"]
         self.ref = self.option("ref_database").prop["path"]
         self.align = self.work_dir + "/align.bam"

@@ -69,7 +69,7 @@ class Enrich2circAgent(Agent):
 class Enrich2circTool(Tool):
     def __init__(self, config):
         super(Enrich2circTool, self).__init__(config)
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
     def run(self):
         """
         运行

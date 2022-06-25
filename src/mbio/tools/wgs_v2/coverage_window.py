@@ -40,7 +40,7 @@ class CoverageWindowTool(Tool):
         super(CoverageWindowTool, self).__init__(config)
         self.depth_stat_window = "bioinfo/WGS/depth_stat_windows"
         self.samtools_sh_path = "bioinfo/WGS/samtools_depth.sh"
-        self.samtools_path = self.config.SOFTWARE_DIR + "/bioinfo/align/samtools-1.7/samtools"
+        self.samtools_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/samtools"
 
     def run_depth_stat_window(self):
         """

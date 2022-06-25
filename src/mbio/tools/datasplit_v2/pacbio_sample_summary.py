@@ -49,7 +49,7 @@ class PacbioSampleSummaryTool(Tool):
     def __init__(self,config):
         super(PacbioSampleSummaryTool,self).__init__(config)
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + "/library/glibc-2.14/lib")
-        self.samtools = self.config.SOFTWARE_DIR+"/bioinfo/align/samtools-1.8/samtools"
+        self.samtools = self.config.SOFTWARE_DIR+"/miniconda2/bin/samtools"
 
     def samtool_stat(self, inputbam):
         output = os.path.join(self.work_dir, "stat.txt")

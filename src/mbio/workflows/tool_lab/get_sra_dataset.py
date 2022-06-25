@@ -47,7 +47,7 @@ class GetSraDatasetWorkflow(Workflow):
         self.add_option(options)
         self.revise_infiles()
         self.set_options(self._sheet.options())
-        perl_path = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin'
+        perl_path = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         os.environ['PATH'] = perl_path + ":" + os.environ['PATH']
         self.program = {
             'esearch': self.config.SOFTWARE_DIR + '/bioinfo/biodb/edirect/esearch',

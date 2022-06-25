@@ -72,8 +72,8 @@ class BasicFilterAgent(Agent):
 class BasicFilterTool(Tool):
     def __init__(self, config):
         super(BasicFilterTool, self).__init__(config)
-        env_path = ':'.join([self.config.SOFTWARE_DIR + '/program/Python/bin',
-                            self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/'])
+        env_path = ':'.join([self.config.SOFTWARE_DIR + '/miniconda2/bin',
+                            self.config.SOFTWARE_DIR + '/miniconda2/bin/'])
         self.orf_stat_file = None
         self.set_environ(PATH=env_path)
         self.filter_work_dir = self.__dir_check(os.path.join(self.work_dir, 'basic_filter'))
@@ -105,7 +105,7 @@ class BasicFilterTool(Tool):
                 self.set_error('%s: 运行错误%s' % cmd_obj.cmd)
 
     def longorf_extract(self):
-        perl_path = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl'
+        perl_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl'
         tool_path = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/lnc_identification/extract_longorf.pl')
         self.orf_stat_file = os.path.join(self.output_dir, 'orf_stat.txt')
         cmd_fac_obj = CommandFactory(perl_path + ' ' + tool_path)

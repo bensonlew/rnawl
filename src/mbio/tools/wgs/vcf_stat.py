@@ -40,7 +40,7 @@ class VcfStatAgent(Agent):
 class VcfStatTool(Tool):
     def __init__(self, config):
         super(VcfStatTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl "
+        self.perl_path = "miniconda2/bin/perl "
         self.script = self.config.PACKAGE_DIR + "/wgs/vcfstat.pl"
 
     def run_tool(self):

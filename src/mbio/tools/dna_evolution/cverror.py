@@ -50,7 +50,7 @@ class CverrorAgent(Agent):
 class CverrorTool(Tool):
     def __init__(self, config):
         super(CverrorTool, self).__init__(config)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
         self.script_path = self.config.PACKAGE_DIR + "/dna_evolution/CVerror.pl"
 
     def cverror(self):

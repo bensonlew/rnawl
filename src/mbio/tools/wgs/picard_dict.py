@@ -49,7 +49,7 @@ class PicardDictTool(Tool):
         super(PicardDictTool, self).__init__(config)
         self.java_path = "program/sun_jdk1.8.0/bin/java"
         self.picard_path = self.config.SOFTWARE_DIR + "/bioinfo/WGS/picard.jar"
-        self.samtools_path = self.config.SOFTWARE_DIR + "/bioinfo/align/samtools-1.7/samtools"
+        self.samtools_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/samtools"
 
     def picarddict(self):
         """

@@ -173,7 +173,9 @@ class AnnotFinalTool(Tool):
             pfam_domain,
             des,
             subloc,
-            enterz
+            enterz,
+            des_type,
+            self.option("kegg_version")
         ])
         cmd_name = 'run_query_gene'
         self.run_code(cmd_name, cmd, block=False)

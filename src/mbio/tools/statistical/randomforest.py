@@ -106,7 +106,7 @@ class RandomforestTool(Tool):
         """
         运行RandomForest.pl
         """
-        cmd = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl ' + self.cmd_path
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl ' + self.cmd_path
         cmd += ' -i %s -o %s' % (self.abutable, self.output_dir)
         if self.option('grouptable').is_set:
             cmd += ' -g %s -m %s' % ((self.option('grouptable').prop['group_scheme'])[0], self.group_table)

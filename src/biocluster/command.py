@@ -232,6 +232,7 @@ class Command(object):
         else:
             try:
                 self._pid = self._subprocess.pid
+                self._start_run_time = int(time.time())
                 self._last_run_cmd = self.cmd
                 func = None
                 if hasattr(self.tool, self.name + '_check'):
@@ -289,7 +290,10 @@ class Command(object):
 
         :return: self
         """
-        command = self.software_dir + "/" + self.cmd
+        if self._is_sh:
+            command = self.cmd
+        else:
+            command = self.software_dir + "/" + self.cmd
         self.tool.logger.info("命令内容为{}".format(command))
         # if self.is_running or self.has_run:
         #     raise OSError("命令已经运行，不能重复运行!")

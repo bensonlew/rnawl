@@ -96,7 +96,7 @@ class AnosimTool(Tool):
     def __init__(self, config):
         super(AnosimTool, self).__init__(config)
         self._version = '1.9.1'  # qiime版本
-        self.cmd_path = 'program/Python/bin/compare_categories.py'
+        self.cmd_path = 'miniconda2/bin/compare_categories.py'
         self.grouplab = self.option('grouplab') if self.option('grouplab') else self.option('group').prop['group_scheme'][0]
         self.dis_matrix = self.get_matrix()
 

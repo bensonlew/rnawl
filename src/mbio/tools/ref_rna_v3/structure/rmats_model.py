@@ -60,7 +60,7 @@ class RmatsModelTool(Tool):
     def __init__(self, config):
         super(RmatsModelTool, self).__init__(config)
         self._LD_LIBRARY_PATH = self.config.SOFTWARE_DIR + "/program/ImageMagick/lib/:$LD_LIBRARY_PATH"
-        self.samtools_path = os.path.join(self.config.SOFTWARE_DIR, "bioinfo/align/samtools-1.7/samtools")
+        self.samtools_path = os.path.join(self.config.SOFTWARE_DIR, "miniconda2/bin/samtools")
         self.program = {
             'python': 'miniconda2/bin/python',
             'convert': 'program/ImageMagick/bin/convert'

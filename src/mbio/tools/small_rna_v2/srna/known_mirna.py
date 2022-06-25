@@ -104,7 +104,7 @@ class KnownMirnaTool(Tool):
         elif self.option("mirdeep2_version") == "0.1.3":
             self.quantifier = self.config.SOFTWARE_DIR + "/bioinfo/miRNA/mirdeep2_0.1.3/mirdeep2-0.1.3/bin/"
             self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/align/bowtie-1.2.3-linux-x86_64/'
-        self.python = 'program/Python/bin/'
+        self.python = 'miniconda2/bin/'
         self.perl = '/program/perl-5.24.0/bin/'
         self.rnafold = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/'
         self.parse_arf = self.config.PACKAGE_DIR + "/small_rna/parse_arf.pl"
@@ -121,7 +121,7 @@ class KnownMirnaTool(Tool):
             'mature2hairpin']
         self.mirbase = Config().get_mongo_client(mtype='small_rna')[Config().get_mongo_dbname('small_rna')]['mirbase']
         self.pmiren = Config().get_mongo_client(mtype='small_rna')[Config().get_mongo_dbname('small_rna')]['pmiren']
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + self.perl)
         self.set_environ(PATH=self.quantifier)

@@ -60,7 +60,7 @@ class RmatsBamTool(Tool):
             'python': 'miniconda2/bin/python'
         }
         self.script = {
-            'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS2/rmats.py')
+            'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS4/rmats.py')
         }
         self.dir = {
             'output': os.path.join(self.work_dir, 'output_rmats')

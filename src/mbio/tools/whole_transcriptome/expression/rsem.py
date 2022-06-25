@@ -50,7 +50,7 @@ class RsemAgent(Agent):
 class RsemTool(Tool):
     def __init__(self, config):
         super(RsemTool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.program = {
             'rsem_calculate_expression': 'bioinfo/rna/RSEM-1.3.1/rsem-calculate-expression'

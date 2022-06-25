@@ -59,8 +59,8 @@ class CircosTool(Tool):
     def __init__(self, config):
         super(CircosTool, self).__init__(config)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/WGS/circos-0.69-6/bin')
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin')
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/miniconda2/bin')
+        self.perl_path = "miniconda2/bin/perl"
         self.circos = self.config.PACKAGE_DIR + '/wgs_v2/circos.pipeline.pl'
         self.variant = json.loads(self.option("variant"))
 

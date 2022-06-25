@@ -44,7 +44,7 @@ class AmphoraTool(Tool):
         self.path =self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/hmmer-3.0/bin:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/RAxML-master:" + self.config.SOFTWARE_DIR + "/bioinfo/seq/EMBOSS-6.6.0/bin:"
         self.set_environ(PATH=self.path,AMPHORA2_home=self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/AMPHORA2-master")
         self.fasta = self.option("bin_fa").prop['path']
-        self.perl_path = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "/miniconda2/bin/perl"
         self.phyloty = "../../../../../.." + self.config.PACKAGE_DIR + '/metagbin/amphora.sh'
         self.perl_script = self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/AMPHORA2-master/Scripts/"
         self.result = self.work_dir + '/' + self.option("bin_name") + '.amphora_anno.xls'

@@ -66,7 +66,7 @@ class ExpressStatisticsTool(Tool):
         super(ExpressStatisticsTool, self).__init__(config)
         self.python = 'miniconda2/bin/python'
         self.statistics_py = os.path.join(self.config.PACKAGE_DIR, 'toolapps/statistics.py')
-        self.perl = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "/miniconda2/bin/perl"
         self.tpm = self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/Trinity-v2.9.1/tpm/abundance_estimates_to_matrix.pl"
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'

@@ -5,8 +5,8 @@ list.of.packages <- a[,1]
 list.of.bio.packages  <- a[,1]
 
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-if(length(new.packages)) install.packages(new.packages, repos="http://cran.rstudio.com/", dependencies=TRUE)
-
+if(length(new.packages)) install.packages(new.packages, repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN/", dependencies=TRUE)
+options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/") 
 new.bio.packages <- list.of.bio.packages[!(list.of.bio.packages %in% installed.packages()[,"Package"])]
 if(length(new.bio.packages)){
     if (!requireNamespace("BiocManager", quietly = TRUE))

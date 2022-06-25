@@ -53,7 +53,7 @@ class CutadaptTool(Tool):
     def __init__(self, config):
         super(CutadaptTool, self).__init__(config)
         self._version = 1.0
-        self.cutadapt = "program/Python/bin/cutadapt"
+        self.cutadapt = "miniconda2/bin/cutadapt"
 
     def run_pairend_cutadapt(self):
         """双端fastq序列进行质控，cutadapt"""

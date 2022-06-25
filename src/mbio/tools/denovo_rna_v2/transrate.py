@@ -63,7 +63,7 @@ class TransrateTool(Tool):
         self.python_path = 'miniconda2/bin/python'
         self.cmd_run = '/bioinfo/denovo_rna_v2/run_cmd.sh'
         self.transrate = '/bioinfo/denovo_rna_v2/transrate-1.0.3-linux-x86_64_new/transrate'
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
 
 

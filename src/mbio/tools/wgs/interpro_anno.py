@@ -52,7 +52,7 @@ class InterproAnnoTool(Tool):
         super(InterproAnnoTool, self).__init__(config)
         # self.interpro_path = self.config.PACKAGE_DIR + "/wgs/interproanno.pl"
         self.interpro_path = self.config.PACKAGE_DIR + "/wgs/InterProanno_v2.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
 
     def script_run(self):
         """

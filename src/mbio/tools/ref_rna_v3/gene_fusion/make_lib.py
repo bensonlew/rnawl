@@ -70,7 +70,7 @@ class MakeLibTool(Tool):
         # self.set_environ(PATH=self.star_fusion_path)
         # self.make_lib_path="/mnt/ilustre/users/sanger-dev/sg-users/fuwenyao/miniconda/miniconda3_3/miniconda3/lib/STAR-Fusion/ctat-genome-lib-builder/"
         # 实际路径
-        self.star_fusion_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v3/gene_fusion/miniconda3/bin/"
+        self.star_fusion_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.set_environ(PATH=self.star_fusion_path)
         self.make_lib_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v3/gene_fusion/miniconda3/lib/STAR-Fusion/ctat-genome-lib-builder/"
 

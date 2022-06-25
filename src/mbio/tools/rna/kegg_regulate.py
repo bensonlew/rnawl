@@ -67,7 +67,7 @@ class KeggRegulateTool(Tool):
     def __init__(self, config):
         super(KeggRegulateTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
         self.diff_list = self.option('diff_stat').prop['diff_genes']
 
     def run(self):

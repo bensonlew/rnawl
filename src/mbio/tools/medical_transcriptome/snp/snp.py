@@ -75,7 +75,7 @@ class SnpTool(Tool):
     def __init__(self, config):
         super(SnpTool, self).__init__(config)
         # self.samtools_path = "bioinfo/rna/miniconda2/bin/samtools"
-        self.samtools_path = "/bioinfo/align/samtools-1.7/samtools"
+        self.samtools_path = "/miniconda2/bin/samtools"
         self.bcftools_path = "/bioinfo/seq/bcftools-1.7/bcftools"
         # self.bcftools_path = "bioinfo/rna/miniconda2/bin/bcftools"
     def mpileup(self):

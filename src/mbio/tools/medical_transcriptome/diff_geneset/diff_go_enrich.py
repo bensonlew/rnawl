@@ -18,7 +18,7 @@ class DiffGoEnrichAgent(Agent):
         options = [
             {'name': 'diff_list', 'type': 'infile', 'format': 'ref_rna_v2.gene_list'},
             {'name': 'go_list', 'type': 'infile', 'format': 'ref_rna_v2.go_list'},
-            {'name': 'go_version', 'type': 'string', 'default': '20200628'},
+            {'name': 'go_version', 'type': 'string', 'default': '20210918'},
             {'name': 'alpha', 'type': 'float', 'default': 0.05},
             {'name': 'pval', 'type': 'float', 'default': 0.05},
             {'name': 'method', 'type': 'string', 'default': 'bh'},

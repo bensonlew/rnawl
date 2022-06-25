@@ -52,7 +52,7 @@ class SvaTool(Tool):
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.program = {
             'python': 'miniconda2/bin/python',
-            'rscript': 'program/R-3.3.1/bin/Rscript',
+            'rscript': 'bioinfo/miniconda2/bin/Rscript',
         }
         self.script = {
             'Sva': os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/batch/sva.r'),

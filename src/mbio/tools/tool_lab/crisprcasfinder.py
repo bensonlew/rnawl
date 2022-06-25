@@ -37,12 +37,12 @@ class CrisprcasfinderAgent(Agent):
 class CrisprcasfinderTool(Tool):
     def __init__(self, config):
         super(CrisprcasfinderTool, self).__init__(config)
-        self.path = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/CRISPRCasFinder/bin:" +self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin"
+        self.path = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/CRISPRCasFinder/bin:" +self.config.SOFTWARE_DIR + "/miniconda2/bin"
         self.lib = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/lib"
         self.set_environ(PATH=self.path, LD_LIBRARY_PATH=self.lib)
         self.db = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/CRISPRCasFinder/src/sel392v2.so"
         self.db2 = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/CRISPRCasFinder/CasFinder-2.0.3"
-        self.perl = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "/miniconda2/bin/perl"
         self.python    = "/miniconda2/bin/python"
         self.perl_script = self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/CRISPRCasFinder/"
         self.script = self.config.PACKAGE_DIR + '/tool_lab/'

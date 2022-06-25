@@ -63,7 +63,7 @@ class P2tfAgent(Agent):
 class P2tfTool(Tool):
     def __init__(self, config):
         super(P2tfTool, self).__init__(config)
-        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
+        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin'))
         self.program = {
             'blastn': 'miniconda2/bin/blastn',
             'python': 'miniconda2/bin/python',

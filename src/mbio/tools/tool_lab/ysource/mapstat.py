@@ -51,7 +51,7 @@ class MapstatTool(Tool):
         super(MapstatTool, self).__init__(config)
         self._version = "v1.0"
         self.software_dir = self.config.SOFTWARE_DIR
-        self.samtools = os.path.join(self.software_dir, 'program/Python/bin/samtools')
+        self.samtools = os.path.join(self.software_dir, 'miniconda2/bin/samtools')
         self.bam = self.option('bam_file').prop["path"]
         self.gatk_path = self.software_dir + "/bioinfo/gene-structure/GenomeAnalysisTK-3.8-0-ge9d806836/GenomeAnalysisTK.jar"
         self.java = os.path.join(self.software_dir, "/program/sun_jdk1.8.0/bin/java")

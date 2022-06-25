@@ -101,7 +101,7 @@ class BuscoTool(Tool):
             self.busco_config = self.config.SOFTWARE_DIR + '/' + self.busco_path + 'config.ini.sanger-dev2'
         else:
             raise OptionError('暂不支持该机器，需重新设置busco配置文件', code = "32002302")
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(BUSCO_CONFIG_FILE=self.busco_config)
         self.set_environ(PYTHONPATH=self.busco_pydb_path)

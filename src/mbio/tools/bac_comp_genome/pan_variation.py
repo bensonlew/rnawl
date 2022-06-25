@@ -52,7 +52,7 @@ class PanVariationTool(Tool):
         self.set_environ(PATH=self.path, PERL5LIB=self.perl5path)
         #self.strains = self.option("strains")
         self.fasta = self.option("infile_dir").prop['path']
-        self.perl_path = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "/miniconda2/bin/perl"
         self.perl_script = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/PGAP-1.2.1/PGAP.pl"
         self.out = self.work_dir + '/out_result'
         self.python = "/miniconda2/bin/python"

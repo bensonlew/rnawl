@@ -140,11 +140,14 @@ class DiffexpBatchTool(Tool):
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
-        self.r_path = software_dir + "/program/R-3.3.1/bin:$PATH"
-        self._r_home = software_dir + "/program/R-3.3.1/lib64/R/"
-        self._LD_LIBRARY_PATH = software_dir + "/program/R-3.3.1/lib64/R/lib:$LD_LIBRARY_PATH"
-        self.set_environ(PATH=self.r_path, R_HOME=self._r_home, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
-
+        # self.r_path = software_dir + "/bioinfo/miniconda2/bin:$PATH"
+        # self._r_home = software_dir + "/bioinfo/miniconda2/lib64/R/"
+        # self._LD_LIBRARY_PATH = software_dir + "/bioinfo/miniconda2/lib64/R/lib:$LD_LIBRARY_PATH"
+        # self.set_environ(PATH=self.r_path, R_HOME=self._r_home, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
+        self.r_path = software_dir + "/miniconda3/bin"
+        # self._r_home = software_dir + "/bioinfo/miniconda2/lib64/R/"
+        # self._LD_LIBRARY_PATH = software_dir + "/bioinfo/miniconda2/lib64/R/lib:$LD_LIBRARY_PATH"
+        self.set_environ(PATH=self.r_path)
         group_dict = dict()
         with open(self.option('group').path, 'r') as group:
             for line in group.readlines():
@@ -166,6 +169,8 @@ class DiffexpBatchTool(Tool):
         self.run_times = 0
 
     def diffexp(self):
+        self.set_environ(PATH=self.r_path)
+        print(os.environ.get('PATH'))
         self.run_times += 1
         self.logger.info("本次分析为第{}次差异分析".format(str(self.run_times)))
         self.logger.info("本次分析使用软件{}".format(self.option("method")))

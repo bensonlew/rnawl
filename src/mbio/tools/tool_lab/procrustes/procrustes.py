@@ -66,7 +66,7 @@ class ProcrustesTool(Tool):
             'python': "miniconda2/bin/python",
         }
         self.script = {
-            'procrustes': os.path.join(self.config.SOFTWARE_DIR, "program/Python/bin/transform_coordinate_matrices.py"),
+            'procrustes': os.path.join(self.config.SOFTWARE_DIR, "miniconda2/bin/transform_coordinate_matrices.py"),
         }
 
     def run_procrustes(self):

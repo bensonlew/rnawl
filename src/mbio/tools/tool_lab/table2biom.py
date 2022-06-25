@@ -37,7 +37,7 @@ class Table2biomAgent(Agent):
 class Table2biomTool(Tool):
     def __init__(self, config):
         super(Table2biomTool, self).__init__(config)
-        self.src_path =  "/program/Python/bin/biom"
+        self.src_path =  "/miniconda2/bin/biom"
 
 
     def run(self):

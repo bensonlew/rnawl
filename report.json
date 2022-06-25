@@ -1,0 +1,1927 @@
+{
+    "annot_detail": {
+        "table_header": [
+            {
+                "field": "gene_id", 
+                "label": "gene_id"
+            }, 
+            {
+                "field": "transcript_id", 
+                "label": "transcript_id"
+            }, 
+            {
+                "field": "is_gene", 
+                "label": "is_gene"
+            }, 
+            {
+                "field": "gene_name", 
+                "label": "gene_name"
+            }, 
+            {
+                "field": "length", 
+                "label": "length"
+            }, 
+            {
+                "field": "description", 
+                "label": "description"
+            }, 
+            {
+                "field": "cog", 
+                "label": "cog"
+            }, 
+            {
+                "field": "cog_description", 
+                "label": "cog_description"
+            }, 
+            {
+                "field": "KO_id", 
+                "label": "KO_id"
+            }, 
+            {
+                "field": "KO_name", 
+                "label": "KO_name"
+            }, 
+            {
+                "field": "paths", 
+                "label": "paths"
+            }, 
+            {
+                "field": "pfam", 
+                "label": "pfam"
+            }, 
+            {
+                "field": "go", 
+                "label": "go"
+            }, 
+            {
+                "field": "nr", 
+                "label": "nr"
+            }, 
+            {
+                "field": "uniprot", 
+                "label": "uniprot"
+            }, 
+            {
+                "field": "entrez", 
+                "label": "entrez"
+            }, 
+            {
+                "field": "bio_type", 
+                "label": "bio_type"
+            }, 
+            {
+                "field": "kegg_genes", 
+                "label": "kegg_genes"
+            }, 
+            {
+                "field": "spe_path", 
+                "label": "spe_path"
+            }, 
+            {
+                "field": "do", 
+                "label": "do"
+            }, 
+            {
+                "field": "reactome_id", 
+                "label": "reactome_id"
+            }, 
+            {
+                "field": "reactome_name", 
+                "label": "reactome_name"
+            }, 
+            {
+                "field": "pathway_id", 
+                "label": "pathway_id"
+            }, 
+            {
+                "field": "pathway_description", 
+                "label": "pathway_description"
+            }, 
+            {
+                "field": "reactome_link", 
+                "label": "reactome_link"
+            }, 
+            {
+                "field": "disgenet_name", 
+                "label": "disgenet_name"
+            }, 
+            {
+                "field": "disgenet_id", 
+                "label": "disgenet_id"
+            }, 
+            {
+                "field": "disgenet_des", 
+                "label": "disgenet_des"
+            }
+        ], 
+        "table": [
+            {
+                "spe_path": NaN, 
+                "cog_description": "3J6FI(negative regulation of peptidyl-lysine crotonylation)", 
+                "pathway_id": NaN, 
+                "is_gene": "yes", 
+                "kegg_genes": NaN, 
+                "go": "GO:0003824(molecular_function:catalytic activity); GO:0016021(cellular_component:integral component of membrane)", 
+                "paths": NaN, 
+                "KO_id": NaN, 
+                "reactome_name": NaN, 
+                "cog": "3J6FI(B:Chromatin structure and dynamics)", 
+                "KO_name": NaN, 
+                "reactome_link": NaN, 
+                "nr": NaN, 
+                "do": NaN, 
+                "disgenet_des": NaN, 
+                "description": "chromodomain protein, Y chromosome-like (CDYL) pseudogene", 
+                "disgenet_name": NaN, 
+                "gene_id": "ENSG00000282222", 
+                "transcript_id": "ENST00000632688", 
+                "bio_type": "processed_pseudogene", 
+                "entrez": NaN, 
+                "pfam": NaN, 
+                "pathway_description": NaN, 
+                "length": 757, 
+                "disgenet_id": NaN, 
+                "uniprot": NaN, 
+                "reactome_id": NaN, 
+                "gene_name": NaN
+            }, 
+            {
+                "spe_path": NaN, 
+                "cog_description": NaN, 
+                "pathway_id": NaN, 
+                "is_gene": "yes", 
+                "kegg_genes": NaN, 
+                "go": NaN, 
+                "paths": NaN, 
+                "KO_id": NaN, 
+                "reactome_name": NaN, 
+                "cog": NaN, 
+                "KO_name": NaN, 
+                "reactome_link": NaN, 
+                "nr": "XP_008974931.1(translation initiation factor IF-2-like [Pan paniscus])", 
+                "do": NaN, 
+                "disgenet_des": NaN, 
+                "description": "novel transcript, antisense to LAD1", 
+                "disgenet_name": NaN, 
+                "gene_id": "ENSG00000282221", 
+                "transcript_id": "ENST00000633182", 
+                "bio_type": "lncRNA", 
+                "entrez": NaN, 
+                "pfam": NaN, 
+                "pathway_description": NaN, 
+                "length": 556, 
+                "disgenet_id": NaN, 
+                "uniprot": NaN, 
+                "reactome_id": NaN, 
+                "gene_name": NaN
+            }, 
+            {
+                "spe_path": NaN, 
+                "cog_description": NaN, 
+                "pathway_id": NaN, 
+                "is_gene": "yes", 
+                "kegg_genes": NaN, 
+                "go": "GO:0035195(biological_process:gene silencing by miRNA); GO:2000773(biological_process:negative regulation of cellular senescence); GO:1903231(molecular_function:mRNA binding involved in posttranscriptional gene silencing)", 
+                "paths": NaN, 
+                "KO_id": NaN, 
+                "reactome_name": NaN, 
+                "cog": NaN, 
+                "KO_name": NaN, 
+                "reactome_link": NaN, 
+                "nr": NaN, 
+                "do": NaN, 
+                "disgenet_des": NaN, 
+                "description": "microRNA 543 [Source:HGNC Symbol;Acc:HGNC:33664]", 
+                "disgenet_name": NaN, 
+                "gene_id": "ENSG00000212040", 
+                "transcript_id": "ENST00000390751", 
+                "bio_type": "miRNA", 
+                "entrez": NaN, 
+                "pfam": NaN, 
+                "pathway_description": NaN, 
+                "length": 78, 
+                "disgenet_id": NaN, 
+                "uniprot": NaN, 
+                "reactome_id": NaN, 
+                "gene_name": "MIR543"
+            }, 
+            {
+                "spe_path": NaN, 
+                "cog_description": "3J6F1(negative regulation of pancreatic amylase secretion)", 
+                "pathway_id": "R-HSA-8876198;R-HSA-5357905;R-HSA-199991;R-HSA-73887;R-HSA-75893;R-HSA-9007101;R-HSA-162582;R-HSA-5653656;R-HSA-73887;R-HSA-75893;R-HSA-162582;R-HSA-5357905", 
+                "is_gene": "no", 
+                "kegg_genes": NaN, 
+                "go": "GO:0000187(biological_process:activation of MAPK activity); GO:0005737(cellular_component:cytoplasm); GO:2001236(biological_process:regulation of extrinsic apoptotic signaling pathway); GO:1902041(biological_process:regulation of extrinsic apoptotic signaling pathway via death domain receptors); GO:0016021(cellular_component:integral component of membrane); GO:0005123(molecular_function:death receptor binding); GO:0051726(biological_process:regulation of cell cycle); GO:0097194(biological_process:execution phase of apoptosis); GO:0005829(cellular_component:cytosol); GO:0010803(biological_process:regulation of tumor necrosis factor-mediated signaling pathway); GO:0017112(molecular_function:Rab guanyl-nucleotide exchange factor activity); GO:0032483(biological_process:regulation of Rab protein signal transduction); GO:0007166(biological_process:cell surface receptor signaling pathway); GO:0005886(cellular_component:plasma membrane); GO:0042981(biological_process:regulation of apoptotic process); GO:0030295(molecular_function:protein kinase activator activity)", 
+                "paths": NaN, 
+                "KO_id": NaN, 
+                "reactome_name": "MADD;DENN-SV", 
+                "cog": "3J6F1(T:Signal transduction mechanisms)", 
+                "KO_name": NaN, 
+                "reactome_link": "R-HSA-8876198&SEL=R-HSA-5626972;R-HSA-5357905&SEL=R-HSA-5626972;R-HSA-199991&SEL=R-HSA-5626972;R-HSA-73887&SEL=R-HSA-5626972;R-HSA-75893&SEL=R-HSA-5626972;R-HSA-9007101&SEL=R-HSA-5626972;R-HSA-162582&SEL=R-HSA-5626972;R-HSA-5653656&SEL=R-HSA-5626972;R-HSA-73887&SEL=R-HSA-5626960;R-HSA-75893&SEL=R-HSA-5626960;R-HSA-162582&SEL=R-HSA-5626960;R-HSA-5357905&SEL=R-HSA-5626960", 
+                "nr": "NP_003673(MAP kinase-activating death domain protein isoform 4 [Homo sapiens])", 
+                "do": "DOID:9351(disease of metabolism: diabetes mellitus); DOID:769(disease of cellular proliferation: neuroblastoma); DOID:162(disease of cellular proliferation: cancer)", 
+                "disgenet_des": "Congenital Abnormality; Alzheimer's Disease; Anxiety; Malignant neoplasm of breast; Malignant Neoplasms; Malignant neoplasm of thyroid; Celiac Disease; Transient Ischemic Attack; Coronary Arteriosclerosis; Coronary heart disease; Diabetes; Diabetes Mellitus; Diabetes Mellitus, Non-Insulin-Dependent; Glaucoma, Open-Angle; Glycogen Storage Disease Type III; Glycogen Storage Disease Type V; Malignant neoplasm of stomach; Neoplasm Metastasis; Neoplasms; Nervousness; Neuroblastoma; Thyroid Neoplasm; Secondary malignant neoplasm of lung; C-reactive protein measurement; Insulin measurement; Triglycerides measurement; Follicular thyroid carcinoma; Pancreatic carcinoma; Anaplastic thyroid carcinoma; Frontometaphyseal dysplasia; Multiple Acyl Coenzyme A Dehydrogenase Deficiency; Metabolic myopathy; Squamous cell carcinoma of esophagus; Renal carnitine transport defect; Malignant neoplasm of pancreas; High density lipoprotein measurement; Serum HDL cholesterol measurement; Fasting blood glucose measurement; Epileptic encephalopathy; Thyroid carcinoma; Carcinogenesis; mathematical ability; Breast Carcinoma; Stomach Carcinoma; Central neuroblastoma; Sleeplessness; Ischemic stroke; Heart Failure, Diastolic; Fasting blood sugar result; Deficiency of dehydrogenase; Body mass index; Primary malignant neoplasm; Age at menarche; Coronary Artery Disease; Secondary Neoplasm; Intellectual Disability; Childhood Neuroblastoma", 
+                "description": "MAP kinase activating death domain [Source:HGNC Symbol;Acc:HGNC:6766]", 
+                "disgenet_name": "MADD", 
+                "gene_id": "ENSG00000110514", 
+                "transcript_id": "ENST00000469699;ENST00000534808;ENST00000489415;ENST00000460452;ENST00000634938;ENST00000494403;ENST00000395336;ENST00000406482;ENST00000428807;ENST00000402799;ENST00000453571;ENST00000349238;ENST00000407859;ENST00000405573;ENST00000444117;ENST00000524530;ENST00000422579;ENST00000311027;ENST00000395344;ENST00000402192;ENST00000342922;ENST00000524686;ENST00000526603", 
+                "bio_type": "protein_coding", 
+                "entrez": "8567", 
+                "pfam": "PF03456(uDENN:uDENN domain); PF02141(DENN:DENN (AEX-3) domain)", 
+                "pathway_description": "RAB GEFs exchange GTP for GDP on RABs;Regulation of TNFR1 signaling;Membrane Trafficking;Death Receptor Signalling;TNF signaling;Rab regulation of trafficking;Signal Transduction;Vesicle-mediated transport;Death Receptor Signalling;TNF signaling;Signal Transduction;Regulation of TNFR1 signaling", 
+                "length": 924, 
+                "disgenet_id": "C0000768; C0002395; C0003467; C0006142; C0006826; C0007115; C0007570; C0007787; C0010054; C0010068; C0011847; C0011849; C0011860; C0017612; C0017922; C0017924; C0024623; C0027627; C0027651; C0027769; C0027819; C0040136; C0153676; C0201657; C0202098; C0202236; C0206682; C0235974; C0238461; C0265293; C0268596; C0270984; C0279626; C0342788; C0346647; C0392885; C0428472; C0428568; C0543888; C0549473; C0596263; C0596887; C0678222; C0699791; C0700095; C0917801; C0948008; C1135196; C1261430; C1291311; C1305855; C1306459; C1314691; C1956346; C2939419; C3714756; C4086165", 
+                "uniprot": "Q8WXG6(MAP kinase-activating death domain protein OS=Homo sapiens OX=9606 GN=MADD PE=1 SV=2)", 
+                "reactome_id": "R-HSA-5626972;R-HSA-5626960", 
+                "gene_name": "MADD"
+            }, 
+            {
+                "spe_path": NaN, 
+                "cog_description": NaN, 
+                "pathway_id": NaN, 
+                "is_gene": "yes", 
+                "kegg_genes": NaN, 
+                "go": NaN, 
+                "paths": NaN, 
+                "KO_id": NaN, 
+                "reactome_name": NaN, 
+                "cog": NaN, 
+                "KO_name": NaN, 
+                "reactome_link": NaN, 
+                "nr": NaN, 
+                "do": NaN, 
+                "disgenet_des": NaN, 
+                "description": "novel transcript, antisense to GPC5", 
+                "disgenet_name": NaN, 
+                "gene_id": "ENSG00000287159", 
+                "transcript_id": "ENST00000662499", 
+                "bio_type": "lncRNA", 
+                "entrez": NaN, 
+                "pfam": NaN, 
+                "pathway_description": NaN, 
+                "length": 1067, 
+                "disgenet_id": NaN, 
+                "uniprot": NaN, 
+                "reactome_id": NaN, 
+                "gene_name": NaN
+            }, 
+            {
+                "spe_path": NaN, 
+                "cog_description": "3JD0E(regulation of interleukin-12 biosynthetic process)", 
+                "pathway_id": NaN, 
+                "is_gene": "no", 
+                "kegg_genes": "hsa:23139", 
+                "go": "GO:0005737(cellular_component:cytoplasm); GO:0006468(biological_process:protein phosphorylation); GO:0018105(biological_process:peptidyl-serine phosphorylation); GO:0007010(biological_process:cytoskeleton organization); GO:0045075(biological_process:regulation of interleukin-12 biosynthetic process); GO:0008017(molecular_function:microtubule binding); GO:0000287(molecular_function:magnesium ion binding); GO:0004674(molecular_function:protein serine/threonine kinase activity); GO:0015630(cellular_component:microtubule cytoskeleton); GO:0019902(molecular_function:phosphatase binding); GO:0048515(biological_process:spermatid differentiation); GO:0005886(cellular_component:plasma membrane); GO:0035556(biological_process:intracellular signal transduction); GO:0005524(molecular_function:ATP binding)", 
+                "paths": NaN, 
+                "KO_id": "K08789", 
+                "reactome_name": NaN, 
+                "cog": "3JD0E(T:Signal transduction mechanisms)", 
+                "KO_name": "MAST", 
+                "reactome_link": NaN, 
+                "nr": "NP_001311249(microtubule-associated serine/threonine-protein kinase 2 isoform 3 [Homo sapiens])", 
+                "do": NaN, 
+                "disgenet_des": "Body Height; Encephalomyelitis; Red Blood Cell Count measurement; Glioblastoma; White Blood Cell Count procedure; Neoplasms; Stage 0 Breast Carcinoma; Neutrophil count (procedure); Blood basophil count (lab test); Reticulocyte count (procedure); Adult Glioblastoma; Childhood Glioblastoma; Neurodegenerative Disorders; Breast Carcinoma; Granulocyte count; Body mass index; Invasive Carcinoma; Mucinous carcinoma of breast; Ovarian Mucinous Adenocarcinoma; Glioblastoma Multiforme; Azoospermia, Nonobstructive; Stage 0 Breast Cancer AJCC v6 and v7", 
+                "description": "microtubule associated serine/threonine kinase 2 [Source:HGNC Symbol;Acc:HGNC:19035]", 
+                "disgenet_name": "MAST2", 
+                "gene_id": "ENSG00000086015", 
+                "transcript_id": "ENST00000482881;ENST00000477968;ENST00000492813;ENST00000467367;ENST00000488619;ENST00000372009;ENST00000372008;ENST00000361297;ENST00000470809;ENST00000498668;ENST00000674079", 
+                "bio_type": "protein_coding", 
+                "entrez": "23139", 
+                "pfam": "PF00069(Pkinase:Protein kinase domain); PF08926(DUF1908:Domain of unknown function (DUF1908)); PF17820(PDZ_6:PDZ domain); PF07714(PK_Tyr_Ser-Thr:Protein tyrosine and serine/threonine kinase); PF00595(PDZ:PDZ domain); PF13180(PDZ_2:PDZ domain); PF03109(ABC1:ABC1 atypical kinase-like domain); PF01636(APH:Phosphotransferase enzyme family)", 
+                "pathway_description": NaN, 
+                "length": 858, 
+                "disgenet_id": "C0005890; C0014070; C0014772; C0017636; C0023508; C0027651; C0154084; C0200633; C0200641; C0206161; C0278878; C0280474; C0524851; C0678222; C0857490; C1305855; C1334274; C1334807; C1335167; C1621958; C1847540; C4520821", 
+                "uniprot": "Q6P0Q8(Microtubule-associated serine/threonine-protein kinase 2 OS=Homo sapiens OX=9606 GN=MAST2 PE=1 SV=2)", 
+                "reactome_id": NaN, 
+                "gene_name": "MAST2"
+            }, 
+            {
+                "spe_path": NaN, 
+                "cog_description": NaN, 
+                "pathway_id": NaN, 
+                "is_gene": "yes", 
+                "kegg_genes": NaN, 
+                "go": NaN, 
+                "paths": NaN, 
+                "KO_id": NaN, 
+                "reactome_name": NaN, 
+                "cog": NaN, 
+                "KO_name": NaN, 
+                "reactome_link": NaN, 
+                "nr": NaN, 
+                "do": NaN, 
+                "disgenet_des": NaN, 
+                "description": "T cell receptor beta joining 2-5 [Source:HGNC Symbol;Acc:HGNC:12173]", 
+                "disgenet_name": NaN, 
+                "gene_id": "ENSG00000211769", 
+                "transcript_id": "ENST00000390417", 
+                "bio_type": "TR_J_gene", 
+                "entrez": NaN, 
+                "pfam": NaN, 
+                "pathway_description": NaN, 
+                "length": 48, 
+                "disgenet_id": NaN, 
+                "uniprot": "A0A5H1ZRR7(T cell receptor beta joining 2-5 (Fragment) OS=Homo sapiens OX=9606 GN=TRBJ2-5 PE=4 SV=1)", 
+                "reactome_id": NaN, 
+                "gene_name": "TRBJ2-5"
+            }, 
+            {
+                "spe_path": NaN, 
+                "cog_description": NaN, 
+                "pathway_id": NaN, 
+                "is_gene": "yes", 
+                "kegg_genes": NaN, 
+                "go": NaN, 
+                "paths": NaN, 
+                "KO_id": NaN, 
+                "reactome_name": NaN, 
+                "cog": NaN, 
+                "KO_name": NaN, 
+                "reactome_link": NaN, 
+                "nr": NaN, 
+                "do": NaN, 
+                "disgenet_des": NaN, 
+                "description": "T cell receptor beta joining 2-4 [Source:HGNC Symbol;Acc:HGNC:12172]", 
+                "disgenet_name": NaN, 
+                "gene_id": "ENSG00000211768", 
+                "transcript_id": "ENST00000390416", 
+                "bio_type": "TR_J_gene", 
+                "entrez": NaN, 
+                "pfam": NaN, 
+                "pathway_description": NaN, 
+                "length": 50, 
+                "disgenet_id": NaN, 
+                "uniprot": "A0A5H1ZRR5(T cell receptor beta joining 2-4 (Fragment) OS=Homo sapiens OX=9606 GN=TRBJ2-4 PE=4 SV=1)", 
+                "reactome_id": NaN, 
+                "gene_name": "TRBJ2-4"
+            }, 
+            {
+                "spe_path": NaN, 
+                "cog_description": "3JHM5(Major acute phase reactant. Apolipoprotein of the HDL complex)", 
+                "pathway_id": NaN, 
+                "is_gene": "yes", 
+                "kegg_genes": "hsa:100528017", 
+                "go": "GO:0042056(molecular_function:chemoattractant activity); GO:0005615(cellular_component:extracellular space); GO:0060326(biological_process:cell chemotaxis)", 
+                "paths": NaN, 
+                "KO_id": "K17310", 
+                "reactome_name": NaN, 
+                "cog": "3JHM5(S:Function unknown)", 
+                "KO_name": "SAA", 
+                "reactome_link": NaN, 
+                "nr": "NP_001186673(SAA2-SAA4 protein precursor [Homo sapiens])", 
+                "do": NaN, 
+                "disgenet_des": "Mental disorders; Psychotic Disorders; Blood Protein Measurement", 
+                "description": "SAA2-SAA4 readthrough [Source:HGNC Symbol;Acc:HGNC:39550]", 
+                "disgenet_name": "SAA2-SAA4", 
+                "gene_id": "ENSG00000255071", 
+                "transcript_id": "ENST00000524555", 
+                "bio_type": "protein_coding", 
+                "entrez": "100528017", 
+                "pfam": "PF00277(SAA:Serum amyloid A protein)", 
+                "pathway_description": NaN, 
+                "length": 743, 
+                "disgenet_id": "C0004936; C0033975; C2985280", 
+                "uniprot": "A0A096LPE2(SAA2-SAA4 readthrough OS=Homo sapiens OX=9606 GN=SAA2-SAA4 PE=3 SV=1)", 
+                "reactome_id": NaN, 
+                "gene_name": "SAA2-SAA4"
+            }, 
+            {
+                "spe_path": NaN, 
+                "cog_description": NaN, 
+                "pathway_id": NaN, 
+                "is_gene": "yes", 
+                "kegg_genes": NaN, 
+                "go": "GO:0019814(cellular_component:immunoglobulin complex); GO:0002250(biological_process:adaptive immune response); GO:0005886(cellular_component:plasma membrane)", 
+                "paths": NaN, 
+                "KO_id": NaN, 
+                "reactome_name": NaN, 
+                "cog": NaN, 
+                "KO_name": NaN, 
+                "reactome_link": NaN, 
+                "nr": NaN, 
+                "do": NaN, 
+                "disgenet_des": NaN, 
+                "description": "T cell receptor beta joining 2-3 [Source:HGNC Symbol;Acc:HGNC:12171]", 
+                "disgenet_name": NaN, 
+                "gene_id": "ENSG00000211767", 
+                "transcript_id": "ENST00000390415", 
+                "bio_type": "TR_J_gene", 
+                "entrez": NaN, 
+                "pfam": NaN, 
+                "pathway_description": NaN, 
+                "length": 49, 
+                "disgenet_id": NaN, 
+                "uniprot": "TJB23()", 
+                "reactome_id": NaN, 
+                "gene_name": "TRBJ2-3"
+            }
+        ]
+    }, 
+    "png": {
+        "geneset_enrich_reactome": "HB025060_vs_HB025061_all_1.reactome_enrich.gene_set.buble.png", 
+        "structure_rmat": "HB025060_vs_HB025061_JCEC.diff_splice_stat.pie.png", 
+        "qc_base_line": "HB025063_rep1.raw_qc_base.line.png", 
+        "structure_rmat_diffs": "HB025060_vs_HB025061_JC.diff_splice_stat.column.png", 
+        "structure_fusion": "HB025063_rep3gene_fusion.png", 
+        "structure_snp_stat": "HB025062_rep2.snp.type_stat.column.png", 
+        "alignments_coverage": "all.align_coverage.line.png", 
+        "qc_qual_err": "HB025060_rep3.clean_qc_error.line.png", 
+        "diff_summary": "all.diffexp_summary.bar2.png", 
+        "geneset_enrich_do": "HB025060_vs_HB025061_all_1.do_enrich.gene_set.bar_line.png", 
+        "geneset_class_go": "HB025060_vs_HB025061_all_1.go_annot.gene_set.column.png", 
+        "qc_qual_box": "HB025061_rep3.raw_qc_qual.box.png", 
+        "diff_ma": "HB025060_vs_HB025061.diffexp_ma.scatter.png", 
+        "geneset_class_kegg": "HB025060_vs_HB025061_all_1_down_genes.kegg_annot.gene_set.column.png", 
+        "geneset_class_reactome": "HB025060_vs_HB025062_all_1.reactome_annot.gene_set.column.png", 
+        "allgene_distribution": "G_samples.exp_distribution.box.png", 
+        "geneset_enrich_kegg": "HB025060_vs_HB025061_all_1.kegg_enrich.gene_set.buble.png", 
+        "alignments_region": "HB025061_rep2.align_pos_dist.pie.png", 
+        "geneset_class_do": "HB025060_vs_HB025062_all_1.do_annot.gene_set.column.png", 
+        "geneset_enrich_go": "HB025060_vs_HB025062_all_1.go_enrich.gene_set.bar_line.png", 
+        "allgene_pca": "all.exp_relation_pca.scatter.png", 
+        "structure_snp": "HB025063_rep2.snp.pos_stat.pie.png", 
+        "diff_volcano": "HB025060_vs_HB025061.diffexp.volcano.png"
+    }, 
+    "geneset_enrich_go_data": {
+        "table_header": [
+            {
+                "field": "#Sample_ID", 
+                "label": "#Sample_ID"
+            }, 
+            {
+                "field": "Total_Reads", 
+                "label": "Total_Reads"
+            }, 
+            {
+                "field": "Total_Bases", 
+                "label": "Total_Bases"
+            }, 
+            {
+                "field": "Error%", 
+                "label": "Error%"
+            }, 
+            {
+                "field": "Q20%", 
+                "label": "Q20%"
+            }, 
+            {
+                "field": "Q30%", 
+                "label": "Q30%"
+            }, 
+            {
+                "field": "GC%", 
+                "label": "GC%"
+            }
+        ], 
+        "table": [
+            {
+                "GC%": 57.01, 
+                "#Sample_ID": "HB025060_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.25, 
+                "Error%": 0.0241, 
+                "Q20%": 98.16, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 57.0, 
+                "#Sample_ID": "HB025060_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.04, 
+                "Error%": 0.0244, 
+                "Q20%": 98.07, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.98, 
+                "#Sample_ID": "HB025060_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.0, 
+                "Error%": 0.0244, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.5, 
+                "#Sample_ID": "HB025061_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.48, 
+                "Error%": 0.0249, 
+                "Q20%": 97.86, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.48, 
+                "#Sample_ID": "HB025061_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.16, 
+                "Error%": 0.0252, 
+                "Q20%": 97.72, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.42, 
+                "#Sample_ID": "HB025061_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 93.96, 
+                "Error%": 0.0254, 
+                "Q20%": 97.67, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.95, 
+                "#Sample_ID": "HB025062_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.14, 
+                "Error%": 0.0242, 
+                "Q20%": 98.14, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.9, 
+                "#Sample_ID": "HB025062_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.8, 
+                "Error%": 0.0246, 
+                "Q20%": 98.01, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.86, 
+                "#Sample_ID": "HB025062_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.55, 
+                "Error%": 0.0248, 
+                "Q20%": 97.93, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.7, 
+                "#Sample_ID": "HB025063_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.11, 
+                "Error%": 0.0243, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.67, 
+                "#Sample_ID": "HB025063_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.78, 
+                "Error%": 0.0246, 
+                "Q20%": 97.95, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.64, 
+                "#Sample_ID": "HB025063_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.58, 
+                "Error%": 0.0248, 
+                "Q20%": 97.89, 
+                "Total_Reads": 5000000
+            }
+        ]
+    }, 
+    "geneset_class_do_data": {
+        "table_header": [
+            {
+                "field": "#Sample_ID", 
+                "label": "#Sample_ID"
+            }, 
+            {
+                "field": "Total_Reads", 
+                "label": "Total_Reads"
+            }, 
+            {
+                "field": "Total_Bases", 
+                "label": "Total_Bases"
+            }, 
+            {
+                "field": "Error%", 
+                "label": "Error%"
+            }, 
+            {
+                "field": "Q20%", 
+                "label": "Q20%"
+            }, 
+            {
+                "field": "Q30%", 
+                "label": "Q30%"
+            }, 
+            {
+                "field": "GC%", 
+                "label": "GC%"
+            }
+        ], 
+        "table": [
+            {
+                "GC%": 57.01, 
+                "#Sample_ID": "HB025060_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.25, 
+                "Error%": 0.0241, 
+                "Q20%": 98.16, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 57.0, 
+                "#Sample_ID": "HB025060_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.04, 
+                "Error%": 0.0244, 
+                "Q20%": 98.07, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.98, 
+                "#Sample_ID": "HB025060_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.0, 
+                "Error%": 0.0244, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.5, 
+                "#Sample_ID": "HB025061_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.48, 
+                "Error%": 0.0249, 
+                "Q20%": 97.86, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.48, 
+                "#Sample_ID": "HB025061_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.16, 
+                "Error%": 0.0252, 
+                "Q20%": 97.72, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.42, 
+                "#Sample_ID": "HB025061_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 93.96, 
+                "Error%": 0.0254, 
+                "Q20%": 97.67, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.95, 
+                "#Sample_ID": "HB025062_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.14, 
+                "Error%": 0.0242, 
+                "Q20%": 98.14, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.9, 
+                "#Sample_ID": "HB025062_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.8, 
+                "Error%": 0.0246, 
+                "Q20%": 98.01, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.86, 
+                "#Sample_ID": "HB025062_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.55, 
+                "Error%": 0.0248, 
+                "Q20%": 97.93, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.7, 
+                "#Sample_ID": "HB025063_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.11, 
+                "Error%": 0.0243, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.67, 
+                "#Sample_ID": "HB025063_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.78, 
+                "Error%": 0.0246, 
+                "Q20%": 97.95, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.64, 
+                "#Sample_ID": "HB025063_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.58, 
+                "Error%": 0.0248, 
+                "Q20%": 97.89, 
+                "Total_Reads": 5000000
+            }
+        ]
+    }, 
+    "geneset_enrich_reactome_data": {
+        "table_header": [
+            {
+                "field": "#Sample_ID", 
+                "label": "#Sample_ID"
+            }, 
+            {
+                "field": "Total_Reads", 
+                "label": "Total_Reads"
+            }, 
+            {
+                "field": "Total_Bases", 
+                "label": "Total_Bases"
+            }, 
+            {
+                "field": "Error%", 
+                "label": "Error%"
+            }, 
+            {
+                "field": "Q20%", 
+                "label": "Q20%"
+            }, 
+            {
+                "field": "Q30%", 
+                "label": "Q30%"
+            }, 
+            {
+                "field": "GC%", 
+                "label": "GC%"
+            }
+        ], 
+        "table": [
+            {
+                "GC%": 57.01, 
+                "#Sample_ID": "HB025060_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.25, 
+                "Error%": 0.0241, 
+                "Q20%": 98.16, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 57.0, 
+                "#Sample_ID": "HB025060_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.04, 
+                "Error%": 0.0244, 
+                "Q20%": 98.07, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.98, 
+                "#Sample_ID": "HB025060_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.0, 
+                "Error%": 0.0244, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.5, 
+                "#Sample_ID": "HB025061_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.48, 
+                "Error%": 0.0249, 
+                "Q20%": 97.86, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.48, 
+                "#Sample_ID": "HB025061_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.16, 
+                "Error%": 0.0252, 
+                "Q20%": 97.72, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.42, 
+                "#Sample_ID": "HB025061_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 93.96, 
+                "Error%": 0.0254, 
+                "Q20%": 97.67, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.95, 
+                "#Sample_ID": "HB025062_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.14, 
+                "Error%": 0.0242, 
+                "Q20%": 98.14, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.9, 
+                "#Sample_ID": "HB025062_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.8, 
+                "Error%": 0.0246, 
+                "Q20%": 98.01, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.86, 
+                "#Sample_ID": "HB025062_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.55, 
+                "Error%": 0.0248, 
+                "Q20%": 97.93, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.7, 
+                "#Sample_ID": "HB025063_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.11, 
+                "Error%": 0.0243, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.67, 
+                "#Sample_ID": "HB025063_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.78, 
+                "Error%": 0.0246, 
+                "Q20%": 97.95, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.64, 
+                "#Sample_ID": "HB025063_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.58, 
+                "Error%": 0.0248, 
+                "Q20%": 97.89, 
+                "Total_Reads": 5000000
+            }
+        ]
+    }, 
+    "geneset_class_reactome_data": {
+        "table_header": [
+            {
+                "field": "#Sample_ID", 
+                "label": "#Sample_ID"
+            }, 
+            {
+                "field": "Total_Reads", 
+                "label": "Total_Reads"
+            }, 
+            {
+                "field": "Total_Bases", 
+                "label": "Total_Bases"
+            }, 
+            {
+                "field": "Error%", 
+                "label": "Error%"
+            }, 
+            {
+                "field": "Q20%", 
+                "label": "Q20%"
+            }, 
+            {
+                "field": "Q30%", 
+                "label": "Q30%"
+            }, 
+            {
+                "field": "GC%", 
+                "label": "GC%"
+            }
+        ], 
+        "table": [
+            {
+                "GC%": 57.01, 
+                "#Sample_ID": "HB025060_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.25, 
+                "Error%": 0.0241, 
+                "Q20%": 98.16, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 57.0, 
+                "#Sample_ID": "HB025060_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.04, 
+                "Error%": 0.0244, 
+                "Q20%": 98.07, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.98, 
+                "#Sample_ID": "HB025060_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.0, 
+                "Error%": 0.0244, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.5, 
+                "#Sample_ID": "HB025061_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.48, 
+                "Error%": 0.0249, 
+                "Q20%": 97.86, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.48, 
+                "#Sample_ID": "HB025061_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.16, 
+                "Error%": 0.0252, 
+                "Q20%": 97.72, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.42, 
+                "#Sample_ID": "HB025061_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 93.96, 
+                "Error%": 0.0254, 
+                "Q20%": 97.67, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.95, 
+                "#Sample_ID": "HB025062_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.14, 
+                "Error%": 0.0242, 
+                "Q20%": 98.14, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.9, 
+                "#Sample_ID": "HB025062_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.8, 
+                "Error%": 0.0246, 
+                "Q20%": 98.01, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.86, 
+                "#Sample_ID": "HB025062_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.55, 
+                "Error%": 0.0248, 
+                "Q20%": 97.93, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.7, 
+                "#Sample_ID": "HB025063_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.11, 
+                "Error%": 0.0243, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.67, 
+                "#Sample_ID": "HB025063_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.78, 
+                "Error%": 0.0246, 
+                "Q20%": 97.95, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.64, 
+                "#Sample_ID": "HB025063_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.58, 
+                "Error%": 0.0248, 
+                "Q20%": 97.89, 
+                "Total_Reads": 5000000
+            }
+        ]
+    }, 
+    "geneset_cluster_data": {
+        "table_header": [
+            {
+                "field": "cluster", 
+                "label": "Cluster id"
+            }, 
+            {
+                "field": "members", 
+                "Label": "Members"
+            }
+        ], 
+        "table": [
+            {
+                "cluster": "1", 
+                "members": "160"
+            }, 
+            {
+                "cluster": "2", 
+                "members": "57"
+            }, 
+            {
+                "cluster": "3", 
+                "members": "46"
+            }, 
+            {
+                "cluster": "4", 
+                "members": "13"
+            }, 
+            {
+                "cluster": "5", 
+                "members": "107"
+            }, 
+            {
+                "cluster": "6", 
+                "members": "9"
+            }, 
+            {
+                "cluster": "7", 
+                "members": "4"
+            }, 
+            {
+                "cluster": "8", 
+                "members": "12"
+            }, 
+            {
+                "cluster": "9", 
+                "members": "5"
+            }, 
+            {
+                "cluster": "10", 
+                "members": "1"
+            }
+        ]
+    }, 
+    "geneset_enrich_do_data": {
+        "table_header": [
+            {
+                "field": "#Sample_ID", 
+                "label": "#Sample_ID"
+            }, 
+            {
+                "field": "Total_Reads", 
+                "label": "Total_Reads"
+            }, 
+            {
+                "field": "Total_Bases", 
+                "label": "Total_Bases"
+            }, 
+            {
+                "field": "Error%", 
+                "label": "Error%"
+            }, 
+            {
+                "field": "Q20%", 
+                "label": "Q20%"
+            }, 
+            {
+                "field": "Q30%", 
+                "label": "Q30%"
+            }, 
+            {
+                "field": "GC%", 
+                "label": "GC%"
+            }
+        ], 
+        "table": [
+            {
+                "GC%": 57.01, 
+                "#Sample_ID": "HB025060_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.25, 
+                "Error%": 0.0241, 
+                "Q20%": 98.16, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 57.0, 
+                "#Sample_ID": "HB025060_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.04, 
+                "Error%": 0.0244, 
+                "Q20%": 98.07, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.98, 
+                "#Sample_ID": "HB025060_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.0, 
+                "Error%": 0.0244, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.5, 
+                "#Sample_ID": "HB025061_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.48, 
+                "Error%": 0.0249, 
+                "Q20%": 97.86, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.48, 
+                "#Sample_ID": "HB025061_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.16, 
+                "Error%": 0.0252, 
+                "Q20%": 97.72, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.42, 
+                "#Sample_ID": "HB025061_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 93.96, 
+                "Error%": 0.0254, 
+                "Q20%": 97.67, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.95, 
+                "#Sample_ID": "HB025062_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.14, 
+                "Error%": 0.0242, 
+                "Q20%": 98.14, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.9, 
+                "#Sample_ID": "HB025062_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.8, 
+                "Error%": 0.0246, 
+                "Q20%": 98.01, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.86, 
+                "#Sample_ID": "HB025062_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.55, 
+                "Error%": 0.0248, 
+                "Q20%": 97.93, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.7, 
+                "#Sample_ID": "HB025063_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.11, 
+                "Error%": 0.0243, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.67, 
+                "#Sample_ID": "HB025063_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.78, 
+                "Error%": 0.0246, 
+                "Q20%": 97.95, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.64, 
+                "#Sample_ID": "HB025063_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.58, 
+                "Error%": 0.0248, 
+                "Q20%": 97.89, 
+                "Total_Reads": 5000000
+            }
+        ]
+    }, 
+    "geneset_enrich_kegg_data": {
+        "table_header": [
+            {
+                "field": "#Sample_ID", 
+                "label": "#Sample_ID"
+            }, 
+            {
+                "field": "Total_Reads", 
+                "label": "Total_Reads"
+            }, 
+            {
+                "field": "Total_Bases", 
+                "label": "Total_Bases"
+            }, 
+            {
+                "field": "Error%", 
+                "label": "Error%"
+            }, 
+            {
+                "field": "Q20%", 
+                "label": "Q20%"
+            }, 
+            {
+                "field": "Q30%", 
+                "label": "Q30%"
+            }, 
+            {
+                "field": "GC%", 
+                "label": "GC%"
+            }
+        ], 
+        "table": [
+            {
+                "GC%": 57.01, 
+                "#Sample_ID": "HB025060_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.25, 
+                "Error%": 0.0241, 
+                "Q20%": 98.16, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 57.0, 
+                "#Sample_ID": "HB025060_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.04, 
+                "Error%": 0.0244, 
+                "Q20%": 98.07, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.98, 
+                "#Sample_ID": "HB025060_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.0, 
+                "Error%": 0.0244, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.5, 
+                "#Sample_ID": "HB025061_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.48, 
+                "Error%": 0.0249, 
+                "Q20%": 97.86, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.48, 
+                "#Sample_ID": "HB025061_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.16, 
+                "Error%": 0.0252, 
+                "Q20%": 97.72, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.42, 
+                "#Sample_ID": "HB025061_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 93.96, 
+                "Error%": 0.0254, 
+                "Q20%": 97.67, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.95, 
+                "#Sample_ID": "HB025062_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.14, 
+                "Error%": 0.0242, 
+                "Q20%": 98.14, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.9, 
+                "#Sample_ID": "HB025062_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.8, 
+                "Error%": 0.0246, 
+                "Q20%": 98.01, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.86, 
+                "#Sample_ID": "HB025062_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.55, 
+                "Error%": 0.0248, 
+                "Q20%": 97.93, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.7, 
+                "#Sample_ID": "HB025063_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.11, 
+                "Error%": 0.0243, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.67, 
+                "#Sample_ID": "HB025063_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.78, 
+                "Error%": 0.0246, 
+                "Q20%": 97.95, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.64, 
+                "#Sample_ID": "HB025063_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.58, 
+                "Error%": 0.0248, 
+                "Q20%": 97.89, 
+                "Total_Reads": 5000000
+            }
+        ]
+    }, 
+    "align_data": {
+        "table_header": [
+            {
+                "field": "Sample", 
+                "label": "Sample"
+            }, 
+            {
+                "field": "Total_reads", 
+                "label": "Total_reads"
+            }, 
+            {
+                "field": "Total_mapped", 
+                "label": "Total_mapped"
+            }, 
+            {
+                "field": "Multiple_mapped", 
+                "label": "Multiple_mapped"
+            }, 
+            {
+                "field": "Unique_mapped", 
+                "label": "Unique_mapped"
+            }
+        ], 
+        "table": [
+            {
+                "Sample": "HB025060_rep1", 
+                "Total_mapped": "4819008(97.97%)", 
+                "Total_reads": 4918770, 
+                "Unique_mapped": "2998335(60.96%)", 
+                "Multiple_mapped": "1820673(37.01%)"
+            }, 
+            {
+                "Sample": "HB025060_rep2", 
+                "Total_mapped": "4815977(97.9%)", 
+                "Total_reads": 4919306, 
+                "Unique_mapped": "2977759(60.53%)", 
+                "Multiple_mapped": "1838218(37.37%)"
+            }, 
+            {
+                "Sample": "HB025060_rep3", 
+                "Total_mapped": "4819757(97.91%)", 
+                "Total_reads": 4922494, 
+                "Unique_mapped": "2950699(59.94%)", 
+                "Multiple_mapped": "1869058(37.97%)"
+            }, 
+            {
+                "Sample": "HB025061_rep1", 
+                "Total_mapped": "4783857(97.22%)", 
+                "Total_reads": 4920716, 
+                "Unique_mapped": "3623449(73.64%)", 
+                "Multiple_mapped": "1160408(23.58%)"
+            }, 
+            {
+                "Sample": "HB025061_rep2", 
+                "Total_mapped": "4777341(97.11%)", 
+                "Total_reads": 4919628, 
+                "Unique_mapped": "3646136(74.11%)", 
+                "Multiple_mapped": "1131205(22.99%)"
+            }, 
+            {
+                "Sample": "HB025061_rep3", 
+                "Total_mapped": "4778597(97.12%)", 
+                "Total_reads": 4920484, 
+                "Unique_mapped": "3611468(73.4%)", 
+                "Multiple_mapped": "1167129(23.72%)"
+            }, 
+            {
+                "Sample": "HB025062_rep1", 
+                "Total_mapped": "4799986(97.37%)", 
+                "Total_reads": 4929420, 
+                "Unique_mapped": "3475809(70.51%)", 
+                "Multiple_mapped": "1324177(26.86%)"
+            }, 
+            {
+                "Sample": "HB025062_rep2", 
+                "Total_mapped": "4795192(97.27%)", 
+                "Total_reads": 4929558, 
+                "Unique_mapped": "3452394(70.03%)", 
+                "Multiple_mapped": "1342798(27.24%)"
+            }, 
+            {
+                "Sample": "HB025062_rep3", 
+                "Total_mapped": "4793652(97.25%)", 
+                "Total_reads": 4929110, 
+                "Unique_mapped": "3447229(69.94%)", 
+                "Multiple_mapped": "1346423(27.32%)"
+            }, 
+            {
+                "Sample": "HB025063_rep1", 
+                "Total_mapped": "4793434(97.43%)", 
+                "Total_reads": 4919852, 
+                "Unique_mapped": "2943076(59.82%)", 
+                "Multiple_mapped": "1850358(37.61%)"
+            }, 
+            {
+                "Sample": "HB025063_rep2", 
+                "Total_mapped": "4789019(97.34%)", 
+                "Total_reads": 4920002, 
+                "Unique_mapped": "2876361(58.46%)", 
+                "Multiple_mapped": "1912658(38.88%)"
+            }, 
+            {
+                "Sample": "HB025063_rep3", 
+                "Total_mapped": "4787512(97.3%)", 
+                "Total_reads": 4920256, 
+                "Unique_mapped": "2849719(57.92%)", 
+                "Multiple_mapped": "1937793(39.38%)"
+            }
+        ]
+    }, 
+    "clean_data": {
+        "table_header": [
+            {
+                "field": "#Sample_ID", 
+                "label": "#Sample_ID"
+            }, 
+            {
+                "field": "Total_Reads", 
+                "label": "Total_Reads"
+            }, 
+            {
+                "field": "Total_Bases", 
+                "label": "Total_Bases"
+            }, 
+            {
+                "field": "Error%", 
+                "label": "Error%"
+            }, 
+            {
+                "field": "Q20%", 
+                "label": "Q20%"
+            }, 
+            {
+                "field": "Q30%", 
+                "label": "Q30%"
+            }, 
+            {
+                "field": "GC%", 
+                "label": "GC%"
+            }
+        ], 
+        "table": [
+            {
+                "GC%": 57.01, 
+                "#Sample_ID": "HB025060_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.25, 
+                "Error%": 0.0241, 
+                "Q20%": 98.16, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 57.0, 
+                "#Sample_ID": "HB025060_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.04, 
+                "Error%": 0.0244, 
+                "Q20%": 98.07, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.98, 
+                "#Sample_ID": "HB025060_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.0, 
+                "Error%": 0.0244, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.5, 
+                "#Sample_ID": "HB025061_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.48, 
+                "Error%": 0.0249, 
+                "Q20%": 97.86, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.48, 
+                "#Sample_ID": "HB025061_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.16, 
+                "Error%": 0.0252, 
+                "Q20%": 97.72, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.42, 
+                "#Sample_ID": "HB025061_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 93.96, 
+                "Error%": 0.0254, 
+                "Q20%": 97.67, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.95, 
+                "#Sample_ID": "HB025062_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.14, 
+                "Error%": 0.0242, 
+                "Q20%": 98.14, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.9, 
+                "#Sample_ID": "HB025062_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.8, 
+                "Error%": 0.0246, 
+                "Q20%": 98.01, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.86, 
+                "#Sample_ID": "HB025062_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.55, 
+                "Error%": 0.0248, 
+                "Q20%": 97.93, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.7, 
+                "#Sample_ID": "HB025063_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.11, 
+                "Error%": 0.0243, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.67, 
+                "#Sample_ID": "HB025063_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.78, 
+                "Error%": 0.0246, 
+                "Q20%": 97.95, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.64, 
+                "#Sample_ID": "HB025063_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.58, 
+                "Error%": 0.0248, 
+                "Q20%": 97.89, 
+                "Total_Reads": 5000000
+            }
+        ]
+    }, 
+    "geneset_class_go_data": {
+        "table_header": [
+            {
+                "field": "#Sample_ID", 
+                "label": "#Sample_ID"
+            }, 
+            {
+                "field": "Total_Reads", 
+                "label": "Total_Reads"
+            }, 
+            {
+                "field": "Total_Bases", 
+                "label": "Total_Bases"
+            }, 
+            {
+                "field": "Error%", 
+                "label": "Error%"
+            }, 
+            {
+                "field": "Q20%", 
+                "label": "Q20%"
+            }, 
+            {
+                "field": "Q30%", 
+                "label": "Q30%"
+            }, 
+            {
+                "field": "GC%", 
+                "label": "GC%"
+            }
+        ], 
+        "table": [
+            {
+                "GC%": 57.01, 
+                "#Sample_ID": "HB025060_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.25, 
+                "Error%": 0.0241, 
+                "Q20%": 98.16, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 57.0, 
+                "#Sample_ID": "HB025060_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.04, 
+                "Error%": 0.0244, 
+                "Q20%": 98.07, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.98, 
+                "#Sample_ID": "HB025060_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.0, 
+                "Error%": 0.0244, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.5, 
+                "#Sample_ID": "HB025061_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.48, 
+                "Error%": 0.0249, 
+                "Q20%": 97.86, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.48, 
+                "#Sample_ID": "HB025061_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.16, 
+                "Error%": 0.0252, 
+                "Q20%": 97.72, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.42, 
+                "#Sample_ID": "HB025061_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 93.96, 
+                "Error%": 0.0254, 
+                "Q20%": 97.67, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.95, 
+                "#Sample_ID": "HB025062_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.14, 
+                "Error%": 0.0242, 
+                "Q20%": 98.14, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.9, 
+                "#Sample_ID": "HB025062_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.8, 
+                "Error%": 0.0246, 
+                "Q20%": 98.01, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.86, 
+                "#Sample_ID": "HB025062_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.55, 
+                "Error%": 0.0248, 
+                "Q20%": 97.93, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.7, 
+                "#Sample_ID": "HB025063_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.11, 
+                "Error%": 0.0243, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.67, 
+                "#Sample_ID": "HB025063_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.78, 
+                "Error%": 0.0246, 
+                "Q20%": 97.95, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.64, 
+                "#Sample_ID": "HB025063_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.58, 
+                "Error%": 0.0248, 
+                "Q20%": 97.89, 
+                "Total_Reads": 5000000
+            }
+        ]
+    }, 
+    "diff_summary": {
+        "table_header": [
+            {
+                "field": "diff", 
+                "label": "diff_group"
+            }, 
+            {
+                "field": "total", 
+                "label": "total DEG"
+            }, 
+            {
+                "field": "up", 
+                "label": "up"
+            }, 
+            {
+                "field": "down", 
+                "label": "down"
+            }
+        ], 
+        "table": [
+            {
+                "down": 314, 
+                "diff": "HB025060_vs_HB025061", 
+                "total": 503, 
+                "up": 189
+            }, 
+            {
+                "down": 296, 
+                "diff": "HB025060_vs_HB025062", 
+                "total": 414, 
+                "up": 118
+            }, 
+            {
+                "down": 197, 
+                "diff": "HB025060_vs_HB025063", 
+                "total": 451, 
+                "up": 254
+            }
+        ]
+    }, 
+    "geneset_class_kegg_data": {
+        "table_header": [
+            {
+                "field": "#Sample_ID", 
+                "label": "#Sample_ID"
+            }, 
+            {
+                "field": "Total_Reads", 
+                "label": "Total_Reads"
+            }, 
+            {
+                "field": "Total_Bases", 
+                "label": "Total_Bases"
+            }, 
+            {
+                "field": "Error%", 
+                "label": "Error%"
+            }, 
+            {
+                "field": "Q20%", 
+                "label": "Q20%"
+            }, 
+            {
+                "field": "Q30%", 
+                "label": "Q30%"
+            }, 
+            {
+                "field": "GC%", 
+                "label": "GC%"
+            }
+        ], 
+        "table": [
+            {
+                "GC%": 57.01, 
+                "#Sample_ID": "HB025060_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.25, 
+                "Error%": 0.0241, 
+                "Q20%": 98.16, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 57.0, 
+                "#Sample_ID": "HB025060_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.04, 
+                "Error%": 0.0244, 
+                "Q20%": 98.07, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.98, 
+                "#Sample_ID": "HB025060_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.0, 
+                "Error%": 0.0244, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.5, 
+                "#Sample_ID": "HB025061_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.48, 
+                "Error%": 0.0249, 
+                "Q20%": 97.86, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.48, 
+                "#Sample_ID": "HB025061_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.16, 
+                "Error%": 0.0252, 
+                "Q20%": 97.72, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.42, 
+                "#Sample_ID": "HB025061_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 93.96, 
+                "Error%": 0.0254, 
+                "Q20%": 97.67, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.95, 
+                "#Sample_ID": "HB025062_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.14, 
+                "Error%": 0.0242, 
+                "Q20%": 98.14, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.9, 
+                "#Sample_ID": "HB025062_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.8, 
+                "Error%": 0.0246, 
+                "Q20%": 98.01, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 53.86, 
+                "#Sample_ID": "HB025062_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.55, 
+                "Error%": 0.0248, 
+                "Q20%": 97.93, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.7, 
+                "#Sample_ID": "HB025063_rep1", 
+                "Total_Bases": 750000000, 
+                "Q30%": 95.11, 
+                "Error%": 0.0243, 
+                "Q20%": 98.08, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.67, 
+                "#Sample_ID": "HB025063_rep2", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.78, 
+                "Error%": 0.0246, 
+                "Q20%": 97.95, 
+                "Total_Reads": 5000000
+            }, 
+            {
+                "GC%": 56.64, 
+                "#Sample_ID": "HB025063_rep3", 
+                "Total_Bases": 750000000, 
+                "Q30%": 94.58, 
+                "Error%": 0.0248, 
+                "Q20%": 97.89, 
+                "Total_Reads": 5000000
+            }
+        ]
+    }
+}

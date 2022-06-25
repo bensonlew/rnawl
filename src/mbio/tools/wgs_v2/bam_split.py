@@ -42,7 +42,7 @@ class BamSplitTool(Tool):
     def __init__(self, config):
         super(BamSplitTool, self).__init__(config)
         self.parafly = "program/parafly-r2013-01-21/src/ParaFly"
-        self.samtools_path = self.config.SOFTWARE_DIR + "/bioinfo/align/samtools-1.7/samtools"
+        self.samtools_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/samtools"
         self.ref_chrlist_path = self.config.SOFTWARE_DIR + "/database/dna_geneome/" + self.option("ref_chrlist")
         if not os.path.exists(self.ref_chrlist_path):
             raise OptionError("请设置参考基因组的ref.chrlist")

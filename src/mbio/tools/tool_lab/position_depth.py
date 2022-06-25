@@ -51,7 +51,7 @@ class PositionDepthTool(Tool):
         self._version = "v1.0"
         self.sample_name = os.path.splitext(os.path.basename(self.option("in_bam").prop["path"]))[0]
         self.program = {
-            'samtools': 'bioinfo/align/samtools-1.8/samtools',
+            'samtools': 'miniconda2/bin/samtools',
         }
         self.file = {
             'outfile':  os.path.join(self.output_dir, self.sample_name + '_depth.xls')

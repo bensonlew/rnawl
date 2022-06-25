@@ -56,7 +56,7 @@ class MapTool(Tool):
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.fq2fa_path = '/bioinfo/metaGenomic/MaxBin-2.2.5/auxiliary/idba-1.1.1/bin/fq2fa '
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         self.bowtie2_path = '/bioinfo/align/bowtie2-2.2.9/'
         self.abund_script = self.config.PACKAGE_DIR + '/hmdb/scripts/abund.pl '
         self.cgc_index = self.config.SOFTWARE_DIR + "/bioinfo/CGC_bowtie/index"

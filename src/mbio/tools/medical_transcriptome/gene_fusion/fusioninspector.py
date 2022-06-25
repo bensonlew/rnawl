@@ -80,10 +80,10 @@ class FusioninspectorTool(Tool):
         # self.make_lib_path="/mnt/ilustre/users/sanger-dev/sg-users/fuwenyao/miniconda/miniconda3_3/miniconda3/lib/STAR-Fusion/ctat-genome-lib-builder/"
         # self.fusion_inspect_path="/mnt/ilustre/users/sanger-dev/sg-users/fuwenyao/miniconda/miniconda3_3/miniconda3/lib/STAR-Fusion/FusionInspector/"
         # 实际路径
-        self.star_fusion_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v3/gene_fusion/miniconda3/bin/"
+        self.star_fusion_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.set_environ(PATH=self.star_fusion_path)
         self.make_lib_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v3/gene_fusion/miniconda3/lib/STAR-Fusion/ctat-genome-lib-builder/"
-        self.fusion_inspect_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v3/gene_fusion/miniconda3/lib/STAR-Fusion/FusionInspector/"
+        self.fusion_inspect_path = self.config.SOFTWARE_DIR + "/miniconda2/lib/STAR-Fusion/FusionInspector/"
 
     def run_fusion_inspector(self):
         """
@@ -95,9 +95,9 @@ class FusioninspectorTool(Tool):
         cmd += "--out_prefix finspector "
         cmd += "--genome_lib_dir {} ".format(self.option("lib_path").prop["path"])
         cmd += "--CPU 10 "
-        cmd += "--vis "
-        cmd += "--output_dir {} ".format(self.output_dir)
-        cmd += "--only_fusion_reads  --fusion_contigs_only --no_FFPM  --annotate "
+        # cmd += "--vis "
+        # cmd += "--output_dir {} ".format(self.output_dir)
+        cmd += "--only_fusion_reads  --fusion_contigs_only --annotate "
         cmd += "--left_fq {} ".format(self.option("left_fq").prop["path"])
         cmd += "--right_fq {} ".format(self.option("right_fq").prop["path"])
         self.logger.info("使用fusion_inspector对star_fusion结果生成igv可视化文件")
@@ -111,12 +111,10 @@ class FusioninspectorTool(Tool):
         else:
             self.set_error("使用fusion_inspector对star_fusion结果生成igv可视化文件失败!")
 
-    # def set_output(self):
-    #     self.raw_fasta_dir = os.path.dirname(self.option("ref_fasta").prop["path"])
-    #     os.makedirs(os.path.join(self.raw_fasta_dir,"star_27"))
-    #     lib_path=os.path.join(self.work_dir,"ctat_genome_lib_build_dir")
-    #     new_path=os.path.join(self.raw_fasta_dir,"star_27")
-    #     os.system('cp -r %s %s' % (lib_path, new_path))
+    def set_output(self):
+        # self.raw_fasta_dir = os.path.dirname(self.option("ref_fasta").prop["path"])
+
+        os.system('cp -r %s/* %s/*' % (self.work_dir + "/FI", self.output_dir))
 
 
     def run(self):
@@ -127,6 +125,7 @@ class FusioninspectorTool(Tool):
         self.logger.info("运行开始")
         self.run_fusion_inspector()
         self.logger.info("运行结束")
+        self.set_output()
         self.end()
 
 

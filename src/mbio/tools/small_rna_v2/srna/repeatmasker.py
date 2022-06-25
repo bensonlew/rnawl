@@ -52,7 +52,7 @@ class RepeatmaskerTool(Tool):
         self.repeatmasker_path = "/bioinfo/Genomic/Sofware/RepeatMasker/"
         self.cufflinks_path = '/bioinfo/rna/cufflinks-2.2.1/'
         self.bedtools = "/bioinfo/rna/bedtools2-master/bin/"
-        self.perl_bin = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin"
+        self.perl_bin = self.config.SOFTWARE_DIR + "/miniconda2/bin"
         self.set_environ(PATH=self.perl_bin)
 
 

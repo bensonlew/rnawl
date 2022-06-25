@@ -126,7 +126,7 @@ class DiffGenesetClassWorkflow(Workflow):
         pathways = self.output_dir + '/pathways'
         if not os.path.exists(pathways):
             os.mkdir(pathways)
-        self.logger.info(ko_genes)
+        # self.logger.info(ko_genes)
         self.get_kegg_pics(ko_genes=ko_genes, catgory=regulate_gene, out_dir=pathways)
         # kegg.get_pictrue(path_ko=path_ko, out_dir=pathways, regulate_dict=regulate_gene)  # 颜色
         # kegg.get_pictrue(path_ko=path_ko, out_dir=pathways)  # edited by shijin on 20170728

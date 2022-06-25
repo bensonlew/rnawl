@@ -66,7 +66,7 @@ class QzaToTableTool(Tool):
         self.shell_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/qza2table.sh")
         self.miniconda3 = os.path.join(self.config.SOFTWARE_DIR, "program/miniconda3/bin")
         self.set_environ(PATH=self.miniconda3)
-        self.biom_path = "program/Python/bin/"
+        self.biom_path = "miniconda2/bin/"
 
     def run_qiime2(self):
         """

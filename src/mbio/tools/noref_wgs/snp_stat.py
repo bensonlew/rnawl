@@ -34,7 +34,7 @@ class SnpStatAgent(Agent):
 class SnpStatTool(Tool):
     def __init__(self, config):
         super(SnpStatTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.python_path = "miniconda2/bin/python"
         self.graph_path = self.config.PACKAGE_DIR + "/noref_wgs/snp_depth_density.py"
         self.stat_path = self.config.PACKAGE_DIR + "/noref_wgs/snp.stat.pl"

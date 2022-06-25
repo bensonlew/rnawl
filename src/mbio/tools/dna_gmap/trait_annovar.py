@@ -41,7 +41,7 @@ class TraitAnnovarAgent(Agent):
 class TraitAnnovarTool(Tool):
     def __init__(self, config):
         super(TraitAnnovarTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.rscript = "program/R-3.3.3/bin/Rscript"
         self.trait_annovar = self.config.PACKAGE_DIR + "/dna_gmap/trit-annovar.pl"
         self.trait_annovar_new = self.config.PACKAGE_DIR + "/dna_gmap/trait_analysis.R"

@@ -50,7 +50,7 @@ class TableSelectTool(Tool):
     def __init__(self, config):
         super(TableSelectTool, self).__init__(config)
         self._version = "v1.0"
-        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
+        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin'))
         self.file = {
             'processed': os.path.join(self.work_dir, 'processed_table.txt'),
         }

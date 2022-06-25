@@ -349,7 +349,7 @@ class Agent(Basic):
             try:
                 output = pickle.load(f)
             except EOFError:
-                gevent.sleep(2)
+                gevent.sleep(200)
                 return self._load_report(success, info)
 
         self._report_data = {

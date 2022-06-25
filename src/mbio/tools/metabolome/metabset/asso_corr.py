@@ -58,7 +58,7 @@ class AssoCorrTool(Tool):
         super(AssoCorrTool, self).__init__(config)
         '''
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')
-        self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/"
+        self.perl_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.r_path = self.config.SOFTWARE_DIR + '/program/R-3.3.1/bin/Rscript'
         self.hcluster_script_path = self.config.SOFTWARE_DIR + "/bioinfo/statistical/scripts/"
         self.Rscript_path = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin/"

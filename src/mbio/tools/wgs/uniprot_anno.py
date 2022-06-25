@@ -51,7 +51,7 @@ class UniprotAnnoTool(Tool):
     def __init__(self, config):
         super(UniprotAnnoTool, self).__init__(config)
         self.uniprot_path = self.config.PACKAGE_DIR + "/wgs/UNIPROTanno.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
 
     def UniprotAnno(self):
         """

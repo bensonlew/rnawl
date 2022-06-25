@@ -45,7 +45,7 @@ class SplitbylgAgent(Agent):
 class SplitbylgTool(Tool):
     def __init__(self, config):
         super(SplitbylgTool, self).__init__(config)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
         self.splitbyLG_CP_pl = self.config.PACKAGE_DIR + '/dna_gmap/splitbyLG-CP.pl'
         self.splitbyLG_NOCP_pl = self.config.PACKAGE_DIR + '/dna_gmap/splitbyLG-NOCP.pl'
 

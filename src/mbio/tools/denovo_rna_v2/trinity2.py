@@ -131,7 +131,7 @@ class Trinity2Tool(Tool):
         # self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/denovo_rna_v2/bowtie2-2.3.3.1-linux-x86_64/'
         self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/align/bowtie2-2.3.4.3-linux-x86_64/'
         self.java = self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0/bin'
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + self.perl)
         self.set_environ(PATH=self.bowtie)

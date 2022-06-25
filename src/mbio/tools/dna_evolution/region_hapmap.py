@@ -93,7 +93,7 @@ class RegionHapmapTool(Tool):
         super(RegionHapmapTool, self).__init__(config)
         self._version = "v1.0.1"
         # self.parafly = "/program/parafly-r2013-01-21/src/ParaFly"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
         self.R_path = "program/R-3.3.3/bin/Rscript"
         self.plink_path = "bioinfo/dna_evolution/plink/plink"
         self.plink_more_path = self.config.SOFTWARE_DIR + "/bioinfo/dna_evolution/plink/plink"

@@ -60,7 +60,7 @@ class TritMvpTool(Tool):
     def __init__(self, config):
         super(TritMvpTool, self).__init__(config)
         self.rscript_path = "program/R-3.3.3/bin/Rscript"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '     # test
+        self.perl_path = 'miniconda2/bin/perl '     # test
         # self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.4.0/lib64')
         self.mvp_path = self.config.PACKAGE_DIR + '/dna_evolution/MVP.single.R'
 

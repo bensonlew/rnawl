@@ -165,7 +165,7 @@ class EnvironmentalRegressionTool(Tool):
         self.env_table = self.work_dir + '/temp_env_table.xls'
         #if not self.create_otu_and_env_common(old_otu_table, old_env_table, self.otu_table, self.env_table):
             #self.set_error('环境因子表中的样本与OTU表中的样本共有数量少于2个')       
-        cmd = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl ' + self.config.SOFTWARE_DIR + '/bioinfo/meta/scripts/plot-pcoa.pl '
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl ' + self.config.SOFTWARE_DIR + '/bioinfo/meta/scripts/plot-pcoa.pl '
         cmd += '-i %s ' %(self.get_otu_table())
         cmd += '-o %s ' %(self.work_dir + '/environmentalregression/')
         if not os.path.exists(self.work_dir + '/environmentalregression/'):

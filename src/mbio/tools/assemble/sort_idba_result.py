@@ -74,7 +74,7 @@ class SortIdbaResultAgent(Agent):
 class SortIdbaResultTool(Tool):
     def __init__(self, config):
         super(SortIdbaResultTool, self).__init__(config)
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         # self.sort_result_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/sort_idba_result.pl '
         self.sort_result_path = self.config.PACKAGE_DIR + '/metagenomic/scripts/sort_idba_result.pl '
 

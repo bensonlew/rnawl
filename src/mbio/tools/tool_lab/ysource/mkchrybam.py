@@ -45,7 +45,7 @@ class MkchrybamTool(Tool):
         super(MkchrybamTool,self).__init__(config)
         self._version = "v1.0"
         self.software_dir=self.config.SOFTWARE_DIR
-        self.samtools = 'program/Python/bin/samtools'
+        self.samtools = 'miniconda2/bin/samtools'
         self.bam = self.option("bam_file").prop["path"]
         self.sample_name = self.option("sample_name")
 

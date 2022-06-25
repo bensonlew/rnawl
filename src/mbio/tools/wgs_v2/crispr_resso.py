@@ -60,7 +60,7 @@ class CrisprRessoTool(Tool):
         :param config:
         """
         super(CrisprRessoTool, self).__init__(config)
-        self.resso = 'program/Python/bin/CRISPRessoWGS'
+        self.resso = 'miniconda2/bin/CRISPRessoWGS'
         self.set_environ(
             PATH=self.config.SOFTWARE_DIR +
             "/bioinfo/align/bowtie2-2.2.9/")

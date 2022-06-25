@@ -55,7 +55,7 @@ class ScafAgpContigTool(Tool):
         super(ScafAgpContigTool, self).__init__(config)
         self.seq_scaf = self.option('seq_scaf').prop['path']
         self.sample_name= self.option('sample_name')
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         self.perl_script_path = self.config.PACKAGE_DIR + '/bacgenome/'
         self.gapcloser = "/bioinfo/metaGenomic/SOAPdenovo2/v1.12-r6/bin/GapCloser"
         self.sort_scaf = self.work_dir + '/' + self.sample_name + '.sort.fna'

@@ -61,7 +61,7 @@ class ModelConstructionTool(Tool):
         super(ModelConstructionTool, self).__init__(config)
         self.program = {
             'rscript': 'program/R-3.3.1/bin/Rscript',
-            'perl': 'program/perl/perls/perl-5.24.0/bin/perl',
+            'perl': 'miniconda2/bin/perl',
         }
         self.script = {
             'win_index': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/bsa/slidingwin-index.r'),

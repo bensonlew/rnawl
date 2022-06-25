@@ -39,7 +39,7 @@ class ExtractMrnaTool(Tool):
     def __init__(self, config):
         super(ExtractMrnaTool, self).__init__(config)
         self.cufflinks_path = '/bioinfo/rna/cufflinks-2.2.1/'
-        self.perl = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl = 'miniconda2/bin/perl'
         self.extract_mrna_gtf = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db/extract_mrna_gtf.pl')
 
     def run(self):

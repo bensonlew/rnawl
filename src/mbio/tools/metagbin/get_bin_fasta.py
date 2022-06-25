@@ -51,7 +51,7 @@ class GetBinFastaTool(Tool):
     """
     def __init__(self, config):
         super(GetBinFastaTool, self).__init__(config)
-        self.perl ="/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl ="/miniconda2/bin/perl"
         self.perl_path = self.config.PACKAGE_DIR + "/metagbin/get_bin_fasta.pl"
         self.fa = self.option('bin_path').path
         self.prefix = self.option('new_bin')

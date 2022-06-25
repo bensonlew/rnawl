@@ -87,7 +87,7 @@ class MarkerFilterAgent(Agent):
 class MarkerFilterTool(Tool):
     def __init__(self, config):
         super(MarkerFilterTool, self).__init__(config)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         self.mkerfilter_path = self.config.PACKAGE_DIR + "/dna_gmap/markerfilter.pl"
         self.markerinfo_path = self.config.PACKAGE_DIR + "/dna_gmap/markerinfo_tian.pl"
         self.sort_markinfo_path = self.config.PACKAGE_DIR + "/dna_gmap/sort_markinfo.pl"

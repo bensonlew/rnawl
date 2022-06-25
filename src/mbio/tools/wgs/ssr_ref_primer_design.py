@@ -46,7 +46,7 @@ class SsrRefPrimerDesignTool(Tool):
         super(SsrRefPrimerDesignTool, self).__init__(config)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + "/gcc/5.1.0/bin")
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + "/gcc/5.1.0/lib64")
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.ssr_p3in_path = self.config.PACKAGE_DIR + "/wgs/ref.ssr.p3in.pl" # 样本基因组组装用sample.ssr.p3in.pl
         self.ssr_p3out_path = self.config.PACKAGE_DIR + "/wgs/ref.ssr.p3out.pl"
         self.ssr_primersort_path = self.config.PACKAGE_DIR + "/wgs/sort.ssr.pl"        

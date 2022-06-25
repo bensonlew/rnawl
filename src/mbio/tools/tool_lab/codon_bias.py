@@ -49,7 +49,7 @@ class CodonBiasTool(Tool):
         self.codonw = self.config.SOFTWARE_DIR + '/bioinfo/tool_lab/CodonW/codonw'
         self.perl_src = self.config.PACKAGE_DIR + '/tool_lab/code.pl'
         #self.r_bin = self.config.SOFTWARE_DIR + '/program/R-3.3.1/bin'
-        self.perl_bin = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_bin = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl'
         self.set_environ(LD_LIBRARY_PATH="{}/gcc/5.1.0/lib64".format(self.config.SOFTWARE_DIR))
 
 

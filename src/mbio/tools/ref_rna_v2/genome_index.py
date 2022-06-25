@@ -48,7 +48,7 @@ class GenomeIndexTool(Tool):
         software_dir = self.config.SOFTWARE_DIR
         self.bowtie2_index = '/bioinfo/align/bowtie2-2.2.9/bowtie2-build'
         self.hisat2_index = '/bioinfo/align/hisat2/hisat2-2.1.0/hisat2-build'
-        self.samtools_index = '/bioinfo/align/samtools-1.7/samtools'
+        self.samtools_index = '/miniconda2/bin/samtools'
         self.gff_read = '/bioinfo/rna/cufflinks-2.2.1/gffread'
         self.stat = self.config.PACKAGE_DIR + "/ref_rna_v2/gtf2genome_stat.sh"
         self.seqkit = software_dir + '/bioinfo/seq/seqkit'

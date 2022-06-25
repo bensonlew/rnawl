@@ -99,7 +99,7 @@ class Mirdeep2Tool(Tool):
         self.get_exp = self.config.PACKAGE_DIR + "/small_rna/get_mireap_exp.pl"
         self.bowtie_bash = '/bioinfo/align/bowtie-1.2.3-linux-x86_64/'
         self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/align/bowtie-1.2.3-linux-x86_64/'
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(PATH=self.bowtie)
         self.set_environ(PERL5LIB=self.mirdeep_lib)

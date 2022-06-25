@@ -94,7 +94,7 @@ class IdbaTool(Tool):
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         # self.split_fasta_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/split_fa.pl '
         self.split_fasta_path = self.config.PACKAGE_DIR + '/sequence/scripts/split_fa.pl '
         # self.combine_contig_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/combine_contig.pl '

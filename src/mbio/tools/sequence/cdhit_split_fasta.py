@@ -70,7 +70,7 @@ class CdhitSplitFastaTool(Tool):
         super(CdhitSplitFastaTool, self).__init__(config)
         self._version = '1.0'
         self.div_path = 'bioinfo/uniGene/cd-hit-v4.6.1-2012-08-27/cd-hit-div'  # 该软件切分前先排序
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         self.div_path1 = self.config.SOFTWARE_DIR + '/bioinfo/uniGene/cd-hit-v4.6.1-2012-08-27/cd-hit-div_new.pl'  # 改脚本不按长短切分
 
     def run(self):

@@ -55,7 +55,7 @@ class CanuAssemTool(Tool):
         self.sample_name = self.option("sample_name")
         self.sh_path = "../../../../../.." + self.config.PACKAGE_DIR + '/sequence/scripts/'
         self.set_environ(JAVA_HOME=self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0')
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/gcc/7.2.0/bin:'+ self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/gnuplot-5.2.3/bin:' + self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/canu-2.0/Linux-amd64/bin:' + self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin')
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/gcc/7.2.0/bin:'+ self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/gnuplot-5.2.3/bin:' + self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/canu-2.0/Linux-amd64/bin:' + self.config.SOFTWARE_DIR + '/miniconda2/bin')
         self.set_environ(CLASSPATH='.:' + self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0/lib/dt.jar:' + self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0/lib/tools.jar')
         self.set_environ(PERL5LIB=self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/lib/site_perl/5.24.0')
         self.set_environ(LIBRARY_PATH= self.config.SOFTWARE_DIR + '/gcc/7.2.0/lib64')

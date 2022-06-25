@@ -61,7 +61,7 @@ class RmatsModelTool(Tool):
         self.python = 'miniconda2/bin/python'
         self.convert = 'program/ImageMagick/bin/convert'
         self.process_event_file_py = os.path.join(self.config.PACKAGE_DIR, 'lnc_rna/process_event_file.py')
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.rmats2sashimiplot_py = os.path.join(
             self.config.SOFTWARE_DIR, 'bioinfo/rna/rmats2sashimiplot-master/src/rmats2sashimiplot/rmats2sashimiplot.py'

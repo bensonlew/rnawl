@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 from biocluster.config import Config
 import re
 from Bio.KEGG.KGML import KGML_parser
-from Bio.Graphics.KGML_vis_t import KGMLCanvas
+# from Bio.Graphics.KGML_vis_t import KGMLCanvas
 from mbio.packages.ref_rna_v2.kegg_html import KeggHtml
 from reportlab.lib import colors
 import collections
@@ -25,10 +25,10 @@ class KeggAnnotation(object):
         # self.mongodb = self.client.sanger_biodb
         print "version is {}".format(kegg_version)
         self.client = Config().get_mongo_client(mtype="ref_rna", ref=True)
-        self.mongodb = self.client[Config().get_mongo_dbname("ref_rna", ref=True)]  # 20171101 by zengjing 数据库连接方式修改
-        self.gene_coll = self.mongodb.kegg_gene_v1
-        self.ko_coll = self.mongodb.kegg_ko_v1
-        self.png_coll = self.mongodb.kegg_pathway_png_v1
+        # self.mongodb = self.client[Config().get_mongo_dbname("ref_rna", ref=True)]  # 20171101 by zengjing 数据库连接方式修改
+        # self.gene_coll = self.mongodb.kegg_gene_v1
+        # self.ko_coll = self.mongodb.kegg_ko_v1
+        # self.png_coll = self.mongodb.kegg_pathway_png_v1
         self.path = collections.defaultdict(str)
         self.ko2gene = dict()
         self.kegg_version = kegg_version

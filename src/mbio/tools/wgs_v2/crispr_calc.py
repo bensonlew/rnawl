@@ -59,7 +59,7 @@ class CrisprCalcTool(Tool):
 
     def __init__(self, config):
         super(CrisprCalcTool, self).__init__(config)
-        self.perl = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "miniconda2/bin/perl"
         self.crispr_stat = self.config.PACKAGE_DIR + "/wgs_v2/crispr.pl"
 
     def run_crispr_stat(self):

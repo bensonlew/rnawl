@@ -70,7 +70,7 @@ class BugbasePredictTool(Tool):
         设置软件、脚本、数据库的路径
         """
         self.set_environ(PYTHONPATH = self.config.SOFTWARE_DIR + "/bioinfo/meta/picrust-1.1.0/")
-        self.python_scripts = "/program/Python/bin/"
+        self.python_scripts = "/miniconda2/bin/"
         self.scripts = self.config.SOFTWARE_DIR + "/bioinfo/meta/16s_scripts/"
         self.picrust_path = self.config.SOFTWARE_DIR + "/bioinfo/meta/picrust-1.1.0/scripts/"
         #self.Fundb = self.config.SOFTWARE_DIR + "/database/taxon_db/train_RDP_taxon/RDP_trained_greengenes135_16s_bacteria/RdpTaxonAssigner_training_seqs.fasta"  # 设置数据库文件路径，97_otus.fasta

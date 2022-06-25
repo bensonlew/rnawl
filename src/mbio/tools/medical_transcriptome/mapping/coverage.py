@@ -60,9 +60,9 @@ class CoverageTool(Tool):
         super(CoverageTool, self).__init__(config)
         self.prefix = os.path.join(self.work_dir, os.path.basename(self.option('bam').path))[:-4]
         self.program = {
-            'samtools': 'program/Python/bin/samtools',
+            'samtools': 'miniconda2/bin/samtools',
             'python': 'miniconda2/bin/python',
-            'bash': 'bash'
+            'bash': 'sh'
         }
         self.script = {
             'genebody_coverage': os.path.join(self.config.SOFTWARE_DIR,
@@ -121,7 +121,7 @@ class CoverageTool(Tool):
         text += ' -o {}'.format(self.prefix)
         open(self.file['sh'], 'w').write(text)
         cmd = '{} {}'.format(self.program['bash'], self.file['sh'])
-        runcmd(self, 'run_bash', cmd)
+        runcmd(self, 'run_bash', cmd, shell=True)
 
     def set_output(self):
         source = self.file['txt']

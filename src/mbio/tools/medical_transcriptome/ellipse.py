@@ -54,7 +54,7 @@ class EllipseTool(Tool):
     """
     def __init__(self, config):
         super(EllipseTool, self).__init__(config)
-        self.R_path = '/program/R-3.3.1/bin/'
+        self.R_path = '/bioinfo/miniconda2/bin/'
         self.ellipse_path = self.config.PACKAGE_DIR + '/graph/scripts/Ellipse.R'
 
     def create_ellipse_table(self):

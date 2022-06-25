@@ -119,7 +119,7 @@ class TrinityTool(Tool):
         super(TrinityTool, self).__init__(config)
         self._version = "v1.0.1"
         self.trinity_path = '/bioinfo/denovo_rna_v2/trinityrnaseq-Trinity-v2.5.0/'
-        self.perl = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin'
+        self.perl = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/denovo_rna_v2/bowtie2-2.3.3.1-linux-x86_64/'
         self.java = self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0/bin'
         self.set_environ(PATH=self.perl)

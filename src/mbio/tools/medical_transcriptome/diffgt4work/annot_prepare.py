@@ -65,7 +65,7 @@ class AnnotPrepareTool(Tool):
         super(AnnotPrepareTool, self).__init__(config)
         # self.diff_id = self.option("diff_id")
         project_type = 'medical_transcriptome'
-        self.db = Config().get_mongo_client(mtype=project_type)[Config().get_mongo_dbname(project_type)]
+        # self.db = Config().get_mongo_client(mtype=project_type)[Config().get_mongo_dbname(project_type)]
         self.file_path = OrderedDict()
 
 
@@ -139,29 +139,31 @@ class AnnotPrepareTool(Tool):
 
     @toolfuncdeco
     def get_kegg_version(self):
-        collection = self.db['sg_task']
-        task_info = collection.find_one({"task_id": self.option("task_id")})
-        if "database_version" in task_info:
-            kegg_version = task_info["database_version"].get("kegg", "")
-        else:
-            kegg_version = None
+        # collection = self.db['sg_task']
+        # task_info = collection.find_one({"task_id": self.option("task_id")})
+        # if "database_version" in task_info:
+        #     kegg_version = task_info["database_version"].get("kegg", "")
+        # else:
+        #     kegg_version = None
+        kegg_version = "202109_spe"
         return kegg_version
 
     @toolfuncdeco
     def get_reactome_version(self):
-        collection = self.db['sg_task']
-        task_info = collection.find_one({"task_id": self.option("task_id")})
-        if "database_version" in task_info:
-            reactome_version = task_info["database_version"].get("reactome", "")
-        else:
-            reactome_version = None
+        # collection = self.db['sg_task']
+        # task_info = collection.find_one({"task_id": self.option("task_id")})
+        # if "database_version" in task_info:
+        #     reactome_version = task_info["database_version"].get("reactome", "")
+        # else:
+        #     reactome_version = None
+        reactome_version = "72"
         return reactome_version
 
 
     @toolfuncdeco
     def export_all_list(self):
         all_list = os.path.join(self.output_dir, "all_gene.list")
-        self.logger.debug("正在导出所有背景基因{}".format(all_list))
+        self.logger.debug(u"正在导出所有背景基因{}".format(all_list))
         exp_df = pd.read_table(self.option("gene_count_file"),sep="\t",index_col=0)
         all_genes = exp_df.index.tolist()
         with open(all_list, "wb") as f:
@@ -172,7 +174,7 @@ class AnnotPrepareTool(Tool):
     @toolfuncdeco
     def export_go_list(self):
         go_list_path =os.path.join(self.output_dir,"GO.list")
-        self.logger.debug("正在导出go列表{}".format(go_list_path))
+        self.logger.debug(u"正在导出go列表{}".format(go_list_path))
         raw_go_list_path = os.path.join(self.option("annot_result"),"allannot_class","go","go_list_gene.xls")
         if os.path.exists(go_list_path):
             os.remove(go_list_path)
@@ -182,7 +184,7 @@ class AnnotPrepareTool(Tool):
     @toolfuncdeco
     def export_kegg_table(self):
         kegg_path = os.path.join(self.output_dir, 'gene_kegg_table.xls')
-        self.logger.debug("正在导出kegg_table文件，路径:%s" % ( kegg_path))
+        self.logger.debug(u"正在导出kegg_table文件，路径:%s" % ( kegg_path))
         raw_kegg_path = os.path.join(self.option("annot_result"), "allannot_class", "kegg", "kegg_gene_gene.xls")
         if os.path.exists(kegg_path):
             os.remove(kegg_path)

@@ -91,7 +91,7 @@ class MirPreferTool(Tool):
         self.bowtie_bash = '/bioinfo/align/bowtie-1.2.3-linux-x86_64/'
         self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/align/bowtie-1.2.3-linux-x86_64/'
         self.rnafold = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/mirdeep2_0.1.3/ViennaRNA-2.4.14/bin/'
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(PATH=self.samtools)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + self.perl)

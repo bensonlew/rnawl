@@ -82,7 +82,7 @@ class DiffReactomeClassTool(Tool):
     def __init__(self, config):
         super(DiffReactomeClassTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
         self.r_path = self.config.SOFTWARE_DIR + "/program/R-3.3.3/bin/Rscript"
         self.map_path = self.config.SOFTWARE_DIR + "/bioinfo/annotation/scripts/map5.r"
 
@@ -473,7 +473,7 @@ class DiffReactomeClassTool(Tool):
                 #reac_svg.svg_mark(svg_path1, geneset2gene=self.geneset2gene, rgene2gene=path_reac_gene, path_name=path, output_dir=self.work_dir + '/svg')
             else:
                 print "can not find {} svg".format(svg_path1)
-        mutiple_svg_convert(paras)
+        # mutiple_svg_convert(paras)
 
 
 

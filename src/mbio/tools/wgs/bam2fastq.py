@@ -60,8 +60,8 @@ class Bam2fastqAgent(Agent):
 class Bam2fastqTool(Tool):
     def __init__(self, config):
         super(Bam2fastqTool, self).__init__(config)
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/align/samtools-1.7/')
-        self.samtools = 'bioinfo/align/samtools-1.7/samtools '
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/miniconda2/bin/')
+        self.samtools = 'miniconda2/bin/samtools '
         self.pos = ""
         
     def samtools_view(self):

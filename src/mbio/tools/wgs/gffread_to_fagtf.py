@@ -56,7 +56,7 @@ class GffreadToFagtfTool(Tool):
         # self.gffread_path = "/bioinfo/rna/cufflinks-2.2.1/gffread"   # 需要下载最新版。崔青美20180813
         self.gffread_path = '/bioinfo/WGS/gffread/gffread-master/gffread'   # cufflinks中gffread存在bug，换软件
         self.gene_path = self.config.PACKAGE_DIR + "/wgs/enrichFastaTitle.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
 
     def gffreadtofagtf(self):
         """

@@ -135,7 +135,7 @@ class DistanceCalcTool(Tool):
     def __init__(self, config):
         super(DistanceCalcTool, self).__init__(config)
         self._version = '1.9.1'  # qiime版本
-        self.cmd_path = 'program/Python/bin/beta_diversity.py'
+        self.cmd_path = 'miniconda2/bin/beta_diversity.py'
         # 设置运行环境变量
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')
         self.real_otu = self.gettable()  # 获取真实的丰度表路劲

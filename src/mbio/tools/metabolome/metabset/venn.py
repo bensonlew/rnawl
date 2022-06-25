@@ -69,7 +69,7 @@ class VennTool(Tool):
         super(VennTool, self).__init__(config)
         self.R_path = '/program/R-3.3.1/bin/'
         self.venn_path = self.config.PACKAGE_DIR + '/graph/scripts/venn_list.py'
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         #self.gcc = software_dir + '/gcc/5.1.0/bin'
         #self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         #self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)

@@ -67,7 +67,7 @@ class RmatsTTool(Tool):
                 'python': 'bioinfo/ref_rna_v3/rmats/miniconda3/bin/python3.7'
         }
         self.script = {
-            # 'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS2/rmats.py'),
+            # 'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/rMATS.4.0.2/rMATS-turbo-Linux-UCS4/rmats.py'),
             # 'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/medical_transcriptome/rmats-turbo/rmats.py'),
             'rmats': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/ref_rna_v3/rmats/miniconda3/rMATS/rmats.py'),
             'rmats_process': os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v3/structure/rmats_process_script.py')

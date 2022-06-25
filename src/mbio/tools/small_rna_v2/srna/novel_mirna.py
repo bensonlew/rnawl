@@ -129,7 +129,7 @@ class NovelMirnaTool(Tool):
         self.randfold = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/mirdeep2/essentials/randfold-2.0/'
         self.quantifier = self.config.SOFTWARE_DIR + "/bioinfo/miRNA/mirdeep2_0.1.3/mirdeep2-0.1.3/bin/"
         self.get_exp = self.config.PACKAGE_DIR + "/small_rna/get_mireap_exp.pl"
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(PERL5LIB=self.mirdeep_lib)
         self.set_environ(PATH=self.mireap)

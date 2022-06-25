@@ -89,7 +89,7 @@ class BlastToRfamTool(Tool):
         self.run_rfam_stat()
         self.end()
 
-    def fastq_to_fasta(self, fq_fp, fa_fp, n_lines=100000):
+    def fastq_to_fasta(self, fq_fp, fa_fp, n_lines=1000):
         sequences = list()
         n_total = 0
         for i, r in enumerate(SeqIO.parse(fq_fp, 'fastq')):

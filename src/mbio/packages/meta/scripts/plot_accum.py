@@ -63,7 +63,7 @@ class PlotAccumTool(Tool):
         self.run_pdf()
 
     def run_pdf(self):
-        cmd = '{}/program/perl/perls/perl-5.24.0/bin/perl {}/bioinfo/meta/scripts/shared_otu_curves.pl'.format(self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR) 
+        cmd = '{}/miniconda2/bin/perl {}/bioinfo/meta/scripts/shared_otu_curves.pl'.format(self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR) 
         cmd += ' -i %s ' %(self.option('otu_table').prop['path'])
         cmd += ' -o %s ' %('test')##prefix for o
         print cmd

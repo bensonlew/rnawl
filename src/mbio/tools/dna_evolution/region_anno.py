@@ -73,7 +73,7 @@ class RegionAnnoTool(Tool):
     def __init__(self, config):
         super(RegionAnnoTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         self.R_path = 'program/R-3.3.1/bin/Rscript '
         self.region_gene_path = self.config.PACKAGE_DIR + '/dna_evolution/region-gene.pl'
         self.effR_path = self.config.PACKAGE_DIR + '/dna_evolution/eff-enrich.R'

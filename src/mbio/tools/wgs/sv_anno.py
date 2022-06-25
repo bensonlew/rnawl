@@ -41,7 +41,7 @@ class SvAnnoAgent(Agent):
 class SvAnnoTool(Tool):
     def __init__(self, config):
         super(SvAnnoTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.sv_anno = self.config.PACKAGE_DIR + "/wgs/sv_anno.pl"
 
     def run_sv_anno(self):

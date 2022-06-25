@@ -55,7 +55,7 @@ class PfamTool(Tool):
     def __init__(self, config):
         super(PfamTool, self).__init__(config)
         self.set_environ(PERL5LIB=self.config.SOFTWARE_DIR + "/bioinfo/wgs_v2/PfamScan")
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin")
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + "/miniconda2/bin")
         self.set_environ(PATH=self.config.SOFTWARE_DIR + "/bioinfo/wgs_v2")
         self.pfam_scan_path = "bioinfo/wgs_v2/PfamScan/pfam_scan.pl"
         self.pfam_db = self.config.SOFTWARE_DIR + "/database/pfam_33.1/"

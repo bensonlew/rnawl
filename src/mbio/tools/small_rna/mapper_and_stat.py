@@ -77,14 +77,14 @@ class MapperAndStatTool(Tool):
         # self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/align/bowtie-1.1.2'
         self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/align/bowtie-1.2.3-linux-x86_64'
         self.mirdeep_dir = software_dir + '/bioinfo/miRNA/mirdeep2'
-        self.python_path = software_dir + "/program/Python/bin/"
+        self.python_path = software_dir + "/miniconda2/bin/"
         self.set_environ(PATH=self.python_path)
         self.set_environ(PATH=self.bowtie)
         self.set_environ(PATH=self.mirdeep_dir)
         self.set_environ(PATH=self.perl)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/WGS/circos-0.69-6/bin')
         self.circo_script_path = self.config.PACKAGE_DIR + '/small_rna/draw_smallrna_mapping.circos.pl'
-        self.perl2_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl2_path = 'miniconda2/bin/perl'
         self.sample_names = list()
         self.bowtie_build =  'bioinfo/align/bowtie-1.1.2/bowtie-build'
 

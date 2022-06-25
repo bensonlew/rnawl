@@ -69,7 +69,7 @@ class HumanAnnoTool(Tool):
                 os.link(i, "input/" + os.path.basename(i))
         with open(self.humann_scon) as f, open("SConstruct", 'w') as w:
             w.write(f.read())
-        cmd = "/program/Python/bin/scons " + "--site-dir=" + os.path.dirname(self.humann_scon) + \
+        cmd = "/miniconda2/bin/scons " + "--site-dir=" + os.path.dirname(self.humann_scon) + \
             "/site_scons " + "-C " + self.work_dir + " -j 2"
         command = self.add_command("humann", cmd)
         command.run()

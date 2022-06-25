@@ -69,7 +69,7 @@ class BamReadsdistributionTool(Tool):
         self.file = {
             'txt': '{}.reads_distribution.txt'.format(self.prefix)
         }
-        self.cmd_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        self.cmd_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.shell_path = 'bioinfo/rna/scripts'
 
     @toolfuncdeco

@@ -51,7 +51,7 @@ class BayesTreeAgent(Agent):
 class BayesTreeTool(Tool):
     def __init__(self, config):
         super(BayesTreeTool, self).__init__(config)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
         self.script_path = self.config.PACKAGE_DIR + "/dna_evolution/bayes-prepair.pl"
         self.script_path1 = self.config.SOFTWARE_DIR + "/bioinfo/dna_evolution/mpirun"
         self.script_path2 = self.config.SOFTWARE_DIR + "/bioinfo/dna_evolution/MrBayes-3.1.2h/mb"

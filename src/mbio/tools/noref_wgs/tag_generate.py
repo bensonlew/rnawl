@@ -51,7 +51,7 @@ class TagGenerateAgent(Agent):
 class TagGenerateTool(Tool):
     def __init__(self, config):
         super(TagGenerateTool, self).__init__(config)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         self.tag_generate = self.config.PACKAGE_DIR + '/noref_wgs/tag-generate.pl'
 
     def run_tag_generate(self):

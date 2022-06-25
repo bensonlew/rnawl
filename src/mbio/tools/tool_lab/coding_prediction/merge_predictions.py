@@ -55,7 +55,7 @@ class MergePredictionsTool(Tool):
     def __init__(self, config):
         super(MergePredictionsTool, self).__init__(config)
         self.python_path = "miniconda2/bin/python"
-        self.env_path = self.config.SOFTWARE_DIR + '/program/Python/bin'
+        self.env_path = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         self.set_environ(PATH=self.env_path)
 
 

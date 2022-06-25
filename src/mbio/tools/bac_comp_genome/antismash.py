@@ -54,10 +54,10 @@ class AntismashTool(Tool):
     def __init__(self, config):
         super(AntismashTool, self).__init__(config)
         self.file_name = ""
-        self.python = "/program/Python/bin/"
+        self.python = "/miniconda2/bin/"
         self.antismash = os.path.join(self.config.SOFTWARE_DIR, "bioinfo/Genomic/Sofware/antismash-4.0.2/")
         self.set_environ(
-            PATH=self.config.SOFTWARE_DIR + '/program/Python/bin/:' + self.config.SOFTWARE_DIR + '/bioinfo/align/hmmer-3.1b2-linux-intel-x86_64/binaries:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/glimmer3.02/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/smrtanalysis_2.3.0/install/smrtanalysis_2.3.0.140936/analysis/bin/:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/Islander_software/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/hmmer-2.3.2/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/GlimmerHMM/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/align/mafft-7.299-with-extensions/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/align/ncbi-blast-2.3.0+/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/align/clustalw-2.1/src:' + self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0/bin/:' + self.config.SOFTWARE_DIR +  "/bioinfo/phylogenetic/muscle-3.8.31-release")
+            PATH=self.config.SOFTWARE_DIR + '/miniconda2/bin/:' + self.config.SOFTWARE_DIR + '/bioinfo/align/hmmer-3.1b2-linux-intel-x86_64/binaries:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/glimmer3.02/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/smrtanalysis_2.3.0/install/smrtanalysis_2.3.0.140936/analysis/bin/:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/Islander_software/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/hmmer-2.3.2/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/Genomic/Sofware/GlimmerHMM/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/align/mafft-7.299-with-extensions/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/align/ncbi-blast-2.3.0+/bin:' + self.config.SOFTWARE_DIR + '/bioinfo/align/clustalw-2.1/src:' + self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0/bin/:' + self.config.SOFTWARE_DIR +  "/bioinfo/phylogenetic/muscle-3.8.31-release")
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/program/Python/lib')
 
     def run_antismash(self):

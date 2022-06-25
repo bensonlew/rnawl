@@ -66,16 +66,16 @@ class ExpClusterTool(Tool):
     def __init__(self, config):
         super(ExpClusterTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.python_path = 'miniconda2/bin/python'
+        self.python_path = 'bioinfo/miniconda2/bin/python'
         self.cluster_toolbox = self.config.PACKAGE_DIR + '/denovo_rna_v2/cluster_toolbox.py'
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
-        self.r_path = software_dir + "/program/R-3.3.1/bin:$PATH"
-        self._r_home = software_dir + "/program/R-3.3.1/lib64/R/"
-        self._LD_LIBRARY_PATH = software_dir + "/program/R-3.3.1/lib64/R/lib:$LD_LIBRARY_PATH"
-        self.set_environ(PATH=self.r_path, R_HOME=self._r_home, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
-        self.R = software_dir + "/program/R-3.3.1/bin/Rscript"
+        self.r_path = software_dir + "/bioinfo/miniconda2/bin:$PATH"
+        self._r_home = software_dir + "/bioinfo/miniconda2/lib64/R/"
+        self._LD_LIBRARY_PATH = software_dir + "/bioinfo/miniconda2/lib64/R/lib:$LD_LIBRARY_PATH"
+        self.set_environ(PATH=self.r_path)
+        self.R = software_dir + "/bioinfo/miniconda2/bin/Rscript"
         self.Rscrip = self.config.PACKAGE_DIR + '/denovo_rna_v2/pheatmap.r'
     def run_cluster_toolbox(self):
         df = pd.read_table(self.option('exp').prop['path'])

@@ -38,7 +38,7 @@ class SearchDataset(object):
     """
 
     def __init__(self, accession=None, query=None, start=0, stop=20):
-        perl_path = Config().SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin'
+        perl_path = Config().SOFTWARE_DIR + '/miniconda2/bin'
         os.environ['PATH'] = perl_path + ":" + os.environ['PATH']
         self.accession = accession
         self.query = query

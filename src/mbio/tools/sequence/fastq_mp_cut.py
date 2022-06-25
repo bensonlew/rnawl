@@ -55,7 +55,7 @@ class FastqMpCutTool(Tool):
         self.fq2 = self.option('fastq2').prop['path']
         self.num = self.option('cut_num')
         self.sample_name =self.option('sample_name')
-        self.perl_path = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "/miniconda2/bin/perl"
         self.perl_script = self.config.PACKAGE_DIR + "/bacgenome/"
 
 

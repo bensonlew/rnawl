@@ -76,7 +76,7 @@ class DiscomparisonTool(Tool):
     def __init__(self, config):
         super(DiscomparisonTool, self).__init__(config)
         self._version = '1.9.1'
-        self.cmd_path = 'program/Python/bin/compare_distance_matrices.py'
+        self.cmd_path = 'miniconda2/bin/compare_distance_matrices.py'
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + 'gcc/5.1.0/lib64:$LD_LIBRARY_PATH')
 
     def run(self):

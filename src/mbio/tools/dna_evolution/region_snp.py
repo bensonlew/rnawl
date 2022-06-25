@@ -38,8 +38,8 @@ class RegionSnpAgent(Agent):
 class RegionSnpTool(Tool):
     def __init__(self, config):
         super(RegionSnpTool, self).__init__(config)
-        self.perl = "program/perl/perls/perl-5.24.0/bin/perl"
-        self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "miniconda2/bin/perl"
+        self.perl_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.parafly = "program/parafly-r2013-01-21/src/ParaFly"
         self.region_snp_path = self.config.PACKAGE_DIR + "/dna_evolution/region_snp.pl"
 

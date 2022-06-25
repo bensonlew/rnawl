@@ -50,7 +50,7 @@ class PlekAgent(Agent):
 class PlekTool(Tool):
     def __init__(self, config):
         super(PlekTool, self).__init__(config)
-        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
+        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin'))
         self.program = {
             'python': 'miniconda2/bin/python',
         }

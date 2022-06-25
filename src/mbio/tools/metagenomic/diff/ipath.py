@@ -77,7 +77,7 @@ class IpathAgent(Agent):
 class IpathTool(Tool):
     def __init__(self, config):
         super(IpathTool, self).__init__(config)
-        # self.python = '/program/Python/bin/'
+        # self.python = '/miniconda2/bin/'
         # self.map_path = self.config.SOFTWARE_DIR + "/bioinfo/annotation/scripts/map5.r"
         self.ipath_db = self.config.SOFTWARE_DIR + "/database/IPATH"
         # self.image_magick = self.config.SOFTWARE_DIR + "/program/ImageMagick/bin/convert"

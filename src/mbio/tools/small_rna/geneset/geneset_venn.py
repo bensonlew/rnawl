@@ -53,7 +53,7 @@ class GenesetVennAgent(Agent):
 class GenesetVennTool(Tool):
     def __init__(self, config):
         super(GenesetVennTool, self).__init__(config)
-        self.python_path = self.config.SOFTWARE_DIR+"/program/Python/bin:$PATH"
+        self.python_path = self.config.SOFTWARE_DIR+"/miniconda2/bin:$PATH"
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
         self.r_path = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin:$PATH"

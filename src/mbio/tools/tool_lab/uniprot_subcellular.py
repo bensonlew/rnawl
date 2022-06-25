@@ -45,7 +45,7 @@ class UniprotSubcellularTool(Tool):
     def __init__(self, config):
         super(UniprotSubcellularTool, self).__init__(config)
         self.program = {
-            'python': '/bioinfo/ref_rna_v3/gene_fusion/miniconda3/bin/python',
+            'python': '/miniconda2/bin/python',
         }
         self.script = {
             'uniprot_api': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/Uniprot.py'),

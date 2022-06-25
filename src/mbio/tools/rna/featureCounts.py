@@ -87,7 +87,7 @@ class FeaturecountsTool(Tool):
         # self._version = '1.0.1'
         self.featurecounts_path = 'bioinfo/align/subread-1.5.0/bin/featureCounts'
         self.set_environ(PATH = self.featurecounts_path)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         self.parse_featurecounts_perl = os.path.join(Config().SOFTWARE_DIR, 'bioinfo/rna/scripts/parse_featurecount_all.pl ')
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
@@ -97,7 +97,7 @@ class FeaturecountsTool(Tool):
         self.set_environ(PATH=self.r_path, R_HOME=self._r_home, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.r_path1 = "/program/R-3.3.1/bin/Rscript "
-        self.python_path = self.config.SOFTWARE_DIR+"/program/Python/bin:$PATH"
+        self.python_path = self.config.SOFTWARE_DIR+"/miniconda2/bin:$PATH"
         self.set_environ(PATH=self.python_path)
         self.distribution_path = '/mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/denovo_rna/express'
 

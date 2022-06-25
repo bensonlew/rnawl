@@ -35,7 +35,7 @@ class SamtoolsSortAgent(Agent):
 class SamtoolsSortTool(Tool):
     def __init__(self, config):
         super(SamtoolsSortTool, self).__init__(config)
-        self.samtools_path = "bioinfo/align/samtools-1.7/samtools"
+        self.samtools_path = "miniconda2/bin/samtools"
 
     def run_samtools_sort(self):
         """

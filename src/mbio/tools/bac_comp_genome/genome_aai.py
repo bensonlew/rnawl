@@ -43,7 +43,7 @@ class GenomeAaiAgent(Agent):
 class GenomeAaiTool(Tool):
     def __init__(self, config):
         super(GenomeAaiTool, self).__init__(config)
-        self.ani = "program/Python/bin/comparem"
+        self.ani = "miniconda2/bin/comparem"
         path = os.path.join(self.config.SOFTWARE_DIR, "bioinfo/metaGenomic/Prodigal-2.6.3")
         self.set_environ(PATH=path)
         self.cmd_path = os.path.join(

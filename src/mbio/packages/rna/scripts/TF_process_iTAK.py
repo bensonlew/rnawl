@@ -7,7 +7,7 @@ import sys
 import os
 import subprocess
 
-# python TF_process_iTAK.py /mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/ /mnt/ilustre/users/sanger-dev/app/bioinfo/rna/iTAK-1.6b/ Arabidopsis_thaliana.TAIR10.pep.all.fa /mnt/ilustre/users/sanger-dev/workspace/20161116/Single_express_sample_v8_change_sample_name/Express/output/diff/featurecounts_count.txt.A_vs_B.edgeR.DE_results_name
+# python TF_process_iTAK.py /mnt/ilustre/users/sanger-dev/app/miniconda2/bin/ /mnt/ilustre/users/sanger-dev/app/bioinfo/rna/iTAK-1.6b/ Arabidopsis_thaliana.TAIR10.pep.all.fa /mnt/ilustre/users/sanger-dev/workspace/20161116/Single_express_sample_v8_change_sample_name/Express/output/diff/featurecounts_count.txt.A_vs_B.edgeR.DE_results_name
 
 cmd = '{}perl {}iTAK.pl {}' \
 	.format(sys.argv[1], sys.argv[2], sys.argv[3])

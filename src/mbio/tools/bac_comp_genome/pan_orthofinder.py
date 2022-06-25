@@ -52,7 +52,7 @@ class PanOrthofinderTool(Tool):
     def __init__(self, config):
         super(PanOrthofinderTool, self).__init__(config)
         self.path = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/OrthoFinder-master/:" + self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/mcl/bin:" + self.work_dir + "/orthofinder:"+ self.config.SOFTWARE_DIR + "/bioinfo/align/ncbi-blast-2.3.0+/bin:"+ self.config.SOFTWARE_DIR + "/bioinfo/align/diamond-0.8.35/"
-        self.perl5path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl5path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.set_environ(PATH=self.path, PERL5LIB=self.perl5path)
         self.fasta = self.option("infile_dir").prop['path']
         self.python = "/miniconda2/bin/python"

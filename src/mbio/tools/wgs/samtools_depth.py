@@ -63,7 +63,7 @@ class SamtoolsDepthTool(Tool):
     def run_samtools_depth_cram(self):
         """
         run samtools depth cram
-        /mnt/lustre/users/sanger/app/bioinfo/align/samtools-1.7/samtools depth
+        /mnt/lustre/users/sanger/app/miniconda2/bin/samtools depth
         --reference /mnt/lustre/users/sanger/app/database/dna_geneome/Ginkgo_biloba/GIGADB/HIC_V1/2019.06.07/ref.fa
         ./G83.sort.cram  > /mnt/lustre/users/sanger/workspace/20200320/WgsV2_majorbio_245724/MappingStat/
         SamtoolsDepth1/G83.coverage

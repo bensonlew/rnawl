@@ -55,7 +55,7 @@ class ManhattanTool(Tool):
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.program = {
             'rscript': 'bioinfo/rna/miniconda2/bin/Rscript',
-            'perl': 'program/perl/perls/perl-5.24.0/bin/perl',
+            'perl': 'miniconda2/bin/perl',
         }
         self.script = {
             'index': os.path.join(self.config.PACKAGE_DIR, 'tool_lab/bsa/manhattan-index.r'),

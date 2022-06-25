@@ -82,7 +82,7 @@ class MetageneTool(Tool):
         self._version = "metagene"
         self.sh_path = 'program/sh ' + self.config.PACKAGE_DIR + '/gene_structure/scripts/'
         self.metagene_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/metagene/'
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         # self.metagene_seqs_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/metagene_seqs.pl '
         self.metagene_seqs_path = self.config.PACKAGE_DIR + '/gene_structure/scripts/metagene_seqs.pl '
         # self.cut_more_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/cut_more.pl '

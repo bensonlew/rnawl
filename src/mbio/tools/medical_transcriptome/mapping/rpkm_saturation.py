@@ -63,13 +63,13 @@ class RpkmSaturationAgent(Agent):
 class RpkmSaturationTool(Tool):
     def __init__(self, config):
         super(RpkmSaturationTool, self).__init__(config)
-        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.1/bin'))
+        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/miniconda2/bin'))
         self.prefix = '{}_{}'.format(
             os.path.join(self.work_dir, 'satur'), os.path.basename(self.option('bam').path)[:-4]
         )
         self.program = {
             'python': 'miniconda2/bin/python',
-            'perl': 'program/perl/perls/perl-5.24.0/bin/perl'
+            'perl': 'miniconda2/bin/perl'
         }
         self.script = {
             'RPKM_saturation': os.path.join(self.config.SOFTWARE_DIR,

@@ -58,7 +58,7 @@ class ProcrustesTool(Tool):
         super(ProcrustesTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
         self.python_path = '/miniconda2/bin/python'
-        self.procrustes = software_dir + '/program/Python/bin/transform_coordinate_matrices.py'
+        self.procrustes = software_dir + '/miniconda2/bin/transform_coordinate_matrices.py'
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)

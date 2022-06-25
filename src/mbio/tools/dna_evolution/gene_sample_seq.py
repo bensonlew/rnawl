@@ -62,7 +62,7 @@ class GeneSampleSeqAgent(Agent):
 class GeneSampleSeqTool(Tool):
     def __init__(self, config):
         super(GeneSampleSeqTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.gene_samples_seq = self.config.PACKAGE_DIR + "/dna_evolution/final.version.pl"
         self.get_exon_seq = self.config.PACKAGE_DIR + "/dna_evolution/01.get-exonseq.pl"
         self.json_path = self.config.SOFTWARE_DIR + "/database/dna_geneome"  # 参考组配置文件

@@ -21,7 +21,8 @@ import lxml.html
 from collections import OrderedDict
 from mbio.packages.ref_rna_v2.chart import Chart as chart_base
 from mbio.packages.medical_transcriptome.chart.chart_diff_pipline import ChartDiffPipline as chart_base
-
+reload(sys)
+sys.setdefaultencoding('utf-8')
 class Chart(chart_base):
     def __init__(self):
         """

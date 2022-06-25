@@ -26,7 +26,10 @@ def get_info_dic_from_tmap(srcfile):
         if re.match(p, arr[2]):
             key = arr[4]
             value = arr[2]
-            dic[key] = value
+            if key.startswith("ENS"):
+                pass
+            else:
+                dic[key] = value
     return dic
 
 

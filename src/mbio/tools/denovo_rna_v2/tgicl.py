@@ -53,7 +53,7 @@ class TgiclTool(Tool):
     def __init__(self, config):
         super(TgiclTool, self).__init__(config)
         software_dir = self.config.SOFTWARE_DIR
-        self.perl = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl = 'miniconda2/bin/perl'
         self.tgicl = software_dir + '/bioinfo/denovo_rna_v2/TGICL-2.1/TGICL-2.1/blib/script/tgicl'
         self.tgicl_lib = software_dir + '/bioinfo/denovo_rna_v2/TGICL-2.1/TGICL-2.1/lib'
         self.tgicl_cfg = software_dir + '/bioinfo/denovo_rna_v2/TGICL-2.1/TGICL-2.1/conf/tgicl.cfg'

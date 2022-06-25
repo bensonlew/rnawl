@@ -58,7 +58,7 @@ class GeneFaTool(Tool):
 
     def __init__(self, config):
         super(GeneFaTool, self).__init__(config)
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.getfasta_path  = "/bioinfo/rna/bedtools2-master/bin/bedtools"
 
     def get_gene_bed(self, transcript_gtf = None, gene_bed = None, assembly_method = 'stringtie', query_type = None):

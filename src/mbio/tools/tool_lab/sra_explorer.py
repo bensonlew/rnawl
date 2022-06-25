@@ -54,9 +54,9 @@ class SraExplorerAgent(Agent):
 class SraExplorerTool(Tool):
     def __init__(self, config):
         super(SraExplorerTool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
-        self.python = 'program/Python/bin/'
+        self.python = 'miniconda2/bin/'
         self.sra_explorer = self.config.PACKAGE_DIR + "/tool_lab/ncbi_search/search_dataset.py"
 
     def run(self):

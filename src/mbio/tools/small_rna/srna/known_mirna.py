@@ -106,7 +106,7 @@ class KnownMirnaTool(Tool):
         self.mature2hairpin = \
         Config().get_mongo_client(mtype='small_rna', ref=True)[Config().get_mongo_dbname('small_rna', ref=True)][
             'mature2hairpin']
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + self.perl)
         self.set_environ(PATH=self.quantifier)

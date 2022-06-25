@@ -61,7 +61,7 @@ class DrawHeatmapTool(Tool):
     """
     def __init__(self, config):
         super(DrawHeatmapTool, self).__init__(config)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
         self.R_path = "program/R-3.3.3/bin/Rscript"
         self.LDheatmap_vcf2matrix_path = self.config.PACKAGE_DIR + "/dna_evolution/LDheatmap.vcf2matrix.pl"
         self.LDheatmap_path = self.config.PACKAGE_DIR + "/dna_evolution/LDheatmap.R"

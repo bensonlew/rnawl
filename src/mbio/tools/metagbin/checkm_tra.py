@@ -50,8 +50,8 @@ class CheckmTraTool(Tool):
         super(CheckmTraTool, self).__init__(config)
         self.path =self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/CheckM-master:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/Prodigal-2.6.3:" + self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/hmmer-3.1b2/bin:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/pplacer-Linux-v1.1.alpha19"
         self.set_environ(PATH=self.path)
-        self.checkm ="/program/Python/bin/"
-        self.perl = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.checkm ="/miniconda2/bin/"
+        self.perl = "/miniconda2/bin/perl"
         self.tetra_result = self.work_dir + '/tetra.summary.xls'
         self.tetra_pcoa = self.work_dir + '/tetra.pcoa.txt'
 

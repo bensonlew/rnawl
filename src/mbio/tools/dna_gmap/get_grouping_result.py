@@ -36,7 +36,7 @@ class GetGroupingResultAgent(Agent):
 class GetGroupingResultTool(Tool):
     def __init__(self, config):
         super(GetGroupingResultTool, self).__init__(config)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
         self.lgmarker_bin = self.config.PACKAGE_DIR + "/dna_gmap/lgmarker_stat.pl"
 
     def run_marker_stat_bin(self):

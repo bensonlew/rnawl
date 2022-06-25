@@ -52,7 +52,7 @@ class SamtoolsDepthTool(Tool):
         super(SamtoolsDepthTool, self).__init__(config)
         self._version = "v1.0"
         self.program = {
-            'samtools': 'bioinfo/align/samtools-1.8/samtools',
+            'samtools': 'miniconda2/bin/samtools',
             'minimap2': 'bioinfo/align/minimap2/minimap2-2.17_x64-linux/minimap2',
             'bwa': 'bioinfo/align/bwa-0.7.17/bwa',
         }

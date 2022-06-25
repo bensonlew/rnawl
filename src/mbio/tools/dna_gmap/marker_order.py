@@ -48,7 +48,7 @@ class MarkerOrderAgent(Agent):
 class MarkerOrderTool(Tool):
     def __init__(self, config):
         super(MarkerOrderTool, self).__init__(config)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
         self.map_gather_pl = self.config.PACKAGE_DIR + '/dna_gmap/map-gather.pl'
         self.smooth_CP_pl = self.config.PACKAGE_DIR + '/dna_gmap/smooth-CP.pl'
         self.smooth_NOCP_pl = self.config.PACKAGE_DIR + '/dna_gmap/smooth-NOCP.pl'

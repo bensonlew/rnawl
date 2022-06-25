@@ -168,6 +168,8 @@ def get_event_stats(files, pvalue_fdr='fdr', fdr=0.05, psi=0):
             event_type = m.group(1)
             dct[event_type]['{}_file'.format(m.group(2))] = file
             df = pd.read_table(file)
+            if len(df) == 0:
+                continue
             if pvalue_fdr.lower() == 'fdr':
                 fldf = df[df['FDR'] <= fdr]
                 fldf = fldf[abs(fldf['IncLevelDifference']) >= psi]
@@ -256,6 +258,8 @@ def get_event_psi_dic(dct, pvalue_fdr='fdr', fdr=0.05, psi=0):
         jc_data = pd.read_table(JC_file, index_col=0, sep='\t', dtype={
             'Pvalue': np.float64, 'FDR': np.float64, 'IncLevelDifference': np.float64
         })
+        if len(jc_data) == 0:
+            continue
         tmp_jc = jc_data[['PValue', 'FDR', 'IncLevel1', 'IncLevel2', 'IncLevelDifference']]
         if pvalue_fdr.lower() == 'fdr':
             df_filter = tmp_jc[tmp_jc['FDR']<=fdr]

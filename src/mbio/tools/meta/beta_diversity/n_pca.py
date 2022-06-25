@@ -126,7 +126,7 @@ class NPcaTool(Tool):
         """
         old_otu_table = self.get_otu_table()
         self.otu_table = self.work_dir + '/new_otu.xls'      
-        cmd = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl ' + self.config.SOFTWARE_DIR + '/bioinfo/meta/scripts/n-pca.pl '
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl ' + self.config.SOFTWARE_DIR + '/bioinfo/meta/scripts/n-pca.pl '
         cmd += '-i %s ' %(self.get_otu_table())
         cmd += '-o %s ' %(self.work_dir + '/npca/')
         if not os.path.exists(self.work_dir + '/npca/'):

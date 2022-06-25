@@ -76,7 +76,7 @@ class CorrelationTool(Tool):
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')
         # self.fpkm_path = self.option("fpkm").prop["path"]
         self.r_path = '/program/R-3.3.1/bin/'
-        self.perl_path = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/'
+        self.perl_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.Rscript_path = self.config.SOFTWARE_DIR + '/program/R-3.3.1/bin/'
         self.hcluster_script_path = self.config.SOFTWARE_DIR + "/bioinfo/statistical/scripts/"
         self.cluster_method = self.option('cluster') if self.option('cluster') != 'no' else "complete"  # 如果不聚类，

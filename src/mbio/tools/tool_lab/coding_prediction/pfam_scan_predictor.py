@@ -62,7 +62,7 @@ class PfamScanPredictorTool(Tool):
         super(PfamScanPredictorTool, self).__init__(config)
         self.perl_rel_path = 'program/perl-5.24.0/bin/perl'
         env_path = ':'.join([
-            os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'),
+            os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin'),
             os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/lnc_rna/hmmer/bin'),
             os.path.join(self.config.SOFTWARE_DIR, 'program/perl-5.24.0/bin')
         ])

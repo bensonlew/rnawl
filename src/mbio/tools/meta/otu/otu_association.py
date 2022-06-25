@@ -81,7 +81,7 @@ class OtuAssociationTool(Tool):
     def __init__(self, config):
         super(OtuAssociationTool, self).__init__(config)
         self._version = '1.0.1'
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         self.mothur_path = 'bioinfo/meta/mothur-1.30/mothur.1.30'
         self.script_path = os.path.join(Config().SOFTWARE_DIR, "bioinfo/meta/scripts/otu2shared_xhd.pl")
 

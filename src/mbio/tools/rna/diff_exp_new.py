@@ -270,7 +270,7 @@ class DiffExpTool(Tool):
                 f1.write(keys+"\t"+"\t".join(count)+"\n")
 
     def R_merge(self):
-        cmd = '{}/program/perl/perls/perl-5.24.0/bin/perl {}/bioinfo/statistical/scripts/merge.pl '.format(self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
+        cmd = '{}/miniconda2/bin/perl {}/bioinfo/statistical/scripts/merge.pl '.format(self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd += '-o %s ' %(self.work_dir)
         self.logger.info('运行程序')
         self.logger.info(cmd)

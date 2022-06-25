@@ -77,11 +77,11 @@ class SingleQuantTool(Tool):
         self.star_path = software_dir + "/miniconda2/bin/"
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
-        self.perl = software_dir + '/program/perl/perls/perl-5.24.0/bin/'
+        self.perl = software_dir + '/miniconda2/bin/'
         self.lib = software_dir + '/glibc-2.14/lib/'
-        # self.samtools_path = os.path.join(software_dir,'bioinfo/align/samtools-1.7')
+        # self.samtools_path = os.path.join(software_dir,'miniconda2/bin')
         self.samtools_path=software_dir + "miniconda2/bin"
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.set_environ( LD_LIBRARY_PATH=self.lib)

@@ -63,10 +63,10 @@ class CheckmTool(Tool):
 	"""
 	def __init__(self, config):
 		super(CheckmTool, self).__init__(config)
-		self.path =self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/CheckM-master:" + self.config.SOFTWARE_DIR + "/program/Python/bin:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/Prodigal-2.6.3:" + self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/islandpath_dimob/hmmer-3.1b1/bin:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/pplacer-Linux-v1.1.alpha19"
+		self.path =self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/CheckM-master:" + self.config.SOFTWARE_DIR + "/miniconda2/bin:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/Prodigal-2.6.3:" + self.config.SOFTWARE_DIR + "/bioinfo/Genomic/Sofware/islandpath_dimob/hmmer-3.1b1/bin:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/pplacer-Linux-v1.1.alpha19"
 		self.set_environ(PATH=self.path)
-		self.checkm = "/program/Python/bin/"
-		self.perl = "/program/perl/perls/perl-5.24.0/bin/perl"
+		self.checkm = "/miniconda2/bin/"
+		self.perl = "/miniconda2/bin/perl"
 		self.perl_script = self.config.PACKAGE_DIR + "/metagbin/checkm_stat.pl"
 		self.summary =self.work_dir + '/checkm_summary.xls'
 		self.result = self.work_dir + '/result/'

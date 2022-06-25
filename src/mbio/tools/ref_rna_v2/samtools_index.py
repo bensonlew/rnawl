@@ -36,7 +36,7 @@ class SamtoolsIndexAgent(Agent):
 class SamtoolsIndexTool(Tool):
     def __init__(self, config):
         super(SamtoolsIndexTool, self).__init__(config)
-        self.samtools_path = "bioinfo/align/samtools-1.7/samtools"
+        self.samtools_path = "miniconda2/bin/samtools"
         self.small_bam = True
 
     def run_samtools_index(self):

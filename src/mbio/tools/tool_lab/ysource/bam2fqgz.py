@@ -43,7 +43,7 @@ class Bam2fqgzTool(Tool):
         super(Bam2fqgzTool, self).__init__(config)
         self._version = "v1.0"
         self.software_dir = self.config.SOFTWARE_DIR
-        self.samtools = os.path.join(self.software_dir, 'bioinfo/align/samtools-1.8')
+        self.samtools = os.path.join(self.software_dir, 'miniconda2/bin')
         self.bam = self.option("bam_file").prop['path']
         self.bam_name = self.option("sample_name")
         # self.bam_name = os.path.basename(self.option("bam_file"))

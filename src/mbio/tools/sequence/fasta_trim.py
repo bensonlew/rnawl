@@ -162,7 +162,7 @@ class FastaTrimTool(Tool):
     def __init__(self, config):
         super(FastaTrimTool, self).__init__(config)
         self._version = '1.9.1'
-        self.cutadapt_path = '/miniconda2/bin/python ' + self.config.SOFTWARE_DIR + '/program/Python/bin/cutadapt '
+        self.cutadapt_path = '/miniconda2/bin/python ' + self.config.SOFTWARE_DIR + '/miniconda2/bin/cutadapt '
         self.adapter = ''
 
     def run(self):

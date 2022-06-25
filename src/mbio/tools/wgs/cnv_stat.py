@@ -36,7 +36,7 @@ class CnvStatAgent(Agent):
 class CnvStatTool(Tool):
     def __init__(self, config):
         super(CnvStatTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.cnv_stat = self.config.PACKAGE_DIR + "/wgs/cnv_stat.pl"
 
     def run_cnv_stat(self):

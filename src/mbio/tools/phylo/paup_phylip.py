@@ -71,7 +71,7 @@ class PaupPhylipTool(Tool):
     def __init__(self, config):
         super(PaupPhylipTool, self).__init__(config)
         self.clustalw2_path = self.config.SOFTWARE_DIR+'/bioinfo/align/clustalw-2.1/src/'
-        self.python_path = '/program/Python/bin/'
+        self.python_path = '/miniconda2/bin/'
         self.mafft_path = self.config.SOFTWARE_DIR+'/bioinfo/align/mafft-7.299-with-extensions/bin/'
         #self.FastTree_path = os.path.join(self.config.SOFTWARE_DIR, "bioinfo/phylogenetic/fasttree2.1.9/FastTreeMP")
         self.paup = self.config.SOFTWARE_DIR + "/bioinfo/phylogenetic/paup4.0a166/paup4a166_centos64"

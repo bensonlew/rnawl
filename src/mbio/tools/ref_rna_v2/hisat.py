@@ -79,7 +79,7 @@ class HisatTool(Tool):
         self.program = {
             'hisat2': 'bioinfo/align/hisat2/hisat2-2.1.0/hisat2',
             # 'hisat2': 'bioinfo/ref_rna_v3/hisat2/miniconda3/bin/hisat2',
-            'samtools': 'bioinfo/align/samtools-1.8/samtools'
+            'samtools': 'miniconda2/bin/samtools'
         }
         # self.hisat_path = 'bioinfo/align/hisat2/hisat2-2.1.0/'
         # self.hisat_path = 'bioinfo/ref_rna_v3/hisat2/miniconda3/bin/'

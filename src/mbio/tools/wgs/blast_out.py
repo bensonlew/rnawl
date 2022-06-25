@@ -47,7 +47,7 @@ class BlastOutAgent(Agent):
 class BlastOutTool(Tool):
     def __init__(self, config):
         super(BlastOutTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.blast_out = self.config.PACKAGE_DIR + "/wgs/blastout.pl"
 
     def run_blast_out(self):

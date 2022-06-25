@@ -35,10 +35,10 @@ class DiamondAgent(Agent):
             {'name': 'kegg_version', 'type': 'string', 'default': "2019"},
             {"name": "nr_version", "type": "string", "default": "2019"},
             {"name": "swissprot_version", "type": "string", "default": "2019"},
-            {"name": "uniprot_version", "type": "string", "default": "202009"},
+            {"name": "uniprot_version", "type": "string", "default": "202109"},
             {"name": "eggnog_version", "type": "string", "default": "2019"},
             {"name": "string_version", "type": "string", "default": "2019"},
-            {"name": "sensitive", "type": "int", "default": 2},
+            {"name": "sensitive", "type": "int", "default": 0},
             {"name": "version", "type": "string", "default": "2019"},
             {"name": "diamond_version", "type": "string", "default": "v0.9.24.125"},
             ]
@@ -97,7 +97,7 @@ class DiamondTool(Tool):
             self.blast_type = "blastx"
         else:
             self.blast_type = "blastp"
-        self.mongodb_nr = Config().get_mongo_client(mtype="ref_rna", ref=True)[Config().get_mongo_dbname("ref_rna", ref=True)].NR_sequence
+        # self.mongodb_nr = Config().get_mongo_client(mtype="ref_rna", ref=True)[Config().get_mongo_dbname("ref_rna", ref=True)].NR_sequence
         self.ori = []
         self.repl = []
 
@@ -153,7 +153,7 @@ class DiamondTool(Tool):
         # 2019.04.11 add for skipping if that error occurs
         # if os.path.getsize(outputfile) and os.path.isfile(os.path.join(self.work_dir, 'Diamond.confirm')):
         #     self.change_version(outputfile)
-        cmd += " {} -q {} -d {} -o {} -e {} -f {} -p {} -k 15".format(
+        cmd += " {} -q {} -d {} -o {} -e {} -f {} -p {} -k 5".format(
             self.blast_type, self.option("query").prop['path'], db, outputfile,
             self.option("evalue"), outfmt, self.option("num_threads"))
         if self.option("sensitive") == 1:

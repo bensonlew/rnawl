@@ -82,9 +82,9 @@ class DrawCircosTool(Tool):
         super(DrawCircosTool, self).__init__(config)
         self._version = "1.0.1"
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/WGS/circos-0.69-6/bin')
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin')
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/miniconda2/bin')
         self.script_path = self.config.PACKAGE_DIR + '/wgs/draw.circos.pl'
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         self.image_magick = "program/ImageMagick/bin/convert"
 
         self.tmp_dir = os.path.join(self.work_dir, 'conf')

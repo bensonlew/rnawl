@@ -93,7 +93,7 @@ class FastqDupTool(Tool):
     def __init__(self, config):
         super(FastqDupTool, self).__init__(config)
         self.script_path = os.path.join(self.config.SOFTWARE_DIR, "bioinfo/seq/scripts/")
-        self.python_path = "program/Python/bin/"
+        self.python_path = "miniconda2/bin/"
         self.samples = {}
         if self.option("fastq_dir").is_set:
             # self.samples = self.get_list()

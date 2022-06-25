@@ -58,7 +58,7 @@ class Bam2fastqTool(Tool):
         super(Bam2fastqTool, self).__init__(config)
         # self.picard_path = self.config.SOFTWARE_DIR + "/bioinfo/gene-structure/"
         # self.samtools_path ="miniconda2/bin/"
-        self.samtools_path = "bioinfo/align/samtools-1.8/"
+        self.samtools_path = "miniconda2/bin/"
         self.bedtoos_path="bioinfo/seq/bedtools-2.25.0/bin/"
         self.sample_name = ''
         self.fq1 = ""

@@ -50,8 +50,8 @@ class MapEvaluationTool(Tool):
         super(MapEvaluationTool, self).__init__(config)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin')
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
-        self.perl = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
+        self.perl = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.mapmergenocp = self.config.PACKAGE_DIR + "/dna_gmap/MapMergeNOCP.pl"
         self.mapmergecp = self.config.PACKAGE_DIR + "/dna_gmap/MapMergeCP.pl"
         self.mapestimate = self.config.PACKAGE_DIR + "/dna_gmap/mapEstimate.pl"
@@ -71,7 +71,7 @@ class MapEvaluationTool(Tool):
     def run_mapmergenocp(self):
         """
         MapMergeNOCP.pl
-        /mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl
+        /mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl
         /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/dna_gmap/MapMergeNOCP.pl
         -dmap ~/sg-users/xuanhongdong/gmap/08.map-cycle3_nobin/ -o nobin_result -adjust
         """
@@ -82,7 +82,7 @@ class MapEvaluationTool(Tool):
     def run_mapmergecp(self):
         """
         MapMergeCP.pl
-        /mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl
+        /mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl
         /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/dna_gmap/MapMergeCP.pl
         -dmap ~/sg-users/xuanhongdong/gmap/08.map-cycle3_nobin/ -o nobin_result -adjust
         """
@@ -95,7 +95,7 @@ class MapEvaluationTool(Tool):
     def run_mapestimate(self, pop_type):
         """
         mapEstimate.pl
-        /mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl
+        /mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl
         /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/dna_gmap/mapEstimate.pl -i total.map -o total.mapstat
         """
 
@@ -117,7 +117,7 @@ class MapEvaluationTool(Tool):
     def run_markerinfo(self, pop_type):
         """
         markerinfo.pl
-        /mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl
+        /mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl
         /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/dna_gmap/markerinfo.pl
         -map total.map -input total.marker --pop f2 -out total.marker.info
         当为cp的时候，input应该是total.loc但是这里生成的该文件为空，所以改成total.final.loc
@@ -147,7 +147,7 @@ class MapEvaluationTool(Tool):
     def run_merge_map_total(self, pop_type):
         """
         merge-map-total.pl
-        /mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl
+        /mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl
         /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/dna_gmap/merge-map-total.pl -list ref.chrlist
           -mark total.map -out 3-15.xls
         """

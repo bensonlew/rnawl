@@ -35,7 +35,7 @@ class PsmcStatTool(Tool):
     def __init__(self, config):
         super(PsmcStatTool, self).__init__(config)
         self.R_path = "program/R-3.3.3/bin/Rscript"
-        self.perl = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "miniconda2/bin/perl"
         self.draw_psmc = self.config.PACKAGE_DIR + "/dna_evolution/drawPSMC.R"
         self.merge_psmc = self.config.PACKAGE_DIR + "/dna_evolution/mergePSMCresult.pl"
 

@@ -81,7 +81,7 @@ class DiffKeggClassTool(Tool):
     def __init__(self, config):
         super(DiffKeggClassTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
         self.r_path = self.config.SOFTWARE_DIR + "/program/R-3.3.3/bin/Rscript"
         self.map_path = self.config.SOFTWARE_DIR + "/bioinfo/annotation/scripts/map5.r"
 

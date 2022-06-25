@@ -73,7 +73,7 @@ class IdModifiedTool(Tool):
         super(IdModifiedTool, self).__init__(config)
         self._version = '1.0.1'
 
-        self.python_path = 'program/Python/bin/'
+        self.python_path = 'miniconda2/bin/'
         self.script_path = Config().SOFTWARE_DIR + '/bioinfo/medical/scripts/'
 
     def modified_run(self):

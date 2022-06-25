@@ -4,6 +4,8 @@
 import argparse
 import os
 import gzip
+
+from requests import head
 from biocluster.config import Config
 from mbio.packages.rna.annot_config import AnnotConfig
 
@@ -78,10 +80,10 @@ class MetagenomicCogAnnotation(object):
     '''
 
     def __init__(self):
-        self.client = Config().get_mongo_client(mtype='metagenomic', ref=True)
-        self.mongodb = self.client[Config().get_mongo_dbname('metagenomic', ref=True)]
-        self.eggNOG_ID = self.mongodb.eggNOG4_seqID
-        self.eggNOG = self.mongodb.eggNOG4
+        # self.client = Config().get_mongo_client(mtype='metagenomic', ref=True)
+        # self.mongodb = self.client[Config().get_mongo_dbname('metagenomic', ref=True)]
+        # self.eggNOG_ID = self.mongodb.eggNOG4_seqID
+        # self.eggNOG = self.mongodb.eggNOG4
         self.seq_nog = dict()
 
         self.eggnog_tax = AnnotConfig().get_file_path(
@@ -92,6 +94,23 @@ class MetagenomicCogAnnotation(object):
             file ="40674_annotations.tsv.gz",
             db = "eggnog",
             version = "202006")
+
+    def get_eggnog_tax_db(self):
+        """
+        从参考库EGGNOG_sequence中找到gi号对应的description
+        """
+        self.gene2eggnog = dict()
+        with gzip.open(self.eggnog_tax, 'r') as f:
+            for line in f:
+                cols = line.strip().split("\t")
+                genes = cols[4].split(",")
+                for gene in genes:
+                    gene_id = ".".join(gene.split(".")[1:])
+                    if gene_id in self.gene2eggnog:
+                        self.gene2eggnog[gene_id].add(cols[1])
+                    else:
+                        self.gene2eggnog[gene_id] = set([cols[1]])
+
 
     def get_eggnog_class(self):
         """
@@ -113,19 +132,26 @@ class MetagenomicCogAnnotation(object):
 
     def main(self, align_table, anno_table):
         print 'INFO: start building dictionary'
+        self.get_eggnog_tax_db()
         nog2detail_dict, nog2class_dict = self.get_eggnog_class()
         # nog_seq2nog_dict = {document['nog_seq']: document['nog'] for document in self.eggNOG_ID.find({})}
         # nog2detail2_dict = {document['nog']: document for document in self.eggNOG.find({})}
         print 'INFO: start processing {}'.format(align_table)
         with open(align_table) as infile, open(anno_table, 'wb') as outfile:
-            infile.readline()
+            header = infile.readline()
             outfile.write('#Query\tNOG\tNOG_description\tFunction\tFun_description\tCategory\tIdentity(%)\tAlign_len\n')
             NOGseq_list = dict()
             NOG_list = dict()
             for line in infile:
                 line = line.strip().split('\t')
-                seq_id = line[0]
-                nogs = line[1].strip(";")
+                if header.startswith("Score"):
+                    seq_id = line[5]
+                    gene = line[10].split(".")[1]
+                    nogs = ";".join(list(self.gene2eggnog.get(gene, [])))
+                    # print nogs
+                else:
+                    seq_id = line[0]
+                    nogs = line[1].strip(";")
                 for nog in nogs.split(";"):
                     if nog == '':
                         continue

@@ -54,7 +54,7 @@ class MkbamTool(Tool):
         super(MkbamTool, self).__init__(config)
         self._version = "v1.0"
         self.software_dir = self.config.SOFTWARE_DIR
-        self.samtools_path = "/bioinfo/align/samtools-1.8/samtools"
+        self.samtools_path = "/miniconda2/bin/samtools"
         self.bwa_path = self.config.SOFTWARE_DIR + "/bioinfo/align/bwa-0.7.17/bwa"
         self.file = {
             'ref': os.path.join(self.software_dir, 'database/Tool_lab/ysource/reference/hg38modMt.fa'),

@@ -49,7 +49,7 @@ class SnpCompareAgent(Agent):
 class SnpCompareTool(Tool):
     def __init__(self, config):
         super(SnpCompareTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.multiple = self.config.PACKAGE_DIR + "/noref_wgs/noref_SNPselection-Multiple.pl"
         self.single = self.config.PACKAGE_DIR + "/noref_wgs/noref_SNPselection-Single.pl"
         self.stat = self.config.PACKAGE_DIR + "/noref_wgs/compare_stat.py"

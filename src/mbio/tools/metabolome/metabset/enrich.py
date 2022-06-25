@@ -73,7 +73,7 @@ class EnrichAgent(Agent):
 class EnrichTool(Tool):
     def __init__(self, config):
         super(EnrichTool, self).__init__(config)
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
         self.script_path = self.config.PACKAGE_DIR + "/itraq_and_tmt/kegg_enrichment.py"
         if self.option("version") in ['v94.2', '94.2']:
             self.k2e = self.config.SOFTWARE_DIR + "/database/Annotation/all/KEGG/version_202007_meta/K2enzyme.tab"

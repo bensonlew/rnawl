@@ -30,7 +30,7 @@ class Pre4sentieonModule(Module):
         self.ref_fasta=""
         self.ref_index1=""
         self.ref_index2=""
-        self.samtools_path = Config().SOFTWARE_DIR + "bioinfo/align/samtools-1.8/"
+        self.samtools_path = Config().SOFTWARE_DIR + "miniconda2/bin/"
         self.picard_path = Config().SOFTWARE_DIR + "/bioinfo/gene-structure/"
         self.java_path=Config().SOFTWARE_DIR+"/program/sun_jdk1.8.0/bin/java"
 

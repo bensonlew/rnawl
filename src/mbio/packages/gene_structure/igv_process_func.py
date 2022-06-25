@@ -23,7 +23,7 @@ def get_bed_from_gtf(bed_path, gtf_path):
 
 def get_fasta_index(fasta):
     config = Config()
-    os.environ['PATH'] = os.environ['PATH'] + '%s/program/Python/bin/' % config.SOFTWARE_DIR
+    os.environ['PATH'] = os.environ['PATH'] + '%s/miniconda2/bin/' % config.SOFTWARE_DIR
     cmd = 'samtools faidx  %s ' % fasta
     try:
         subprocess.call(cmd, shell=True)
@@ -98,7 +98,7 @@ def sort_gtf(gtf, sorted_gtf):
 
 def sort_bam(bam, sorted_bam):
     config = Config()
-    os.environ['PATH'] = os.environ['PATH'] + '%s/program/Python/bin/' % config.SOFTWARE_DIR
+    os.environ['PATH'] = os.environ['PATH'] + '%s/miniconda2/bin/' % config.SOFTWARE_DIR
     cmd = 'samtools sort -o %s  %s ' % (sorted_bam, bam)
     try:
         subprocess.call(cmd, shell=True)
@@ -108,7 +108,7 @@ def sort_bam(bam, sorted_bam):
 
 def index_bam(bam):
     config = Config()
-    os.environ['PATH'] = os.environ['PATH'] + '%s/program/Python/bin/' % config.SOFTWARE_DIR
+    os.environ['PATH'] = os.environ['PATH'] + '%s/miniconda2/bin/' % config.SOFTWARE_DIR
     cmd = 'samtools index  %s ' % bam
     try:
         subprocess.call(cmd, shell=True)

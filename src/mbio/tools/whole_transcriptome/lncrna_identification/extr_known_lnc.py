@@ -47,7 +47,7 @@ class ExtrKnownLncAgent(Agent):
 class ExtrKnownLncTool(Tool):
     def __init__(self, config):
         super(ExtrKnownLncTool, self).__init__(config)
-        env_path = os.path.join(self.config.SOFTWARE_DIR, '/program/Python/bin')
+        env_path = os.path.join(self.config.SOFTWARE_DIR, '/miniconda2/bin')
         self.set_environ(PATH=env_path)
 
     def cmd_runner(self, cmd_name, cmd, check_stat=True):

@@ -88,10 +88,10 @@ class QuantTool(Tool):
         self.bowtie2_path = software_dir + '/bioinfo/align/bowtie2-2.2.9/'
         self.bowtie_path = software_dir + '/bioinfo/align/bowtie-1.1.2/'
         self.star_path = software_dir + "/bioinfo/rna/star-2.5/bin/Linux_x86_64/"
-        self.samtools_path = software_dir + "/program/Python/bin/samtools"
+        self.samtools_path = software_dir + "/miniconda2/bin/samtools"
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
-        self.perl = software_dir + '/program/perl/perls/perl-5.24.0/bin/'
+        self.perl = software_dir + '/miniconda2/bin/'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.set_environ(PATH=self.rsem_path)
         self.set_environ(PATH=self.perl)

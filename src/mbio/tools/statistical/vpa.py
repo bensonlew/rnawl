@@ -109,7 +109,7 @@ class VpaTool(Tool):
         """
         运行vpa.pl
         """
-        cmd = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl ' + self.config.PACKAGE_DIR + '/metagenomic/scripts/vpa.pl '
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl ' + self.config.PACKAGE_DIR + '/metagenomic/scripts/vpa.pl '
         cmd += '-spe {0} -env {1} -g {2} -o {3}'.format(self.option('species_table').prop['path'], self.option('env_table').prop['path'], self.option('group_table').prop['path'], self.option('out_name'))
 
         self.logger.info('开始运行vpa.pl')

@@ -68,11 +68,11 @@ class Bowtie2Agent(Agent):
 class Bowtie2Tool(Tool):
     def __init__(self, config):
         super(Bowtie2Tool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         # self.bowtie_path = self.config.SOFTWARE_DIR + "/bioinfo/align/bowtie2-2.2.9/"
         self.bowtie_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
-        self.samtool_path = self.config.SOFTWARE_DIR + "/program/Python/bin/samtools"
+        self.samtool_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/samtools"
     
     def run_build_index(self):
         ref_name = os.path.basename(self.option("ref_genome"))

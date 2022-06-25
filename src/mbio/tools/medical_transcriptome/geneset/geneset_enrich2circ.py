@@ -71,7 +71,7 @@ class GenesetEnrich2circAgent(Agent):
 class GenesetEnrich2circTool(Tool):
     def __init__(self, config):
         super(GenesetEnrich2circTool, self).__init__(config)
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
 
     def run(self):
         """

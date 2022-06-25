@@ -79,7 +79,7 @@ class GffposExtractTool(Tool):
         super(GffposExtractTool, self).__init__(config)
         self._version = "v1.0.1"
         self.python_path = '/miniconda2/bin/python'
-        # self.perl = 'program/perl/perls/perl-5.24.0/bin/perl'
+        # self.perl = 'miniconda2/bin/perl'
         self.gfftool_path = self.config.PACKAGE_DIR+"/tool_lab/gff_tool.py"
         # self.gtftool_path = self.config.PACKAGE_DIR+"/tool_lab/gtf_tool.py"
         # self.conver2bed_path=self.config.SOFTWARE_DIR+"/miniconda2/bin"

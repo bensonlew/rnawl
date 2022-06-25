@@ -49,7 +49,7 @@ class GeneSamplesSeqAgent(Agent):
 class GeneSamplesSeqTool(Tool):
     def __init__(self, config):
         super(GeneSamplesSeqTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.gene_samples_seq = self.config.PACKAGE_DIR + "/wgs/gene_samples_seq.pl"
         self.json_path = self.config.SOFTWARE_DIR + "/database/dna_wgs_geneome"  # 参考组配置文件
         self.ref_fa = os.path.join(self.json_path, self.option("ref_fa"))

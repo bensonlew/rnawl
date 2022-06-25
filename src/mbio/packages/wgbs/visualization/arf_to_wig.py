@@ -242,7 +242,7 @@ if __name__ == "__main__":
         A.chr_list=['rCRS']
         A.write_window()
 
-        circos_cmd = "/mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgbs/visualization/draw_circos.pl --windows 10 --pos {}.pos.window --neg {}.neg.window --label label.txt --chrlist rCRS.fasta.fai --chr_band chr.band.txt --outdir {}".format(sample[0], sample[0], sample[0])
+        circos_cmd = "/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgbs/visualization/draw_circos.pl --windows 10 --pos {}.pos.window --neg {}.neg.window --label label.txt --chrlist rCRS.fasta.fai --chr_band chr.band.txt --outdir {}".format(sample[0], sample[0], sample[0])
         print circos_cmd
         os.system(circos_cmd)
         convert_cmd = "rsvg-convert -f pdf -o {}.circos.pdf {}/circos.svg".format(sample[0], sample[0])
@@ -262,7 +262,7 @@ if __name__ == "__main__":
         A.write_window()
 
 
-        circos_cmd = "/mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgbs/visualization/draw_circos.pl --windows 10 --pos {}.pos.window --neg {}.neg.window --label label.txt --chrlist rCRS.fasta.fai --chr_band chr.band.txt --outdir {}".format(sample[0], sample[0], sample[0] + "_cg")
+        circos_cmd = "/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgbs/visualization/draw_circos.pl --windows 10 --pos {}.pos.window --neg {}.neg.window --label label.txt --chrlist rCRS.fasta.fai --chr_band chr.band.txt --outdir {}".format(sample[0], sample[0], sample[0] + "_cg")
         print circos_cmd
         os.system(circos_cmd)
 
@@ -285,7 +285,7 @@ if __name__ == "__main__":
         A.chr_list=['rCRS']
         A.write_window()
 
-        circos_cmd = "/mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgbs/visualization/draw_circos.pl --windows 10 --pos {}.pos.window --neg {}.neg.window --label label.txt --chrlist rCRS.fasta.fai --chr_band chr.band.txt --outdir {}".format(sample, sample, sample)
+        circos_cmd = "/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgbs/visualization/draw_circos.pl --windows 10 --pos {}.pos.window --neg {}.neg.window --label label.txt --chrlist rCRS.fasta.fai --chr_band chr.band.txt --outdir {}".format(sample, sample, sample)
         print circos_cmd
         os.system(circos_cmd)
         convert_cmd = "rsvg-convert -f pdf -o {}.circos.pdf {}/circos.svg".format(sample, sample)
@@ -305,7 +305,7 @@ if __name__ == "__main__":
         A.write_window()
 
 
-        circos_cmd = "/mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgbs/visualization/draw_circos.pl --windows 10 --pos {}.pos.window --neg {}.neg.window --label label.txt --chrlist rCRS.fasta.fai --chr_band chr.band.txt --outdir {}".format(sample, sample, sample + "_cg")
+        circos_cmd = "/mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl /mnt/ilustre/users/sanger-dev/biocluster/src/mbio/packages/wgbs/visualization/draw_circos.pl --windows 10 --pos {}.pos.window --neg {}.neg.window --label label.txt --chrlist rCRS.fasta.fai --chr_band chr.band.txt --outdir {}".format(sample, sample, sample + "_cg")
         print circos_cmd
         os.system(circos_cmd)
 

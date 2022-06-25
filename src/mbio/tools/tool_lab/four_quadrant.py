@@ -45,7 +45,7 @@ class FourQuadrantTool(Tool):
         software_dir = self.config.SOFTWARE_DIR
         # self.gcc = software_dir + '/gcc/5.1.0/bin'
         # self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
-        self.set_environ(PATH=os.path.join(software_dir, 'program/Python/bin'))
+        self.set_environ(PATH=os.path.join(software_dir, 'miniconda2/bin'))
         self.program = {
             'python': 'miniconda2/bin/python',
             'rscript': '/program/R-3.3.1/bin/Rscript'

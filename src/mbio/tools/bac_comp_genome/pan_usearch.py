@@ -81,7 +81,7 @@ class PanUsearchTool(Tool):
         self._version = "v7.0"
         self.usearch_path = "bioinfo/meta/usearch-v7.0/"
         self.script_path = "bioinfo/meta/scripts/"
-        self.qiime_path = "program/Python/bin/"
+        self.qiime_path = "miniconda2/bin/"
 
     def cmd1(self):
         """

@@ -38,7 +38,7 @@ class LimaTool(Tool):
         super(LimaTool,self).__init__(config)
         # self.pbmerge = "bioinfo/ref_rna_v3/HTSeq/miniconda3/bin/pbmerge"
         self.lima = "program/SmrtLink/smrtlink/smrtcmds/bin/lima"
-        self.samtools = "program/Python/bin/samtools"
+        self.samtools = "miniconda2/bin/samtools"
         self.ccs_new = self.option("ccs_bam")
 
     def run(self):

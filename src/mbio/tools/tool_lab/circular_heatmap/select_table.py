@@ -58,7 +58,7 @@ class SelectTableTool(Tool):
     def __init__(self, config):
         super(SelectTableTool, self).__init__(config)
         self._version = "v1.0"
-        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
+        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin'))
         self.program = {
             'python': 'miniconda2/bin/python',
         }

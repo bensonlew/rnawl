@@ -18,7 +18,7 @@ class FormatReads(object):
     """
     def __init__(self):
         self.software_dir = Config().SOFTWARE_DIR
-        self.biom = os.path.join(self.software_dir, "program/Python/bin/biom")
+        self.biom = os.path.join(self.software_dir, "miniconda2/bin/biom")
 
     def run_taxon_anno(self, biom_table, reference, out_file):
         """

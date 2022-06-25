@@ -38,7 +38,7 @@ class PbmergeTool(Tool):
         super(PbmergeTool,self).__init__(config)
         self.pbmerge = "bioinfo/ref_rna_v3/HTSeq/miniconda3/bin/pbmerge"
         # self.lima = "program/SmrtLink/smrtlink/smrtcmds/bin/lima"
-        self.samtools = "program/Python/bin/samtools"
+        self.samtools = "miniconda2/bin/samtools"
 
     def run(self):
         super(PbmergeTool, self).run()

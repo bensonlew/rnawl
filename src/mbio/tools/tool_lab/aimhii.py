@@ -46,8 +46,8 @@ class AimhiiTool(Tool):
     def __init__(self, config):
         super(AimhiiTool, self).__init__(config)
         #self.aimhii = "/bioinfo/tool_lab/aimhii/aimhii_venv/bin/aimhii"
-        self.aimhii = "program/Python/bin/aimhii"
-        self.samtools = "program/Python/bin/samtools"
+        self.aimhii = "miniconda2/bin/aimhii"
+        self.samtools = "miniconda2/bin/samtools"
         self.illumina_adapter1 = self.config.SOFTWARE_DIR + "/database/wgs_v2/illumina_adapter1.fasta"
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin')
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')

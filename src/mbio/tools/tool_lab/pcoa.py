@@ -90,8 +90,8 @@ class PcoaAgent(Agent):
 class PcoaTool(Tool):
     def __init__(self, config):
         super(PcoaTool, self).__init__(config)
-        self.cmdpath = 'program/Python/bin/beta_diversity.py'
-        self.biom_path = 'program/Python/bin/'
+        self.cmdpath = 'miniconda2/bin/beta_diversity.py'
+        self.biom_path = 'miniconda2/bin/'
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')
         self.perl_path = "program/perl-5.24.0/bin/perl"
         self.cmd_path = self.config.PACKAGE_DIR + '/statistical/ordinationdis.pl'

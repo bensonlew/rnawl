@@ -88,7 +88,7 @@ class OrfTool(Tool):
         self.fasta_name = self.option("fasta").prop["path"].split("/")[-1]
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
-        self.perl_lib = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin'
+        self.perl_lib = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         self.set_environ(PATH=self.perl_lib)
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
 

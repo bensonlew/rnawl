@@ -62,7 +62,7 @@ class SamtoolsCallTool(Tool):
         super(SamtoolsCallTool, self).__init__(config)
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/align/samtools-1.4/bin')
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/seq/bcftools-1.4/bin')
-        self.samtools = 'bioinfo/align/samtools-1.7/'
+        self.samtools = 'miniconda2/bin/'
         self.bcftools = "bioinfo/seq/bcftools-1.7/"
         
     def samtools_mpileup(self):

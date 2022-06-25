@@ -45,7 +45,7 @@ class TransBuildTool(Tool):
     def __init__(self, config):
         super(TransBuildTool, self).__init__(config)
         self.program = {
-            'perl': 'program/perl/perls/perl-5.24.0/bin/perl',
+            'perl': 'miniconda2/bin/perl',
             'gffcompare': 'bioinfo/rna/gffcompare-0.9.8.Linux_x86_64/gffcompare',
             'cuffcompare': 'bioinfo/rna/cufflinks-2.2.1/cuffcompare',
             'python': 'miniconda2/bin/python',

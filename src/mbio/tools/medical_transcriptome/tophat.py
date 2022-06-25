@@ -83,7 +83,7 @@ class TophatTool(Tool):
         super(TophatTool, self).__init__(config)
         self.program = {
             "tophat2": "bioinfo/align/tophat-2.1.1/tophat-2.1.1.Linux_x86_64/tophat2",
-            "samtools": "bioinfo/align/samtools-1.8/samtools"
+            "samtools": "miniconda2/bin/samtools"
         }
         self.path = {
             "bam": os.path.join(self.output_dir, "{}.bam".format(self.option("sample")))

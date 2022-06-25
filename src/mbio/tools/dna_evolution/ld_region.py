@@ -37,8 +37,8 @@ class LdRegionAgent(Agent):
 class LdRegionTool(Tool):
     def __init__(self, config):
         super(LdRegionTool, self).__init__(config)
-        self.perl = "program/perl/perls/perl-5.24.0/bin/perl"
-        self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "miniconda2/bin/perl"
+        self.perl_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.parafly = "/program/parafly-r2013-01-21/src/ParaFly"
         self.ld_region = self.config.PACKAGE_DIR + "/dna_evolution/sweep_ld_region.pl"
 

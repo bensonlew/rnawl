@@ -45,7 +45,7 @@ class PacbioStatAgent(Agent):
 class PacbioStatTool(Tool):
     def __init__(self,config):
         super(PacbioStatTool, self).__init__(config)
-        self.samtools = self.config.SOFTWARE_DIR+"/bioinfo/align/samtools-1.8/samtools"
+        self.samtools = self.config.SOFTWARE_DIR+"/miniconda2/bin/samtools"
         self.ccs_bam  = self.option("ccsbam").prop['path']
         self.split_dir = self.option('split_dir').prop['path']
         self.seqkit = os.path.join(self.config.SOFTWARE_DIR,"bioinfo/meta/seqkit/seqkit")

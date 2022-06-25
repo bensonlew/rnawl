@@ -91,7 +91,7 @@ class FastqProcessTool(Tool):
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/align/samtools-1.4')
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/seq/samblaster-0.1.24')
         self.set_environ(PATH=self.config.SOFTWARE_DIR + '/bioinfo/medical/cutadapt-1.10-py27_0/bin')
-        # self.set_environ(PATH=self.config.SOFTWARE_DIR + '/mnt/ilustre/users/sanger/app/program/Python/bin')#正式机的cutadapt
+        # self.set_environ(PATH=self.config.SOFTWARE_DIR + '/mnt/ilustre/users/sanger/app/miniconda2/bin')#正式机的cutadapt
         
         self.ref1 = self.config.SOFTWARE_DIR + '/database/human/hg38.chromosomal_assembly/ref.fa'
         self.ref = self.config.SOFTWARE_DIR + '/database/human/hg38_nipt/nchr.fa'

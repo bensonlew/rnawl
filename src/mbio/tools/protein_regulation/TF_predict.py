@@ -79,8 +79,8 @@ class TfPredictTool(Tool):
     def __init__(self, config):
         super(TfPredictTool, self).__init__(config)
         self._version = '1.0.1'
-        self.python_path = 'program/Python/bin/'
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/'
+        self.python_path = 'miniconda2/bin/'
+        self.perl_path = 'miniconda2/bin/'
         self.script_path = Config().SOFTWARE_DIR + '/bioinfo/rna/scripts/'
         self.ref_path = Config().SOFTWARE_DIR + '/database/refGenome/TF/'
         self.itak_path = Config().SOFTWARE_DIR + '/bioinfo/rna/iTAK-1.6b/'

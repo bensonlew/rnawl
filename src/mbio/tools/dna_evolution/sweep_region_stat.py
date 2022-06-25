@@ -53,8 +53,8 @@ class SweepRegionStatAgent(Agent):
 class SweepRegionStatTool(Tool):
     def __init__(self, config):
         super(SweepRegionStatTool, self).__init__(config)
-        self.perl = "program/perl/perls/perl-5.24.0/bin/perl"
-        self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "miniconda2/bin/perl"
+        self.perl_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.parafly = "/program/parafly-r2013-01-21/src/ParaFly"
         self.result_table_path = self.config.PACKAGE_DIR + "/dna_evolution/result.table.pl"
         self.single_result_table_path = self.config.PACKAGE_DIR + "/dna_evolution/result.single_pop.table.pl"

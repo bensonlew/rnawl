@@ -58,7 +58,7 @@ class PfamScanTool(Tool):
         super(PfamScanTool, self).__init__(config)
         if self.option("anno_method") == 'pfam_scan':
             self.set_environ(PERL5LIB=self.config.SOFTWARE_DIR + "/bioinfo/wgs_v2/PfamScan")
-            self.set_environ(PATH=self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin")
+            self.set_environ(PATH=self.config.SOFTWARE_DIR + "/miniconda2/bin")
             self.set_environ(PATH=self.config.SOFTWARE_DIR + "/bioinfo/wgs_v2")
             self.pfam_scan_path = "bioinfo/wgs_v2/PfamScan/pfam_scan.pl"
         else:
@@ -68,7 +68,7 @@ class PfamScanTool(Tool):
             self.set_environ(PATH=self.config.SOFTWARE_DIR + "/bioinfo/wgs_v2")
             self.set_environ(PATH=self.config.SOFTWARE_DIR + "/program/Python35/bin")
             self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + "/program/Python35/lib")
-            self.set_environ(PATH=self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin")
+            self.set_environ(PATH=self.config.SOFTWARE_DIR + "/miniconda2/bin")
             self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + "/library_gcc_7.2/lib")
             self.interpro_scan_path = "database/dna_wgs_geneome/Anno_database/InterProScan/" \
                                       "interproscan-5.30-69.0/interproscan.sh"

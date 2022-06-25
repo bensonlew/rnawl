@@ -70,7 +70,7 @@ class AnnotMergeTool(Tool):
 
         self.statistics_py = os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/annotation/statistics.py')
         self.map4_r = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/map4.r')
-        self.rscript = os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.3/bin/Rscript')
+        self.rscript = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/miniconda2/bin/Rscript')
         self.image_magick_convert = os.path.join(self.config.SOFTWARE_DIR, 'program/ImageMagick/bin/convert')
 
         self.kegg_files_dict = AnnotConfig().get_file_dict(db="kegg", version=self.option("kegg_version"))

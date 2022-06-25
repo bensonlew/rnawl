@@ -23,6 +23,7 @@ class HisatAgent(Agent):
         super(HisatAgent, self).__init__(parent)
         options = [
             {"name": "ref_genome", "type": "string"},  # 参考基因组参数
+            {"name": "dna_index", "type": "string"},  # 参考基因组参数
             {"name": "genome_version", "type": "string", "default": "Custom"},  # 参考基因组版本
             {"name": "genome_annot_version", "type": "string", "default": "Custom"},  # 参考基因组注释版本
             {"name": "mapping_method", "type": "string"},  # 比对软件，tophat or hisat
@@ -75,7 +76,7 @@ class HisatTool(Tool):
         super(HisatTool, self).__init__(config)
         self.program = {
             'hisat2': 'bioinfo/align/hisat2/hisat2-2.1.0/hisat2',
-            'samtools': 'bioinfo/align/samtools-1.8/samtools'
+            'samtools': 'miniconda2/bin/samtools'
         }
         self.hisat_path = 'bioinfo/align/hisat2/hisat2-2.1.0/'
         self.ht2_idx = str()
@@ -88,18 +89,8 @@ class HisatTool(Tool):
 
     def hisat_build(self):
         try:
-            db = Config().get_mongo_client(mtype="ref_rna_v2", dydb_forbid=True)[Config().get_mongo_dbname("ref_rna_v2", dydb_forbid=True)]
-            col = db["sg_genome_db"]
-            self.logger.debug('name => {}'.format(self.option('ref_genome')))
-            self.logger.debug('assembly => {}'.format(self.option('genome_version')))
-            self.logger.debug('annot_version => {}'.format(self.option('genome_annot_version')))
-            genome_info = col.find_one({
-                "name": self.option("ref_genome"),
-                "assembly": self.option("genome_version"),
-                "annot_version": self.option("genome_annot_version")
-            })
             self.ht2_idx = os.path.join(
-                self.config.SOFTWARE_DIR, 'database/Genome_DB_finish/{}'.format(genome_info["dna_index"]))
+                self.config.SOFTWARE_DIR, 'database/Genome_DB_finish/{}'.format(self.option("dna_index")))
         except (ServerSelectionTimeoutError, NetworkTimeout): # 捕获因为mongo服务器问题导致的异常后重运行此方法
             if self.process_rerun < 5:
                 self.process_rerun += 1

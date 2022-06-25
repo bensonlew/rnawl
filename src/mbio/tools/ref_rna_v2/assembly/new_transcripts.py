@@ -48,7 +48,7 @@ class NewTranscriptsTool(Tool):
     def __init__(self, config):
         super(NewTranscriptsTool, self).__init__(config)
         self.program = {
-            'perl': 'program/perl/perls/perl-5.24.0/bin/perl',
+            'perl': 'miniconda2/bin/perl',
             'python': 'miniconda2/bin/python',
             'gffread': 'bioinfo/rna/cufflinks-2.2.1/gffread'
         }

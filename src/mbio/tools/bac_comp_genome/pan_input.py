@@ -41,7 +41,7 @@ class PanInputTool(Tool):
         super(PanInputTool, self).__init__(config)
         self.strains = self.option("strains")
         self.fasta = self.option("infile_dir").prop['path']
-        self.perl_path = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "/miniconda2/bin/perl"
         self.perl_script = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/PGAP-1.2.1/Converter_finished.pl"
         self.out = self.work_dir + '/out_result'
 

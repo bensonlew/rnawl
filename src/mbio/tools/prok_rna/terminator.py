@@ -59,7 +59,7 @@ class TerminatorAgent(Agent):
 class TerminatorTool(Tool):
     def __init__(self, config):
         super(TerminatorTool, self).__init__(config)
-        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin'))
+        self.set_environ(PATH=os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin'))
         self.program = {
             'transterm': 'bioinfo/prok_rna/transterm_hp_v2.09/transterm',
             'python': 'miniconda2/bin/python',

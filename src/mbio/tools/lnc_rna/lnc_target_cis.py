@@ -66,7 +66,7 @@ class LncTargetCisTool(Tool):
         software_dir = self.config.SOFTWARE_DIR
 
         self.python_path = 'miniconda2/bin/python'
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
         self.bed2intersect_script = self.config.PACKAGE_DIR + '/lnc_rna/bed2intersect.py'
         self.gtf2bed_script = self.config.PACKAGE_DIR + '/lnc_rna/gtf2bed.pl'
 

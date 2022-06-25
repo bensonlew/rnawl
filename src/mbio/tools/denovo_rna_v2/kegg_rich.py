@@ -79,7 +79,7 @@ class KeggRichTool(Tool):
         # self._r_home = self.config.SOFTWARE_DIR + "/program/R-3.3.1/lib64/R/"
         # self._LD_LIBRARY_PATH = self.config.SOFTWARE_DIR + "/program/R-3.3.1/lib64/R/lib:$LD_LIBRARY_PATH"
         # self.set_environ(PATH=self.r_path, R_HOME=self._r_home, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
-        self.python = '/program/Python/bin/'
+        self.python = '/miniconda2/bin/'
         # self.all_list = self.option('all_list').prop['gene_list']
         # self.diff_list = self.option('diff_list').prop['gene_list']
         self.script_path = self.config.PACKAGE_DIR + "/ref_rna_v2/"

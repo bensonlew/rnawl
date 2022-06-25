@@ -39,7 +39,7 @@ class StackStatAgent(Agent):
 class StackStatTool(Tool):
     def __init__(self, config):
         super(StackStatTool, self).__init__(config)
-        self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.snp_stat = self.config.PACKAGE_DIR + "/noref_wgs/snp.stat.pl"
         self.variant_qual = self.config.PACKAGE_DIR + "/noref_wgs/variant_qual.pl"
         self.merge = self.config.PACKAGE_DIR + "/noref_wgs/merge.pl"

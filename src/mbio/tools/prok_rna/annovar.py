@@ -80,8 +80,8 @@ class AnnovarTool(Tool):
         super(AnnovarTool, self).__init__(config)
         self.gatk_path = self.config.SOFTWARE_DIR + "/bioinfo/gene-structure/GenomeAnalysisTK.jar"
         self.java_path = "/program/sun_jdk1.8.0/bin/"
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/"
-        self.perl_full_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/"
+        self.perl_path = "miniconda2/bin/"
+        self.perl_full_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.annovar_path = self.config.SOFTWARE_DIR + "/bioinfo/gene-structure/annovar/"
         self.gtfToGenePred_path = "/bioinfo/gene-structure/annovar/"
         self.picard_path = self.config.SOFTWARE_DIR + "/bioinfo/gene-structure/"

@@ -16,7 +16,7 @@ from mbio.packages.medical_transcriptome.copy_file import CopyFile
 class GeneInfoSupple(object):
     def __init__(self,project_type="medical_transcriptome",task_id = None,id2namedict = None ,add_columns =[],level = None,file_path =None,split = ";",annotype = "go"):
         self.level = level
-        self.database = Config().get_mongo_client(mtype=project_type)[Config().get_mongo_dbname(project_type)]
+        # self.database = Config().get_mongo_client(mtype=project_type)[Config().get_mongo_dbname(project_type)]
         if id2namedict:
             self.id2name_dict = id2namedict
         else:

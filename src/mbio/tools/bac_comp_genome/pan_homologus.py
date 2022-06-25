@@ -58,7 +58,7 @@ class PanHomologusTool(Tool):
     def __init__(self, config):
         super(PanHomologusTool, self).__init__(config)
         self.path = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/get_homologues-master:" + self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin:"
-        self.perl5path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl5path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.library = self.config.SOFTWARE_DIR + "/program/R-3.3.1/lib64/R/lib"
         self.r_home = self.config.SOFTWARE_DIR + "/program/R-3.3.1/lib64/R"
         self.c_include = self.config.SOFTWARE_DIR + "/program/R-3.3.1/lib64/R/include"
@@ -66,7 +66,7 @@ class PanHomologusTool(Tool):
         self.set_environ(R_HOME=self.r_home, LD_LIBRARY_PATH=self.library, C_INCLUDE_PATH=self.c_include)
         #self.strains = self.option("strains")
         self.fasta = self.option("infile_dir").prop['path']
-        self.perl_path = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "/miniconda2/bin/perl"
         self.perl_script = self.config.SOFTWARE_DIR + "/bioinfo/compare_genome/software/get_homologues-master/"
         self.out = self.work_dir + '/out_result'
 

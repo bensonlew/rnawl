@@ -47,7 +47,7 @@ class GoCircTool(Tool):
         self.gcc = software_dir + '/gcc/5.1.0/bin'
         self.gcc_lib = software_dir + '/gcc/5.1.0/lib64'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
-        self.python = os.path.join(software_dir, 'program/Python/bin')
+        self.python = os.path.join(software_dir, 'miniconda2/bin')
         self.r = os.path.join(software_dir, 'program/R-3.3.1/bin')
         self.set_environ(PATH=self.python)
         self.set_environ(PATH=self.r)

@@ -39,7 +39,7 @@ class BamSsrAgent(Agent):
 class BamSsrTool(Tool):
     def __init__(self, config):
         super(BamSsrTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.diff_ssr = self.config.PACKAGE_DIR + "/wgs_v2/diff_ssr.pl"
         self.ref_misa_path = self.config.SOFTWARE_DIR + "/database/dna_geneome/" + self.option("ref_misa")
         if not os.path.exists(self.ref_misa_path):

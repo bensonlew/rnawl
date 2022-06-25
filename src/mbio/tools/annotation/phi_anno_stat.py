@@ -41,7 +41,7 @@ class PhiAnnoStatTool(Tool):
     def __init__(self, config):
         super(PhiAnnoStatTool, self).__init__(config)
         self._version = "1.0"
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         self.script = self.config.PACKAGE_DIR + '/annotation/scripts/phi_anno_abudance.pl'
 
     def run(self):

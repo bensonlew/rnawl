@@ -70,7 +70,7 @@ class StasticTool(Tool):
     def __init__(self, config):
         super(StasticTool, self).__init__(config)
         self._version = '1.0.1'
-        self.python_path = 'program/Python/bin/'
+        self.python_path = 'miniconda2/bin/'
         self.script_path = Config().SOFTWARE_DIR + '/bioinfo/rna/scripts/'
         # self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/lib/site_perl/5.24.0/Bio')
 

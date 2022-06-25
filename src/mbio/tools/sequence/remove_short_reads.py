@@ -41,7 +41,7 @@ class RemoveShortReadsTool(Tool):
     def __init__(self, config):
         super(RemoveShortReadsTool, self).__init__(config)
         self._version = "1.0"
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin')
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + '/miniconda2/bin')
         self.set_environ(PERLBREW_ROOT=self.config.SOFTWARE_DIR + '/program/perl')
         #self.perl_script = self.config.SOFTWARE_DIR + '/bioinfo/seq/scripts/remove_short_reads.pl'
         #self.perl_script_2 = self.config.SOFTWARE_DIR + "/bioinfo/seq/scripts/remove_short_reads.pair.pl"

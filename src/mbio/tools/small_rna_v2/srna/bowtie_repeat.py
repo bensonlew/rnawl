@@ -73,7 +73,7 @@ class BowtieRepeatTool(Tool):
         super(BowtieRepeatTool, self).__init__(config)
         self.bowtie2_path = "bioinfo/align/bowtie2-2.2.9"
         self.bowtie_path = self.config.SOFTWARE_DIR + "/bioinfo/align/bowtie-1.1.2"
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.set_environ(PATH=self.bowtie_path)
         self.set_environ(PATH=self.bowtie2_path)

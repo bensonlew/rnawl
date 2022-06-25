@@ -32,7 +32,7 @@ class SamtoolsFaidxAgent(Agent):
 class SamtoolsFaidxTool(Tool):
     def __init__(self, config):
         super(SamtoolsFaidxTool, self).__init__(config)
-        self.samtools_path = 'bioinfo/align/samtools-1.7/samtools'
+        self.samtools_path = 'miniconda2/bin/samtools'
 
     def run_faidx(self):
         """

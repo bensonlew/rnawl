@@ -53,7 +53,7 @@ class AnnoCountTool(Tool):
     def __init__(self, config):
         super(AnnoCountTool, self).__init__(config)
         self.scrpit_path = self.config.PACKAGE_DIR + "/wgs/anno-count.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
         
     def cnv_diff(self):
         """

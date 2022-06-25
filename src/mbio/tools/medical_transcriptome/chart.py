@@ -14,7 +14,11 @@ from mbio.packages.ref_rna_v2.chart_geneset import ChartGeneset
 from mbio.packages.ref_rna_v2.chart_advance import ChartAdvance
 from mbio.packages.medical_transcriptome.chart.chart_diff_pipline import ChartDiffPipline
 from mbio.packages.medical_transcriptome.chart.chart_report import ChartReport
+from mbio.packages.medical_transcriptome.chart.data_report import DataReport
 import json
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class ChartAgent(Agent):
     """
@@ -84,6 +88,7 @@ class ChartTool(Tool):
         self.parafly_pdf()
         if self.option('chart_report'):
             self.chart_report()
+        self.data_report()
         self.end()
 
     def chart(self, json_file):
@@ -100,6 +105,7 @@ class ChartTool(Tool):
                 chart_obj = ChartAdvance()
             elif a["type"] ==  "diff_pipline":
                 chart_obj = ChartDiffPipline()
+            chart_obj.work_dir = self.work_dir + "/"
             chart_obj.chart_json_batch(a)
 
     def parafly_pdf(self):
@@ -120,6 +126,10 @@ class ChartTool(Tool):
     def chart_report(self):
         report = ChartReport()
         report.run()
+
+    def data_report(self):
+        report = DataReport()
+        report.run(self.option("file_json").prop['path'], self.work_dir + "/report_config.json")
 
 
 

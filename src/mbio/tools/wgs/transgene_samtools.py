@@ -34,7 +34,7 @@ class TransgeneSamtoolsAgent(Agent):
 class TransgeneSamtoolsTool(Tool):
     def __init__(self, config):
         super(TransgeneSamtoolsTool, self).__init__(config)
-        self.samtools_path = 'bioinfo/align/samtools-1.7/samtools'
+        self.samtools_path = 'miniconda2/bin/samtools'
         self.makeblastdb_path = 'bioinfo/align/ncbi-blast-2.3.0+/bin/makeblastdb'
 
     def run_faidx(self):

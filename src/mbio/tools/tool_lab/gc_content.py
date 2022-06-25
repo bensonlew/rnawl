@@ -45,7 +45,7 @@ class GcContentAgent(Agent):
 class GcContentTool(Tool):
     def __init__(self, config):
         super(GcContentTool, self).__init__(config)
-        self.python = "/program/Python/bin/"
+        self.python = "/miniconda2/bin/"
         self.gc_content = self.config.PACKAGE_DIR + '/tool_lab/gc_content.py'
         self.sample_name = self.option("sample_name")
 

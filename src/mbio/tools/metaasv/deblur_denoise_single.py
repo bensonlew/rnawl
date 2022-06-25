@@ -84,7 +84,7 @@ class DeblurDenoiseSingleTool(Tool):
         self.software = os.path.join(self.config.SOFTWARE_DIR, "database/taxon_db/qiime2_qza")
         self.trim_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/format_reads.py")
         self.set_environ(PATH=self.miniconda3)
-        self.biom_path = "program/Python/bin/"
+        self.biom_path = "miniconda2/bin/"
         self.DATABASE = {
             'unite7.2/its_fungi': 'unite7.2_its_fungi',
             'unite8.0/its_fungi': 'unite8.0_its_fungi',

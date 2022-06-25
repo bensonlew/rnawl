@@ -57,7 +57,7 @@ class Bam2cramTool(Tool):
     def __init__(self, config):
         super(Bam2cramTool, self).__init__(config)
         self.picard_path = self.config.SOFTWARE_DIR + "/bioinfo/gene-structure/"
-        self.samtools_path ="bioinfo/align/samtools-1.8/"
+        self.samtools_path ="miniconda2/bin/"
         self.sample_name = ''
         self.tmp_path = self.work_dir + "/tmp/"
 

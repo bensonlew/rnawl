@@ -110,7 +110,7 @@ class MergeRsemTool(Tool):
         self.set_environ(PATH=self.r_path, R_HOME=self._r_home, LD_LIBRARY_PATH=self._LD_LIBRARY_PATH)
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.long_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/scripts/"
-        self.python_path = "program/Python/bin/"
+        self.python_path = "miniconda2/bin/"
         self.r_path1 = "/program/R-3.3.1/bin/Rscript"
 
     def merge_rsem(self):

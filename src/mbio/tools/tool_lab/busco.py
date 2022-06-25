@@ -67,7 +67,7 @@ class BuscoTool(Tool):
         super(BuscoTool, self).__init__(config)
         self._version = "v1.0.1"
         software_dir = self.config.SOFTWARE_DIR
-        self.python = os.path.join(software_dir, 'program/Python/bin')
+        self.python = os.path.join(software_dir, 'miniconda2/bin')
         self.set_environ(PATH=self.python)
         self.busco_path = os.path.join(
             software_dir, 'bioinfo/denovo_rna_v2/busco-master-e83a6c94101511484799f9770cdfc148559b136d/')

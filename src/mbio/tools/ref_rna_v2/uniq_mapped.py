@@ -40,7 +40,7 @@ class UniqMappedAgent(Agent):
 class UniqMappedTool(Tool):
     def __init__(self, config):
         super(UniqMappedTool, self).__init__(config)
-        self.samtools = 'bioinfo/align/samtools-1.8/samtools'
+        self.samtools = 'miniconda2/bin/samtools'
 
     def run_uniq_mapped(self):
         bam_file = self.option("bam_path").prop['path']

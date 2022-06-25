@@ -92,7 +92,7 @@ class HmmTool(Tool):
         super(HmmTool, self).__init__(config)
         self.transdecoder_path = "bioinfo/gene-structure/TransDecoder-3.0.0/"
         # self.hmmscan_path = "bioinfo/align/hmmer-3.1b2-linux-intel-x86_64/binaries/"
-        self.hmmscan_path = "miniconda2/bin/"
+        self.hmmscan_path = "miniconda3/bin/"
         # self.pfam_db = self.config.SOFTWARE_DIR + "/database/Pfam/Pfam-A.hmm"# hmm参考库
         self.pfam_db = AnnotConfig().get_file_path(
             file ="Pfam-A",
@@ -103,7 +103,7 @@ class HmmTool(Tool):
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
         # TransDecoder-3.0.0的运行依赖perl的环境，所以程序必须设置一个环境变量，直接在我们的服务器程序里测试单条是不行的，我们没有perl_env
-        self.perl_lib = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin'
+        self.perl_lib = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         self.set_environ(PATH=self.perl_lib)
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.tfdb_path = self.config.SOFTWARE_DIR + "/database/TFDB/"

@@ -73,7 +73,7 @@ class KeggAnnotTool(Tool):
         self.kegg_annotation_spe_py = os.path.join(self.config.PACKAGE_DIR, 'medical_transcriptome/annotation/kegg_annotation_spe_v3.py')
         self.txml2gxml_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/txml2gxml.py')
         self.kegg_known_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/kegg_known.py')
-        self.rscript = os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.3/bin/Rscript')
+        self.rscript = os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/miniconda2/bin/Rscript')
         self.map4_r = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/map4.r')
         self.get_venn_list_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/get_venn_list.py')
         self.kegg_files_dict = AnnotConfig().get_file_dict(db="kegg", version=self.option("kegg_version"))
@@ -120,33 +120,34 @@ class KeggAnnotTool(Tool):
         self.gene_list = os.path.join(self.output_dir, '{}.G.list'.format(self.option('database')))
 
     def get_limit_ko(self):
-        self.client = Config().get_mongo_client(mtype='ref_rna', ref=True)
-        self.mongodb = self.client[Config().get_mongo_dbname('ref_rna', ref=True)]
-        self.kegg_species = self.mongodb.kegg_species_map
-        try:
-            if self.option("kegg_species"):
-                result = self.kegg_species.find_one({'abr': self.option("kegg_species"), "level": "species"})
-        except:
-            self.logger.info("未找到该分类列表 {}".format(self.option("kegg_species")))
+        return None
+        # self.client = Config().get_mongo_client(mtype='ref_rna', ref=True)
+        # self.mongodb = self.client[Config().get_mongo_dbname('ref_rna', ref=True)]
+        # self.kegg_species = self.mongodb.kegg_species_map
+        # try:
+        #     if self.option("kegg_species"):
+        #         result = self.kegg_species.find_one({'abr': self.option("kegg_species"), "level": "species"})
+        # except:
+        #     self.logger.info("未找到该分类列表 {}".format(self.option("kegg_species")))
 
-        try:
-            if self.option("kegg_subtax2"):
-                result = self.kegg_species.find_one({'abr': self.option("kegg_subtax2"), "level": "classIII"})
-        except:
-            self.logger.info("未找到该分类列表 {}".format(self.option("kegg_subtax2")))
-        try:
-            if self.option("kegg_subtax1"):
-                result = self.kegg_species.find_one({'abr': self.option("kegg_subtax1"), "level": "classII"})
-        except:
-            self.logger.info("未找到该分类列表 {}".format(self.option("kegg_subtax1")))
-        if result:
-            ko_list = ["ko" + mapid for mapid in result['map_list']]
-            with open(self.work_dir + "/ko_limit.txt", 'w') as fo:
-                fo.write("\n".join(ko_list))
-            self.ko_txt = self.work_dir + "/ko_limit.txt"
-            return self.work_dir + "/ko_limit.txt"
-        else:
-            return None
+        # try:
+        #     if self.option("kegg_subtax2"):
+        #         result = self.kegg_species.find_one({'abr': self.option("kegg_subtax2"), "level": "classIII"})
+        # except:
+        #     self.logger.info("未找到该分类列表 {}".format(self.option("kegg_subtax2")))
+        # try:
+        #     if self.option("kegg_subtax1"):
+        #         result = self.kegg_species.find_one({'abr': self.option("kegg_subtax1"), "level": "classII"})
+        # except:
+        #     self.logger.info("未找到该分类列表 {}".format(self.option("kegg_subtax1")))
+        # if result:
+        #     ko_list = ["ko" + mapid for mapid in result['map_list']]
+        #     with open(self.work_dir + "/ko_limit.txt", 'w') as fo:
+        #         fo.write("\n".join(ko_list))
+        #     self.ko_txt = self.work_dir + "/ko_limit.txt"
+        #     return self.work_dir + "/ko_limit.txt"
+        # else:
+        #     return None
 
 
 

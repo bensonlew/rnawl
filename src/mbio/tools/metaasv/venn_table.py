@@ -80,8 +80,8 @@ class VennTableTool(Tool):
         self.venn_path = self.config.PACKAGE_DIR + '/graph/scripts/venn_table.py'
         self.petal_path =  self.config.PACKAGE_DIR + '/metaasv/venn_table.py'
         self.venn_path_mg = self.config.PACKAGE_DIR + '/graph/scripts/venn_table_mg.py'
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
-        self.python_path2 = '/program/Python/bin/'  # 用于小工具
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
+        self.python_path2 = '/miniconda2/bin/'  # 用于小工具
         self.software = 'program/parafly-r2013-01-21/bin/bin/ParaFly'
         self._version = 1.0
 

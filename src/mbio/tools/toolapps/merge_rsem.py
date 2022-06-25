@@ -71,7 +71,7 @@ class MergeRsemTool(Tool):
         self.fpkm = self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/Trinity-v2.9.1/fpkm/abundance_estimates_to_matrix.pl"
         self.tpm = self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/Trinity-v2.9.1/tpm/abundance_estimates_to_matrix.pl"
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
-        self.perl = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "/miniconda2/bin/perl"
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
         self.r_path = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin:$PATH"
         self._r_home = self.config.SOFTWARE_DIR + "/program/R-3.3.1/lib64/R/"

@@ -50,7 +50,7 @@ class CanuAssembleTool(Tool):
         self.read_type = self.option("read_type")
         self.sample_name = self.option("sample_name")
         self.sh_path = "../../../../../.." + self.config.PACKAGE_DIR + '/sequence/scripts/'
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin")
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + "/miniconda2/bin")
         self.logger.debug("after set per environ:")  # 计算节点和登录节点的环境变量可能不一致，导致canu依赖的perl和java环境出现问题，此处作为检查
         self.logger.info(os.environ)
         self.set_environ(JAVA_HOME=self.config.SOFTWARE_DIR + '/program/sun_jdk1.8.0')

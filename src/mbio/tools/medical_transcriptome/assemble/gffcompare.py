@@ -144,7 +144,8 @@ class GffcompareTool(Tool):
                         if known_tran2gene[tran_id] == gene_id:
                             merge_file.write(line + "\n")
                         else:
-                            self.logger.info('gffcompare gene_id异常: {}为已知转录本，不属于基因{}'.format(tran_id,gene_id))
+                            pass
+                            # self.logger.info('gffcompare gene_id异常: {}为已知转录本，不属于基因{}'.format(tran_id,gene_id))
                     else:
                         merge_file.write(line + "\n")
                 else:

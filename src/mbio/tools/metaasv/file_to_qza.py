@@ -70,7 +70,7 @@ class FileToQzaTool(Tool):
         self.taxonomy_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/taxonomy2qza.sh")
         self.miniconda3 = os.path.join(self.config.SOFTWARE_DIR, "program/miniconda3/bin")
         self.set_environ(PATH=self.miniconda3)
-        self.biom_path = "program/Python/bin/"
+        self.biom_path = "miniconda2/bin/"
 
     def get_manifest_table(self):
         """

@@ -59,7 +59,7 @@ class EggnogAnnotTool(Tool):
         self.python = 'miniconda2/bin/python'
         self.xml2table_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/xml2table.py')
         self.txml2gxml_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/txml2gxml.py')
-        self.cog_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/cog_annotation.py')
+        self.cog_annotation_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/cog_annotation.py')
         self.cog_transition_py = os.path.join(self.config.PACKAGE_DIR, 'ref_genome_db_medical/annotation/cog_transition.py')
         self.cog_summary_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/cog_summary.py')
         self.get_venn_list_py = os.path.join(self.config.PACKAGE_DIR, 'ref_rna_v2/annotation/get_venn_list.py')

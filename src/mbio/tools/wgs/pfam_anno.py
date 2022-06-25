@@ -57,7 +57,7 @@ class PfamAnnoTool(Tool):
             self.pfam_path = self.config.PACKAGE_DIR + "/wgs/pfamanno.pl"
         else:
             self.pfam_path = self.config.PACKAGE_DIR + "/wgs/Pfamanno_v2.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
 
     def script_run(self):
         """

@@ -40,7 +40,7 @@ class IpyradTagStatAgent(Agent):
 class IpyradTagStatTool(Tool):
     def __init__(self, config):
         super(IpyradTagStatTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.python_path = "miniconda2/bin/python"
         self.tag_stat = self.config.PACKAGE_DIR + "/noref_wgs/tagsinfo.pl"
         self.consensus_path = self.config.PACKAGE_DIR + "/noref_wgs/consensus_stat_ipyrad.py"

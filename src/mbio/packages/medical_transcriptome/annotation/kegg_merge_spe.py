@@ -15,9 +15,9 @@ import json
 class MergeKeggPathway(object):
     def __init__(self, kegg_version=None, kegg_species=None):
         self.kegg_version = kegg_version
-        self.mongodb = Config().get_mongo_client(mtype='ref_rna', ref=True)[Config().get_mongo_dbname('ref_rna', ref=True)]
-        self.png_coll = self.mongodb.kegg_pathway_png_v1
-        self.parafly = os.path.join(Config().SOFTWARE_DIR, 'bioinfo/denovo_rna_v2/trinityrnaseq-Trinity-v2.5.0/trinity-plugins/ParaFly-0.1.0/bin/ParaFly')
+        # self.mongodb = Config().get_mongo_client(mtype='ref_rna', ref=True)[Config().get_mongo_dbname('ref_rna', ref=True)]
+        # self.png_coll = self.mongodb.kegg_pathway_png_v1
+        self.parafly = os.path.join(Config().SOFTWARE_DIR, 'program/parafly-r2013-01-21/bin/bin/ParaFly')
         self.png_modify_cmd = list()
         self.png2pdf = list()
         self.kegg_json = os.path.join(Config().SOFTWARE_DIR, 'database/KEGG/br08901.json')

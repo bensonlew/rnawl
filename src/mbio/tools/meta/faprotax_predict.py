@@ -63,7 +63,7 @@ class FaprotaxPredictTool(Tool):
         设置软件、脚本、数据库的路径
         """
         self.set_environ(PYTHONPATH = self.config.SOFTWARE_DIR + "/bioinfo/meta/picrust-1.1.0/")
-        self.python_scripts = "/program/Python/bin/"
+        self.python_scripts = "/miniconda2/bin/"
         self.faprotax_path = self.config.SOFTWARE_DIR + "/bioinfo/meta/FAPROTAX_1.2.1/" #"/mnt/ilustre/users/sanger-dev/sg-users/zhangqingchen/metagenomic/faprotax/FAPROTAX_1.2.1"
 
     def faprotax_predict(self):

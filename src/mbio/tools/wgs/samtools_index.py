@@ -37,7 +37,7 @@ class SamtoolsIndexAgent(Agent):
 class SamtoolsIndexTool(Tool):
     def __init__(self, config):
         super(SamtoolsIndexTool, self).__init__(config)
-        # self.samtools_path = "bioinfo/align/samtools-1.7/samtools"
+        # self.samtools_path = "miniconda2/bin/samtools"
         self.samtools_path = "bioinfo/align/samtools-1.10/samtools"   # 换成新的版本samtools
         self.small_bam = True
         self.bamtosrcam = False
@@ -96,10 +96,10 @@ class SamtoolsIndexTool(Tool):
         """
         解析samtools_index_csi.o，因为[E::hts_idx_push] NO_COOR reads not in a single block at the end 0 -1报错，
         所以在samtools index -c 需要将bam转为cram格式
-        /mnt/lustre/users/sanger/app/bioinfo/align/samtools-1.7/samtools view -C -T
+        /mnt/lustre/users/sanger/app/miniconda2/bin/samtools view -C -T
         /mnt/lustre/users/sanger/app/database/dna_geneome/Ginkgo_biloba/GIGADB/HIC_V1/2019.06.07/ref.fa
         G83-1.sort.bam -o G83-1.sort.cram
-        /mnt/lustre/users/sanger/app/bioinfo/align/samtools-1.7/samtools index -c  G83-1.sort.cram
+        /mnt/lustre/users/sanger/app/miniconda2/bin/samtools index -c  G83-1.sort.cram
         :return:
         """
         with open(self.work_dir + "/samtools_index_csi.o", "r") as r:
@@ -111,10 +111,10 @@ class SamtoolsIndexTool(Tool):
 
     def run_bam2cram(self):
         """
-        /mnt/lustre/users/sanger/app/bioinfo/align/samtools-1.7/samtools view -C -T
+        /mnt/lustre/users/sanger/app/miniconda2/bin/samtools view -C -T
         /mnt/lustre/users/sanger/app/database/dna_geneome/Ginkgo_biloba/GIGADB/HIC_V1/2019.06.07/ref.fa
         G83-1.sort.bam -o G83-1.sort.cram
-        /mnt/lustre/users/sanger/app/bioinfo/align/samtools-1.7/samtools index -c  G83-1.sort.cram
+        /mnt/lustre/users/sanger/app/miniconda2/bin/samtools index -c  G83-1.sort.cram
         注意该步骤后得到的G83.sort.bam其实不是bam文件，是转换后的cram文件，主要是为了不影响后续的分析模块进行调用，
         将cram文件命名为bam文件
         :return:

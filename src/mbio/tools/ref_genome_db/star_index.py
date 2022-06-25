@@ -38,7 +38,7 @@ class StarIndexTool(Tool):
     def __init__(self, config):
         super(StarIndexTool, self).__init__(config)
         self.star = 'bioinfo/rna/star-2.5/bin/Linux_x86_64/STAR'
-        self.star27 = 'bioinfo/ref_rna_v3/gene_fusion/miniconda3/bin/STAR'
+        self.star27 = 'miniconda2/bin/STAR'
         self.star_version = "2.5"
 
     def run(self):

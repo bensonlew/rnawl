@@ -89,11 +89,11 @@ class ExpressRsemTool(Tool):
     def __init__(self, config):
         super(ExpressRsemTool, self).__init__(config)
         self._version = '1.0.1'
-        self.perl = "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "/miniconda2/bin/perl"
         self.rsem = self.config.SOFTWARE_DIR + "/bioinfo/rna/scripts/align_and_estimate_abundance.pl"
         self.rsem_path = self.config.SOFTWARE_DIR + '/bioinfo/rna/RSEM-1.2.31/bin'
         self.bowtie_path = self.config.SOFTWARE_DIR + '/bioinfo/align/bowtie2-2.2.9/'
-        self.perl_path = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin'
+        self.perl_path = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
         self.perl_lib = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/lib'

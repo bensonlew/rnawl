@@ -112,10 +112,10 @@ class RocNewTool(Tool):
     def __init__(self, config):
         super(RocNewTool, self).__init__(config)
         self._version = '1.0.1'
-        self.biom_path = "/program/Python/bin/"
+        self.biom_path = "/miniconda2/bin/"
         self.python_path = "/miniconda2/bin/python"
-        self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
-        self.sum_taxa_path = "/program/Python/bin/"
+        self.perl_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
+        self.sum_taxa_path = "/miniconda2/bin/"
         self.script_path = "/bioinfo/taxon/scripts/"
         self.plot_lefse_path = self.config.SOFTWARE_DIR + "/bioinfo/statistical/lefse/"
         self._path = self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin:$PATH"
@@ -260,7 +260,7 @@ class RocNewTool(Tool):
             self.logger.info("plot_res_cmd运行出错")
 
     def run_level_otu(self):
-        cmd = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl ' + self.config.SOFTWARE_DIR + '/bioinfo/meta/scripts/lefse_ana.pl'
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl ' + self.config.SOFTWARE_DIR + '/bioinfo/meta/scripts/lefse_ana.pl'
         cmd += ' -o %s ' %(self.work_dir)
         self.logger.info('开始运行相关数据')
         try:
@@ -334,7 +334,7 @@ class RocNewTool(Tool):
         print "sometime"
 
     def randomforest_two_group(self):
-        cmd = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl ' + self.cmd_path_lefse_randomforest 
+        cmd = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl ' + self.cmd_path_lefse_randomforest 
         cmd += ' -i %s -o %s' % (self.option('otutable').prop['path'], self.work_dir + '/RandomForest')
         if self.option('lefse_group').is_set:
             cmd += ' -g %s -m %s' % (self.option('grouptable').prop['path'],self.option('grouptable').prop['path'])

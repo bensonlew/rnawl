@@ -42,7 +42,7 @@ class Vcf2smcTool(Tool):
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/library/gcc_7.2/gmp-6.1.0/lib')
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/library/gcc_7.2/gsl23/lib')
         self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/library/gcc_7.2/mpfr-3.1.4/lib')
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.bgzip_path = "bioinfo/dna_evolution/bgzip"
         self.tabix_path = "bioinfo/dna_evolution/tabix"
         self.parafly = "/program/parafly-r2013-01-21/src/ParaFly"

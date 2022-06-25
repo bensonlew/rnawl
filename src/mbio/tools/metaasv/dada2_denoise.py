@@ -71,7 +71,7 @@ class Dada2DenoiseTool(Tool):
         self.shell_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/dada2_denoise.sh")
         self.miniconda3 = os.path.join(self.config.SOFTWARE_DIR, "program/miniconda3/bin")
         self.shell = self.config.SOFTWARE_DIR +"/program/sh"
-        self.biom_path = "program/Python/bin/"
+        self.biom_path = "miniconda2/bin/"
         self.set_environ(PATH=self.miniconda3)
 
     def get_manifest_table(self):

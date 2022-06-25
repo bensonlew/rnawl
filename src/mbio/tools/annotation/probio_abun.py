@@ -47,8 +47,8 @@ class ProbioAbunTool(Tool):
     def __init__(self, config):
         super(ProbioAbunTool, self).__init__(config)
         self._version = "1.0"
-        #self.soft = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl' 
-        self.soft = '/program/perl/perls/perl-5.24.0/bin/perl'
+        #self.soft = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl' 
+        self.soft = '/miniconda2/bin/perl'
         self.script = self.config.PACKAGE_DIR + '/annotation/mg_annotation/probio_abu.pl'
 
     def run(self):

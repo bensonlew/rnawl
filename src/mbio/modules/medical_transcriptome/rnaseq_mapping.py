@@ -24,6 +24,7 @@ class RnaseqMappingModule(Module):
         options = [
             {"name": "ref_genome", "type": "string"},  # 参考基因组，在页面上呈现为下拉菜单中的选项
             {"name": "genome_version", "type": "string", "default": "Custom"},  # 参考基因组版本
+            {"name": "dna_index", "type": "string"},  # 参考基因组参数
             {"name": "genome_annot_version", "type": "string", "default": "Custom"},  # 参考基因组注释版本
             {"name": "mapping_method", "type": "string"},  # 比对方法，分为tophat、hisat、star
             {"name": "seq_method", "type": "string"},  # 双端测序还是单端测序
@@ -77,6 +78,7 @@ class RnaseqMappingModule(Module):
             "ref_genome": self.option("ref_genome"),
             "genome_version": self.option("genome_version"),  # 参考基因组版本
             "genome_annot_version": self.option("genome_annot_version"),  # 参考基因组注释版本
+            "dna_index": self.option("dna_index"),
             "mapping_method": self.option("mapping_method"),
             "seq_method": self.option("seq_method"),
             "assemble_method": self.option("assemble_method").lower()

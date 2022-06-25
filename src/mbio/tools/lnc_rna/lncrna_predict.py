@@ -69,16 +69,16 @@ class LncrnaPredictTool(Tool):
     def __init__(self, config):
         super(LncrnaPredictTool, self).__init__(config)
         self.python_path = "miniconda2/bin/python"
-        self.perl_path = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/perl'
         gcc_path = self.config.SOFTWARE_DIR + '/gcc/8.1.0/bin'
         gcc_lib = self.config.SOFTWARE_DIR + '/gcc/8.1.0/lib:'
         gcc_lib += self.config.SOFTWARE_DIR + '/gcc/8.1.0/lib64'
         # /bioinfo/lnc_rna/PfamScan/pfam_scan.pl
         self.pfam_scan_dir = self.config.SOFTWARE_DIR + '/bioinfo/lnc_rna/PfamScan'
-        # self.env_path = self.config.SOFTWARE_DIR + "/program/Python/bin:$PATH"
+        # self.env_path = self.config.SOFTWARE_DIR + "/miniconda2/bin:$PATH"
         # 不需要再bin后加:$PARH, 因为set_environ中自动添加了
         # 添加hmmer路径[ 目的使用hmmscan ]/bioinfo/lnc_rna/hmmer-3.2.1/bin
-        self.env_path = self.config.SOFTWARE_DIR + '/program/Python/bin'
+        self.env_path = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         self.env_path += self.config.SOFTWARE_DIR + '/bioinfo/lnc_rna/hmmer-3.2.1/bin'
         self.env_path += gcc_path
         # export PERL5LIB=/mnt/ilustre/users/isanger/app/bioinfo/lnc_rna/PfamScan:$PERL5LIB

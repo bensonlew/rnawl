@@ -27,7 +27,7 @@ with open(args.ID_list, "r") as list:
     for line in list:
         name = line.strip("\n")
         if 'GCF' in name:
-            res1 = os.popen("{}/bioinfo/ref_rna_v3/gene_fusion/miniconda3/bin/esearch -db assembly -query ".format(args.sorfware) + name + " | efetch -format docsum ").read()
+            res1 = os.popen("{}/miniconda2/bin/esearch -db assembly -query ".format(args.sorfware) + name + " | efetch -format docsum ").read()
             pr = re.findall("<FtpPath_RefSeq>(.*?)<", res1)
             pr1 = pr[0].split('/', 3)[3]
             # pr2 = "/mnt/ilustre/users/sanger-dev/.aspera/connect/bin/ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -k1 -QTr -l100m anonftp@ftp.ncbi.nlm.nih.gov:" + pr1 + " " + args.output

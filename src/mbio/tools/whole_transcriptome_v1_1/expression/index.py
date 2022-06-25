@@ -61,7 +61,7 @@ class IndexTool(Tool):
         }
         self.dir = {
             'bowtie2_path': os.path.join(self.config.SOFTWARE_DIR, 'bioinfo/rna/miniconda3/bin'),
-            'perl_path': os.path.join(self.config.SOFTWARE_DIR, 'program/perl/perls/perl-5.24.0/bin')
+            'perl_path': os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin')
         }
         self.set_environ(PATH=self.dir['perl_path'])
 

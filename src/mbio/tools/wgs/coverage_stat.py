@@ -39,7 +39,7 @@ class CoverageStatAgent(Agent):
 class CoverageStatTool(Tool):
     def __init__(self, config):
         super(CoverageStatTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.map_stat = self.config.PACKAGE_DIR + "/wgs/map_stat.pl"
 
     def run_map_stat(self):

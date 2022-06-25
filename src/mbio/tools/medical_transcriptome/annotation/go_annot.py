@@ -148,7 +148,7 @@ class GoAnnotTool(Tool):
             self.txpt_dir
         )
         '''
-        cmd = '{} {} {} {}'.format(
+        cmd = '{} {} {} {} {}'.format(
             self.python,
             self.go_annotation_py,
             self.id2terms_txpt_tsv,
@@ -174,7 +174,7 @@ class GoAnnotTool(Tool):
             self.gene_dir
         )
         '''
-        cmd = '{} {} {} {}'.format(
+        cmd = '{} {} {} {} {}'.format(
             self.python,
             self.go_annotation_py,
             self.id2terms_gene_tsv,

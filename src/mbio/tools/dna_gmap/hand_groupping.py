@@ -39,13 +39,13 @@ class HandGrouppingAgent(Agent):
 class HandGrouppingTool(Tool):
     def __init__(self, config):
         super(HandGrouppingTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.linkage_by_user = self.config.PACKAGE_DIR + "/dna_gmap/linkage_by_user.pl"
         self.tree_nodes_file = ''
 
     def run_linkage_by_user(self):
         """
-        /mnt/ilustre/users/sanger-dev/app/program/perl/perls/perl-5.24.0/bin/perl
+        /mnt/ilustre/users/sanger-dev/app/miniconda2/bin/perl
         ~/biocluster/src/mbio/packages/dna_gmap/linkage_by_user.pl -i Total.gTree.delFragment.mergeNode.hash
         -s test_node -o Total.lg
         """

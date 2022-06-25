@@ -72,7 +72,7 @@ class RpkmSaturationTool(Tool):
         )
         self.program = {
             'python': 'miniconda2/bin/python',
-            'perl': 'program/perl/perls/perl-5.24.0/bin/perl'
+            'perl': 'miniconda2/bin/perl'
         }
         self.script = {
             'RPKM_saturation': os.path.join(self.config.SOFTWARE_DIR,

@@ -59,8 +59,8 @@ class SangerIdentityTool(Tool):
         self.perl_script = self.config.PACKAGE_DIR + "/tool_lab/bac_identity/gi_tax.pl"
         self.set_environ(
             LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/library/glibc-2.14/lib/')
-        self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
-        self.perl5path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
+        self.perl5path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.set_environ(PERL5LIB=self.perl5path)
         self.script = self.config.PACKAGE_DIR + '/tool_lab/sanger_identity.r'
         self.assemble_sh = self.config.PACKAGE_DIR + '/tool_lab/assemble.sh'

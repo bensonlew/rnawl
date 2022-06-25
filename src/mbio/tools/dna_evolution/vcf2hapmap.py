@@ -50,7 +50,7 @@ class Vcf2hapmapAgent(Agent):
 class Vcf2hapmapTool(Tool):
     def __init__(self, config):
         super(Vcf2hapmapTool, self).__init__(config)
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
         self.hapmap_path = self.config.PACKAGE_DIR + "/dna_evolution/vcf2hapmap.pl"
 
     def Vcf2hapmap(self):

@@ -54,7 +54,7 @@ class CallSnpIndelSamtoolsModule(Module):
         self.end_times = 0
         self.samtools_tools = []
         # self.samtools_path = Config().SOFTWARE_DIR + "/bioinfo/align/samtools-1.6/samtools-1.6/samtools"
-        self.samtools_path = Config().SOFTWARE_DIR + "/bioinfo/align/samtools-1.7/samtools"
+        self.samtools_path = Config().SOFTWARE_DIR + "/miniconda2/bin/samtools"
         # self.samtools_path = Config().SOFTWARE_DIR + "/miniconda2/bin/"
         self.split = self.add_tool('medical_transcriptome.snp.split_ref_fasta')
 

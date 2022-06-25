@@ -2,7 +2,7 @@
 # __author__ = 'qiuping'
 
 from Bio.KEGG.KGML import KGML_parser
-from Bio.Graphics.KGML_vis_t import KGMLCanvas
+# from Bio.Graphics.KGML_vis_t import KGMLCanvas
 from biocluster.config import Config
 import gridfs
 import re
@@ -14,7 +14,7 @@ import subprocess
 class KeggRegulate(object):
     def __init__(self):
         project_type = "ref_rna"
-        self.mong_db = Config().get_mongo_client(mtype=project_type, ref=True)[Config().get_mongo_dbname(project_type, ref=True)]
+        # self.mong_db = Config().get_mongo_client(mtype=project_type, ref=True)[Config().get_mongo_dbname(project_type, ref=True)]
 
     def get_kgml_and_png(self, pathway_id, kgml_path, png_path):
         collection = self.mong_db['kegg_pathway_png']

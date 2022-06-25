@@ -15,6 +15,8 @@ import json
 import math
 import numpy as np
 from collections import OrderedDict
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 def choose_js_large(files):
@@ -75,182 +77,182 @@ class ChartReport(object):
         self.report_config = {
             "1001": {
                 "categroy_name": "表达量差异统计",
-                "img": "../DiffexpBatch/all.diffexp_summary.bar2.pdf",
-                "name": "表达量统计图-堆积图",
-                "main_coll": "sg_diff"
+                "img": u"../DiffexpBatch/all.diffexp_summary.bar2.pdf",
+                "name": u"表达量统计图-堆积图",
+                "main_coll": u"sg_diff"
             },
             "1002": {
-                "categroy_name": "表达量差异统计",
-                "img": "../DiffexpBatch/*.diffexp.volcano.pdf",
-                "name": "表达量差异火山图",
-                "main_coll": "sg_diff"
+                "categroy_name": u"表达量差异统计",
+                "img": u"../DiffexpBatch/*.diffexp.volcano.pdf",
+                "name": u"表达量差异火山图",
+                "main_coll": u"sg_diff"
             },
             "1003": {
-                "categroy_name": "表达量差异统计",
-                "img": "../DiffexpBatch/*.diffexp_ma.scatter.pdf",
-                "name": "表达量差异MA图",
-                "main_coll": "sg_diff"
+                "categroy_name": u"表达量差异统计",
+                "img": u"../DiffexpBatch/*.diffexp_ma.scatter.pdf",
+                "name": u"表达量差异MA图",
+                "main_coll": u"sg_diff"
             },
             "1004": {
-                "categroy_name": "差异基因Venn分析",
-                "img": "diff_genesets.analysis.venn.pdf",
-                "name": "Venn图",
-                "main_coll": "sg_diff_geneset_venn"
+                "categroy_name": u"差异基因Venn分析",
+                "img": u"diff_genesets.analysis.venn.pdf",
+                "name": u"Venn图",
+                "main_coll": u"sg_diff_geneset_venn"
             },
             "1005": {
-                "categroy_name": "差异基因聚类分析",
-                "img": "geneset.cluster.heat_corr.pdf",
-                "name": "聚类热图",
-                "main_coll": "sg_diff_geneset_cluster"
+                "categroy_name": u"差异基因聚类分析",
+                "img": u"geneset.cluster.heat_corr.pdf",
+                "name": u"聚类热图",
+                "main_coll": u"sg_diff_geneset_cluster"
             },
             "1007": {
-                "categroy_name": "差异基因功能注释分析",
-                "img": "*.go_annot.gene_set.column.pdf",
-                "name": "GO分类统计图-柱状图",
-                "main_coll": "sg_diff_geneset_go_class",
-                "main_dict": {"gene_set": "get_geneset_by_file_name"}
+                "categroy_name": u"差异基因功能注释分析",
+                "img": u"*.go_annot.gene_set.column.pdf",
+                "name": u"GO分类统计图-柱状图",
+                "main_coll": u"sg_diff_geneset_go_class",
+                "main_dict": {"gene_set": u"get_geneset_by_file_name"}
             },
             "1008": {
-                "categroy_name": "差异基因功能注释分析",
-                "img": "*.kegg_annot.gene_set.column.pdf",
-                "name": "KEGG分类统计图-柱状图",
-                "main_coll": "sg_diff_geneset_kegg_class",
-                "main_dict": {"gene_set": "get_geneset_by_file_name"}
+                "categroy_name": u"差异基因功能注释分析",
+                "img": u"*.kegg_annot.gene_set.column.pdf",
+                "name": u"KEGG分类统计图-柱状图",
+                "main_coll": u"sg_diff_geneset_kegg_class",
+                "main_dict": {"gene_set": u"get_geneset_by_file_name"}
             },
             "1009": {
-                "categroy_name": "差异基因功能注释分析",
-                "img": "*.reactome_annot.gene_set.column.pdf",
-                "name": "Reactome分类统计图-柱状图",
-                "main_coll": "sg_diff_geneset_reactome_class",
-                "main_dict": {"gene_set": "get_geneset_by_file_name"}
+                "categroy_name": u"差异基因功能注释分析",
+                "img": u"*.reactome_annot.gene_set.column.pdf",
+                "name": u"Reactome分类统计图-柱状图",
+                "main_coll": u"sg_diff_geneset_reactome_class",
+                "main_dict": {"gene_set": u"get_geneset_by_file_name"}
             },
             "1010": {
-                "categroy_name": "差异基因功能注释分析",
+                "categroy_name": u"差异基因功能注释分析",
                 "img": "*.do_annot.gene_set.column.pdf",
-                "name": "DO分类统计图-柱状图",
+                "name": u"DO分类统计图-柱状图",
                 "main_coll": "sg_diff_geneset_do_class",
                 "main_dict": {"gene_set": "get_geneset_by_file_name"}
             },
             "1011": {
-                "categroy_name": "差异基因功能富集分析",
+                "categroy_name": u"差异基因功能富集分析",
                 "img": "*.go_enrich.gene_set.bar_line.pdf",
-                "name": "GO富集分析结果图-柱形图（带折线）",
+                "name": u"GO富集分析结果图-柱形图（带折线）",
                 "main_coll": "sg_diff_geneset_go_enrich",
                 "main_dict": {"gene_set": "get_geneset_by_file_name"}
             },
             "1012": {
-                "categroy_name": "差异基因功能富集分析",
+                "categroy_name": u"差异基因功能富集分析",
                 "img": "*.kegg_enrich.gene_set.buble.pdf",
-                "name": "KEGG富集分析结果图-气泡图",
+                "name": u"KEGG富集分析结果图-气泡图",
                 "choose_func": "choose_js_large",
                 "main_coll": "sg_diff_geneset_kegg_enrich",
                 "main_dict": {"gene_set": "get_geneset_by_file_name"}
             },
             "1013": {
-                "categroy_name": "差异基因功能富集分析",
+                "categroy_name": u"差异基因功能富集分析",
                 "img": "*.reactome_enrich.gene_set.buble.pdf",
-                "name": "Reactome富集分析结果图-气泡图",
+                "name": u"Reactome富集分析结果图-气泡图",
                 "main_coll": "sg_diff_geneset_reactome_enrich",
                 "main_dict": {"gene_set": "get_geneset_by_file_name"}
             },
             "1014": {
-                "categroy_name": "差异基因功能富集分析",
+                "categroy_name": u"差异基因功能富集分析",
                 "img": "*.do_enrich.gene_set.bar_line.pdf",
-                "name": "DO富集分析结果图-柱形图（带折线）",
+                "name": u"DO富集分析结果图-柱形图（带折线）",
                 "main_coll": "sg_diff_geneset_do_enrich",
                 "main_dict": {"gene_set": "get_geneset_by_file_name"}
 
             },
             "1015": {
-                "categroy_name": "样本关系分析",
+                "categroy_name": u"样本关系分析",
                 "img": "all.exp.venn.pdf",
-                "name": "样本间 Venn图",
+                "name": u"样本间 Venn图",
                 "main_coll": "sg_geneset_venn"
             },
             "1016": {
-                "categroy_name": "样本关系分析",
+                "categroy_name": u"样本关系分析",
                 "img": "all.exp.heat_corr.pdf",
-                "name": "样本间相关性热图",
+                "name": u"样本间相关性热图",
                 "main_coll": "sg_exp_corr"
             },
             "1017": {
-                "categroy_name": "样本关系分析",
+                "categroy_name": u"样本关系分析",
                 "img": "all.exp_relation_pca.scatter.pdf",
-                "name": "PCA图",
+                "name": u"PCA图",
                 "main_coll": "sg_exp_pca"
             },
             "1018": {
-                "categroy_name": "差异可变剪切分析",
+                "categroy_name": u"差异可变剪切分析",
                 "img": "*.diff_splice_stat.pie.pdf",
-                "name": "差异可变剪切事件统计图",
+                "name": u"差异可变剪切事件统计图",
                 "main_coll": "sg_splicing_rmats"
             },
             "101802": {
-                "categroy_name": "差异可变剪切分析",
+                "categroy_name": u"差异可变剪切分析",
                 "img": "*.diff_splice_stat.column.pdf",
-                "name": "差异可变剪切模式变化统计图",
+                "name": u"差异可变剪切模式变化统计图",
                 "main_coll": "sg_splicing_rmats"
             },
             "1019": {
-                "categroy_name": "基因融合分析",
+                "categroy_name": u"基因融合分析",
                 "img": "*gene_fusion.pdf",
-                "name": "基因融合circos图",
+                "name": u"基因融合circos图",
                 "main_coll": "sg_gene_fusion"
 
             },
             "1020": {
-                "categroy_name": "SNP/InDel分析",
+                "categroy_name": u"SNP/InDel分析",
                 "img": "*.snp.pos_stat.pie.pdf",
-                "name": "不同区域分布饼图",
+                "name": u"不同区域分布饼图",
                 "main_coll": "sg_snp",
                 "main_dict": {"sample": "get_sample_by_file_name"}
             },
             "102002": {
-                "categroy_name": "SNP/InDel分析",
+                "categroy_name": u"SNP/InDel分析",
                 "img": "*.snp.type_stat.column.pdf",
-                "name": "SNP类型统计柱状图",
+                "name": u"SNP类型统计柱状图",
                 "main_coll": "sg_snp",
                 "main_dict": {"sample": "get_sample_by_file_name"}
             },
             "1021": {
-                "categroy_name": "测序数据质控-质控数据统计",
+                "categroy_name": u"测序数据质控-质控数据统计",
                 "img": "*.clean_qc_error.line.pdf",
-                "name": "碱基错误率分布图",
+                "name": u"碱基错误率分布图",
                 "main_coll": "sg_qc",
                 "main_dict": {"sample": "get_sample_by_file_name"}
             },
             "1022": {
-                "categroy_name": "测序数据质控-质控数据统计",
+                "categroy_name": u"测序数据质控-质控数据统计",
                 "img": "*.raw_qc_base.line.pdf",
-                "name": "碱基含量分布图",
+                "name": u"碱基含量分布图",
                 "main_coll": "sg_qc",
                 "main_dict": {"sample": "get_sample_by_file_name"}
             },
             "1023": {
-                "categroy_name": "测序数据质控-质控数据统计",
+                "categroy_name": u"测序数据质控-质控数据统计",
                 "img": "*.raw_qc_qual.box.pdf",
-                "name": "盒形图",
+                "name": u"盒形图",
                 "main_coll": "sg_qc",
                 "main_dict": {"sample": "get_sample_by_file_name"}
             },
             "1024": {
-                "categroy_name": "序列比对分析-转录组质量评估",
+                "categroy_name": u"序列比对分析-转录组质量评估",
                 "img": "*.align_coverage.line.pdf",
-                "name": "测序覆盖度分布图",
+                "name": u"测序覆盖度分布图",
                 "main_coll": "sg_assessment_coverage",
                 "main_dict": {"sample": "get_sample_by_file_name"}
             },
             "1025": {
-                "categroy_name": "序列比对分析-转录组质量评估",
+                "categroy_name": u"序列比对分析-转录组质量评估",
                 "img": "*.align_pos_dist.pie.pdf",
-                "name": "不同区域Reads分布统计饼图",
+                "name": u"不同区域Reads分布统计饼图",
                 "main_coll": "sg_assessment_distribution",
                 "main_dict": {"sample": "get_sample_by_file_name"}
             },
             "1026": {
-                "categroy_name": "表达量分布",
+                "categroy_name": u"表达量分布",
                 "img": "G_samples.exp_distribution.box.pdf",
-                "name": "表达量分布-盒型图",
+                "name": u"表达量分布-盒型图",
                 "main_coll": "sg_exp_graph"
             }
         }
@@ -262,7 +264,7 @@ class ChartReport(object):
 
     def write_config(self, config):
         with open(config, 'w') as fw:
-            fw.write(json.dumps(self.report_config_out, indent=4, ensure_ascii=False).encode('utf8').decode())
+            fw.write(json.dumps(self.report_config_out, indent=4, ensure_ascii=False))
 
     def filter_chart(self):
         '''

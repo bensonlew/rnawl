@@ -51,7 +51,7 @@ class EggnogAnnoTool(Tool):
     def __init__(self, config):
         super(EggnogAnnoTool, self).__init__(config)
         self.eggnog_path = self.config.PACKAGE_DIR + "/wgs/EGGanno.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = 'miniconda2/bin/perl '
 
     def EggnogAnno(self):
         """

@@ -35,8 +35,8 @@ class BreakdancerAgent(Agent):
 class BreakdancerTool(Tool):
     def __init__(self, config):
         super(BreakdancerTool, self).__init__(config)
-        self.set_environ(PATH=self.config.SOFTWARE_DIR + "/bioinfo/align/samtools-1.7")
-        self.perl_path = self.config.SOFTWARE_DIR + "/program/perl/perls/perl-5.24.0/bin/perl"
+        self.set_environ(PATH=self.config.SOFTWARE_DIR + "/miniconda2/bin")
+        self.perl_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/perl"
         self.bam2cfg_sh = "bioinfo/WGS/breakdancer_bam2cfg.sh"
         self.bam2cfg_path = self.config.SOFTWARE_DIR + "/bioinfo/gene-structure/breakdancer-1.3.6/perl/bam2cfg.pl"
         self.breakdancer_max_sh = "bioinfo/WGS/breakdancer_max.sh"

@@ -68,8 +68,8 @@ class ReadDuplicationTool(Tool):
 
     def __init__(self, config):
         super(ReadDuplicationTool, self).__init__(config)
-        self.python_path = "program/Python/bin/"
-        self.python_full_path = self.config.SOFTWARE_DIR + "/program/Python/bin/"
+        self.python_path = "miniconda2/bin/"
+        self.python_full_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
 
     def duplication(self, bam, out_pre):
         bam_name = bam.split("/")[-1]

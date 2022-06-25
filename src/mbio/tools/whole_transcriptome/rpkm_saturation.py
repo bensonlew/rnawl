@@ -76,9 +76,9 @@ class RpkmSaturationTool(Tool):
 
     def __init__(self, config):
         super(RpkmSaturationTool, self).__init__(config)
-        self.python_path = "program/Python/bin/"
-        self.python_full_path = self.config.SOFTWARE_DIR + "/program/Python/bin/"
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.python_path = "miniconda2/bin/"
+        self.python_full_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
+        self.perl_path = "miniconda2/bin/perl"
         self.plot_script = self.config.SOFTWARE_DIR + "/bioinfo/plot/scripts/saturation2plot.pl"
         self.set_environ(PATH=self.config.SOFTWARE_DIR + "/program/R-3.3.1/bin")
         self.plot_cmd = []

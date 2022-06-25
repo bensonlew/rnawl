@@ -71,7 +71,7 @@ class GetContigTool(Tool):
     def __init__(self, config):
         super(GetContigTool, self).__init__(config)
         # self.set_environ(LD_LIBRARY_PATH=self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64')
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         self.logger.info(self.perl_path)
         # self.get_scaftig_path = self.config.SOFTWARE_DIR + '/bioinfo/metaGenomic/scripts/get_scaftig.pl '
         self.get_scaftig_path = self.config.PACKAGE_DIR + '/assemble/scripts/get_scaftig.pl '

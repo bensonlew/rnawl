@@ -86,7 +86,7 @@ class NewTranscriptsTool(Tool):
     def __init__(self, config):
         super(NewTranscriptsTool, self).__init__(config)
         self._version = "v1.0.1"
-        self.perl_path = '/program/perl/perls/perl-5.24.0/bin/perl '
+        self.perl_path = '/miniconda2/bin/perl '
         self.Python_path = 'miniconda2/bin/python '
         self.newtranscripts_gtf_path = self.config.SOFTWARE_DIR + '/bioinfo/rna/scripts/assembly_stat.py'
         self.change_id_path = self.config.SOFTWARE_DIR + '/bioinfo/rna/scripts/gtfmerge.pl'

@@ -70,7 +70,7 @@ class FileToQzaqzvTool(Tool):
         self.taxonomy_path = os.path.join(self.config.PACKAGE_DIR, "metaasv/biom2qzaqzv.sh")
         self.miniconda3 = os.path.join(self.config.SOFTWARE_DIR, "program/miniconda3/bin")
         self.set_environ(PATH=self.miniconda3)
-        self.biom_path = "program/Python/bin/"
+        self.biom_path = "miniconda2/bin/"
 
     def file_to_biom(self):
         """

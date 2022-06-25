@@ -92,7 +92,7 @@ class IdModifyTool(Tool):
         # self.fusion_result_out = ""
         # self.fusion_result_detail_out = self.option("fusion_result_detail").prop["path"]
 
-        self.star_fusion_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v3/gene_fusion/miniconda3/bin/"
+        self.star_fusion_path = self.config.SOFTWARE_DIR + "/miniconda2/bin/"
         self.set_environ(PATH=self.star_fusion_path)
         self.make_lib_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v3/gene_fusion/miniconda3/lib/STAR-Fusion/ctat-genome-lib-builder/"
         self.fusion_inspect_path = self.config.SOFTWARE_DIR + "/bioinfo/ref_rna_v3/gene_fusion/miniconda3/lib/STAR-Fusion/FusionInspector/"

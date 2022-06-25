@@ -60,7 +60,7 @@ class CoverageTool(Tool):
         super(CoverageTool, self).__init__(config)
         self.prefix = os.path.join(self.work_dir, os.path.basename(self.option('bam').path))[:-4]
         self.program = {
-            'samtools': 'program/Python/bin/samtools',
+            'samtools': 'miniconda2/bin/samtools',
             'python': 'miniconda2/bin/python',
             'bash': 'bash'
         }

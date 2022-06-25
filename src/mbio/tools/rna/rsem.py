@@ -84,7 +84,7 @@ class RsemTool(Tool):
         #self.star_build_path = self.config.SOFTWARE_DIR + "/bioinfo/rna/star-2.5/bin/Linux_x86_64/"
         self.gcc = self.config.SOFTWARE_DIR + '/gcc/5.1.0/bin'
         self.gcc_lib = self.config.SOFTWARE_DIR + '/gcc/5.1.0/lib64'
-        self.perl = self.config.SOFTWARE_DIR + '/program/perl/perls/perl-5.24.0/bin'
+        self.perl = self.config.SOFTWARE_DIR + '/miniconda2/bin'
         self.set_environ(PATH=self.gcc, LD_LIBRARY_PATH=self.gcc_lib)
         self.set_environ(PATH=self.Rsem1_path)
         self.set_environ(PATH=self.bowtie_path)

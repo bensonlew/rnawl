@@ -72,7 +72,7 @@ class ExpressvennTool(Tool):
         self.R_path = '/program/R-3.3.1/bin/'
         self.R_path_total = self.config.SOFTWARE_DIR + self.R_path + "R"
         self.venn_path = self.config.SOFTWARE_DIR + '/bioinfo/rna/scripts/'
-        self.python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        self.python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self._version = 1.0
 
     def _create_venn_table(self):

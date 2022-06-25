@@ -61,7 +61,7 @@ class CpatPredictorTool(Tool):
         self.python_path = "miniconda2/bin/python"
         env_path = ':'.join([
             os.path.join(self.config.SOFTWARE_DIR, 'program/R-3.3.3/bin/'),
-            os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin')
+            os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin')
         ])
         self.set_environ(PATH=env_path)
         self.cpat_out_file = os.path.join(self.output_dir, 'cpat_output.txt')
@@ -122,7 +122,7 @@ class CpatPredictorTool(Tool):
         :return:
         """
         # '{soft} -g {fa_file} -d {logit_model} -x {hexamer_dat} -o {outfile}'
-        cnci_tool = os.path.join(self.config.SOFTWARE_DIR, 'program/Python/bin/cpat.py')
+        cnci_tool = os.path.join(self.config.SOFTWARE_DIR, 'miniconda2/bin/cpat.py')
         cpat_out_file = os.path.join(self.work_dir, 'temp_cpat_output.txt')
 
         cmd_fac_obj = CommandFactory(self.python_path + ' ' + cnci_tool)

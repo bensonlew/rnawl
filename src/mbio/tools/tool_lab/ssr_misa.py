@@ -42,7 +42,7 @@ class SsrMisaAgent(Agent):
 class SsrMisaTool(Tool):
     def __init__(self, config):
         super(SsrMisaTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.misa_path = self.config.PACKAGE_DIR + "/wgs/misa.pl"
         self.misa_path2 = self.config.PACKAGE_DIR + "/wgs_v2/misa.pl"
         self.ssr_type_stat = self.config.PACKAGE_DIR + "/wgs/SSR.type.stat.pl"
@@ -144,7 +144,7 @@ class SsrMisaTool(Tool):
 # class SsrMisaTool(Tool):
 #     def __init__(self, config):
 #         super(SsrMisaTool, self).__init__(config)
-#         self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+#         self.perl_path = "miniconda2/bin/perl"
 #         self.misa_path = self.config.PACKAGE_DIR + "/wgs/misa.pl"
 #         self.ssr_type_stat = self.config.PACKAGE_DIR + "/wgs/SSR.type.stat.pl"
 #         self.misa_ini = self.config.SOFTWARE_DIR + "/bioinfo/WGS/misa.ini"

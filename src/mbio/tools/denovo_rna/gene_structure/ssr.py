@@ -78,8 +78,8 @@ class SsrTool(Tool):
         self.primer3_path = os.path.join(self.config.SOFTWARE_DIR, "bioinfo/gene-structure/primer3-2.3.7/")
         self.script_path = self.config.SOFTWARE_DIR + "/bioinfo/gene-structure/scripts/"
         self.fasta_name = os.path.basename(self.option("fasta").prop["path"])
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/"
-        self.python_path = "program/Python/bin/"
+        self.perl_path = "miniconda2/bin/"
+        self.python_path = "miniconda2/bin/"
 
     def misa(self):
         # self.logger.info(self.work_dir + "/" + self.fasta_name)

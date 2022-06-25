@@ -62,9 +62,9 @@ class GeneBiotypeAgent(Agent):
 class GeneBiotypeTool(Tool):
     def __init__(self, config):
         super(GeneBiotypeTool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
-        self.python = 'program/Python/bin/'
+        self.python = 'miniconda2/bin/'
         self.gff_biotype = self.config.PACKAGE_DIR + "/tool_lab/gff_biotype.py"
         self.gtf_biotype = self.config.PACKAGE_DIR + "/tool_lab/gtf_biotype.py"
 

@@ -88,7 +88,7 @@ class KnownMirnaTool(Tool):
         super(KnownMirnaTool, self).__init__(config)
         self.quantifier = self.config.SOFTWARE_DIR + "/bioinfo/miRNA/mirdeep2/"
         self.bowtie = self.config.SOFTWARE_DIR + '/bioinfo/align/bowtie-1.1.2/'
-        self.python = 'program/Python/bin/'
+        self.python = 'miniconda2/bin/'
         self.perl = '/program/perl-5.24.0/bin/'
         self.rnafold = self.config.SOFTWARE_DIR + '/bioinfo/miRNA/'
         self.parse_arf = self.config.PACKAGE_DIR + "/small_rna/parse_arf.pl"

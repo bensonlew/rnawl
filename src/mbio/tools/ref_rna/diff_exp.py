@@ -359,7 +359,7 @@ class DiffExpTool(Tool):
                 #print m.values()
                 #print values.values().count('{\'count\': \'no\'}')
                 f1.write(keys+"\t"+"\t".join(count)+"\n")
-        #cmd = '{}/program/perl/perls/perl-5.24.0/bin/perl {}/bioinfo/meta/scripts/plot-bubble.pl '.format(self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
+        #cmd = '{}/miniconda2/bin/perl {}/bioinfo/meta/scripts/plot-bubble.pl '.format(self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         #with open(self.work_dir + '/table_merge.xls', 'r+') as f2:
             #f2.readline()
             #for f21 in f2:
@@ -376,7 +376,7 @@ class DiffExpTool(Tool):
                         #f3.write("Gene_ID" + "\t"+"\t".join(sample_name) + "\n")
 
     def R_merge(self):
-        cmd = '{}/program/perl/perls/perl-5.24.0/bin/perl {}/bioinfo/statistical/scripts/merge.pl '.format(self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
+        cmd = '{}/miniconda2/bin/perl {}/bioinfo/statistical/scripts/merge.pl '.format(self.config.SOFTWARE_DIR, self.config.SOFTWARE_DIR)
         cmd += '-o %s ' %(self.work_dir)
         self.logger.info('运行程序')
         self.logger.info(cmd)

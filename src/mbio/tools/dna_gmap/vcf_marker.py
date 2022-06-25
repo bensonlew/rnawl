@@ -62,7 +62,7 @@ class VcfMarkerTool(Tool):
         super(VcfMarkerTool, self).__init__(config)
         # self.vcf2marker_path = self.config.PACKAGE_DIR + "/dna_gmap/vcf2markercui.pl"
         self.vcf2marker_path = self.config.PACKAGE_DIR + "/dna_gmap/vcf2marker.pl"
-        self.perl_path = 'program/perl/perls/perl-5.24.0/bin/perl'
+        self.perl_path = 'miniconda2/bin/perl'
 
     def vcfmarker(self):
         """

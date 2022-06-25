@@ -56,7 +56,7 @@ class SalmonAgent(Agent):
 class SalmonTool(Tool):
     def __init__(self, config):
         super(SalmonTool, self).__init__(config)
-        python_path = self.config.SOFTWARE_DIR + '/program/Python/bin/'
+        python_path = self.config.SOFTWARE_DIR + '/miniconda2/bin/'
         self.set_environ(PATH=python_path)
         self.program = {
             'salmon': 'bioinfo/rna/salmon-0.14.1/bin/salmon'

@@ -42,7 +42,7 @@ class ReBlastAgent(Agent):
 class ReBlastTool(Tool):
     def __init__(self, config):
         super(ReBlastTool, self).__init__(config)
-        self.perl_path = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl_path = "miniconda2/bin/perl"
         self.re_blast = self.config.PACKAGE_DIR + "/wgs/reblast.pl"
 
     def run_re_blast(self):

@@ -59,10 +59,10 @@ class HumannAgent(Agent):
 class HumannTool(Tool):
     def __init__(self, config):
         super(HumannTool, self).__init__(config)
-        self.path = self.config.SOFTWARE_DIR + "/bioinfo/meta/usearch-v7.0:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/RAPSearch2.24_64bits/bin:" + self.config.SOFTWARE_DIR + "/program/Python/bin:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/metaphlan2:" + self.config.SOFTWARE_DIR + "/bioinfo/align/diamond-0.8.35:"
+        self.path = self.config.SOFTWARE_DIR + "/bioinfo/meta/usearch-v7.0:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/RAPSearch2.24_64bits/bin:" + self.config.SOFTWARE_DIR + "/miniconda2/bin:" + self.config.SOFTWARE_DIR + "/bioinfo/metaGenomic/metaphlan2:" + self.config.SOFTWARE_DIR + "/bioinfo/align/diamond-0.8.35:"
         self.bowtie2 =self.config.SOFTWARE_DIR + "/bioinfo/align/bowtie2-2.3.4.3-linux-x86_64"
         self.set_environ(PATH=self.path)
-        self.humann = "/program/Python/bin/humann2"
+        self.humann = "/miniconda2/bin/humann2"
         self.out =self.work_dir + "/result"
         self.mergefq = "/bioinfo/metaGenomic/sortmerna-2.1b/scripts/merge-paired-reads.sh"
         self.reads = self.work_dir + "/merge.fq"

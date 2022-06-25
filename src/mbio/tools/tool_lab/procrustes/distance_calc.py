@@ -67,7 +67,7 @@ class DistanceCalcTool(Tool):
             'python': "miniconda2/bin/python",
         }
         self.script = {
-            'beta_div':  os.path.join(self.config.SOFTWARE_DIR, "program/Python/bin/beta_diversity.py")
+            'beta_div':  os.path.join(self.config.SOFTWARE_DIR, "miniconda2/bin/beta_diversity.py")
         }
 
     def run_beta_diversity(self):

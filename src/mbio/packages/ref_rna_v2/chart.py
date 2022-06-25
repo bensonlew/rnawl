@@ -20,6 +20,9 @@ import lxml.html
 from collections import OrderedDict
 from collections import defaultdict
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 class Chart(object):
     def __init__(self):
         """

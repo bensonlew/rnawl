@@ -62,7 +62,7 @@ class Bam2vcfTool(Tool):
         self._version = "v1.0"
         self.software_dir = self.config.SOFTWARE_DIR
         self.samtools = os.path.join(
-            self.software_dir, 'program/Python/bin/samtools')
+            self.software_dir, 'miniconda2/bin/samtools')
         self.bcftools = os.path.join(
             self.software_dir, 'bioinfo/align/bcftools-1.6/bcftools')
         self.file = {

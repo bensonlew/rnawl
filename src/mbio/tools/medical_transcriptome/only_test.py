@@ -73,7 +73,7 @@ class OnlyTestTool(Tool):
         super(OnlyTestTool, self).__init__(config)
         self.program = {
             'hisat2': 'bioinfo/align/hisat2/hisat2-2.1.0/hisat2',
-            'samtools': 'bioinfo/align/samtools-1.8/samtools'
+            'samtools': 'miniconda2/bin/samtools'
         }
         self.hisat_path = 'bioinfo/align/hisat2/hisat2-2.1.0/'
         self.ht2_idx = str()

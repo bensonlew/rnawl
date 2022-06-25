@@ -78,7 +78,7 @@ class BedToBiomartTool(Tool):
         self._version = "v1.0.1"
         self.bed_to_biomart = self.config.PACKAGE_DIR + "/ref_genome_db/bed2biomart2.pl"
         self.bed_to_biomart3 = self.config.PACKAGE_DIR + "/ref_genome_db/bed2biomart3.pl"
-        self.perl = "program/perl/perls/perl-5.24.0/bin/perl"
+        self.perl = "miniconda2/bin/perl"
 
 
     def run(self):

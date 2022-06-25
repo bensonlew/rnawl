@@ -69,9 +69,9 @@ class MetaSourcetrackerTool(Tool):
 	def __init__(self, config):
 		super(MetaSourcetrackerTool, self).__init__(config)
 		self._version = "v1"
-		self.biom_path = 'program/Python/bin/biom'  #  /mnt/ilustre/users/sanger-dev/app/ app/program/R-3.3.1/lib64/R/bin/exec/R
+		self.biom_path = 'miniconda2/bin/biom'  #  /mnt/ilustre/users/sanger-dev/app/ app/program/R-3.3.1/lib64/R/bin/exec/R
 		self.r_path = 'program/R-3.3.1/bin/Rscript'
-		self.filter_otus_from_otu_table_path = 'program/Python/bin/filter_otus_from_otu_table.py'
+		self.filter_otus_from_otu_table_path = 'miniconda2/bin/filter_otus_from_otu_table.py'
 		self.sourcetracker_for_qiime_path = self.config.SOFTWARE_DIR + '/bioinfo/meta/sourcetracker-1.0.0-release/sourcetracker_for_qiime.r'
 
 	def run(self):
