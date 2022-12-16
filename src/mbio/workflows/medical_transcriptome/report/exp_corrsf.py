@@ -34,6 +34,7 @@ class ExpCorrsfWorkflow(Workflow):
             {"name": "task_id", "type": "string"}
         ]
         self.add_option(options)
+        print(self._sheet.options())
         self.set_options(self._sheet.options())
         self.tool = self.add_tool("medical_transcriptome.exp_corrsf")
         self._sheet.output = self._sheet.output.replace('interaction_results', 'interaction_results/04 GeneSet/04 Exp_Network')
@@ -66,7 +67,7 @@ class ExpCorrsfWorkflow(Workflow):
 
     def run(self):
         self.tool.on("end", self.set_db)
-        self.get_run_log()
+        # self.get_run_log()
         self.run_tool()
         super(ExpCorrsfWorkflow, self).run()
 
@@ -78,10 +79,10 @@ class ExpCorrsfWorkflow(Workflow):
     def set_db(self):
         """
         保存结果表到mongo数据库中
-        """
-        exp_corrsf = self.api.api("medical_transcriptome.exp_corrsf")
-        # add result info
-        exp_corrsf.add_ExpCorrsf(self.get_workflow_output_dir(), self.tool.work_dir, main_id=self.option('corr_main_id'))
+        # """
+        # exp_corrsf = self.api.api("medical_transcriptome.exp_corrsf")
+        # # add result info
+        # exp_corrsf.add_ExpCorrsf(self.get_workflow_output_dir(), self.tool.work_dir, main_id=self.option('corr_main_id'))
         self.end()
 
     def get_workflow_output_dir(self):
@@ -93,9 +94,9 @@ class ExpCorrsfWorkflow(Workflow):
         return workflow_output
 
     def end(self):
-        if os.path.exists(os.path.join(self.tool.output_dir, os.path.basename(self.run_log))):
-            os.remove(os.path.join(self.tool.output_dir, os.path.basename(self.run_log)))
-        os.link(self.run_log, os.path.join(self.tool.output_dir, os.path.basename(self.run_log)))
+        # if os.path.exists(os.path.join(self.tool.output_dir, os.path.basename(self.run_log))):
+        #     os.remove(os.path.join(self.tool.output_dir, os.path.basename(self.run_log)))
+        # os.link(self.run_log, os.path.join(self.tool.output_dir, os.path.basename(self.run_log)))
         result_dir = self.add_upload_dir(self.tool.output_dir)
         self.inter_dirs = [
             ["04 GeneSet", "", "基因集分析结果目录",0],

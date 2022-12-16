@@ -17,6 +17,7 @@ from mbio.packages.medical_transcriptome.chart.chart_report import ChartReport
 from mbio.packages.medical_transcriptome.chart.data_report import DataReport
 import json
 import sys
+import shutil
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -84,11 +85,12 @@ class ChartTool(Tool):
         :return:
         """ 
         super(ChartTool, self).run()
-        self.chart(self.option("file_json").prop['path'])
-        self.parafly_pdf()
-        if self.option('chart_report'):
-            self.chart_report()
-        self.data_report()
+        # self.chart(self.option("file_json").prop['path'])
+        # self.parafly_pdf()
+        # if self.option('chart_report'):
+        #     self.chart_report()
+        # self.data_report()
+        self.logger.info("report finished")
         self.end()
 
     def chart(self, json_file):
@@ -131,7 +133,18 @@ class ChartTool(Tool):
         report = DataReport()
         report.run(self.option("file_json").prop['path'], self.work_dir + "/report_config.json")
 
-
+    def end(self):
+        report_path = "~/dist"
+        if os.path.exists(self.output_dir + "/report"):
+            shutil.rmtree(self.output_dir + "/report")
+        shutil.copytree(self.config.SOFTWARE_DIR + "/dist", self.output_dir + "/report")
+        if os.path.exists(self.output_dir + "/report/static/png"):
+            shutil.rmtree(self.output_dir + "/report/static/png")
+        shutil.copytree(self.work_dir + "/png", self.output_dir + "/report/static/png")
+        if os.path.exists(self.output_dir + "/report/static/report.js"):
+            os.remove(self.output_dir + "/report/static/report.js")
+            os.link(self.work_dir + "/report.js", self.output_dir + "/report/static/report.js")
+        super(ChartTool, self).end()
 
 class TestFunction(unittest.TestCase):
     def test(self):

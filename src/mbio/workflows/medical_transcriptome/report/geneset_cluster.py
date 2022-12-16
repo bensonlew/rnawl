@@ -70,7 +70,7 @@ class GenesetClusterWorkflow(Workflow):
 
     def run(self):
         self.tool.on("end", self.set_db)
-        self.get_run_log()
+        # self.get_run_log()
         self.run_tool()
         super(GenesetClusterWorkflow, self).run()
 
@@ -83,9 +83,9 @@ class GenesetClusterWorkflow(Workflow):
         """
         保存结果表到mongo数据库中
         """
-        all_exp = self.api.api("medical_transcriptome.all_exp")
+        # all_exp = self.api.api("medical_transcriptome.all_exp")
         # add result info
-        all_exp.add_geneset_cluster(self.tool.output_dir, self.option("gene_detail"), main_id=self.option('cluster_main_id'), )
+        # all_exp.add_geneset_cluster(self.tool.output_dir, self.option("gene_detail"), main_id=self.option('cluster_main_id'), )
         self.end()
 
     def chart(self):
@@ -132,8 +132,8 @@ class GenesetClusterWorkflow(Workflow):
         seq_annot_pd = pd.read_table(self.work_dir + '/seq_annot.xls', header=0, index_col=0)
         seq_matrix_pd = pd.read_table(self.tool.output_dir + '/expression_matrix.xls', header=0, index_col=0)
         seq_matrix_add_annot_pd = seq_matrix_pd.join(seq_annot_pd)
-        df1 = seq_matrix_add_annot_pd[["gene_name", "gene_desc"]]
-        df2 = seq_matrix_add_annot_pd.drop(columns=["gene_name", "gene_desc"])
+        df1 = seq_matrix_add_annot_pd[["gene_name", "description"]]
+        df2 = seq_matrix_add_annot_pd.drop(columns=["gene_name", "description"])
         seq_matrix_add_annot_pd = pd.concat([df1, df2], axis=1)
         seq_matrix_add_annot_file = os.path.join(self.tool.output_dir, 'expression_matrix_annot.xls')
         header = ['seq_id']
@@ -153,9 +153,9 @@ class GenesetClusterWorkflow(Workflow):
         rm_files += glob.glob(self.tool.output_dir + '/seq*cluster*.xls')
         for each in rm_files:
             os.remove(each)
-        if os.path.exists(os.path.join(self.tool.output_dir, os.path.basename(self.run_log))):
-            os.remove(os.path.join(self.tool.output_dir, os.path.basename(self.run_log)))
-        os.link(self.run_log, os.path.join(self.tool.output_dir, os.path.basename(self.run_log)))
+        # if os.path.exists(os.path.join(self.tool.output_dir, os.path.basename(self.run_log))):
+        #     os.remove(os.path.join(self.tool.output_dir, os.path.basename(self.run_log)))
+        # os.link(self.run_log, os.path.join(self.tool.output_dir, os.path.basename(self.run_log)))
         result_dir = self.add_upload_dir(self.tool.output_dir)
         self.inter_dirs = [
             ["04 GeneSet", "", "基因集分析结果目录",0],

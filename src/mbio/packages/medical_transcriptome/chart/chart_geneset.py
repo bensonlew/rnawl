@@ -26,20 +26,28 @@ class ChartGeneset(Chart):
     def __init__(self):
         super(ChartGeneset, self).__init__()
 
-    def chart_geneset_venn(self, geneset_ids):
+    def chart_geneset_venn(self, geneset_ids, mongo=False):
         print(geneset_ids)
-        project_type = 'medical_transcriptome'
-        db = Config().get_mongo_client(mtype=project_type)[Config().get_mongo_dbname(project_type)]
-        collection = db['sg_geneset_detail']
-        main_collection = db['sg_geneset']
+        if mongo:
+            project_type = 'medical_transcriptome'
+            db = Config().get_mongo_client(mtype=project_type)[Config().get_mongo_dbname(project_type)]
+            collection = db['sg_geneset_detail']
+            main_collection = db['sg_geneset']
 
         source = list()
         for geneset_id in geneset_ids.split(","):
-            my_result = main_collection.find_one({'main_id': ObjectId(geneset_id)})
-            name = my_result["name"]
-            print name
-            results = collection.find_one({"geneset_id": ObjectId(geneset_id)})
-            seq_list = results["seq_list"]
+            if mongo:
+                my_result = main_collection.find_one({'main_id': ObjectId(geneset_id)})
+                name = my_result["name"]
+                print name
+                results = collection.find_one({"geneset_id": ObjectId(geneset_id)})
+                seq_list = results["seq_list"]
+            else:
+                name = geneset_id
+                seq_list = []
+                with open(geneset_id, 'r') as f:
+                    for line in f:
+                        seq_list.append(line.strip())
 
             source.append({
                 "data": seq_list,
@@ -83,7 +91,7 @@ class ChartGeneset(Chart):
         corr_heat = [[""] + samples]
         for line_dict in cluster_pd.iterrows():
             corr_heat.append(
-                [seq_id2name[line_dict[0]]] + [line_dict[1][s] for s in samples]
+                [line_dict[0]] + [line_dict[1][s] for s in samples]
             )
 
         sample2group_source = [["name", "group"]]
@@ -140,12 +148,24 @@ class ChartGeneset(Chart):
 
         for sub in sorted(sub_2gene):
             for gene in sub_2gene[sub]:
+                gene_name = seq_id2name[gene]
                 gene2group_source.append([gene, gene2group_dict[gene]])
         # for gene in genes:
         #     if gene in gene2group_dict:
         #         gene2group_source.append([gene, gene2group_dict[gene]])
         # # sub_order =sorted(list(set([k[1] for k in gene2group_source])))
         # gene2group_source = sorted(gene2group_source, key = lambda k: k[1])
+        cluster_pd["group"] = cluster_pd["seq_id"].map(lambda x:gene2group_dict.get(x, 0))
+        # cluster_pd["seq_id"] = cluster_pd.index
+        cluster_pd = cluster_pd.loc[genes, :]
+        cluster_pd = cluster_pd.sort_values("group")
+        corr_heat = [[""] + samples]
+        for line_dict in cluster_pd.iterrows():
+            corr_heat.append(
+                [line_dict[0]] + [line_dict[1][s] for s in samples]
+            )
+
+        gene2group_source = []
 
         self.chart_heat_tree("geneset", ".cluster", corr_heat, sample_tree, gene_tree,  sample2group_source, gene2group_source, "../medical_transcriptome/geneset.cluster.heatmap.json",height=chart_height)
 

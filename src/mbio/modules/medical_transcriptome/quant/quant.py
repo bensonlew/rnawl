@@ -115,7 +115,10 @@ class QuantModule(Module):
 
     def set_output(self):
         self.logger.info("Set output of expression quantification")
-        self.generate_exp_table()
+        if os.path.exists(self.work_dir + "/matrix.exists"):
+            pass
+        else:
+            self.generate_exp_table()
         matrix_files = glob.glob(self.work_dir + '/*.matrix')
         if self.option("method").lower() == 'rsem':
             matrix_files += [self.work_dir + '/alignment_rate.txt']

@@ -317,6 +317,8 @@ class ChartReport(object):
             func = globals()[func_name]
             choosed = files[0]
             try:
+                print("files {}".format(files))
+                print("func_name {}".format(func_name))
                 choosed = func(files)
             except Exception as e:
                 print("筛选图片错误")
@@ -327,7 +329,16 @@ class ChartReport(object):
 
     def pdf2png(self, pdf_choose):
         png_path = os.path.splitext(os.path.basename(pdf_choose))[0]
-        command = "gs -o png/{}.jpg -sDEVICE=jpeg  -r256 {} && convert png/{}.jpg png/{}.png".format(png_path, pdf_choose, png_path, png_path)
+        command = "gs -o png/{}.jpg -sDEVICE=jpeg  -r256 {} 2> pdf2png.err ".format(png_path, pdf_choose)
+        print(command)
+        # os.system(command)
+        return_code = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE,
+                                                    stderr=subprocess.STDOUT,
+                                                    env=os.environ, universal_newlines=True, bufsize=0)
+        if return_code.wait() != 0:
+            print("Error command: {}".format(command))
+        command = "~/miniconda3/bin/convert png/{}.jpg png/{}.png".format(png_path, png_path)
+        print(command)
         os.system(command)
         return png_path
 

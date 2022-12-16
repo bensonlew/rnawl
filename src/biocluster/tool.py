@@ -527,6 +527,8 @@ class Tool(object):
 
         :return:
         """
+
+        
         path = os.path.join(self.work_dir, self.name + "_output.pk")
         output = {}
         for name, option in self._options.items():

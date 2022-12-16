@@ -37,13 +37,13 @@ class Chart(object):
         # chart_dir = "/mnt/ilustre/users/sanger-dev/sg-users/liubinxu/work/sg_chart/test2"
         chart_dir = Config().SOFTWARE_DIR + "/bioinfo/sg_chart"
         self.phantomjs_dir = Config().SOFTWARE_DIR + "/program/phantomjs/phantomjs-2.1.1-linux-x86_64/bin/"
-        self.wkhtml_dir = Config().SOFTWARE_DIR + "/install_packages/wkhtmltox-0.12.6-1/usr/local/bin/"
+        self.wkhtml_dir = Config().SOFTWARE_DIR + "/miniconda2/bin/"
         self.mode_dir = chart_dir + "/refrna_v2"
         self.mode_mode = chart_dir + "/model"
         self.mode_mode2 = chart_dir + "/highchart_model"
         self.js_list = list()
         self.work_dir = os.environ.get("PWD", "") + "/"
-        self.cairo_svg = Config().SOFTWARE_DIR + "/bioinfo/rna/miniconda3/bin/cairosvg"
+        self.cairo_svg = Config().SOFTWARE_DIR + "/miniconda3/bin/cairosvg"
         try:
             os.link(self.mode_mode + '/iconfont.woff', self.work_dir + '/iconfont.woff')
         except:
@@ -1191,7 +1191,7 @@ class Chart(object):
             a["chart"]["type"] = "heatmap_tree"
             fo.write("var options = ")
             fo.write(json.dumps(a, indent=4))
-            self.js_list.append([self.work_dir + name + out + ".heat_corr.js", {"to_type": "svg"}])
+            self.js_list.append([self.work_dir + name + out + ".heat_corr.js", {"to_type": "svg", "delay": 30000}])
 
     def chart_heat(self, name, out, corr_source, group_source, p_source, color, json_mode):
         json_mode = self.mode_dir + "/" + json_mode

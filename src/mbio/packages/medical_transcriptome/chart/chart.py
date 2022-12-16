@@ -757,6 +757,8 @@ class Chart(chart_base):
         for gene in genes:
             gene2group_source.append([gene, gene2group_dict[gene]])
 
+        gene2group_source = []
+
         self.chart_heat_tree("geneset", ".cluster", corr_heat, sample_tree, gene_tree, sample2group_source,
                              gene2group_source, "geneset.cluster.heatmap.json",height=chart_height)
 

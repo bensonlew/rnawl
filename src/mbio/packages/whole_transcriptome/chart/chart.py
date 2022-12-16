@@ -37,16 +37,16 @@ class Chart(object):
         # chart_dir = "/mnt/ilustre/users/sanger-dev/sg-users/liubinxu/work/sg_chart/test2"
         chart_dir = Config().SOFTWARE_DIR + "/bioinfo/sg_chart"
         self.phantomjs_dir = Config().SOFTWARE_DIR + "/program/phantomjs/phantomjs-2.1.1-linux-x86_64/bin/"
-        self.wkhtml_dir = Config().SOFTWARE_DIR + "/install_packages/wkhtmltox-0.12.6-1/usr/local/bin/"
+        self.wkhtml_dir = Config().SOFTWARE_DIR + "/miniconda2/bin/"
         self.mode_dir = chart_dir + "/whole_transcriptome"
         self.mode_mode = chart_dir + "/model"
         self.mode_mode2 = chart_dir + "/whole_transcriptome/highchart_model"
         self.js_list = list()
         self.work_dir = os.environ.get("PWD", "") + "/"
-        self.cairo_svg = Config().SOFTWARE_DIR + "/bioinfo/rna/miniconda3/bin/cairosvg"
+        self.cairo_svg = Config().SOFTWARE_DIR + "/miniconda3/bin/cairosvg"
         self.node_path = Config().SOFTWARE_DIR + "/bioinfo/sg_chart/node-v14.16.0-linux-x64/bin/node"
         self.puppeteer_path = Config().SOFTWARE_DIR + "/bioinfo/sg_chart/model/sg_chart_puppeteer.js"
-        self.puppeteer_dir = Config().SOFTWARE_DIR + "/install_packages/wkhtmltox-0.12.6-1/usr/local/bin/"
+        self.puppeteer_dir = Config().SOFTWARE_DIR + "/miniconda2/bin/"
         try:
             os.link(self.mode_mode + '/iconfont.woff', self.work_dir + '/iconfont.woff')
         except:

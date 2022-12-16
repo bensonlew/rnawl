@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # __author__ = 'konghualei, 20170421'
-from mainapp.controllers.project.meta_controller import MetaController
-from mainapp.libs.param_pack import group_detail_sort
+# from mainapp.controllers.project.meta_controller import MetaController
+# from mainapp.libs.param_pack import group_detail_sort
 from bson import ObjectId
 import datetime
 import shutil
@@ -59,7 +59,7 @@ class GenesetVennWorkflow(Workflow):
     def run(self):
         self.start_listener()
         self.fire("start")
-        self.set_db()
+        # self.set_db()
         self.end()
 
     def end(self):

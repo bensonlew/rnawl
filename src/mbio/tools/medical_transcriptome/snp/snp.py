@@ -206,7 +206,10 @@ class SnpTool(Tool):
     def run(self):
         super(SnpTool, self).run()
         # self.download_bam()
-        self.mpileup()
+        if os.path.exists(self.work_dir + "/mpileup.finished"):
+            pass
+        else:
+            self.mpileup()
         self.bcfcall()
         # self.t2u_new(self.option("isoform_unigene"), os.path.join(self.output_dir, os.path.basename(self.option("bed_file"))) + ".call.vcf")
         self.set_output()
